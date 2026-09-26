@@ -614,7 +614,7 @@
   }
 
   function factorProfileCard(st, fit) {
-    const c = U.card("Factor profile", `Typical ${freqWord()} move in the shares for a one-standard-deviation move in each factor, ${windowWord()} regression (${PRESETS[state.preset] ? PRESETS[state.preset].label : "custom model"}). Black ticks mark the ${st.meta.subsector} average.`);
+    const c = U.card("Factor profile", `Typical ${freqWord()} move in the shares for a one-standard-deviation move in each factor, ${windowWord()} regression (${PRESETS[state.preset] ? PRESETS[state.preset].label : "custom model"}). Black ticks mark the ${st.meta.subsector} median.`);
     if (!fit.ok) {
       c.body.appendChild(failBox(fit.error || "The model could not be estimated for this stock."));
       return c.root;
@@ -943,7 +943,7 @@
           { key: "share", label: "Share of variance", num: true, fmt: (v) => U.pct(v, 0) },
         ],
         rows,
-        { sortable: true }
+        { sortable: true, compact: true }
       )
     );
     const relNote = fit.factors.includes("SECTOR") && fit.factors.some((id) => F[id].group === "Rates" || F[id].group === "Credit")
@@ -1051,10 +1051,10 @@
           { key: "partialT", label: "t", num: true, fmt: (v) => (v == null ? "·" : U.num(v, 1)) },
           { key: "r2", label: "R² alone", num: true, fmt: (v) => U.num(v, 2) },
           { key: "peer", label: `${st.meta.subsector} median`, num: true, fmt: (v) => U.pct(v, 2, true) },
-          { key: "rank", label: "Rank (most negative = 1)", num: true, sortValue: (r) => r.rankNum },
+          { key: "rank", label: "Rank", num: true, sortValue: (r) => r.rankNum, title: "Rank in sub-sector, most negative effect = 1" },
         ],
         data,
-        { sortable: true }
+        { sortable: true, compact: true }
       ),
       note(`Home 10Y for ${st.meta.name}: ${rateLabel(st)}. Market and sector rows are plain betas scaled to a +1% move. Peer medians use the market-held-constant effect where available.`)
     );
@@ -1254,7 +1254,7 @@
           { key: "peer", label: "Peer median then", num: true, fmt: (v) => U.pct(v, 1, true) },
         ],
         rows,
-        { sortable: false }
+        { sortable: false, compact: true }
       ),
       note("Implied moves ignore compounding and anything the macro factors do not capture, so long episodes are rougher. Actual returns are only shown where the stock was listed.")
     );

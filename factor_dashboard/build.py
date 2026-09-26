@@ -48,12 +48,15 @@ def _describe(series: pd.Series) -> dict:
     }
 
 
-def _validate_rate(series: pd.Series, name: str) -> pd.Series:
+def _validate_rate(series: pd.Series, name: str, max_age_days: int = 21) -> pd.Series:
     s = series.dropna()
     if s.size < 60:
         raise ValueError(f"{name}: only {s.size} observations")
     if s.abs().max() > 40:
         raise ValueError(f"{name}: values out of range for a yield in percent")
+    age = (pd.Timestamp.today().normalize() - s.index[-1]).days
+    if age > max_age_days:
+        raise ValueError(f"{name}: last observation {s.index[-1].date()} is {age} days old")
     return s
 
 

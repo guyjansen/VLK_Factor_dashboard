@@ -135,6 +135,7 @@ def test_offline_build_produces_consistent_file(offline, tmp_path):
     # Vastned history is spliced from VASTN.AS; Lumo copes with a missing history ticker.
     status = data["meta"]["stock_status"]
     assert status["VASTB"]["spliced_with"] == "VASTN.AS"
+    assert "spliced_with" not in status["URW"]
     assert status["LUMO"]["prices"] == "ok"
     size = write_data_js(data, out)
     assert size > 100_000

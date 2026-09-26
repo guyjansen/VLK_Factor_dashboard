@@ -154,3 +154,18 @@ def test_snb_prefers_confederation_code():
 def test_norges_sdmx_csv_2():
     s = cb.parse_sdmx_csv(NORGES_SDMX2)
     assert s.iloc[0] == pytest.approx(1.73)
+
+
+SNB_SWITCHED = '''"Date";"D0";"Value"
+"2025-07-30";"10J0";"0.40"
+"2025-07-31";"10J0";"0.38"
+"2025-07-31";"10J1";"0.39"
+"2025-08-01";"10J1";"0.41"
+'''
+
+
+def test_snb_uses_the_code_still_published():
+    s = cb.parse_snb_csv(SNB_SWITCHED, "10J")
+    assert s.index[-1] == pd.Timestamp("2025-08-01")
+    assert s.loc["2025-07-30"] == pytest.approx(0.40)  # early history from the old code
+    assert s.loc["2025-07-31"] == pytest.approx(0.39)  # the current code wins on overlap

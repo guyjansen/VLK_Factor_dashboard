@@ -117,12 +117,26 @@ def parse_snb_csv(text: str, maturity: str) -> pd.Series:
         available = set(codes.unique())
         # The cube mixes Confederation maturities (e.g. "10J0") with other series;
         # take the plain Confederation code first.
-        base = maturity.rstrip("JY0123456789") or maturity
-        candidates = [maturity + "0", maturity, maturity.replace("J", "Y"), maturity + "1", base]
-        chosen = next((c for c in candidates if c in available), None)
-        if chosen is None:
+        candidates = [c for c in (maturity + "0", maturity, maturity.replace("J", "Y"), maturity + "1") if c in available]
+        if not candidates:
             raise ValueError(f"SNB maturity {maturity} not in {sorted(available)[:20]}")
-        df = df[codes == chosen]
+        # Codes can be discontinued and replaced (e.g. "10J0" ending in 2025):
+        # take the one published most recently and fill its early history from the others.
+        pieces = []
+        for c in candidates:
+            part = df[codes == c]
+            vals = part[value_col].astype(str).str.replace(",", ".", regex=False)
+            try:
+                pieces.append(_clean(pd.Series(vals.values, index=part["Date"].values)))
+            except ValueError:
+                continue
+        if not pieces:
+            raise ValueError(f"SNB maturity {maturity}: no observations")
+        pieces.sort(key=lambda p: p.index[-1], reverse=True)
+        combined = pieces[0]
+        for extra in pieces[1:]:
+            combined = combined.combine_first(extra)
+        return combined
     values = df[value_col].astype(str).str.replace(",", ".", regex=False)
     return _clean(pd.Series(values.values, index=df["Date"].values))
 

@@ -24,7 +24,7 @@
     { id: "EUR2Y", label: "EUR 2Y yield", short: "EUR 2Y", group: "Rates", kind: "rate", series: "EUR2Y", unit: "bp", shock: 10, shockLabel: "+10bp", desc: "Change in the 2-year point of the ECB euro area AAA government curve." },
     { id: "CURVE", label: "EUR 2s10s curve", short: "2s10s", group: "Rates", kind: "spread", series: ["EUR10Y", "EUR2Y"], unit: "bp", shock: 10, shockLabel: "+10bp steeper", desc: "Change in the 10Y minus 2Y spread of the ECB AAA curve." },
     { id: "CREDIT", label: "EUR high-yield spread", short: "HY spread", group: "Credit", kind: "rate", series: "EUR_HY_OAS", unit: "bp", shock: 25, shockLabel: "+25bp", desc: "Change in the ICE BofA Euro High Yield option-adjusted spread." },
-    { id: "CREDIT_ETF", label: "EUR high-yield bonds vs governments", short: "HY vs govts", group: "Credit", kind: "active2", series: ["HY_BOND", "GOVT_BOND"], unit: "%", shock: -0.01, shockLabel: "-1% HY excess return", desc: "Return of EUR high-yield corporate bonds minus 3-5Y government bonds (iShares ETFs); a credit proxy used when the FRED spread is unavailable." },
+    { id: "CREDIT_ETF", label: "EUR high-yield bonds vs governments", short: "HY vs govts", group: "Credit", kind: "active2", series: ["HY_BOND", "GOVT_BOND"], unit: "%", shock: -0.01, shockLabel: "−1% HY excess return", desc: "Return of EUR high-yield corporate bonds minus 3-5Y government bonds (iShares ETFs); a credit proxy used when the FRED spread is unavailable." },
     { id: "FXL", label: "Home currency vs EUR", short: "FX vs EUR", group: "FX", kind: "fxlocal", unit: "%", shock: 0.01, shockLabel: "+1% home ccy", desc: "Return of the stock's home currency against the euro (non-euro stocks only)." },
     { id: "EURUSD", label: "EUR/USD", short: "EUR/USD", group: "FX", kind: "asset", series: "FX_USD", unit: "%", shock: 0.01, shockLabel: "+1% EUR", desc: "Return of the euro against the US dollar." },
     { id: "OIL", label: "Brent crude oil", short: "Oil", group: "Macro", kind: "asset", series: "BRENT", unit: "%", shock: 0.1, shockLabel: "+10%", desc: "Return of the front-month Brent future (USD)." },
@@ -134,6 +134,14 @@
     for (const [id, s] of Object.entries(data.series || {})) series[id] = ffillInside(s.values, FFILL_LIMIT);
     const fxByCcy = { USD: series.FX_USD, GBP: series.FX_GBP, SEK: series.FX_SEK, CHF: series.FX_CHF, NOK: series.FX_NOK };
     const localRate = (data.meta && data.meta.local_rate_by_country) || {};
+    // A home yield that stopped updating would silently shorten every regression;
+    // fall back to the EUR curve unless it runs to within ~3 weeks of the end.
+    const lastValid = (arr) => {
+      let t = arr.length - 1;
+      while (t >= 0 && !isNum(arr[t])) t--;
+      return t;
+    };
+    const freshRate = (id) => series[id] && lastValid(series[id]) >= n - 15;
     const dayNum = dates.map(epochDay);
     const weekEnd = new Uint8Array(n);
     const monthEnd = new Uint8Array(n);
@@ -151,7 +159,7 @@
       const fx = s.currency === "EUR" ? null : fxByCcy[s.currency] || null;
       const triEur = fx ? tri.map((v, t) => v / fx[t]) : tri;
       const pxEur = fx ? px.map((v, t) => v / fx[t]) : px;
-      const rateSeries = localRate[s.country] && series[localRate[s.country]] ? localRate[s.country] : "EUR10Y";
+      const rateSeries = localRate[s.country] && freshRate(localRate[s.country]) ? localRate[s.country] : "EUR10Y";
       const first = obs.indexOf(1);
       const last = obs.lastIndexOf(1);
       return { i, id: s.id, meta: s, fund: s.fund || {}, tri, px, obs, fx, triEur, pxEur, rateSeries, first, last };

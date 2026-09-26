@@ -555,6 +555,7 @@ select,
 .factor-picker {
   flex-basis: 100%;
   display: grid;
+  align-items: start;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   padding-top: 8px;
@@ -566,6 +567,7 @@ select,
   padding: 0;
   margin: 0;
   display: grid;
+  align-content: start;
   gap: 4px;
 }
 
