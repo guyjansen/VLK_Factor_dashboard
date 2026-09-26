@@ -77,7 +77,9 @@ When a source fails, the build reuses that series from the previous refresh and 
 
 - Yahoo Finance data is free but unofficial. Statements can be stale or in odd units; the pipeline corrects pence/pound and currency mix-ups and drops implausible ratios, so check key figures against company reports.
 - The Fama-French factors arrive one to two months late. Recent attribution therefore defaults to market, sector, rates and credit, which are all current.
-- FRED times out from GitHub's servers, so the credit factor currently uses the ETF proxy. Where a Swiss or Norwegian yield is unavailable, those stocks fall back to the EUR 10Y yield.
+- FRED times out from GitHub's servers, so the credit factor currently uses the ETF proxy.
+- The SNB yield series the pipeline reads stopped updating in July 2025, so Swiss stocks currently use the EUR 10Y yield as their rate factor. Any home yield more than three weeks stale is replaced the same way, and the note above each view says so.
+- Yahoo no longer serves the pre-merger Vastned Retail line or URW's pre-April 2023 Amsterdam line, so those two histories are shorter.
 - P/B and the LTV proxy approximate EPRA NTA and EPRA LTV; they are not the same measures.
 
 ## Development
