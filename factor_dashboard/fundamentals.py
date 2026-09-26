@@ -26,7 +26,6 @@ CASH_ROWS = (
 )
 MINORITY_ROWS = ("Minority Interest",)
 SHARE_ROWS = ("Ordinary Shares Number", "Share Issued")
-PROPERTY_ROWS = ("Investment Properties",)
 REVENUE_ROWS = ("Total Revenue", "Operating Revenue")
 EBITDA_ROWS = ("Normalized EBITDA", "EBITDA")
 INTEREST_ROWS = ("Interest Expense", "Interest Expense Non Operating")
@@ -83,9 +82,19 @@ def _complete(column: pd.Series | None) -> bool:
 
 
 def _latest_balance_sheet(raw: dict) -> tuple[pd.Series | None, pd.Timestamp | None, pd.Series | None]:
-    """Newest balance sheet column with assets, debt and equity; the other statement is the fallback."""
+    """Newest balance sheet column with assets, debt and equity; the other statement is the fallback.
+
+    Yahoo's interim statements sometimes carry only part of the debt (e.g. the
+    current portion), so an interim column whose debt-to-assets ratio is far
+    below the annual one is not trusted.
+    """
     q_col, q_date = _statement_column(raw.get("quarterly_balance_sheet"))
     a_col, a_date = _statement_column(raw.get("balance_sheet"))
+    if _complete(q_col) and _complete(a_col):
+        q_ratio = _pick(q_col, DEBT_ROWS) / _pick(q_col, ASSET_ROWS)
+        a_ratio = _pick(a_col, DEBT_ROWS) / _pick(a_col, ASSET_ROWS)
+        if a_ratio > 0 and not (1 / 3 <= q_ratio / a_ratio <= 3):
+            return a_col, a_date, q_col
     if _complete(q_col) and (not _complete(a_col) or q_date >= a_date):
         return q_col, q_date, a_col
     if a_col is not None:
@@ -249,7 +258,6 @@ def compute_snapshot(
     debt = _pick(bs, DEBT_ROWS)
     cash = _pick(bs, CASH_ROWS) or 0.0
     minority = _pick(bs, MINORITY_ROWS) or 0.0
-    properties = _pick(bs, PROPERTY_ROWS)
     snap["balance_sheet_date"] = bs_date.strftime("%Y-%m-%d") if bs_date is not None else None
 
     per_share_count = bs_shares or shares
@@ -263,11 +271,12 @@ def compute_snapshot(
     snap["cash"] = to_quote(cash)
     snap["total_assets"] = to_quote(assets)
     snap["equity"] = to_quote(equity)
+    # Total assets less cash rather than investment property: companies with
+    # large joint ventures (VGP, Sagax, Balder) hold much of their property
+    # off the consolidated investment-property line.
     ltv = None
-    if net_debt is not None:
-        base = properties if properties and assets and properties > 0.3 * assets else (assets - cash if assets else None)
-        if base and base > 0:
-            ltv = _in_range(net_debt / base, -0.5, 1.2)
+    if net_debt is not None and assets and assets - cash > 0:
+        ltv = _in_range(net_debt / (assets - cash), -0.5, 1.2)
     snap["ltv"] = ltv
 
     inc, inc_date = _statement_column(raw.get("income_stmt"))

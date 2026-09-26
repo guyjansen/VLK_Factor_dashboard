@@ -430,9 +430,9 @@
       });
     }
     const option = Object.assign(base(t), {
-      grid: { left: 10, right: 30, top: 34, bottom: 30, containLabel: true },
+      grid: { left: 10, right: 30, top: opts.showYName === false ? 12 : 34, bottom: 30, containLabel: true },
       xAxis: valueAxis(t, xFmt, { name: opts.xName, nameLocation: "middle", nameGap: 28, nameTextStyle: { color: t.ink2, fontSize: 12 } }),
-      yAxis: valueAxis(t, yFmt, { name: opts.yName, nameLocation: "end", nameGap: 10, nameTextStyle: { color: t.ink2, fontSize: 12, align: "left" } }),
+      yAxis: valueAxis(t, yFmt, opts.showYName === false ? {} : { name: opts.yName, nameLocation: "end", nameGap: 10, nameTextStyle: { color: t.ink2, fontSize: 12, align: "left" } }),
       tooltip: Object.assign(base(t).tooltip, {
         trigger: "item",
         formatter: (p) =>

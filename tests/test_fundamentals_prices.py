@@ -30,7 +30,7 @@ def test_cross_currency_book_value():
     # Book value per share = 50 EUR = 550 SEK -> P/B 0.8.
     assert snap["book_value_per_share"] == pytest.approx(550.0)
     assert snap["pb"] == pytest.approx(0.8)
-    assert snap["ltv"] == pytest.approx(3.8e9 / 9.8e9, rel=1e-4)
+    assert snap["ltv"] == pytest.approx(3.8e9 / 9.8e9, rel=1e-4)  # net debt / (assets - cash)
     assert snap["nd_ebitda"] == pytest.approx(9.5)
     assert snap["interest_cover"] == pytest.approx(4.0)
     assert snap["market_cap_eur"] == pytest.approx(440.0 * 1e8 / 11.0, rel=1e-5)
@@ -133,3 +133,14 @@ def test_extend_with_index_appends_trailing_days():
     assert len(out) == 5
     assert out.iloc[-1] == pytest.approx(103.0 * 520.15 / 515.0)
     assert prices.extend_with_index(etf, None).equals(etf)
+
+
+def test_interim_balance_sheet_with_partial_debt_is_ignored():
+    bs, inc = _statements()
+    q = bs.copy()
+    q.columns = [pd.Timestamp("2026-06-30")]
+    q.loc["Total Debt"] = 2.0e8  # only the current portion
+    raw = {"info": {"financialCurrency": "EUR"}, "balance_sheet": bs, "quarterly_balance_sheet": q, "income_stmt": inc}
+    snap = fund.compute_snapshot(raw, quote_currency="EUR", price_scale=1.0, last_price=30.0, as_of=pd.Timestamp("2026-09-25"), fx=FX)
+    assert snap["balance_sheet_date"] == "2025-12-31"
+    assert snap["ltv"] == pytest.approx(3.8e9 / 9.8e9, rel=1e-4)

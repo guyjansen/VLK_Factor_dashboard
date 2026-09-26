@@ -105,10 +105,12 @@
   }
   const macroIds = () => M.resolveFactors(ctx, M.MACRO_SPEC);
   const styleIds = () => M.resolveFactors(ctx, M.STYLE_SPEC);
-  const fits = (ids) => once(`fits|${ids.join(",")}|${setKey()}`, () => M.fitUniverse(ctx, ids, opts()));
+  // Newey-West errors cost time; skip them where no t-statistic is shown.
+  const fits = (ids, hac = true) => once(`fits|${ids.join(",")}|${hac}|${setKey()}`, () => M.fitUniverse(ctx, ids, { ...opts(), hac }));
   const stats = () => once(`stats|${state.ccy}`, () => STOCKS.map((st) => M.stockStats(ctx, st, state.ccy)));
+  const capmFits = () => fits(M.resolveFactors(ctx, ["MKT"]), false);
   const chars = () =>
-    once(`chars|${setKey()}`, () => M.characteristics(ctx, stats(), fits(macroIds()).map((f) => (f.ok ? f.betas.MKT : NaN))));
+    once(`chars|${setKey()}`, () => M.characteristics(ctx, stats(), capmFits().map((f) => (f.ok ? f.betas.MKT : NaN))));
   const sel = () => ctx.byId[state.stock];
   const peersOf = (st) => STOCKS.filter((s) => s.meta.subsector === st.meta.subsector);
 
@@ -333,7 +335,7 @@
     const f = st.fund;
     const s = stats()[st.i];
     const mfit = fits(macroIds())[st.i];
-    const capm = fits(M.resolveFactors(ctx, ["MKT"]))[st.i];
+    const capm = capmFits()[st.i];
     const peers = peersOf(st);
     const qccy = st.meta.currency;
     const peerMed = (fn) => median(peers.filter((p) => p !== st).map(fn));
@@ -677,7 +679,7 @@
         out.push({ tag: "Rates", text: `The shares have tended to rise with the ${rateLabel(st)} (${U.pct(v, 2, true)} per +10bp, t ${U.num(fit.t.RATES, 1)}), unusual for real estate.${sigTxt}` });
       }
     }
-    const cf = fits(M.resolveFactors(ctx, ["MKT"]));
+    const cf = capmFits();
     if (cf[st.i].ok) {
       const med = median(peers.filter((p) => p !== st).map((p) => (cf[p.i].ok ? cf[p.i].betas.MKT : NaN)));
       const b = cf[st.i].betas.MKT;
@@ -807,7 +809,7 @@
   const attribIds = () => M.resolveFactors(ctx, M.ATTRIB_SPEC);
 
   function specificCard(st) {
-    const fit = fits(attribIds())[st.i];
+    const fit = fits(attribIds(), false)[st.i];
     const c = U.card("Stock-specific return", `What is left after the market, the real estate sector, the home 10Y yield and credit: cumulative residual of the ${windowWord()} regression.`);
     if (!fit.ok || !fit.rows || !fit.rows.length) {
       c.body.appendChild(failBox(fit.error || "Not available."));
@@ -854,16 +856,17 @@
         ["P/B", U.mult(f.pb)],
         ["Dividend yield (trailing 12M)", `${U.pct(f.dividend_yield, 1)}${isNum(f.dps_ttm) ? ` · DPS ${U.money(f.dps_ttm, ccy)}` : ""}`],
         ["Forward P/E (consensus EPS)", U.mult(f.pe_forward, 1)],
-        ["LTV proxy", U.pct(f.ltv, 1), "Net debt divided by total assets less cash (investment property when reported)."],
-        ["Net debt / EBITDA", U.mult(f.nd_ebitda, 1), "Omitted when Yahoo's EBITDA looks distorted by revaluations."],
-        ["Interest cover (EBITDA)", U.mult(f.interest_cover, 1)],
-        ["EV / EBITDA", U.mult(f.ev_ebitda, 1)],
+        ["LTV proxy", U.pct(f.ltv, 1), "Net debt divided by total assets less cash."],
+        ["Net debt / EBITDA (indicative)", U.mult(f.nd_ebitda, 1), "Yahoo EBITDA; omitted when it looks distorted by revaluations."],
+        ["Interest cover (indicative)", U.mult(f.interest_cover, 1), "EBITDA over interest expense, from Yahoo statements."],
+        ["EV / EBITDA (indicative)", U.mult(f.ev_ebitda, 1)],
         ["Revenue growth (last FY)", U.pct(f.revenue_growth, 1, true)],
         ["Avg daily traded value (3M)", U.moneyCompact(f.adv_3m_eur, "EUR")],
         ["Consensus target", isNum(cns.target_mean) ? `${U.money(cns.target_mean, ccy)} (${U.pct(cns.upside, 0, true)})` : DASH],
         ["Target range", isNum(cns.target_low) && isNum(cns.target_high) ? `${U.money(cns.target_low, ccy)} – ${U.money(cns.target_high, ccy)}` : DASH],
         ["Ratings", counts || (cns.rating ? `${cns.rating} (${cns.analysts || "?"} analysts)` : DASH)],
         ["Next results", f.next_results ? U.date(f.next_results) : f.last_results ? `last ${U.date(f.last_results)}` : DASH],
+        f.ex_dividend ? [f.ex_dividend >= META.as_of ? "Next ex-dividend date" : "Last ex-dividend date", U.date(f.ex_dividend)] : null,
       ])
     );
     if (f.stale) c.body.appendChild(note("Fundamentals could not be refreshed today; these figures are from the previous refresh."));
@@ -1379,7 +1382,7 @@
     const st = sel();
     const fit = fits(modelIds())[st.i];
     const s = stats()[st.i];
-    const capm = fits(M.resolveFactors(ctx, ["MKT"]))[st.i];
+    const capm = capmFits()[st.i];
     const tiles = el(
       "div",
       { class: "tiles", "data-n": "8" },
@@ -1542,7 +1545,7 @@
     pe: { label: "Forward P/E", get: (st) => st.fund.pe_forward, fmt: (v) => U.mult(v, 1) },
     upside: { label: "Consensus upside", get: (st) => st.fund.consensus && st.fund.consensus.upside, fmt: (v) => U.pct(v, 0, true) },
     mcap: { label: "Market cap (EUR bn)", get: (st) => (isNum(st.fund.market_cap_eur) ? st.fund.market_cap_eur / 1e9 : NaN), fmt: (v) => U.num(v, 1) },
-    beta: { label: "Market beta", get: (st) => macroFit(st).betas && macroFit(st).betas.MKT, fmt: (v) => U.num(v, 2) },
+    beta: { label: "Beta vs STOXX 600", get: (st) => (capmFits()[st.i].ok ? capmFits()[st.i].betas.MKT : NaN), fmt: (v) => U.num(v, 2) },
     rate10: { label: "Rate sensitivity (% per +10bp)", get: (st) => (macroFit(st).ok && isNum(macroFit(st).betas.RATES) ? macroFit(st).betas.RATES * 1000 : NaN), fmt: (v) => U.num(v, 2) + "%" },
     specvol: { label: "Specific volatility", get: (st) => (macroFit(st).ok ? macroFit(st).specificVolAnn : NaN), fmt: (v) => U.pct(v, 0) },
     vol: { label: "Volatility (1Y daily)", get: (st) => stats()[st.i].vol1y, fmt: (v) => U.pct(v, 0) },
@@ -1572,6 +1575,7 @@
         { label: `${st.meta.subsector} peers`, color: t.series[1], kind: "dot" },
         { label: "Other coverage", color: t.otherStrong, kind: "dot" },
       ]),
+      el("div", { style: { fontSize: "12px", color: "var(--ink-2)", marginBottom: "-6px" }, text: `↑ ${my.label}` }),
       box
     );
     const me = pts[st.i];
@@ -1579,7 +1583,7 @@
       const expected = fitLine.intercept + fitLine.slope * me.x;
       c.body.appendChild(note(`${st.meta.name}: ${my.label} of ${my.fmt(me.y)} against ${my.fmt(expected)} on the fitted line at its ${mx.label.toLowerCase()} of ${mx.fmt(me.x)}. The line explains ${U.pct(fitLine.r2, 0)} of the variation across ${fitLine.n} stocks.`));
     }
-    draw(() => C.scatter(box, pts, { xFmt: mx.fmt, yFmt: my.fmt, xName: mx.label, yName: my.label, fit: fitLine, onClick: (id) => selectStock(id) }));
+    draw(() => C.scatter(box, pts, { xFmt: mx.fmt, yFmt: my.fmt, xName: mx.label, yName: my.label, showYName: false, fit: fitLine, onClick: (id) => selectStock(id) }));
     panel.appendChild(c.root);
 
     // Style characteristics.
@@ -1631,7 +1635,7 @@
         upside: f.consensus && f.consensus.upside,
         r3m: s.ret.m3,
         r1y: s.ret.y1,
-        beta: mf[p.i].ok ? mf[p.i].betas.MKT : NaN,
+        beta: capmFits()[p.i].ok ? capmFits()[p.i].betas.MKT : NaN,
         rate: mf[p.i].ok && isNum(mf[p.i].betas.RATES) ? mf[p.i].betas.RATES * 10 : NaN,
       };
     });
@@ -1719,7 +1723,7 @@
         ytd: s.ret.ytd,
         r1y: s.ret.y1,
         vol: s.vol1y,
-        beta: fm.ok ? fm.betas.MKT : NaN,
+        beta: capmFits()[p.i].ok ? capmFits()[p.i].betas.MKT : NaN,
         rate: fm.ok && isNum(fm.betas.RATES) ? fm.betas.RATES * 10 : NaN,
         r2: fm.ok ? fm.r2 : NaN,
       };
