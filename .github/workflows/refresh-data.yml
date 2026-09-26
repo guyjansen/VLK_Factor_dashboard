@@ -26,7 +26,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
+      # Start from the branch head, not the commit that triggered the run, so a
+      # refresh committed by an earlier run is already in the history.
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}
 
       - uses: actions/setup-python@v6
         with:
@@ -39,18 +43,30 @@ jobs:
       - name: Build data file
         run: python -m factor_dashboard.build
 
+      # The freshly built file always wins: re-apply it on top of the latest
+      # branch head instead of rebasing, and retry if someone pushes meanwhile.
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/dashboard_data.js
-          if git diff --cached --quiet; then
-            echo "Data unchanged"
-            exit 0
-          fi
-          git commit -m "Refresh market data ($(date -u +%Y-%m-%d))"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          cp docs/data/dashboard_data.js "$RUNNER_TEMP/dashboard_data.js"
+          for attempt in 1 2 3 4; do
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            cp "$RUNNER_TEMP/dashboard_data.js" docs/data/dashboard_data.js
+            git add docs/data/dashboard_data.js
+            if git diff --cached --quiet; then
+              echo "Data unchanged"
+              exit 0
+            fi
+            git commit -m "Refresh market data ($(date -u +%Y-%m-%d))"
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Could not push the refreshed data" >&2
+          exit 1
 
       - name: Build single-file dashboard
         run: python -m factor_dashboard.bundle

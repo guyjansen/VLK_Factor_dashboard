@@ -359,8 +359,12 @@ def build(options: config.BuildOptions) -> dict:
     prev_series = (previous or {}).get("series", {})
     for sid, prev in prev_series.items():
         if sid not in series_out and prev_dates.size:
-            reused = {**prev, "values": realign(prev.get("values", [])), "stale": True}
-            series_out[sid] = reused
+            values = realign(prev.get("values", []))
+            last = max((i for i, v in enumerate(values) if v is not None), default=-1)
+            # Only bridge a short outage; a series that had already stopped updating is dropped.
+            if last < 0 or (calendar[-1] - calendar[last]).days > 21:
+                continue
+            series_out[sid] = {**prev, "values": values, "stale": True}
             series_status.setdefault(sid, {})["status"] = "stale (previous build)"
             warnings.append(f"{sid}: source unavailable, reused previous build")
 

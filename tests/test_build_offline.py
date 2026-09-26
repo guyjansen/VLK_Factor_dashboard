@@ -178,3 +178,21 @@ def test_bundle_inlines_assets_and_data(tmp_path):
     assert frag.lstrip().startswith("<title>")
     assert "<html" not in frag and "<body" not in frag
     assert bundle.ECHARTS_CDN in frag
+
+
+def test_previous_series_that_had_stopped_updating_is_not_reused(offline, tmp_path, monkeypatch):
+    out = tmp_path / "data.js"
+    first = build_mod.build(config.BuildOptions(out=out, pause=0))
+    n = len(first["dates"])
+    first["series"]["CH10Y"]["values"] = first["series"]["CH10Y"]["values"][: n - 60] + [None] * 60
+    write_data_js(first, out)
+
+    def rate(spec, start):
+        if spec.id == "CH10Y":
+            return None, {"status": "failed", "errors": ["offline"]}
+        return fake_rate(spec, start)
+
+    monkeypatch.setattr(build_mod, "_fetch_rate", rate)
+    second = build_mod.build(config.BuildOptions(out=out, pause=0))
+    assert "CH10Y" not in second["series"]
+    assert second["meta"]["series_status"]["CH10Y"]["status"] == "failed"
