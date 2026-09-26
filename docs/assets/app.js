@@ -688,7 +688,16 @@
       const lessSensitive = others.filter((x) => x > v).length;
       const sigTxt = Math.abs(fit.t.RATES) >= 1.96 ? "" : " The estimate is not statistically significant.";
       if (v < 0) {
-        out.push({ tag: "Rates", text: `A +10bp move in the ${rateLabel(st)} has come with a ${U.pct(v, 2, true)} move in the shares, holding the market constant (t ${U.num(fit.t.RATES, 1)}). That is more rate-sensitive than ${lessSensitive} of ${others.length} ${ss} peers.${sigTxt}` });
+        const total = others.length + 1;
+        const rel =
+          !others.length
+            ? ""
+            : lessSensitive === 0
+              ? ` That makes it the least rate-sensitive of the ${total} ${ss} stocks.`
+              : lessSensitive === others.length
+                ? ` That makes it the most rate-sensitive of the ${total} ${ss} stocks.`
+                : ` That is more rate-sensitive than ${lessSensitive} of its ${others.length} ${ss} peers.`;
+        out.push({ tag: "Rates", text: `A +10bp move in the ${rateLabel(st)} has come with a ${U.pct(v, 2, true)} move in the shares, holding the market constant (t ${U.num(fit.t.RATES, 1)}).${rel}${sigTxt}` });
       } else {
         out.push({ tag: "Rates", text: `The shares have tended to rise with the ${rateLabel(st)} (${U.pct(v, 2, true)} per +10bp, t ${U.num(fit.t.RATES, 1)}), unusual for real estate.${sigTxt}` });
       }
