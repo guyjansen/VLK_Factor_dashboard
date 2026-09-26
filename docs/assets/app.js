@@ -248,12 +248,26 @@
   function dataBanner() {
     const warnings = [];
     if (META.synthetic) warnings.push("This file holds synthetic demo data generated for testing. Run the data pipeline for real market data.");
+    const fallback = {
+      EUR_HY_OAS: M.available(ctx, "CREDIT_ETF") ? "credit uses the high-yield bond ETF proxy" : "credit factors are left out",
+      GB10Y: "UK stocks use the EUR 10Y yield",
+      SE10Y: "Swedish stocks use the EUR 10Y yield",
+      CH10Y: "Swiss stocks use the EUR 10Y yield",
+      NO10Y: "Norwegian stocks use the EUR 10Y yield",
+    };
+    let severe = !!META.synthetic;
     const missing = Object.entries(META.series_status || {})
       .filter(([, s]) => s.status === "failed" || String(s.status || "").startsWith("stale"))
-      .map(([id, s]) => `${s.label || (DATA.series[id] && DATA.series[id].label) || id} (${s.status === "failed" ? "unavailable" : "from the previous refresh"})`);
-    if (missing.length) warnings.push(`Some inputs are missing from this refresh: ${missing.join("; ")}. Factors that depend on them are left out or use a proxy.`);
+      .map(([id, s]) => {
+        const name = s.label || (DATA.series[id] && DATA.series[id].label) || id;
+        if (s.status !== "failed") return `${name} is from the previous refresh`;
+        if (!fallback[id]) severe = true;
+        return fallback[id] ? `${name} is unavailable, so ${fallback[id]}` : `${name} is unavailable`;
+      });
+    if (missing.length) warnings.push(`Not in this refresh: ${missing.join("; ")}.`);
     if (!warnings.length) return null;
-    return el("div", { class: "banner", role: "note" }, warnings.join(" "));
+    // Inputs with a working fallback get a quiet note; anything else is a warning.
+    return el("div", { class: severe ? "banner" : "banner info", role: "note" }, warnings.join(" "));
   }
 
   // ------------------------------------------------------------------ rail

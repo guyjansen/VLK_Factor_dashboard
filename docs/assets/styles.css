@@ -1062,6 +1062,14 @@ select,
   font-size: 13px;
 }
 
+.banner.info {
+  padding: 7px 12px;
+  border-color: var(--hairline);
+  background: var(--surface-2);
+  color: var(--ink-2);
+  font-size: 12.5px;
+}
+
 .empty {
   padding: 24px;
   text-align: center;
