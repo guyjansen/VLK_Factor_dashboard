@@ -23,6 +23,21 @@ def parse_fred_csv(text: str, series_id: str) -> pd.Series:
     return series.astype(float)
 
 
+FRED_LEGACY_URL = "https://fred.stlouisfed.org/series/{id}/downloaddata/{id}.csv"
+
+
 def fetch_fred_series(series_id: str, start: str) -> pd.Series:
-    resp = http.get(FRED_CSV_URL, params={"id": series_id, "cosd": pd.Timestamp(start).strftime("%Y-%m-%d")})
-    return parse_fred_csv(resp.text, series_id)
+    """FRED's graph CSV endpoint, with the legacy download URL as a fallback."""
+    errors = []
+    attempts = (
+        (FRED_CSV_URL, {"id": series_id, "cosd": pd.Timestamp(start).strftime("%Y-%m-%d")}),
+        (FRED_LEGACY_URL.format(id=series_id), None),
+    )
+    for url, params in attempts:
+        try:
+            resp = http.get(url, params=params, timeout=90, retries=2)
+            series = parse_fred_csv(resp.text, series_id)
+            return series[series.index >= pd.Timestamp(start)]
+        except Exception as exc:  # try the next endpoint
+            errors.append(f"{url}: {exc}")
+    raise http.FetchError("; ".join(errors))

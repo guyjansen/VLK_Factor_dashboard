@@ -1,0 +1,9 @@
+[project]
+name = "factor-dashboard"
+version = "1.0.0"
+description = "Public-data pipeline for a European listed real estate factor exposure dashboard"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

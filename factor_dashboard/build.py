@@ -225,7 +225,14 @@ def build(options: config.BuildOptions) -> dict:
                 adj = prices.splice_returns(adj, prices.fix_unit_glitches(h["Adj Close"] * scale), stock.splice_date)
                 status["spliced_with"] = stock.history_ticker
             else:
-                warnings.append(f"{stock.id}: history ticker {stock.history_ticker} unavailable; using {stock.ticker} only")
+                # Before the splice date the primary line belongs to a different
+                # entity, so start the series at the splice instead of mixing them.
+                cutoff = pd.Timestamp(stock.splice_date)
+                close, adj = close[close.index >= cutoff], adj[adj.index >= cutoff]
+                status["history_truncated_at"] = stock.splice_date
+                warnings.append(
+                    f"{stock.id}: history ticker {stock.history_ticker} unavailable; series starts {stock.splice_date}"
+                )
         status.update({"prices": "ok", "quote_currency": quote, "currency": major, **_describe(adj)})
         stock_frames[stock.id] = {
             "close": close.dropna(),
@@ -246,7 +253,7 @@ def build(options: config.BuildOptions) -> dict:
             raise SystemExit("Market series (STOXX Europe 600) unavailable; refusing to build")
 
     # 7. Calendar: weekdays on which at least a tenth of the stocks traded.
-    counts = pd.concat([f["adj"].rename(k) for k, f in stock_frames.items()], axis=1).notna().sum(axis=1)
+    counts = pd.concat([f["adj"].rename(k) for k, f in stock_frames.items()], axis=1, sort=True).notna().sum(axis=1)
     counts = counts[counts.index >= pd.Timestamp(start)]
     calendar = counts[(counts >= max(3, int(0.1 * len(stock_frames)))) & (counts.index.dayofweek < 5)].index
     calendar = pd.DatetimeIndex(sorted(calendar))
@@ -283,6 +290,7 @@ def build(options: config.BuildOptions) -> dict:
                         as_of=frames["close"].index[-1],
                         fx=fx_latest,
                     )
+                    fund_block.pop("fetched_at", None)
                     stock_status[stock.id]["fundamentals"] = "ok"
                 except Exception as exc:
                     log.warning("Fundamentals snapshot failed for %s: %s", stock.id, exc)

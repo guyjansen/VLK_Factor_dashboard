@@ -1,5 +1,5 @@
 id,name,ticker,history_ticker,splice_date,exchange,country,currency,subsector,segment,note
-URW,Unibail-Rodamco-Westfield SE (Stapled),URW.PA,,,Euronext Paris,FR,EUR,Retail,Flagship shopping centres (EU & US),
+URW,Unibail-Rodamco-Westfield SE (Stapled),URW.PA,URW.AS,2023-04-14,Euronext Paris,FR,EUR,Retail,Flagship shopping centres (EU & US),History before 14 Apr 2023 uses the Euronext Amsterdam line (URW.AS) of the same stapled share.
 LI,Klepierre SA,LI.PA,,,Euronext Paris,FR,EUR,Retail,Shopping centres (Continental Europe),
 CARM,Carmila SA,CARM.PA,,,Euronext Paris,FR,EUR,Retail,Hypermarket-anchored shopping centres,
 HMSO,Hammerson plc,HMSO.L,,,London Stock Exchange,GB,GBP,Retail,City-centre retail destinations (UK & IE),
@@ -8,7 +8,7 @@ WHA,Wereldhave N.V.,WHA.AS,,,Euronext Amsterdam,NL,EUR,Retail,Full-service centr
 RET,Retail Estates SA,RET.BR,,,Euronext Brussels,BE,EUR,Retail,Out-of-town retail parks (BE & NL),
 MERY,Mercialys SA,MERY.PA,,,Euronext Paris,FR,EUR,Retail,Shopping centres (France),
 CIBUS,Cibus Real Estate AB (publ),CIBUS.ST,,,Nasdaq Stockholm,SE,SEK,Retail,Grocery-anchored retail (Nordics & Europe),
-VASTB,Vastned,VASTB.BR,VASTN.AS,2025-01-02,Euronext Brussels,BE,EUR,Retail,High-street retail (city centres),History before 2 Jan 2025 uses Vastned Retail (VASTN.AS); the two merged into Vastned (VASTB) on 1 Jan 2025.
+VASTB,Vastned,VASTB.BR,VASTN.AS,2025-01-02,Euronext Brussels,BE,EUR,Retail,High-street retail (city centres),Vastned Belgium absorbed Vastned Retail on 1 Jan 2025 and the combined company trades as VASTB. History before 2 Jan 2025 uses Vastned Retail (VASTN.AS) where available; otherwise the series starts at the merger.
 DLN,Derwent London plc,DLN.L,,,London Stock Exchange,GB,GBP,Office,Central London offices,
 GFC,Gecina SA,GFC.PA,,,Euronext Paris,FR,EUR,Office,Paris offices & residential,
 PSPN,PSP Swiss Property AG,PSPN.SW,,,SIX Swiss Exchange,CH,CHF,Office,Swiss offices,
@@ -41,7 +41,7 @@ SAFE,Safestore Holdings plc,SAFE.L,,,London Stock Exchange,GB,GBP,Self Storage,U
 VNA,Vonovia SE,VNA.DE,,,Xetra,DE,EUR,Residential & Alternatives,German residential,
 LEG,LEG Immobilien SE,LEG.DE,,,Xetra,DE,EUR,Residential & Alternatives,German residential (NRW),
 TEG,TAG Immobilien AG,TEG.DE,,,Xetra,DE,EUR,Residential & Alternatives,German & Polish residential,
-LUMO,Lumo Homes Plc,LUMO.HE,KOJAMO.HE,2026-03-16,Nasdaq Helsinki,FI,EUR,Residential & Alternatives,Finnish residential,Formerly Kojamo plc; ticker changed from KOJAMO to LUMO on 16 Mar 2026.
+LUMO,Lumo Homes Plc,LUMO.HE,,,Nasdaq Helsinki,FI,EUR,Residential & Alternatives,Finnish residential,Formerly Kojamo plc; the ticker changed from KOJAMO to LUMO on 16 Mar 2026.
 AED,Aedifica SA,AED.BR,,,Euronext Brussels,BE,EUR,Residential & Alternatives,European healthcare real estate,
 CPINV,Care Property Invest SA,CPINV.BR,,,Euronext Brussels,BE,EUR,Residential & Alternatives,Healthcare real estate (BE & NL & ES),
 UTG,UNITE Group plc,UTG.L,,,London Stock Exchange,GB,GBP,Residential & Alternatives,UK student accommodation,

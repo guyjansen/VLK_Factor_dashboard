@@ -94,21 +94,33 @@ def fetch_riksbank_series(series_id: str, start: str) -> pd.Series:
 
 
 # ---------------------------------------------------------------- Swiss National Bank
+def _snippet(text: str, n: int = 240) -> str:
+    return re.sub(r"\s+", " ", text[:n])
+
+
 def parse_snb_csv(text: str, maturity: str) -> pd.Series:
     lines = text.splitlines()
     start = next(
-        (i for i, line in enumerate(lines) if re.match(r'^"?Date"?\s*;', line.strip())),
+        (i for i, line in enumerate(lines) if re.match(r'^"?Date"?\s*[;,]', line.strip())),
         None,
     )
     if start is None:
-        raise ValueError("SNB CSV header not found")
-    df = pd.read_csv(io.StringIO("\n".join(lines[start:])), sep=";")
+        raise ValueError(f"SNB CSV header not found: {_snippet(text)!r}")
+    body = "\n".join(lines[start:])
+    sep = ";" if body.count(";") >= body.count(",") else ","
+    df = pd.read_csv(io.StringIO(body), sep=sep, dtype=str)
     df.columns = [c.strip().strip('"') for c in df.columns]
-    dim_cols = [c for c in df.columns if c not in ("Date", "Value")]
+    value_col = next((c for c in df.columns if c.lower() == "value"), df.columns[-1])
+    dim_cols = [c for c in df.columns if c not in ("Date", value_col)]
     if dim_cols:
-        mask = df[dim_cols[0]].astype(str).str.strip().str.strip('"') == maturity
+        codes = df[dim_cols[0]].astype(str).str.strip().str.strip('"')
+        wanted = {maturity, maturity.replace("J", "Y"), maturity.rstrip("JY")}
+        mask = codes.isin(wanted)
+        if not mask.any():
+            raise ValueError(f"SNB maturity {maturity} not in {sorted(codes.unique())[:20]}")
         df = df[mask]
-    return _clean(pd.Series(df["Value"].values, index=df["Date"].values))
+    values = df[value_col].astype(str).str.replace(",", ".", regex=False)
+    return _clean(pd.Series(values.values, index=df["Date"].values))
 
 
 def fetch_snb_series(spec: str, start: str) -> pd.Series:
@@ -119,13 +131,14 @@ def fetch_snb_series(spec: str, start: str) -> pd.Series:
 
 # ---------------------------------------------------------------- Norges Bank
 def parse_sdmx_csv(text: str) -> pd.Series:
-    sep = ";" if text.count(";") > text.count(",") else ","
+    first_line = text.lstrip("\ufeff").splitlines()[0] if text.strip() else ""
+    sep = ";" if first_line.count(";") > first_line.count(",") else ","
     df = pd.read_csv(io.StringIO(text), sep=sep)
-    df.columns = [c.strip() for c in df.columns]
+    df.columns = [c.strip().strip('"').lstrip("\ufeff") for c in df.columns]
     time_col = next((c for c in df.columns if c.upper() in ("TIME_PERIOD", "TIME PERIOD")), None)
     value_col = next((c for c in df.columns if c.upper() in ("OBS_VALUE", "OBS VALUE")), None)
     if not time_col or not value_col:
-        raise ValueError("unexpected SDMX CSV layout")
+        raise ValueError(f"unexpected SDMX CSV layout, columns={list(df.columns)[:12]}: {_snippet(text)!r}")
     values = df[value_col]
     if not pd.api.types.is_numeric_dtype(values):
         values = values.astype(str).str.replace(",", ".", regex=False)

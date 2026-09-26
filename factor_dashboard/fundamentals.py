@@ -78,13 +78,19 @@ def _pick(column: pd.Series | None, rows: tuple[str, ...]) -> float | None:
     return None
 
 
+def _complete(column: pd.Series | None) -> bool:
+    return column is not None and all(_pick(column, rows) is not None for rows in (ASSET_ROWS, DEBT_ROWS, EQUITY_ROWS))
+
+
 def _latest_balance_sheet(raw: dict) -> tuple[pd.Series | None, pd.Timestamp | None, pd.Series | None]:
-    """Newest balance sheet column plus the annual one as a fallback."""
+    """Newest balance sheet column with assets, debt and equity; the other statement is the fallback."""
     q_col, q_date = _statement_column(raw.get("quarterly_balance_sheet"))
     a_col, a_date = _statement_column(raw.get("balance_sheet"))
-    if q_col is not None and (a_date is None or q_date >= a_date) and _pick(q_col, ASSET_ROWS):
+    if _complete(q_col) and (not _complete(a_col) or q_date >= a_date):
         return q_col, q_date, a_col
-    return a_col, a_date, q_col
+    if a_col is not None:
+        return a_col, a_date, q_col
+    return q_col, q_date, None
 
 
 def convert(amount: float | None, from_ccy: str | None, to_ccy: str, fx: dict) -> float | None:
@@ -111,14 +117,20 @@ def _price_ratio_fix(ratio: float | None, lo: float, hi: float) -> float | None:
     return _in_range(ratio, lo, hi)
 
 
-def _multiple_fix(value: float | None, lo: float, hi: float) -> float | None:
-    """P/E style multiples: undo a 100x pence/pound mix-up, else range-check."""
+def _multiple_fix(value: float | None, lo: float, hi: float, fx_factor: float = 1.0) -> float | None:
+    """P/E style multiples from Yahoo (price / EPS).
+
+    Yahoo divides the quote price by EPS in the reporting currency, so the
+    ratio can be off by a pence factor (100x) or by an exchange rate. Try the
+    raw value first, then the corrected ones, and keep the first plausible one.
+    """
     value = _num(value)
     if value is None or value <= 0:
         return None
-    if value > hi and lo <= value / 100.0 <= hi:
-        value /= 100.0
-    return _in_range(value, lo, hi)
+    for candidate in (value, value * fx_factor, value / 100.0, value * fx_factor / 100.0):
+        if lo <= candidate <= hi:
+            return candidate
+    return None
 
 
 def _short_description(text: str | None, limit: int = 600) -> str | None:
@@ -142,7 +154,7 @@ def _iso(value) -> str | None:
     return ts.strftime("%Y-%m-%d")
 
 
-def _calendar(raw_calendar) -> dict:
+def _calendar(raw_calendar, as_of: pd.Timestamp | None = None) -> dict:
     out: dict = {}
     if not raw_calendar:
         return out
@@ -155,8 +167,12 @@ def _calendar(raw_calendar) -> dict:
     if earnings is not None:
         dates = earnings if isinstance(earnings, (list, tuple)) else [earnings]
         iso = sorted(d for d in (_iso(x) for x in dates) if d)
-        if iso:
-            out["next_results"] = iso[0]
+        cutoff = (as_of or pd.Timestamp.today()).strftime("%Y-%m-%d")
+        upcoming = [d for d in iso if d >= cutoff]
+        if upcoming:
+            out["next_results"] = upcoming[0]
+        elif iso:
+            out["last_results"] = iso[-1]
     for key, name in (("Ex-Dividend Date", "ex_dividend"), ("Dividend Date", "dividend_payment")):
         if cal.get(key) is not None:
             iso = _iso(cal.get(key))
@@ -243,7 +259,10 @@ def compute_snapshot(
 
     net_debt = (debt - cash) if debt is not None else None
     snap["net_debt"] = to_quote(net_debt)
+    snap["total_debt"] = to_quote(debt)
+    snap["cash"] = to_quote(cash)
     snap["total_assets"] = to_quote(assets)
+    snap["equity"] = to_quote(equity)
     ltv = None
     if net_debt is not None:
         base = properties if properties and assets and properties > 0.3 * assets else (assets - cash if assets else None)
@@ -258,15 +277,17 @@ def compute_snapshot(
     snap["income_statement_date"] = inc_date.strftime("%Y-%m-%d") if inc_date is not None else None
     snap["revenue"] = to_quote(revenue)
     snap["ebitda"] = to_quote(ebitda)
-    if ebitda and ebitda > 0:
-        snap["nd_ebitda"] = _in_range(net_debt / ebitda, -10, 100) if net_debt is not None else None
-        snap["interest_cover"] = _in_range(ebitda / abs(interest), 0, 100) if interest else None
+    margin = ebitda / revenue if ebitda and revenue and revenue > 0 else None
+    snap["ebitda_margin"] = margin
+    if ebitda and ebitda > 0 and margin is not None and 0.3 <= margin <= 1.0:
+        snap["nd_ebitda"] = _in_range(net_debt / ebitda, 0, 40) if net_debt is not None else None
+        snap["interest_cover"] = _in_range(ebitda / abs(interest), 0.3, 30) if interest else None
         ev = (mcap or 0) + (to_quote(net_debt) or 0) + (to_quote(minority) or 0) if mcap else None
-        snap["ev_ebitda"] = _in_range(ev / to_quote(ebitda), 0, 200) if ev and to_quote(ebitda) else None
+        snap["ev_ebitda"] = _in_range(ev / to_quote(ebitda), 3, 80) if ev and to_quote(ebitda) else None
     else:
         snap["nd_ebitda"] = snap["interest_cover"] = snap["ev_ebitda"] = None
         if ebitda is not None:
-            notes.append("EBITDA is negative or zero in the latest annual statement")
+            notes.append("EBITDA-based ratios omitted: Yahoo's EBITDA looks distorted (e.g. by revaluations)")
 
     # Revenue growth from the two most recent fiscal years.
     snap["revenue_growth"] = None
@@ -293,8 +314,12 @@ def compute_snapshot(
     snap["dps_ttm"] = dps
     snap["dividend_yield"] = _in_range(dy, 0, 0.3) if dy is not None else None
 
-    snap["pe_trailing"] = _multiple_fix(info.get("trailingPE"), 0.5, 150)
-    snap["pe_forward"] = _multiple_fix(info.get("forwardPE"), 0.5, 150)
+    # EPS is in the reporting currency; express it in the quote currency.
+    fx_factor = 1.0
+    if fin_ccy != quote_currency and fin_ccy in fx and quote_currency in fx:
+        fx_factor = fx[fin_ccy] / fx[quote_currency]
+    snap["pe_trailing"] = _multiple_fix(info.get("trailingPE"), 4, 80, fx_factor)
+    snap["pe_forward"] = _multiple_fix(info.get("forwardPE"), 4, 80, fx_factor)
 
     # Analyst consensus as published on Yahoo Finance.
     targets = raw.get("price_targets") if isinstance(raw.get("price_targets"), dict) else {}
@@ -315,7 +340,7 @@ def compute_snapshot(
         consensus[key] = last_price * r if r else None
     snap["consensus"] = consensus if any(v is not None for v in consensus.values()) else None
 
-    snap.update(_calendar(raw.get("calendar")))
+    snap.update(_calendar(raw.get("calendar"), as_of))
     snap["description"] = _short_description(info.get("longBusinessSummary"))
     snap["website"] = info.get("website") or None
     snap["employees"] = int(_num(info.get("fullTimeEmployees")) or 0) or None

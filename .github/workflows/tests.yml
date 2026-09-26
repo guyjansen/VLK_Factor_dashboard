@@ -8,9 +8,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -21,10 +21,10 @@ jobs:
       - name: Python tests
         run: pytest -q
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
 
       - name: Dashboard analytics tests
         run: |
-          if [ -d tests/js ]; then node --test tests/js/; else echo "No JS tests yet"; fi
+          if [ -d tests/js ]; then node --test tests/js/*.test.mjs; else echo "No JS tests yet"; fi
