@@ -1,0 +1,3 @@
+-r requirements.txt
+pytest>=8
+statsmodels>=0.14  # reference implementation for the analytics test fixtures

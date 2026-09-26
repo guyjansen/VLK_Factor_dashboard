@@ -1,0 +1,6 @@
+# Data pipeline (python -m factor_dashboard.build)
+pandas>=2.2
+numpy>=1.26
+requests>=2.31
+yfinance>=1.0
+scipy>=1.11  # used by yfinance's price repair

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# Node
+node_modules/
+
+# Local build output (the published dashboard lives in docs/)
+dist/
+.cache/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

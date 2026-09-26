@@ -1,0 +1,53 @@
+name: Refresh market data
+
+# Rebuilds docs/data/dashboard_data.js from public sources and commits it.
+# Runs every weekday after the European close, on demand, and whenever the
+# pipeline or the coverage list changes.
+on:
+  schedule:
+    - cron: "35 17 * * 1-5"
+  workflow_dispatch:
+  push:
+    paths:
+      - "factor_dashboard/**"
+      - "config/**"
+      - "requirements.txt"
+      - ".github/workflows/refresh-data.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build data file
+        run: python -m factor_dashboard.build
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/dashboard_data.js
+          if git diff --cached --quiet; then
+            echo "Data unchanged"
+            exit 0
+          fi
+          git commit -m "Refresh market data ($(date -u +%Y-%m-%d))"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
