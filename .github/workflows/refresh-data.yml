@@ -51,3 +51,13 @@ jobs:
           git commit -m "Refresh market data ($(date -u +%Y-%m-%d))"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Build single-file dashboard
+        run: python -m factor_dashboard.bundle
+
+      - name: Upload single-file dashboard
+        uses: actions/upload-artifact@v4
+        with:
+          name: property-factor-lens
+          path: dist/property_factor_lens.html
+          retention-days: 30

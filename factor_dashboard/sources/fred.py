@@ -35,7 +35,7 @@ def fetch_fred_series(series_id: str, start: str) -> pd.Series:
     )
     for url, params in attempts:
         try:
-            resp = http.get(url, params=params, timeout=90, retries=2)
+            resp = http.get(url, params=params, timeout=40, retries=1)
             series = parse_fred_csv(resp.text, series_id)
             return series[series.index >= pd.Timestamp(start)]
         except Exception as exc:  # try the next endpoint

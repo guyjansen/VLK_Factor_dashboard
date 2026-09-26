@@ -24,6 +24,7 @@
     { id: "EUR2Y", label: "EUR 2Y yield", short: "EUR 2Y", group: "Rates", kind: "rate", series: "EUR2Y", unit: "bp", shock: 10, shockLabel: "+10bp", desc: "Change in the 2-year point of the ECB euro area AAA government curve." },
     { id: "CURVE", label: "EUR 2s10s curve", short: "2s10s", group: "Rates", kind: "spread", series: ["EUR10Y", "EUR2Y"], unit: "bp", shock: 10, shockLabel: "+10bp steeper", desc: "Change in the 10Y minus 2Y spread of the ECB AAA curve." },
     { id: "CREDIT", label: "EUR high-yield spread", short: "HY spread", group: "Credit", kind: "rate", series: "EUR_HY_OAS", unit: "bp", shock: 25, shockLabel: "+25bp", desc: "Change in the ICE BofA Euro High Yield option-adjusted spread." },
+    { id: "CREDIT_ETF", label: "EUR high-yield bonds vs governments", short: "HY vs govts", group: "Credit", kind: "active2", series: ["HY_BOND", "GOVT_BOND"], unit: "%", shock: -0.01, shockLabel: "-1% HY excess return", desc: "Return of EUR high-yield corporate bonds minus 3-5Y government bonds (iShares ETFs); a credit proxy used when the FRED spread is unavailable." },
     { id: "FXL", label: "Home currency vs EUR", short: "FX vs EUR", group: "FX", kind: "fxlocal", unit: "%", shock: 0.01, shockLabel: "+1% home ccy", desc: "Return of the stock's home currency against the euro (non-euro stocks only)." },
     { id: "EURUSD", label: "EUR/USD", short: "EUR/USD", group: "FX", kind: "asset", series: "FX_USD", unit: "%", shock: 0.01, shockLabel: "+1% EUR", desc: "Return of the euro against the US dollar." },
     { id: "OIL", label: "Brent crude oil", short: "Oil", group: "Macro", kind: "asset", series: "BRENT", unit: "%", shock: 0.1, shockLabel: "+10%", desc: "Return of the front-month Brent future (USD)." },
@@ -42,15 +43,18 @@
   const FACTOR_BY_ID = Object.fromEntries(FACTORS.map((f) => [f.id, f]));
 
   const PRESETS = {
-    full: { label: "Macro + style", factors: ["MKT", "SECTOR", "RATES", "CREDIT", "SMB", "HML", "WML"] },
+    full: { label: "Macro + style", factors: ["MKT", "RATES", "CREDIT", "FXL", "SMB", "HML", "WML"] },
+    relative: { label: "Sector-relative", factors: ["MKT", "SECTOR", "RATES", "CREDIT", "SMB", "HML", "WML"] },
     macro: { label: "Real estate macro", factors: ["MKT", "RATES", "CREDIT", "FXL"] },
     ffc: { label: "Fama-French-Carhart", factors: ["MKT", "SMB", "HML", "RMW", "CMA", "WML"] },
-    etf: { label: "MSCI style ETFs", factors: ["MKT", "SECTOR", "E_VAL", "E_MOM", "E_QUAL", "E_MINV"] },
+    etf: { label: "MSCI style ETFs", factors: ["MKT", "E_VAL", "E_MOM", "E_QUAL", "E_MINV", "E_SIZE"] },
     capm: { label: "Market only", factors: ["MKT"] },
   };
   const MACRO_SPEC = ["MKT", "RATES", "CREDIT", "FXL"];
   const STYLE_SPEC = ["MKT", "SECTOR", "SMB", "HML", "RMW", "CMA", "WML"];
-  const MACRO_DRIVERS = ["RATES", "EUR10Y", "EUR2Y", "CURVE", "CREDIT", "FXL", "EURUSD", "OIL", "VOL"];
+  // Up-to-date factors for splitting recent returns into market, sector, macro and stock-specific parts.
+  const ATTRIB_SPEC = ["MKT", "SECTOR", "RATES", "CREDIT", "FXL"];
+  const MACRO_DRIVERS = ["RATES", "EUR10Y", "EUR2Y", "CURVE", "CREDIT", "CREDIT_ETF", "FXL", "EURUSD", "OIL", "VOL"];
 
   const EPISODES = [
     { id: "covid", label: "COVID crash", start: "2020-02-19", end: "2020-03-18" },
@@ -62,6 +66,26 @@
     { id: "fiscal25", label: "German fiscal package", start: "2025-03-04", end: "2025-03-06" },
     { id: "tariffs25", label: "US tariff shock", start: "2025-04-02", end: "2025-04-07" },
   ];
+
+  /** Swap factors whose data is missing for their fallbacks (e.g. credit spread -> ETF proxy). */
+  const FALLBACKS = { CREDIT: "CREDIT_ETF", E_SIZE: "SMB" };
+  function available(ctx, id) {
+    const f = FACTOR_BY_ID[id];
+    if (!f) return false;
+    if (f.kind === "rate" && f.series === "local") return !!ctx.series.EUR10Y;
+    if (f.kind === "sector" || f.kind === "fxlocal") return true;
+    const need = Array.isArray(f.series) ? f.series : [f.series];
+    return need.every((sid) => ctx.series[sid]);
+  }
+  function resolveFactors(ctx, ids) {
+    const out = [];
+    for (const id of ids) {
+      let use = id;
+      if (!available(ctx, use) && FALLBACKS[use] && available(ctx, FALLBACKS[use])) use = FALLBACKS[use];
+      if (available(ctx, use) && !out.includes(use)) out.push(use);
+    }
+    return out;
+  }
 
   // ------------------------------------------------------------------ dates
   const DAY_MS = 86400000;
@@ -94,11 +118,20 @@
   }
 
   // ------------------------------------------------------------------ preparation
+  /** Forward-fill interior gaps; after the last observation the series stays missing. */
+  function ffillInside(values, limit) {
+    const out = FA.ffill(values, limit);
+    let last = values.length - 1;
+    while (last >= 0 && !isNum(values[last])) last--;
+    for (let t = last + 1; t < out.length; t++) out[t] = NaN;
+    return out;
+  }
+
   function prepare(data) {
     const dates = data.dates;
     const n = dates.length;
     const series = {};
-    for (const [id, s] of Object.entries(data.series || {})) series[id] = FA.ffill(s.values, FFILL_LIMIT);
+    for (const [id, s] of Object.entries(data.series || {})) series[id] = ffillInside(s.values, FFILL_LIMIT);
     const fxByCcy = { USD: series.FX_USD, GBP: series.FX_GBP, SEK: series.FX_SEK, CHF: series.FX_CHF, NOK: series.FX_NOK };
     const localRate = (data.meta && data.meta.local_rate_by_country) || {};
     const dayNum = dates.map(epochDay);
@@ -111,8 +144,8 @@
     }
 
     const stocks = data.stocks.map((s, i) => {
-      const tri = FA.ffill(s.tri, FFILL_LIMIT);
-      const px = FA.ffill(s.px, FFILL_LIMIT);
+      const tri = ffillInside(s.tri, FFILL_LIMIT);
+      const px = ffillInside(s.px, FFILL_LIMIT);
       const obs = new Uint8Array(n);
       for (let t = 0; t < n; t++) obs[t] = isNum(s.tri[t]) ? 1 : 0;
       const fx = s.currency === "EUR" ? null : fxByCcy[s.currency] || null;
@@ -220,6 +253,8 @@
         return f.series.every((s) => ctx.series[s]) ? true : "yield data unavailable";
       case "active":
         return ctx.series[f.series] && ctx.series.MKT ? true : `${f.series} data unavailable`;
+      case "active2":
+        return f.series.every((s) => ctx.series[s]) ? true : "bond ETF data unavailable";
       default:
         return ctx.series[f.series] ? true : `${f.series} data unavailable`;
     }
@@ -246,6 +281,11 @@
         const E = ctx.series[f.series];
         const M = ctx.series.MKT;
         return (a, b) => E[b] / E[a] - M[b] / M[a];
+      }
+      case "active2": {
+        const A = ctx.series[f.series[0]];
+        const B = ctx.series[f.series[1]];
+        return (a, b) => A[b] / A[a] - B[b] / B[a];
       }
       case "rate": {
         const R = ctx.series[f.series === "local" ? st.rateSeries : f.series];
@@ -511,6 +551,7 @@
     for (const id of MACRO_DRIVERS) {
       const f = FACTOR_BY_ID[id];
       if (applicable(ctx, st, f) !== true) continue;
+      if (id === "CREDIT_ETF" && available(ctx, "CREDIT")) continue; // proxy only when the spread is missing
       const total = fitModel(ctx, st, [id], opts);
       const partial = fitModel(ctx, st, ["MKT", id], opts);
       if (!total.ok) continue;
@@ -665,9 +706,15 @@
       specific: p.linked[ids.length],
     }));
     const moves = {};
+    const movesTo = {};
     const a0 = days[0][0];
     const b0 = days[days.length - 1][1];
-    for (const id of ids) moves[id] = fns[id](a0, b0);
+    for (const id of ids) {
+      let b = b0;
+      while (b > a0 && !isNum(fns[id](a0, b))) b--;
+      moves[id] = b > a0 ? fns[id](a0, b) : NaN;
+      movesTo[id] = b > a0 ? ctx.dates[b] : null;
+    }
     return {
       ok: true,
       factors: ids,
@@ -679,6 +726,7 @@
       specific: linked.linked[ids.length],
       avgBeta: Object.fromEntries(ids.map((id) => [id, betaSum[id] / usedDays])),
       moves,
+      movesTo,
       missing,
       path,
       lastFit,
@@ -697,8 +745,10 @@
     const d = ctx.dates[end];
     const at = (date) => indexOnOrBefore(ctx.dates, date);
     const ytdIdx = at(`${Number(d.slice(0, 4)) - 1}-12-31`);
+    let prevObs = end - 1;
+    while (prevObs > 0 && !st.obs[prevObs]) prevObs--;
     const horizons = {
-      d1: end - 1,
+      d1: prevObs,
       w1: at(shiftDays(d, 7)),
       m1: at(shiftYears(d, 1 / 12)),
       m3: at(shiftYears(d, 0.25)),
@@ -715,13 +765,16 @@
     const cov = peerIndex(ctx, st, "all");
     const sub = peerIndex(ctx, st, "sub");
     const mkt = ctx.series.MKT;
+    // The market series can end a day before the shares; compare over the common window.
+    let mEnd = end;
+    while (mkt && mEnd > 0 && !isNum(mkt[mEnd])) mEnd--;
     const rel = {};
     for (const [k, i] of Object.entries(horizons)) {
       const s = periodReturn(st.triEur, firstValid(i), end);
       rel[k] = {
         coverage: s - periodReturn(cov, i, end),
         subsector: s - periodReturn(sub, i, end),
-        market: mkt ? s - periodReturn(mkt, i, end) : NaN,
+        market: mkt ? periodReturn(st.triEur, firstValid(i), mEnd) - periodReturn(mkt, i, mEnd) : NaN,
       };
     }
     // Daily volatility over the last year and 12-1 momentum.
@@ -847,11 +900,14 @@
     PRESETS,
     MACRO_SPEC,
     STYLE_SPEC,
+    ATTRIB_SPEC,
     MACRO_DRIVERS,
     EPISODES,
     PERIODS_PER_YEAR,
     ROLLING_WINDOW,
     FREQ_LABEL,
+    available,
+    resolveFactors,
     indexOnOrBefore,
     shiftYears,
     shiftDays,

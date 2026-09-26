@@ -114,11 +114,15 @@ def parse_snb_csv(text: str, maturity: str) -> pd.Series:
     dim_cols = [c for c in df.columns if c not in ("Date", value_col)]
     if dim_cols:
         codes = df[dim_cols[0]].astype(str).str.strip().str.strip('"')
-        wanted = {maturity, maturity.replace("J", "Y"), maturity.rstrip("JY")}
-        mask = codes.isin(wanted)
-        if not mask.any():
-            raise ValueError(f"SNB maturity {maturity} not in {sorted(codes.unique())[:20]}")
-        df = df[mask]
+        available = set(codes.unique())
+        # The cube mixes Confederation maturities (e.g. "10J0") with other series;
+        # take the plain Confederation code first.
+        base = maturity.rstrip("JY0123456789") or maturity
+        candidates = [maturity + "0", maturity, maturity.replace("J", "Y"), maturity + "1", base]
+        chosen = next((c for c in candidates if c in available), None)
+        if chosen is None:
+            raise ValueError(f"SNB maturity {maturity} not in {sorted(available)[:20]}")
+        df = df[codes == chosen]
     values = df[value_col].astype(str).str.replace(",", ".", regex=False)
     return _clean(pd.Series(values.values, index=df["Date"].values))
 
@@ -135,8 +139,10 @@ def parse_sdmx_csv(text: str) -> pd.Series:
     sep = ";" if first_line.count(";") > first_line.count(",") else ","
     df = pd.read_csv(io.StringIO(text), sep=sep)
     df.columns = [c.strip().strip('"').lstrip("\ufeff") for c in df.columns]
-    time_col = next((c for c in df.columns if c.upper() in ("TIME_PERIOD", "TIME PERIOD")), None)
-    value_col = next((c for c in df.columns if c.upper() in ("OBS_VALUE", "OBS VALUE")), None)
+    # SDMX-CSV 2.0 headers look like "TIME_PERIOD:Time period"; match on the code part.
+    code = lambda c: c.split(":", 1)[0].strip().upper()
+    time_col = next((c for c in df.columns if code(c) in ("TIME_PERIOD", "TIME PERIOD")), None)
+    value_col = next((c for c in df.columns if code(c) in ("OBS_VALUE", "OBS VALUE")), None)
     if not time_col or not value_col:
         raise ValueError(f"unexpected SDMX CSV layout, columns={list(df.columns)[:12]}: {_snippet(text)!r}")
     values = df[value_col]

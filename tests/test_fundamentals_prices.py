@@ -123,3 +123,13 @@ def test_market_snapshot_traded_value_in_eur():
     assert snap["adv_3m"] == pytest.approx(10000.0)
     assert snap["adv_3m_eur"] == pytest.approx(12500.0)
     assert snap["high_52w"] == snap["low_52w"] == 10.0
+
+
+def test_extend_with_index_appends_trailing_days():
+    idx = pd.bdate_range("2026-09-21", periods=5)
+    etf = pd.Series([100.0, 101.0, 102.0, 103.0], index=idx[:4])
+    index = pd.Series([500.0, 505.0, 510.0, 515.0, 520.15], index=idx)
+    out = prices.extend_with_index(etf, index)
+    assert len(out) == 5
+    assert out.iloc[-1] == pytest.approx(103.0 * 520.15 / 515.0)
+    assert prices.extend_with_index(etf, None).equals(etf)

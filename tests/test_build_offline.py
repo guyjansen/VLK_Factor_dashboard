@@ -162,3 +162,18 @@ def test_build_refuses_when_prices_missing(offline, tmp_path, monkeypatch):
     monkeypatch.setattr(yahoo, "download_history", lambda tickers, start, **kw: {})
     with pytest.raises(SystemExit):
         build_mod.build(config.BuildOptions(out=tmp_path / "x.js", pause=0))
+
+
+def test_bundle_inlines_assets_and_data(tmp_path):
+    from factor_dashboard import bundle
+
+    data = tmp_path / "data.js"
+    data.write_text('window.DASHBOARD_DATA = {"meta":{"note":"</script>"},"dates":[],"stocks":[],"series":{}};\n')
+    html = bundle.render(data)
+    assert '<script src="' not in html  # everything inline
+    assert "<\\/script>" in html  # data cannot close the script tag early
+    assert "window.PFModel" in html or "PFModel" in html
+    frag = bundle.render(data, cdn=True, fragment=True)
+    assert frag.lstrip().startswith("<title>")
+    assert "<html" not in frag and "<body" not in frag
+    assert bundle.ECHARTS_CDN in frag

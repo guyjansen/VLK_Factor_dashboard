@@ -1,5 +1,5 @@
 id,name,ticker,history_ticker,splice_date,exchange,country,currency,subsector,segment,note
-URW,Unibail-Rodamco-Westfield SE (Stapled),URW.PA,URW.AS,2023-04-14,Euronext Paris,FR,EUR,Retail,Flagship shopping centres (EU & US),History before 14 Apr 2023 uses the Euronext Amsterdam line (URW.AS) of the same stapled share.
+URW,Unibail-Rodamco-Westfield SE (Stapled),URW.PA,UL.PA,2023-04-14,Euronext Paris,FR,EUR,Retail,Flagship shopping centres (EU & US),Euronext Paris became the reference market on 14 Apr 2023; earlier history uses Yahoo's legacy Paris symbol (UL.PA) for the same stapled share when available.
 LI,Klepierre SA,LI.PA,,,Euronext Paris,FR,EUR,Retail,Shopping centres (Continental Europe),
 CARM,Carmila SA,CARM.PA,,,Euronext Paris,FR,EUR,Retail,Hypermarket-anchored shopping centres,
 HMSO,Hammerson plc,HMSO.L,,,London Stock Exchange,GB,GBP,Retail,City-centre retail destinations (UK & IE),

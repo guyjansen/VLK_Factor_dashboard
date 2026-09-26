@@ -31,6 +31,8 @@ class YahooSeries:
     group: str
     description: str = ""
     use_adjusted: bool = True
+    # Index used to carry the series forward when the chosen ticker lags (price return).
+    extend_with: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -55,6 +57,7 @@ YAHOO_SERIES: tuple[YahooSeries, ...] = (
         "EUR",
         "Market",
         "iShares STOXX Europe 600 UCITS ETF, dividend-adjusted; falls back to the price index.",
+        extend_with=("^STOXX",),
     ),
     YahooSeries(
         "ETF_VALUE",

@@ -107,3 +107,20 @@ def round_dp(values: np.ndarray, decimals: int = 4) -> list:
     for v in np.asarray(values, dtype=float):
         out.append(round(float(v), decimals) if np.isfinite(v) else None)
     return out
+
+
+def extend_with_index(values: pd.Series, index: pd.Series | None) -> pd.Series:
+    """Carry a series past its last date using the index's returns (e.g. an ETF
+    that has not printed today's close, extended with the underlying index)."""
+    values = values.dropna()
+    if index is None or values.empty:
+        return values
+    index = index.dropna()
+    last = values.index[-1]
+    if last not in index.index:
+        return values
+    tail = index[index.index > last]
+    if tail.empty:
+        return values
+    extension = values.iloc[-1] * tail / index.loc[last]
+    return pd.concat([values, extension])

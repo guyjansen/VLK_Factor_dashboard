@@ -129,3 +129,28 @@ def test_stooq():
     assert s.iloc[0] == pytest.approx(0.18)
     with pytest.raises(ValueError):
         stooq.parse_stooq_csv("No data")
+
+
+SNB_MIXED = '''"CubeId";"rendoblid"
+
+"Date";"D0";"Value"
+"2019-01-03";"10J0";"-0.02"
+"2019-01-03";"10J1";"0.15"
+"2019-01-03";"AA";"0.40"
+"2019-01-04";"10J0";"0.01"
+'''
+
+NORGES_SDMX2 = """STRUCTURE,STRUCTURE_ID,ACTION,FREQ:Frequency,TENOR:Tenor,INSTRUMENT_TYPE:Instrument type,TIME_PERIOD:Time period,OBS_VALUE:Observation value
+dataflow,NB:GOVT_GENERIC_RATES(1.0),I,B:Business,10Y:10 years,GBON:Government bonds,2019-01-02,1.73
+dataflow,NB:GOVT_GENERIC_RATES(1.0),I,B:Business,10Y:10 years,GBON:Government bonds,2019-01-03,1.70
+"""
+
+
+def test_snb_prefers_confederation_code():
+    s = cb.parse_snb_csv(SNB_MIXED, "10J")
+    assert list(s.round(2)) == [-0.02, 0.01]
+
+
+def test_norges_sdmx_csv_2():
+    s = cb.parse_sdmx_csv(NORGES_SDMX2)
+    assert s.iloc[0] == pytest.approx(1.73)

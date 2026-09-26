@@ -124,6 +124,7 @@ def build(options: config.BuildOptions) -> dict:
     # 1. Yahoo prices: stocks, splice histories, market / style / FX series.
     stock_tickers = [s.ticker for s in universe] + [s.history_ticker for s in universe if s.history_ticker]
     macro_first = [spec.candidates[0] for spec in config.YAHOO_SERIES]
+    macro_first += [t for spec in config.YAHOO_SERIES for t in spec.extend_with]
     log.info("Downloading %d stock and %d market tickers from Yahoo Finance", len(stock_tickers), len(macro_first))
     hist = yahoo.download_history(stock_tickers + macro_first + list(EXTRA_FX.values()), fetch_start)
     fallbacks = [
@@ -139,13 +140,24 @@ def build(options: config.BuildOptions) -> dict:
     for spec in config.YAHOO_SERIES:
         ticker = next((c for c in spec.candidates if c in hist), None)
         if ticker is None:
-            series_status[spec.id] = {"status": "failed", "errors": [f"no Yahoo data for {', '.join(spec.candidates)}"]}
+            series_status[spec.id] = {
+                "label": spec.label,
+                "status": "failed",
+                "errors": [f"no Yahoo data for {', '.join(spec.candidates)}"],
+            }
             continue
         column = "Adj Close" if spec.use_adjusted else "Close"
         values = hist[ticker][column].dropna()
+        for ext in spec.extend_with:
+            if ext != ticker and ext in hist:
+                longer = prices.extend_with_index(values, hist[ext]["Close"])
+                if len(longer) > len(values):
+                    log.info("%s: extended %s by %d day(s) with %s", spec.id, ticker, len(longer) - len(values), ext)
+                    values = longer
+                break
         if spec.kind == "fx":
             fx_series[spec.unit] = values
-        series_status[spec.id] = {"status": "ok", "source": "yahoo", "code": ticker, **_describe(values)}
+        series_status[spec.id] = {"label": spec.label, "status": "ok", "source": "yahoo", "code": ticker, **_describe(values)}
         out_series[spec.id] = {"spec": spec, "ticker": ticker, "values": values}
     fx_latest = {"EUR": 1.0}
     for ccy, s in fx_series.items():
@@ -176,14 +188,18 @@ def build(options: config.BuildOptions) -> dict:
     for spec in config.RATE_SERIES:
         log.info("Fetching %s", spec.id)
         series, info = _fetch_rate(spec, fetch_start)
-        series_status[spec.id] = info
+        series_status[spec.id] = {"label": spec.label, **info}
         if series is not None:
             out_series[spec.id] = {"spec": spec, "values": series}
 
     # 4. Fama-French European factors.
     ff, ff_info = _french_indices(fetch_start)
     for sid, (column, label) in config.FRENCH_FACTORS.items():
-        series_status[sid] = dict(ff_info) if sid in ff else {"status": "failed", "errors": ff_info.get("errors", ["missing column"])}
+        series_status[sid] = (
+            {"label": label, **ff_info}
+            if sid in ff
+            else {"label": label, "status": "failed", "errors": ff_info.get("errors", ["missing column"])}
+        )
         if sid in ff:
             out_series[sid] = {"label": label, "values": ff[sid]}
 
