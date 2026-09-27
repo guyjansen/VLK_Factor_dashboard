@@ -29,6 +29,7 @@
       mid: v("--mid"),
       other: v("--other"),
       otherStrong: v("--other-strong"),
+      barBg: v("--bar-bg") || v("--surface-2"),
       font: v("--font-body") || "system-ui, sans-serif",
     };
   }
@@ -94,11 +95,9 @@
     );
   }
 
-  function row(color, label, value, kind = "line") {
-    const key =
-      kind === "dot"
-        ? `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:6px"></span>`
-        : `<span style="display:inline-block;width:12px;height:2px;border-radius:2px;background:${color};margin:0 6px 3px 0"></span>`;
+  /** One tooltip line: dot key (as in the house-style legends), label, value. */
+  function row(color, label, value) {
+    const key = `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:6px"></span>`;
     return `<div style="display:flex;justify-content:space-between;gap:14px;align-items:center"><span style="color:inherit;opacity:.8">${key}${esc(label)}</span><b style="font-variant-numeric:tabular-nums">${esc(value)}</b></div>`;
   }
 
@@ -197,7 +196,8 @@
   /**
    * items: [{label, value, color?, marker?, note?, bold?}]
    * opts: {fmt, labelFmt, symmetric, markerName, valueName, onClick, labelWidth, valueColumn}
-   * Positive bars use --pos, negative --neg unless an item sets a colour.
+   * Positive bars use --pos, negative --neg unless an item sets a colour. As in
+   * the house style, bars have square ends and sit on a 25% grey background track.
    * With valueColumn the values sit in a fixed column on the right, which keeps
    * them clear of the reference ticks.
    */
@@ -275,8 +275,8 @@
           const it = items[p.dataIndex];
           if (!it) return "";
           let html = `<div style="margin-bottom:4px;color:${t.muted}">${esc(it.label)}</div>`;
-          html += row(barColor(it, t), opts.valueName || "Value", fmt(it.value), "dot");
-          if (isNum(it.marker)) html += row(t.ink, opts.markerName || "Reference", fmt(it.marker), "dot");
+          html += row(barColor(it, t), opts.valueName || "Value", fmt(it.value));
+          if (isNum(it.marker)) html += row(t.ink, opts.markerName || "Reference", fmt(it.marker));
           if (it.note) html += `<div style="margin-top:4px;color:${t.muted};max-width:260px;white-space:normal">${esc(it.note)}</div>`;
           return html;
         },
@@ -287,11 +287,10 @@
           yAxisIndex: 0,
           data: items.map((it) => ({
             value: isNum(it.value) ? it.value : null,
-            itemStyle: {
-              color: barColor(it, t),
-              borderRadius: isNum(it.value) && it.value < 0 ? [4, 0, 0, 4] : [0, 4, 4, 0],
-            },
+            itemStyle: { color: barColor(it, t) },
           })),
+          showBackground: true,
+          backgroundStyle: { color: t.barBg },
           barMaxWidth: 16,
           barCategoryGap: "38%",
           label: {
@@ -371,7 +370,7 @@
       },
       tooltip: Object.assign(base(t).tooltip, {
         trigger: "item",
-        formatter: (p) => `<div style="margin-bottom:4px;color:${t.muted}">${esc(cats[p.value[1]])}</div>` + row(p.color, p.name, fmt(p.value[0]), "dot"),
+        formatter: (p) => `<div style="margin-bottom:4px;color:${t.muted}">${esc(cats[p.value[1]])}</div>` + row(p.color, p.name, fmt(p.value[0])),
       }),
       series,
     });
@@ -437,8 +436,8 @@
         trigger: "item",
         formatter: (p) =>
           `<div style="margin-bottom:4px;font-weight:600">${esc(p.name)}</div>` +
-          row(p.color, opts.xName || "x", xFmt(p.value[0]), "dot") +
-          row(p.color, opts.yName || "y", yFmt(p.value[1]), "dot"),
+          row(p.color, opts.xName || "x", xFmt(p.value[0])) +
+          row(p.color, opts.yName || "y", yFmt(p.value[1])),
       }),
       series,
     });
@@ -453,22 +452,27 @@
   // ------------------------------------------------------------------ heatmap
   /**
    * rows: [labels], cols: [labels], cells: [{r, c, v, text, tip}], opts: {limit, onRowClick, selectedRow}
-   * Diverging blue/red scale centred on zero with a grey midpoint.
+   * Diverging scale (--neg to --pos) centred on zero with a pale midpoint.
    */
   function heatmap(el, rows, cols, cells, opts = {}) {
     const t = tokens();
     const rowH = opts.rowHeight || 20;
-    el.style.height = rows.length * rowH + 70 + "px";
     const limit = opts.limit || 3;
+    // Fixed label column: containLabel under-measured some long names and clipped them.
+    const width = el.clientWidth || 800;
+    const labelWidth = Math.max(90, Math.min(190, Math.round(width * 0.26)));
+    // Narrow columns (phones) get slanted headers so they do not run into each other.
+    const slant = (width - labelWidth - 26) / Math.max(1, cols.length) < 62;
+    el.style.height = rows.length * rowH + (slant ? 106 : 70) + "px";
     const option = Object.assign(base(t), {
-      grid: { left: 6, right: 12, top: 40, bottom: 4, containLabel: true },
+      grid: { left: labelWidth + 14, right: 12, top: slant ? 76 : 40, bottom: 4, containLabel: false },
       xAxis: {
         type: "category",
         data: cols,
         position: "top",
         axisLine: { show: false },
         axisTick: { show: false },
-        axisLabel: { color: t.ink2, fontSize: 11.5, interval: 0, hideOverlap: false },
+        axisLabel: { color: t.ink2, fontSize: 11.5, interval: 0, hideOverlap: false, rotate: slant ? 40 : 0 },
         splitArea: { show: false },
       },
       yAxis: {
@@ -480,8 +484,9 @@
         axisLabel: {
           color: t.ink2,
           fontSize: 11.5,
-          width: 190,
+          width: labelWidth,
           overflow: "truncate",
+          ellipsis: "…",
           rich: { sel: { color: t.ink, fontWeight: 700 } },
           formatter: (v, i) => (i === opts.selectedRow ? `{sel|${v}}` : v),
         },

@@ -109,8 +109,16 @@
   }
 
   // ------------------------------------------------------------------ components
+  /** KPI tile; attrs.tone ("up" or "down") colours the value with the signal colours. */
   function tile(label, value, sub, attrs = {}) {
-    return el("div", { class: "tile", ...attrs }, el("span", { class: "tile-label", text: label }), el("span", { class: "tile-value", text: value }), sub != null ? el("span", { class: "tile-sub", text: sub }) : null);
+    const { tone, ...rest } = attrs;
+    return el(
+      "div",
+      { class: "tile", ...rest },
+      el("span", { class: "tile-label", text: label }),
+      el("span", { class: tone ? `tile-value ${tone}` : "tile-value", text: value }),
+      sub != null ? el("span", { class: "tile-sub", text: sub }) : null
+    );
   }
 
   function card(title, sub, opts = {}) {
@@ -164,19 +172,22 @@
     return dl;
   }
 
+  /**
+   * Legend with dot keys, as in the house style. kind "tick" draws a slim bar
+   * instead, for reference markers such as a peer median.
+   */
   function legend(items) {
     return el(
       "div",
       { class: "legend" },
-      items.map((it) =>
-        el("span", null, el("i", { class: it.kind === "dot" ? "key-dot" : it.kind === "rect" ? "key-rect" : "key-line", style: { background: it.color } }), it.label)
-      )
+      items.map((it) => el("span", null, el("i", { class: it.kind === "tick" ? "key-tick" : "key-dot", style: { background: it.color } }), it.label))
     );
   }
 
   /**
    * Sortable table.
-   * columns: [{key, label, num, fmt(value,row), sortValue(row), title, class}]
+   * columns: [{key, label, num, fmt(value,row), sortValue(row), title, class, cls(value,row)}]
+   * cls returns extra classes for one cell, e.g. "up" or "down" for signed figures.
    * opts: {rows, sortKey, sortDir, onRowClick, rowClass(row), groupBy(row), maxHeight}
    */
   function table(columns, rows, opts = {}) {
@@ -242,7 +253,7 @@
         for (const c of columns) {
           const v = r[c.key];
           const content = c.fmt ? c.fmt(v, r) : v == null ? DASH : String(v);
-          const td = el("td", { class: (c.num ? "num " : "") + (c.cellClass || "") });
+          const td = el("td", { class: [c.num ? "num" : "", c.cellClass || "", c.cls ? c.cls(v, r) || "" : ""].join(" ").trim() || null });
           if (c.link && opts.onRowClick) {
             td.appendChild(el("button", { type: "button", class: "link", onclick: () => opts.onRowClick(r) }, content instanceof Node ? content : String(content)));
           } else if (content instanceof Node) td.appendChild(content);
@@ -305,8 +316,9 @@
     }
   }
 
+  /** "up" or "down" for a signed figure, so gains and losses take the brand's signal colours. */
   function signClass(x) {
-    return isNum(x) ? (x > 0 ? "pos" : x < 0 ? "neg" : "") : "";
+    return isNum(x) ? (x > 0 ? "up" : x < 0 ? "down" : "") : "";
   }
 
   root.PFUI = {

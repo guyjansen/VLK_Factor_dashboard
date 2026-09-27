@@ -1,6 +1,6 @@
 # Property Factor Lens
 
-A factor exposure dashboard for the 55 European listed real estate stocks in the coverage list, built only on publicly available data. Pick any stock to see how it responds to the market, interest rates, credit and style factors; what drove its recent performance; how risky it is; and how it compares with its sub-sector on exposures, valuation and consensus.
+A factor exposure dashboard for the 55 European listed real estate stocks in the coverage list, built only on publicly available data. Pick any stock to see how it responds to the market, interest rates, credit and style factors; what drove its recent performance; how risky it is; and how it compares with its sub-sector on exposures, valuation and consensus. It is styled in the Van Lanschot Kempen house style.
 
 ![Overview of the dashboard for SEGRO](docs/img/overview.png)
 
@@ -9,7 +9,7 @@ A factor exposure dashboard for the 55 European listed real estate stocks in the
 | Option | How |
 | --- | --- |
 | Local, no install | Open `docs/index.html` in a browser. It reads the data file with a plain `<script>` tag, so double-clicking works. |
-| Single shareable file | Download the `property-factor-lens` artifact from the latest **Refresh market data** run on the Actions tab, or build it with `python -m factor_dashboard.bundle`. One HTML file (about 3 MB) with the data inside; e-mail it or drop it on SharePoint or Teams. |
+| Single shareable file | Download the `property-factor-lens` artifact from the latest **Refresh market data** run on the Actions tab, or build it with `python -m factor_dashboard.bundle`. One HTML file (about 3.6 MB) with the data, fonts and logo inside; e-mail it or drop it on SharePoint or Teams. |
 | Always-current website | In the repository settings, open **Pages**, choose **Deploy from a branch**, pick the default branch and the `/docs` folder. The scheduled refresh then keeps the site current. |
 
 ## What the dashboard shows
@@ -82,6 +82,18 @@ When a source fails, the build reuses that series from the previous refresh and 
 - Yahoo no longer serves the pre-merger Vastned Retail line or URW's pre-April 2023 Amsterdam line, so those two histories are shorter.
 - P/B and the LTV proxy approximate EPRA NTA and EPRA LTV; they are not the same measures.
 
+## House style
+
+The page follows the Van Lanschot Kempen brand book:
+
+- **Type.** Bitter for headings, Lato for everything else, and capitals only for small spaced labels. Both fonts ship with the page under the SIL Open Font License (`docs/assets/fonts`), so no font service is needed and the shareable file renders correctly offline.
+- **Colour.** Chart series use the brand's primary colours, starting with turquoise. Blue grey is pale on white, so it is kept for context: background peers and results that are not significant. Positive and negative exposures are turquoise and dark rose.
+- **Tables.** Navy header bar in white Lato bold, grey hairlines and a navy closing rule. Returns and upside are in the signal colours: green for gains, red for losses.
+- **Graphs.** Titles in Bitter semibold, bars with square ends on 25% grey tracks, dot markers in legends.
+- **Identity.** The logo in the top bar (`docs/assets/img/vlk-logo.png`) and the rounded mirror shape in the stock header.
+
+Two small departures, both for reading on screen: signal green and red are a shade deeper for small text (the brand book does the same for ochre with its online dark ochre), and there is no dark mode, since the brand is a light identity. Every colour is set once, as a token at the top of `docs/assets/styles.css`.
+
 ## Development
 
 ```
@@ -98,6 +110,6 @@ node --test tests/js/*.test.mjs
 python tests/fixtures/make_ols_fixture.py   # regenerate the statsmodels reference results
 ```
 
-ECharts 5.6.0 is vendored under `docs/assets/vendor` (Apache 2.0).
+ECharts 5.6.0 is vendored under `docs/assets/vendor` (Apache 2.0); Bitter and Lato under `docs/assets/fonts` (SIL Open Font License 1.1).
 
 For research and discussion only; not investment advice.

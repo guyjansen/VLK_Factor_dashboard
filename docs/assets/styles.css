@@ -1,119 +1,134 @@
-/* Property Factor Lens
- * Cool "concrete" neutrals, one ink-blue accent. Chart colours follow the
- * validated categorical order (blue, orange, aqua, yellow) and a blue/red
- * diverging pair. Every colour is a token so both themes stay in sync. */
+/* Property Factor Lens - Van Lanschot Kempen house style
+ *
+ * Follows the VLK Brand Book: Bitter for headings, Lato for everything else;
+ * primary colours in the brand order (turquoise, blue grey, navy, ochre,
+ * chocolate, aqua, petrol, dark rose); signal colours for positive and
+ * negative figures; tables with a navy top bar, grey hairlines and a closing
+ * rule in the main colour; the rounded "mirror" shape in the stock header.
+ * The brand is a light, print-first identity, so the page has one light theme.
+ */
+
+/* Brand fonts ship with the page (SIL Open Font License, see fonts/OFL-*.txt),
+   so it renders in Bitter and Lato offline and on networks that block Google
+   Fonts. Latin subset; Bitter is one variable file. */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/bitter-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("fonts/lato-300-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/lato-400-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/lato-700-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("fonts/lato-900-latin.woff2") format("woff2");
+}
 
 :root {
   color-scheme: light;
-  --bg: #eef1f4;
-  --surface: #fbfcfd;
-  --surface-2: #f3f6f8;
-  --surface-3: #e8edf2;
-  --ink: #0f1722;
-  --ink-2: #435063;
-  --muted: #6f7b8c;
-  --hairline: #dbe1e8;
-  --baseline: #bcc5cf;
-  --accent: #1d5ca8;
+
+  /* Brand primary colours */
+  --vlk-turquoise: #007f93;
+  --vlk-blue-grey: #94adb9;
+  --vlk-navy: #003646;
+  --vlk-ochre: #cf952e;
+  --vlk-dark-ochre: #a46900;
+  --vlk-chocolate: #400410;
+  --vlk-aqua: #0ab7cf;
+  --vlk-petrol: #006568;
+  --vlk-dark-rose: #be114c;
+  --vlk-logo-petrol: #00585b;
+
+  /* Brand background colours */
+  --vlk-grey: #dae0e3;
+  --vlk-dark-grey: #98a0a4;
+  --vlk-ivory: #fffbf4;
+  --vlk-grey-25: #f6f7f8; /* 25% VLK grey: table columns, bar backgrounds */
+  --vlk-blue-grey-25: #e4eaee; /* 25% VLK blue grey: highlighted columns */
+  --vlk-text: #58585a; /* 80% black for text */
+
+  /* Brand signal colours */
+  --vlk-signal-green: #009e4d;
+  --vlk-signal-light-green: #95c11f;
+  --vlk-signal-orange: #ff9b04;
+  --vlk-signal-red: #dd0c29;
+  --vlk-neutral: #ececec;
+
+  /* Roles used by the layout and the charts */
+  --bg: var(--vlk-grey-25);
+  --surface: #ffffff;
+  --surface-2: var(--vlk-grey-25);
+  --surface-3: var(--vlk-blue-grey-25);
+  --ink: var(--vlk-navy);
+  --ink-2: var(--vlk-text);
+  --muted: #6d7478;
+  --hairline: var(--vlk-grey);
+  --baseline: var(--vlk-dark-grey);
+  --accent: var(--vlk-petrol);
   --accent-ink: #ffffff;
-  --accent-soft: #e2ecf8;
-  --focus: #1d5ca8;
+  --accent-soft: var(--vlk-blue-grey-25);
+  --focus: var(--vlk-turquoise);
 
-  --series-1: #2a78d6;
-  --series-2: #eb6834;
-  --series-3: #1baf7a;
-  --series-4: #eda100;
-  --series-5: #e87ba4;
-  --series-6: #008300;
-  --series-7: #4a3aa7;
-  --series-8: #e34948;
-  --pos: #2a78d6;
-  --neg: #e34948;
-  --mid: #f0efec;
-  --other: #c3ccd6;
-  --other-strong: #97a3b1;
+  --series-1: var(--vlk-turquoise);
+  --series-2: var(--vlk-ochre);
+  --series-3: var(--vlk-navy);
+  --series-4: var(--vlk-aqua);
+  --series-5: var(--vlk-chocolate);
+  --series-6: var(--vlk-petrol);
+  --series-7: var(--vlk-dark-rose);
+  --series-8: var(--vlk-blue-grey);
+  --pos: var(--vlk-turquoise);
+  --neg: var(--vlk-dark-rose);
+  --mid: var(--vlk-grey-25);
+  --other: var(--vlk-blue-grey);
+  --other-strong: var(--vlk-dark-grey);
+  --bar-bg: var(--vlk-grey-25);
 
-  --good: #0ca30c;
-  --good-text: #006300;
-  --warning: #fab219;
-  --serious: #ec835a;
-  --critical: #d03b3b;
-  --critical-text: #b42a2a;
+  --good: var(--vlk-signal-green);
+  --warning: var(--vlk-signal-orange);
+  --serious: var(--vlk-signal-orange);
+  --critical: var(--vlk-signal-red);
+  /* Signal colours used for small text: the brand hues, deepened just enough to
+     stay readable on white and the 25% tints (the brand book does the same for
+     ochre with its online-only dark ochre). */
+  --good-text: #007a3a;
+  --critical-text: #c8102e;
 
-  --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-display: "Bitter", Georgia, "Times New Roman", serif;
+  --font-body: "Lato", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Lato", "Helvetica Neue", Arial, sans-serif;
 
   --radius: 6px;
   --radius-sm: 4px;
   --rail-w: 272px;
-  --topbar-h: 56px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --bg: #0a0e13;
-    --surface: #121922;
-    --surface-2: #17202b;
-    --surface-3: #1e2935;
-    --ink: #edf1f6;
-    --ink-2: #b3becb;
-    --muted: #8591a0;
-    --hairline: #243040;
-    --baseline: #3a4758;
-    --accent: #6ba6ef;
-    --accent-ink: #07111f;
-    --accent-soft: #1a2c42;
-    --focus: #8cbcf5;
-    --series-1: #3987e5;
-    --series-2: #d95926;
-    --series-3: #199e70;
-    --series-4: #c98500;
-    --series-5: #d55181;
-    --series-6: #008300;
-    --series-7: #9085e9;
-    --series-8: #e66767;
-    --pos: #3987e5;
-    --neg: #e66767;
-    --mid: #383835;
-    --other: #3b4655;
-    --other-strong: #5b6878;
-    --good-text: #3ec43e;
-    --critical-text: #f08080;
-  }
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #0a0e13;
-  --surface: #121922;
-  --surface-2: #17202b;
-  --surface-3: #1e2935;
-  --ink: #edf1f6;
-  --ink-2: #b3becb;
-  --muted: #8591a0;
-  --hairline: #243040;
-  --baseline: #3a4758;
-  --accent: #6ba6ef;
-  --accent-ink: #07111f;
-  --accent-soft: #1a2c42;
-  --focus: #8cbcf5;
-  --series-1: #3987e5;
-  --series-2: #d95926;
-  --series-3: #199e70;
-  --series-4: #c98500;
-  --series-5: #d55181;
-  --series-6: #008300;
-  --series-7: #9085e9;
-  --series-8: #e66767;
-  --pos: #3987e5;
-  --neg: #e66767;
-  --mid: #383835;
-  --other: #3b4655;
-  --other-strong: #5b6878;
-  --good-text: #3ec43e;
-  --critical-text: #f08080;
+  --topbar-h: 64px;
 }
 
 *,
@@ -126,7 +141,7 @@ html,
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--ink);
+  color: var(--ink-2);
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.45;
@@ -138,10 +153,11 @@ input,
 select {
   font: inherit;
   color: inherit;
+  accent-color: var(--vlk-petrol);
 }
 
 a {
-  color: var(--accent);
+  color: var(--vlk-turquoise);
   text-underline-offset: 2px;
 }
 
@@ -163,16 +179,35 @@ a {
 .num,
 .table td.num,
 .table th.num {
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .mono {
-  font-family: var(--font-mono);
-  font-size: 0.92em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .muted {
   color: var(--muted);
+}
+
+/* Gains and losses in the signal colours; the selectors beat the navy used for
+   key figures, selected rows and tiles. */
+.up,
+.table td.up,
+.table tr.sel td.up,
+.tile-value.up,
+.figure .v.up {
+  color: var(--good-text);
+}
+
+.down,
+.table td.down,
+.table tr.sel td.down,
+.tile-value.down,
+.figure .v.down {
+  color: var(--critical-text);
 }
 
 .sr-only {
@@ -182,6 +217,19 @@ a {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* Labels are the one place the brand allows capitals: Lato heavy, spaced. */
+.label,
+.rail-group h3,
+.takeaways .tag,
+.factor-picker legend,
+.group-row td {
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 10.5px;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
 }
 
 /* ------------------------------------------------------------------ top bar */
@@ -199,24 +247,45 @@ a {
   padding: 10px 16px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 16px 24px;
   flex-wrap: wrap;
   min-height: var(--topbar-h);
 }
 
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 18px;
   margin-right: auto;
+  min-width: 0;
+}
+
+/* Protected space around the logo: roughly the length of the seal. */
+.brand-logo {
+  display: block;
+  height: 34px;
+  width: auto;
+  margin: 4px 6px 4px 0;
+}
+
+.brand-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--hairline);
+}
+
+.brand-text {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
 }
 
 .brand-name {
   font-family: var(--font-display);
-  font-stretch: 85%;
-  font-weight: 650;
+  font-weight: 500;
   font-size: 19px;
-  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: var(--vlk-petrol);
   margin: 0;
 }
 
@@ -226,7 +295,7 @@ a {
 }
 
 .asof {
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--ink-2);
   display: flex;
   gap: 8px;
@@ -267,11 +336,16 @@ a {
   background: var(--surface);
   border: 1px solid var(--hairline);
   border-radius: var(--radius);
-  padding: 10px 0 12px;
+  padding: 0 0 12px;
 }
 
+/* The search stays in view while the list scrolls to the selected stock. */
 .rail-search {
-  padding: 2px 12px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface);
+  padding: 12px 12px 10px;
   border-bottom: 1px solid var(--hairline);
 }
 
@@ -284,17 +358,13 @@ a {
 }
 
 .rail-group {
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
 .rail-group h3 {
   margin: 0;
-  padding: 4px 14px 4px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
+  padding: 4px 14px 5px;
+  color: var(--vlk-petrol);
   display: flex;
   justify-content: space-between;
 }
@@ -310,6 +380,7 @@ a {
   padding: 5px 14px;
   cursor: pointer;
   border-left: 3px solid transparent;
+  color: var(--ink-2);
 }
 
 .rail-item:hover {
@@ -318,7 +389,9 @@ a {
 
 .rail-item[aria-current="true"] {
   background: var(--accent-soft);
-  border-left-color: var(--accent);
+  border-left-color: var(--vlk-turquoise);
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .rail-item .nm {
@@ -330,8 +403,8 @@ a {
 
 .rail-item .rt {
   font-size: 12px;
-  color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .content {
@@ -340,48 +413,89 @@ a {
   gap: 16px;
 }
 
-/* ------------------------------------------------------------------ stock header */
+/* ------------------------------------------------------------------ stock header (hero) */
 .stock-head {
   display: grid;
   gap: 14px;
 }
 
+/* Navy panel with the brand's rounded "mirror" shape cutting in from the right.
+   The price sits on the white shape in a fixed column; the outer element is a
+   size container so the panel can stack when it gets narrow. */
+.hero {
+  container: hero / inline-size;
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--vlk-navy);
+  color: #ffffff;
+  border-radius: var(--radius);
+  padding: 22px 24px 22px;
+  min-height: 132px;
+}
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: -70px;
+  top: -40px;
+  width: 360px;
+  height: 260px;
+  background: #ffffff;
+  border-radius: 26px;
+  transform: rotate(-11deg) skewX(-7deg);
+}
+
+.hero-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
 .stock-title-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  align-items: end;
+  gap: 12px 40px;
 }
 
 .stock-name {
   margin: 0;
   font-family: var(--font-display);
-  font-stretch: 85%;
-  font-weight: 650;
-  font-size: clamp(24px, 3vw, 32px);
-  line-height: 1.1;
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.12;
+  color: #ffffff;
   text-wrap: balance;
 }
 
 .stock-meta {
-  margin-top: 6px;
+  margin-top: 8px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px 10px;
-  color: var(--ink-2);
+  gap: 6px 12px;
+  color: var(--vlk-grey);
   font-size: 13px;
+}
+
+.stock-meta .mono {
+  color: #ffffff;
 }
 
 .price-block {
   text-align: right;
+  padding: 4px 0 0;
 }
 
 .price {
-  font-size: 26px;
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 700;
   line-height: 1.1;
+  color: var(--vlk-navy);
 }
 
 .price-sub {
@@ -393,22 +507,52 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 1px 8px;
+  padding: 1px 9px;
   border-radius: 999px;
   font-size: 12px;
   background: var(--surface-3);
-  color: var(--ink-2);
+  color: var(--ink);
   white-space: nowrap;
 }
 
+.hero .chip {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Narrow panel: no shape, price below the name in white. */
+@container hero (max-width: 620px) {
+  .hero-panel::after {
+    display: none;
+  }
+  .stock-title-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .price-block {
+    text-align: left;
+    padding: 0;
+  }
+  .price {
+    color: #ffffff;
+  }
+  .price-sub {
+    color: var(--vlk-grey);
+  }
+}
+
+.hero .chip.accent {
+  background: var(--vlk-turquoise);
+  color: #ffffff;
+}
+
 .chip.accent {
-  background: var(--accent-soft);
-  color: var(--ink);
+  background: var(--vlk-turquoise);
+  color: #ffffff;
 }
 
 .chip.warn {
-  background: color-mix(in srgb, var(--warning) 22%, var(--surface));
-  color: var(--ink);
+  background: var(--vlk-signal-orange);
+  color: var(--vlk-navy);
 }
 
 .chip.sig {
@@ -452,7 +596,7 @@ a {
 
 .tile {
   background: var(--surface);
-  padding: 10px 14px 11px;
+  padding: 10px 14px 12px;
   display: grid;
   gap: 2px;
   align-content: start;
@@ -464,9 +608,10 @@ a {
 }
 
 .tile-value {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 21px;
+  font-weight: 700;
   line-height: 1.2;
+  color: var(--vlk-navy);
 }
 
 .tile-sub {
@@ -490,7 +635,7 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12.5px;
+  font-size: 13px;
   color: var(--ink-2);
 }
 
@@ -503,8 +648,9 @@ select,
   padding: 5px 8px;
   border: 1px solid var(--hairline);
   border-radius: var(--radius-sm);
-  background: var(--surface-2);
+  background: var(--surface);
   font-size: 13px;
+  color: var(--ink);
 }
 
 .seg {
@@ -512,14 +658,14 @@ select,
   border: 1px solid var(--hairline);
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--surface-2);
+  background: var(--surface);
 }
 
 .seg button {
   border: 0;
   background: none;
-  padding: 5px 10px;
-  font-size: 12.5px;
+  padding: 5px 11px;
+  font-size: 13px;
   cursor: pointer;
   color: var(--ink-2);
 }
@@ -528,17 +674,24 @@ select,
   border-left: 1px solid var(--hairline);
 }
 
+.seg button:hover {
+  background: var(--surface-2);
+}
+
 .seg button[aria-pressed="true"] {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--vlk-petrol);
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .btn {
   border: 1px solid var(--hairline);
-  background: var(--surface-2);
+  background: var(--surface);
+  color: var(--vlk-petrol);
   border-radius: var(--radius-sm);
-  padding: 5px 10px;
-  font-size: 12.5px;
+  padding: 5px 11px;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -547,18 +700,18 @@ select,
 }
 
 .btn.primary {
-  background: var(--accent);
-  color: var(--accent-ink);
-  border-color: var(--accent);
+  background: var(--vlk-petrol);
+  color: #ffffff;
+  border-color: var(--vlk-petrol);
 }
 
 .factor-picker {
   flex-basis: 100%;
   display: grid;
   align-items: start;
-  gap: 10px;
+  gap: 12px;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  padding-top: 8px;
+  padding-top: 10px;
   border-top: 1px solid var(--hairline);
 }
 
@@ -572,23 +725,24 @@ select,
 }
 
 .factor-picker legend {
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2px;
+  color: var(--vlk-petrol);
+  margin-bottom: 4px;
 }
 
 .factor-picker label {
   display: flex;
-  gap: 6px;
+  gap: 7px;
   align-items: center;
   font-size: 13px;
-  color: var(--ink);
+  color: var(--ink-2);
+}
+
+.factor-picker input {
+  accent-color: var(--vlk-petrol);
 }
 
 .factor-picker label.na {
-  color: var(--muted);
+  color: var(--vlk-dark-grey);
 }
 
 /* ------------------------------------------------------------------ tabs */
@@ -603,23 +757,23 @@ select,
 .tabs button {
   border: 0;
   background: none;
-  padding: 9px 12px 10px;
-  font-size: 13.5px;
+  padding: 9px 13px 10px;
+  font-size: 14px;
   color: var(--ink-2);
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
   margin-bottom: -1px;
 }
 
 .tabs button:hover {
-  color: var(--ink);
+  color: var(--vlk-navy);
 }
 
 .tabs button[aria-selected="true"] {
-  color: var(--ink);
-  font-weight: 600;
-  border-bottom-color: var(--accent);
+  color: var(--vlk-navy);
+  font-weight: 700;
+  border-bottom-color: var(--vlk-turquoise);
 }
 
 .panel {
@@ -657,7 +811,7 @@ select,
   background: var(--surface);
   border: 1px solid var(--hairline);
   border-radius: var(--radius);
-  padding: 14px 16px 16px;
+  padding: 16px 18px 18px;
   min-width: 0;
   display: grid;
   gap: 10px;
@@ -672,18 +826,21 @@ select,
   gap: 4px 12px;
 }
 
+/* Graph and table titles: Bitter semibold. */
 .card-title {
   margin: 0;
-  font-size: 14.5px;
+  font-family: var(--font-display);
+  font-size: 16px;
   font-weight: 600;
+  color: var(--vlk-navy);
   text-wrap: balance;
 }
 
 .card-sub {
-  margin: 2px 0 0;
+  margin: 3px 0 0;
   font-size: 12.5px;
   color: var(--muted);
-  max-width: 75ch;
+  max-width: 78ch;
 }
 
 .card-tools {
@@ -695,18 +852,20 @@ select,
 
 .note {
   font-size: 12px;
-  color: var(--muted);
+  font-weight: 300;
+  color: var(--ink-2);
   margin: 0;
-  max-width: 90ch;
+  max-width: 92ch;
 }
 
 .warn-note {
   font-size: 12.5px;
   margin: 0;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--warning) 16%, var(--surface));
-  color: var(--ink);
+  background: var(--vlk-ivory);
+  border-left: 3px solid var(--vlk-ochre);
+  color: var(--ink-2);
 }
 
 .chart {
@@ -714,10 +873,11 @@ select,
   min-height: 200px;
 }
 
+/* Legends use the brand's dot markers. */
 .legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 14px;
+  gap: 4px 16px;
   font-size: 12px;
   color: var(--ink-2);
 }
@@ -728,13 +888,6 @@ select,
   gap: 6px;
 }
 
-.key-line {
-  width: 14px;
-  height: 2px;
-  border-radius: 2px;
-  display: inline-block;
-}
-
 .key-dot {
   width: 9px;
   height: 9px;
@@ -742,10 +895,10 @@ select,
   display: inline-block;
 }
 
-.key-rect {
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
+/* Reference markers (a peer median) are drawn as slim ticks on the chart. */
+.key-tick {
+  width: 3px;
+  height: 12px;
   display: inline-block;
 }
 
@@ -759,23 +912,26 @@ select,
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+  color: var(--ink-2);
+  border-bottom: 1.5px solid var(--vlk-navy); /* closing rule in the main colour */
 }
 
 .table th,
 .table td {
-  padding: 6px 8px;
+  padding: 6px 9px;
   border-bottom: 1px solid var(--hairline);
   text-align: left;
   vertical-align: middle;
   white-space: nowrap;
 }
 
+/* Top bar in the main colour with white Lato bold. */
 .table th {
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-  background: var(--surface);
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--vlk-navy);
+  border-bottom: 0;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -787,19 +943,21 @@ select,
 }
 
 .table tr.sel td {
-  background: var(--accent-soft);
+  background: var(--vlk-blue-grey-25);
+  color: var(--vlk-navy);
+  font-weight: 700;
 }
 
 .table tr.peer td:first-child {
-  box-shadow: inset 3px 0 0 var(--series-2);
+  box-shadow: inset 3px 0 0 var(--vlk-ochre);
 }
 
 .table tbody tr:hover td {
-  background: var(--surface-2);
+  background: var(--vlk-grey-25);
 }
 
 .table tbody tr.sel:hover td {
-  background: var(--accent-soft);
+  background: var(--vlk-blue-grey-25);
 }
 
 .table .wrap {
@@ -809,7 +967,7 @@ select,
 
 .table.compact th,
 .table.compact td {
-  padding: 5px 6px;
+  padding: 5px 7px;
   font-size: 12.5px;
 }
 
@@ -823,14 +981,15 @@ select,
   border: 0;
   background: none;
   padding: 0;
-  color: var(--ink);
+  color: inherit;
   cursor: pointer;
   text-align: left;
   font-size: inherit;
+  font-weight: inherit;
 }
 
 .table button.link:hover {
-  color: var(--accent);
+  color: var(--vlk-turquoise);
   text-decoration: underline;
 }
 
@@ -846,17 +1005,13 @@ select,
   align-items: center;
 }
 
-.table th[aria-sort] button.sort {
-  color: var(--ink);
+.table th[aria-sort] {
+  background: var(--vlk-petrol);
 }
 
 .group-row td {
-  background: var(--surface-2);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--muted);
+  background: var(--vlk-grey-25);
+  color: var(--vlk-petrol);
 }
 
 .bar-cell {
@@ -867,7 +1022,6 @@ select,
 .inline-bar {
   display: block;
   height: 6px;
-  border-radius: 3px;
   background: var(--surface-3);
   position: relative;
   overflow: hidden;
@@ -878,7 +1032,6 @@ select,
   position: absolute;
   top: 0;
   bottom: 0;
-  border-radius: 3px;
 }
 
 /* key/value list */
@@ -893,7 +1046,7 @@ select,
 .kv dt,
 .kv dd {
   margin: 0;
-  padding: 5px 0;
+  padding: 6px 0;
   border-bottom: 1px solid var(--hairline);
 }
 
@@ -903,11 +1056,14 @@ select,
 
 .kv dd {
   text-align: right;
-  font-variant-numeric: tabular-nums;
+  color: var(--vlk-navy);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .kv dd .muted {
   font-size: 12px;
+  font-weight: 400;
 }
 
 /* takeaways */
@@ -916,24 +1072,21 @@ select,
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .takeaways li {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
+  grid-template-columns: 96px minmax(0, 1fr);
   gap: 10px;
   align-items: start;
   font-size: 13.5px;
+  color: var(--ink-2);
 }
 
 .takeaways .tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-top: 2px;
+  color: var(--vlk-turquoise);
+  padding-top: 3px;
 }
 
 /* stat line */
@@ -946,12 +1099,12 @@ select,
 }
 
 .stats-line b {
-  color: var(--ink);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
+  color: var(--vlk-navy);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
-/* hero-ish figure inside a card */
+/* figure inside a card */
 .figure-row {
   display: flex;
   flex-wrap: wrap;
@@ -966,8 +1119,9 @@ select,
 
 .figure .v {
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
+  color: var(--vlk-navy);
 }
 
 .figure .l {
@@ -986,12 +1140,13 @@ select,
   grid-template-columns: minmax(0, 1fr) 84px;
   gap: 4px 10px;
   align-items: center;
-  padding: 6px 0;
+  padding: 7px 0;
   border-bottom: 1px solid var(--hairline);
 }
 
 .shock label {
   font-size: 13px;
+  color: var(--vlk-navy);
 }
 
 .shock .hint {
@@ -1003,7 +1158,7 @@ select,
 .shock input[type="range"] {
   grid-column: 1 / -1;
   width: 100%;
-  accent-color: var(--accent);
+  accent-color: var(--vlk-turquoise);
 }
 
 .shock input[type="number"] {
@@ -1025,7 +1180,10 @@ select,
 
 .method h3 {
   margin: 8px 0 0;
-  font-size: 14px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--vlk-navy);
 }
 
 .method p,
@@ -1042,31 +1200,40 @@ select,
   gap: 4px;
 }
 
+.method b {
+  color: var(--vlk-navy);
+}
+
 .status-ok {
   color: var(--good-text);
+  font-weight: 700;
 }
 
 .status-bad {
   color: var(--critical-text);
+  font-weight: 700;
 }
 
 .status-stale {
-  color: var(--ink-2);
+  color: var(--vlk-dark-ochre);
+  font-weight: 700;
 }
 
 .banner {
   padding: 10px 14px;
   border-radius: var(--radius);
-  border: 1px solid color-mix(in srgb, var(--warning) 60%, var(--hairline));
-  background: color-mix(in srgb, var(--warning) 14%, var(--surface));
+  border: 1px solid var(--vlk-signal-orange);
+  border-left-width: 4px;
+  background: var(--vlk-ivory);
   font-size: 13px;
+  color: var(--ink-2);
 }
 
 .banner.info {
-  padding: 7px 12px;
-  border-color: var(--hairline);
-  background: var(--surface-2);
-  color: var(--ink-2);
+  padding: 8px 12px;
+  border: 1px solid var(--hairline);
+  border-left: 4px solid var(--vlk-ochre);
+  background: var(--vlk-ivory);
   font-size: 12.5px;
 }
 
@@ -1079,7 +1246,8 @@ select,
 
 .foot {
   font-size: 12px;
-  color: var(--muted);
+  font-weight: 300;
+  color: var(--ink-2);
   padding: 8px 2px 0;
   max-width: 110ch;
 }
@@ -1115,15 +1283,16 @@ select,
   .scenario-grid {
     grid-template-columns: minmax(0, 1fr);
   }
-  .price-block {
-    text-align: left;
-  }
   .takeaways li {
     grid-template-columns: minmax(0, 1fr);
     gap: 2px;
   }
-  .brand-sub {
+  .brand-sub,
+  .brand-divider {
     display: none;
+  }
+  .brand-logo {
+    height: 26px;
   }
 }
 

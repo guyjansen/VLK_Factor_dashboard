@@ -224,8 +224,14 @@
         el(
           "div",
           { class: "brand" },
-          el("h1", { class: "brand-name", text: "Property Factor Lens" }),
-          el("span", { class: "brand-sub", text: `${STOCKS.length} European listed real estate stocks · public data` })
+          el("img", { class: "brand-logo", src: "assets/img/vlk-logo.png", alt: "Van Lanschot Kempen", width: "158", height: "34" }),
+          el("span", { class: "brand-divider", "aria-hidden": "true" }),
+          el(
+            "div",
+            { class: "brand-text" },
+            el("h1", { class: "brand-name", text: "Property Factor Lens" }),
+            el("span", { class: "brand-sub", text: `${STOCKS.length} European listed real estate stocks · public data` })
+          )
         ),
         (mobilePicker = el("div", { class: "picker-mobile" })),
         el(
@@ -325,13 +331,18 @@
     for (const b of railEl.querySelectorAll(".rail-item")) {
       const st = ctx.byId[b.dataset.id];
       b.setAttribute("aria-current", String(st.id === state.stock));
-      b.querySelector(".rt").textContent = U.pct(s[st.i].ret.m1, 1, true);
+      const rt = b.querySelector(".rt");
+      rt.textContent = U.pct(s[st.i].ret.m1, 1, true);
+      rt.className = ("rt " + U.signClass(s[st.i].ret.m1)).trim();
     }
     const current = railEl.querySelector('.rail-item[aria-current="true"]');
     if (current && current.scrollIntoView) {
+      // Keep the selected stock clear of the sticky search box.
+      const searchH = railEl.querySelector(".rail-search").offsetHeight;
+      railEl.style.scrollPaddingTop = `${searchH}px`;
       const r = current.getBoundingClientRect();
       const rr = railEl.getBoundingClientRect();
-      if (r.top < rr.top || r.bottom > rr.bottom) current.scrollIntoView({ block: "nearest" });
+      if (r.top < rr.top + searchH || r.bottom > rr.bottom) current.scrollIntoView({ block: "nearest" });
     }
     clear(mobilePicker).appendChild(
       U.select(
@@ -381,13 +392,13 @@
       U.tile("Market cap", U.moneyCompact(f.market_cap_eur, "EUR"), f.market_cap && qccy !== "EUR" ? U.moneyCompact(f.market_cap, qccy) : `${U.ordinal(rankCap(st))} largest of ${STOCKS.length}`),
       U.tile("P/B (P/NAV proxy)", U.mult(f.pb), `sub-sector median ${U.mult(peerMed((p) => p.fund.pb))}`),
       U.tile("Dividend yield", U.pct(f.dividend_yield, 1), `sub-sector median ${U.pct(peerMed((p) => p.fund.dividend_yield), 1)}`),
-      U.tile("1Y total return", U.pct(s.ret.y1, 1, true), `${U.pp(s.rel.y1.subsector)} vs sub-sector`),
+      U.tile("1Y total return", U.pct(s.ret.y1, 1, true), `${U.pp(s.rel.y1.subsector)} vs sub-sector`, { tone: U.signClass(s.ret.y1) }),
       U.tile("Beta vs STOXX 600", capm.ok ? U.num(capm.betas.MKT, 2) : DASH, `${windowWord()}, market only`),
       U.tile("Rate sensitivity", mfit.ok && isNum(mfit.betas.RATES) ? U.pct(mfit.betas.RATES * 10, 2, true) : DASH, `per +10bp ${rateLabel(st).replace(" yield", "")}, market held constant`),
       U.tile("Volatility (1Y)", U.pct(s.vol1y, 0), mfit.ok ? `${U.pct(mfit.specificVolAnn, 0)} stock-specific` : ""),
-      U.tile("Consensus upside", U.pct(upside, 0, true), f.consensus && f.consensus.analysts ? `${f.consensus.analysts} analysts${f.consensus.rating ? " · " + f.consensus.rating : ""}` : "Yahoo Finance consensus")
+      U.tile("Consensus upside", U.pct(upside, 0, true), f.consensus && f.consensus.analysts ? `${f.consensus.analysts} analysts${f.consensus.rating ? " · " + f.consensus.rating : ""}` : "Yahoo Finance consensus", { tone: U.signClass(upside) })
     );
-    clear(headEl).append(el("div", { class: "stock-title-row" }, title, priceBlock), el("div", { class: "tiles-wrap" }, tiles));
+    clear(headEl).append(el("div", { class: "hero" }, el("div", { class: "hero-panel" }, el("div", { class: "stock-title-row" }, title, priceBlock))), el("div", { class: "tiles-wrap" }, tiles));
   }
 
   function rankCap(st) {
@@ -605,14 +616,6 @@
     }
   });
 
-  // Charts read colours from CSS tokens: redraw when the theme changes.
-  const redrawTheme = () => renderPanel();
-  if (window.matchMedia) {
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    if (mq.addEventListener) mq.addEventListener("change", redrawTheme);
-  }
-  new MutationObserver(redrawTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "class"] });
-
   // ================================================================== VIEWS
   // ------------------------------------------------------------------ overview
   function overview(panel) {
@@ -628,7 +631,7 @@
   }
 
   function factorProfileCard(st, fit) {
-    const c = U.card("Factor profile", `Typical ${freqWord()} move in the shares for a one-standard-deviation move in each factor, ${windowWord()} regression (${PRESETS[state.preset] ? PRESETS[state.preset].label : "custom model"}). Black ticks mark the ${st.meta.subsector} median.`);
+    const c = U.card("Factor profile", `Typical ${freqWord()} move in the shares for a one-standard-deviation move in each factor, ${windowWord()} regression (${PRESETS[state.preset] ? PRESETS[state.preset].label : "custom model"}). Navy ticks mark the ${st.meta.subsector} median.`);
     if (!fit.ok) {
       c.body.appendChild(failBox(fit.error || "The model could not be estimated for this stock."));
       return c.root;
@@ -650,10 +653,10 @@
     const box = chartBox();
     c.body.append(
       U.legend([
-        { label: "Positive, significant", color: t.pos, kind: "rect" },
-        { label: "Negative, significant", color: t.neg, kind: "rect" },
-        { label: "Not significant (|t| < 1.96)", color: t.other, kind: "rect" },
-        { label: `${st.meta.subsector} median`, color: t.ink, kind: "line" },
+        { label: "Positive, significant", color: t.pos },
+        { label: "Negative, significant", color: t.neg },
+        { label: "Not significant (|t| < 1.96)", color: t.other },
+        { label: `${st.meta.subsector} median`, color: t.ink, kind: "tick" },
       ]),
       box,
       el("div", { class: "stats-line" }, el("span", null, "R² ", el("b", { text: U.num(fit.r2, 2) })), el("span", null, "Observations ", el("b", { text: String(fit.n) })), el("span", null, "Specific volatility ", el("b", { text: U.pct(fit.specificVolAnn, 1) })), el("span", null, "Window ", el("b", { text: `${U.monthYear(fit.start)} – ${U.monthYear(fit.end)}` })))
@@ -809,10 +812,10 @@
       U.table(
         [
           { key: "label", label: "Period" },
-          { key: "ret", label: "Return", num: true, fmt: (v) => U.pct(v, 1, true) },
-          { key: "sub", label: "vs sub-sector", num: true, fmt: (v) => U.pp(v) },
-          { key: "cov", label: "vs coverage", num: true, fmt: (v) => U.pp(v) },
-          { key: "mkt", label: "vs STOXX 600", num: true, fmt: (v) => U.pp(v) },
+          { key: "ret", label: "Return", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
+          { key: "sub", label: "vs sub-sector", num: true, fmt: (v) => U.pp(v), cls: U.signClass },
+          { key: "cov", label: "vs coverage", num: true, fmt: (v) => U.pp(v), cls: U.signClass },
+          { key: "mkt", label: "vs STOXX 600", num: true, fmt: (v) => U.pp(v), cls: U.signClass },
         ],
         rows,
         { sortable: false }
@@ -857,7 +860,7 @@
       el(
         "div",
         { class: "figure-row" },
-        periods.map((p) => el("div", { class: "figure" }, el("span", { class: "v", text: isNum(p.value) ? U.pct(p.value, 1, true) : DASH }), el("span", { class: "l", text: `${p.label} specific · ${isNum(p.z) ? U.num(p.z, 1) + " σ" : "n/a"}` })))
+        periods.map((p) => el("div", { class: "figure" }, el("span", { class: ("v " + U.signClass(p.value)).trim(), text: isNum(p.value) ? U.pct(p.value, 1, true) : DASH }), el("span", { class: "l", text: `${p.label} specific · ${isNum(p.z) ? U.num(p.z, 1) + " σ" : "n/a"}` })))
       ),
       box,
       note("σ: the move divided by the stock's specific volatility over the same horizon. Beyond ±1.5 the move is unusual; beyond ±2 it is rare.")
@@ -975,14 +978,14 @@
     c.body.appendChild(note(`Market-type factors are betas (1.00 = moves one-for-one). Rate and spread factors show the share move for the standard shock. Sector and ETF style factors are orthogonalised to the market inside the window, so the market beta keeps its usual meaning.${relNote} ${fit.dropped.length ? "Left out: " + fit.dropped.map((d) => `${factorName(d.id)} (${d.reason})`).join("; ") + "." : ""}`));
 
     // Strip plot against the whole coverage.
-    const strip = U.card("Exposure versus coverage", `Each dot is a coverage stock's one-standard-deviation impact. ${st.meta.name} in blue, ${st.meta.subsector} peers in orange.`);
+    const strip = U.card("Exposure versus coverage", `Each dot is a coverage stock's one-standard-deviation impact. ${st.meta.name} in turquoise, ${st.meta.subsector} peers in ochre.`);
     const t = C.tokens();
     const box = chartBox();
     strip.body.append(
       U.legend([
-        { label: st.meta.name, color: t.series[0], kind: "dot" },
-        { label: `${st.meta.subsector} peers`, color: t.series[1], kind: "dot" },
-        { label: "Other coverage", color: t.other, kind: "dot" },
+        { label: st.meta.name, color: t.series[0] },
+        { label: `${st.meta.subsector} peers`, color: t.series[1] },
+        { label: "Other coverage", color: t.other },
       ]),
       box
     );
@@ -1197,7 +1200,7 @@
       const res = M.scenario(fit, shocksFor(fit), state.conditional);
       const residSd = fit.specificVolAnn / Math.sqrt(fit.ppy);
       figure.append(
-        el("div", { class: "figure" }, el("span", { class: "v", text: U.pct(res.total, 1, true) }), el("span", { class: "l", text: `${st.meta.name}, model-implied` })),
+        el("div", { class: "figure" }, el("span", { class: ("v " + U.signClass(res.total)).trim(), text: U.pct(res.total, 1, true) }), el("span", { class: "l", text: `${st.meta.name}, model-implied` })),
         el("div", { class: "figure" }, el("span", { class: "v", style: { fontSize: "20px" }, text: `±${U.pct(residSd, 1)}` }), el("span", { class: "l", text: `typical ${freqWord()} stock-specific noise` }))
       );
       const t = C.tokens();
@@ -1269,12 +1272,12 @@
         [
           { key: "episode", label: "Episode" },
           { key: "dates", label: "Dates", sortable: false },
-          { key: "mkt", label: "Market", num: true, fmt: (v) => U.pct(v, 1, true) },
+          { key: "mkt", label: "Market", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
           { key: "rates", label: "Home 10Y", num: true, fmt: (v) => U.bp(v, 0) },
           { key: "credit", label: "Credit", num: true, fmt: (v, r) => (r.creditIsBp ? U.bp(v, 0) : U.pct(v, 1, true)) },
-          { key: "implied", label: "Implied today", num: true, fmt: (v) => U.pct(v, 1, true) },
-          { key: "actual", label: "Actual then", num: true, fmt: (v) => U.pct(v, 1, true) },
-          { key: "peer", label: "Peer median then", num: true, fmt: (v) => U.pct(v, 1, true) },
+          { key: "implied", label: "Implied today", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
+          { key: "actual", label: "Actual then", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
+          { key: "peer", label: "Peer median then", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
         ],
         rows,
         { sortable: false, compact: true }
@@ -1319,9 +1322,9 @@
     const tiles = el(
       "div",
       { class: "tiles", "data-n": "3" },
-      U.tile("Total return", U.pct(att.total, 1, true), `${U.date(att.start)} – ${U.date(att.end)}`),
-      U.tile("Explained by factors", U.pct(att.total - att.specific, 1, true), `${att.factors.length} factors`),
-      U.tile("Stock-specific", U.pct(att.specific, 1, true), att.lastFit && att.lastFit.ok ? `${U.num(att.specific / (att.lastFit.specificVolAnn * Math.sqrt(att.days / 252)), 1)} σ` : "")
+      U.tile("Total return", U.pct(att.total, 1, true), `${U.date(att.start)} – ${U.date(att.end)}`, { tone: U.signClass(att.total) }),
+      U.tile("Explained by factors", U.pct(att.total - att.specific, 1, true), `${att.factors.length} factors`, { tone: U.signClass(att.total - att.specific) }),
+      U.tile("Stock-specific", U.pct(att.specific, 1, true), att.lastFit && att.lastFit.ok ? `${U.num(att.specific / (att.lastFit.specificVolAnn * Math.sqrt(att.days / 252)), 1)} σ` : "", { tone: U.signClass(att.specific) })
     );
     panel.appendChild(el("div", { class: "tiles-wrap" }, tiles));
 
@@ -1365,7 +1368,7 @@
             },
           },
           { key: "exposure", label: "Avg exposure", num: true, fmt: (v, r) => exposureText(r.id, v) },
-          { key: "contribution", label: "Contribution", num: true, fmt: (v) => U.pct(v, 2, true) },
+          { key: "contribution", label: "Contribution", num: true, fmt: (v) => U.pct(v, 2, true), cls: U.signClass },
         ],
         rows,
         { sortable: true, sortKey: "contribution" }
@@ -1485,7 +1488,7 @@
       })
       .sort((a, b) => b.ret - a.ret)
       .slice(0, 12);
-    const c4 = U.card("Closest peers and pair spreads", "Most correlated coverage stocks (weekly EUR returns over the window); an orange edge marks the same sub-sector. Specific correlation uses the model residuals. The spread z-score compares today's price ratio with its 1-year history: positive means the selected stock has outperformed that peer.");
+    const c4 = U.card("Closest peers and pair spreads", "Most correlated coverage stocks (weekly EUR returns over the window); an ochre edge marks the same sub-sector. Specific correlation uses the model residuals. The spread z-score compares today's price ratio with its 1-year history: positive means the selected stock has outperformed that peer.");
     c4.body.appendChild(
       U.table(
         [
@@ -1494,7 +1497,7 @@
           { key: "ret", label: "Return corr.", num: true, fmt: (v) => U.num(v, 2) },
           { key: "resid", label: "Specific corr.", num: true, fmt: (v) => U.num(v, 2) },
           { key: "z", label: "Spread z (1Y)", num: true, fmt: (v) => U.num(v, 1, true) },
-          { key: "rel3m", label: "Relative 3M", num: true, fmt: (v) => U.pct(v, 1, true) },
+          { key: "rel3m", label: "Relative 3M", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
         ],
         rows,
         { sortable: true, onRowClick: (r) => selectStock(r.id), rowClass: (r) => (r.peer ? "peer" : "") }
@@ -1518,7 +1521,7 @@
       );
       C.heatmap(box5, peers.map((p) => p.meta.name), peers.map((p) => p.id), cells, { limit: 3, selectedRow: peers.indexOf(st), rowHeight: 24, onRowClick: (r) => selectStock(peers[r].id) });
     });
-    panel.appendChild(note("Heatmap colours are centred on a correlation of 0.5: blue above, red below."));
+    panel.appendChild(note("Heatmap colours are centred on a correlation of 0.5: turquoise above, rose below."));
   }
 
   function rollingVol(levels, start, end, obs) {
@@ -1580,7 +1583,7 @@
 
   function peers(panel) {
     const st = sel();
-    const c = U.card("Relative value map", "Pick any two measures. Blue is the selected stock, orange its sub-sector peers. The line is a least-squares fit across the coverage; click a dot to open that stock.");
+    const c = U.card("Relative value map", "Pick any two measures. Turquoise is the selected stock, ochre its sub-sector peers. The line is a least-squares fit across the coverage; click a dot to open that stock.");
     const opts2 = Object.entries(METRICS).map(([k, m]) => ({ value: k, label: m.label }));
     c.tools.append(
       el("label", { class: "control" }, el("span", { class: "lbl", text: "X" }), U.select(opts2, state.sx, (v) => { state.sx = v; persist(); renderPanel(); }, { "aria-label": "X axis measure" })),
@@ -1594,9 +1597,9 @@
     const t = C.tokens();
     c.body.append(
       U.legend([
-        { label: st.meta.name, color: t.series[0], kind: "dot" },
-        { label: `${st.meta.subsector} peers`, color: t.series[1], kind: "dot" },
-        { label: "Other coverage", color: t.otherStrong, kind: "dot" },
+        { label: st.meta.name, color: t.series[0] },
+        { label: `${st.meta.subsector} peers`, color: t.series[1] },
+        { label: "Other coverage", color: t.otherStrong },
       ]),
       el("div", { style: { fontSize: "12px", color: "var(--ink-2)", marginBottom: "-6px" }, text: `↑ ${my.label}` }),
       box
@@ -1612,7 +1615,7 @@
     // Style characteristics.
     const ch = chars();
     const peersList = peersOf(st);
-    const sc = U.card("Style characteristics", "Where the stock sits on each characteristic, in standard deviations from the coverage average (winsorised). Black ticks mark the sub-sector average.");
+    const sc = U.card("Style characteristics", "Where the stock sits on each characteristic, in standard deviations from the coverage average (winsorised). Navy ticks mark the sub-sector average.");
     const items = ch.map((d) => ({
       label: d.label,
       value: d.z[st.i],
@@ -1671,9 +1674,9 @@
           { key: "dy", label: "Div. yield", num: true, fmt: (v) => U.pct(v, 1) },
           { key: "ltv", label: "LTV proxy", num: true, fmt: (v) => U.pct(v, 0) },
           { key: "pe", label: "Fwd P/E", num: true, fmt: (v) => U.mult(v, 1) },
-          { key: "upside", label: "Cons. upside", num: true, fmt: (v) => U.pct(v, 0, true) },
-          { key: "r3m", label: "3M", num: true, fmt: (v) => U.pct(v, 1, true) },
-          { key: "r1y", label: "1Y", num: true, fmt: (v) => U.pct(v, 1, true) },
+          { key: "upside", label: "Cons. upside", num: true, fmt: (v) => U.pct(v, 0, true), cls: U.signClass },
+          { key: "r3m", label: "3M", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
+          { key: "r1y", label: "1Y", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
           { key: "beta", label: "Beta", num: true, fmt: (v) => U.num(v, 2) },
           { key: "rate", label: "Per +10bp", num: true, fmt: (v) => U.pct(v, 2, true) },
         ],
@@ -1698,7 +1701,7 @@
     const st = sel();
     const ids = modelIds();
     const all = fits(ids);
-    const hc = U.card("Exposure heatmap", `All ${STOCKS.length} stocks, ${windowWord()} ${PRESETS[state.preset] ? PRESETS[state.preset].label.toLowerCase() : "custom"} model. Colour shows ${state.heat === "t" ? "the t-statistic (blue positive, red negative; pale = not significant)" : "the one-standard-deviation impact"}; the number is the exposure. Click a row to open that stock.`);
+    const hc = U.card("Exposure heatmap", `All ${STOCKS.length} stocks, ${windowWord()} ${PRESETS[state.preset] ? PRESETS[state.preset].label.toLowerCase() : "custom"} model. Colour shows ${state.heat === "t" ? "the t-statistic (turquoise positive, rose negative; pale = not significant)" : "the one-standard-deviation impact"}; the number is the exposure. Click a row to open that stock.`);
     hc.tools.appendChild(U.seg([{ value: "t", label: "t-stat" }, { value: "impact", label: "1σ impact" }], state.heat, (v) => { state.heat = v; persist(); renderPanel(); }, "Heatmap colour"));
     const order = [];
     for (const ss of SUBS) for (const p of STOCKS) if (p.meta.subsector === ss) order.push(p);
@@ -1758,11 +1761,11 @@
       { key: "pb", label: "P/B", num: true, fmt: (v) => U.mult(v) },
       { key: "dy", label: "Div. yield", num: true, fmt: (v) => U.pct(v, 1), csv: (r) => r.dy },
       { key: "ltv", label: "LTV", num: true, fmt: (v) => U.pct(v, 0) },
-      { key: "upside", label: "Upside", num: true, fmt: (v) => U.pct(v, 0, true) },
-      { key: "r1m", label: "1M", num: true, fmt: (v) => U.pct(v, 1, true) },
-      { key: "r3m", label: "3M", num: true, fmt: (v) => U.pct(v, 1, true) },
-      { key: "ytd", label: "YTD", num: true, fmt: (v) => U.pct(v, 1, true) },
-      { key: "r1y", label: "1Y", num: true, fmt: (v) => U.pct(v, 1, true) },
+      { key: "upside", label: "Upside", num: true, fmt: (v) => U.pct(v, 0, true), cls: U.signClass },
+      { key: "r1m", label: "1M", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
+      { key: "r3m", label: "3M", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
+      { key: "ytd", label: "YTD", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
+      { key: "r1y", label: "1Y", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
       { key: "vol", label: "Vol 1Y", num: true, fmt: (v) => U.pct(v, 0) },
       { key: "beta", label: "Beta", num: true, fmt: (v) => U.num(v, 2) },
       { key: "rate", label: "Per +10bp", num: true, fmt: (v) => U.pct(v, 2, true) },
@@ -1789,8 +1792,8 @@
           { key: "pb", label: "P/B", num: true, fmt: (v) => U.mult(v) },
           { key: "dy", label: "Div. yield", num: true, fmt: (v) => U.pct(v, 1) },
           { key: "ltv", label: "LTV", num: true, fmt: (v) => U.pct(v, 0) },
-          { key: "r3m", label: "3M", num: true, fmt: (v) => U.pct(v, 1, true) },
-          { key: "r1y", label: "1Y", num: true, fmt: (v) => U.pct(v, 1, true) },
+          { key: "r3m", label: "3M", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
+          { key: "r1y", label: "1Y", num: true, fmt: (v) => U.pct(v, 1, true), cls: U.signClass },
           { key: "beta", label: "Beta", num: true, fmt: (v) => U.num(v, 2) },
           { key: "rate", label: "Per +10bp", num: true, fmt: (v) => U.pct(v, 2, true) },
           { key: "vol", label: "Vol 1Y", num: true, fmt: (v) => U.pct(v, 0) },

@@ -174,6 +174,10 @@ def test_bundle_inlines_assets_and_data(tmp_path):
     assert '<script src="' not in html  # everything inline
     assert "<\\/script>" in html  # data cannot close the script tag early
     assert "window.PFModel" in html or "PFModel" in html
+    assert "assets/img/" not in html  # the logo travels inside the file
+    assert "data:image/png;base64," in html
+    assert 'url("fonts/' not in html and "fonts.googleapis.com" not in html  # and so do the fonts
+    assert html.count("data:font/woff2;base64,") == 5
     frag = bundle.render(data, cdn=True, fragment=True)
     assert frag.lstrip().startswith("<title>")
     assert "<html" not in frag and "<body" not in frag
