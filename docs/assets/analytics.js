@@ -278,6 +278,40 @@
     };
   }
 
+  /**
+   * OLS coefficients only (intercept first) over rows lo..hi, without copying
+   * the data. Same scaling as ols(); used for the many small regressions of
+   * the exposure-forecast backtest.
+   */
+  function olsCoef(y, cols, lo = 0, hi = y.length - 1) {
+    const k = cols.length + 1;
+    const n = hi - lo + 1;
+    if (n <= k) return null;
+    const s = new Float64Array(k);
+    s[0] = 1;
+    for (let j = 1; j < k; j++) {
+      const c = cols[j - 1];
+      let acc = 0;
+      for (let i = lo; i <= hi; i++) acc += c[i] * c[i];
+      s[j] = Math.sqrt(acc / n) || 1;
+    }
+    const A = Array.from({ length: k }, () => new Float64Array(k));
+    const b = new Float64Array(k);
+    const z = new Float64Array(k);
+    for (let i = lo; i <= hi; i++) {
+      z[0] = 1;
+      for (let j = 1; j < k; j++) z[j] = cols[j - 1][i] / s[j];
+      for (let p = 0; p < k; p++) {
+        b[p] += z[p] * y[i];
+        for (let q = 0; q <= p; q++) A[p][q] += z[p] * z[q];
+      }
+    }
+    for (let p = 0; p < k; p++) for (let q = 0; q < p; q++) A[q][p] = A[p][q];
+    const Ainv = invert(A);
+    if (!Ainv) return null;
+    return matVec(Ainv, b).map((v, j) => v / s[j]);
+  }
+
   /** Two-sided p-value from a t statistic (normal approximation). */
   function pValue(t) {
     if (!isNum(t)) return NaN;
@@ -409,6 +443,80 @@
     return path;
   }
 
+  // ------------------------------------------------------------------ volatility forecasts
+  /**
+   * GARCH(1,1) with variance targeting (long-run variance = sample variance),
+   * fitted by Gaussian maximum likelihood on a grid refined twice.
+   * returns: daily returns. Null with fewer than 250 observations.
+   */
+  function garch11(returns) {
+    const r = finite(returns);
+    const n = r.length;
+    if (n < 250) return null;
+    const m = mean(r);
+    const e = r.map((v) => v - m);
+    const lrVar = variance(e, 0);
+    if (!(lrVar > 0)) return null;
+    const loglik = (a, b) => {
+      const w = lrVar * (1 - a - b);
+      let h = lrVar;
+      let s = 0;
+      for (let t = 0; t < n; t++) {
+        if (t > 0) h = w + a * e[t - 1] * e[t - 1] + b * h;
+        s += Math.log(h) + (e[t] * e[t]) / h;
+      }
+      return -0.5 * s;
+    };
+    let best = { a: 0.05, b: 0.9, ll: -Infinity };
+    const search = (a0, a1, da, b0, b1, db) => {
+      for (let a = Math.max(a0, 0.001); a <= a1 + 1e-12; a += da) {
+        for (let b = Math.max(b0, 0); b <= b1 + 1e-12; b += db) {
+          if (a + b >= 0.999) continue;
+          const v = loglik(a, b);
+          if (v > best.ll) best = { a, b, ll: v };
+        }
+      }
+    };
+    search(0.01, 0.3, 0.01, 0.5, 0.98, 0.02);
+    search(best.a - 0.01, best.a + 0.01, 0.002, best.b - 0.02, best.b + 0.02, 0.004);
+    search(best.a - 0.002, best.a + 0.002, 0.0005, best.b - 0.004, best.b + 0.004, 0.001);
+    const { a: alpha, b: beta } = best;
+    const omega = lrVar * (1 - alpha - beta);
+    const condVar = new Float64Array(n);
+    let h = lrVar;
+    for (let t = 0; t < n; t++) {
+      if (t > 0) h = omega + alpha * e[t - 1] * e[t - 1] + beta * h;
+      condVar[t] = h;
+    }
+    const nextVar = omega + alpha * e[n - 1] * e[n - 1] + beta * condVar[n - 1];
+    const persistence = alpha + beta;
+    return {
+      alpha,
+      beta,
+      omega,
+      persistence,
+      lrVar,
+      nextVar,
+      halfLife: persistence > 0 && persistence < 1 ? Math.log(0.5) / Math.log(persistence) : NaN,
+      logLik: best.ll,
+      condVar,
+      n,
+    };
+  }
+
+  /** Expected daily variance h trading days ahead (h = 1 is the next day). */
+  function garchVarAt(g, h) {
+    return g.lrVar + Math.pow(g.persistence, h - 1) * (g.nextVar - g.lrVar);
+  }
+
+  /** Expected variance of the cumulative return over the next h trading days. */
+  function garchCumVar(g, h) {
+    if (!(h > 0)) return 0;
+    const p = g.persistence;
+    const decay = Math.abs(1 - p) < 1e-12 ? h : (1 - Math.pow(p, h)) / (1 - p);
+    return h * g.lrVar + (g.nextVar - g.lrVar) * decay;
+  }
+
   // ------------------------------------------------------------------ technicals
   function sma(values, n) {
     const out = new Float64Array(values.length).fill(NaN);
@@ -483,6 +591,35 @@
     return clipped.map((v) => (isNum(v) && s > 0 ? (v - m) / s : NaN));
   }
 
+  /** Ranks 1..n with ties sharing their average rank; NaN stays NaN. */
+  function ranks(values) {
+    const idx = [];
+    for (let i = 0; i < values.length; i++) if (isNum(values[i])) idx.push(i);
+    idx.sort((a, b) => values[a] - values[b]);
+    const out = new Array(values.length).fill(NaN);
+    for (let s = 0; s < idx.length; ) {
+      let e = s;
+      while (e + 1 < idx.length && values[idx[e + 1]] === values[idx[s]]) e++;
+      const avg = (s + e) / 2 + 1;
+      for (let k = s; k <= e; k++) out[idx[k]] = avg;
+      s = e + 1;
+    }
+    return out;
+  }
+
+  /** Spearman rank correlation over pairs where both values are finite. */
+  function spearman(a, b) {
+    const x = [];
+    const y = [];
+    for (let i = 0; i < a.length; i++) {
+      if (isNum(a[i]) && isNum(b[i])) {
+        x.push(a[i]);
+        y.push(b[i]);
+      }
+    }
+    return x.length < 3 ? NaN : correlation(ranks(x), ranks(y));
+  }
+
   /** Rank (1 = highest) of `value` among `values`; returns {rank, of}. */
   function rankOf(values, value, descending = true) {
     const v = finite(values);
@@ -523,6 +660,7 @@
     matVec,
     nwLags,
     ols,
+    olsCoef,
     pValue,
     normCdf,
     rollingOLS,
@@ -531,10 +669,15 @@
     conditionalShocks,
     carino,
     carinoPath,
+    garch11,
+    garchVarAt,
+    garchCumVar,
     sma,
     rsi,
     drawdowns,
     zscores,
+    ranks,
+    spearman,
     rankOf,
     fitLine,
   };

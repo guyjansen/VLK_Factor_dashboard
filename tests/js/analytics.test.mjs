@@ -85,3 +85,50 @@ test("z-scores are centred after winsorising", () => {
   assert.ok(z[9] < raw[9], "outlier is pulled in by winsorising");
   assert.ok(Number.isNaN(FA.zscores([1, null, 3, 4])[1]), "missing stays missing");
 });
+
+test("coefficient-only OLS matches the full regression, also on a row range", () => {
+  for (const [i, c] of fixture.cases.entries()) {
+    const full = FA.ols(c.y, c.cols);
+    FA.olsCoef(c.y, c.cols).forEach((b, j) => close(b, full.coef[j], 1e-9, `case ${i} coef ${j}`));
+    const lo = 5;
+    const hi = c.y.length - 4;
+    const part = FA.ols(c.y.slice(lo, hi + 1), c.cols.map((col) => col.slice(lo, hi + 1)));
+    FA.olsCoef(c.y, c.cols, lo, hi).forEach((b, j) => close(b, part.coef[j], 1e-9, `case ${i} range coef ${j}`));
+  }
+});
+
+test("ranks share ties and Spearman ignores monotone transforms", () => {
+  assert.deepEqual(FA.ranks([10, 20, 20, 30]), [1, 2.5, 2.5, 4]);
+  const x = [0.3, -1.2, 2.5, 0.7, 1.1, -0.4];
+  close(FA.spearman(x, x.map((v) => Math.exp(3 * v))), 1, 1e-12, "monotone");
+  close(FA.spearman(x, x.map((v) => -v)), -1, 1e-12, "reversed");
+  assert.ok(Number.isNaN(FA.spearman([1, 2], [2, 1])), "too few pairs");
+});
+
+test("GARCH(1,1) recovers simulated parameters and forecasts back to the long-run level", () => {
+  let s = 12345;
+  const uniform = () => {
+    s = (s * 1664525 + 1013904223) >>> 0;
+    return s / 4294967296;
+  };
+  const normal = () => Math.sqrt(-2 * Math.log(Math.max(uniform(), 1e-12))) * Math.cos(2 * Math.PI * uniform());
+  const [a, b, lr] = [0.08, 0.9, 1e-4];
+  const r = [];
+  let h = lr;
+  let prev = 0;
+  for (let t = 0; t < 6000; t++) {
+    h = lr * (1 - a - b) + a * prev * prev + b * h;
+    prev = Math.sqrt(h) * normal();
+    r.push(prev);
+  }
+  const g = FA.garch11(r);
+  assert.ok(Math.abs(g.alpha - a) < 0.04, `alpha ${g.alpha}`);
+  assert.ok(Math.abs(g.beta - b) < 0.05, `beta ${g.beta}`);
+  assert.ok(Math.abs(g.persistence - (a + b)) < 0.02, `persistence ${g.persistence}`);
+  close(FA.garchCumVar(g, 1), g.nextVar, 1e-12, "one day ahead");
+  let sum = 0;
+  for (let k = 1; k <= 10; k++) sum += FA.garchVarAt(g, k);
+  close(FA.garchCumVar(g, 10), sum, 1e-12, "cumulative = sum of daily variances");
+  close(FA.garchCumVar(g, 100000) / 100000, g.lrVar, 1e-3, "long horizons revert");
+  assert.equal(FA.garch11(r.slice(0, 100)), null, "too short");
+});

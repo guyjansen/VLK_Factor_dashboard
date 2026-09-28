@@ -103,8 +103,10 @@
 
   // ------------------------------------------------------------------ time series
   /**
-   * series: [{name, data:[[isoDate, value]], color, width, area, z, endLabel}]
-   * opts: {yFmt, tipFmt, height, zeroLine, band:{lo,hi,color}}
+   * series: [{name, data:[[isoDate, value]], color, width, dashed, area, z, endLabel, invisible}]
+   * opts: {yFmt, tipFmt, height, zeroLine, band:{lo,hi,color}, bands:[{lo,hi,color,opacity}]}
+   * An invisible series draws nothing but still lists its value in the tooltip
+   * (used for the edges of forecast ranges).
    */
   function line(el, series, opts = {}) {
     const t = tokens();
@@ -120,8 +122,8 @@
       symbolSize: 7,
       connectNulls: false,
       z: sr.z || 2 + (series.length - i),
-      lineStyle: { width: sr.width || 2, color: sr.color, type: sr.dashed ? [4, 3] : "solid", cap: "round", join: "round" },
-      itemStyle: { color: sr.color, borderColor: t.surface, borderWidth: 2 },
+      lineStyle: { width: sr.width || 2, color: sr.color, type: sr.dashed ? [4, 3] : "solid", cap: "round", join: "round", opacity: sr.invisible ? 0 : 1 },
+      itemStyle: { color: sr.color, borderColor: t.surface, borderWidth: 2, opacity: sr.invisible ? 0 : 1 },
       areaStyle: sr.area ? { color: sr.color, opacity: 0.1 } : undefined,
       emphasis: { disabled: true },
       endLabel: sr.endLabel
@@ -138,25 +140,26 @@
           ? { silent: true, symbol: "none", label: { show: false }, lineStyle: { color: t.baseline, width: 1, type: "solid" }, data: [{ yAxis: opts.zeroLine === true ? 0 : opts.zeroLine }] }
           : undefined,
     }));
-    if (opts.band) {
-      // Confidence band as a stacked area: invisible lower edge plus the width.
+    const bands = opts.bands || (opts.band ? [opts.band] : []);
+    bands.forEach((band, b) => {
+      // Each band is a stacked area: an invisible lower edge plus the width.
       s.unshift(
-        { type: "line", name: "__lo", data: opts.band.lo, stack: "band", stackStrategy: "all", showSymbol: false, lineStyle: { opacity: 0 }, areaStyle: { opacity: 0 }, tooltip: { show: false }, silent: true, z: 1 },
+        { type: "line", name: `__lo${b}`, data: band.lo, stack: `band${b}`, stackStrategy: "all", showSymbol: false, lineStyle: { opacity: 0 }, areaStyle: { opacity: 0 }, tooltip: { show: false }, silent: true, z: 1 },
         {
           type: "line",
-          name: "__band",
-          data: opts.band.hi.map((d, k) => [d[0], isNum(d[1]) && isNum(opts.band.lo[k][1]) ? d[1] - opts.band.lo[k][1] : null]),
-          stack: "band",
+          name: `__band${b}`,
+          data: band.hi.map((d, k) => [d[0], isNum(d[1]) && isNum(band.lo[k][1]) ? d[1] - band.lo[k][1] : null]),
+          stack: `band${b}`,
           stackStrategy: "all",
           showSymbol: false,
           lineStyle: { opacity: 0 },
-          areaStyle: { color: opts.band.color, opacity: 0.16 },
+          areaStyle: { color: band.color, opacity: band.opacity == null ? 0.16 : band.opacity },
           tooltip: { show: false },
           silent: true,
           z: 1,
         }
       );
-    }
+    });
     const option = Object.assign(base(t), {
       grid: { left: 6, right: opts.rightPad || 16, top: 14, bottom: 6, containLabel: true },
       xAxis: {

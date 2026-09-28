@@ -1,5 +1,5 @@
 /*
- * Property Factor Lens - application: state, layout and the eight views.
+ * Property Factor Lens - application: state, layout and the nine views.
  */
 (function () {
   "use strict";
@@ -32,6 +32,7 @@
     ["overview", "Overview"],
     ["exposures", "Factor exposures"],
     ["macro", "Macro & scenarios"],
+    ["outlook", "Outlook"],
     ["attribution", "Attribution"],
     ["risk", "Risk"],
     ["peers", "Peers & value"],
@@ -74,6 +75,7 @@
     sx: stored.sx || "rate10",
     sy: stored.sy || "pb",
     heat: stored.heat === "impact" ? "impact" : "t",
+    ofac: typeof stored.ofac === "string" ? stored.ofac : "RATES",
     pickerOpen: false,
     scen: { MKT: 0, RATES: 50, CREDIT: 0, FXL: 0, OIL: 0 },
     conditional: true,
@@ -83,8 +85,8 @@
 
   function persist() {
     try {
-      const { stock, preset, custom, freq, years, ccy, tab, attr, attrModel, sx, sy, heat } = state;
-      localStorage.setItem(STORE_KEY, JSON.stringify({ stock, preset, custom, freq, years, ccy, tab, attr, attrModel, sx, sy, heat }));
+      const { stock, preset, custom, freq, years, ccy, tab, attr, attrModel, sx, sy, heat, ofac } = state;
+      localStorage.setItem(STORE_KEY, JSON.stringify({ stock, preset, custom, freq, years, ccy, tab, attr, attrModel, sx, sy, heat, ofac }));
     } catch (e) {
       /* storage unavailable: preferences are not remembered */
     }
@@ -116,6 +118,27 @@
 
   function macroSens(st) {
     return once(`macro|${st.id}|${setKey()}`, () => M.macroSensitivities(ctx, st, opts()));
+  }
+
+  // Outlook: exposure forecasts (weekly, fixed windows), volatility forecasts, signal record.
+  const forecast = () => once(`fcst|${state.ccy}`, () => M.exposureForecast(ctx, macroIds(), { ccy: state.ccy }));
+  const signalTest = () => once("signals", () => M.signalBacktest(ctx));
+
+  /** GARCH(1,1) on the last three years of daily total returns in the quote currency. */
+  function garchOf(st) {
+    return once(`garch|${st.id}`, () => {
+      const r = [];
+      const dates = [];
+      for (let t = Math.max(st.last - 756, st.first + 1); t <= st.last; t++) {
+        if (!st.obs[t]) continue;
+        const v = Math.log(st.tri[t] / st.tri[t - 1]);
+        if (!isNum(v)) continue;
+        r.push(v);
+        dates.push(ctx.dates[t]);
+      }
+      const g = FA.garch11(r);
+      return g ? { g, dates } : null;
+    });
   }
 
   function attrPeriod(key) {
@@ -552,7 +575,7 @@
     C.disposeWithin(panelEl);
     clear(panelEl);
     panelEl.setAttribute("aria-labelledby", `tab-${state.tab}`);
-    const renderers = { overview, exposures, macro, attributionView, risk, peers, coverage, method };
+    const renderers = { overview, exposures, macro, outlook, attributionView, risk, peers, coverage, method };
     const fn = renderers[state.tab === "attribution" ? "attributionView" : state.tab];
     try {
       fn(panelEl);
@@ -1287,6 +1310,446 @@
     return c.root;
   }
 
+  // ------------------------------------------------------------------ outlook
+  // Exposures in display units: % share move per standard shock for rate-type
+  // factors (per +10bp for yields), plain betas for return factors.
+  const perShock = (id) => F[id].unit === "bp" || F[id].unit === "pts";
+  const expUnits = (id, v) => (isNum(v) ? (perShock(id) ? v * F[id].shock * 100 : v) : NaN);
+  const expFmt = (id, v, dp = 2) => (!isNum(v) ? DASH : perShock(id) ? `${U.num(v, dp, true)}%` : U.num(v, dp));
+  const todayIso = () => new Date().toISOString().slice(0, 10);
+  const daysBetween = (a, b) => Math.round((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86400000);
+
+  /** Weekly ISO dates after the last data date. */
+  function futureWeeks(weeks) {
+    const base = Date.parse(`${ctx.dates[ctx.asOfIndex]}T00:00:00Z`);
+    return Array.from({ length: weeks }, (_, k) => new Date(base + (k + 1) * 7 * 86400000).toISOString().slice(0, 10));
+  }
+
+  /** "0.88 over 2 years", or the 1-year estimate for stocks listed more recently. */
+  function pastExposure(id, x) {
+    return isNum(x.long) ? `${expFmt(id, expUnits(id, x.long))} over 2 years` : `${expFmt(id, expUnits(id, x.short))} over the last year`;
+  }
+
+  /** Last quoted price, matching the end of the price history. */
+  const lastPrice = (st) => (isNum(st.px[st.last]) ? st.px[st.last] : st.fund.price);
+
+  function outlook(panel) {
+    const st = sel();
+    const fc = forecast();
+    const mine = fc.ok ? fc.stocks[st.i] : {};
+    const gv = garchOf(st);
+    const bs = M.balanceSheetOutlook(st.fund);
+    const sb = signalTest();
+    panel.appendChild(outlookTiles(st, mine, gv, bs));
+    const grid1 = el("div", { class: "grid-wide", style: { alignItems: "start" } });
+    grid1.append(exposureForecastCard(st, fc, mine), watchCard(st, fc, mine, gv, bs, sb));
+    const grid2 = el("div", { class: "grid-2", style: { alignItems: "start" } });
+    grid2.append(priceRangeCard(st, gv), volOutlookCard(st, gv));
+    const grid3 = el("div", { class: "grid-2", style: { alignItems: "start" } });
+    grid3.append(impliedValueCard(st, bs), signalsCard(st, sb));
+    panel.append(
+      grid1,
+      grid2,
+      grid3,
+      el("p", { class: "foot", text: "Forward-looking figures on this page are statistical estimates from past prices and the latest published accounts. They are not return forecasts and not investment advice." })
+    );
+  }
+
+  function outlookTiles(st, mine, gv, bs) {
+    const f = st.fund;
+    const vol1y = once(`vol1y|${st.id}`, () => M.stockStats(ctx, st, "local").vol1y); // same currency as the GARCH fit
+    const m = mine.MKT;
+    const r = mine.RATES;
+    const g = gv && gv.g;
+    const price = lastPrice(st);
+    const year = g && isNum(price) ? M.priceRange(price, g, 252, 1) : null;
+    const dp = price >= 100 ? 0 : price >= 5 ? 1 : 2;
+    const cns = f.consensus || {};
+    const zTarget = year && isNum(cns.target_mean) ? Math.log(cns.target_mean / price) / year.sd : NaN;
+    const today = todayIso();
+    const results = f.next_results && f.next_results >= today ? f.next_results : null;
+    return el(
+      "div",
+      { class: "tiles-wrap" },
+      el(
+        "div",
+        { class: "tiles", "data-n": "8" },
+        U.tile("Market beta, next 12M", m ? U.num(m.forecast, 2) : DASH, m ? `${pastExposure("MKT", m)}; peers ${U.num(m.peers, 2)}` : "not enough history"),
+        U.tile("Rate sensitivity, next 12M", r ? expFmt("RATES", expUnits("RATES", r.forecast)) : DASH, r ? `per +10bp; ${pastExposure("RATES", r)}` : "not enough history"),
+        U.tile("Volatility, next month", g ? U.pct(Math.sqrt((FA.garchCumVar(g, 21) / 21) * 252), 0) : DASH, g ? `long-run ${U.pct(Math.sqrt(g.lrVar * 252), 0)}; last year ${U.pct(vol1y, 0)}` : "not enough history"),
+        U.tile("Price in 12 months", year ? `${U.num(year.lo, dp)}–${U.num(year.hi, dp)}` : DASH, year ? `${st.meta.currency}, two in three outcomes` : ""),
+        U.tile("Consensus target", isNum(zTarget) ? `${U.num(zTarget, 1, true)}σ` : DASH, isNum(cns.target_mean) ? `${U.money(cns.target_mean, st.meta.currency)} mean, ${U.pct(cns.upside, 0, true)}` : "no consensus on Yahoo Finance"),
+        U.tile("Implied property values", bs ? U.pct(bs.implied, 0, true) : DASH, bs ? `vs book, at P/B ${U.mult(f.pb)}` : "accounts incomplete"),
+        U.tile("Value fall to 50% LTV", bs ? (isNum(bs.headroom50) ? U.pct(bs.headroom50, 0) : "Net cash") : DASH, bs ? `LTV proxy ${U.pct(bs.ltvNow, 0)} today` : ""),
+        results
+          ? U.tile("Next results", U.date(results, false), `${results.slice(0, 4)}, in ${daysBetween(today, results)} days`)
+          : U.tile("Last results", f.last_results ? U.date(f.last_results, false) : DASH, f.last_results ? `${f.last_results.slice(0, 4)}; next date not published` : "no dates on Yahoo Finance")
+      )
+    );
+  }
+
+  function exposureForecastCard(st, fc, mine) {
+    const span = fc.firstOrigin ? `${fc.firstOrigin.slice(0, 4)}–${fc.lastOrigin.slice(0, 4)}` : "";
+    const c = U.card(
+      "Where exposures are heading",
+      `Forecast average exposure over the next 12 months, from weekly ${state.ccy === "EUR" ? "EUR" : "local-currency"} returns on the macro model. It blends the 2-year and 1-year estimates with the ${st.meta.subsector} median, weighted by how well each predicted the following year across the coverage (forecasts made ${span}).`
+    );
+    const ids = fc.ok ? fc.factors.filter((id) => mine[id]) : [];
+    if (!ids.length) {
+      c.body.appendChild(failBox("Not enough weekly history to forecast this stock's exposures."));
+      return c.root;
+    }
+    const pick = ids.includes(state.ofac) ? state.ofac : ids.includes("RATES") ? "RATES" : ids[0];
+    c.tools.appendChild(
+      U.seg(
+        ids.map((id) => ({ value: id, label: factorName(id) })),
+        pick,
+        (v) => {
+          state.ofac = v;
+          persist();
+          renderPanel();
+        },
+        "Exposure to chart"
+      )
+    );
+    const t = C.tokens();
+    const box = chartBox();
+    c.body.append(
+      U.legend([
+        { label: `${st.meta.name}: rolling 52 weeks, then the forecast (dashed)`, color: t.series[0] },
+        { label: "Likely range", color: `color-mix(in srgb, ${t.series[0]} 30%, #ffffff)` },
+        { label: `${st.meta.subsector} median today`, color: t.series[1] },
+      ]),
+      box
+    );
+    draw(() => {
+      const roll = once(`rollmacro|${st.id}|${state.ccy}`, () => M.rollingFit(ctx, st, macroIds(), { freq: "W", ccy: state.ccy }));
+      const x = mine[pick];
+      const u = (v) => expUnits(pick, v);
+      const from = M.shiftYears(ctx.dates[ctx.asOfIndex], 3);
+      const hist = roll.ok && roll.beta[pick] ? roll.dates.map((d, k) => [d, u(roll.beta[pick][k])]).filter((p) => p[0] >= from && isNum(p[1])) : [];
+      const ahead = [ctx.dates[ctx.asOfIndex], ...futureWeeks(52)];
+      const flat = (v) => ahead.map((d) => [d, u(v)]);
+      const lines = [
+        { name: "Rolling 52 weeks", data: hist, color: t.series[0], width: 2 },
+        { name: "Forecast", data: flat(x.forecast), color: t.series[0], width: 2, dashed: true },
+        { name: `${st.meta.subsector} median`, data: flat(x.peers), color: t.series[1], width: 1.6 },
+        { name: "Range high", data: flat(x.hi), color: t.series[0], invisible: true },
+        { name: "Range low", data: flat(x.lo), color: t.series[0], invisible: true },
+      ];
+      C.line(box, lines, {
+        bands: [{ lo: flat(x.lo), hi: flat(x.hi), color: t.series[0], opacity: 0.14 }],
+        yFmt: (v) => (perShock(pick) ? `${U.num(v, 1)}%` : U.num(v, 1)),
+        tipFmt: (v) => expFmt(pick, v),
+        height: 250,
+        zeroLine: true,
+        dateFmt: U.date,
+      });
+    });
+    const rows = ids.map((id) => {
+      const x = mine[id];
+      return {
+        id,
+        factor: perShock(id) ? `${factorName(id)} (${F[id].shockLabel})` : factorName(id),
+        long: expUnits(id, x.long),
+        short: expUnits(id, x.short),
+        peers: expUnits(id, x.peers),
+        forecast: expUnits(id, x.forecast),
+        lo: expUnits(id, x.lo),
+        hi: expUnits(id, x.hi),
+        basis: x.basis,
+      };
+    });
+    c.body.appendChild(
+      U.table(
+        [
+          { key: "factor", label: "Exposure" },
+          { key: "long", label: "2 years", num: true, fmt: (v, r) => expFmt(r.id, v) },
+          { key: "short", label: "Last year", num: true, fmt: (v, r) => expFmt(r.id, v) },
+          { key: "peers", label: "Peers", num: true, fmt: (v, r) => expFmt(r.id, v), title: `${st.meta.subsector} median of the 2-year estimates` },
+          { key: "forecast", label: "Next 12M", num: true, fmt: (v, r) => expFmt(r.id, v) + (r.basis === "short" ? "*" : "") },
+          { key: "lo", label: "Likely range", num: true, fmt: (v, r) => `${expFmt(r.id, r.lo)} to ${expFmt(r.id, r.hi)}` },
+        ],
+        rows,
+        { sortable: false, compact: true }
+      )
+    );
+    const weights = ids.map((id) => {
+      const w = fc.weights[id];
+      return `${factorName(id)} ${U.num(w.long * 100, 0)} · ${U.num(w.short * 100, 0)} · ${U.num(w.peers * 100, 0)}`;
+    });
+    const gains = ids.map((id) => 1 - fc.weights[id].rmse / fc.weights[id].rmseLong).filter(isNum);
+    const notes = [
+      `Weights in % for the 2-year estimate, the last year and the peer median: ${weights.join("; ")}. They come from all stocks, so they are the same for every stock.`,
+      `Across the coverage these forecasts missed the next year's exposure by ${U.pct(Math.min(...gains), 0)}–${U.pct(Math.max(...gains), 0)} less than the 2-year estimate on its own. The likely range is plus or minus the typical miss; about two in three past outcomes fell inside it.`,
+    ];
+    if (rows.some((r) => r.basis === "short")) notes.push("* Listed for less than two years: the forecast uses the 1-year estimate.");
+    c.body.appendChild(note(notes.join(" ")));
+    return c.root;
+  }
+
+  function watchCard(st, fc, mine, gv, bs, sb) {
+    const c = U.card("What to watch", "Generated from the forecasts on this page; check before quoting.");
+    const list = el("ul", { class: "takeaways" });
+    for (const item of watchItems(st, fc, mine, gv, bs, sb)) list.appendChild(el("li", null, el("span", { class: "tag", text: item.tag }), el("span", { text: item.text })));
+    if (!list.children.length) list.appendChild(el("li", null, el("span", { class: "tag", text: "Data" }), el("span", { text: "Not enough history to look ahead for this stock yet." })));
+    c.body.appendChild(list);
+    return c.root;
+  }
+
+  function watchItems(st, fc, mine, gv, bs, sb) {
+    const out = [];
+    const f = st.fund;
+    const qccy = st.meta.currency;
+    const r = mine.RATES;
+    if (r) {
+      const [a, b, p] = [r.long, r.short, r.forecast].map((v) => expUnits("RATES", v));
+      const err = expUnits("RATES", fc.weights.RATES.rmse);
+      let trend = "";
+      if (Math.abs(b) > Math.abs(a) + err / 2) trend = " The last year has been more rate-sensitive than the two-year average, so the exposure is building.";
+      else if (Math.abs(b) < Math.abs(a) - err / 2) trend = " The last year has been less rate-sensitive than the two-year average, so the exposure is fading.";
+      out.push({
+        tag: "Rates",
+        text: `Expect about ${expFmt("RATES", p)} per +10bp in the ${rateLabel(st)} over the next 12 months (likely ${expFmt("RATES", expUnits("RATES", r.lo))} to ${expFmt("RATES", expUnits("RATES", r.hi))}), against ${pastExposure("RATES", r)}.${trend}`,
+      });
+    }
+    const m = mine.MKT;
+    if (m) {
+      const how = m.forecast > 1.1 ? "move more than" : m.forecast < 0.9 ? "move less than" : "move roughly in line with";
+      const past = [isNum(m.long) ? `two years ${U.num(m.long, 2)}` : null, isNum(m.short) ? `last year ${U.num(m.short, 2)}` : null].filter(Boolean).join(", ");
+      out.push({ tag: "Market", text: `Forecast market beta ${U.num(m.forecast, 2)} (${past}): the shares should ${how} European equities; a 10% market fall implies about ${U.pct(-0.1 * m.forecast, 1)} from the market alone.` });
+    }
+    if (gv) {
+      const g = gv.g;
+      const vol = (h) => Math.sqrt((FA.garchCumVar(g, h) / h) * 252);
+      const lr = Math.sqrt(g.lrVar * 252);
+      const ratio = vol(21) / lr;
+      const regime = ratio > 1.15 ? `above its long-run level of ${U.pct(lr, 0)}, and the model expects it to ease` : ratio < 0.87 ? `below its long-run level of ${U.pct(lr, 0)}, and the model expects it to drift back up` : `close to its long-run level of ${U.pct(lr, 0)}`;
+      const fade = isNum(g.halfLife) ? ` Shocks fade with a half-life of about ${U.num(g.halfLife, 0)} trading days.` : "";
+      out.push({ tag: "Volatility", text: `Expected volatility is ${U.pct(vol(21), 0)} for the next month, ${regime}.${fade}` });
+    }
+    const cns = f.consensus || {};
+    const price = lastPrice(st);
+    if (gv && isNum(cns.target_mean) && isNum(price)) {
+      const sd = Math.sqrt(FA.garchCumVar(gv.g, 252));
+      const z = Math.log(cns.target_mean / price) / sd;
+      const prob = 1 - FA.normCdf(z);
+      out.push({
+        tag: "Consensus",
+        text: `The mean target of ${U.money(cns.target_mean, qccy)} is ${U.num(Math.abs(z), 1)} standard deviations of a year's move ${z >= 0 ? "above" : "below"} the price. With the forecast volatility and no drift, the shares would end a year above it about ${U.pct(prob, 0)} of the time.`,
+      });
+    }
+    if (bs) {
+      const down10 = bs.rows.find((x) => Math.abs(x.change + 0.1) < 1e-9);
+      const reach = isNum(bs.headroom50) ? ` and would reach 50% after a ${U.pct(-bs.headroom50, 0)} fall` : "";
+      out.push({
+        tag: "Valuation",
+        text: `The share price implies property values ${U.pct(Math.abs(bs.implied), 0)} ${bs.implied >= 0 ? "above" : "below"} book. If values fell 10% from book, the LTV proxy would rise from ${U.pct(bs.ltvNow, 0)} to ${down10 ? U.pct(down10.ltv, 0) : DASH}${reach}.`,
+      });
+    }
+    if (sb.ok) {
+      const strong = sb.signals.filter((s) => isNum(s.t) && Math.abs(s.t) >= 2 && isNum(s.percentile[st.i]));
+      if (!strong.length) {
+        out.push({ tag: "Signals", text: `No price signal has a reliable record in this coverage since ${sb.first.slice(0, 4)} (all |t| below 2), so recent price action says little about next month.` });
+      }
+      for (const s of strong.slice(0, 2)) {
+        const p = s.percentile[st.i];
+        const good = s.ic > 0 ? p : 1 - p;
+        const reading = good >= 2 / 3 ? "a tailwind" : good <= 1 / 3 ? "a headwind" : "neutral";
+        out.push({
+          tag: "Signals",
+          text: `${s.label} has ${s.ic > 0 ? "pointed the right way" : "worked in reverse"} for next-month returns in this coverage (rank IC ${U.num(s.ic, 2, true)}, t ${U.num(s.t, 1)}). ${st.meta.name} is in the ${U.ordinal(Math.round(p * 100))} percentile, which reads as ${reading}.`,
+        });
+      }
+    }
+    const today = todayIso();
+    if (f.next_results && f.next_results >= today) out.push({ tag: "Calendar", text: `Results due ${U.date(f.next_results)}, in ${daysBetween(today, f.next_results)} days.` });
+    else if (f.last_results) out.push({ tag: "Calendar", text: `Last results ${U.date(f.last_results)}; the next date is not on Yahoo Finance yet.` });
+    return out;
+  }
+
+  function priceRangeCard(st, gv) {
+    const qccy = st.meta.currency;
+    const c = U.card("Price range ahead", `Share price over the past year and the range for the next 12 months implied by the volatility forecast, assuming no drift. The darker band holds about two in three outcomes, the lighter one 19 in 20. In ${qccy}.`);
+    const price = lastPrice(st);
+    if (!gv || !isNum(price)) {
+      c.body.appendChild(failBox("Not enough daily history for a volatility forecast."));
+      return c.root;
+    }
+    const g = gv.g;
+    const cns = st.fund.consensus || {};
+    const t = C.tokens();
+    const box = chartBox();
+    const legend = [
+      { label: "Price", color: t.series[0] },
+      { label: "Range: two in three, 19 in 20", color: `color-mix(in srgb, ${t.series[0]} 30%, #ffffff)` },
+    ];
+    if (isNum(cns.target_mean)) legend.push({ label: "Consensus mean target", color: t.series[1] });
+    const dp = price >= 100 ? 0 : price >= 5 ? 1 : 2;
+    const range = (h) => {
+      const x = M.priceRange(price, g, h, 1);
+      return `${U.num(x.lo, dp)}–${U.num(x.hi, dp)}`;
+    };
+    const ranges = el(
+      "div",
+      { class: "stats-line" },
+      el("span", null, "1 month ", el("b", { text: range(21) })),
+      el("span", null, "3 months ", el("b", { text: range(63) })),
+      el("span", null, "12 months ", el("b", { text: range(252) })),
+      isNum(cns.target_low) && isNum(cns.target_high) ? el("span", null, "Target range ", el("b", { text: `${U.num(cns.target_low, dp)}–${U.num(cns.target_high, dp)}` })) : null
+    );
+    c.body.append(U.legend(legend), box, ranges, note("Ranges hold about two in three outcomes. Total returns also include dividends, which the price path leaves out."));
+    draw(() => {
+      const end = st.last;
+      const start = Math.max(M.indexOnOrBefore(ctx.dates, M.shiftYears(ctx.dates[end], 1)), st.first);
+      const hist = seriesPoints(st.px, start, end, false);
+      const weeks = futureWeeks(52);
+      const d0 = ctx.dates[end];
+      const edge = (z, side) => [[d0, price], ...weeks.map((d, k) => [d, M.priceRange(price, g, 5 * (k + 1), z)[side]])];
+      const lines = [
+        { name: "Price", data: hist, color: t.series[0], width: 2 },
+        { name: "19 in 20: high", data: edge(1.96, "hi"), color: t.series[0], invisible: true },
+        { name: "Two in three: high", data: edge(1, "hi"), color: t.series[0], invisible: true },
+        { name: "Two in three: low", data: edge(1, "lo"), color: t.series[0], invisible: true },
+        { name: "19 in 20: low", data: edge(1.96, "lo"), color: t.series[0], invisible: true },
+      ];
+      if (isNum(cns.target_mean)) lines.push({ name: "Mean target", data: weeks.map((d) => [d, cns.target_mean]), color: t.series[1], width: 1.6 });
+      C.line(box, lines, {
+        bands: [
+          { lo: edge(1.96, "lo"), hi: edge(1.96, "hi"), color: t.series[0], opacity: 0.1 },
+          { lo: edge(1, "lo"), hi: edge(1, "hi"), color: t.series[0], opacity: 0.16 },
+        ],
+        yFmt: (v) => U.num(v, dp),
+        tipFmt: (v) => U.money(v, qccy),
+        height: 280,
+        dateFmt: U.date,
+      });
+    });
+    return c.root;
+  }
+
+  function volOutlookCard(st, gv) {
+    const c = U.card("Volatility ahead", "Annualised volatility of daily total returns: realised over 63 days, the GARCH(1,1) estimate, and its forecast path back towards the long-run level over the next 12 months. Fitted on the last three years in the quote currency.");
+    if (!gv) {
+      c.body.appendChild(failBox("Not enough daily history for a volatility forecast."));
+      return c.root;
+    }
+    const g = gv.g;
+    const t = C.tokens();
+    const box = chartBox();
+    const vol = (h) => Math.sqrt((FA.garchCumVar(g, h) / h) * 252);
+    c.body.append(
+      U.legend([
+        { label: "GARCH estimate, then the forecast (dashed)", color: t.series[0] },
+        { label: "Realised, 63 days", color: t.series[1] },
+        { label: "Long-run level", color: t.series[2] },
+      ]),
+      box,
+      el(
+        "div",
+        { class: "stats-line" },
+        el("span", null, "Next month ", el("b", { text: U.pct(vol(21), 0) })),
+        el("span", null, "Next 3 months ", el("b", { text: U.pct(vol(63), 0) })),
+        el("span", null, "Next year ", el("b", { text: U.pct(vol(252), 0) })),
+        el("span", null, "Long-run ", el("b", { text: U.pct(Math.sqrt(g.lrVar * 252), 0) })),
+        el("span", null, "Persistence ", el("b", { text: U.num(g.persistence, 3) }))
+      )
+    );
+    draw(() => {
+      const from = M.shiftYears(ctx.dates[ctx.asOfIndex], 2);
+      const startIdx = Math.max(M.indexOnOrBefore(ctx.dates, from), 0);
+      const realised = rollingVol(st.tri, startIdx, st.last, st.obs);
+      const hist = gv.dates.map((d, k) => [d, Math.sqrt(g.condVar[k] * 252) * 100]).filter((p) => p[0] >= from);
+      const weeks = futureWeeks(52);
+      const d0 = gv.dates[gv.dates.length - 1];
+      const path = [[d0, Math.sqrt(g.nextVar * 252) * 100], ...weeks.map((d, k) => [d, Math.sqrt(FA.garchVarAt(g, 5 * (k + 1)) * 252) * 100])];
+      const lr = Math.sqrt(g.lrVar * 252) * 100;
+      const lines = [
+        { name: "GARCH estimate", data: hist, color: t.series[0], width: 2 },
+        { name: "Forecast", data: path, color: t.series[0], width: 2, dashed: true },
+        { name: "Realised, 63 days", data: realised, color: t.series[1], width: 1.6 },
+        { name: "Long-run level", data: hist.map((p) => [p[0], lr]).concat(weeks.map((d) => [d, lr])), color: t.series[2], width: 1.2 },
+      ];
+      C.line(box, lines, { yFmt: (v) => `${U.num(v, 0)}%`, tipFmt: (v) => `${U.num(v, 1)}%`, height: 260, dateFmt: U.date });
+    });
+    return c.root;
+  }
+
+  function impliedValueCard(st, bs) {
+    const f = st.fund;
+    const qccy = st.meta.currency;
+    const c = U.card(
+      "What the share price implies",
+      `Property values implied by the share price, and NAV per share and the LTV proxy if values move. IFRS equity stands in for NAV and total assets less cash for the portfolio${f.balance_sheet_date ? ` (accounts at ${U.date(f.balance_sheet_date)})` : ""}, so treat this as a first approximation to EPRA NTA and LTV.`
+    );
+    if (!bs) {
+      c.body.appendChild(failBox("The balance sheet on Yahoo Finance is incomplete for this stock."));
+      return c.root;
+    }
+    const rows = bs.rows.concat([{ ...bs.impliedRow, implied: true }]).sort((a, b) => a.change - b.change);
+    c.body.appendChild(
+      U.table(
+        [
+          { key: "change", label: "Values vs book", fmt: (v, r) => (r.implied ? `${U.pct(v, 1, true)} priced in` : v === 0 ? "Book" : U.pct(v, 0, true)) },
+          { key: "nav", label: "NAV/share", num: true, fmt: (v) => U.money(v, qccy) },
+          { key: "navChange", label: "NAV change", num: true, fmt: (v) => U.pct(v, 0, true), cls: U.signClass },
+          { key: "pnav", label: "P/NAV", num: true, fmt: (v) => U.mult(v), title: "Today's share price over the NAV per share in each case" },
+          { key: "ltv", label: "LTV", num: true, fmt: (v) => U.pct(v, 0), title: "LTV proxy: net debt over total assets less cash" },
+        ],
+        rows,
+        { sortable: false, compact: true, rowClass: (r) => (r.implied ? "sel" : "") }
+      )
+    );
+    const parts = [];
+    if (isNum(bs.headroom50)) parts.push(el("span", null, "Values can fall ", el("b", { text: U.pct(-bs.headroom50, 0) }), " before the LTV proxy reaches 50%, and ", el("b", { text: U.pct(-bs.headroom60, 0) }), " before 60%"));
+    else parts.push(el("span", null, "Net cash: no LTV constraint"));
+    if (isNum(bs.coverStressed)) parts.push(el("span", null, "Interest cover ", el("b", { text: `${U.num(bs.coverNow, 1)}x` }), " now, ", el("b", { text: `${U.num(bs.coverStressed, 1)}x` }), " if all debt cost 1 percentage point more"));
+    c.body.append(el("div", { class: "stats-line" }, parts), note("The highlighted row is the value change at which NAV equals the share price. Covenants usually sit at 50–65% LTV on company definitions, which differ from this proxy."));
+    return c.root;
+  }
+
+  function signalsCard(st, sb) {
+    const c = U.card(
+      "Price signals and their record",
+      sb.ok ? `Each month from ${U.monthYear(sb.first)} to ${U.monthYear(sb.last)}, the coverage was ranked on each signal and compared with the next month's EUR total return. Rank IC is the average rank correlation (0 = no information); |t| above 2 suggests the record is not luck.` : ""
+    );
+    if (!sb.ok) {
+      c.body.appendChild(failBox("Not enough monthly history to test signals."));
+      return c.root;
+    }
+    const rows = sb.signals.map((s) => {
+      const p = s.percentile[st.i];
+      const reliable = isNum(s.t) && Math.abs(s.t) >= 2;
+      const good = s.ic > 0 ? p : 1 - p;
+      return {
+        label: s.label,
+        desc: s.desc,
+        pct: p,
+        ic: s.ic,
+        t: s.t,
+        hit: s.hit,
+        reading: !isNum(p) ? DASH : !reliable ? "No reliable record" : good >= 2 / 3 ? "Tailwind" : good <= 1 / 3 ? "Headwind" : "Neutral",
+      };
+    });
+    c.body.append(
+      U.table(
+        [
+          { key: "label", label: "Signal", fmt: (v, r) => el("span", { title: r.desc, text: v }) },
+          { key: "pct", label: "Today", num: true, fmt: (v) => (isNum(v) ? `${U.ordinal(Math.round(v * 100))} pct.` : DASH), title: `${st.meta.name}'s percentile in the coverage: 0 = lowest signal, 100 = highest` },
+          { key: "ic", label: "Rank IC", num: true, fmt: (v) => U.num(v, 2, true), title: "Average monthly rank correlation between the signal and the next month's return" },
+          { key: "t", label: "t", num: true, fmt: (v) => U.num(v, 1) },
+          { key: "reading", label: "Reading" },
+        ],
+        rows,
+        { sortable: false, compact: true }
+      ),
+      note(
+        `Months with a positive rank IC: ${rows.map((r) => `${r.label.replace(/ \(.*\)$/, "").toLowerCase()} ${U.pct(r.hit, 0)}`).join(", ")}. A tailwind needs a reliable record and a position in the favourable third of the coverage; for a signal that works in reverse, the low end is favourable. Hover a signal for its definition.`
+      )
+    );
+    return c.root;
+  }
+
   // ------------------------------------------------------------------ attribution
   function attributionView(panel) {
     const st = sel();
@@ -1865,6 +2328,11 @@
         P("Each trading day's return is split into exposure × factor return plus a stock-specific remainder. Exposures are re-estimated at the start of every month using only the preceding window, so the attribution uses no information from the future. Daily pieces are linked with the Carino method so they add up exactly to the period return."),
         el("h3", { text: "Risk and scenarios" }),
         P("Variance is decomposed as exposure × factor covariance × exposure plus residual variance (Euler contributions). Scenarios multiply the chosen shocks by each stock's macro exposures; with correlated moves on, unshocked factors take their conditional expectation given the shocks, from the factor covariance in the window."),
+        el("h3", { text: "Outlook" }),
+        P(`Exposure forecasts: every four weeks since the data allow, each stock's 2-year and 1-year weekly exposures to the macro factors were recorded next to its sub-sector median and the exposure it actually showed over the following 52 weeks. A regression pooled across the coverage sets how much weight the 2-year estimate, the last year and the peer median deserve, and the same weights give today's forecast. The likely range is plus or minus the typical forecast error. These forecasts use fixed windows, so only the currency setting applies to them.`),
+        P("Volatility and price ranges: a GARCH(1,1) model with the long-run variance set to the sample variance, fitted by maximum likelihood to the last three years of daily total returns in the quote currency. Price ranges assume no drift: after h days the price sits within exp(±z·σ) of today's price, with σ the forecast volatility of the h-day return (z = 1 for two in three outcomes, 1.96 for 19 in 20)."),
+        P("What the price implies: IFRS equity stands in for NAV and total assets less cash for the property portfolio. The implied value change is the move in property values that would make NAV equal to the market value; NAV per share and the LTV proxy are recomputed for other value changes. The interest-cover stress adds one percentage point of interest on all gross debt."),
+        P("Signals: at each month-end the coverage is ranked on each price signal, and the Spearman rank correlation with the next month's EUR total return is recorded (the rank IC). t is the average IC divided by its standard error."),
         el("h3", { text: "Fundamentals" }),
         P("Book value, debt, cash and EBITDA come from the latest Yahoo Finance statements, converted into the quote currency. P/B uses IFRS book value as a proxy for NAV, and the LTV proxy is net debt over total assets less cash; both differ from company-reported EPRA figures. EBITDA-based ratios are left out when Yahoo's EBITDA margin looks distorted by revaluations. Consensus targets and ratings are Yahoo Finance's aggregates."),
         el("h3", { text: "Coverage notes" }),

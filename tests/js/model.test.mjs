@@ -192,3 +192,47 @@ test("episodes outside the data range are skipped", () => {
   const imp = M.episodeImpact(ctx, ctx.byId.AAA, fit, tariffs, "local");
   assert.ok(imp && Number.isFinite(imp.implied) && Number.isFinite(imp.actual));
 });
+
+test("exposure forecast recovers persistent exposures and beats the peer median", () => {
+  const fc = M.exposureForecast(ctx, ["MKT", "RATES"], { ccy: "local", longWeeks: 52, shortWeeks: 26, horizonWeeks: 26, stepWeeks: 2 });
+  assert.ok(fc.ok);
+  for (const id of ["MKT", "RATES"]) {
+    const w = fc.weights[id];
+    assert.ok(w.long >= 0 && w.short >= 0 && w.long + w.short <= 1 + 1e-12, `${id} weights`);
+    assert.ok(w.rmse <= w.rmsePeers + 1e-12, `${id} forecast beats the peer median alone`);
+  }
+  for (const [id, bm, br] of [["AAA", 1.2, -0.0008], ["CCC", 1.0, -0.0012]]) {
+    const x = fc.stocks[ctx.byId[id].i];
+    assert.ok(Math.abs(x.MKT.forecast - bm) < 0.15, `${id} market ${x.MKT.forecast}`);
+    assert.ok(Math.abs(x.RATES.forecast - br) < 0.0004, `${id} rates ${x.RATES.forecast}`);
+    assert.ok(x.MKT.lo < x.MKT.forecast && x.MKT.forecast < x.MKT.hi);
+  }
+});
+
+test("balance sheet outlook: implied values price NAV at the share price", () => {
+  const fund = { equity: 600, total_assets: 1000, cash: 0, net_debt: 350, total_debt: 400, shares: 100, market_cap: 500, price: 5, ebitda: 50, interest_cover: 5 };
+  const bs = M.balanceSheetOutlook(fund);
+  assert.ok(Math.abs(bs.implied + 0.1) < 1e-12);
+  assert.ok(Math.abs(bs.impliedRow.pnav - 1) < 1e-12);
+  assert.ok(Math.abs(bs.ltvNow - 0.35) < 1e-12);
+  assert.ok(Math.abs(bs.headroom50 + 0.3) < 1e-12);
+  assert.ok(Math.abs(fund.net_debt / (bs.assets * (1 + bs.headroom60)) - 0.6) < 1e-12);
+  assert.ok(Math.abs(bs.coverStressed - 50 / 14) < 1e-12);
+  assert.equal(M.balanceSheetOutlook({ ...fund, equity: null }), null);
+});
+
+test("price range is symmetric in log terms around today's price", () => {
+  const g = { persistence: 0.95, lrVar: 1e-4, nextVar: 2e-4 };
+  const r = M.priceRange(10, g, 21, 1);
+  assert.ok(Math.abs(r.lo * r.hi - 100) < 1e-9);
+  assert.ok(r.hi > 10 && r.lo < 10);
+});
+
+test("signal backtest yields rank ICs and percentiles for every signal", () => {
+  const sb = M.signalBacktest(ctx, { minStocks: 3 });
+  assert.ok(sb.ok && sb.months > 12);
+  for (const s of sb.signals) {
+    assert.ok(Number.isFinite(s.ic) && Math.abs(s.ic) <= 1, `${s.id} ic`);
+    for (const p of s.percentile) assert.ok(Number.isNaN(p) || (p >= 0 && p <= 1), `${s.id} percentile ${p}`);
+  }
+});

@@ -14,18 +14,21 @@ A factor exposure dashboard for the 55 European listed real estate stocks in the
 
 ## What the dashboard shows
 
-The model, return frequency (daily, weekly, monthly), estimation window (1 to 5 years) and currency view (local or EUR) at the top apply to every view.
+The model, return frequency (daily, weekly, monthly), estimation window (1 to 5 years) and currency view (local or EUR) at the top apply to every view except the Outlook forecasts, which use fixed windows and follow only the currency setting.
 
 | View | What it shows |
 | --- | --- |
 | **Overview** | Price and key figures (market cap, P/B, dividend yield, beta, rate sensitivity, volatility, consensus upside). Factor profile with the sub-sector median. Auto-generated takeaways for client conversations. Stock-specific return with z-scores. Performance against sub-sector, coverage and STOXX 600. Returns table and technicals. Valuation, balance sheet and consensus. Company profile. |
 | **Factor exposures** | Full regression table with Newey-West t-statistics, sub-sector medians, ranks and variance shares. Each exposure plotted against all 55 stocks. Rolling exposures with ±2 standard error bands. |
 | **Macro & scenarios** | Sensitivity to the home 10Y yield, EUR 2Y/10Y, curve, credit, FX, oil and volatility, both on its own and with the market held constant. Rate sensitivity over time against peers. A scenario builder (rates, equities, credit, FX, with optional correlated moves) that ranks all 55 stocks. Replays of stress episodes: COVID, the 2022 rate shock, the UK mini-budget, bank stress in 2023, the late-2023 rally, the 2025 German fiscal package and the 2025 US tariff shock. |
+| **Outlook** | What to expect next. Forecasts of market beta, rate sensitivity, credit and FX exposure for the next 12 months, with a likely range and their track record across the coverage. A GARCH volatility forecast and the 12-month price range it implies, set against the consensus target. Property values implied by the share price, with NAV and LTV if values move, the value fall that takes LTV to 50% or 60%, and interest cover if debt costs rise. Price signals (momentum, reversal, low volatility, 52-week high) and how well each has predicted returns in this coverage. Auto-generated points to watch, including the next results date. |
 | **Attribution** | Splits 1M to 3Y returns into factor contributions and a stock-specific part. Exposures are re-estimated monthly with no look-ahead and linked with the Carino method. Also compares stock-specific returns across the sub-sector. |
 | **Risk** | Systematic and specific volatility, drawdown, VaR and expected shortfall. Where the variance comes from. Rolling volatility. Closest peers with pair-spread z-scores for pair ideas. Sub-sector correlation matrix. |
 | **Peers & value** | Relative value scatter on any two measures (for example rate sensitivity against P/B) with a fitted line. Style characteristics as z-scores. Sub-sector peer table. |
 | **Coverage** | Exposure heatmap for all 55 stocks. Sortable coverage table that can be copied to Excel. Sub-sector medians. |
 | **Data & method** | Freshness and source of every input, and how each number is calculated. |
+
+![The Outlook view for SEGRO: exposure forecasts and points to watch](docs/img/outlook.png)
 
 ## Factors
 
@@ -71,6 +74,10 @@ When a source fails, the build reuses that series from the previous refresh and 
 - **Attribution.** Exposure × factor return each day, with exposures re-estimated at each month start from the preceding window. Contributions are Carino-linked so they sum to the period return.
 - **Risk.** Euler decomposition of exposure × factor covariance × exposure, plus residual variance.
 - **Scenarios.** Shocks × macro exposures. With correlated moves on, unshocked factors take their conditional expectation given the shocks.
+- **Exposure forecasts.** Every four weeks since 2021, each stock's 2-year and 1-year weekly exposures were recorded next to its sub-sector median and the exposure it showed over the following 52 weeks. A regression pooled across the coverage fits the weight on each; today's forecast uses the same weights. The likely range is plus or minus the typical forecast error. The view reports how much smaller the forecast errors were than the 2-year estimate's (9–14% smaller in September 2026). The peer median carries most of the weight: exposures drift strongly towards their sub-sector.
+- **Volatility and price ranges.** GARCH(1,1) with variance targeting, fitted by maximum likelihood to three years of daily total returns. Price ranges assume no drift.
+- **Implied property values.** The change in property values (total assets less cash) that would make IFRS equity equal to the market value. NAV and the LTV proxy are recomputed for other value changes.
+- **Signals.** Monthly Spearman rank correlation (rank IC) between each signal and the next month's EUR total return across the coverage; t is the average IC over its standard error.
 - **Fundamentals.** From the latest Yahoo statements, converted to the quote currency. P/B uses IFRS book value as a NAV proxy. The LTV proxy is net debt over total assets less cash. EBITDA ratios are dropped when Yahoo's EBITDA margin looks distorted by revaluations. Consensus targets and ratings are Yahoo's aggregates.
 
 ## Known limitations

@@ -902,6 +902,365 @@
     return { z: s > 0 ? (last - m) / s : NaN, change3m: Math.exp(last - m3) - 1 };
   }
 
+  // ------------------------------------------------------------------ outlook
+  const FORECAST = { longWeeks: 104, shortWeeks: 52, horizonWeeks: 52, stepWeeks: 4 };
+
+  /** Median of the finite values, NaN when there are none. */
+  const medianOf = (a) => {
+    const v = FA.finite(a);
+    return v.length ? FA.median(v) : NaN;
+  };
+
+  /** Clip values to the given quantiles of their own distribution. */
+  function winsorise(values, lo = 0.01, hi = 0.99) {
+    const qlo = FA.quantile(values, lo);
+    const qhi = FA.quantile(values, hi);
+    return values.map((v) => Math.min(Math.max(v, qlo), qhi));
+  }
+
+  /**
+   * Forecast of each stock's average exposure over the next 52 weeks.
+   *
+   * Every four weeks back to the start of the data, each stock gets a 2-year
+   * and a 1-year weekly estimate, the median 2-year estimate of its sub-sector
+   * peers, and the exposure it actually showed over the following 52 weeks.
+   * A regression pooled across the coverage measures how much of each
+   * estimate's gap to the peer median carried into the next year:
+   *   realised - median = b2y (2y - median) + b1y (1y - median).
+   * Today's forecast applies those weights to today's estimates, and the
+   * range is plus or minus the typical forecast error. Market-orthogonalised
+   * factors are skipped (their windows would need re-orthogonalising).
+   */
+  function exposureForecast(ctx, factorIds, opts = {}) {
+    const cfg = { ...FORECAST, ...opts };
+    const ccy = opts.ccy || "local";
+    const ids = factorIds.filter((id) => FACTOR_BY_ID[id] && !FACTOR_BY_ID[id].orth);
+    const weekEnds = [];
+    for (let t = 0; t < ctx.n; t++) if (ctx.weekEnd[t]) weekEnds.push(t);
+    const origins = [];
+    for (let k = weekEnds.length - 1; k >= 0; k -= cfg.stepWeeks) origins.unshift(weekEnds[k]);
+    const nowK = origins.length - 1;
+    // Weeks can be missing for a stock, so windows are checked in calendar days too.
+    const maxSpan = (weeks) => weeks * 7 * 1.25;
+
+    const est = ctx.stocks.map((st) => {
+      const panel = buildPanel(ctx, st, ids, { freq: "W", ccy, startIdx: 0, endIdx: ctx.asOfIndex });
+      const fids = panel.factors.map((f) => f.id);
+      const rows = panel.rows;
+      const last = rows.length - 1;
+      const betas = (lo, hi) => {
+        if (lo < 0 || hi > last) return null;
+        if (ctx.dayNum[rows[hi]] - ctx.dayNum[rows[lo]] > maxSpan(hi - lo + 1)) return null;
+        const coef = FA.olsCoef(panel.y, panel.cols, lo, hi);
+        return coef ? Object.fromEntries(fids.map((id, j) => [id, coef[j + 1]])) : null;
+      };
+      let e = -1;
+      return origins.map((T) => {
+        // Last weekly row on or before the origin; rate series can end a day
+        // or two before prices, so the latest week may not have a row yet.
+        while (e + 1 <= last && rows[e + 1] <= T) e++;
+        if (e < 0 || ctx.dayNum[T] - ctx.dayNum[rows[e]] > 7) return null;
+        const long = betas(e - cfg.longWeeks + 1, e);
+        const short = betas(e - cfg.shortWeeks + 1, e);
+        const realised = betas(e + 1, e + cfg.horizonWeeks);
+        return long || short ? { long, short, realised } : null;
+      });
+    });
+
+    // Peer median of the 2-year estimates (1-year where a peer is too new),
+    // from the other stocks in the sub-sector or, with fewer than two, the coverage.
+    const members = Object.fromEntries(ctx.subsectors.map((ss) => [ss, ctx.stocks.filter((s) => s.meta.subsector === ss).map((s) => s.i)]));
+    const valueCache = new Map();
+    const valuesAt = (k, id) => {
+      const key = `${k}|${id}`;
+      if (!valueCache.has(key)) {
+        valueCache.set(
+          key,
+          est.map((e) => {
+            const x = e[k];
+            const v = !x ? NaN : x.long ? x.long[id] : x.short ? x.short[id] : NaN;
+            return isNum(v) ? v : NaN;
+          })
+        );
+      }
+      return valueCache.get(key);
+    };
+    const targetFor = (st, k, id) => {
+      const vals = valuesAt(k, id);
+      const sub = (members[st.meta.subsector] || []).filter((i) => i !== st.i).map((i) => vals[i]).filter(isNum);
+      return sub.length >= 2 ? FA.median(sub) : medianOf(vals.filter((v, i) => i !== st.i));
+    };
+
+    const weights = {};
+    const pooled = {};
+    for (const id of ids) {
+      const x1 = [];
+      const x2 = [];
+      const y = [];
+      const who = [];
+      for (const st of ctx.stocks) {
+        for (let k = 0; k < nowK; k++) {
+          const x = est[st.i][k];
+          if (!x || !x.long || !x.short || !x.realised) continue;
+          const a = x.long[id];
+          const b = x.short[id];
+          const r = x.realised[id];
+          if (!isNum(a) || !isNum(b) || !isNum(r)) continue;
+          const m = targetFor(st, k, id);
+          if (!isNum(m)) continue;
+          x1.push(a - m);
+          x2.push(b - m);
+          y.push(r - m);
+          who.push(st.i);
+        }
+      }
+      if (y.length < 30) continue;
+      const w1 = winsorise(x1);
+      const w2 = winsorise(x2);
+      const wy = winsorise(y);
+      const dot = (p, q) => p.reduce((s, v, i) => s + v * q[i], 0);
+      const s11 = dot(w1, w1);
+      const s22 = dot(w2, w2);
+      const s12 = dot(w1, w2);
+      const s1y = dot(w1, wy);
+      const s2y = dot(w2, wy);
+      const det = s11 * s22 - s12 * s12;
+      let b1 = det > 0 ? (s1y * s22 - s2y * s12) / det : NaN;
+      let b2 = det > 0 ? (s2y * s11 - s1y * s12) / det : NaN;
+      if (!(b1 >= 0 && b2 >= 0)) {
+        // One estimate adds nothing once the other is known: keep the better single one.
+        const one = (s, sy) => Math.min(Math.max(s > 0 ? sy / s : 0, 0), 1);
+        const c1 = one(s11, s1y);
+        const c2 = one(s22, s2y);
+        const sse = (c, w) => wy.reduce((s, v, i) => s + (v - c * w[i]) ** 2, 0);
+        if (sse(c1, w1) <= sse(c2, w2)) [b1, b2] = [c1, 0];
+        else [b1, b2] = [0, c2];
+      }
+      if (b1 + b2 > 1) {
+        const scale = 1 / (b1 + b2);
+        b1 *= scale;
+        b2 *= scale;
+      }
+      const rmse = (err) => Math.sqrt(err.reduce((s, v) => s + v * v, 0) / err.length);
+      const errForecast = wy.map((v, i) => v - b1 * w1[i] - b2 * w2[i]);
+      weights[id] = {
+        long: b1,
+        short: b2,
+        peers: 1 - b1 - b2,
+        n: y.length,
+        rmse: rmse(errForecast),
+        rmseLong: rmse(wy.map((v, i) => v - w1[i])),
+        rmseShort: rmse(wy.map((v, i) => v - w2[i])),
+        rmsePeers: rmse(wy),
+      };
+      pooled[id] = { who, err: errForecast, errLong: wy.map((v, i) => v - w1[i]) };
+    }
+
+    const fitted = Object.keys(weights);
+    const stocks = ctx.stocks.map((st) => {
+      const x = est[st.i][nowK];
+      const out = {};
+      for (const id of fitted) {
+        const w = weights[id];
+        const a = x && x.long ? x.long[id] : NaN;
+        const b = x && x.short ? x.short[id] : NaN;
+        const m = targetFor(st, nowK, id);
+        if (!isNum(m) || (!isNum(a) && !isNum(b))) continue;
+        let forecast;
+        let basis;
+        if (isNum(a) && isNum(b)) {
+          forecast = m + w.long * (a - m) + w.short * (b - m);
+          basis = "full";
+        } else {
+          // Listed for less than two years: the 1-year estimate takes both weights.
+          forecast = m + (w.long + w.short) * ((isNum(b) ? b : a) - m);
+          basis = "short";
+        }
+        const mine = pooled[id].who.map((who, i) => (who === st.i ? i : -1)).filter((i) => i >= 0);
+        const own = (err) => (mine.length >= 6 ? Math.sqrt(mine.reduce((s, i) => s + err[i] * err[i], 0) / mine.length) : NaN);
+        out[id] = {
+          long: a,
+          short: b,
+          peers: m,
+          forecast,
+          lo: forecast - w.rmse,
+          hi: forecast + w.rmse,
+          basis,
+          ownRmse: own(pooled[id].err),
+          ownRmseLong: own(pooled[id].errLong),
+          ownN: mine.length,
+        };
+      }
+      return out;
+    });
+    const tested = [];
+    for (let k = 0; k < nowK; k++) if (est.some((e) => e[k] && e[k].long && e[k].realised)) tested.push(k);
+    return {
+      ok: fitted.length > 0,
+      factors: fitted,
+      weights,
+      stocks,
+      firstOrigin: tested.length ? ctx.dates[origins[tested[0]]] : null,
+      lastOrigin: tested.length ? ctx.dates[origins[tested[tested.length - 1]]] : null,
+      origins: tested.length,
+      config: cfg,
+    };
+  }
+
+  /**
+   * Price range after h trading days for a zero-drift log price with GARCH
+   * variance: the median stays at today's price.
+   */
+  function priceRange(price, g, h, z) {
+    const s = Math.sqrt(FA.garchCumVar(g, h));
+    return { lo: price * Math.exp(-z * s), hi: price * Math.exp(z * s), sd: s };
+  }
+
+  /**
+   * What the share price implies for property values, and NAV and LTV if
+   * values move. Treats total assets less cash as the property portfolio and
+   * IFRS equity as NAV: a first approximation to EPRA figures.
+   */
+  function balanceSheetOutlook(fund, changes = [-0.2, -0.1, -0.05, 0, 0.05, 0.1]) {
+    const need = ["equity", "total_assets", "cash", "net_debt", "shares", "market_cap"];
+    if (!fund || !need.every((k) => isNum(fund[k]))) return null;
+    const assets = fund.total_assets - fund.cash;
+    if (!(assets > 0 && fund.shares > 0 && fund.equity > 0 && fund.market_cap > 0)) return null;
+    const price = isNum(fund.price) ? fund.price : fund.market_cap / fund.shares;
+    const nav0 = fund.equity / fund.shares;
+    const row = (change) => {
+      const nav = (fund.equity + change * assets) / fund.shares;
+      return {
+        change,
+        nav,
+        navChange: nav / nav0 - 1,
+        pnav: nav > 0 ? price / nav : NaN,
+        ltv: fund.net_debt / (assets * (1 + change)),
+      };
+    };
+    // Market value at the quoted price, so the implied row prices NAV exactly at the share price.
+    const implied = (price * fund.shares - fund.equity) / assets;
+    // Value change at which the LTV proxy reaches a given level.
+    const headroom = (level) => (fund.net_debt > 0 ? fund.net_debt / (level * assets) - 1 : NaN);
+    let coverStressed = NaN;
+    if (isNum(fund.ebitda) && fund.ebitda > 0 && isNum(fund.interest_cover) && fund.interest_cover > 0 && isNum(fund.total_debt)) {
+      coverStressed = fund.ebitda / (fund.ebitda / fund.interest_cover + 0.01 * fund.total_debt);
+    }
+    return {
+      assets,
+      price,
+      implied,
+      impliedRow: row(implied),
+      rows: changes.map(row),
+      ltvNow: fund.net_debt / assets,
+      headroom50: headroom(0.5),
+      headroom60: headroom(0.6),
+      coverNow: isNum(fund.interest_cover) ? fund.interest_cover : NaN,
+      coverStressed,
+    };
+  }
+
+  const SIGNALS = [
+    { id: "mom", label: "Momentum (12-1M return)", desc: "Total return from 12 months ago to 1 month ago." },
+    { id: "momrel", label: "Momentum vs sub-sector", desc: "12-1M return minus the sub-sector median, so sector moves drop out." },
+    { id: "rev", label: "Last month's return", desc: "Total return over the latest month; a negative record means losers tended to bounce." },
+    { id: "lowvol", label: "Low volatility", desc: "Minus the daily volatility over the past year, so calmer stocks score higher." },
+    { id: "high", label: "Nearness to 52-week high", desc: "Price relative to its 52-week high (0 = at the high)." },
+  ];
+
+  /**
+   * Monthly cross-sectional test of price-based signals: each month-end, rank
+   * the coverage on each signal and correlate with the next month's EUR total
+   * return (Spearman rank IC). Also returns today's signal values.
+   */
+  function signalBacktest(ctx, opts = {}) {
+    const minStocks = opts.minStocks || 15;
+    const ends = [];
+    for (let t = 0; t < ctx.n; t++) if (ctx.monthEnd[t]) ends.push(t);
+    const S = ctx.stocks.length;
+    const valueAt = (k) => {
+      const t = ends[k];
+      const out = {};
+      for (const sig of SIGNALS) out[sig.id] = new Array(S).fill(NaN);
+      if (k < 12) return out;
+      for (const st of ctx.stocks) {
+        const L = st.triEur;
+        const i = st.i;
+        if (st.first > ends[k - 12] || !st.obs[t]) continue;
+        out.mom[i] = L[ends[k - 1]] / L[ends[k - 12]] - 1;
+        out.rev[i] = L[t] / L[ends[k - 1]] - 1;
+        const daily = [];
+        let peak = -Infinity;
+        for (let u = Math.max(t - 251, 1); u <= t; u++) {
+          if (!st.obs[u]) continue;
+          const r = L[u] / L[u - 1] - 1;
+          if (isNum(r)) daily.push(r);
+          if (isNum(st.px[u])) peak = Math.max(peak, st.px[u]);
+        }
+        if (daily.length >= 200) out.lowvol[i] = -FA.std(daily) * Math.sqrt(252);
+        if (peak > 0 && isNum(st.px[t])) out.high[i] = st.px[t] / peak - 1;
+      }
+      for (const ss of ctx.subsectors) {
+        const members = ctx.stocks.filter((s) => s.meta.subsector === ss);
+        const med = medianOf(members.map((s) => out.mom[s.i]));
+        for (const s of members) out.momrel[s.i] = out.mom[s.i] - med;
+      }
+      for (const sig of SIGNALS) out[sig.id] = out[sig.id].map((v) => (isNum(v) ? v : NaN));
+      return out;
+    };
+
+    const ics = Object.fromEntries(SIGNALS.map((s) => [s.id, []]));
+    const spreads = Object.fromEntries(SIGNALS.map((s) => [s.id, []]));
+    const months = [];
+    for (let k = 12; k < ends.length - 1; k++) {
+      const vals = valueAt(k);
+      const fwd = ctx.stocks.map((st) => {
+        const r = st.triEur[ends[k + 1]] / st.triEur[ends[k]] - 1;
+        return st.obs[ends[k]] && isNum(r) ? r : NaN;
+      });
+      months.push(ctx.dates[ends[k]]);
+      for (const sig of SIGNALS) {
+        const x = vals[sig.id];
+        const pairs = x.map((v, i) => [v, fwd[i]]).filter(([v, r]) => isNum(v) && isNum(r));
+        if (pairs.length < minStocks) {
+          ics[sig.id].push(NaN);
+          spreads[sig.id].push(NaN);
+          continue;
+        }
+        ics[sig.id].push(FA.spearman(pairs.map((p) => p[0]), pairs.map((p) => p[1])));
+        pairs.sort((a, b) => a[0] - b[0]);
+        const third = Math.floor(pairs.length / 3);
+        const avg = (list) => FA.mean(list.map((p) => p[1]));
+        spreads[sig.id].push(avg(pairs.slice(pairs.length - third)) - avg(pairs.slice(0, third)));
+      }
+    }
+
+    const now = valueAt(ends.length - 1);
+    const signals = SIGNALS.map((sig) => {
+      const ic = FA.finite(ics[sig.id]);
+      const T = ic.length;
+      const m = FA.mean(ic);
+      const sd = FA.std(ic);
+      const recent = FA.finite(ics[sig.id].slice(-36));
+      const current = now[sig.id];
+      const rk = FA.ranks(current);
+      const count = FA.finite(current).length;
+      return {
+        ...sig,
+        months: T,
+        ic: m,
+        t: sd > 0 ? m / (sd / Math.sqrt(T)) : NaN,
+        hit: T ? ic.filter((v) => v > 0).length / T : NaN,
+        spread: FA.mean(spreads[sig.id]),
+        icRecent: FA.mean(recent),
+        current,
+        // Percentile within the coverage today: 0 = lowest signal, 1 = highest.
+        percentile: rk.map((r) => (isNum(r) && count > 1 ? (r - 1) / (count - 1) : NaN)),
+      };
+    });
+    return { ok: months.length > 0, signals, first: months[0] || null, last: months[months.length - 1] || null, months: months.length };
+  }
+
   return {
     FACTORS,
     FACTOR_BY_ID,
@@ -937,5 +1296,11 @@
     characteristics,
     correlations,
     pairSpread,
+    FORECAST,
+    SIGNALS,
+    exposureForecast,
+    priceRange,
+    balanceSheetOutlook,
+    signalBacktest,
   };
 });
