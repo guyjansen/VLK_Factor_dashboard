@@ -1,0 +1,14 @@
+# Verification notebook (backtester/dashboard_backtester.ipynb)
+# Also needs Node.js 18+ on the PATH to run the dashboard's own engine.
+jupyterlab>=4
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+statsmodels>=0.14
+matplotlib>=3.8
+openpyxl>=3.1      # Excel export
+playwright>=1.45   # screen audit; after installing, run: playwright install chromium
+
+# Optional
+# yfinance>=1.0    # online source checks (RUN_ONLINE_CHECKS = True)
+# mini-racer>=0.12 # runs the dashboard engine when Node.js is not installed

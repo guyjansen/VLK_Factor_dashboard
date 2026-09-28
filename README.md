@@ -101,6 +101,19 @@ The page follows the Van Lanschot Kempen brand book:
 
 Two small departures, both for reading on screen: signal green and red are a shade deeper for small text (the brand book does the same for ochre with its online dark ochre), and there is no dark mode, since the brand is a light identity. Every colour is set once, as a token at the top of `docs/assets/styles.css`.
 
+## Verification and backtest
+
+`backtester/dashboard_backtester.ipynb` checks the numbers before the dashboard goes to clients. Open it in JupyterLab from the repository and run all cells (about ten minutes). It needs Node.js 18+ and the packages in `backtester/requirements.txt`.
+
+| Layer | What it does |
+| --- | --- |
+| Input data | Checks every price, total-return index, yield, FX rate and fundamental in the data file for gaps, spikes, stale values, unit errors, splices and dividend adjustments, and recomputes every stored ratio. |
+| Engine | Runs `analytics.js` and `model.js` on the data file through Node.js for every model, frequency, window and currency, then recomputes every number independently in Python (statsmodels, numpy, scipy) and compares them. |
+| Screen | Opens the dashboard in headless Chromium (when Playwright is installed), reads every tile, table cell and generated sentence for every stock, and compares each with the expected text. |
+| Backtests | Tests the forward-looking numbers out of sample: volatility forecasts and price ranges, VaR, the exposure forecasts and their stated accuracy, the price signals and the stress replays. |
+
+It also reviews the method for issues that do not show up as mismatches, and measures how far each moves the numbers on screen. Results go to `backtester/output/`, which is not committed: an Excel workbook, every comparison as CSV, and an HTML report with the scorecard, findings and charts.
+
 ## Development
 
 ```
@@ -108,6 +121,7 @@ factor_dashboard/     data pipeline (sources, cleaning, fundamentals, build, bun
 config/universe.csv   coverage list
 docs/                 the dashboard (index.html, assets/, data/)
 tests/                pytest for the pipeline, node:test for the analytics (tests/js)
+backtester/           verification and backtest notebook
 ```
 
 ```bash

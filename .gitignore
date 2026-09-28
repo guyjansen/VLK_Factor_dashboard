@@ -12,6 +12,10 @@ node_modules/
 dist/
 .cache/
 
+# Verification notebook reports (regenerated on every run)
+backtester/output/
+.ipynb_checkpoints/
+
 # OS / editor
 .DS_Store
 .idea/
