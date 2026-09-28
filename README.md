@@ -103,7 +103,7 @@ Two small departures, both for reading on screen: signal green and red are a sha
 
 ## Verification and backtest
 
-`backtester/dashboard_backtester.ipynb` checks the numbers before the dashboard goes to clients. Open it in JupyterLab from the repository and run all cells (about ten minutes). It needs Node.js 18+ and the packages in `backtester/requirements.txt`.
+`backtester/dashboard_backtester.ipynb` checks the numbers before the dashboard goes to clients. Open it in JupyterLab from the repository and run all cells (five to ten minutes). It needs Node.js 18+ and the packages in `backtester/requirements.txt`.
 
 | Layer | What it does |
 | --- | --- |
