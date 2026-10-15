@@ -16,3 +16,7 @@ dist/
 .DS_Store
 .idea/
 .vscode/
+
+# Morning RNS report output
+rns_report/output/
+rns_report/rns_task.xml
