@@ -42,11 +42,57 @@ def test_uk_time_handles_summer_and_winter():
 
 
 def test_investegate_request_matches_browser():
-    url = r.investegate_list_urls(DAY, exclude_navs=False)[0]
+    url = r.investegate_draw_url(DAY, exclude_navs=False)
     assert url.startswith("https://www.investegate.co.uk/advanced-search/draw?")
     assert "date_from=15+October+2026" in url
     assert "sources%5B%5D=RNS" in url and "sectors%5B%5D=18" in url
     assert "exclude_navs=false" in url
+    assert "categories" not in url  # jQuery drops an empty list
+    assert "date_from=&" in r.investegate_draw_url(DAY, False, date_from=False)
+
+
+def _investegate_fake(monkeypatch, rows_html, empty_html):
+    """Investegate that only fills the table for a session that loaded the page."""
+    calls = []
+
+    def fake_fetch(url, session=None, **kw):
+        calls.append((url, session))
+        if "/advanced-search?" in url:
+            session.loaded = True
+            return "<html>search page</html>"
+        if "/draw?" in url:
+            return rows_html if getattr(session, "loaded", False) else empty_html
+        raise r.FetchError(url)
+
+    monkeypatch.setattr(r, "fetch", fake_fetch)
+    return calls
+
+
+def test_investegate_uses_a_browser_session(monkeypatch):
+    rows_html = (FIX / "investegate_draw.html").read_text(encoding="utf-8")
+    empty = '<table class="table-investegate"><tbody></tbody></table>'
+    calls = _investegate_fake(monkeypatch, rows_html, empty)
+    src = r.InvestegateSource(exclude_navs=False)
+    rows = src.list(DAY)
+    assert len(rows) == 27 and src.preferred == "session, date"
+    assert "/advanced-search?" in calls[0][0]  # page loaded first, as a browser does
+    # Next poll goes straight to the variant that worked, reusing the session
+    calls.clear()
+    assert len(src.list(DAY)) == 27 and len(calls) == 1
+
+
+def test_investegate_empty_table_everywhere_is_an_empty_answer(monkeypatch):
+    empty = '<table class="table-investegate"><tbody></tbody></table>'
+    _investegate_fake(monkeypatch, empty, empty)
+    assert r.InvestegateSource(False).list(DAY) == []
+
+
+def test_investegate_rejects_unfiltered_results(monkeypatch):
+    rows_html = (FIX / "investegate_draw.html").read_text(encoding="utf-8")
+    unfiltered = rows_html.replace('title="RNS" href="https://www.investegate.co.uk/source/RNS">RNS<',
+                                   'title="GNW" href="https://www.investegate.co.uk/source/GNW">GNW<', 1)
+    _investegate_fake(monkeypatch, unfiltered, unfiltered)
+    assert r.InvestegateSource(False).list(DAY) == []
 
 
 def test_parse_investegate_list():
@@ -77,6 +123,20 @@ def test_parse_lse_list():
     assert town.when.date() == DAY
 
 
+LSE_LAYOUT = json.dumps({"id": "14", "layout": "onecol", "info": {"title": "Today's News"},
+                         "components": [
+                             {"id": "block_content:11111111-1111-1111-1111-111111111111",
+                              "title": "News explorer - Hero"},
+                             {"id": r.LSE_NEWS_COMPONENT, "title": "News explorer", "content": []}]})
+
+
+def _lse_news_json(rows):
+    return json.dumps([{"componentId": r.LSE_NEWS_COMPONENT, "content": [
+        {"name": "newsexplorersearch", "value": {"totalElements": len(rows), "content": [
+            {"id": int(a.url.rsplit("/", 1)[1]), "title": a.headline, "companycode": a.tidm,
+             "companyname": a.company, "datetime": a.when.isoformat()} for a in rows]}}]}])
+
+
 def test_parse_lse_api_list():
     payload = json.dumps({"components": [{"content": [{"value": {"content": [
         {"id": 17836300, "title": "Response to media coverage", "companycode": "BYG",
@@ -84,6 +144,31 @@ def test_parse_lse_api_list():
     (a,) = r.parse_lse_api_list(payload)
     assert a.url == "https://www.londonstockexchange.com/news-article/BYG/response-to-media-coverage/17836300"
     assert a.when == dt.datetime(2026, 10, 15, 7, 0, 7)
+    # The page layout is not a news list, so it must not read as an empty day
+    assert r.parse_lse_api_list(LSE_LAYOUT) is None
+    assert r.parse_lse_api_list(json.dumps({"totalElements": 0, "content": []})) == []
+
+
+def test_lse_component_ids_puts_news_explorer_first():
+    assert r.lse_component_ids(LSE_LAYOUT)[0] == r.LSE_NEWS_COMPONENT
+
+
+def test_lse_refresh_payload(monkeypatch):
+    sent = {}
+
+    def fake_fetch(url, data=None, headers=None, **kw):
+        sent.update(url=url, payload=json.loads(data), headers=headers)
+        return "[]"
+
+    monkeypatch.setattr(r, "fetch", fake_fetch)
+    r.lse_refresh("news", r.lse_query(), [r.LSE_NEWS_COMPONENT], "page=0")
+    p = sent["payload"]
+    assert sent["url"].endswith("/api/v1/components/refresh")
+    assert p["path"] == "news"
+    assert p["parameters"].startswith("tab%3Dnews-explorer%26period%3Ddaily")
+    assert p["components"] == [{"componentId": "block_content%3A431d02ac-09b8-40c9-aba6-04a72a4f2e49",
+                                "parameters": "page=0"}]
+    assert sent["headers"]["Content-Type"] == "application/json"
 
 
 def test_extract_body_finds_announcement_and_drops_page_furniture():
@@ -108,19 +193,27 @@ def test_extract_json_body_from_lse_page():
 @pytest.fixture
 def fake_web(monkeypatch):
     """Investegate down, LSE up: the report must fall back to LSE."""
-    lse_list = (FIX / "lse_news.html").read_text(encoding="utf-8")
+    lse_rows = r.parse_lse_list((FIX / "lse_news.html").read_text(encoding="utf-8"))
     calls = []
 
-    def fake_fetch(url, **kw):
+    def fake_fetch(url, data=None, **kw):
         calls.append(url)
         if "investegate" in url:
-            raise r.FetchError(f"{url}: HTTP Error 403: Forbidden")
-        if "/news?" in url:
-            return lse_list
-        if "/news-article/" in url:
-            if "HKLD" in url:
+            raise r.FetchError(f"{url}: HTTP Error 403: Forbidden", 403)
+        if url.endswith("/components/refresh"):
+            path = json.loads(data)["path"]
+            if path == "news":
+                return _lse_news_json(lse_rows)
+            raise r.FetchError(f"{url}: unexpected {path}")
+        if "path=news-article" in url:
+            nid = url.split("newsId%253D")[1] if "newsId%253D" in url else url.split("newsId%3D")[1]
+            if nid.startswith("17837523"):  # HKLD
                 raise r.FetchError(f"{url}: timed out")
-            return ARTICLE.replace("Big Yellow", url.split("/")[4])
+            a = next(x for x in lse_rows if x.url.endswith(nid))
+            return json.dumps({"components": [{"content": [{"name": "newsarticle", "value": {
+                "body": f"<p><b>{a.company}</b></p><p>{a.headline}.</p><p>" + "Details. " * 20 + "</p>"}}]}]})
+        if "/news-article/" in url:
+            return "<html><body><nav>London Stock Exchange menu</nav></body></html>"
         raise r.FetchError(f"{url}: unexpected")
 
     monkeypatch.setattr(r, "fetch", fake_fetch)
@@ -136,7 +229,7 @@ def test_end_to_end_falls_back_to_lse(fake_web, tmp_path):
     assert "10 announcement(s)" in html
     assert "1 could not be retrieved" in html  # HKLD body fetch failed
     assert "Could not retrieve the text" in html
-    assert "BLND Group PLC" in txt  # body text made it into the plain-text copy
+    assert "British Land Co PLC\n\nTrading Statement." in txt  # body text in the plain-text copy
     # Index is in time order
     assert txt.index("Workspace Group PLC") < txt.index("Safestore Holdings plc (SAFE): Director")
 
@@ -150,6 +243,14 @@ def test_sources_all_down_still_writes_a_report(monkeypatch, tmp_path):
     assert code == 2
     html = (tmp_path / "RNS_RealEstate_2026-10-15.html").read_text(encoding="utf-8")
     assert "SOURCES FAILED" in html
+
+
+def test_empty_weekday_is_flagged(monkeypatch, tmp_path):
+    monkeypatch.setattr(r.InvestegateSource, "list", lambda self, day: [])
+    monkeypatch.setattr(r.LseSource, "list", lambda self, day: [])
+    r.main(["--once", "--date", DAY.isoformat(), "--out", str(tmp_path)])
+    html = (tmp_path / "RNS_RealEstate_2026-10-15.html").read_text(encoding="utf-8")
+    assert "WARNING: no announcements found" in html
 
 
 def test_morning_loop_waits_for_seven_and_picks_up_late_items(monkeypatch, tmp_path):
@@ -168,7 +269,7 @@ def test_morning_loop_waits_for_seven_and_picks_up_late_items(monkeypatch, tmp_p
         n = 3 if len(polls) == 1 else len(seven)  # the rest arrive a poll later
         return [r.Announcement(**{**a.__dict__, "extra": {}}) for a in seven[:n]]
 
-    monkeypatch.setattr(r, "list_investegate", fake_list)
+    monkeypatch.setattr(r.InvestegateSource, "list", lambda self, day: fake_list(day, False))
     monkeypatch.setattr(r, "fetch", lambda url, **kw: ARTICLE)
     assert r.main(["--out", str(tmp_path)]) == 0
     assert polls[0] >= dt.datetime(2026, 10, 15, 7, 0)

@@ -17,24 +17,28 @@ The report opens with an index of all announcements (time, company, headline) fo
 
 ## Sources
 
-1. **Investegate** advanced search: RNS, sector 18 (real estate), including NAV, Rule 8 and similar notices. The script calls the same endpoint the page uses to fill its results table (`/advanced-search/draw`).
-2. **London Stock Exchange** news explorer: sectors 302030, 351010 and 351020, regulatory and non-regulatory headlines. It is used if Investegate fails, and also checked when Investegate has nothing yet.
+1. **Investegate** advanced search: RNS, sector 18 (real estate), including NAV, Rule 8 and similar notices. Like a browser, the script first opens the search page to get a session, then makes the request the page uses to fill its results table (`/advanced-search/draw`). If that comes back empty it tries a few variants. It rejects any answer that includes other newswires, because that means the filter was ignored.
+2. **London Stock Exchange** news explorer: sectors 302030, 351010 and 351020, regulatory and non-regulatory headlines. The web page arrives without the rows and loads them afterwards. The script asks for them the same way, through `api.londonstockexchange.com/api/v1/components/refresh` for the News explorer block. The LSE is used if Investegate fails, and is also checked when Investegate lists nothing yet.
+
+If both sources list nothing on a weekday, the report says so in a warning rather than presenting it as a quiet day.
 
 The two sites classify companies slightly differently. On 15 October, for example, Investegate listed Mindflair and LSE listed IWG, RentGuarantor and Town Centre Securities. Use `--source lse` to make LSE the only source.
 
 ## Setup on the work laptop
 
-1. Copy the `rns_report` folder anywhere, for example `Documents\rns_report`.
-2. Check that Python is available: open a Command Prompt and run `py --version` or `python --version`. If neither works, install Python from the Company Portal or Software Center, or from python.org (the per-user installer needs no admin rights).
+The commands below are for PowerShell. Folder names with spaces need quotes.
+
+1. Copy the `rns_report` folder anywhere, for example `K:\Property\ZZ Interns\Guy Jansen\rns_report`. To update, replace `rns_report.py` with the new version. The first line of `--diagnose` output shows the version.
+2. Check that Python is available: `py --version`. If it is missing, install it from the Company Portal or Software Center, or from python.org (the per-user installer needs no admin rights).
 3. Check the sources from your network:
    ```
-   cd %USERPROFILE%\Documents\rns_report
-   py rns_report.py --diagnose
+   cd "K:\Property\ZZ Interns\Guy Jansen\rns_report"
+   py .\rns_report.py --diagnose
    ```
-   This tries each source, reports how many announcements it found and prints the start of one announcement. It saves the raw pages in `output\debug\`. At least one source must show rows and body text.
+   This tries every way of reading each source and shows, for each, how many announcements came back with a sample of companies and headlines. It then extracts the text of one announcement. Everything is saved in `output\debug\`, and `output\debug\probe_summary.txt` holds the full printout. That one small file is what to send when something does not work. Before scheduling, at least one source must show rows of real estate companies plus announcement text.
 4. Schedule it:
    ```
-   py rns_report.py --install-task
+   py .\rns_report.py --install-task
    ```
    This creates the weekday task *RNS Real Estate Morning Report*. It starts at 06:58 UK time, which is 07:58 on a laptop set to Amsterdam time; the UK and EU change clocks on the same dates. The task wakes the laptop from sleep and runs without a console window. If the laptop was off at that time, the task runs as soon as it is back on and builds the report for the whole day. To pick a different start time, use `--install-task 06:55`. To remove the task, run `schtasks /Delete /TN "RNS Real Estate Morning Report" /F`.
 
@@ -44,7 +48,7 @@ The laptop must be switched on (asleep is fine), you must be logged in (a locked
 
 | Command | What it does |
 | --- | --- |
-| Double-click `run_report.bat` | Builds today's report now and opens it |
+| Double-click `run_report.bat`, or `cmd /c .\run_report.bat` in PowerShell | Builds today's report now and opens it |
 | `py rns_report.py` | The morning routine: waits for 07:00 UK, polls until 07:03:30, writes the report |
 | `py rns_report.py --once` | One pass now, no waiting |
 | `py rns_report.py --once --since 07:00` | Only announcements released at or after 07:00 |
@@ -66,6 +70,6 @@ The laptop must be switched on (asleep is fine), you must be logged in (a locked
 
 ## If something breaks
 
-- **Status line shows "SOURCES FAILED"**: run `--diagnose` and look at the files in `output\debug\`. A 403 error usually means the site is blocking scripted requests from your network.
+- **Status line shows "SOURCES FAILED" or "WARNING: no announcements found"**: run `py .\rns_report.py --diagnose` and send `output\debug\probe_summary.txt`. A 403 error usually means the site is blocking scripted requests from your network.
 - **Text missing for one announcement**: the report links to it. Failed texts are retried on every poll until 07:03:30. To try again later, double-click `run_report.bat`.
-- **A site changes its layout**: the parsers are in `rns_report.py` (`parse_investegate_list`, `parse_lse_list`, `extract_body`). The offline tests in `tests/test_rns_report.py` run against copies of both list pages saved on 15 October 2026.
+- **A site changes its layout**: the parsers are in `rns_report.py` (`InvestegateSource`, `LseSource`, `parse_investegate_list`, `parse_lse_api_list`, `extract_body`). The offline tests in `tests/test_rns_report.py` run against copies of both list pages saved on 15 October 2026.
