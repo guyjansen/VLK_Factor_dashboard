@@ -45,7 +45,7 @@ from pathlib import Path
 # ----------------------------------------------------------------------------
 # Settings (all can be overridden on the command line)
 # ----------------------------------------------------------------------------
-VERSION = "2"
+VERSION = "3"
 
 INVESTEGATE_BASE = "https://www.investegate.co.uk"
 INVESTEGATE_SECTORS = ["18"]          # 18 = Real Estate
@@ -305,7 +305,8 @@ class Announcement:
     extra: dict = field(default_factory=dict)
 
     @property
-    def key(self) -> tuple[str, str]:
+    def same_story(self) -> tuple[str, str]:
+        """Matches the same announcement listed by the other site."""
         return (self.tidm.upper(), re.sub(r"[^a-z0-9]", "", self.headline.lower()))
 
 
@@ -732,7 +733,8 @@ DROP_CLASS = re.compile(
     r"newsletter|subscribe|related|recommended|most-read)($|[\s_-])", re.I)
 # Known containers, checked before the generic search. Only used when they hold
 # a real amount of text, so a wrong guess costs nothing.
-KNOWN_BODY = [("div", "news-body"), ("div", "news-body-content"), ("div", "news-article-content"),
+KNOWN_BODY = [("div", "news-window"),  # Investegate announcement page (checked 15 Oct 2026)
+              ("div", "news-body"), ("div", "news-body-content"), ("div", "news-article-content"),
               ("div", "announcement-content"), ("div", "announcement-body"),
               ("div", "announcement-text"), ("div", "article-body"), ("div", "rns-body")]
 KNOWN_BODY_IDS = ["rns", "ArticleContent", "announcement", "news-body", "newsArticle"]
@@ -765,7 +767,44 @@ def _weights(node: Node, memo: dict) -> int:
     return total
 
 
+RNS_FOOTER = "This information is provided by RNS"
+_DATE_LINE = re.compile(r"\b\d{1,2} (January|February|March|April|May|June|July|August|"
+                        r"September|October|November|December) \d{4}\b")
+
+
+def strip_boilerplate(node: Node) -> Node:
+    """Keep only the announcement: drop the RNS legal footer and its 'END'
+    marker, and the site's own company/date header ahead of the text."""
+    def walk(n: Node) -> None:
+        keep, footer_seen = [], False
+        for c in n.children:
+            text = c.strip() if isinstance(c, str) else c.text()
+            if text.startswith(RNS_FOOTER):
+                footer_seen = True
+                continue
+            if text == "END" or (footer_seen and not text):
+                continue
+            if isinstance(c, Node):
+                walk(c)
+            keep.append(c)
+        n.children = keep
+
+    walk(node)
+    # Investegate puts "<company> <date>" in a small block before the text;
+    # the announcement itself repeats both.
+    blocks = [c for c in node.children if isinstance(c, Node) and c.text()]
+    if len(blocks) > 1 and blocks[0].tag == "div" and len(blocks[0].text()) < 150 \
+            and _DATE_LINE.search(blocks[0].text()):
+        node.children.remove(blocks[0])
+    return node
+
+
 def extract_body(page_html: str) -> Node | None:
+    node = _find_body(page_html)
+    return strip_boilerplate(node) if node is not None else None
+
+
+def _find_body(page_html: str) -> Node | None:
     root = parse_html(page_html)
     body = root.find("body") or root
     _prune(body)
@@ -847,8 +886,8 @@ def to_clean_html(node: Node, base_url: str) -> str:
                     attrs = f' href="{html.escape(href)}"'
             elif c.tag == "img":
                 src = urllib.parse.urljoin(base_url, c.attrs.get("src", ""))
-                if not src.startswith("http"):
-                    continue
+                if not src.startswith("http") or "1" in (c.attrs.get("width"), c.attrs.get("height")):
+                    continue  # unusable, or a 1-pixel tracking image
                 attrs = f' src="{html.escape(src)}" alt="{html.escape(c.attrs.get("alt", ""))}"'
             if c.tag in VOID:
                 out.append(f"<{c.tag}{attrs}>")
@@ -988,9 +1027,12 @@ def build_text(day: dt.date, items: list[Announcement], status: str) -> str:
     return "\n".join(out) + "\n"
 
 
-def write_atomic(path: Path, content: str) -> Path:
+def write_atomic(path: Path, content: str | bytes) -> Path:
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(content, encoding="utf-8")
+    if isinstance(content, bytes):
+        tmp.write_bytes(content)
+    else:
+        tmp.write_text(content, encoding="utf-8")
     try:
         os.replace(tmp, path)
         return path
@@ -998,6 +1040,190 @@ def write_atomic(path: Path, content: str) -> Path:
         alt = path.with_name(f"{path.stem}_{uk_now():%H%M%S}{path.suffix}")
         os.replace(tmp, alt)
         return alt
+
+
+# ----------------------------------------------------------------------------
+# Word document (.docx), written with the standard library only
+# ----------------------------------------------------------------------------
+_W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+_BAD_XML = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f￾￿]")
+_DOCX_STYLES = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:styles xmlns:w="{_W_NS}">
+<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+<w:sz w:val="21"/><w:lang w:val="en-GB"/></w:rPr></w:rPrDefault>
+<w:pPrDefault><w:pPr><w:spacing w:after="100" w:line="259" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults>
+<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style>
+<w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:basedOn w:val="Normal"/><w:qFormat/>
+<w:pPr><w:spacing w:after="120"/></w:pPr><w:rPr><w:b/><w:sz w:val="36"/></w:rPr></w:style>
+<w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/><w:basedOn w:val="Normal"/>
+<w:next w:val="Normal"/><w:qFormat/><w:pPr><w:keepNext/><w:pageBreakBefore/><w:spacing w:before="0" w:after="80"/>
+<w:outlineLvl w:val="0"/></w:pPr><w:rPr><w:b/><w:color w:val="1F3864"/><w:sz w:val="28"/></w:rPr></w:style>
+<w:style w:type="paragraph" w:styleId="Meta"><w:name w:val="Meta"/><w:basedOn w:val="Normal"/>
+<w:pPr><w:spacing w:after="240"/></w:pPr><w:rPr><w:color w:val="595959"/><w:sz w:val="18"/></w:rPr></w:style>
+<w:style w:type="table" w:styleId="TableGrid"><w:name w:val="Table Grid"/><w:tblPr><w:tblBorders>
+<w:top w:val="single" w:sz="4" w:color="BFBFBF"/><w:left w:val="single" w:sz="4" w:color="BFBFBF"/>
+<w:bottom w:val="single" w:sz="4" w:color="BFBFBF"/><w:right w:val="single" w:sz="4" w:color="BFBFBF"/>
+<w:insideH w:val="single" w:sz="4" w:color="BFBFBF"/><w:insideV w:val="single" w:sz="4" w:color="BFBFBF"/>
+</w:tblBorders><w:tblCellMar><w:left w:w="80" w:type="dxa"/><w:right w:w="80" w:type="dxa"/></w:tblCellMar>
+</w:tblPr></w:style>
+</w:styles>"""
+
+
+def _x(s: str) -> str:
+    return html.escape(_BAD_XML.sub("", s), quote=False)
+
+
+def _para(runs: list[tuple[str, bool, bool]], style: str | None = None) -> str:
+    """A paragraph from (text, bold, italic) runs, with whitespace collapsed."""
+    text = "".join(t for t, _, _ in runs)
+    if not text.strip() and not any(t == "\n" for t, _, _ in runs):
+        return ""
+    out, first = [], True
+    for t, b, i in runs:
+        if t == "\n":
+            out.append("<w:r><w:br/></w:r>")
+            first = True
+            continue
+        t = re.sub(r"\s+", " ", t)
+        if first:
+            t = t.lstrip()
+        if not t:
+            continue
+        first = False
+        rpr = ("<w:b/>" if b else "") + ("<w:i/>" if i else "")
+        out.append(f'<w:r>{f"<w:rPr>{rpr}</w:rPr>" if rpr else ""}'
+                   f'<w:t xml:space="preserve">{_x(t)}</w:t></w:r>')
+    ppr = f'<w:pPr><w:pStyle w:val="{style}"/></w:pPr>' if style else ""
+    return f"<w:p>{ppr}{''.join(out)}</w:p>" if out else ""
+
+
+_BLOCK_TAGS = BLOCKS | {"li", "tr", "td", "th", "caption", "tbody", "thead", "tfoot"}
+
+
+def _docx_blocks(node: Node) -> list[str]:
+    """Paragraphs and tables for the children of an HTML node."""
+    out: list[str] = []
+    runs: list[tuple[str, bool, bool]] = []
+
+    def flush():
+        p = _para(runs)
+        if p:
+            out.append(p)
+        runs.clear()
+
+    def walk(n: Node, b: bool, i: bool):
+        for c in n.children:
+            if isinstance(c, str):
+                runs.append((c, b, i))
+                continue
+            if c.tag in DROP_TAGS or c.tag == "img":
+                continue
+            if c.tag == "br":
+                runs.append(("\n", b, i))
+            elif c.tag == "table":
+                flush()
+                out.append(_docx_table(c))
+            elif c.tag in _BLOCK_TAGS:
+                flush()
+                if c.tag == "li":
+                    runs.append(("• ", b, i))
+                walk(c, b or c.tag in ("h1", "h2", "h3", "h4", "h5", "h6", "th"), i)
+                flush()
+            else:
+                walk(c, b or c.tag in ("b", "strong"), i or c.tag in ("i", "em"))
+
+    walk(node, False, False)
+    flush()
+    return out
+
+
+def _docx_table(table: Node, widths: list[int] | None = None) -> str:
+    rows = [tr for tr in table.iter("tr")
+            if not any(p.tag == "table" for p in _ancestors(tr, stop=table))]
+    if not rows:
+        return ""
+    xml_rows, width = [], 1
+    for tr in rows:
+        cells = [c for c in tr.children if isinstance(c, Node) and c.tag in ("td", "th")]
+        tcs, span_total = [], 0
+        for c in cells:
+            span = int(c.attrs["colspan"]) if c.attrs.get("colspan", "").isdigit() else 1
+            span_total += span
+            inner = _docx_blocks(c) if c.tag == "td" else [_para([(c.text(), True, False)])]
+            inner = [p for p in inner if p]
+            if not inner or inner[-1].startswith("<w:tbl>"):
+                inner.append("<w:p/>")
+            tcpr = f'<w:tcPr><w:gridSpan w:val="{span}"/></w:tcPr>' if span > 1 else ""
+            tcs.append(f"<w:tc>{tcpr}{''.join(inner)}</w:tc>")
+        if tcs:
+            width = max(width, span_total)
+            xml_rows.append(f"<w:tr>{''.join(tcs)}</w:tr>")
+    if not xml_rows:
+        return ""
+    cols = widths if widths and len(widths) == width else [1800] * width
+    grid = "".join(f'<w:gridCol w:w="{w}"/>' for w in cols)
+    tblw = (f'<w:tblW w:w="{sum(cols)}" w:type="dxa"/><w:tblLayout w:type="fixed"/>' if widths
+            else '<w:tblW w:w="0" w:type="auto"/>')
+    return (f'<w:tbl><w:tblPr><w:tblStyle w:val="TableGrid"/>{tblw}</w:tblPr>'
+            f'<w:tblGrid>{grid}</w:tblGrid>{"".join(xml_rows)}</w:tbl>')
+
+
+def _ancestors(n: Node, stop: Node):
+    p = n.parent
+    while p is not None and p is not stop:
+        yield p
+        p = p.parent
+
+
+def build_docx(day: dt.date, items: list[Announcement], status: str) -> bytes:
+    body = [_para([(f"Real estate RNS announcements: {day.strftime('%A %d %B %Y')}", False, False)],
+                  "Title"),
+            _para([(status, False, False)], "Meta")]
+    if items:
+        idx = parse_html("<table>" + "".join(
+            f"<tr><td>{_fmt_time(a.when)}</td><td>{html.escape(a.company)} ({html.escape(a.tidm)})</td>"
+            f"<td>{html.escape(a.headline)}</td></tr>" for a in items) + "</table>")
+        body.append(_docx_table(idx.find("table"), widths=[800, 3200, 5600]))
+    else:
+        body.append(_para([("No real estate announcements found.", False, False)]))
+    for a in items:
+        body.append(_para([(f"{a.company}{f' ({a.tidm})' if a.tidm else ''}: {a.headline}",
+                            False, False)], "Heading1"))
+        body.append(_para([(f"{_fmt_time(a.when)} UK | {a.url}", False, False)], "Meta"))
+        if a.error:
+            body.append(_para([(f"Could not retrieve the text ({a.error}). Open the link above.",
+                                True, False)]))
+        else:
+            body += _docx_blocks(parse_html(a.body_html))
+    sect = ('<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" '
+            'w:bottom="1134" w:left="1134" w:header="567" w:footer="567" w:gutter="0"/></w:sectPr>')
+    document = (f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<w:document xmlns:w="{_W_NS}">'
+                f'<w:body>{"".join(p for p in body if p)}{sect}</w:body></w:document>')
+    import io
+    import zipfile
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        z.writestr("[Content_Types].xml",
+                   '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+                   '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
+                   '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>'
+                   '<Default Extension="xml" ContentType="application/xml"/>'
+                   '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>'
+                   '<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>'
+                   '</Types>')
+        z.writestr("_rels/.rels",
+                   '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+                   '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
+                   '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>'
+                   '</Relationships>')
+        z.writestr("word/_rels/document.xml.rels",
+                   '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+                   '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
+                   '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>'
+                   '</Relationships>')
+        z.writestr("word/styles.xml", _DOCX_STYLES)
+        z.writestr("word/document.xml", document)
+    return buf.getvalue()
 
 
 # ----------------------------------------------------------------------------
@@ -1044,9 +1270,15 @@ class Collector:
 
     def poll(self, pool) -> int:
         rows = self._list()
-        new = [r for r in rows if r.key not in self.items]
+        # Each filing counts once, even when several share a headline (Form 8.5s);
+        # an announcement already taken from the other site is skipped.
+        other = {a.same_story for a in self.items.values()}
+        new = [r for r in rows if r.url not in self.items
+               and not (r.same_story in other
+                        and any(a.source != r.source and a.same_story == r.same_story
+                                for a in self.items.values()))]
         for r in new:
-            self.items[r.key] = r
+            self.items[r.url] = r
         if new:
             log.info("Fetching %d new announcement(s)", len(new))
             list(pool.map(fetch_body, new))
@@ -1081,6 +1313,7 @@ def run(args) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     html_path = out_dir / f"RNS_RealEstate_{day.isoformat()}.html"
     txt_path = out_dir / f"RNS_RealEstate_{day.isoformat()}.txt"
+    docx_path = out_dir / f"RNS_RealEstate_{day.isoformat()}.docx"
     since = parse_hms(args.since) if args.since else None
     col = Collector(day, args.source, args.exclude_navs, since)
     t0 = time.monotonic()
@@ -1100,6 +1333,10 @@ def run(args) -> int:
                   + ("" if final else " (still checking for late announcements)"))
         written = write_atomic(html_path, build_html(day, items, status))
         write_atomic(txt_path, build_text(day, items, status))
+        try:
+            write_atomic(docx_path, build_docx(day, items, status))
+        except Exception as e:  # the HTML and text copies are already written
+            log.exception("Word copy failed: %s", e)
         log.info("Wrote %s (%d items, %.1f s)", written, len(items), time.monotonic() - t0)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:

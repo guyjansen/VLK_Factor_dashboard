@@ -6,21 +6,26 @@ It needs only Python 3.9 or later. There are no packages to install and no brows
 
 ## Output
 
-Each run writes two files to `rns_report\output\`:
+Each run writes the same report in three formats to `rns_report\output\`:
 
 | File | Use |
 | --- | --- |
-| `RNS_RealEstate_YYYY-MM-DD.html` | The report. It opens in Word or Edge and keeps the tables from the announcements. To send it, paste it into an Outlook message or save it from Word as .docx or PDF. |
-| `RNS_RealEstate_YYYY-MM-DD.txt` | The same content as plain text. |
+| `RNS_RealEstate_YYYY-MM-DD.docx` | Word document: an index on page one, then each announcement on its own page with its tables. |
+| `RNS_RealEstate_YYYY-MM-DD.html` | Opens in Edge or Word. Paste it into an Outlook message to send it. |
+| `RNS_RealEstate_YYYY-MM-DD.txt` | Plain text, the easiest format for further processing. |
 
-The report opens with an index of all announcements (time, company, headline) followed by each full announcement with a link to the original. If an announcement's text cannot be retrieved, the report says so and gives the link. The status line at the top names the source used and how many items failed. A log of each run is kept in `output\logs\`.
+**What goes in.** Only announcements dated today (UK). A run at 07:05 therefore holds that morning's 07:00 releases. A run in the afternoon also holds anything released since. Each filing appears once, including separate filings that share a headline. If both sites list the same announcement, it appears once.
+
+**What each entry holds.** A heading (company, ticker, headline), the release time and a link, then the announcement exactly as issued: from the first line (usually the date) through to the end, including enquiries and notes to editors. The site's own header, AI summary and adverts are left out, as is the standard RNS footer ("This information is provided by RNS ... END").
+
+If an announcement's text cannot be retrieved, the report says so and gives the link. The status line at the top names the source used and how many items failed. A log of each run is kept in `output\logs\`.
 
 ## Sources
 
 1. **Investegate** advanced search: RNS, sector 18 (real estate), including NAV, Rule 8 and similar notices. Like a browser, the script first opens the search page to get a session, then makes the request the page uses to fill its results table (`/advanced-search/draw`). If that comes back empty it tries a few variants. It rejects any answer that includes other newswires, because that means the filter was ignored.
 2. **London Stock Exchange** news explorer: sectors 302030, 351010 and 351020, regulatory and non-regulatory headlines. The web page arrives without the rows and loads them afterwards. The script asks for them the same way, through `api.londonstockexchange.com/api/v1/components/refresh` for the News explorer block. The LSE is used if Investegate fails, and is also checked when Investegate lists nothing yet.
 
-Status on 15 October 2026: Investegate works (33 real estate announcements listed and their text extracted). The LSE fallback does not list announcements yet: its News explorer block returns an empty answer to the script, so for now the report depends on Investegate.
+Status on 15 October 2026: Investegate works (33 real estate announcements listed and their text extracted, checked against a saved Big Yellow announcement). The LSE fallback does not list announcements yet: its News explorer block returns an empty answer to the script, so for now the report depends on Investegate.
 
 If both sources list nothing on a weekday, the report says so in a warning rather than presenting it as a quiet day.
 

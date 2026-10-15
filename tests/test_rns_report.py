@@ -290,3 +290,56 @@ def test_scheduled_task_xml_and_local_time():
     root = ET.fromstring(xml.split("\n", 1)[1])
     assert root.find(".//t:WakeToRun", ns).text == "true"
     assert root.find(".//t:Arguments", ns).text == '"C:\\RNS\\rns_report.py"'
+
+
+def test_real_investegate_announcement_keeps_only_the_announcement():
+    """Saved Big Yellow page: text from the date line to the notes to editors,
+    without Investegate's header and AI summary or the RNS footer."""
+    page = (FIX / "investegate_announcement_byg.html").read_text(encoding="utf-8")
+    node = r.extract_body(page)
+    text = r.to_text(node)
+    assert text.startswith("15 October 2026\n\nBig Yellow Group PLC\n\n(“Big Yellow” or “the Company”)")
+    assert "Response to media coverage\n\nThe Board of Big Yellow notes" in text
+    assert "Enquiries:" in text and "Victoria Heslop" in text and "Notes to Editors" in text
+    assert text.endswith("with a significant investment in sustainability.")
+    for junk in ("This information is provided by RNS", "END", "Summary by AI", "Disclaimer"):
+        assert junk not in text
+    assert "<img" not in r.to_clean_html(node, "https://www.investegate.co.uk/x")  # tracking pixel
+
+
+def test_separate_filings_with_the_same_headline_are_all_kept(monkeypatch):
+    rows = r.parse_investegate_list((FIX / "investegate_draw.html").read_text(encoding="utf-8"))
+    monkeypatch.setattr(r.InvestegateSource, "list", lambda self, day: list(rows))
+    monkeypatch.setattr(r, "fetch_body", lambda a: a)
+    col = r.Collector(DAY, "investegate", exclude_navs=False)
+    import concurrent.futures
+    with concurrent.futures.ThreadPoolExecutor(2) as pool:
+        assert col.poll(pool) == 27
+        assert col.poll(pool) == 0  # nothing new on the next poll
+    # The same announcement from the LSE is not added twice
+    lse = r.Announcement("LSE", "https://www.londonstockexchange.com/news-article/BYG/x/1",
+                         "Big Yellow Group PLC", "BYG", "Response to media coverage", None)
+    monkeypatch.setattr(r.InvestegateSource, "list", lambda self, day: [])
+    monkeypatch.setattr(r.LseSource, "list", lambda self, day: [lse])
+    col.source = "auto"
+    with concurrent.futures.ThreadPoolExecutor(2) as pool:
+        assert col.poll(pool) == 0
+
+
+def test_word_document_is_valid(tmp_path):
+    import zipfile
+    import xml.etree.ElementTree as ET
+    page = (FIX / "investegate_announcement_byg.html").read_text(encoding="utf-8")
+    node = r.extract_body(page)
+    a = r.Announcement("Investegate", "https://www.investegate.co.uk/a/1", "Big Yellow Group", "BYG",
+                       "Response to media coverage", dt.datetime(2026, 10, 15, 7, 0),
+                       body_html=r.to_clean_html(node, "https://www.investegate.co.uk/a/1")
+                       + "<table><tr><td colspan='2'><b>NAV</b></td></tr><tr><td>p</td><td>5 &amp; 6</td></tr></table>")
+    data = r.build_docx(DAY, [a], "1 announcement(s)")
+    z = zipfile.ZipFile(__import__("io").BytesIO(data))
+    for name in z.namelist():
+        if name.endswith(".xml") or name.endswith(".rels"):
+            ET.fromstring(z.read(name))  # well-formed
+    doc = z.read("word/document.xml").decode("utf-8")
+    assert "The Board of Big Yellow notes" in doc and "Notes to Editors" in doc
+    assert "5 &amp; 6" in doc and '<w:gridSpan w:val="2"/>' in doc
