@@ -20,6 +20,8 @@ The report opens with an index of all announcements (time, company, headline) fo
 1. **Investegate** advanced search: RNS, sector 18 (real estate), including NAV, Rule 8 and similar notices. Like a browser, the script first opens the search page to get a session, then makes the request the page uses to fill its results table (`/advanced-search/draw`). If that comes back empty it tries a few variants. It rejects any answer that includes other newswires, because that means the filter was ignored.
 2. **London Stock Exchange** news explorer: sectors 302030, 351010 and 351020, regulatory and non-regulatory headlines. The web page arrives without the rows and loads them afterwards. The script asks for them the same way, through `api.londonstockexchange.com/api/v1/components/refresh` for the News explorer block. The LSE is used if Investegate fails, and is also checked when Investegate lists nothing yet.
 
+Status on 15 October 2026: Investegate works (33 real estate announcements listed and their text extracted). The LSE fallback does not list announcements yet: its News explorer block returns an empty answer to the script, so for now the report depends on Investegate.
+
 If both sources list nothing on a weekday, the report says so in a warning rather than presenting it as a quiet day.
 
 The two sites classify companies slightly differently. On 15 October, for example, Investegate listed Mindflair and LSE listed IWG, RentGuarantor and Town Centre Securities. Use `--source lse` to make LSE the only source.

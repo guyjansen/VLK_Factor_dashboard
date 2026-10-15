@@ -330,7 +330,8 @@ def investegate_draw_url(d: dt.date, exclude_navs: bool, *, date_from: bool = Tr
     """The request the page's jQuery makes to fill its results table.
 
     jQuery sends list values as name[]=value (the plain form gets HTTP 422)
-    and leaves out an empty category list.
+    and leaves out an empty category list. Sending "categories=" made the
+    site return an empty table (checked 15 October 2026), so it is not sent.
     """
     q = [("search_for", "1"), ("search_word", ""),
          ("date_from", investegate_date(d) if date_from else ""),
