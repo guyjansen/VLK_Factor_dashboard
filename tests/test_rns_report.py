@@ -221,7 +221,7 @@ def fake_web(monkeypatch):
 
 
 def test_end_to_end_falls_back_to_lse(fake_web, tmp_path):
-    code = r.main(["--once", "--date", DAY.isoformat(), "--since", "07:00", "--out", str(tmp_path)])
+    code = r.main(["--once", "--date", DAY.isoformat(), "--since", "07:00", "--out", str(tmp_path), "--formats", "md,docx,html,txt"])
     assert code == 0
     html = (tmp_path / "RNS_RealEstate_2026-10-15.html").read_text(encoding="utf-8")
     txt = (tmp_path / "RNS_RealEstate_2026-10-15.txt").read_text(encoding="utf-8")
@@ -239,7 +239,7 @@ def test_sources_all_down_still_writes_a_report(monkeypatch, tmp_path):
         raise r.FetchError(f"{url}: connection refused")
 
     monkeypatch.setattr(r, "fetch", down)
-    code = r.main(["--once", "--date", DAY.isoformat(), "--out", str(tmp_path)])
+    code = r.main(["--once", "--date", DAY.isoformat(), "--out", str(tmp_path), "--formats", "html"])
     assert code == 2
     html = (tmp_path / "RNS_RealEstate_2026-10-15.html").read_text(encoding="utf-8")
     assert "SOURCES FAILED" in html
@@ -248,7 +248,7 @@ def test_sources_all_down_still_writes_a_report(monkeypatch, tmp_path):
 def test_empty_weekday_is_flagged(monkeypatch, tmp_path):
     monkeypatch.setattr(r.InvestegateSource, "list", lambda self, day: [])
     monkeypatch.setattr(r.LseSource, "list", lambda self, day: [])
-    r.main(["--once", "--date", DAY.isoformat(), "--out", str(tmp_path)])
+    r.main(["--once", "--date", DAY.isoformat(), "--out", str(tmp_path), "--formats", "html"])
     html = (tmp_path / "RNS_RealEstate_2026-10-15.html").read_text(encoding="utf-8")
     assert "WARNING: no announcements found" in html
 
@@ -271,9 +271,9 @@ def test_morning_loop_waits_for_seven_and_picks_up_late_items(monkeypatch, tmp_p
 
     monkeypatch.setattr(r.InvestegateSource, "list", lambda self, day: fake_list(day, False))
     monkeypatch.setattr(r, "fetch", lambda url, **kw: ARTICLE)
-    assert r.main(["--out", str(tmp_path)]) == 0
-    assert polls[0] >= dt.datetime(2026, 10, 15, 7, 0)
-    assert polls[-1] >= dt.datetime(2026, 10, 15, 7, 3, 30) - dt.timedelta(seconds=r.POLL_SECONDS)
+    assert r.main(["--out", str(tmp_path), "--formats", "html"]) == 0
+    assert polls[0] >= dt.datetime(2026, 10, 15, 7, 1)  # run_time_uk in settings.ini
+    assert polls[-1] >= dt.datetime(2026, 10, 15, 7, 3) - dt.timedelta(seconds=r.POLL_SECONDS)
     html = (tmp_path / "RNS_RealEstate_2026-10-15.html").read_text(encoding="utf-8")
     assert f"{len(seven)} announcement(s); source: Investegate" in html
     assert "still checking" not in html
@@ -343,3 +343,51 @@ def test_word_document_is_valid(tmp_path):
     doc = z.read("word/document.xml").decode("utf-8")
     assert "The Board of Big Yellow notes" in doc and "Notes to Editors" in doc
     assert "5 &amp; 6" in doc and '<w:gridSpan w:val="2"/>' in doc
+
+
+def test_markdown_file_for_the_llm(tmp_path):
+    page = (FIX / "investegate_announcement_byg.html").read_text(encoding="utf-8")
+    node = r.extract_body(page)
+    md = r.to_markdown(node)
+    assert md.startswith("15 October 2026\n\nBig Yellow Group PLC\n\n(“Big Yellow” or “the Company”)")
+    assert md.rstrip().endswith("with a significant investment in sustainability.")
+    table = r.to_markdown(r.parse_html(
+        "<p><b>Results</b> for the half</p><table><tr><td></td><td><b>2026</b></td><td></td><td>2025</td></tr>"
+        "<tr><td>EPRA NTA (p)</td><td>612</td><td></td><td>598</td></tr>"
+        "<tr><td colspan='4'></td></tr><tr><td>LTV | %</td><td>33.1</td><td></td><td>34.0</td></tr></table>"
+        "<ul><li>One</li><li>Two</li></ul>"))
+    assert table == ("**Results** for the half\n\n|  | 2026 | 2025 |\n|---|---|---|\n"
+                     "| EPRA NTA (p) | 612 | 598 |\n| LTV \\| % | 33.1 | 34.0 |\n\n- One\n- Two")
+    a = r.Announcement("Investegate", "https://x/1", "Big Yellow Group", "BYG", "Response to media coverage",
+                       dt.datetime(2026, 10, 15, 7, 0), body_md=md)
+    b = r.Announcement("Investegate", "https://x/2", "SEGRO", "SGRO", "Form 8.3", None, error="timed out")
+    doc = r.build_markdown(DAY, [a, b], "2 announcement(s)", instructions="Summarise.")
+    assert doc.startswith("# Real estate RNS announcements: Thursday 15 October 2026")
+    assert "| 1 | 07:00 | Big Yellow Group | BYG | Response to media coverage |" in doc
+    assert "## 1. Big Yellow Group (BYG): Response to media coverage" in doc
+    assert "Released: 15 October 2026, 07:00 UK" in doc
+    assert "could not be retrieved (timed out)" in doc
+    assert doc.rstrip().endswith("## Instructions\n\nSummarise.")
+
+
+def test_settings_file(tmp_path):
+    ini = tmp_path / "settings.ini"
+    ini.write_text("[report]\noutput_folder = D:\\Reports ; comment\nrun_time_uk = 07:05\n"
+                   "exclude_form8_and_nav = yes\n", encoding="utf-8")
+    s = r.load_settings(ini)
+    assert s["output_folder"] == "D:\\Reports" and s["run_time_uk"] == "07:05"
+    assert r._yes(s["exclude_form8_and_nav"]) and s["formats"] == "md, docx"
+    assert r.output_dir({"output_folder": ""}).name == "RNS Reports"
+    shipped = r.load_settings(Path(r.__file__).with_name("settings.ini"))
+    assert shipped["run_time_uk"] == "07:01" and shipped["formats"] == "md, docx"
+
+
+def test_shipped_instructions_drop_comment_lines():
+    text = r.read_instructions()
+    assert text.startswith("You are helping a listed real estate equity research team")
+    assert "#" not in text.splitlines()[0]
+
+
+def test_daily_schedule_xml():
+    xml = r.task_xml("py.exe", "s.py", dt.datetime(2026, 10, 16, 7, 59), days="daily")
+    assert "<ScheduleByDay>" in xml and "Monday" not in xml

@@ -45,7 +45,7 @@ from pathlib import Path
 # ----------------------------------------------------------------------------
 # Settings (all can be overridden on the command line)
 # ----------------------------------------------------------------------------
-VERSION = "3"
+VERSION = "4"
 
 INVESTEGATE_BASE = "https://www.investegate.co.uk"
 INVESTEGATE_SECTORS = ["18"]          # 18 = Real Estate
@@ -55,8 +55,6 @@ LSE_API = "https://api.londonstockexchange.com/api/v1/pages"
 LSE_SECTORS = "302030,351010,351020"  # mortgage REITs, RE investment & services, REITs
 LSE_HEADLINE_TYPES = "1,2"
 
-START_TIME = "07:00:02"   # UK time to start polling
-SETTLE_TIME = "07:03:30"  # keep polling for late arrivals until this UK time
 GIVE_UP_TIME = "07:07:00" # stop retrying broken sources at this UK time
 POLL_SECONDS = 15
 HTTP_TIMEOUT = 20
@@ -301,6 +299,7 @@ class Announcement:
     when: dt.datetime | None  # UK time
     body_html: str = ""
     body_text: str = ""
+    body_md: str = ""
     error: str = ""
     extra: dict = field(default_factory=dict)
 
@@ -962,6 +961,7 @@ def fetch_body(a: Announcement) -> Announcement:
             raise FetchError("could not find the announcement text on the page")
         a.body_html = to_clean_html(node, a.url)
         a.body_text = to_text(node)
+        a.body_md = to_markdown(node)
         if len(a.body_text) < 40:
             raise FetchError("announcement text looks empty")
     except Exception as e:  # keep going: one bad page must not sink the report
@@ -1227,6 +1227,150 @@ def build_docx(day: dt.date, items: list[Announcement], status: str) -> bytes:
 
 
 # ----------------------------------------------------------------------------
+# Markdown: one plain-text file that an LLM (or a person) reads easily
+# ----------------------------------------------------------------------------
+_MD_HEADINGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
+
+
+def _md_inline(runs: list[tuple[str, bool]]) -> str:
+    """Join (text, bold) runs into one line of Markdown, whitespace collapsed."""
+    out, buf, bold = [], [], False
+
+    def close():
+        text = re.sub(r"[ \t\r\f\v\xa0]+", " ", "".join(buf))
+        if bold and text.strip():
+            lead = " " if text[:1] == " " else ""
+            tail = " " if text[-1:] == " " else ""
+            text = f"{lead}**{text.strip()}**{tail}"
+        out.append(text)
+        buf.clear()
+
+    for text, b in runs:
+        if text == "\n":
+            close()
+            out.append("\n")
+            continue
+        if b != bold:
+            close()
+            bold = b
+        buf.append(text)
+    close()
+    lines = [re.sub(r" {2,}", " ", ln).strip() for ln in "".join(out).split("\n")]
+    return "\n".join(ln for ln in lines if ln)
+
+
+def _md_cell(cell: Node) -> str:
+    text = cell.text()
+    return text.replace("|", "\\|").strip()
+
+
+def _md_table(table: Node) -> str:
+    rows = []
+    for tr in table.iter("tr"):
+        if any(p.tag == "table" for p in _ancestors(tr, stop=table)):
+            continue  # nested tables are flattened into their cell's text
+        row = []
+        for c in tr.children:
+            if isinstance(c, Node) and c.tag in ("td", "th"):
+                row.append(_md_cell(c))
+                span = int(c.attrs["colspan"]) if c.attrs.get("colspan", "").isdigit() else 1
+                row += [""] * (min(span, 20) - 1)
+        if any(row):
+            rows.append(row)
+    if not rows:
+        return ""
+    width = max(len(r) for r in rows)
+    rows = [r + [""] * (width - len(r)) for r in rows]
+    keep = [i for i in range(width) if any(r[i] for r in rows)]  # drop spacer columns
+    rows = [[r[i] for i in keep] for r in rows]
+    if len(keep) <= 1:  # a one-column "table" is just layout: write it as lines
+        return "\n".join(r[0] for r in rows if r and r[0])
+    lines = ["| " + " | ".join(rows[0]) + " |", "|" + "---|" * len(keep)]
+    lines += ["| " + " | ".join(r) + " |" for r in rows[1:]]
+    return "\n".join(lines)
+
+
+def to_markdown(node: Node) -> str:
+    """Announcement HTML as Markdown: paragraphs, bold, lists, headings, tables."""
+    blocks: list[str] = []
+    runs: list[tuple[str, bool]] = []
+
+    def flush(prefix: str = ""):
+        text = _md_inline(runs)
+        runs.clear()
+        if text:
+            blocks.append(prefix + text if prefix else text)
+
+    def walk(n: Node, bold: bool):
+        for c in n.children:
+            if isinstance(c, str):
+                runs.append((c, bold))
+                continue
+            if c.tag in DROP_TAGS or c.tag == "img":
+                continue
+            if c.tag == "br":
+                runs.append(("\n", bold))
+            elif c.tag == "table":
+                flush()
+                t = _md_table(c)
+                if t:
+                    blocks.append(t)
+            elif c.tag in _MD_HEADINGS:
+                flush()
+                walk(c, False)
+                flush("#### ")
+            elif c.tag == "li":
+                flush()
+                walk(c, bold)
+                flush("- ")
+            elif c.tag in BLOCKS or c.tag in ("tr", "td", "th", "caption"):
+                flush()
+                walk(c, bold)
+                flush()
+            else:
+                walk(c, bold or c.tag in ("b", "strong"))
+
+    walk(node, False)
+    flush()
+    # A list item block is one line; join consecutive ones without blank lines
+    out: list[str] = []
+    for b in blocks:
+        if out and b.startswith("- ") and out[-1].startswith("- "):
+            out[-1] += "\n" + b
+        else:
+            out.append(b)
+    return "\n\n".join(out)
+
+
+def build_markdown(day: dt.date, items: list[Announcement], status: str,
+                   instructions: str = "") -> str:
+    e = lambda s: s.replace("|", "\\|")  # noqa: E731
+    out = [f"# Real estate RNS announcements: {day.strftime('%A %d %B %Y')}", "",
+           "Regulatory announcements (RNS) released today, UK time, by real estate companies "
+           "listed on the London Stock Exchange. Each announcement is given in full, as issued.",
+           "", f"Status: {status}", ""]
+    if not items:
+        out += ["No real estate announcements were found.", ""]
+    else:
+        out += ["## Index", "", "| # | Time (UK) | Company | Ticker | Headline |", "|---|---|---|---|---|"]
+        out += [f"| {i} | {_fmt_time(a.when)} | {e(a.company)} | {e(a.tidm)} | {e(a.headline)} |"
+                for i, a in enumerate(items, 1)]
+        out.append("")
+    for i, a in enumerate(items, 1):
+        when = a.when.strftime("%d %B %Y, %H:%M UK") if a.when else "today"
+        out += ["---", "", f"## {i}. {a.company}{f' ({a.tidm})' if a.tidm else ''}: {a.headline}", "",
+                f"Released: {when}  ", f"Link: {a.url}", ""]
+        if a.error:
+            out += [f"[The text of this announcement could not be retrieved ({a.error}). "
+                    "See the link above.]", ""]
+        else:
+            out += [a.body_md or a.body_text, ""]
+    if instructions.strip():
+        out += ["---", "", "## Instructions", "", instructions.strip(), ""]
+    return "\n".join(out)
+
+
+# ----------------------------------------------------------------------------
 # Main loop
 # ----------------------------------------------------------------------------
 class Collector:
@@ -1311,16 +1455,16 @@ def run(args) -> int:
 
     out_dir = Path(args.out).expanduser()
     out_dir.mkdir(parents=True, exist_ok=True)
-    html_path = out_dir / f"RNS_RealEstate_{day.isoformat()}.html"
-    txt_path = out_dir / f"RNS_RealEstate_{day.isoformat()}.txt"
-    docx_path = out_dir / f"RNS_RealEstate_{day.isoformat()}.docx"
+    stem = out_dir / f"RNS_RealEstate_{day.isoformat()}"
+    instructions = read_instructions()
     since = parse_hms(args.since) if args.since else None
     col = Collector(day, args.source, args.exclude_navs, since)
     t0 = time.monotonic()
-    written = None
+    written: Path | None = None
 
     def write(final: bool):
         nonlocal written
+        written = None
         items = col.sorted_items()
         failed = sum(1 for a in items if a.error)
         status = (f"{len(items)} announcement(s); source: {', '.join(sorted(col.used)) or 'none'}; "
@@ -1331,12 +1475,16 @@ def run(args) -> int:
                      " A weekday normally has several, so run --diagnose"
                      if final and not items and col.listed_ok and day.weekday() < 5 else "")
                   + ("" if final else " (still checking for late announcements)"))
-        written = write_atomic(html_path, build_html(day, items, status))
-        write_atomic(txt_path, build_text(day, items, status))
-        try:
-            write_atomic(docx_path, build_docx(day, items, status))
-        except Exception as e:  # the HTML and text copies are already written
-            log.exception("Word copy failed: %s", e)
+        builders = {"md": lambda: build_markdown(day, items, status, instructions),
+                    "docx": lambda: build_docx(day, items, status),
+                    "html": lambda: build_html(day, items, status),
+                    "txt": lambda: build_text(day, items, status)}
+        for fmt in args.formats:
+            try:
+                path = write_atomic(stem.with_suffix("." + fmt), builders[fmt]())
+                written = written or path
+            except Exception as e:  # one format failing must not stop the others
+                log.exception("Writing the %s file failed: %s", fmt, e)
         log.info("Wrote %s (%d items, %.1f s)", written, len(items), time.monotonic() - t0)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
@@ -1355,8 +1503,8 @@ def run(args) -> int:
                 break
             time.sleep(max(1.0, min(args.poll, (give_up - now).total_seconds())))
     write(final=True)
-    if args.open and written and hasattr(os, "startfile"):
-        os.startfile(str(written))  # type: ignore[attr-defined]
+    if args.open and hasattr(os, "startfile"):
+        os.startfile(str(out_dir))  # type: ignore[attr-defined]
     return 0 if col.listed_ok else 2
 
 
@@ -1405,7 +1553,7 @@ def diagnose(args) -> int:
     """Try every way of reading each source, save the raw responses and write
     a short summary (output/debug/probe_summary.txt) to send for debugging."""
     day = dt.date.fromisoformat(args.date) if args.date else uk_now().date()
-    dbg = Path(args.out).expanduser() / "debug"
+    dbg = getattr(args, "debug_dir", None) or Path(args.out).expanduser() / "debug"
     dbg.mkdir(parents=True, exist_ok=True)
     lines: list[str] = []
 
@@ -1540,8 +1688,82 @@ def diagnose(args) -> int:
 
 
 TASK_NAME = "RNS Real Estate Morning Report"
+APP_DIR = Path(__file__).resolve().parent
+INSTALL_DIR_NAME = "RNS Report"
+OUTPUT_DIR_NAME = "RNS Reports"
+ALL_FORMATS = ("md", "docx", "html", "txt")
+
+# ----------------------------------------------------------------------------
+# Settings (settings.ini next to this script)
+# ----------------------------------------------------------------------------
+DEFAULT_SETTINGS = {
+    "output_folder": "",
+    "run_time_uk": "07:01",
+    "final_time_uk": "07:03",
+    "exclude_form8_and_nav": "no",
+    "formats": "md, docx",
+    "days": "weekdays",
+}
 
 
+def load_settings(path: Path | None = None) -> dict[str, str]:
+    import configparser
+    s = dict(DEFAULT_SETTINGS)
+    path = path or APP_DIR / "settings.ini"
+    if path.exists():
+        cp = configparser.ConfigParser(inline_comment_prefixes=(";", "#"))
+        try:
+            cp.read(path, encoding="utf-8-sig")
+            if cp.has_section("report"):
+                s.update({k: v.strip() for k, v in cp.items("report") if v.strip() or k == "output_folder"})
+        except configparser.Error as e:
+            log.warning("settings.ini could not be read (%s); using defaults", e)
+    return s
+
+
+def _yes(v: str) -> bool:
+    return str(v).strip().lower() in ("yes", "y", "true", "1", "on")
+
+
+def _windows_folder(csidl: int, fallback: str) -> Path:
+    """A Windows special folder (handles Documents moved to OneDrive)."""
+    if os.name == "nt":
+        try:
+            import ctypes
+            buf = ctypes.create_unicode_buffer(260)
+            if ctypes.windll.shell32.SHGetFolderPathW(None, csidl, None, 0, buf) == 0 and buf.value:
+                return Path(buf.value)
+        except Exception:
+            pass
+    return Path.home() / fallback
+
+
+def documents_dir() -> Path:
+    return _windows_folder(5, "Documents")  # CSIDL_PERSONAL
+
+
+def desktop_dir() -> Path:
+    return _windows_folder(0x10, "Desktop")  # CSIDL_DESKTOPDIRECTORY
+
+
+def output_dir(settings: dict[str, str]) -> Path:
+    folder = settings.get("output_folder", "").strip().strip('"')
+    return Path(os.path.expandvars(folder)).expanduser() if folder else documents_dir() / OUTPUT_DIR_NAME
+
+
+def read_instructions() -> str:
+    path = APP_DIR / "llm_instructions.txt"
+    try:
+        lines = path.read_text(encoding="utf-8-sig").splitlines()
+    except OSError:
+        return ""
+    # Lines starting with '#' explain the file and are left out
+    return "\n".join(ln for ln in lines if not ln.lstrip().startswith("#")).strip()
+
+
+# ----------------------------------------------------------------------------
+# Windows setup: copy to the user's profile and schedule the daily run
+# ----------------------------------------------------------------------------
 def local_time_for_uk(uk_time: dt.time, day: dt.date) -> dt.datetime:
     """The laptop's local clock time that corresponds to a UK time."""
     uk = dt.datetime.combine(day, uk_time)
@@ -1550,15 +1772,20 @@ def local_time_for_uk(uk_time: dt.time, day: dt.date) -> dt.datetime:
     return utc.astimezone().replace(tzinfo=None)
 
 
-def task_xml(python: str, script: str, start_local: dt.datetime) -> str:
-    days = "".join(f"<{d}/>" for d in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"))
+def task_xml(python: str, script: str, start_local: dt.datetime, days: str = "weekdays") -> str:
     e = html.escape
+    if days.strip().lower() == "daily":
+        schedule = "<ScheduleByDay><DaysInterval>1</DaysInterval></ScheduleByDay>"
+    else:
+        names = "".join(f"<{d}/>" for d in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"))
+        schedule = (f"<ScheduleByWeek><DaysOfWeek>{names}</DaysOfWeek>"
+                    "<WeeksInterval>1</WeeksInterval></ScheduleByWeek>")
     return f"""<?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
-  <RegistrationInfo><Description>Collects the day's real estate RNS announcements into one document.</Description></RegistrationInfo>
+  <RegistrationInfo><Description>Collects the day's real estate RNS announcements into one file for an LLM.</Description></RegistrationInfo>
   <Triggers><CalendarTrigger>
     <StartBoundary>{start_local:%Y-%m-%dT%H:%M:%S}</StartBoundary><Enabled>true</Enabled>
-    <ScheduleByWeek><DaysOfWeek>{days}</DaysOfWeek><WeeksInterval>1</WeeksInterval></ScheduleByWeek>
+    {schedule}
   </CalendarTrigger></Triggers>
   <Principals><Principal id="Author"><LogonType>InteractiveToken</LogonType><RunLevel>LeastPrivilege</RunLevel></Principal></Principals>
   <Settings>
@@ -1578,52 +1805,150 @@ def task_xml(python: str, script: str, start_local: dt.datetime) -> str:
 """
 
 
-def install_task(at_uk: str) -> int:
-    """Register a weekday Windows scheduled task that starts at `at_uk` UK time."""
+def _python_for(app: Path) -> Path:
+    """Bundled python (kit) if present, else the one running now; windowless if possible."""
+    for exe in (app / "python" / "pythonw.exe", app / "python" / "python.exe"):
+        if exe.exists():
+            return exe
+    here = Path(sys.executable)
+    return here.with_name("pythonw.exe") if here.with_name("pythonw.exe").exists() else here
+
+
+def _copy_kit(src: Path, dest: Path) -> None:
+    import shutil
+    skip = shutil.ignore_patterns("output", "logs", "debug", "__pycache__", "*.tmp", "*.pyc",
+                                  "rns_task.xml", "tests")
+    shutil.copytree(src, dest, ignore=skip, dirs_exist_ok=True)
+
+
+def _schedule(python: Path, script: Path, settings: dict[str, str]) -> tuple[int, dt.datetime]:
     import subprocess
-    exe = Path(sys.executable)
-    pyw = exe.with_name("pythonw.exe")  # no console window
-    python = str(pyw if pyw.exists() else exe)
-    script = str(Path(__file__).resolve())
-    tomorrow = uk_now().date() + dt.timedelta(days=1)
-    start = local_time_for_uk(parse_hms(at_uk), tomorrow)
-    xml_path = Path(script).with_name("rns_task.xml")
-    xml_path.write_text(task_xml(python, script, start), encoding="utf-16")
-    cmd = ["schtasks", "/Create", "/TN", TASK_NAME, "/XML", str(xml_path), "/F"]
-    print("Running:", subprocess.list2cmdline(cmd))
-    rc = subprocess.call(cmd)
+    # Start two minutes early so a sleeping laptop is awake; the script then
+    # waits for run_time_uk itself.
+    run_at = dt.datetime.combine(dt.date(2000, 1, 1), parse_hms(settings["run_time_uk"]))
+    start_uk = (run_at - dt.timedelta(minutes=2)).time()
+    start = local_time_for_uk(start_uk, uk_now().date() + dt.timedelta(days=1))
+    xml_path = script.with_name("rns_task.xml")
+    xml_path.write_text(task_xml(str(python), str(script), start, settings["days"]), encoding="utf-16")
+    rc = subprocess.call(["schtasks", "/Create", "/TN", TASK_NAME, "/XML", str(xml_path), "/F"],
+                         stdout=subprocess.DEVNULL)
+    return rc, start
+
+
+def _shortcut(target: Path, link: Path) -> bool:
+    import subprocess
+    ps = (f"$s=(New-Object -ComObject WScript.Shell).CreateShortcut('{str(link).replace(chr(39), chr(39) * 2)}');"
+          f"$s.TargetPath='{str(target).replace(chr(39), chr(39) * 2)}';$s.Save()")
+    try:
+        return subprocess.call(["powershell", "-NoProfile", "-NonInteractive", "-Command", ps],
+                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
+    except OSError:
+        return False
+
+
+def setup() -> int:
+    """Install for the current Windows user. Run by Install.bat."""
+    if os.name != "nt":
+        print("Setup is for Windows.")
+        return 1
+    import shutil
+    print("Setting up the RNS real estate report...\n")
+    local = Path(os.environ.get("LOCALAPPDATA") or Path.home() / "AppData" / "Local") / INSTALL_DIR_NAME
+    try:
+        if APP_DIR != local:
+            _copy_kit(APP_DIR, local)
+        print(f"  [ok] Program copied to {local}")
+    except OSError as e:
+        print(f"  [!!] Could not copy the program to {local}: {e}")
+        return 1
+    settings = load_settings(local / "settings.ini")
+    out = output_dir(settings)
+    out.mkdir(parents=True, exist_ok=True)
+    print(f"  [ok] Reports will be saved in {out}")
+    python = _python_for(local)
+    if not python.exists():
+        print("  [!!] No Python found. Use the full kit (with the 'python' folder).")
+        return 1
+    rc, start = _schedule(python, local / "rns_report.py", settings)
+    days = "every day" if settings["days"].lower() == "daily" else "every weekday"
     if rc == 0:
-        print(f"Scheduled '{TASK_NAME}' for weekdays at {start:%H:%M} local time "
-              f"({at_uk} UK). Reports go to {Path(script).parent / 'output'}")
+        print(f"  [ok] Scheduled {days} at {settings['run_time_uk']} UK time "
+              f"(task starts {start:%H:%M} on this computer's clock)")
+    else:
+        print("  [!!] Windows did not accept the scheduled task (Task Scheduler may be blocked "
+              "on this computer). Ask IT, or use 'Run now.bat' by hand.")
+    if _shortcut(out, desktop_dir() / f"{OUTPUT_DIR_NAME}.lnk"):
+        print(f"  [ok] Desktop shortcut '{OUTPUT_DIR_NAME}' created")
+    _shortcut(local / "Run now.bat", out / "Make today's report now.lnk")
+    print("\nChecking the connection to Investegate...")
+    try:
+        InvestegateSource(_yes(settings["exclude_form8_and_nav"])).list(uk_now().date())
+        print("  [ok] Investegate can be reached")
+    except Exception as e:
+        print(f"  [!!] Investegate could not be reached: {e}\n"
+              "       The report will be empty until this works. Run 'Test connection.bat' "
+              "and send the file it names to whoever set this up.")
+        rc = rc or 2
+    print("\nDone." if rc == 0 else "\nFinished with warnings (see [!!] above).")
+    print(f"Each morning a file named RNS_RealEstate_<date>.md appears in '{out}'.\n"
+          "Drag that file into your AI assistant.")
     return rc
 
 
+def uninstall() -> int:
+    import subprocess
+    rc = subprocess.call(["schtasks", "/Delete", "/TN", TASK_NAME, "/F"])
+    print("Scheduled task removed." if rc == 0 else "No scheduled task found.")
+    local = Path(os.environ.get("LOCALAPPDATA") or "") / INSTALL_DIR_NAME
+    print(f"Reports were kept. You can delete the program folder: {local}")
+    return 0
+
+
 def main(argv=None) -> int:
-    here = Path(__file__).resolve().parent
+    for stream in (sys.stdout, sys.stderr):  # never crash on a character the console lacks
+        try:
+            stream.reconfigure(errors="replace")
+        except Exception:
+            pass
+    settings = load_settings()
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("--once", action="store_true", help="one pass now, no waiting or polling")
     p.add_argument("--diagnose", action="store_true", help="test both sources, save raw pages")
+    p.add_argument("--setup", action="store_true", help="install for this Windows user (Install.bat)")
+    p.add_argument("--uninstall", action="store_true", help="remove the scheduled task")
     p.add_argument("--source", choices=["auto", "investegate", "lse"], default="auto")
     p.add_argument("--date", help="YYYY-MM-DD (default: today, UK)")
     p.add_argument("--since", help="only announcements at or after HH:MM UK, e.g. 07:00")
     p.add_argument("--exclude-navs", action="store_true",
+                   default=_yes(settings["exclude_form8_and_nav"]),
                    help="drop NAV, EMM/EPT, Rule 8 (Form 8.x) and FRN rate-fix notices")
-    p.add_argument("--start", default=START_TIME, help="UK time to start polling")
-    p.add_argument("--settle", default=SETTLE_TIME, help="UK time to stop polling")
+    p.add_argument("--include-navs", dest="exclude_navs", action="store_false",
+                   help="keep those notices even if settings.ini excludes them")
+    p.add_argument("--start", default=settings["run_time_uk"], help="UK time to start polling")
+    p.add_argument("--settle", default=settings["final_time_uk"], help="UK time to stop polling")
     p.add_argument("--give-up", default=GIVE_UP_TIME, help="UK time to stop retrying failed sources")
     p.add_argument("--poll", type=float, default=POLL_SECONDS, help="seconds between polls")
     p.add_argument("--workers", type=int, default=WORKERS)
-    p.add_argument("--out", default=str(here / "output"), help="output folder")
-    p.add_argument("--open", action="store_true", help="open the report when done (Windows)")
-    p.add_argument("--install-task", nargs="?", const="06:58", metavar="HH:MM",
-                   help="create a weekday Windows scheduled task starting at this UK time "
-                        "(default 06:58)")
+    p.add_argument("--out", default=str(output_dir(settings)), help="folder for the reports")
+    p.add_argument("--formats", default=settings["formats"],
+                   help=f"comma-separated, any of: {', '.join(ALL_FORMATS)}")
+    p.add_argument("--open", action="store_true", help="open the reports folder when done (Windows)")
+    p.add_argument("--install-task", action="store_true", help=argparse.SUPPRESS)  # old name
     args = p.parse_args(argv)
-    if args.install_task:
-        return install_task(args.install_task)
+    if args.setup or args.install_task:
+        return setup()
+    if args.uninstall:
+        return uninstall()
+    args.formats = [f.strip().lower().lstrip(".") for f in args.formats.split(",")
+                    if f.strip().lower().lstrip(".") in ALL_FORMATS] or ["md"]
 
-    logs = Path(args.out).expanduser() / "logs"
-    logs.mkdir(parents=True, exist_ok=True)
+    logs = APP_DIR / "logs"
+    try:
+        logs.mkdir(parents=True, exist_ok=True)
+    except OSError:  # read-only program folder: log next to the reports
+        logs = Path(args.out).expanduser() / "logs"
+        logs.mkdir(parents=True, exist_ok=True)
+    args.debug_dir = logs.parent / "debug"
     handlers: list[logging.Handler] = [
         logging.FileHandler(logs / f"rns_report_{uk_now():%Y-%m-%d}.log", encoding="utf-8")]
     if sys.stdout is not None:  # None under pythonw.exe (scheduled task)

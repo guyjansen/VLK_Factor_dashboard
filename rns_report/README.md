@@ -1,82 +1,119 @@
 # Morning real estate RNS report
 
-`rns_report.py` collects the day's London Stock Exchange announcements (RNS) for real estate companies and puts the full text of all of them into one document. A scheduled task starts it just before 07:00 UK time. It polls from 07:00, fetches the announcement texts in parallel and writes the report. On a normal morning the file is ready by about 07:04 UK, well before 07:08.
+Every weekday at 07:01 UK time (08:01 Amsterdam), this collects that morning's London Stock Exchange announcements (RNS) from real estate companies. It writes their full text into one Markdown file, ready to drag into an LLM: `Documents\RNS Reports\RNS_RealEstate_<date>.md`. It runs on its own on any Windows computer. Python comes inside the kit, so nothing needs to be installed and no browser is needed.
 
-It needs only Python 3.9 or later. There are no packages to install and no browser is needed, so it works without Chrome. It uses the Windows proxy settings and certificate store, as Edge does.
+This page is for the person setting it up. Users get `HOW TO USE.txt`, a one-page guide inside the kit.
 
-## Output
+## Get the kit
 
-Each run writes the same report in three formats to `rns_report\output\`:
+GitHub builds the kit each time anything in `rns_report/` changes:
 
-| File | Use |
+1. On GitHub, open **Actions** > **Build RNS report kit** and click the latest green run.
+2. Under **Artifacts**, download **RNS-Report-kit**. Artifacts are kept for 90 days. To build a new one, click **Run workflow** on the same page.
+3. Before unzipping, right-click the zip > **Properties** > tick **Unblock** > **OK**. This stops Windows warning about every file.
+4. Unzip. Put the folder on a shared drive such as `K:\Property\...\RNS Report`, or copy it to each computer.
+
+The kit contains:
+
+| File | For |
 | --- | --- |
-| `RNS_RealEstate_YYYY-MM-DD.docx` | Word document: an index on page one, then each announcement on its own page with its tables. |
-| `RNS_RealEstate_YYYY-MM-DD.html` | Opens in Edge or Word. Paste it into an Outlook message to send it. |
-| `RNS_RealEstate_YYYY-MM-DD.txt` | Plain text, the easiest format for further processing. |
+| `Install.bat` | One-time setup on a computer (see below). Run it again after changing `run_time_uk` or `days` in the settings. |
+| `Run now.bat` | Make today's file straight away and open the reports folder |
+| `Test connection.bat` | Check the sources and open `probe_summary.txt`, the file to send when something is wrong |
+| `Uninstall.bat` | Remove the daily task (reports are kept) |
+| `settings.ini` | Time, output folder, days, formats, whether to leave out Form 8 disclosures |
+| `llm_instructions.txt` | The prompt added to the end of each file |
+| `HOW TO USE.txt` | One-page guide for the user |
+| `python\` | Private copy of Python (the embeddable package from python.org) |
+| `rns_report.py` | The program |
 
-**What goes in.** Only announcements dated today (UK). A run at 07:05 therefore holds that morning's 07:00 releases. A run in the afternoon also holds anything released since. Each filing appears once, including separate filings that share a headline. If both sites list the same announcement, it appears once.
+## Set up a computer
 
-**What each entry holds.** A heading (company, ticker, headline), the release time and a link, then the announcement exactly as issued: from the first line (usually the date) through to the end, including enquiries and notes to editors. The site's own header, AI summary and adverts are left out, as is the standard RNS footer ("This information is provided by RNS ... END").
+Log in as the user, or have them do it, and double-click `Install.bat` in the kit. It:
 
-If an announcement's text cannot be retrieved, the report says so and gives the link. The status line at the top names the source used and how many items failed. A log of each run is kept in `output\logs\`.
+1. Copies the kit to `%LOCALAPPDATA%\RNS Report`, so the task keeps working when the shared drive is not connected.
+2. Creates the output folder, `Documents\RNS Reports` by default (OneDrive-redirected Documents folders are handled).
+3. Creates the scheduled task *RNS Real Estate Morning Report*. It runs on weekdays, starts 2 minutes before `run_time_uk` and wakes the computer from sleep. If the computer was off, it runs as soon as it is back on and builds the file for the whole day.
+4. Adds a desktop shortcut **RNS Reports**, plus a **Make today's report now** shortcut inside that folder.
+5. Checks that Investegate can be reached.
+
+Each line it prints should start with `[ok]`. No admin rights are needed. If the scheduled task is refused, the computer's policy blocks Task Scheduler for users and IT has to allow it.
+
+**What the computer needs:** it must be switched on or asleep (not shut down) at 07:01 UK, the user must be logged in (a locked screen is fine), and it must be on the network.
+
+**Time zones:** the task's start time is converted to the computer's clock at install, and the UK and the Netherlands change their clocks on the same days. On a computer in a time zone that changes clocks on other dates, run `Install.bat` again after each change.
+
+## The daily file
+
+`RNS_RealEstate_<date>.md` is plain text in Markdown, which every LLM reads well:
+
+```
+# Real estate RNS announcements: Thursday 15 October 2026
+Status: 6 announcement(s); source: Investegate; generated 07:02:41 UK
+
+## Index
+| # | Time (UK) | Company | Ticker | Headline |
+| 1 | 07:00 | Big Yellow Group | BYG | Response to media coverage |
+...
+## 1. Big Yellow Group (BYG): Response to media coverage
+Released: 15 October 2026, 07:00 UK
+Link: https://www.investegate.co.uk/announcement/...
+
+15 October 2026
+Big Yellow Group PLC
+...the announcement as issued, tables as Markdown tables, through to the notes to editors...
+
+## Instructions
+...the text of llm_instructions.txt...
+```
+
+- **What goes in:** only announcements dated today (UK). At 07:01 that means the 07:00 batch. A run later in the day also includes anything released since. Each filing appears once.
+- **What each entry holds:** the announcement exactly as issued. Left out are Investegate's own header, AI summary and adverts, and the standard RNS footer ("This information is provided by RNS ... END").
+- **Instructions:** `llm_instructions.txt` is appended at the end, because LLMs follow instructions best after the material. With that, dragging the file in and pressing Enter is enough. Edit the text to change what the LLM picks out, or delete it to give the prompt yourself.
+- **Status line:** it shows how many announcements there are and the source used. If something went wrong, it says `WARNING` or `SOURCES FAILED`.
+- **Timing:** the file first appears at about 07:01:15 UK. It is updated if late announcements arrive, and is final at 07:03 (`final_time_uk`).
+- **Word copy:** a `.docx` copy is written alongside for people who want to read it themselves. Set `formats = md` in `settings.ini` to write only the Markdown.
+
+## Settings
+
+`settings.ini` (in `%LOCALAPPDATA%\RNS Report` after install):
+
+| Setting | Default | Meaning |
+| --- | --- | --- |
+| `output_folder` | empty = `Documents\RNS Reports` | Where the daily files go |
+| `run_time_uk` | `07:01` | When the file is made. Run `Install.bat` again after changing it. |
+| `final_time_uk` | `07:03` | Keep checking for late announcements until then |
+| `exclude_form8_and_nav` | `no` | `yes` leaves out Form 8.3/8.5 takeover disclosures, NAV and similar routine notices |
+| `formats` | `md, docx` | Any of `md`, `docx`, `html`, `txt` |
+| `days` | `weekdays` | `weekdays` or `daily`. Run `Install.bat` again after changing it. |
 
 ## Sources
 
-1. **Investegate** advanced search: RNS, sector 18 (real estate), including NAV, Rule 8 and similar notices. Like a browser, the script first opens the search page to get a session, then makes the request the page uses to fill its results table (`/advanced-search/draw`). If that comes back empty it tries a few variants. It rejects any answer that includes other newswires, because that means the filter was ignored.
-2. **London Stock Exchange** news explorer: sectors 302030, 351010 and 351020, regulatory and non-regulatory headlines. The web page arrives without the rows and loads them afterwards. The script asks for them the same way, through `api.londonstockexchange.com/api/v1/components/refresh` for the News explorer block. The LSE is used if Investegate fails, and is also checked when Investegate lists nothing yet.
+1. **Investegate** advanced search: RNS, sector 18 (Real Estate). The script opens the search page as a browser would, then makes the request the page uses to fill its results table. It rejects answers that contain other newswires, since that would mean the filter was ignored. This source was checked from the office network on 15 October 2026: 33 announcements listed, text extracted correctly.
+2. **London Stock Exchange** news explorer (sectors 302030, 351010, 351020). This is used if Investegate fails. It does not list announcements yet: its News explorer block returns an empty answer to the script.
 
-Status on 15 October 2026: Investegate works (33 real estate announcements listed and their text extracted, checked against a saved Big Yellow announcement). The LSE fallback does not list announcements yet: its News explorer block returns an empty answer to the script, so for now the report depends on Investegate.
+If both list nothing on a weekday, the file says so in a warning instead of looking like a quiet day.
 
-If both sources list nothing on a weekday, the report says so in a warning rather than presenting it as a quiet day.
+## Troubleshooting
 
-The two sites classify companies slightly differently. On 15 October, for example, Investegate listed Mindflair and LSE listed IWG, RentGuarantor and Town Centre Securities. Use `--source lse` to make LSE the only source.
+| Symptom | What to do |
+| --- | --- |
+| No file this morning | Was the computer on and logged in at 08:01? Double-click **Make today's report now**. Logs are in `%LOCALAPPDATA%\RNS Report\logs`. |
+| File says `SOURCES FAILED` or `WARNING` | Run `Test connection.bat` and look at `probe_summary.txt`. A 403 error means the site is blocking requests from that network. |
+| "Windows protected your PC" | Click **More info** > **Run anyway**, or unblock the zip before unzipping (see above). |
+| One announcement says "could not be retrieved" | The file links to it. Failed texts are retried until 07:03. |
+| Check the task | Task Scheduler > Task Scheduler Library > *RNS Real Estate Morning Report*. The *Last Run Result* should be `0x0`. |
 
-## Setup on the work laptop
+## For developers
 
-The commands below are for PowerShell. Folder names with spaces need quotes.
-
-1. Copy the `rns_report` folder anywhere, for example `K:\Property\ZZ Interns\Guy Jansen\rns_report`. To update, replace `rns_report.py` with the new version. The first line of `--diagnose` output shows the version.
-2. Check that Python is available: `py --version`. If it is missing, install it from the Company Portal or Software Center, or from python.org (the per-user installer needs no admin rights).
-3. Check the sources from your network:
-   ```
-   cd "K:\Property\ZZ Interns\Guy Jansen\rns_report"
-   py .\rns_report.py --diagnose
-   ```
-   This tries every way of reading each source and shows, for each, how many announcements came back with a sample of companies and headlines. It then extracts the text of one announcement. Everything is saved in `output\debug\`, and `output\debug\probe_summary.txt` holds the full printout. That one small file is what to send when something does not work. Before scheduling, at least one source must show rows of real estate companies plus announcement text.
-4. Schedule it:
-   ```
-   py .\rns_report.py --install-task
-   ```
-   This creates the weekday task *RNS Real Estate Morning Report*. It starts at 06:58 UK time, which is 07:58 on a laptop set to Amsterdam time; the UK and EU change clocks on the same dates. The task wakes the laptop from sleep and runs without a console window. If the laptop was off at that time, the task runs as soon as it is back on and builds the report for the whole day. To pick a different start time, use `--install-task 06:55`. To remove the task, run `schtasks /Delete /TN "RNS Real Estate Morning Report" /F`.
-
-The laptop must be switched on (asleep is fine), you must be logged in (a locked screen is fine) and it must be on a network at 07:00 UK.
-
-## Running by hand
+The program is `rns_report.py`: one file, standard library only, Python 3.9+. Command-line options override `settings.ini`. Run `py rns_report.py --help` for the list.
 
 | Command | What it does |
 | --- | --- |
-| Double-click `run_report.bat`, or `cmd /c .\run_report.bat` in PowerShell | Builds today's report now and opens it |
-| `py rns_report.py` | The morning routine: waits for 07:00 UK, polls until 07:03:30, writes the report |
-| `py rns_report.py --once` | One pass now, no waiting |
-| `py rns_report.py --once --since 07:00` | Only announcements released at or after 07:00 |
-| `py rns_report.py --exclude-navs` | Leaves out NAV, EMM/EPT, Rule 8 (Form 8.3/8.5) and FRN rate-fix notices |
-| `py rns_report.py --once --date 2026-10-15` | Report for an earlier day |
-| `py rns_report.py --source lse` | Use only the LSE site |
+| `py rns_report.py` | Morning routine: waits for `run_time_uk`, polls every 15 s until `final_time_uk` |
+| `py rns_report.py --once --open` | One pass now |
+| `py rns_report.py --once --date 2026-10-15 --since 07:00` | An earlier day, from 07:00 on |
+| `py rns_report.py --diagnose` | Probe every source variant and write `debug\probe_summary.txt` |
+| `py rns_report.py --setup` / `--uninstall` | What `Install.bat` / `Uninstall.bat` run |
 
-## Timing
-
-| UK time | Step |
-| --- | --- |
-| 06:58 | Task starts, waits |
-| 07:00:02 | First poll. New announcements are fetched in parallel (8 at a time) and the report is written straight away. |
-| Every 15 s | Polls again for announcements that are indexed late. The report is rewritten when new items appear. |
-| 07:03:30 | Final write. The status line no longer says "still checking". |
-| 07:07 | Latest stop if both sources keep failing. A report is still written, stating the error. |
-
-`--start`, `--settle`, `--give-up` and `--poll` change these times.
-
-## If something breaks
-
-- **Status line shows "SOURCES FAILED" or "WARNING: no announcements found"**: run `py .\rns_report.py --diagnose` and send `output\debug\probe_summary.txt`. A 403 error usually means the site is blocking scripted requests from your network.
-- **Text missing for one announcement**: the report links to it. Failed texts are retried on every poll until 07:03:30. To try again later, double-click `run_report.bat`.
-- **A site changes its layout**: the parsers are in `rns_report.py` (`InvestegateSource`, `LseSource`, `parse_investegate_list`, `parse_lse_api_list`, `extract_body`). The offline tests in `tests/test_rns_report.py` run against copies of both list pages saved on 15 October 2026.
+Tests: `pytest tests/test_rns_report.py`. They are offline and use pages saved on 15 October 2026 (the Investegate and LSE lists and a Big Yellow announcement). The kit workflow (`.github/workflows/rns-kit.yml`) does four things: bundles the latest embeddable Python 3.12 to 3.14, tests the installer on a Windows runner, does a live run against the sites, and uploads that run as the **live-test** artifact.

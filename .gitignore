@@ -20,3 +20,5 @@ dist/
 # Morning RNS report output
 rns_report/output/
 rns_report/rns_task.xml
+rns_report/logs/
+rns_report/debug/
