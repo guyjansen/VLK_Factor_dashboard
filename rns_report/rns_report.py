@@ -45,7 +45,7 @@ from pathlib import Path
 # ----------------------------------------------------------------------------
 # Settings (all can be overridden on the command line)
 # ----------------------------------------------------------------------------
-VERSION = "5"
+VERSION = "7"
 
 INVESTEGATE_BASE = "https://www.investegate.co.uk"
 INVESTEGATE_SECTORS = ["18"]          # 18 = Real Estate
@@ -1806,7 +1806,7 @@ def task_xml(python: str, script: str, start_local: dt.datetime, days: str = "we
     <Enabled>true</Enabled>
   </Settings>
   <Actions Context="Author"><Exec>
-    <Command>{e(python)}</Command><Arguments>"{e(script)}"</Arguments>
+    <Command>{e(python)}</Command><Arguments>"{e(script)}" --scheduled</Arguments>
     <WorkingDirectory>{e(str(Path(script).parent))}</WorkingDirectory>
   </Exec></Actions>
 </Task>
@@ -1854,6 +1854,119 @@ def _shortcut(target: Path, link: Path) -> bool:
         return False
 
 
+# ----------------------------------------------------------------------------
+# Kit: double-click launchers and a private copy of Python, made locally.
+# Many company networks block downloading .bat and .exe files, so the kit is
+# assembled on the computer itself with --make-kit.
+# ----------------------------------------------------------------------------
+_LAUNCHER = """@echo off
+title RNS Report - {title}
+cd /d "%~dp0"
+call :findpython || goto :nopython
+"%PY%" rns_report.py {args}
+{after}
+echo.
+pause
+exit /b
+
+:findpython
+set "PY=%~dp0python\\python.exe"
+if exist "%PY%" exit /b 0
+set "PY="
+for %%P in (py.exe python.exe) do if not defined PY for /f "delims=" %%W in ('where %%P 2^>nul') do if not defined PY set "PY=%%W"
+if defined PY exit /b 0
+exit /b 1
+
+:nopython
+echo Python was not found. Use the complete kit, which has a "python" folder next to this file.
+echo.
+pause
+exit /b 1
+"""
+LAUNCHERS = {
+    "Install.bat": ("Install", "--setup", ""),
+    "Run now.bat": ("Make today's report", "--once --open", ""),
+    "Test connection.bat": ("Test connection", "--diagnose",
+                            'if exist "%~dp0debug\\probe_summary.txt" start "" notepad '
+                            '"%~dp0debug\\probe_summary.txt"'),
+    "Uninstall.bat": ("Uninstall", "--uninstall", ""),
+}
+KIT_FILES = ("rns_report.py", "settings.ini", "llm_instructions.txt", "HOW TO USE.txt")
+# Parts of a Python installation the report does not need
+_PY_SKIP_TOP = {"doc", "include", "libs", "scripts", "tools", "tcl", "share", "__pycache__"}
+_PY_SKIP_LIB = {"site-packages", "test", "idlelib", "tkinter", "turtledemo", "ensurepip",
+                "__pycache__", "lib2to3", "pydoc_data"}
+
+
+def write_launchers(folder: Path) -> list[Path]:
+    """Write the double-click .bat files (Windows line endings) into folder."""
+    out = []
+    for name, (title, args, after) in LAUNCHERS.items():
+        text = _LAUNCHER.format(title=title, args=args, after=after)
+        path = folder / name
+        path.write_bytes(text.replace("\r\n", "\n").replace("\n", "\r\n").encode("ascii"))
+        out.append(path)
+    return out
+
+
+def _python_ignore(root: Path):
+    def ignore(directory: str, names: list[str]) -> set[str]:
+        d = Path(directory)
+        if d == root:
+            return {n for n in names if n.lower() in _PY_SKIP_TOP}
+        if d == root / "Lib":
+            return {n for n in names if n.lower() in _PY_SKIP_LIB}
+        return {n for n in names if n == "__pycache__"}
+    return ignore
+
+
+def copy_python(target: Path) -> Path:
+    """Copy the Python running this script into target (Windows Python is
+    relocatable). Returns the python.exe in target."""
+    import shutil
+    src = Path(sys.base_prefix)
+    if src.resolve() != target.resolve():
+        shutil.copytree(src, target, ignore=_python_ignore(src), dirs_exist_ok=True)
+    return target / "python.exe"
+
+
+def make_kit(dest: Path, with_python: bool = True) -> int:
+    """Assemble a ready-to-share kit folder from the files next to this script."""
+    import shutil
+    import subprocess
+    dest.mkdir(parents=True, exist_ok=True)
+    print(f"Making the RNS report kit in {dest}\n")
+    for name in KIT_FILES:
+        src = APP_DIR / name
+        if not src.exists():
+            print(f"  [!!] {name} is missing next to rns_report.py; get it from GitHub")
+        elif src.resolve() != (dest / name).resolve():
+            shutil.copy2(src, dest / name)
+    print(f"  [ok] Program and settings files in place")
+    write_launchers(dest)
+    print(f"  [ok] Double-click files written: {', '.join(LAUNCHERS)}")
+    rc = 0
+    if with_python and os.name == "nt":
+        target = dest / "python"
+        if (target / "python.exe").exists():
+            print("  [ok] Python is already in the kit")
+        else:
+            print(f"  ... copying Python {sys.version.split()[0]} from {sys.base_prefix} (about a minute)")
+            try:
+                exe = copy_python(target)
+                ok = subprocess.call([str(exe), "-c", "import ssl, urllib.request, http.cookiejar, "
+                                      "html.parser, zipfile, json, configparser, ctypes"]) == 0
+                print("  [ok] Python copied into the kit" if ok else
+                      "  [!!] The copied Python does not start; colleagues will need Python installed")
+                rc = 0 if ok else 2
+            except OSError as e:
+                print(f"  [!!] Could not copy Python ({e}); colleagues will need Python installed")
+                rc = 2
+    print("\nShare this folder (for example on the K: drive). On each computer, the user "
+          "double-clicks Install.bat in it once.")
+    return rc
+
+
 def setup() -> int:
     """Install for the current Windows user. Run by Install.bat."""
     if os.name != "nt":
@@ -1865,6 +1978,7 @@ def setup() -> int:
     try:
         if APP_DIR != local:
             _copy_kit(APP_DIR, local)
+        write_launchers(local)
         print(f"  [ok] Program copied to {local}")
     except OSError as e:
         print(f"  [!!] Could not copy the program to {local}: {e}")
@@ -1887,7 +2001,8 @@ def setup() -> int:
               "on this computer). Ask IT, or use 'Run now.bat' by hand.")
     if _shortcut(out, desktop_dir() / f"{OUTPUT_DIR_NAME}.lnk"):
         print(f"  [ok] Desktop shortcut '{OUTPUT_DIR_NAME}' created")
-    _shortcut(local / "Run now.bat", out / "Make today's report now.lnk")
+    if (local / "Run now.bat").exists():
+        _shortcut(local / "Run now.bat", out / "Make today's report now.lnk")
     print("\nChecking the connection to Investegate...")
     try:
         InvestegateSource(_yes(settings["exclude_form8_and_nav"])).list(uk_now().date())
@@ -1912,18 +2027,71 @@ def uninstall() -> int:
     return 0
 
 
+MENU = """
+RNS real estate report
+======================
+
+  1  Install or update on this computer
+     (makes the report automatically every weekday at 07:01 UK / 08:01 Amsterdam)
+  2  Make today's report now
+  3  Test the connection
+  4  Uninstall (stop the daily report)
+  5  Make a kit to share with colleagues
+     (adds the double-click .bat files and a copy of Python to this folder)
+"""
+
+
+def interactive_menu() -> int:
+    """Shown when rns_report.py is double-clicked, so no .bat files are needed."""
+    print(MENU)
+    try:
+        choice = input("Type a number and press Enter: ").strip()
+    except (EOFError, KeyboardInterrupt):
+        return 0
+    print()
+    rc = 0
+    if choice == "1":
+        rc = main(["--setup"])
+    elif choice == "2":
+        rc = main(["--once", "--open"])
+    elif choice == "3":
+        rc = main(["--diagnose"])
+        summary = APP_DIR / "debug" / "probe_summary.txt"
+        if summary.exists() and hasattr(os, "startfile"):
+            os.startfile(str(summary))  # type: ignore[attr-defined]
+    elif choice == "4":
+        rc = main(["--uninstall"])
+    elif choice == "5":
+        rc = main(["--make-kit"])
+    else:
+        print("Nothing done.")
+    try:
+        input("\nPress Enter to close this window.")
+    except (EOFError, KeyboardInterrupt):
+        pass
+    return rc
+
+
 def main(argv=None) -> int:
     for stream in (sys.stdout, sys.stderr):  # never crash on a character the console lacks
         try:
             stream.reconfigure(errors="replace")
         except Exception:
             pass
+    # Double-clicked (a console, no arguments): show the menu. The scheduled
+    # task passes --scheduled and runs windowless, so it never gets here.
+    if argv is None and len(sys.argv) == 1 and sys.stdin is not None and sys.stdin.isatty():
+        return interactive_menu()
     settings = load_settings()
     p = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     p.add_argument("--once", action="store_true", help="one pass now, no waiting or polling")
     p.add_argument("--diagnose", action="store_true", help="test both sources, save raw pages")
     p.add_argument("--setup", action="store_true", help="install for this Windows user (Install.bat)")
     p.add_argument("--uninstall", action="store_true", help="remove the scheduled task")
+    p.add_argument("--make-kit", nargs="?", const=str(APP_DIR), metavar="FOLDER",
+                   help="write the double-click .bat files (and copy Python) into FOLDER, "
+                        "default: this script's folder")
+    p.add_argument("--no-python", action="store_true", help="with --make-kit: don't copy Python")
     p.add_argument("--source", choices=["auto", "investegate", "lse"], default="auto")
     p.add_argument("--date", help="YYYY-MM-DD (default: today, UK)")
     p.add_argument("--since", help="only announcements at or after HH:MM UK, e.g. 07:00")
@@ -1942,7 +2110,10 @@ def main(argv=None) -> int:
                    help=f"comma-separated, any of: {', '.join(ALL_FORMATS)}")
     p.add_argument("--open", action="store_true", help="open the reports folder when done (Windows)")
     p.add_argument("--install-task", action="store_true", help=argparse.SUPPRESS)  # old name
+    p.add_argument("--scheduled", action="store_true", help=argparse.SUPPRESS)  # set by the task
     args = p.parse_args(argv)
+    if args.make_kit:
+        return make_kit(Path(args.make_kit).expanduser(), with_python=not args.no_python)
     if args.setup or args.install_task:
         return setup()
     if args.uninstall:

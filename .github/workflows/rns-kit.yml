@@ -40,7 +40,10 @@ jobs:
           $kit = "RNS Report"
           New-Item -ItemType Directory $kit | Out-Null
           Expand-Archive python.zip -DestinationPath "$kit/python"
-          Copy-Item -Path rns_report/rns_report.py, rns_report/settings.ini, rns_report/llm_instructions.txt, "rns_report/HOW TO USE.txt", rns_report/*.bat -Destination $kit
+          Copy-Item -Path rns_report/rns_report.py, rns_report/settings.ini, rns_report/llm_instructions.txt, "rns_report/HOW TO USE.txt" -Destination $kit
+          # Text files only, for networks that block downloading .exe files too
+          New-Item -ItemType Directory files | Out-Null
+          Copy-Item -Path rns_report/rns_report.py, rns_report/settings.ini, rns_report/llm_instructions.txt, "rns_report/HOW TO USE.txt" -Destination files
           Get-ChildItem $kit | Format-Table Name, Length
 
       - name: Smoke test
@@ -56,6 +59,33 @@ jobs:
           name: RNS-Report-kit
           path: RNS Report/
           retention-days: 90
+
+      - name: Upload the text-only files
+        uses: actions/upload-artifact@v4
+        with:
+          name: RNS-Report-files
+          path: files/
+          retention-days: 90
+
+      # No .bat files are shipped (downloading them is often blocked); the
+      # script writes them with --make-kit. Check that, and that a copied
+      # full Python installation runs from its new place.
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Test --make-kit from an installed Python
+        run: |
+          python files/rns_report.py --make-kit made-kit
+          if ($LASTEXITCODE) { throw "make-kit failed" }
+          foreach ($f in "Install.bat", "Run now.bat", "Test connection.bat", "Uninstall.bat", "python/python.exe", "python/pythonw.exe") {
+            if (-not (Test-Path "made-kit/$f")) { throw "made-kit/$f missing" }
+          }
+          & "made-kit/python/python.exe" "made-kit/rns_report.py" --help | Out-Null
+          if ($LASTEXITCODE) { throw "the copied Python does not run the script" }
+          "{0:N0} MB" -f ((Get-ChildItem made-kit -Recurse | Measure-Object Length -Sum).Sum / 1MB)
+          & "RNS Report/python/python.exe" "RNS Report/rns_report.py" --make-kit
+          if (-not (Test-Path "RNS Report/Install.bat")) { throw "launchers not written into the kit" }
 
       - name: Test the installer
         run: |

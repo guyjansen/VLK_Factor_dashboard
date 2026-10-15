@@ -289,7 +289,7 @@ def test_scheduled_task_xml_and_local_time():
     ns = {"t": "http://schemas.microsoft.com/windows/2004/02/mit/task"}
     root = ET.fromstring(xml.split("\n", 1)[1])
     assert root.find(".//t:WakeToRun", ns).text == "true"
-    assert root.find(".//t:Arguments", ns).text == '"C:\\RNS\\rns_report.py"'
+    assert root.find(".//t:Arguments", ns).text == '"C:\\RNS\\rns_report.py" --scheduled'
 
 
 @pytest.mark.parametrize("fixture", ["investegate_announcement_byg.html",
@@ -411,3 +411,25 @@ def test_form8_and_nav_notices_are_left_out_by_default(monkeypatch, tmp_path):
     assert "exclude_navs=true" in r.investegate_draw_url(DAY, exclude_navs=True)
     r.main(["--once", "--date", DAY.isoformat(), "--out", str(tmp_path), "--formats", "md", "--include-navs"])
     assert seen["exclude_navs"] is False
+
+
+def test_make_kit_writes_launchers_locally(tmp_path):
+    """The .bat files are generated on the computer (downloading them is often blocked)."""
+    assert r.make_kit(tmp_path / "kit", with_python=False) == 0
+    kit = tmp_path / "kit"
+    for name in ("Install.bat", "Run now.bat", "Test connection.bat", "Uninstall.bat",
+                 "rns_report.py", "settings.ini", "llm_instructions.txt", "HOW TO USE.txt"):
+        assert (kit / name).exists(), name
+    install = (kit / "Install.bat").read_bytes()
+    assert b"\r\n" in install and b"\n" not in install.replace(b"\r\n", b"")
+    assert b'"%PY%" rns_report.py --setup' in install
+    assert b'set "PY=%~dp0python\\python.exe"' in install
+    assert b"--once --open" in (kit / "Run now.bat").read_bytes()
+
+
+def test_python_copy_skips_what_the_report_does_not_need(tmp_path):
+    root = tmp_path / "Python314"
+    ignore = r._python_ignore(root)
+    assert ignore(str(root), ["Lib", "DLLs", "Doc", "Scripts", "tcl", "python.exe"]) == {"Doc", "Scripts", "tcl"}
+    assert ignore(str(root / "Lib"), ["os.py", "site-packages", "test", "tkinter", "json"]) == \
+        {"site-packages", "test", "tkinter"}
