@@ -292,10 +292,14 @@ def test_scheduled_task_xml_and_local_time():
     assert root.find(".//t:Arguments", ns).text == '"C:\\RNS\\rns_report.py"'
 
 
-def test_real_investegate_announcement_keeps_only_the_announcement():
-    """Saved Big Yellow page: text from the date line to the notes to editors,
-    without Investegate's header and AI summary or the RNS footer."""
-    page = (FIX / "investegate_announcement_byg.html").read_text(encoding="utf-8")
+@pytest.mark.parametrize("fixture", ["investegate_announcement_byg.html",
+                                     "investegate_announcement_byg_live.html"])
+def test_real_investegate_announcement_keeps_only_the_announcement(fixture):
+    """Big Yellow page, as saved by a browser and as the server sends it (the
+    announcement embedded as its own <html><body> document): text from the
+    date line to the notes to editors, without Investegate's header and AI
+    summary or the RNS footer."""
+    page = (FIX / fixture).read_text(encoding="utf-8")
     node = r.extract_body(page)
     text = r.to_text(node)
     assert text.startswith("15 October 2026\n\nBig Yellow Group PLC\n\n(“Big Yellow” or “the Company”)")

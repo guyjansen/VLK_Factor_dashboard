@@ -76,16 +76,6 @@ jobs:
           Copy-Item -Recurse "RNS Report/debug", "RNS Report/logs" live -ErrorAction SilentlyContinue
           Get-ChildItem live/*.md | ForEach-Object { Get-Content $_ -TotalCount 80 }
 
-      - name: Show the raw layout of one live announcement (information only)
-        continue-on-error: true
-        run: |
-          $html = (Invoke-WebRequest "https://www.investegate.co.uk/announcement/rns/big-yellow-group--byg/response-to-media-coverage/9823573" -UseBasicParsing -UserAgent "Mozilla/5.0").Content
-          $i = $html.IndexOf("news-window")
-          Write-Host "news-window at $i of $($html.Length)"
-          $chunk = $html.Substring([Math]::Max(0, $i - 300), [Math]::Min(6000, $html.Length - [Math]::Max(0, $i - 300)))
-          $chunk = [regex]::Replace($chunk, "(?s)<style.*?</style>", "<style>...</style>")
-          Write-Host $chunk
-
       - name: Upload the live test
         if: always()
         uses: actions/upload-artifact@v4

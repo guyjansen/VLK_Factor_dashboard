@@ -45,7 +45,7 @@ from pathlib import Path
 # ----------------------------------------------------------------------------
 # Settings (all can be overridden on the command line)
 # ----------------------------------------------------------------------------
-VERSION = "4"
+VERSION = "5"
 
 INVESTEGATE_BASE = "https://www.investegate.co.uk"
 INVESTEGATE_SECTORS = ["18"]          # 18 = Real Estate
@@ -790,11 +790,19 @@ def strip_boilerplate(node: Node) -> Node:
 
     walk(node)
     # Investegate puts "<company> <date>" in a small block before the text;
-    # the announcement itself repeats both.
-    blocks = [c for c in node.children if isinstance(c, Node) and c.text()]
+    # the announcement itself repeats both. On the live site the announcement
+    # is a whole embedded document (<html><body>...), so look inside wrappers
+    # that hold everything before checking.
+    container = node
+    while True:
+        blocks = [c for c in container.children if isinstance(c, Node) and c.text()]
+        if len(blocks) == 1 and any(isinstance(x, Node) for x in blocks[0].children):
+            container = blocks[0]
+            continue
+        break
     if len(blocks) > 1 and blocks[0].tag == "div" and len(blocks[0].text()) < 150 \
             and _DATE_LINE.search(blocks[0].text()):
-        node.children.remove(blocks[0])
+        container.children.remove(blocks[0])
     return node
 
 
