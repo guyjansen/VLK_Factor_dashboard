@@ -395,3 +395,19 @@ def test_shipped_instructions_drop_comment_lines():
 def test_daily_schedule_xml():
     xml = r.task_xml("py.exe", "s.py", dt.datetime(2026, 10, 16, 7, 59), days="daily")
     assert "<ScheduleByDay>" in xml and "Monday" not in xml
+
+
+def test_form8_and_nav_notices_are_left_out_by_default(monkeypatch, tmp_path):
+    seen = {}
+
+    def fake_list(self, day):
+        seen["exclude_navs"] = self.exclude_navs
+        return []
+
+    monkeypatch.setattr(r.InvestegateSource, "list", fake_list)
+    monkeypatch.setattr(r.LseSource, "list", lambda self, day: [])
+    r.main(["--once", "--date", DAY.isoformat(), "--out", str(tmp_path), "--formats", "md"])
+    assert seen["exclude_navs"] is True
+    assert "exclude_navs=true" in r.investegate_draw_url(DAY, exclude_navs=True)
+    r.main(["--once", "--date", DAY.isoformat(), "--out", str(tmp_path), "--formats", "md", "--include-navs"])
+    assert seen["exclude_navs"] is False

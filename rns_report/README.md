@@ -21,7 +21,7 @@ The kit contains:
 | `Run now.bat` | Make today's file straight away and open the reports folder |
 | `Test connection.bat` | Check the sources and open `probe_summary.txt`, the file to send when something is wrong |
 | `Uninstall.bat` | Remove the daily task (reports are kept) |
-| `settings.ini` | Time, output folder, days, formats, whether to leave out Form 8 disclosures |
+| `settings.ini` | Time, output folder, days, formats, whether to include Form 8 disclosures |
 | `llm_instructions.txt` | The prompt added to the end of each file |
 | `HOW TO USE.txt` | One-page guide for the user |
 | `python\` | Private copy of Python (the embeddable package from python.org) |
@@ -83,7 +83,7 @@ Big Yellow Group PLC
 | `output_folder` | empty = `Documents\RNS Reports` | Where the daily files go |
 | `run_time_uk` | `07:01` | When the file is made. Run `Install.bat` again after changing it. |
 | `final_time_uk` | `07:03` | Keep checking for late announcements until then |
-| `exclude_form8_and_nav` | `no` | `yes` leaves out Form 8.3/8.5 takeover disclosures, NAV and similar routine notices |
+| `exclude_form8_and_nav` | `yes` | Leaves out Form 8.3/8.5 takeover disclosures, NAV, EMM/EPT and FRN rate-fix notices. `no` includes them. |
 | `formats` | `md, docx` | Any of `md`, `docx`, `html`, `txt` |
 | `days` | `weekdays` | `weekdays` or `daily`. Run `Install.bat` again after changing it. |
 

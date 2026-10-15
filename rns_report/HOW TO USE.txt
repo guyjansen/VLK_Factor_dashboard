@@ -53,7 +53,7 @@ Double-click "Test connection.bat". It opens a short text file
 Changing settings
 -----------------
 Open settings.ini with Notepad to change the time, the folder, or to
-leave out routine Form 8 disclosures. Then double-click Install.bat
+include routine Form 8 disclosures (left out by default). Then double-click Install.bat
 again.
 
 To change what the AI assistant is asked to do, edit

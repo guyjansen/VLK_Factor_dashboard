@@ -1708,7 +1708,7 @@ DEFAULT_SETTINGS = {
     "output_folder": "",
     "run_time_uk": "07:01",
     "final_time_uk": "07:03",
-    "exclude_form8_and_nav": "no",
+    "exclude_form8_and_nav": "yes",
     "formats": "md, docx",
     "days": "weekdays",
 }
@@ -1929,9 +1929,9 @@ def main(argv=None) -> int:
     p.add_argument("--since", help="only announcements at or after HH:MM UK, e.g. 07:00")
     p.add_argument("--exclude-navs", action="store_true",
                    default=_yes(settings["exclude_form8_and_nav"]),
-                   help="drop NAV, EMM/EPT, Rule 8 (Form 8.x) and FRN rate-fix notices")
+                   help="drop NAV, EMM/EPT, Rule 8 (Form 8.x) and FRN rate-fix notices (default)")
     p.add_argument("--include-navs", dest="exclude_navs", action="store_false",
-                   help="keep those notices even if settings.ini excludes them")
+                   help="keep NAV, Rule 8 (Form 8.x) and similar notices")
     p.add_argument("--start", default=settings["run_time_uk"], help="UK time to start polling")
     p.add_argument("--settle", default=settings["final_time_uk"], help="UK time to stop polling")
     p.add_argument("--give-up", default=GIVE_UP_TIME, help="UK time to stop retrying failed sources")
