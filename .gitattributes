@@ -1,0 +1,3 @@
+*.bat text eol=crlf
+rns_report/*.txt text eol=crlf
+rns_report/*.ini text eol=crlf
