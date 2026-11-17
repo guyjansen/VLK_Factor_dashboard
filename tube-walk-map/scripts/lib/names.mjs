@@ -3,12 +3,19 @@
 // the two coordinates to be close (see build-network.mjs). Names alone never
 // merge records.
 
-/** Strip TfL suffixes such as " Underground Station" and "-Underground". */
+/**
+ * Strip TfL suffixes such as " Underground Station", "-Underground" and
+ * " Rail Station". National Rail terminus stops are named "London X Rail
+ * Station" (e.g. "London Paddington"); for those, the "London " prefix is
+ * dropped too. Names that genuinely start with "London" (London Bridge) are
+ * not rail-suffixed Elizabeth line stops, so they are left alone.
+ */
 export function stripTflSuffix(name) {
-  return String(name || '')
-    .replace(/\s*Underground Station$/i, '')
-    .replace(/-Underground$/i, '')
-    .trim();
+  let s = String(name || '').trim();
+  const rail = /\s+Rail Station$/i.test(s);
+  s = s.replace(/\s*Underground Station$/i, '').replace(/-Underground$/i, '').replace(/\s+Rail Station$/i, '');
+  if (rail && !/^London Bridge$/i.test(s)) s = s.replace(/^London\s+/i, '');
+  return s.trim();
 }
 
 /** Canonical comparison key: case, punctuation and "&"/"and" insensitive. */

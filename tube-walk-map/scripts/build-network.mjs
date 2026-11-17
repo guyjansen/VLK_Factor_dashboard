@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Step 3: join the authoritative TfL topology to the supplied station CSV.
+// Step 3: join the authoritative TfL topology (Underground + Elizabeth line)
+// to the supplied station table.
 //
 // Inputs : data/stations.clean.json, data/raw/tfl/<line>-<dir>.json,
 //          data/station-aliases.json, data/topology-overrides.json
@@ -8,6 +9,9 @@
 //          data/topology.geojson     one LineString per (edge, line) for GIS use
 //          data/join-report.json     how every CSV record / TfL stop was matched
 //          public/data/network.js    compact browser bundle
+//
+// Stations are physical stations: an interchange such as Liverpool Street
+// (Underground + Elizabeth line, three TfL stop ids) is one station.
 //
 // Edges come ONLY from consecutive stops in TfL stopPointSequences (both
 // directions). Branch sequences overlap at their junction station, so
@@ -33,13 +37,12 @@ const MAX_JOIN_M = aliasCfg.maxJoinDistanceM || 500;
 
 // ---------------------------------------------------------------- topology
 const stops = new Map(); // stopId -> {id, name, lat, lon, hubId, lines:Set}
-const lineEdges = new Map(); // lineId -> Map(edgeKey -> {a,b,directions:Set,branchIds:Set})
+const sequences = []; // {line, dir, branchId, stopIds}
 const overridesApplied = [];
 const rawSummary = [];
 
 for (const line of TubeConfig.LINES) {
-  const edges = new Map();
-  lineEdges.set(line.id, edges);
+  const tflMode = TubeConfig.MODES.find((m) => m.id === line.mode).tflMode;
   for (const dir of ['outbound', 'inbound']) {
     const file = path.join(paths.rawTfl, `${line.id}-${dir}.json`);
     if (!fs.existsSync(file)) fail(`missing topology file ${rel(file)}. Run "npm run fetch-topology".`);
@@ -47,7 +50,7 @@ for (const line of TubeConfig.LINES) {
     if (json.lineId !== line.id) fail(`${rel(file)} contains line "${json.lineId}", expected "${line.id}"`);
     rawSummary.push({ line: line.id, direction: dir, sequences: json.stopPointSequences.length, orderedRoutes: (json.orderedLineRoutes || []).map((r) => r.name.replace(/\s*&harr;\s*/g, ' ↔ ')) });
     for (const seq of json.stopPointSequences) {
-      let pts = seq.stopPoint.filter((p) => (p.modes || []).includes('tube') || p.stopType === 'NaptanMetroStation');
+      let pts = seq.stopPoint.filter((p) => (p.modes || []).includes(tflMode) || (tflMode === 'tube' && p.stopType === 'NaptanMetroStation'));
       for (const ov of overrides.removeStops || []) {
         if (ov.line !== line.id) continue;
         const before = pts.length;
@@ -55,122 +58,167 @@ for (const line of TubeConfig.LINES) {
         if (pts.length !== before) overridesApplied.push({ ...ov, direction: dir, branchId: seq.branchId });
       }
       for (const p of pts) {
-        if (!stops.has(p.id)) stops.set(p.id, { id: p.id, name: stripTflSuffix(p.name), lat: p.lat, lon: p.lon, hubId: p.topMostParentId || null, lines: new Set() });
+        if (!stops.has(p.id)) stops.set(p.id, { id: p.id, name: stripTflSuffix(p.name), rawName: p.name, lat: p.lat, lon: p.lon, hubId: p.topMostParentId || null, lines: new Set() });
         stops.get(p.id).lines.add(line.id);
       }
-      for (let i = 0; i + 1 < pts.length; i++) {
-        const a = pts[i].id, b = pts[i + 1].id;
-        if (a === b) continue;
-        const [x, y] = a < b ? [a, b] : [b, a];
-        const key = `${x}|${y}`;
-        if (!edges.has(key)) edges.set(key, { a: x, b: y, directions: new Set(), branchIds: new Set() });
-        edges.get(key).directions.add(dir);
-        edges.get(key).branchIds.add(`${dir}:${seq.branchId}`);
-      }
+      sequences.push({ line: line.id, dir, branchId: seq.branchId, stopIds: pts.map((p) => p.id) });
     }
   }
 }
 const unusedOverrides = (overrides.removeStops || []).filter((ov) => !overridesApplied.some((a) => a.line === ov.line && a.stopId === ov.stopId));
 
 // -------------------------------------------------------------- CSV join
+// One physical station can have several TfL stop records: for example
+// Paddington has the Underground stop (940GZZLUPAC), the Elizabeth line core
+// stop (910GPADTLL) and the National Rail terminus stop used by some
+// Elizabeth line trains (910GPADTON). Records and stops are linked when
+//   - the record's ATCOCODE is that stop's id, or
+//   - a documented alias says so, or
+//   - the normalised names are equal, or (only if unambiguous) equal after
+//     dropping parenthetical qualifiers ("Stratford (London)" -> "Stratford"),
+// AND the two points are within MAX_JOIN_M metres. Linked records and stops
+// are then grouped (union-find); each group is one physical station.
 const stopList = [...stops.values()];
-const matches = []; // {record, stopId, method, distanceM}
-const unmatchedCsv = [];
-for (const r of clean.records) {
-  const here = [r.lon, r.lat];
-  const dist = (s) => TubeGeometry.haversineM(here, [s.lon, s.lat]);
-  let found = null;
-  const alias = (aliasCfg.aliases || []).find((a) => a.csvName === r.name);
-  if (alias && stops.has(alias.stopId)) {
-    const s = stops.get(alias.stopId);
-    if (dist(s) <= MAX_JOIN_M) found = { stopId: s.id, method: 'alias', distanceM: dist(s), reason: alias.reason };
+const records = clean.records;
+const dist = (r, s) => TubeGeometry.haversineM([r.lon, r.lat], [s.lon, s.lat]);
+const links = []; // {record, stop, method, distanceM}
+const linked = new Set();
+function link(r, s, method) {
+  const key = `${r.objectId}|${s.id}`;
+  if (linked.has(key)) return;
+  linked.add(key);
+  links.push({ record: r, stop: s, method, distanceM: Math.round(dist(r, s)) });
+}
+for (const r of records) {
+  const near = stopList.filter((s) => dist(r, s) <= MAX_JOIN_M);
+  if (r.atcoCode && stops.has(r.atcoCode) && dist(r, stops.get(r.atcoCode)) <= MAX_JOIN_M) link(r, stops.get(r.atcoCode), 'atco-code');
+  for (const a of (aliasCfg.aliases || []).filter((x) => x.csvName === r.name)) {
+    if (stops.has(a.stopId) && dist(r, stops.get(a.stopId)) <= MAX_JOIN_M) link(r, stops.get(a.stopId), 'alias');
   }
-  if (!found) {
-    const exact = stopList.filter((s) => nameKey(s.name) === nameKey(r.name) && dist(s) <= MAX_JOIN_M);
-    if (exact.length) {
-      exact.sort((p, q) => dist(p) - dist(q));
-      found = { stopId: exact[0].id, method: 'exact-name', distanceM: dist(exact[0]) };
-    }
+  const exact = near.filter((s) => nameKey(s.name) === nameKey(r.name));
+  exact.forEach((s) => link(r, s, 'exact-name'));
+  if (!exact.length) {
+    const base = near.filter((s) => baseNameKey(s.name) === baseNameKey(r.name));
+    if (base.length === 1) link(r, base[0], 'base-name');
   }
-  if (!found) {
-    // Same name ignoring parenthetical qualifiers, e.g. CSV "Shepherd's Bush"
-    // vs TfL "Shepherd's Bush (Central)". Only accepted if unambiguous.
-    const base = stopList.filter((s) => baseNameKey(s.name) === baseNameKey(r.name) && dist(s) <= MAX_JOIN_M);
-    if (base.length === 1) found = { stopId: base[0].id, method: 'base-name', distanceM: dist(base[0]) };
-  }
-  if (found) matches.push({ record: r, ...found, distanceM: Math.round(found.distanceM) });
-  else unmatchedCsv.push({ objectId: r.objectId, name: r.name, lon: r.lon, lat: r.lat, csvLines: r.lines });
+}
+// Stop-centric pass for stops whose TfL name carries a qualifier the record
+// lacks, e.g. "Stratford (London) Rail Station" vs record "Stratford".
+for (const s of stopList) {
+  if (links.some((l) => l.stop === s)) continue;
+  const near = records.filter((r) => dist(r, s) <= MAX_JOIN_M);
+  const exact = near.filter((r) => nameKey(r.name) === nameKey(s.name)).sort((p, q) => dist(p, s) - dist(q, s));
+  if (exact.length) { link(exact[0], s, 'exact-name'); continue; }
+  const base = near.filter((r) => baseNameKey(r.name) === baseNameKey(s.name));
+  const distinct = new Set(base.map((r) => nameKey(r.name)));
+  if (base.length && distinct.size === 1) link(base.sort((p, q) => dist(p, s) - dist(q, s))[0], s, 'base-name');
 }
 
-// Group CSV records per stop; nearest record becomes canonical, others are duplicates.
-const byStop = new Map();
-for (const m of matches) {
-  if (!byStop.has(m.stopId)) byStop.set(m.stopId, []);
-  byStop.get(m.stopId).push(m);
+// Union-find over records ("r:<objectId>") and stops ("s:<stopId>").
+const parent = new Map();
+const find = (x) => { while (parent.get(x) !== x) { parent.set(x, parent.get(parent.get(x))); x = parent.get(x); } return x; };
+const union = (a, b) => { const ra = find(a), rb = find(b); if (ra !== rb) parent.set(ra, rb); };
+records.forEach((r) => parent.set(`r:${r.objectId}`, `r:${r.objectId}`));
+stopList.forEach((s) => parent.set(`s:${s.id}`, `s:${s.id}`));
+links.forEach((l) => union(`r:${l.record.objectId}`, `s:${l.stop.id}`));
+const groups = new Map();
+for (const key of parent.keys()) {
+  const root = find(key);
+  if (!groups.has(root)) groups.set(root, { records: [], stops: [] });
+  if (key.startsWith('r:')) groups.get(root).records.push(records.find((r) => `r:${r.objectId}` === key));
+  else groups.get(root).stops.push(stops.get(key.slice(2)));
 }
+
 const lineOrder = (ids) => [...ids].sort((p, q) => TubeConfig.LINE_BY_ID[p].order - TubeConfig.LINE_BY_ID[q].order);
+const modeOf = (lineIds) => [...new Set(lineIds.map((l) => TubeConfig.LINE_BY_ID[l].mode))];
+// Prefer the Underground NaPTAN id as the station id (stable across runs and
+// keeps existing isochrone caches valid); Elizabeth-only stations use theirs.
+const preferredStop = (ss) => ss.slice().sort((p, q) => (q.id.startsWith('940G') - p.id.startsWith('940G')) || p.id.localeCompare(q.id))[0];
 
 const stations = [];
+const stopToStation = new Map();
 const duplicateResolutions = [];
 const lineMismatches = [];
-for (const s of stopList) {
-  const group = (byStop.get(s.id) || []).sort((p, q) => p.distanceM - q.distanceM);
-  const canonical = group[0];
-  const topoLines = lineOrder(s.lines);
+const groupNameConflicts = [];
+const unmatchedCsv = [];
+const topologyStopsWithoutCsv = [];
+for (const g of groups.values()) {
+  if (!g.stops.length) {
+    const r = g.records[0];
+    unmatchedCsv.push({ objectId: r.objectId, name: r.name, lon: r.lon, lat: r.lat, csvLines: r.lines });
+    stations.push({
+      id: `CSV-${r.objectId}`, hubId: null, stopIds: [], name: r.name, tflName: null, lon: r.lon, lat: r.lat, tflLon: null, tflLat: null,
+      coordinateSource: 'csv', objectId: r.objectId, joinMethod: 'none', joinDistanceM: null,
+      lines: lineOrder(r.lines), modes: modeOf(r.lines), csvLines: lineOrder(r.lines), interchange: r.lines.length > 1,
+      duplicateRecords: [], note: 'No matching TfL topology stop: drawn as a station but not connected to any line.', unmatched: true
+    });
+    continue;
+  }
+  const main = preferredStop(g.stops);
+  const recs = g.records.slice().sort((p, q) => dist(p, main) - dist(q, main));
+  const canonical = recs[0] || null;
+  if (!canonical) topologyStopsWithoutCsv.push(...g.stops.map((s) => ({ stopId: s.id, name: s.name, lines: lineOrder(s.lines) })));
+  if (new Set(recs.map((r) => nameKey(r.name))).size > 1) groupNameConflicts.push({ stops: g.stops.map((s) => s.id), records: recs.map((r) => `${r.objectId} ${r.name}`) });
+  const topoLines = lineOrder(new Set(g.stops.flatMap((s) => [...s.lines])));
+  const how = canonical ? links.filter((l) => l.record === canonical) : [];
   const st = {
-    id: s.id,
-    hubId: s.hubId,
-    name: canonical ? canonical.record.name : s.name,
-    tflName: s.name,
-    lon: canonical ? canonical.record.lon : s.lon,
-    lat: canonical ? canonical.record.lat : s.lat,
-    tflLon: s.lon,
-    tflLat: s.lat,
-    coordinateSource: canonical ? 'csv' : 'tfl',
-    objectId: canonical ? canonical.record.objectId : null,
-    joinMethod: canonical ? canonical.method : 'none',
-    joinDistanceM: canonical ? canonical.distanceM : null,
+    id: main.id,
+    hubId: main.hubId,
+    stopIds: g.stops.map((s) => s.id).sort(),
+    name: canonical ? canonical.name : main.name,
+    tflName: main.name,
+    lon: canonical ? canonical.lon : main.lon,
+    lat: canonical ? canonical.lat : main.lat,
+    tflLon: main.lon,
+    tflLat: main.lat,
+    coordinateSource: canonical ? 'station-table' : 'tfl',
+    objectId: canonical ? canonical.objectId : null,
+    atcoCode: canonical ? canonical.atcoCode : null,
+    network: canonical ? canonical.network : null,
+    joinMethod: how.map((l) => l.method).filter((v, i, a) => a.indexOf(v) === i).join('+') || 'none',
+    joinDistanceM: how.length ? Math.max(...how.map((l) => l.distanceM)) : null,
     lines: topoLines,
-    csvLines: canonical ? lineOrder(canonical.record.lines) : [],
+    modes: modeOf(topoLines),
+    csvLines: canonical ? lineOrder(canonical.lines) : [],
     interchange: topoLines.length > 1,
-    duplicateRecords: group.slice(1).map((m) => ({ objectId: m.record.objectId, name: m.record.name, lon: m.record.lon, lat: m.record.lat, distanceFromCanonicalM: Math.round(TubeGeometry.haversineM([m.record.lon, m.record.lat], [canonical.record.lon, canonical.record.lat])) })),
-    note: aliasCfg.notes?.[s.id] || null
+    duplicateRecords: recs.slice(1).map((r) => ({ objectId: r.objectId, name: r.name, lon: r.lon, lat: r.lat, distanceFromCanonicalM: Math.round(TubeGeometry.haversineM([r.lon, r.lat], [canonical.lon, canonical.lat])) })),
+    note: g.stops.map((s) => aliasCfg.notes?.[s.id]).filter(Boolean).join(' ') || null
   };
-  if (st.duplicateRecords.length) duplicateResolutions.push({ stopId: s.id, name: st.name, canonicalObjectId: st.objectId, duplicates: st.duplicateRecords });
+  g.stops.forEach((s) => stopToStation.set(s.id, st.id));
+  if (st.duplicateRecords.length) duplicateResolutions.push({ stationId: st.id, name: st.name, canonicalObjectId: st.objectId, duplicates: st.duplicateRecords });
   if (canonical) {
     const missingInCsv = topoLines.filter((l) => !st.csvLines.includes(l));
     const extraInCsv = st.csvLines.filter((l) => !topoLines.includes(l));
     if (missingInCsv.length || extraInCsv.length) {
-      lineMismatches.push({ stopId: s.id, name: st.name, objectId: st.objectId, topologyLines: topoLines, csvLines: st.csvLines, missingInCsv, extraInCsv });
+      lineMismatches.push({ stationId: st.id, name: st.name, objectId: st.objectId, topologyLines: topoLines, csvLines: st.csvLines, missingInCsv, extraInCsv });
     }
   }
   stations.push(st);
-}
-// CSV stations with no topology match are still shown (with CSV lines) but flagged.
-for (const u of unmatchedCsv) {
-  stations.push({
-    id: `CSV-${u.objectId}`, hubId: null, name: u.name, tflName: null, lon: u.lon, lat: u.lat, tflLon: null, tflLat: null,
-    coordinateSource: 'csv', objectId: u.objectId, joinMethod: 'none', joinDistanceM: null,
-    lines: lineOrder(u.csvLines), csvLines: lineOrder(u.csvLines), interchange: u.csvLines.length > 1,
-    duplicateRecords: [], note: 'No matching TfL topology stop: drawn as a station but not connected to any line.', unmatched: true
-  });
 }
 stations.sort((p, q) => p.name.localeCompare(q.name, 'en-GB') || p.id.localeCompare(q.id));
 const stationById = new Map(stations.map((s) => [s.id, s]));
 
 // -------------------------------------------------------------- edges
+// Consecutive stops in each TfL sequence, mapped to physical stations.
 const edgeMap = new Map();
-for (const [lineId, edges] of lineEdges) {
-  for (const e of edges.values()) {
-    const key = `${e.a}|${e.b}`;
-    if (!edgeMap.has(key)) edgeMap.set(key, { a: e.a, b: e.b, lines: [] });
-    edgeMap.get(key).lines.push({ line: lineId, directions: [...e.directions].sort(), branchIds: [...e.branchIds].sort() });
+for (const seq of sequences) {
+  for (let i = 0; i + 1 < seq.stopIds.length; i++) {
+    const a = stopToStation.get(seq.stopIds[i]), b = stopToStation.get(seq.stopIds[i + 1]);
+    if (!a || !b || a === b) continue;
+    const [x, y] = a < b ? [a, b] : [b, a];
+    const key = `${x}|${y}`;
+    if (!edgeMap.has(key)) edgeMap.set(key, { a: x, b: y, byLine: new Map() });
+    const e = edgeMap.get(key);
+    if (!e.byLine.has(seq.line)) e.byLine.set(seq.line, { directions: new Set(), branchIds: new Set() });
+    e.byLine.get(seq.line).directions.add(seq.dir);
+    e.byLine.get(seq.line).branchIds.add(`${seq.dir}:${seq.branchId}`);
   }
 }
 const edges = [...edgeMap.values()].map((e) => {
-  e.lines.sort((p, q) => TubeConfig.LINE_BY_ID[p.line].order - TubeConfig.LINE_BY_ID[q.line].order);
+  const lines = [...e.byLine].map(([line, v]) => ({ line, directions: [...v.directions].sort(), branchIds: [...v.branchIds].sort() }))
+    .sort((p, q) => TubeConfig.LINE_BY_ID[p.line].order - TubeConfig.LINE_BY_ID[q.line].order);
   const A = stationById.get(e.a), B = stationById.get(e.b);
-  return { ...e, aName: A.name, bName: B.name, lengthM: Math.round(TubeGeometry.haversineM([A.lon, A.lat], [B.lon, B.lat])) };
+  return { a: e.a, b: e.b, lines, aName: A.name, bName: B.name, lengthM: Math.round(TubeGeometry.haversineM([A.lon, A.lat], [B.lon, B.lat])) };
 }).sort((p, q) => (p.a + p.b).localeCompare(q.a + q.b));
 
 // Per-line graph stats: stations, termini (degree 1), junctions (degree >= 3), components.
@@ -208,12 +256,12 @@ const generatedAt = new Date().toISOString();
 const meta = {
   generatedAt,
   topology: {
-    source: 'TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound}',
+    source: 'TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound} (London Underground lines and the Elizabeth line)',
     url: 'https://api.tfl.gov.uk/',
     retrievedAt: manifest?.retrievedAt || null,
     licence: manifest?.licence || { attribution: 'Powered by TfL Open Data' }
   },
-  stations: { source: rel(paths.csv), records: clean.recordCount },
+  stations: { source: clean.source, coordinateSystem: clean.coordinateSystem || 'WGS84', records: clean.recordCount },
   overridesApplied: overridesApplied.length
 };
 
@@ -222,9 +270,11 @@ writeJson(paths.edges, { meta, edges, lines: lineStats });
 writeJson(paths.joinReport, {
   generatedAt,
   maxJoinDistanceM: MAX_JOIN_M,
-  matches: matches.map((m) => ({ objectId: m.record.objectId, csvName: m.record.name, stopId: m.stopId, tflName: stops.get(m.stopId).name, method: m.method, distanceM: m.distanceM })),
+  csvRecordCount: records.length,
+  matches: links.map((m) => ({ objectId: m.record.objectId, csvName: m.record.name, stopId: m.stop.id, tflName: m.stop.rawName, stationId: stopToStation.get(m.stop.id), method: m.method, distanceM: m.distanceM })),
   unmatchedCsv,
-  topologyStopsWithoutCsv: stopList.filter((s) => !byStop.has(s.id)).map((s) => ({ stopId: s.id, name: s.name, lines: lineOrder(s.lines) })),
+  topologyStopsWithoutCsv,
+  groupNameConflicts,
   duplicateResolutions,
   lineMismatches,
   overridesApplied,
@@ -261,7 +311,7 @@ writeBrowserData(paths.publicNetwork, 'TUBE_NETWORK', {
     termini: lineStats[l.id].termini.map((t) => t.id)
   })),
   stations: stations.map((s) => ({
-    id: s.id, name: s.name, lon: r6(s.lon), lat: r6(s.lat), lines: s.lines, csvLines: s.csvLines,
+    id: s.id, name: s.name, lon: r6(s.lon), lat: r6(s.lat), lines: s.lines, modes: s.modes, csvLines: s.csvLines, stopIds: s.stopIds,
     objectId: s.objectId, coordinateSource: s.coordinateSource,
     duplicateRecords: s.duplicateRecords.map((d) => ({ objectId: d.objectId, lon: r6(d.lon), lat: r6(d.lat), distanceFromCanonicalM: d.distanceFromCanonicalM })),
     note: s.note, unmatched: !!s.unmatched
@@ -269,7 +319,7 @@ writeBrowserData(paths.publicNetwork, 'TUBE_NETWORK', {
   edges: edges.map((e) => ({ a: e.a, b: e.b, lines: e.lines.map((l) => l.line) }))
 });
 
-console.log(`Topology stops: ${stops.size}; CSV records: ${clean.recordCount}; matched: ${matches.length}; unmatched CSV: ${unmatchedCsv.length}`);
+console.log(`Topology stops: ${stops.size}; station records: ${clean.recordCount}; record-stop links: ${links.length}; unmatched records: ${unmatchedCsv.length}; unmatched stops: ${topologyStopsWithoutCsv.length}; name conflicts: ${groupNameConflicts.length}`);
 console.log(`Physical stations: ${stations.length}; edges: ${edges.length}; overrides applied: ${overridesApplied.length}`);
 for (const l of TubeConfig.LINES) {
   const s = lineStats[l.id];

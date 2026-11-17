@@ -17,6 +17,7 @@ export const polygonClipping = require('polygon-clipping');
 
 export const paths = {
   csv: path.join(DATA_DIR, 'stations.csv'),
+  xlsx: path.join(DATA_DIR, 'Underground_and_Elizabeth_Stations.xlsx'),
   stationsClean: path.join(DATA_DIR, 'stations.clean.json'),
   stations: path.join(DATA_DIR, 'stations.json'),
   aliases: path.join(DATA_DIR, 'station-aliases.json'),

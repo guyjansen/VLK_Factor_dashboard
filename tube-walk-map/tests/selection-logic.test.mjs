@@ -51,7 +51,9 @@ test('pruneOverrides removes overrides made redundant by a line change', () => {
 
 test('select all / clear all on the real network', () => {
   const all = S.resolveSelection(net, { lines: TubeConfig.LINES.map((l) => l.id) });
-  assert.equal(all.stationIds.length, 272);
+  assert.equal(all.stationIds.length, 301);
+  const tubeOnly = S.resolveSelection(net, { lines: TubeConfig.LINES.filter((l) => l.mode === 'tube').map((l) => l.id) });
+  assert.equal(tubeOnly.stationIds.length, 272);
   assert.equal(new Set(all.stationIds).size, all.stationIds.length);
   assert.equal(S.resolveSelection(net, { lines: [] }).stationIds.length, 0);
 });
@@ -64,6 +66,15 @@ test('real network: Victoria + Northern counts shared stations once', () => {
     .filter((nm) => { const s = net.stations.find((x) => x.name === nm); return s.lines.includes('victoria') && s.lines.includes('northern'); });
   assert.equal(both.length, v + n - shared.length);
   assert.ok(both.includes(id('Euston')));
+});
+
+test('real network: Elizabeth + Central counts shared stations once', () => {
+  const e = S.resolveSelection(net, { lines: ['elizabeth'] }).stationIds.length;
+  const c = S.resolveSelection(net, { lines: ['central'] }).stationIds.length;
+  const both = S.resolveSelection(net, { lines: ['elizabeth', 'central'] }).stationIds.length;
+  // Shared: Ealing Broadway, Bond Street, Tottenham Court Road, Liverpool Street, Stratford.
+  assert.equal(e, 41);
+  assert.equal(both, e + c - 5);
 });
 
 test('summary text', () => {

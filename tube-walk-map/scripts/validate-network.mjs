@@ -28,7 +28,9 @@ const failuresDoc = readJson(paths.isoFailures, null);
 
 const errors = [];
 const warnings = [];
-const MAX_EDGE_M = 8000; // longest real Underground gap (Finchley Road–Wembley Park) is ~7.1 km
+// Longest real gaps: Underground Finchley Road–Wembley Park ~7.1 km;
+// Elizabeth line Maidenhead–Twyford ~10.9 km (outer main-line section).
+const MAX_EDGE_M = { tube: 8000, 'elizabeth-line': 12000 };
 
 // Connectivity / plausibility per line
 const disconnected = [];
@@ -38,8 +40,10 @@ for (const [lineId, s] of Object.entries(edgesDoc.lines)) {
     errors.push(`${TubeConfig.LINE_BY_ID[lineId].name} line has ${s.components.length} disconnected segments`);
   }
 }
-const longEdges = edgesDoc.edges.filter((e) => e.lengthM > MAX_EDGE_M).map((e) => ({ a: e.aName, b: e.bName, lengthM: e.lengthM, lines: e.lines.map((l) => l.line) }));
-if (longEdges.length) errors.push(`${longEdges.length} edge(s) longer than ${MAX_EDGE_M} m`);
+const edgeLimit = (e) => Math.min(...e.lines.map((l) => MAX_EDGE_M[TubeConfig.LINE_BY_ID[l.line].mode]));
+const longEdges = edgesDoc.edges.filter((e) => e.lengthM > edgeLimit(e)).map((e) => ({ a: e.aName, b: e.bName, lengthM: e.lengthM, limitM: edgeLimit(e), lines: e.lines.map((l) => l.line) }));
+if (longEdges.length) errors.push(`${longEdges.length} edge(s) longer than the plausible maximum for their mode`);
+if (join.groupNameConflicts?.length) errors.push(`${join.groupNameConflicts.length} station group(s) join records with different names`);
 
 const stationsWithoutEdges = stationsDoc.stations.filter((st) => st.lines.length && !edgesDoc.edges.some((e) => e.a === st.id || e.b === st.id)).map((s) => s.name);
 if (stationsWithoutEdges.length) errors.push(`${stationsWithoutEdges.length} station(s) on a line but with no track connection`);
@@ -110,8 +114,10 @@ const report = {
   errors,
   warnings,
   summary: {
-    csvRecords: join.matches.length + join.unmatchedCsv.length,
+    stationRecords: join.csvRecordCount,
     physicalStations: stationsDoc.stations.length,
+    byMode: Object.fromEntries(TubeConfig.MODES.map((m) => [m.id, stationsDoc.stations.filter((s) => (s.modes || []).includes(m.id)).length])),
+    tflStopsJoined: join.matches.length,
     interchanges: stationsDoc.stations.filter((s) => s.interchange).length,
     edges: edgesDoc.edges.length,
     sharedEdges: edgesDoc.edges.filter((e) => e.lines.length > 1).length
@@ -119,7 +125,8 @@ const report = {
   unmatchedStations: {
     csvStationsWithoutTopologyMatch: join.unmatchedCsv,
     topologyStopsWithoutCsvMatch: join.topologyStopsWithoutCsv,
-    nonExactMatches: join.matches.filter((m) => m.method !== 'exact-name')
+    nonExactMatches: join.matches.filter((m) => !['exact-name', 'atco-code'].includes(m.method)),
+    stationsWithSeveralTflStops: stationsDoc.stations.filter((s) => (s.stopIds || []).length > 1).map((s) => ({ name: s.name, stopIds: s.stopIds }))
   },
   duplicates: {
     duplicateNames: join.csvDuplicates.duplicateNames,
@@ -127,7 +134,8 @@ const report = {
     recordsWithin200m: join.csvDuplicates.nearDuplicates,
     duplicateObjectIds: join.csvDuplicates.duplicateObjectIds,
     resolution: join.duplicateResolutions,
-    note: 'Records are merged only when both the name and the location match the same TfL station. Edgware Road, Hammersmith, Paddington (H&C Line) and Shepherd\'s Bush / Shepherd\'s Bush Market stay as separate stations.'
+    nameConflicts: join.groupNameConflicts || [],
+    note: 'Records and TfL stops are merged only when the ATCO code, or both the name and the location, match. Edgware Road, Hammersmith, Paddington (H&C Line) and Shepherd\'s Bush / Shepherd\'s Bush Market stay as separate stations; Underground and Elizabeth line platforms of the same station (e.g. Liverpool Street) are one station.'
   },
   lineNameMismatches: join.lineMismatches,
   csvParseIssues: join.csvIssues,

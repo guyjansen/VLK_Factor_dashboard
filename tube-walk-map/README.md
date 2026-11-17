@@ -1,13 +1,14 @@
 # Tube walk map
 
-An interactive map of the areas you can reach **on foot within 1, 2 and 5 minutes** of London Underground stations. Line routes follow authoritative TfL route order, and the walking areas are pedestrian-network isochrones produced by a routing engine.
+An interactive map of the areas you can reach **on foot within 1, 2 and 5 minutes** of London Underground and Elizabeth line stations. Line routes follow authoritative TfL route order, and the walking areas are pedestrian-network isochrones produced by a routing engine.
 
 > **Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.**
 
-![Status](https://img.shields.io/badge/tests-37%20passing-brightgreen)
+![Status](https://img.shields.io/badge/tests-41%20passing-brightgreen)
 
-- 272 physical stations (273 CSV records; the duplicate Paddington record is merged). 11 lines. 312 track links built from TfL Route Sequence data.
-- 816 walking-time polygons (272 stations × 60/120/300 s) generated with Valhalla (`pedestrian` costing, 5.04 km/h = 1.4 m/s).
+- 301 physical stations from 302 station records (the duplicate Paddington record is merged): 272 Underground stations, 41 Elizabeth line stations, 12 of them shared. 11 Underground lines plus the Elizabeth line. 351 track links built from TfL Route Sequence data.
+- The Elizabeth line is a separate mode (TfL rail, not the Underground). It has its own group in the line list and its own entry in the colour config.
+- 903 walking-time polygons (301 stations × 60/120/300 s) generated with Valhalla (`pedestrian` costing, 5.04 km/h = 1.4 m/s).
 - Combined coverage is a true polygon union for each time threshold, computed in a Web Worker in the browser and also precomputed for each line and for the whole network.
 - Works from `npm start` (Express) or as a static site, including opening `index.html` straight from disk.
 
@@ -24,7 +25,7 @@ An interactive map of the areas you can reach **on foot within 1, 2 and 5 minute
 | Isochrones | **Valhalla** (default) or **openrouteservice**, each behind an adapter | Both are true pedestrian-network isochrone engines and return all three contours in one request. Valhalla's public FOSSGIS instance needs no key, and the walking speed can be set to exactly 1.4 m/s. ORS needs a key and uses its own fixed ~5 km/h foot profile. A self-hosted Valhalla is the production recommendation. |
 | Isochrone architecture | **Offline preprocessing + cache**, plus an optional server proxy | Isochrones are generated once (`npm run isochrones`), cached per station and shipped as static data. Keys live only in `.env` on the machine running the scripts or server, never in the browser. The Express server can optionally compute a missing station on demand, with rate limiting and retries. |
 | Browser data loading | Generated `public/data/*.js` files that set `window.TUBE_*` globals | Unlike `fetch()`, these load under `file://`, so opening `index.html` directly works with no CORS dependency. The network loads first; isochrones and unions load afterwards. |
-| Unions at runtime | Web Worker (`js/union-worker.js`), with cancellation and a cache | Each new selection terminates any in-flight job. Results are cached by selection. Exact line selections reuse the precomputed line unions. Under `file://` (no workers) the union runs on the main thread, which still takes under 100 ms for all 272 stations. |
+| Unions at runtime | Web Worker (`js/union-worker.js`), with cancellation and a cache | Each new selection terminates any in-flight job. Results are cached by selection. Exact line selections reuse the precomputed line unions. Under `file://` (no workers) the union runs on the main thread, which still takes under 100 ms for all 301 stations. |
 | Shared code | UMD modules in `public/js/shared/` (`config.js`, `geometry.js`, `selection.js`) | The browser, the Node scripts and the tests all use the same colour config, geometry and selection logic. |
 | Dependencies | Three runtime dependencies at pinned versions; tests use the built-in `node:test` | Minimal surface. |
 
@@ -32,9 +33,9 @@ An interactive map of the areas you can reach **on foot within 1, 2 and 5 minute
 
 | Data | Source | Retrieved | Licence / attribution |
 |---|---|---|---|
-| Station coordinates & CSV line lists | Supplied `data/stations.csv` (copy of `cleaned_df.csv`) | — | As supplied |
-| Route order, branches, adjacency | TfL Unified API: `https://api.tfl.gov.uk/Line/Mode/tube` and `https://api.tfl.gov.uk/Line/{id}/Route/Sequence/{outbound\|inbound}` | 2026-11-17 (exact time in `data/raw/tfl/manifest.json`) | TfL transport data terms (https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service). Required attribution: *"Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019]."* |
-| Line colours | TfL *Colour standard*, Issue 11, August 2026, §5 "London Underground line colours" (RGB values) | — | Reference only. Colours are used to identify lines and do not imply endorsement |
+| Station coordinates & line lists | Supplied `data/Underground_and_Elizabeth_Stations.xlsx` (302 records; X/Y in British National Grid, EPSG:27700; ATCO codes). This is the default input. The original Underground-only `data/stations.csv` (273 records, WGS84) is kept and can be used with `npm run prepare-stations -- --input data/stations.csv` | — | As supplied |
+| Route order, branches, adjacency | TfL Unified API: `https://api.tfl.gov.uk/Line/Mode/tube,elizabeth-line` and `https://api.tfl.gov.uk/Line/{id}/Route/Sequence/{outbound\|inbound}` (11 Underground lines + `elizabeth`) | 2026-11-17 (exact time in `data/raw/tfl/manifest.json`) | TfL transport data terms (https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service). Required attribution: *"Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019]."* |
+| Line colours | TfL *Colour standard*, Issue 11, August 2026: §5 "London Underground line colours", and §3 "Mode colours" for the Elizabeth line (RGB values) | — | Reference only. Colours are used to identify lines and do not imply endorsement |
 | Walking isochrones | Valhalla, FOSSGIS e.V. public instance `https://valhalla1.openstreetmap.de` | 2026-11-17 | Valhalla is MIT-licensed. Routing data is © OpenStreetMap contributors (ODbL). The public instance is for light, non-commercial use, so this project sends no more than ~1 request per second |
 | Basemap | OpenFreeMap (`https://openfreemap.org`), OpenMapTiles schema | live | © OpenMapTiles, © OpenStreetMap contributors |
 | Software | MapLibre GL JS (BSD-3-Clause), polygon-clipping (MIT), Express (MIT) | | |
@@ -56,22 +57,27 @@ The app shows attribution in the map's attribution control, the panel footer and
 | Piccadilly | 0, 25, 168 | `#0019A8` |
 | Victoria | 3, 155, 229 | `#039BE5` |
 | Waterloo & City | 118, 208, 189 | `#76D0BD` |
+| Elizabeth line (§3 mode colour) | 96, 57, 158 | `#60399E` |
 
 ## 3. Assumptions and known limitations
 
+- **Coordinates**: the workbook's X/Y are British National Grid. `scripts/lib/osgb.mjs` converts them to WGS84 with the inverse Transverse Mercator projection on the Airy 1830 ellipsoid and the Ordnance Survey 7-parameter Helmert transformation (accuracy about 2–5 m; not the centimetre-level OSTN15 grid). For all 273 records shared with the original CSV, this reproduces its WGS84 coordinates to within 0.5 m, so their cached isochrones were reused (8 whose coordinates differed in the 6th decimal place were regenerated).
 - **Topology is never inferred from coordinates.** Track links are only consecutive stops in TfL `stopPointSequences`, from both directions. Branch sequences overlap at their junction station, so branches connect without inventing any links.
 - **One documented correction** (`data/topology-overrides.json`): TfL's Metropolitan outbound data includes an alternative branch via Willesden Green, but Metropolitan trains do not call there. The inbound sequence and the CSV agree. Removing that stop collapses the branch into the existing Wembley Park–Finchley Road link. The validation report lists the correction, and the build fails if the TfL data changes so that it no longer applies.
-- **Station identity** is the TfL NaPTAN station id (`940GZZLU…`). A CSV record joins a TfL stop only when the names match after normalisation (or through the documented alias table) **and** the two points are within 500 m. Similar names alone never merge records. Special cases (see `data/station-aliases.json`; the app shows these notes in the station popup):
-  - **Paddington**: the CSV has two records (OBJECTID 125 and 171, 125 m apart). Both join TfL's single Paddington station (Bakerloo, Circle, District). OBJECTID 125 is closest to the TfL coordinate and is used; 171 is kept as a duplicate record. **Paddington (H&C Line)** is a separate station.
+- **Station identity**: one physical station can have several TfL stop records. Paddington, for example, has the Underground stop `940GZZLUPAC`, the Elizabeth line core stop `910GPADTLL` and the National Rail terminus stop `910GPADTON` used by some Elizabeth line trains; Liverpool Street likewise. A record links to a TfL stop when the record's ATCO code is that stop's id, when a documented alias says so, or when the names match after normalisation ("Stratford (London) Rail Station" → "Stratford" only if unambiguous). In every case the two points must also be within 500 m. Linked records and stops are grouped into one station. The station id is the Underground NaPTAN id where one exists; otherwise it is the Elizabeth line `910G…` id. Similar names alone never merge records, and the build fails if a group would join records with different names. Special cases (see `data/station-aliases.json`; the app shows these notes in the station popup):
+  - **Paddington**: the data has two records (OBJECTID 125 and 171, 125 m apart). Both join one Paddington station (Bakerloo, Circle, District, Elizabeth line). OBJECTID 125 is closest to the TfL coordinate and is used; 171 is kept as a duplicate record. **Paddington (H&C Line)** is a separate station.
+  - **Shared Underground / Elizabeth line stations** (one station each, with all their lines): Paddington, Bond Street, Tottenham Court Road, Farringdon, Liverpool Street, Whitechapel, Stratford, Canary Wharf, Ealing Broadway, and Heathrow Terminals 2 & 3, 4 and 5.
   - **Edgware Road (Circle Line)** and **Edgware Road (Bakerloo)** are separate stations about 170 m apart.
   - **Hammersmith (Dist&Picc Line)** and **Hammersmith (H&C Line)** are separate stations.
-  - **Heathrow Terminals 1-2-3** in the CSV is TfL's *Heathrow Terminals 2 & 3*. This is an explicit alias.
+  - **Heathrow Terminals 2 & 3**: the workbook uses TfL's name. The old CSV name "Heathrow Terminals 1-2-3" remains an explicit alias.
   - **Shepherd's Bush** (Central) and **Shepherd's Bush Market** are different stations.
-- **Line membership comes from the topology.** Four CSV line lists disagree with TfL: Paddington lists H&C; Paddington (H&C Line) and Hammersmith (H&C Line) omit Circle; Edgware Road (Circle Line) omits District and H&C. All four are reported, and the popup notes the difference.
+- **Line membership comes from the topology.** Four station-table line lists disagree with TfL: Paddington lists H&C; Paddington (H&C Line) and Hammersmith (H&C Line) omit Circle; Edgware Road (Circle Line) omits District and H&C. All four are reported, and the popup notes the difference.
 - **Routes are straight segments between adjacent stations** at their real coordinates. They follow the correct station order but not the curved track alignment, because TfL Route Sequence has no track geometry.
 - **Walking origin**: each isochrone starts at the supplied station coordinate, which is usually a centroid and not every entrance. 1-minute areas (~84 m) are very sensitive to this and to how detailed OSM is locally.
 - **Walking assumptions**: foot travel only, no Tube time, 60/120/300 s, 1.4 m/s (Valhalla `walking_speed` 5.04 km/h). Valhalla settings: `denoise 0.1`, `generalize 3 m`. Closures, temporary restrictions and opening hours are not modelled.
-- Overground, DLR, Elizabeth line, trams and National Rail are **out of scope** and not drawn.
+- **Elizabeth line**: included as a separate mode (TfL rail, not the Underground), from Reading and Heathrow in the west to Shenfield and Abbey Wood in the east. Its outer sections run on National Rail tracks with long gaps between stations (Maidenhead–Twyford is ~10.9 km), so the validation limit for Elizabeth line links is 12 km instead of 8 km. Shenfield trains reach Liverpool Street via the main-line platforms (Stratford → Liverpool Street) and others via the tunnel (Stratford → Whitechapel → Liverpool Street); both links come from TfL data. The Heathrow Terminals 2 & 3 → Terminal 4 and → Terminal 5 links are shared with the Piccadilly line and are drawn side by side.
+- **Walking-area colours** are a teal-green ramp. The earlier violet ramp clashed with the Elizabeth line's purple. Teal is distinct from all line colours except, loosely, the much paler Waterloo & City (a two-station line drawn with a dark casing).
+- London Overground, DLR, trams and National Rail are **out of scope** and not drawn.
 - The screenshot mentioned in the original brief was not among the provided files, so the design does not depend on it.
 - No circular-buffer mode exists, including for debugging. If isochrones are missing, the map shows stations and lines and says that walking areas are unavailable.
 
@@ -102,7 +108,7 @@ tube-walk-map/
 ├── server/
 │   └── server.mjs                Express: static files, /api/health, /api/config, /api/isochrone
 ├── scripts/
-│   ├── prepare-stations.mjs      CSV → stations.clean.json (+ duplicate analysis)
+│   ├── prepare-stations.mjs      xlsx/CSV (BNG → WGS84) → stations.clean.json (+ duplicate analysis)
 │   ├── fetch-topology.mjs        TfL Unified API → data/raw/tfl/*.json + manifest
 │   ├── build-network.mjs         join topology ↔ CSV → stations/edges/topology/network.js
 │   ├── validate-network.mjs      → data/validation-report.json
@@ -111,16 +117,17 @@ tube-walk-map/
 │   ├── build.mjs                 verify data + copy public/ → dist/
 │   ├── vendor.mjs                postinstall copy of browser libraries
 │   └── lib/
-│       ├── common.mjs  csv.mjs  names.mjs  http.mjs  isochrone-store.mjs
+│       ├── common.mjs  csv.mjs  xlsx.mjs  osgb.mjs  names.mjs  http.mjs  isochrone-store.mjs
 │       └── providers/  index.mjs  valhalla.mjs  openrouteservice.mjs
 ├── data/
-│   ├── stations.csv              supplied input
+│   ├── Underground_and_Elizabeth_Stations.xlsx   supplied input (default)
+│   ├── stations.csv              original Underground-only input
 │   ├── station-aliases.json      reviewed join exceptions + special-case notes
 │   ├── topology-overrides.json   reviewed topology corrections
 │   ├── raw/tfl/                  raw TfL Route Sequence responses + manifest.json
 │   ├── stations.clean.json       parsed CSV + parse issues
-│   ├── stations.json             272 canonical physical stations
-│   ├── network-edges.json        312 adjacent pairs with lines/directions/branches + per-line stats
+│   ├── stations.json             301 canonical physical stations
+│   ├── network-edges.json        351 adjacent pairs with lines/directions/branches + per-line stats
 │   ├── topology.geojson          one LineString per (edge, line) for GIS tools
 │   ├── join-report.json          how every record was matched
 │   ├── validation-report.json
@@ -169,19 +176,19 @@ npm run build
 
 ### Shareable single-file version
 
-`npm run build` also writes **`dist/tube-walk-map.html`** (~2.5 MB). It is one self-contained file: styles, MapLibre, the app and all station, line and walking-area data are inlined. Email it or put it on any web host, and it opens in a browser with no install. Only the basemap tiles come from the internet (OpenFreeMap); offline, the map uses a plain background. Rebuild just this file with `npm run build:single`. The file is committed, so it is also in the repository at `tube-walk-map/dist/tube-walk-map.html`.
+`npm run build` also writes **`dist/tube-walk-map.html`** (~2.7 MB). It is one self-contained file: styles, MapLibre, the app and all station, line and walking-area data are inlined. Email it or put it on any web host, and it opens in a browser with no install. Only the basemap tiles come from the internet (OpenFreeMap); offline, the map uses a plain background. Rebuild just this file with `npm run build:single`. The file is committed, so it is also in the repository at `tube-walk-map/dist/tube-walk-map.html`.
 
 ## 6. Data preparation
 
 ```bash
-npm run fetch-topology      # download TfL Route Sequence data (22 requests, ~30 s)
+npm run fetch-topology      # download TfL Route Sequence data (24 requests, ~35 s)
 ```
 
 ```bash
 npm run data                # prepare-stations → build-network → validate
 ```
 
-`npm run fetch-topology` keeps the previous files if the API is unreachable, and exits non-zero only when no usable copy exists. To get the topology by hand, save `https://api.tfl.gov.uk/Line/<line>/Route/Sequence/<outbound|inbound>` for each of the 11 line ids (`bakerloo central circle district hammersmith-city jubilee metropolitan northern piccadilly victoria waterloo-city`) as `data/raw/tfl/<line>-<direction>.json`.
+`npm run fetch-topology` keeps the previous files if the API is unreachable, and exits non-zero only when no usable copy exists. To get the topology by hand, save `https://api.tfl.gov.uk/Line/<line>/Route/Sequence/<outbound|inbound>` for each of the 12 line ids (`bakerloo central circle district hammersmith-city jubilee metropolitan northern piccadilly victoria waterloo-city elizabeth`) as `data/raw/tfl/<line>-<direction>.json`.
 
 If your network uses an HTTPS proxy, run Node scripts with `NODE_USE_ENV_PROXY=1` (Node ≥ 22.21) so `fetch()` respects `HTTPS_PROXY`.
 
@@ -247,24 +254,24 @@ Or run the whole pipeline: `npm run data:full`.
 npm test
 ```
 
-Expected result: **37 tests, 37 pass, 0 fail**. The tests cover:
+Expected result: **41 tests, 41 pass, 0 fail**. The tests cover:
 
-- **Data validation**: colours equal the PDF RGB values and are defined only in the central config; the CSV parser handles quotes, CRLF, BOM and malformed rows; all 273 records join; Paddington is deduplicated; Edgware Road, Hammersmith and Shepherd's Bush stay separate; interchanges have all their lines; every line forms one connected component; the termini of every line match reality (for example, the Northern line has Morden, Battersea Power Station, Edgware, High Barnet and Mill Hill East); branch junctions exist (Northern Euston–Camden Town and Euston–Mornington Crescent, Metropolitan Chesham/Watford/Uxbridge, District at Earl's Court with degree 5, the Central Hainault loop, the Piccadilly Heathrow loop); no edge is longer than 8 km; the validation report has no errors.
-- **Selection logic**: single and multiple lines, deduplication of interchanges, manual add and remove, pruning of overrides, select all and clear all, summary text, search that ignores punctuation.
+- **Data validation**: colours equal the PDF RGB values (including the Elizabeth line) and are defined only in the central config; the CSV parser handles quotes, CRLF, BOM and malformed rows; the xlsx reader and BNG conversion reproduce the original CSV coordinates; all 302 records and all 315 TfL stops join; the Elizabeth line has the correct termini, branches and shared stations; Paddington is deduplicated; Edgware Road, Hammersmith and Shepherd's Bush stay separate; interchanges have all their lines; every line forms one connected component; the termini of every line match reality (for example, the Northern line has Morden, Battersea Power Station, Edgware, High Barnet and Mill Hill East); branch junctions exist (Northern Euston–Camden Town and Euston–Mornington Crescent, Metropolitan Chesham/Watford/Uxbridge, District at Earl's Court with degree 5, the Central Hainault loop, the Piccadilly Heathrow loop); no Underground link is longer than 8 km and no Elizabeth line link longer than 12 km; the validation report has no errors.
+- **Selection logic**: single and multiple lines, deduplication of interchanges (including Underground/Elizabeth line ones), manual add and remove, pruning of overrides, select all and clear all, summary text, search that ignores punctuation.
 - **Geometry**: union of overlaps, holes and disjoint parts; skipping invalid geometry; simplification; radial-irregularity detection. For the generated data: every isochrone records a routing provider and profile; 1-minute ⊆ 2-minute ⊆ 5-minute by area; no 5-minute area exceeds what 300 s at 1.4 m/s allows; more than 90% are irregular (buffers would be circular); precomputed unions match fresh unions.
 
-`npm run validate` writes `data/validation-report.json`. Its current status is `warnings` (four CSV line-list mismatches), with 0 errors, 0 unmatched stations, 0 failed or missing isochrones, 0 invalid geometries, 0 nesting violations and 0 circular-looking polygons. The radial coefficient of variation of the 5-minute polygons has a median of 0.198.
+`npm run validate` writes `data/validation-report.json`. Its current status is `warnings` (four CSV line-list mismatches), with 0 errors, 0 unmatched stations or stops, 0 failed or missing isochrones (301/301), 0 invalid geometries, 0 nesting violations and 0 circular-looking polygons. The radial coefficient of variation of the 5-minute polygons has a median of 0.198.
 
 ## 9. Performance
 
 | Scenario | Work | Observed |
 |---|---|---|
-| Page load | `network.js` 88 KB first, then `isochrones.js` 430 KB, then `coverage.js` 880 KB, loaded progressively. All are gzip-friendly JSON, and gzip shrinks them by about 4× | Lines and stations render as soon as the style loads |
+| Page load | `network.js` ~100 KB first, then `isochrones.js` ~470 KB, then `coverage.js` ~970 KB, loaded progressively. All are gzip-friendly JSON, and gzip shrinks them by about 4× | Lines and stations render as soon as the style loads |
 | One station | ≤ 3 polygons, no union needed beyond one call | Instant |
 | One line (exact) | Precomputed line union reused | Instant |
 | Several lines (exact) | Union of ≤ 11 precomputed line unions in the worker | Tens of ms |
 | All lines | Precomputed network union | Instant |
-| Arbitrary station sets | Union of up to 272 station polygons per threshold in the worker; cancellable, cached by selection | ~60–100 ms per threshold for all 272 (measured in Node) |
+| Arbitrary station sets | Union of up to 301 station polygons per threshold in the worker; cancellable, cached by selection | ~60–100 ms per threshold for all stations (measured in Node) |
 
 The map never creates DOM elements per vertex. Polygons are WebGL layers updated with `setData`, station selection uses `feature-state`, and line visibility uses `setFilter`. Display copies are simplified (~1.5–2 m tolerance, 5 decimal places); full-precision copies stay in `data/` for analysis.
 
@@ -283,7 +290,7 @@ The map never creates DOM elements per vertex. Polygons are WebGL layers updated
 |---|---|---|---|
 | A1 | Stations joined in authoritative route order | ✅ | `build-network.mjs` (TfL `stopPointSequences` only) |
 | A2 | Branches and termini represented | ✅ | `network-edges.json` per-line termini and junctions; tests |
-| A3 | No line cuts across London | ✅ | Longest edge 7.1 km (Finchley Road–Wembley Park, a real non-stop section); test |
+| A3 | No line cuts across London | ✅ | Longest Underground link 7.1 km (Finchley Road–Wembley Park, a real non-stop section); longest Elizabeth line link 10.9 km (Maidenhead–Twyford); tests |
 | A4 | Interchanges show all lines | ✅ | `stations.json` `lines`; popup chips; tests |
 | B1 | TfL digital RGB for every line | ✅ | `config.js`; test against PDF values |
 | B2 | Colours defined centrally | ✅ | `config.js`; test that the app has no hard-coded line colours |

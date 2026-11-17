@@ -27,7 +27,7 @@ for (const f of iso.features) {
 
 const scopes = [
   ...TubeConfig.LINES.map((l) => ({ scope: 'line', id: l.id, name: l.name, stations: stationsDoc.stations.filter((s) => s.lines.includes(l.id)) })),
-  { scope: 'all', id: 'all', name: 'All Underground lines', stations: stationsDoc.stations.filter((s) => s.lines.length) }
+  { scope: 'all', id: 'all', name: 'All lines (Underground + Elizabeth line)', stations: stationsDoc.stations.filter((s) => s.lines.length) }
 ];
 
 const features = [];

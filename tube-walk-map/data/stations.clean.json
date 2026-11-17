@@ -1,614 +1,723 @@
 {
-  "source": "data/stations.csv",
-  "preparedAt": "2026-11-17T11:40:46.511Z",
-  "recordCount": 273,
+  "source": "data/Underground_and_Elizabeth_Stations.xlsx",
+  "coordinateSystem": "EPSG:27700 (converted to WGS84)",
+  "preparedAt": "2026-11-17T12:43:53.795Z",
+  "recordCount": 302,
   "records": [
     {
       "objectId": 111,
       "name": "St. Paul's",
-      "lon": -0.09751775310793301,
-      "lat": 51.514952875698356,
+      "lon": -0.09751779119465283,
+      "lat": 51.51495287223005,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUSPU",
+      "network": "London Underground",
       "csvLine": 2
     },
     {
       "objectId": 112,
       "name": "Mile End",
-      "lon": -0.033768063294587126,
-      "lat": 51.52523491887216,
+      "lon": -0.033768101435853445,
+      "lat": 51.52523491546581,
       "lines": [
         "district",
         "hammersmith-city",
         "central"
       ],
       "rawLines": "District, Hammersmith & City, Central",
+      "atcoCode": "940GZZLUMED",
+      "network": "London Underground",
       "csvLine": 3
     },
     {
       "objectId": 113,
       "name": "Bethnal Green",
-      "lon": -0.05469030192583057,
-      "lat": 51.527237667207054,
+      "lon": -0.05469034006235893,
+      "lat": 51.5272376637805,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUBLG",
+      "network": "London Underground",
       "csvLine": 4
     },
     {
       "objectId": 114,
       "name": "Leyton",
-      "lon": -0.00548715538242508,
-      "lat": 51.55660356521063,
+      "lon": -0.005487193616362739,
+      "lat": 51.55660356183211,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLULYN",
+      "network": "London Underground",
       "csvLine": 5
     },
     {
       "objectId": 115,
       "name": "Snaresbrook",
-      "lon": 0.021393426338283436,
-      "lat": 51.58067707711797,
+      "lon": 0.021393388030031334,
+      "lat": 51.58067707376577,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUSNB",
+      "network": "London Underground",
       "csvLine": 6
     },
     {
       "objectId": 116,
       "name": "Leytonstone",
-      "lon": 0.008183219874044318,
-      "lat": 51.568320494028455,
+      "lon": 0.008183181603719046,
+      "lat": 51.56832049066332,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLULYS",
+      "network": "London Underground",
       "csvLine": 7
     },
     {
       "objectId": 117,
       "name": "Wanstead",
-      "lon": 0.028620677765270462,
-      "lat": 51.57560161289604,
+      "lon": 0.028620639465997667,
+      "lat": 51.57560160955068,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUWSD",
+      "network": "London Underground",
       "csvLine": 8
     },
     {
       "objectId": 118,
       "name": "South Woodford",
-      "lon": 0.027362518469825348,
-      "lat": 51.591892453017074,
+      "lon": 0.027362480130196844,
+      "lat": 51.59189244967079,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUSWF",
+      "network": "London Underground",
       "csvLine": 9
     },
     {
       "objectId": 119,
       "name": "Newbury Park",
-      "lon": 0.08992082990646201,
-      "lat": 51.57570573751538,
+      "lon": 0.08992079157272422,
+      "lat": 51.5757057342287,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUNBP",
+      "network": "London Underground",
       "csvLine": 10
     },
     {
       "objectId": 120,
       "name": "Barkingside",
-      "lon": 0.08862520423436726,
-      "lat": 51.58570377518845,
+      "lon": 0.08862516587624344,
+      "lat": 51.585703771900725,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUBKE",
+      "network": "London Underground",
       "csvLine": 11
     },
     {
       "objectId": 121,
       "name": "Fairlop",
-      "lon": 0.09105309597165903,
-      "lat": 51.595558107334746,
+      "lon": 0.09105305758731282,
+      "lat": 51.5955581040495,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUFLP",
+      "network": "London Underground",
       "csvLine": 12
     },
     {
       "objectId": 122,
       "name": "Woodford",
-      "lon": 0.03401185348011002,
-      "lat": 51.60686112070409,
+      "lon": 0.03401181509924305,
+      "lat": 51.60686111736446,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUWOF",
+      "network": "London Underground",
       "csvLine": 13
     },
     {
       "objectId": 123,
       "name": "Roding Valley",
-      "lon": 0.04370965024464847,
-      "lat": 51.61707861416649,
+      "lon": 0.043709611832818566,
+      "lat": 51.61707861083633,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLURVY",
+      "network": "London Underground",
       "csvLine": 14
     },
     {
       "objectId": 124,
       "name": "Chigwell",
-      "lon": 0.0755949749891976,
-      "lat": 51.61765286220907,
+      "lon": 0.0755949365581763,
+      "lat": 51.617652858909445,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUCWL",
+      "network": "London Underground",
       "csvLine": 15
     },
     {
       "objectId": 125,
       "name": "Paddington",
-      "lon": -0.17598969226411743,
-      "lat": 51.51656148278404,
+      "lon": -0.17598973032374599,
+      "lat": 51.51656147923935,
       "lines": [
         "hammersmith-city",
         "district",
         "circle",
-        "bakerloo"
+        "bakerloo",
+        "elizabeth"
       ],
-      "rawLines": "Hammersmith & City, District, Circle, Bakerloo",
+      "rawLines": "Hammersmith & City, District, Circle, Bakerloo, Elizabeth line",
+      "atcoCode": "940GZZLUPAC",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 16
     },
     {
       "objectId": 126,
       "name": "Plaistow",
-      "lon": 0.01698872064506072,
-      "lat": 51.53123134107084,
+      "lon": 0.01698868246346745,
+      "lat": 51.531231337713535,
       "lines": [
         "district",
         "hammersmith-city"
       ],
       "rawLines": "District, Hammersmith & City",
+      "atcoCode": "940GZZLUPLW",
+      "network": "London Underground",
       "csvLine": 17
     },
     {
       "objectId": 127,
       "name": "Upton Park",
-      "lon": 0.03521015765496934,
-      "lat": 51.53538004104193,
+      "lon": 0.03521011945332829,
+      "lat": 51.53538003770221,
       "lines": [
         "district",
         "hammersmith-city"
       ],
       "rawLines": "District, Hammersmith & City",
+      "atcoCode": "940GZZLUUPK",
+      "network": "London Underground",
       "csvLine": 18
     },
     {
       "objectId": 128,
       "name": "East Ham",
-      "lon": 0.052826568311649,
-      "lat": 51.53940709913807,
+      "lon": 0.05282653009029549,
+      "lat": 51.539407095815314,
       "lines": [
         "district",
         "hammersmith-city"
       ],
       "rawLines": "District, Hammersmith & City",
+      "atcoCode": "940GZZLUEHM",
+      "network": "London Underground",
       "csvLine": 19
     },
     {
       "objectId": 129,
       "name": "Ruislip Gardens",
-      "lon": -0.4107169346271762,
-      "lat": 51.56077549009729,
+      "lon": -0.4107169727276798,
+      "lat": 51.56077548632314,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLURSG",
+      "network": "London Underground",
       "csvLine": 20
     },
     {
       "objectId": 130,
       "name": "South Ruislip",
-      "lon": -0.39886613068870685,
-      "lat": 51.55686021118094,
+      "lon": -0.39886616878221337,
+      "lat": 51.55686020741838,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUSRP",
+      "network": "London Underground",
       "csvLine": 21
     },
     {
       "objectId": 131,
       "name": "Northolt",
-      "lon": -0.36865042407239057,
-      "lat": 51.548259260589994,
+      "lon": -0.36865046215184244,
+      "lat": 51.54825925685698,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUNHT",
+      "network": "London Underground",
       "csvLine": 22
     },
     {
       "objectId": 132,
       "name": "West Ruislip",
-      "lon": -0.43764707604605596,
-      "lat": 51.56962926058854,
+      "lon": -0.43764711416258356,
+      "lat": 51.56962925678803,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUWRP",
+      "network": "London Underground",
       "csvLine": 23
     },
     {
       "objectId": 133,
       "name": "Upney",
-      "lon": 0.10155366360748233,
-      "lat": 51.53835457119145,
+      "lon": 0.10155362536066036,
+      "lat": 51.53835456791522,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUUPY",
+      "network": "London Underground",
       "csvLine": 24
     },
     {
       "objectId": 134,
       "name": "Brent Cross",
-      "lon": -0.21378475842151334,
-      "lat": 51.576668983672164,
+      "lon": -0.21378479661916727,
+      "lat": 51.57666898009163,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUBTX",
+      "network": "London Underground",
       "csvLine": 25
     },
     {
       "objectId": 135,
       "name": "Colindale",
-      "lon": -0.24993805686952955,
-      "lat": 51.59544539419721,
+      "lon": -0.2499380951025801,
+      "lat": 51.59544539058163,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUCND",
+      "network": "London Underground",
       "csvLine": 26
     },
     {
       "objectId": 136,
       "name": "Burnt Oak",
-      "lon": -0.26399369483295404,
-      "lat": 51.602834176714175,
+      "lon": -0.26399373308021745,
+      "lat": 51.60283417308495,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUBTK",
+      "network": "London Underground",
       "csvLine": 27
     },
     {
       "objectId": 137,
       "name": "Mill Hill East",
-      "lon": -0.21006141993144073,
-      "lat": 51.608233232687525,
+      "lon": -0.21006145821010905,
+      "lat": 51.60823322911119,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUMHL",
+      "network": "London Underground",
       "csvLine": 28
     },
     {
       "objectId": 138,
       "name": "Golders Green",
-      "lon": -0.19402225224523736,
-      "lat": 51.57228620318889,
+      "lon": -0.19402229043874897,
+      "lat": 51.57228619962759,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUGGN",
+      "network": "London Underground",
       "csvLine": 29
     },
     {
       "objectId": 139,
       "name": "Finchley Central",
-      "lon": -0.19255484880487297,
-      "lat": 51.60093175153773,
+      "lon": -0.19255488707123494,
+      "lat": 51.60093174797838,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUFYC",
+      "network": "London Underground",
       "csvLine": 30
     },
     {
       "objectId": 140,
       "name": "Sudbury Hill",
-      "lon": -0.3366239412564384,
-      "lat": 51.55696518658866,
+      "lon": -0.3366239793664492,
+      "lat": 51.55696518288731,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUSUH",
+      "network": "London Underground",
       "csvLine": 31
     },
     {
       "objectId": 141,
       "name": "Sudbury Town",
-      "lon": -0.3157464873310852,
-      "lat": 51.550805806993615,
+      "lon": -0.3157465254314199,
+      "lat": 51.550805803312656,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUSUT",
+      "network": "London Underground",
       "csvLine": 32
     },
     {
       "objectId": 142,
       "name": "South Ealing",
-      "lon": -0.30750525770727977,
-      "lat": 51.50089966685759,
+      "lon": -0.3075052956842078,
+      "lat": 51.50089966318379,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUSEA",
+      "network": "London Underground",
       "csvLine": 33
     },
     {
       "objectId": 143,
       "name": "Park Royal",
-      "lon": -0.28396753015599946,
-      "lat": 51.526479964901434,
+      "lon": -0.28396756820436736,
+      "lat": 51.526479961251205,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUPKR",
+      "network": "London Underground",
       "csvLine": 34
     },
     {
       "objectId": 144,
       "name": "Alperton",
-      "lon": -0.299949349972513,
-      "lat": 51.540730963558445,
+      "lon": -0.2999493880520233,
+      "lat": 51.540730959892805,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUALP",
+      "network": "London Underground",
       "csvLine": 35
     },
     {
       "objectId": 145,
       "name": "Hyde Park Corner",
-      "lon": -0.15414966922837586,
-      "lat": 51.5027515504957,
+      "lon": -0.15414970726149832,
+      "lat": 51.502751546972036,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUHPC",
+      "network": "London Underground",
       "csvLine": 36
     },
     {
       "objectId": 146,
       "name": "Knightsbridge",
-      "lon": -0.16146611606618974,
-      "lat": 51.50124118729131,
+      "lon": -0.16146615409271795,
+      "lat": 51.5012411837605,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUKNB",
+      "network": "London Underground",
       "csvLine": 37
     },
     {
       "objectId": 147,
       "name": "Leicester Square",
-      "lon": -0.128332134429999,
-      "lat": 51.51140465728606,
+      "lon": -0.12833217249504286,
+      "lat": 51.511404653787714,
       "lines": [
         "piccadilly",
         "northern"
       ],
       "rawLines": "Piccadilly, Northern",
+      "atcoCode": "940GZZLULSQ",
+      "network": "London Underground",
       "csvLine": 38
     },
     {
       "objectId": 148,
       "name": "Covent Garden",
-      "lon": -0.12436702786860558,
-      "lat": 51.513144508444505,
+      "lon": -0.12436706593962715,
+      "lat": 51.51314450495006,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUCGN",
+      "network": "London Underground",
       "csvLine": 39
     },
     {
       "objectId": 149,
       "name": "Russell Square",
-      "lon": -0.1242697810208252,
-      "lat": 51.52305918332612,
+      "lon": -0.12426981911682716,
+      "lat": 51.52305917983195,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLURSQ",
+      "network": "London Underground",
       "csvLine": 40
     },
     {
       "objectId": 150,
       "name": "Holloway Road",
-      "lon": -0.11326351342118741,
-      "lat": 51.55275576448648,
+      "lon": -0.1132635515964528,
+      "lat": 51.55275576100355,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUHWY",
+      "network": "London Underground",
       "csvLine": 41
     },
     {
       "objectId": 151,
       "name": "Arsenal",
-      "lon": -0.10728530327692844,
-      "lat": 51.55861585603557,
+      "lon": -0.10728534146943547,
+      "lat": 51.55861585255857,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUASL",
+      "network": "London Underground",
       "csvLine": 42
     },
     {
       "objectId": 152,
       "name": "Arnos Grove",
-      "lon": -0.1330451742909319,
-      "lat": 51.61645247794506,
+      "lon": -0.13304521261889973,
+      "lat": 51.61645247444402,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUASG",
+      "network": "London Underground",
       "csvLine": 43
     },
     {
       "objectId": 153,
       "name": "Southgate",
-      "lon": -0.1277625393853033,
-      "lat": 51.63225854371172,
+      "lon": -0.12776257775532562,
+      "lat": 51.63225854021612,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUSGT",
+      "network": "London Underground",
       "csvLine": 44
     },
     {
       "objectId": 154,
       "name": "Cockfosters",
-      "lon": -0.14916314678277617,
-      "lat": 51.65152862765704,
+      "lon": -0.14916318519315933,
+      "lat": 51.65152862414091,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUCKS",
+      "network": "London Underground",
       "csvLine": 45
     },
     {
       "objectId": 155,
       "name": "Oakwood",
-      "lon": -0.13126893872170828,
-      "lat": 51.64733362819432,
+      "lon": -0.13126897712846375,
+      "lat": 51.64733362469556,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "910GENFCOAK",
+      "network": "London Underground",
       "csvLine": 46
     },
     {
       "objectId": 156,
       "name": "Manor House",
-      "lon": -0.09606483069595965,
-      "lat": 51.57075126410129,
+      "lon": -0.09606486892377006,
+      "lat": 51.57075126063541,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUMRH",
+      "network": "London Underground",
       "csvLine": 47
     },
     {
       "objectId": 157,
       "name": "Temple",
-      "lon": -0.1142517165435635,
-      "lat": 51.51098440371512,
+      "lon": -0.11425175461329228,
+      "lat": 51.51098440023046,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUTMP",
+      "network": "London Underground",
       "csvLine": 48
     },
     {
       "objectId": 158,
       "name": "Blackfriars",
-      "lon": -0.10362963813725404,
-      "lat": 51.51162476747557,
+      "lon": -0.10362967621302033,
+      "lat": 51.511624764001255,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUBKF",
+      "network": "London Underground",
       "csvLine": 49
     },
     {
       "objectId": 159,
       "name": "Mansion House",
-      "lon": -0.094105792133622,
-      "lat": 51.51181640319618,
+      "lon": -0.09410583021391139,
+      "lat": 51.511816399731124,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUMSH",
+      "network": "London Underground",
       "csvLine": 50
     },
     {
       "objectId": 160,
       "name": "Cannon Street",
-      "lon": -0.09041192056785469,
-      "lat": 51.511473069259,
+      "lon": -0.09041195864886796,
+      "lat": 51.51147306579751,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUCST",
+      "network": "London Underground",
       "csvLine": 51
     },
     {
       "objectId": 161,
       "name": "Tower Hill",
-      "lon": -0.07652627141943263,
-      "lat": 51.50994511580925,
+      "lon": -0.0765263095026621,
+      "lat": 51.50994511236124,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUTWH",
+      "network": "London Underground",
       "csvLine": 52
     },
     {
       "objectId": 162,
       "name": "Aldgate",
-      "lon": -0.07584896688802757,
-      "lat": 51.51449244157986,
+      "lon": -0.0758490049829858,
+      "lat": 51.51449243813258,
       "lines": [
         "metropolitan",
         "circle"
       ],
       "rawLines": "Metropolitan, Circle",
+      "atcoCode": "940GZZLUALD",
+      "network": "London Underground",
       "csvLine": 53
     },
     {
       "objectId": 163,
       "name": "Liverpool Street",
-      "lon": -0.08321330923554981,
-      "lat": 51.51735237101746,
+      "lon": -0.08321334733446416,
+      "lat": 51.51735236756309,
       "lines": [
         "metropolitan",
         "central",
         "circle",
-        "hammersmith-city"
+        "hammersmith-city",
+        "elizabeth"
       ],
-      "rawLines": "Metropolitan, Central, Circle, Hammersmith & City",
+      "rawLines": "Metropolitan, Central, Circle, Hammersmith & City, Elizabeth line",
+      "atcoCode": "940GZZLULVT",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 54
     },
     {
       "objectId": 164,
       "name": "Moorgate",
-      "lon": -0.08931153515551986,
-      "lat": 51.51836305552553,
+      "lon": -0.0893115732543296,
+      "lat": 51.51836305206526,
       "lines": [
         "metropolitan",
         "northern",
@@ -616,39 +725,46 @@
         "hammersmith-city"
       ],
       "rawLines": "Metropolitan, Northern, Circle, Hammersmith & City",
+      "atcoCode": "940GZZLUMGT",
+      "network": "London Underground",
       "csvLine": 55
     },
     {
       "objectId": 165,
       "name": "Barbican",
-      "lon": -0.09879996291215272,
-      "lat": 51.520208600153815,
+      "lon": -0.09880000101154464,
+      "lat": 51.52020859668436,
       "lines": [
         "metropolitan",
         "circle",
         "hammersmith-city"
       ],
       "rawLines": "Metropolitan, Circle, Hammersmith & City",
+      "atcoCode": "940GZZLUBBN",
+      "network": "London Underground",
       "csvLine": 56
     },
     {
       "objectId": 166,
       "name": "Farringdon",
-      "lon": -0.10519198867818359,
-      "lat": 51.52047027577585,
+      "lon": -0.10519202677553768,
+      "lat": 51.52047027230017,
       "lines": [
         "metropolitan",
         "circle",
-        "hammersmith-city"
+        "hammersmith-city",
+        "elizabeth"
       ],
-      "rawLines": "Metropolitan, Circle, Hammersmith & City",
+      "rawLines": "Metropolitan, Circle, Hammersmith & City, Elizabeth line",
+      "atcoCode": "940GZZLUFCN",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 57
     },
     {
       "objectId": 167,
       "name": "King's Cross St. Pancras",
-      "lon": -0.12477613021792856,
-      "lat": 51.529785143075884,
+      "lon": -0.12477616833065044,
+      "lat": 51.52978513958134,
       "lines": [
         "metropolitan",
         "northern",
@@ -658,26 +774,30 @@
         "hammersmith-city"
       ],
       "rawLines": "Metropolitan, Northern, Piccadilly, Circle, Victoria, Hammersmith & City",
+      "atcoCode": "940GZZLUKSX",
+      "network": "London Underground",
       "csvLine": 58
     },
     {
       "objectId": 168,
       "name": "Euston Square",
-      "lon": -0.13587687351584915,
-      "lat": 51.525633154752434,
+      "lon": -0.13587691161367196,
+      "lat": 51.525633151247014,
       "lines": [
         "metropolitan",
         "circle",
         "hammersmith-city"
       ],
       "rawLines": "Metropolitan, Circle, Hammersmith & City",
+      "atcoCode": "940GZZLUESQ",
+      "network": "London Underground",
       "csvLine": 59
     },
     {
       "objectId": 169,
       "name": "Baker Street",
-      "lon": -0.1570581597729946,
-      "lat": 51.5230020037108,
+      "lon": -0.1570581978559469,
+      "lat": 51.523002000184675,
       "lines": [
         "metropolitan",
         "bakerloo",
@@ -686,1021 +806,1205 @@
         "hammersmith-city"
       ],
       "rawLines": "Metropolitan, Bakerloo, Circle, Jubilee, Hammersmith & City",
+      "atcoCode": "940GZZLUBST",
+      "network": "London Underground",
       "csvLine": 60
     },
     {
       "objectId": 170,
       "name": "Edgware Road (Circle Line)",
-      "lon": -0.16777316638890663,
-      "lat": 51.51987245129845,
+      "lon": -0.16777320445992613,
+      "lat": 51.51987244776183,
       "lines": [
         "circle"
       ],
       "rawLines": "Circle",
+      "atcoCode": "940GZZLUERC",
+      "network": "London Underground",
       "csvLine": 61
     },
     {
       "objectId": 171,
       "name": "Paddington",
-      "lon": -0.17539086258650674,
-      "lat": 51.5155036135896,
+      "lon": -0.17539090064369411,
+      "lat": 51.51550361004548,
       "lines": [
         "hammersmith-city",
         "district",
         "circle",
-        "bakerloo"
+        "bakerloo",
+        "elizabeth"
       ],
-      "rawLines": "Hammersmith & City, District, Circle, Bakerloo",
+      "rawLines": "Hammersmith & City, District, Circle, Bakerloo, Elizabeth line",
+      "atcoCode": "940GZZLUPAC",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 62
     },
     {
       "objectId": 172,
       "name": "Bayswater",
-      "lon": -0.1879225224209527,
-      "lat": 51.51232394663448,
+      "lon": -0.1879225604655546,
+      "lat": 51.51232394307803,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUBWT",
+      "network": "London Underground",
       "csvLine": 63
     },
     {
       "objectId": 173,
       "name": "High Street Kensington",
-      "lon": -0.19220609592531968,
-      "lat": 51.500445098932744,
+      "lon": -0.19220613393849206,
+      "lat": 51.50044509537188,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUHSK",
+      "network": "London Underground",
       "csvLine": 64
     },
     {
       "objectId": 174,
       "name": "Gloucester Road",
-      "lon": -0.18373468987431105,
-      "lat": 51.49448863919927,
+      "lon": -0.1837347278755708,
+      "lat": 51.494488635646576,
       "lines": [
         "district",
         "piccadilly",
         "circle"
       ],
       "rawLines": "District, Piccadilly, Circle",
+      "atcoCode": "940GZZLUGTR",
+      "network": "London Underground",
       "csvLine": 65
     },
     {
       "objectId": 175,
       "name": "South Kensington",
-      "lon": -0.17316504691138462,
-      "lat": 51.49408858708188,
+      "lon": -0.17316508491553245,
+      "lat": 51.494088583539515,
       "lines": [
         "district",
         "piccadilly",
         "circle"
       ],
       "rawLines": "District, Piccadilly, Circle",
+      "atcoCode": "940GZZLUSKS",
+      "network": "London Underground",
       "csvLine": 66
     },
     {
       "objectId": 176,
       "name": "Chiswick Park",
-      "lon": -0.26857152550054486,
-      "lat": 51.49466748590177,
+      "lon": -0.2685715634735517,
+      "lat": 51.49466748226605,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUCWP",
+      "network": "London Underground",
       "csvLine": 67
     },
     {
       "objectId": 177,
       "name": "Wimbledon Park",
-      "lon": -0.19908634010842738,
-      "lat": 51.434055248289106,
+      "lon": -0.19908637795238998,
+      "lat": 51.4340552447203,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUWIP",
+      "network": "London Underground",
       "csvLine": 68
     },
     {
       "objectId": 178,
       "name": "East Putney",
-      "lon": -0.2110636822805433,
-      "lat": 51.459149587092405,
+      "lon": -0.21106372018326353,
+      "lat": 51.45914958351234,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUEPY",
+      "network": "London Underground",
       "csvLine": 69
     },
     {
       "objectId": 179,
       "name": "West Kensington",
-      "lon": -0.20545700029973243,
-      "lat": 51.490790555082114,
+      "lon": -0.20545703828391912,
+      "lat": 51.49079055150815,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUWKN",
+      "network": "London Underground",
       "csvLine": 70
     },
     {
       "objectId": 180,
       "name": "Parsons Green",
-      "lon": -0.20176352486363486,
-      "lat": 51.47498535708651,
+      "lon": -0.20176356280939545,
+      "lat": 51.47498535351585,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUPSG",
+      "network": "London Underground",
       "csvLine": 71
     },
     {
       "objectId": 181,
       "name": "White City",
-      "lon": -0.22446214525403546,
-      "lat": 51.5122152625013,
+      "lon": -0.22446218328557202,
+      "lat": 51.51221525890912,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUWCY",
+      "network": "London Underground",
       "csvLine": 72
     },
     {
       "objectId": 182,
       "name": "Shepherd's Bush",
-      "lon": -0.2188348749838903,
-      "lat": 51.50435277171325,
+      "lon": -0.21883491299755486,
+      "lat": 51.50435276812643,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUSBC",
+      "network": "London Underground",
       "csvLine": 73
     },
     {
       "objectId": 183,
       "name": "Holland Park",
-      "lon": -0.20566045316838816,
-      "lat": 51.5071535735316,
+      "lon": -0.20566049119366253,
+      "lat": 51.507153569957715,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUHPK",
+      "network": "London Underground",
       "csvLine": 74
     },
     {
       "objectId": 184,
       "name": "Becontree",
-      "lon": 0.1273417848283317,
-      "lat": 51.54034470776378,
+      "lon": 0.12734174656066163,
+      "lat": 51.54034470451212,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUBEC",
+      "network": "London Underground",
       "csvLine": 75
     },
     {
       "objectId": 185,
       "name": "Victoria",
-      "lon": -0.14308928980094832,
-      "lat": 51.49640097859263,
+      "lon": -0.14308932782240177,
+      "lat": 51.49640097507964,
       "lines": [
         "district",
         "circle",
         "victoria"
       ],
       "rawLines": "District, Circle, Victoria",
+      "atcoCode": "940GZZLUVIC",
+      "network": "London Underground",
       "csvLine": 76
     },
     {
       "objectId": 186,
       "name": "Brixton",
-      "lon": -0.1148949328839154,
-      "lat": 51.46266709356466,
+      "lon": -0.11489497083201569,
+      "lat": 51.4626670900785,
       "lines": [
         "victoria"
       ],
       "rawLines": "Victoria",
+      "atcoCode": "940GZZLUBXN",
+      "network": "London Underground",
       "csvLine": 77
     },
     {
       "objectId": 187,
       "name": "Pimlico",
-      "lon": -0.13370871250340682,
-      "lat": 51.489081972458365,
+      "lon": -0.13370875051018155,
+      "lat": 51.48908196895438,
       "lines": [
         "victoria"
       ],
       "rawLines": "Victoria",
+      "atcoCode": "940GZZLUPCO",
+      "network": "London Underground",
       "csvLine": 78
     },
     {
       "objectId": 188,
       "name": "Vauxhall",
-      "lon": -0.12425212298282715,
-      "lat": 51.48569743810505,
+      "lon": -0.1242521609849083,
+      "lat": 51.485697434610216,
       "lines": [
         "victoria"
       ],
       "rawLines": "Victoria",
+      "atcoCode": "940GZZLUVXL",
+      "network": "London Underground",
       "csvLine": 79
     },
     {
       "objectId": 189,
       "name": "Warren Street",
-      "lon": -0.13834177714005547,
-      "lat": 51.524527123997764,
+      "lon": -0.13834181523411995,
+      "lat": 51.5245271204899,
       "lines": [
         "northern",
         "victoria"
       ],
       "rawLines": "Northern, Victoria",
+      "atcoCode": "940GZZLUWRR",
+      "network": "London Underground",
       "csvLine": 80
     },
     {
       "objectId": 190,
       "name": "Dagenham East",
-      "lon": 0.16597604681459355,
-      "lat": 51.54416043622838,
+      "lon": 0.165976008512269,
+      "lat": 51.544160433013325,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUDGE",
+      "network": "London Underground",
       "csvLine": 81
     },
     {
       "objectId": 191,
       "name": "Elm Park",
-      "lon": 0.1986662037147443,
-      "lat": 51.549719886941844,
+      "lon": 0.1986661653759535,
+      "lat": 51.54971988375766,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUEPK",
+      "network": "London Underground",
       "csvLine": 82
     },
     {
       "objectId": 192,
       "name": "Hornchurch",
-      "lon": 0.21910684007400003,
-      "lat": 51.55404895710733,
+      "lon": 0.21910680170964003,
+      "lat": 51.55404895394234,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUHCH",
+      "network": "London Underground",
       "csvLine": 83
     },
     {
       "objectId": 193,
       "name": "Upminster Bridge",
-      "lon": 0.23582667980199254,
-      "lat": 51.558496054141195,
+      "lon": 0.2358266414140777,
+      "lat": 51.55849605099191,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUUPB",
+      "network": "London Underground",
       "csvLine": 84
     },
     {
       "objectId": 194,
       "name": "Shepherd's Bush Market",
-      "lon": -0.22629592219219624,
-      "lat": 51.50609054189476,
+      "lon": -0.2262959602076966,
+      "lat": 51.506090538300676,
       "lines": [
         "hammersmith-city",
         "circle"
       ],
       "rawLines": "Hammersmith & City, Circle",
+      "atcoCode": "940GZZLUSBM",
+      "network": "London Underground",
       "csvLine": 85
     },
     {
       "objectId": 195,
       "name": "Goldhawk Road",
-      "lon": -0.22664486415404567,
-      "lat": 51.50199179519617,
+      "lon": -0.22664490215911456,
+      "lat": 51.50199179160166,
       "lines": [
         "hammersmith-city",
         "circle"
       ],
       "rawLines": "Hammersmith & City, Circle",
+      "atcoCode": "940GZZLUGHK",
+      "network": "London Underground",
       "csvLine": 86
     },
     {
       "objectId": 196,
       "name": "Latimer Road",
-      "lon": -0.21785393577321283,
-      "lat": 51.513458663999614,
+      "lon": -0.21785397381013083,
+      "lat": 51.513458660413924,
       "lines": [
         "hammersmith-city",
         "circle"
       ],
       "rawLines": "Hammersmith & City, Circle",
+      "atcoCode": "940GZZLULRD",
+      "network": "London Underground",
       "csvLine": 87
     },
     {
       "objectId": 197,
       "name": "Ladbroke Grove",
-      "lon": -0.21090185775767434,
-      "lat": 51.51732053919889,
+      "lon": -0.21090189580671112,
+      "lat": 51.51732053562008,
       "lines": [
         "hammersmith-city",
         "circle"
       ],
       "rawLines": "Hammersmith & City, Circle",
+      "atcoCode": "940GZZLULAD",
+      "network": "London Underground",
       "csvLine": 88
     },
     {
       "objectId": 198,
       "name": "Royal Oak",
-      "lon": -0.18778627332991857,
-      "lat": 51.519048130119494,
+      "lon": -0.18778631139149352,
+      "lat": 51.51904812656332,
       "lines": [
         "hammersmith-city",
         "circle"
       ],
       "rawLines": "Hammersmith & City, Circle",
+      "atcoCode": "940GZZLURYO",
+      "network": "London Underground",
       "csvLine": 89
     },
     {
       "objectId": 199,
       "name": "Earl's Court",
-      "lon": -0.19317540262977842,
-      "lat": 51.49198454803539,
+      "lon": -0.193175440621326,
+      "lat": 51.491984544473446,
       "lines": [
         "district",
         "piccadilly"
       ],
       "rawLines": "District, Piccadilly",
+      "atcoCode": "940GZZLUECT",
+      "network": "London Underground",
       "csvLine": 90
     },
     {
       "objectId": 200,
       "name": "Queen's Park",
-      "lon": -0.2057416029735368,
-      "lat": 51.533978210095334,
+      "lon": -0.2057416410663231,
+      "lat": 51.53397820652187,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUQPS",
+      "network": "London Underground",
       "csvLine": 91
     },
     {
       "objectId": 201,
       "name": "Notting Hill Gate",
-      "lon": -0.19608997336265582,
-      "lat": 51.509156012573975,
+      "lon": -0.19609001139635274,
+      "lat": 51.50915600900949,
       "lines": [
         "district",
         "central",
         "circle"
       ],
       "rawLines": "District, Central, Circle",
+      "atcoCode": "940GZZLUNHG",
+      "network": "London Underground",
       "csvLine": 92
     },
     {
       "objectId": 202,
       "name": "Lancaster Gate",
-      "lon": -0.17544510185673504,
-      "lat": 51.51168719578341,
+      "lon": -0.17544513990429939,
+      "lat": 51.511687192239144,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLULGT",
+      "network": "London Underground",
       "csvLine": 93
     },
     {
       "objectId": 203,
       "name": "Marble Arch",
-      "lon": -0.1573589906802929,
-      "lat": 51.51359976087709,
+      "lon": -0.15735902873947008,
+      "lat": 51.513599757350505,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUMBA",
+      "network": "London Underground",
       "csvLine": 94
     },
     {
       "objectId": 204,
       "name": "Bond Street",
-      "lon": -0.1496811425789451,
-      "lat": 51.51437958002913,
+      "lon": -0.1496811806430396,
+      "lat": 51.51437957651004,
       "lines": [
         "central",
-        "jubilee"
+        "jubilee",
+        "elizabeth"
       ],
-      "rawLines": "Central, Jubilee",
+      "rawLines": "Central, Jubilee, Elizabeth line",
+      "atcoCode": "940GZZLUBND",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 95
     },
     {
       "objectId": 205,
       "name": "Perivale",
-      "lon": -0.32342516922982106,
-      "lat": 51.5367509216631,
+      "lon": -0.32342520729251434,
+      "lat": 51.53675091797434,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUPVL",
+      "network": "London Underground",
       "csvLine": 96
     },
     {
       "objectId": 206,
       "name": "Greenford",
-      "lon": -0.3465040750206399,
-      "lat": 51.54259127112355,
+      "lon": -0.34650411309167384,
+      "lat": 51.542591267412234,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUGFD",
+      "network": "London Underground",
       "csvLine": 97
     },
     {
       "objectId": 207,
       "name": "North Acton",
-      "lon": -0.2597600781194744,
-      "lat": 51.523611766196794,
+      "lon": -0.25976011616813494,
+      "lat": 51.523611762570276,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUNAN",
+      "network": "London Underground",
       "csvLine": 98
     },
     {
       "objectId": 208,
       "name": "Putney Bridge",
-      "lon": -0.2087270375114135,
-      "lat": 51.46825546825846,
+      "lon": -0.2087270754378185,
+      "lat": 51.468255464680865,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUPYB",
+      "network": "London Underground",
       "csvLine": 99
     },
     {
       "objectId": 209,
       "name": "Bank",
-      "lon": -0.08890808727118107,
-      "lat": 51.513425435909184,
+      "lon": -0.0889081253577515,
+      "lat": 51.5134254324492,
       "lines": [
         "waterloo-city",
         "northern",
         "central"
       ],
       "rawLines": "Waterloo & City, Northern, Central",
+      "atcoCode": "940GZZLUBNK",
+      "network": "London Underground",
       "csvLine": 100
     },
     {
       "objectId": 210,
       "name": "Oxford Circus",
-      "lon": -0.14163045969608393,
-      "lat": 51.515319726422334,
+      "lon": -0.14163049776568457,
+      "lat": 51.515319722911116,
       "lines": [
         "central",
         "bakerloo",
         "victoria"
       ],
       "rawLines": "Central, Bakerloo, Victoria",
+      "atcoCode": "940GZZLUOXC",
+      "network": "London Underground",
       "csvLine": 101
     },
     {
       "objectId": 211,
       "name": "Holborn",
-      "lon": -0.12041642112778311,
-      "lat": 51.5175781351181,
+      "lon": -0.12041645921156285,
+      "lat": 51.51757813162759,
       "lines": [
         "central",
         "piccadilly"
       ],
       "rawLines": "Central, Piccadilly",
+      "atcoCode": "940GZZLUHBN",
+      "network": "London Underground",
       "csvLine": 102
     },
     {
       "objectId": 212,
       "name": "Chancery Lane",
-      "lon": -0.11156930260294359,
-      "lat": 51.51824890350831,
+      "lon": -0.11156934069205075,
+      "lat": 51.51824890002639,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUCHL",
+      "network": "London Underground",
       "csvLine": 103
     },
     {
       "objectId": 213,
       "name": "Canada Water",
-      "lon": -0.049987164956990765,
-      "lat": 51.49792096344705,
+      "lon": -0.04998720302202036,
+      "lat": 51.49792096002452,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUCWR",
+      "network": "London Underground",
       "csvLine": 104
     },
     {
       "objectId": 214,
       "name": "Bermondsey",
-      "lon": -0.06435917646629304,
-      "lat": 51.49770238120657,
+      "lon": -0.06435921452419852,
+      "lat": 51.49770237777011,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUBMY",
+      "network": "London Underground",
       "csvLine": 105
     },
     {
       "objectId": 215,
       "name": "Canary Wharf",
-      "lon": -0.01775363971134798,
-      "lat": 51.50343011540573,
+      "lon": -0.01775367780557425,
+      "lat": 51.503430112014456,
       "lines": [
-        "jubilee"
+        "jubilee",
+        "elizabeth"
       ],
-      "rawLines": "Jubilee",
+      "rawLines": "Jubilee, Elizabeth line",
+      "atcoCode": "940GZZLUCYF",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 106
     },
     {
       "objectId": 216,
       "name": "North Greenwich",
-      "lon": 0.004287576712352386,
-      "lat": 51.50053431205634,
+      "lon": 0.0042875386143776196,
+      "lat": 51.50053430868627,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUNGW",
+      "network": "London Underground",
       "csvLine": 107
     },
     {
       "objectId": 217,
       "name": "Canning Town",
-      "lon": 0.00794669828970189,
-      "lat": 51.51412171801386,
+      "lon": 0.007946660155749654,
+      "lat": 51.51412171464755,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUCGT",
+      "network": "London Underground",
       "csvLine": 108
     },
     {
       "objectId": 218,
       "name": "Kilburn",
-      "lon": -0.20471489160119855,
-      "lat": 51.546953022454446,
+      "lon": -0.20471492972704133,
+      "lat": 51.546953018882235,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUKBN",
+      "network": "London Underground",
       "csvLine": 109
     },
     {
       "objectId": 219,
       "name": "West Hampstead",
-      "lon": -0.19016960275566852,
-      "lat": 51.546801915703966,
+      "lon": -0.19016964088629074,
+      "lat": 51.546801912145966,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUWHP",
+      "network": "London Underground",
       "csvLine": 110
     },
     {
       "objectId": 220,
       "name": "Swiss Cottage",
-      "lon": -0.17483983477545229,
-      "lat": 51.54370542648981,
+      "lon": -0.1748398729038594,
+      "lat": 51.54370542294672,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUSWC",
+      "network": "London Underground",
       "csvLine": 111
     },
     {
       "objectId": 221,
       "name": "Finchley Road",
-      "lon": -0.18109153879636952,
-      "lat": 51.54723083836693,
+      "lon": -0.18109157693136282,
+      "lat": 51.547230834817796,
       "lines": [
         "metropolitan",
         "jubilee"
       ],
       "rawLines": "Metropolitan, Jubilee",
+      "atcoCode": "940GZZLUFYR",
+      "network": "London Underground",
       "csvLine": 112
     },
     {
       "objectId": 222,
       "name": "Colliers Wood",
-      "lon": -0.17805799608697154,
-      "lat": 51.41815971696416,
+      "lon": -0.1780580338987256,
+      "lat": 51.41815971341558,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUCSD",
+      "network": "London Underground",
       "csvLine": 113
     },
     {
       "objectId": 223,
       "name": "Archway",
-      "lon": -0.13505202452388373,
-      "lat": 51.56453819250787,
+      "lon": -0.13505206272003012,
+      "lat": 51.56453818900394,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUACY",
+      "network": "London Underground",
       "csvLine": 114
     },
     {
       "objectId": 224,
       "name": "Tooting Broadway",
-      "lon": -0.16838983681417344,
-      "lat": 51.42767600459317,
+      "lon": -0.16838987465338986,
+      "lat": 51.42767600105422,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUTBY",
+      "network": "London Underground",
       "csvLine": 115
     },
     {
       "objectId": 225,
       "name": "Tooting Bec",
-      "lon": -0.15923362533504307,
-      "lat": 51.43589927439103,
+      "lon": -0.15923366319835228,
+      "lat": 51.43589927086119,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUTBC",
+      "network": "London Underground",
       "csvLine": 116
     },
     {
       "objectId": 226,
       "name": "Clapham South",
-      "lon": -0.14721241263243376,
-      "lat": 51.45323695245536,
+      "lon": -0.147212450543877,
+      "lat": 51.45323694893755,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUCPS",
+      "network": "London Underground",
       "csvLine": 117
     },
     {
       "objectId": 227,
       "name": "Clapham Common",
-      "lon": -0.13719253566731915,
-      "lat": 51.46221051259463,
+      "lon": -0.13719257360522882,
+      "lat": 51.46221050908675,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUCPC",
+      "network": "London Underground",
       "csvLine": 118
     },
     {
       "objectId": 228,
       "name": "Clapham North",
-      "lon": -0.12935895070321768,
-      "lat": 51.46572960060881,
+      "lon": -0.12935898865309545,
+      "lat": 51.4657295971086,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUCPN",
+      "network": "London Underground",
       "csvLine": 119
     },
     {
       "objectId": 229,
       "name": "Goodge Street",
-      "lon": -0.13434290236565843,
-      "lat": 51.520601842773736,
+      "lon": -0.13434294045143097,
+      "lat": 51.520601839269716,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUGDG",
+      "network": "London Underground",
       "csvLine": 120
     },
     {
       "objectId": 230,
       "name": "Tottenham Court Road",
-      "lon": -0.1305038755407188,
-      "lat": 51.51645724635473,
+      "lon": -0.1305039136175985,
+      "lat": 51.51645724285438,
       "lines": [
         "central",
-        "northern"
+        "northern",
+        "elizabeth"
       ],
-      "rawLines": "Central, Northern",
+      "rawLines": "Central, Northern, Elizabeth line",
+      "atcoCode": "940GZZLUTCR",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 121
     },
     {
       "objectId": 231,
       "name": "Hampstead",
-      "lon": -0.17852309354375814,
-      "lat": 51.5565898798849,
+      "lon": -0.1785231317032835,
+      "lat": 51.55658987633845,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUHTD",
+      "network": "London Underground",
       "csvLine": 122
     },
     {
       "objectId": 232,
       "name": "Mornington Crescent",
-      "lon": -0.13874979864115178,
-      "lat": 51.534704942339104,
+      "lon": -0.13874983676067382,
+      "lat": 51.53470493883105,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUMTC",
+      "network": "London Underground",
       "csvLine": 123
     },
     {
       "objectId": 233,
       "name": "Chalk Farm",
-      "lon": -0.15264214766916676,
-      "lat": 51.54385835909765,
+      "lon": -0.15264218580632966,
+      "lat": 51.543858355576226,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUCFM",
+      "network": "London Underground",
       "csvLine": 124
     },
     {
       "objectId": 234,
       "name": "Kentish Town",
-      "lon": -0.1407479399821426,
-      "lat": 51.55029387744979,
+      "lon": -0.1407479781401416,
+      "lat": 51.550293873940056,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUKSH",
+      "network": "London Underground",
       "csvLine": 125
     },
     {
       "objectId": 235,
       "name": "Tufnell Park",
-      "lon": -0.13846565572304778,
-      "lat": 51.55684430975304,
+      "lon": -0.13846569389845112,
+      "lat": 51.55684430624566,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUTFP",
+      "network": "London Underground",
       "csvLine": 126
     },
     {
       "objectId": 236,
       "name": "Oval",
-      "lon": -0.1124062491167189,
-      "lat": 51.48183745351276,
+      "lon": -0.11240628711397026,
+      "lat": 51.48183745002938,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUOVL",
+      "network": "London Underground",
       "csvLine": 127
     },
     {
       "objectId": 237,
       "name": "Kennington",
-      "lon": -0.10596541286235016,
-      "lat": 51.48834003191997,
+      "lon": -0.10596545087862105,
+      "lat": 51.48834002844296,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUKNG",
+      "network": "London Underground",
       "csvLine": 128
     },
     {
       "objectId": 238,
       "name": "East Acton",
-      "lon": -0.2471625219934364,
-      "lat": 51.51659745054098,
+      "lon": -0.24716256002847561,
+      "lat": 51.51659744692665,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUEAN",
+      "network": "London Underground",
       "csvLine": 129
     },
     {
       "objectId": 239,
       "name": "Chalfont & Latimer",
-      "lon": -0.5607234520464773,
-      "lat": 51.668031426229064,
+      "lon": -0.5607234903868834,
+      "lat": 51.66803142230909,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUCAL",
+      "network": "London Underground",
       "csvLine": 130
     },
     {
       "objectId": 240,
       "name": "Chorleywood",
-      "lon": -0.5185530310182181,
-      "lat": 51.65429398451199,
+      "lon": -0.5185530693318394,
+      "lat": 51.654293980633355,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUCYD",
+      "network": "London Underground",
       "csvLine": 131
     },
     {
       "objectId": 241,
       "name": "Wood Lane",
-      "lon": -0.223589832503072,
-      "lat": 51.510140640931624,
+      "lon": -0.22358987052968207,
+      "lat": 51.51014063734027,
       "lines": [
         "hammersmith-city",
         "circle"
       ],
       "rawLines": "Hammersmith & City, Circle",
+      "atcoCode": "940GZZLUWLA",
+      "network": "London Underground",
       "csvLine": 132
     },
     {
       "objectId": 242,
       "name": "Highbury & Islington",
-      "lon": -0.10373671479788171,
-      "lat": 51.5474243924603,
+      "lon": -0.10373675296368322,
+      "lat": 51.54742438898653,
       "lines": [
         "victoria"
       ],
       "rawLines": "Victoria",
+      "atcoCode": "940GZZLUHAI",
+      "network": "London Underground",
       "csvLine": 133
     },
     {
       "objectId": 243,
       "name": "Blackhorse Road",
-      "lon": -0.041793873795219,
-      "lat": 51.586840594392974,
+      "lon": -0.04179391208777425,
+      "lat": 51.58684059097997,
       "lines": [
         "victoria"
       ],
       "rawLines": "Victoria",
+      "atcoCode": "940GZZLUBLR",
+      "network": "London Underground",
       "csvLine": 134
     },
     {
       "objectId": 244,
       "name": "Tottenham Hale",
-      "lon": -0.06016465065370944,
-      "lat": 51.588048703622064,
+      "lon": -0.060164688940865615,
+      "lat": 51.58804870019129,
       "lines": [
         "victoria"
       ],
       "rawLines": "Victoria",
+      "atcoCode": "940GZZLUTMH",
+      "network": "London Underground",
       "csvLine": 135
     },
     {
       "objectId": 245,
       "name": "Queensway",
-      "lon": -0.18713829824007047,
-      "lat": 51.51025217607452,
+      "lon": -0.18713833627974286,
+      "lat": 51.5102521725188,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUQWY",
+      "network": "London Underground",
       "csvLine": 136
     },
     {
       "objectId": 246,
       "name": "Buckhurst Hill",
-      "lon": 0.04682407515656278,
-      "lat": 51.625982897027,
+      "lon": 0.04682403672059037,
+      "lat": 51.62598289369999,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUBKH",
+      "network": "London Underground",
       "csvLine": 137
     },
     {
       "objectId": 247,
       "name": "Loughton",
-      "lon": 0.05533810169999307,
-      "lat": 51.64131224348847,
+      "lon": 0.055338063220687086,
+      "lat": 51.64131224016988,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLULGN",
+      "network": "London Underground",
       "csvLine": 138
     },
     {
       "objectId": 248,
       "name": "Hainault",
-      "lon": 0.09350819615879127,
-      "lat": 51.6036401975141,
+      "lon": 0.09350815775265484,
+      "lat": 51.603640194231325,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUHLT",
+      "network": "London Underground",
       "csvLine": 139
     },
     {
       "objectId": 249,
       "name": "Grange Hill",
-      "lon": 0.09232184221334147,
-      "lat": 51.61319815416051,
+      "lon": 0.09232180378383686,
+      "lat": 51.61319815087677,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUGGH",
+      "network": "London Underground",
       "csvLine": 140
     },
     {
       "objectId": 250,
       "name": "Debden",
-      "lon": 0.08376689656236329,
-      "lat": 51.6453918793904,
+      "lon": 0.08376685805670303,
+      "lat": 51.64539187609905,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUDBN",
+      "network": "London Underground",
       "csvLine": 141
     },
     {
       "objectId": 251,
       "name": "Epping",
-      "lon": 0.11399961918418978,
-      "lat": 51.69356092525262,
+      "lon": 0.11399958053898623,
+      "lat": 51.693560921990844,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUEPG",
+      "network": "London Underground",
       "csvLine": 142
     },
     {
       "objectId": 252,
       "name": "Redbridge",
-      "lon": 0.04541027413893245,
-      "lat": 51.576249813818855,
+      "lon": 0.04541023582901835,
+      "lat": 51.57624981048964,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLURBG",
+      "network": "London Underground",
       "csvLine": 143
     },
     {
       "objectId": 253,
       "name": "Dollis Hill",
-      "lon": -0.23904076572437893,
-      "lat": 51.55196194099086,
+      "lon": -0.23904080385119733,
+      "lat": 51.551961937385165,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUDOH",
+      "network": "London Underground",
       "csvLine": 144
     },
     {
       "objectId": 254,
       "name": "Kingsbury",
-      "lon": -0.2786447440288867,
-      "lat": 51.584641087244194,
+      "lon": -0.2786447822256331,
+      "lat": 51.58464108360028,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUKBY",
+      "network": "London Underground",
       "csvLine": 145
     },
     {
       "objectId": 255,
       "name": "Queensbury",
-      "lon": -0.2862217775472735,
-      "lat": 51.59419745209295,
+      "lon": -0.2862218157658697,
+      "lat": 51.59419744844179,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUQBY",
+      "network": "London Underground",
       "csvLine": 146
     },
     {
       "objectId": 256,
       "name": "South Kenton",
-      "lon": -0.3083734923397721,
-      "lat": 51.570212909100526,
+      "lon": -0.30837353049122196,
+      "lat": 51.570212905427184,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUSKT",
+      "network": "London Underground",
       "csvLine": 147
     },
     {
       "objectId": 257,
       "name": "Harrow & Wealdstone",
-      "lon": -0.3348864548890388,
-      "lat": 51.59204382510434,
+      "lon": -0.3348864930881498,
+      "lat": 51.59204382140534,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUHAW",
+      "network": "London Underground",
       "csvLine": 148
     },
     {
       "objectId": 258,
       "name": "Stonebridge Park",
-      "lon": -0.27646679490996795,
-      "lat": 51.54419264973252,
+      "lon": -0.2764668330052826,
+      "lat": 51.54419264609,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUSGP",
+      "network": "London Underground",
       "csvLine": 149
     },
     {
       "objectId": 259,
       "name": "Embankment",
-      "lon": -0.12216953430795731,
-      "lat": 51.50745185655674,
+      "lon": -0.1221695723655563,
+      "lat": 51.50745185306432,
       "lines": [
         "district",
         "bakerloo",
@@ -1708,307 +2012,361 @@
         "circle"
       ],
       "rawLines": "District, Bakerloo, Northern, Circle",
+      "atcoCode": "940GZZLUEMB",
+      "network": "London Underground",
       "csvLine": 150
     },
     {
       "objectId": 260,
       "name": "South Harrow",
-      "lon": -0.3520927569079474,
-      "lat": 51.564549549948175,
+      "lon": -0.35209279503290225,
+      "lat": 51.56454954623175,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUSHH",
+      "network": "London Underground",
       "csvLine": 151
     },
     {
       "objectId": 261,
       "name": "Kensal Green",
-      "lon": -0.2244787816465951,
-      "lat": 51.530571777558116,
+      "lon": -0.22447881972435407,
+      "lat": 51.53057177396627,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUKSL",
+      "network": "London Underground",
       "csvLine": 152
     },
     {
       "objectId": 262,
       "name": "Harlesden",
-      "lon": -0.2585901442236528,
-      "lat": 51.5366984829526,
+      "lon": -0.2585901823056632,
+      "lat": 51.536698479327484,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUHSN",
+      "network": "London Underground",
       "csvLine": 153
     },
     {
       "objectId": 263,
       "name": "Wembley Central",
-      "lon": -0.2968265595489338,
-      "lat": 51.55228164027704,
+      "lon": -0.296826597658505,
+      "lat": 51.55228163661468,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUWYC",
+      "network": "London Underground",
       "csvLine": 154
     },
     {
       "objectId": 264,
       "name": "North Wembley",
-      "lon": -0.3038826458342014,
-      "lat": 51.562393713680144,
+      "lon": -0.3038826839672166,
+      "lat": 51.562393710011044,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUNWY",
+      "network": "London Underground",
       "csvLine": 155
     },
     {
       "objectId": 265,
       "name": "Paddington (H&C Line)",
-      "lon": -0.17879726299159643,
-      "lat": 51.51851327530939,
+      "lon": -0.17879730105510316,
+      "lat": 51.51851327176198,
       "lines": [
         "hammersmith-city"
       ],
       "rawLines": "Hammersmith & City",
+      "atcoCode": "940GZZLUPAH",
+      "network": "London Underground",
       "csvLine": 156
     },
     {
       "objectId": 266,
       "name": "Kew Gardens",
-      "lon": -0.28504091647405505,
-      "lat": 51.47699774458654,
+      "lon": -0.2850409543975335,
+      "lat": 51.476997740934344,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUKWG",
+      "network": "London Underground",
       "csvLine": 157
     },
     {
       "objectId": 267,
       "name": "Gunnersbury",
-      "lon": -0.2751361823945699,
-      "lat": 51.491741910939425,
+      "lon": -0.27513622035817287,
+      "lat": 51.49174190729722,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUGBY",
+      "network": "London Underground",
       "csvLine": 158
     },
     {
       "objectId": 268,
       "name": "Piccadilly Circus",
-      "lon": -0.1336873864316472,
-      "lat": 51.51006061519836,
+      "lon": -0.13368742449116452,
+      "lat": 51.51006061169478,
       "lines": [
         "bakerloo",
         "piccadilly"
       ],
       "rawLines": "Bakerloo, Piccadilly",
+      "atcoCode": "940GZZLUPCC",
+      "network": "London Underground",
       "csvLine": 159
     },
     {
       "objectId": 269,
       "name": "Charing Cross",
-      "lon": -0.1273836832203838,
-      "lat": 51.50737795073341,
+      "lon": -0.1273837212756834,
+      "lat": 51.50737794723594,
       "lines": [
         "bakerloo",
         "northern"
       ],
       "rawLines": "Bakerloo, Northern",
+      "atcoCode": "940GZZLUCHX",
+      "network": "London Underground",
       "csvLine": 160
     },
     {
       "objectId": 270,
       "name": "Elephant & Castle",
-      "lon": -0.10118627610280032,
-      "lat": 51.49583746787788,
+      "lon": -0.10118631413991931,
+      "lat": 51.495837464405675,
       "lines": [
         "northern",
         "bakerloo"
       ],
       "rawLines": "Northern, Bakerloo",
+      "atcoCode": "940GZZLUEAC",
+      "network": "London Underground",
       "csvLine": 161
     },
     {
       "objectId": 271,
       "name": "Lambeth North",
-      "lon": -0.1122327661467621,
-      "lat": 51.498842228801465,
+      "lon": -0.11223280418680355,
+      "lat": 51.49884222531857,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLULBN",
+      "network": "London Underground",
       "csvLine": 162
     },
     {
       "objectId": 272,
       "name": "Edgware Road (Bakerloo)",
-      "lon": -0.1702481178612425,
-      "lat": 51.52046920147198,
+      "lon": -0.17024815593283815,
+      "lat": 51.520469197932954,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUERB",
+      "network": "London Underground",
       "csvLine": 163
     },
     {
       "objectId": 273,
       "name": "Maida Vale",
-      "lon": -0.18582932871164548,
-      "lat": 51.529729085515065,
+      "lon": -0.18582936680082146,
+      "lat": 51.52972908196099,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUMVL",
+      "network": "London Underground",
       "csvLine": 164
     },
     {
       "objectId": 274,
       "name": "Kilburn Park",
-      "lon": -0.1940203229099902,
-      "lat": 51.534947545387965,
+      "lon": -0.19402036100936257,
+      "lat": 51.53494754182599,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUKPK",
+      "network": "London Underground",
       "csvLine": 165
     },
     {
       "objectId": 275,
       "name": "Marylebone",
-      "lon": -0.16424026631880048,
-      "lat": 51.52215890700219,
+      "lon": -0.16424030439690349,
+      "lat": 51.522158903469055,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUMYB",
+      "network": "London Underground",
       "csvLine": 166
     },
     {
       "objectId": 276,
       "name": "Regent's Park",
-      "lon": -0.14631312455288237,
-      "lat": 51.52327838474291,
+      "lon": -0.1463131626406758,
+      "lat": 51.52327838122729,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLURGP",
+      "network": "London Underground",
       "csvLine": 167
     },
     {
       "objectId": 277,
       "name": "Sloane Square",
-      "lon": -0.1563353394945677,
-      "lat": 51.49233693461083,
+      "lon": -0.1563353775006676,
+      "lat": 51.492336931084864,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUSSQ",
+      "network": "London Underground",
       "csvLine": 168
     },
     {
       "objectId": 278,
       "name": "Ravenscourt Park",
-      "lon": -0.23577535697187463,
-      "lat": 51.494167735828476,
+      "lon": -0.23577539495420144,
+      "lat": 51.494167732224916,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLURVP",
+      "network": "London Underground",
       "csvLine": 169
     },
     {
       "objectId": 279,
       "name": "Hammersmith (Dist&Picc Line)",
-      "lon": -0.22304188389888033,
-      "lat": 51.49199951963806,
+      "lon": -0.223041921880033,
+      "lat": 51.491999516046896,
       "lines": [
         "district",
         "piccadilly"
       ],
       "rawLines": "District, Piccadilly",
+      "atcoCode": "940GZZLUHSD",
+      "network": "London Underground",
       "csvLine": 170
     },
     {
       "objectId": 280,
       "name": "Belsize Park",
-      "lon": -0.16462098681641185,
-      "lat": 51.55032570077621,
+      "lon": -0.1646210249653126,
+      "lat": 51.55032569724322,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUBZP",
+      "network": "London Underground",
       "csvLine": 171
     },
     {
       "objectId": 281,
       "name": "Wood Green",
-      "lon": -0.10985901912398979,
-      "lat": 51.5974714659873,
+      "lon": -0.10985905741341509,
+      "lat": 51.59747146250847,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUWOG",
+      "network": "London Underground",
       "csvLine": 172
     },
     {
       "objectId": 282,
       "name": "Bounds Green",
-      "lon": -0.12434197787111509,
-      "lat": 51.60706378685743,
+      "lon": -0.12434201617884377,
+      "lat": 51.6070637833647,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUBDS",
+      "network": "London Underground",
       "csvLine": 173
     },
     {
       "objectId": 283,
       "name": "Westminster",
-      "lon": -0.1256586526219809,
-      "lat": 51.5009642958388,
+      "lon": -0.12565869066185406,
+      "lat": 51.50096429234287,
       "lines": [
         "district",
         "circle",
         "jubilee"
       ],
       "rawLines": "District, Circle, Jubilee",
+      "atcoCode": "940GZZLUWSM",
+      "network": "London Underground",
       "csvLine": 174
     },
     {
       "objectId": 284,
       "name": "Kensington (Olympia)",
-      "lon": -0.21012996310043217,
-      "lat": 51.49773548808454,
+      "lon": -0.21013000110045205,
+      "lat": 51.49773548450613,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUKOY",
+      "network": "London Underground",
       "csvLine": 175
     },
     {
       "objectId": 285,
       "name": "Euston",
-      "lon": -0.13459860915117344,
-      "lat": 51.52808458451346,
+      "lon": -0.1345986472556744,
+      "lat": 51.52808458100933,
       "lines": [
         "northern",
         "victoria"
       ],
       "rawLines": "Northern, Victoria",
+      "atcoCode": "940GZZLUEUS",
+      "network": "London Underground",
       "csvLine": 176
     },
     {
       "objectId": 286,
       "name": "Waterloo",
-      "lon": -0.11442663408154648,
-      "lat": 51.50342525720376,
+      "lon": -0.114426672132198,
+      "lat": 51.503425253718795,
       "lines": [
         "waterloo-city",
         "bakerloo",
@@ -2016,1106 +2374,1685 @@
         "jubilee"
       ],
       "rawLines": "Waterloo & City, Bakerloo, Northern, Jubilee",
+      "atcoCode": "940GZZLUWLO",
+      "network": "London Underground",
       "csvLine": 177
     },
     {
       "objectId": 287,
       "name": "Upminster",
-      "lon": 0.25111551581131547,
-      "lat": 51.55908765486934,
+      "lon": 0.251115477410267,
+      "lat": 51.55908765173429,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUUPM",
+      "network": "London Underground",
       "csvLine": 178
     },
     {
       "objectId": 288,
       "name": "West Ham",
-      "lon": 0.0042827258459676954,
-      "lat": 51.5282792316888,
+      "lon": 0.00428268767832561,
+      "lat": 51.52827922831923,
       "lines": [
         "district",
         "hammersmith-city",
         "jubilee"
       ],
       "rawLines": "District, Hammersmith & City, Jubilee",
+      "atcoCode": "940GZZLUWHM",
+      "network": "London Underground",
       "csvLine": 179
     },
     {
       "objectId": 289,
       "name": "Walthamstow Central",
-      "lon": -0.0215170203946605,
-      "lat": 51.58311960662003,
+      "lon": -0.02151705868748228,
+      "lat": 51.583119603226535,
       "lines": [
         "victoria"
       ],
       "rawLines": "Victoria",
+      "atcoCode": "940GZZLUWWL",
+      "network": "London Underground",
       "csvLine": 180
     },
     {
       "objectId": 290,
       "name": "Ealing Broadway",
-      "lon": -0.301005548648285,
-      "lat": 51.51500454109758,
+      "lon": -0.30100558666263905,
+      "lat": 51.51500453743044,
       "lines": [
         "district",
-        "central"
+        "central",
+        "elizabeth"
       ],
-      "rawLines": "District, Central",
+      "rawLines": "District, Central, Elizabeth line",
+      "atcoCode": "940GZZLUEBY",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 181
     },
     {
       "objectId": 291,
       "name": "Acton Town",
-      "lon": -0.28002176408560275,
-      "lat": 51.50264555083834,
+      "lon": -0.2800218020751425,
+      "lat": 51.50264554719156,
       "lines": [
         "district",
         "piccadilly"
       ],
       "rawLines": "District, Piccadilly",
+      "atcoCode": "940GZZLUACT",
+      "network": "London Underground",
       "csvLine": 182
     },
     {
       "objectId": 292,
       "name": "Ealing Common",
-      "lon": -0.28814377331699453,
-      "lat": 51.50954325566993,
+      "lon": -0.28814381132143085,
+      "lat": 51.509543252015305,
       "lines": [
         "district",
         "piccadilly"
       ],
       "rawLines": "District, Piccadilly",
+      "atcoCode": "940GZZLUECM",
+      "network": "London Underground",
       "csvLine": 183
     },
     {
       "objectId": 293,
       "name": "Green Park",
-      "lon": -0.14254189011089013,
-      "lat": 51.50686769929983,
+      "lon": -0.14254192815887395,
+      "lat": 51.50686769578754,
       "lines": [
         "piccadilly",
         "victoria",
         "jubilee"
       ],
       "rawLines": "Piccadilly, Victoria, Jubilee",
+      "atcoCode": "940GZZLUGPK",
+      "network": "London Underground",
       "csvLine": 184
     },
     {
       "objectId": 294,
       "name": "Finsbury Park",
-      "lon": -0.10667934765407905,
-      "lat": 51.56457021452156,
+      "lon": -0.10667938586184313,
+      "lat": 51.56457021104525,
       "lines": [
         "piccadilly",
         "victoria"
       ],
       "rawLines": "Piccadilly, Victoria",
+      "atcoCode": "940GZZLUFPK",
+      "network": "London Underground",
       "csvLine": 185
     },
     {
       "objectId": 295,
       "name": "Stockwell",
-      "lon": -0.12304218836550214,
-      "lat": 51.47182845729258,
+      "lon": -0.12304222633324945,
+      "lat": 51.471828453798665,
       "lines": [
         "northern",
         "victoria"
       ],
       "rawLines": "Northern, Victoria",
+      "atcoCode": "940GZZLUSKW",
+      "network": "London Underground",
       "csvLine": 186
     },
     {
       "objectId": 296,
       "name": "Morden",
-      "lon": -0.19475485350439264,
-      "lat": 51.40253820130652,
+      "lon": -0.19475489127091544,
+      "lat": 51.40253819774136,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUMDN",
+      "network": "London Underground",
       "csvLine": 187
     },
     {
       "objectId": 297,
       "name": "Hammersmith (H&C Line)",
-      "lon": -0.2249293587788519,
-      "lat": 51.49378399419851,
+      "lon": -0.22492939676385246,
+      "lat": 51.49378399060554,
       "lines": [
         "hammersmith-city"
       ],
       "rawLines": "Hammersmith & City",
+      "atcoCode": "940GZZLUHSC",
+      "network": "London Underground",
       "csvLine": 188
     },
     {
       "objectId": 298,
       "name": "Hatton Cross",
-      "lon": -0.42346421038625753,
-      "lat": 51.46662784627763,
+      "lon": -0.42346424824639123,
+      "lat": 51.46662784248914,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUHNX",
+      "network": "London Underground",
       "csvLine": 189
     },
     {
       "objectId": 299,
       "name": "Hounslow West",
-      "lon": -0.38579398315426044,
-      "lat": 51.47361867347103,
+      "lon": -0.3857940210412208,
+      "lat": 51.473618669719755,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUHWT",
+      "network": "London Underground",
       "csvLine": 190
     },
     {
       "objectId": 300,
       "name": "Hounslow Central",
-      "lon": -0.3662939172379908,
-      "lat": 51.47131979963469,
+      "lon": -0.36629395512420254,
+      "lat": 51.47131979590255,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUHWC",
+      "network": "London Underground",
       "csvLine": 191
     },
     {
       "objectId": 301,
       "name": "Hounslow East",
-      "lon": -0.35633446056928547,
-      "lat": 51.47326292270873,
+      "lon": -0.356334498463024,
+      "lat": 51.473262918986414,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUHWE",
+      "network": "London Underground",
       "csvLine": 192
     },
     {
       "objectId": 302,
       "name": "Osterley",
-      "lon": -0.3522207467968353,
-      "lat": 51.4812434687809,
+      "lon": -0.3522207847117558,
+      "lat": 51.481243465062796,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUOSY",
+      "network": "London Underground",
       "csvLine": 193
     },
     {
       "objectId": 303,
       "name": "Northfields",
-      "lon": -0.31299492833767906,
-      "lat": 51.49965470504596,
+      "lon": -0.3129949663098791,
+      "lat": 51.499654701366744,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUNFD",
+      "network": "London Underground",
       "csvLine": 194
     },
     {
       "objectId": 304,
       "name": "Barons Court",
-      "lon": -0.21468405012348488,
-      "lat": 51.49029837209941,
+      "lon": -0.21468408810322273,
+      "lat": 51.490298368516406,
       "lines": [
         "district",
         "piccadilly"
       ],
       "rawLines": "District, Piccadilly",
+      "atcoCode": "940GZZLUBSC",
+      "network": "London Underground",
       "csvLine": 195
     },
     {
       "objectId": 305,
       "name": "Fulham Broadway",
-      "lon": -0.19476643999333534,
-      "lat": 51.48076777565934,
+      "lon": -0.19476647795611635,
+      "lat": 51.48076777209564,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUFBY",
+      "network": "London Underground",
       "csvLine": 196
     },
     {
       "objectId": 306,
       "name": "West Brompton",
-      "lon": -0.19557175970385998,
-      "lat": 51.487279564113926,
+      "lon": -0.19557179768271965,
+      "lat": 51.48727956054957,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUWBN",
+      "network": "London Underground",
       "csvLine": 197
     },
     {
       "objectId": 307,
       "name": "Stamford Brook",
-      "lon": -0.24600122518353934,
-      "lat": 51.4949181050598,
+      "lon": -0.24600126316438856,
+      "lat": 51.49491810144623,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUSFB",
+      "network": "London Underground",
       "csvLine": 198
     },
     {
       "objectId": 308,
       "name": "Turnham Green",
-      "lon": -0.2545503301237331,
-      "lat": 51.4949578319235,
+      "lon": -0.25455036810191667,
+      "lat": 51.494957828301544,
       "lines": [
         "district",
         "piccadilly"
       ],
       "rawLines": "District, Piccadilly",
+      "atcoCode": "940GZZLUTNG",
+      "network": "London Underground",
       "csvLine": 199
     },
     {
       "objectId": 309,
       "name": "Aldgate East",
-      "lon": -0.07115364166807008,
-      "lat": 51.51542691621208,
+      "lon": -0.07115367976746165,
+      "lat": 51.51542691276934,
       "lines": [
         "hammersmith-city",
         "district"
       ],
       "rawLines": "Hammersmith & City, District",
+      "atcoCode": "940GZZLUADE",
+      "network": "London Underground",
       "csvLine": 200
     },
     {
       "objectId": 310,
       "name": "Whitechapel",
-      "lon": -0.06076871394741355,
-      "lat": 51.51953209733413,
+      "lon": -0.06076875206179566,
+      "lat": 51.51953209390155,
       "lines": [
         "district",
-        "hammersmith-city"
+        "hammersmith-city",
+        "elizabeth"
       ],
-      "rawLines": "District, Hammersmith & City",
+      "rawLines": "District, Hammersmith & City, Elizabeth line",
+      "atcoCode": "940GZZLUWPL",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 201
     },
     {
       "objectId": 311,
       "name": "Bow Road",
-      "lon": -0.02520321216907312,
-      "lat": 51.526902665586434,
+      "lon": -0.025203250318638275,
+      "lat": 51.52690266218839,
       "lines": [
         "district",
         "hammersmith-city"
       ],
       "rawLines": "District, Hammersmith & City",
+      "atcoCode": "940GZZLUBWR",
+      "network": "London Underground",
       "csvLine": 202
     },
     {
       "objectId": 312,
       "name": "Wembley Park",
-      "lon": -0.28005006150968614,
-      "lat": 51.56376083873252,
+      "lon": -0.28005009965327393,
+      "lat": 51.56376083508685,
       "lines": [
         "metropolitan",
         "jubilee"
       ],
       "rawLines": "Metropolitan, Jubilee",
+      "atcoCode": "940GZZLUWYP",
+      "network": "London Underground",
       "csvLine": 203
     },
     {
       "objectId": 313,
       "name": "Neasden",
-      "lon": -0.2511708953836603,
-      "lat": 51.554426400499004,
+      "lon": -0.2511709335127481,
+      "lat": 51.55442639688146,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUNDN",
+      "network": "London Underground",
       "csvLine": 204
     },
     {
       "objectId": 314,
       "name": "Totteridge & Whetstone",
-      "lon": -0.1792054604098072,
-      "lat": 51.63058779485697,
+      "lon": -0.1792054987559553,
+      "lat": 51.63058779131119,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUTAW",
+      "network": "London Underground",
       "csvLine": 205
     },
     {
       "objectId": 315,
       "name": "Heathrow Terminal 4",
-      "lon": -0.44571396376058325,
-      "lat": 51.45854050640025,
+      "lon": -0.4457140015952022,
+      "lat": 51.45854050258968,
       "lines": [
-        "piccadilly"
+        "piccadilly",
+        "elizabeth"
       ],
-      "rawLines": "Piccadilly",
+      "rawLines": "Piccadilly, Elizabeth line",
+      "atcoCode": "940GZZLUHR4",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 206
     },
     {
       "objectId": 316,
       "name": "West Acton",
-      "lon": -0.2809538703054756,
-      "lat": 51.517980197246935,
+      "lon": -0.2809539083333456,
+      "lat": 51.51798019359953,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUWTA",
+      "network": "London Underground",
       "csvLine": 207
     },
     {
       "objectId": 317,
       "name": "Stratford",
-      "lon": -0.0038044932283004124,
-      "lat": 51.541456474970374,
+      "lon": -0.0038045314249806317,
+      "lat": 51.54145647159322,
       "lines": [
         "central",
-        "jubilee"
+        "jubilee",
+        "elizabeth"
       ],
-      "rawLines": "Central, Jubilee",
+      "rawLines": "Central, Jubilee, Elizabeth line",
+      "atcoCode": "940GZZLUSTD",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 208
     },
     {
       "objectId": 318,
       "name": "Uxbridge",
-      "lon": -0.4776347848292753,
-      "lat": 51.54646222722115,
+      "lon": -0.47763482287839426,
+      "lat": 51.546462223380814,
       "lines": [
         "metropolitan",
         "piccadilly"
       ],
       "rawLines": "Metropolitan, Piccadilly",
+      "atcoCode": "940GZZLUUXB",
+      "network": "London Underground",
       "csvLine": 209
     },
     {
       "objectId": 319,
       "name": "Hillingdon",
-      "lon": -0.44938394891092626,
-      "lat": 51.55394931648672,
+      "lon": -0.44938398698516735,
+      "lat": 51.55394931267436,
       "lines": [
         "metropolitan",
         "piccadilly"
       ],
       "rawLines": "Metropolitan, Piccadilly",
+      "atcoCode": "940GZZLUHGD",
+      "network": "London Underground",
       "csvLine": 210
     },
     {
       "objectId": 320,
       "name": "Ickenham",
-      "lon": -0.44204013678137116,
-      "lat": 51.56196897211082,
+      "lon": -0.4420401748775358,
+      "lat": 51.561968968305855,
       "lines": [
         "metropolitan",
         "piccadilly"
       ],
       "rawLines": "Metropolitan, Piccadilly",
+      "atcoCode": "940GZZLUICK",
+      "network": "London Underground",
       "csvLine": 211
     },
     {
       "objectId": 321,
       "name": "Ruislip",
-      "lon": -0.4217906669062553,
-      "lat": 51.57129177940531,
+      "lon": -0.4217907050306823,
+      "lat": 51.57129177562047,
       "lines": [
         "metropolitan",
         "piccadilly"
       ],
       "rawLines": "Metropolitan, Piccadilly",
+      "atcoCode": "940GZZLURSP",
+      "network": "London Underground",
       "csvLine": 212
     },
     {
       "objectId": 322,
       "name": "Ruislip Manor",
-      "lon": -0.411812431756392,
-      "lat": 51.573476142150504,
+      "lon": -0.41181246988872083,
+      "lat": 51.573476138375526,
       "lines": [
         "metropolitan",
         "piccadilly"
       ],
       "rawLines": "Metropolitan, Piccadilly",
+      "atcoCode": "940GZZLURSM",
+      "network": "London Underground",
       "csvLine": 213
     },
     {
       "objectId": 323,
       "name": "Northwood Hills",
-      "lon": -0.4087463545441836,
-      "lat": 51.60019223372048,
+      "lon": -0.4087463927448115,
+      "lat": 51.600192229948995,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUNWH",
+      "network": "London Underground",
       "csvLine": 214
     },
     {
       "objectId": 324,
       "name": "West Harrow",
-      "lon": -0.35329028029996584,
-      "lat": 51.57956661616709,
+      "lon": -0.35329031846253833,
+      "lat": 51.57956661244978,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUWHW",
+      "network": "London Underground",
       "csvLine": 215
     },
     {
       "objectId": 325,
       "name": "Rayners Lane",
-      "lon": -0.3714462140203309,
-      "lat": 51.575195361923186,
+      "lon": -0.37144625216708194,
+      "lat": 51.57519535818794,
       "lines": [
         "metropolitan",
         "piccadilly"
       ],
       "rawLines": "Metropolitan, Piccadilly",
+      "atcoCode": "940GZZLURYL",
+      "network": "London Underground",
       "csvLine": 216
     },
     {
       "objectId": 326,
       "name": "North Harrow",
-      "lon": -0.3626047009909967,
-      "lat": 51.58494710527484,
+      "lon": -0.36260473916469965,
+      "lat": 51.5849471015485,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUNHA",
+      "network": "London Underground",
       "csvLine": 217
     },
     {
       "objectId": 327,
       "name": "Pinner",
-      "lon": -0.38116191894249885,
-      "lat": 51.592825567877355,
+      "lon": -0.38116195713132806,
+      "lat": 51.59282556413288,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUPNR",
+      "network": "London Underground",
       "csvLine": 218
     },
     {
       "objectId": 328,
       "name": "Harrow-on-the-Hill",
-      "lon": -0.3367522322346986,
-      "lat": 51.57941460314498,
+      "lon": -0.3367522704013735,
+      "lat": 51.57941459944393,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUHOH",
+      "network": "London Underground",
       "csvLine": 219
     },
     {
       "objectId": 329,
       "name": "Northwick Park",
-      "lon": -0.31806633884631424,
-      "lat": 51.57847500401296,
+      "lon": -0.318066377015848,
+      "lat": 51.57847500033024,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUNKP",
+      "network": "London Underground",
       "csvLine": 220
     },
     {
       "objectId": 330,
       "name": "Stanmore",
-      "lon": -0.3032624771028668,
-      "lat": 51.61971092780402,
+      "lon": -0.3032625153809407,
+      "lat": 51.6197109241366,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUSTM",
+      "network": "London Underground",
       "csvLine": 221
     },
     {
       "objectId": 331,
       "name": "Canons Park",
-      "lon": -0.29469410620588665,
-      "lat": 51.60770907048488,
+      "lon": -0.2946941444561147,
+      "lat": 51.60770906682565,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUCPK",
+      "network": "London Underground",
       "csvLine": 222
     },
     {
       "objectId": 332,
       "name": "St. John's Wood",
-      "lon": -0.17414757419359148,
-      "lat": 51.535204969887026,
+      "lon": -0.17414761230084044,
+      "lat": 51.53520496634446,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUSJW",
+      "network": "London Underground",
       "csvLine": 223
     },
     {
       "objectId": 333,
       "name": "Southwark",
-      "lon": -0.1053973366341109,
-      "lat": 51.50428757953954,
+      "lon": -0.10539737469068963,
+      "lat": 51.50428757606337,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUSWK",
+      "network": "London Underground",
       "csvLine": 224
     },
     {
       "objectId": 334,
       "name": "London Bridge",
-      "lon": -0.08964851723570844,
-      "lat": 51.50506500549169,
+      "lon": -0.08964855530094384,
+      "lat": 51.50506500203085,
       "lines": [
         "northern",
         "jubilee"
       ],
       "rawLines": "Northern, Jubilee",
+      "atcoCode": "940GZZLULNB",
+      "network": "London Underground",
       "csvLine": 225
     },
     {
       "objectId": 335,
       "name": "Wimbledon",
-      "lon": -0.2065150560922177,
-      "lat": 51.42143496760067,
+      "lon": -0.2065150939019046,
+      "lat": 51.421434964024336,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUWIM",
+      "network": "London Underground",
       "csvLine": 226
     },
     {
       "objectId": 336,
       "name": "West Finchley",
-      "lon": -0.18834268491450493,
-      "lat": 51.60948689407505,
+      "lon": -0.18834272320399348,
+      "lat": 51.60948689051995,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUWFN",
+      "network": "London Underground",
       "csvLine": 227
     },
     {
       "objectId": 379,
       "name": "Battersea Power Station",
-      "lon": -0.1434008238398742,
-      "lat": 51.47947593806482,
+      "lon": -0.14340086181867848,
+      "lat": 51.47947593455123,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "754",
+      "network": "London Underground",
       "csvLine": 228
     },
     {
       "objectId": 380,
       "name": "Nine Elms",
-      "lon": -0.12948529538068784,
-      "lat": 51.48013931574214,
+      "lon": -0.1294853333666917,
+      "lat": 51.48013931224208,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "754",
+      "network": "London Underground",
       "csvLine": 229
     },
     {
       "objectId": 384,
       "name": "Edgware",
-      "lon": -0.27477777123740055,
-      "lat": 51.61360827412279,
+      "lon": -0.27477780950856256,
+      "lat": 51.61360827048319,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUEGW",
+      "network": "London Underground",
       "csvLine": 230
     },
     {
       "objectId": 385,
       "name": "North Ealing",
-      "lon": -0.2888251159580139,
-      "lat": 51.517482284384876,
+      "lon": -0.2888251539822415,
+      "lat": 51.51748228072974,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUNEN",
+      "network": "London Underground",
       "csvLine": 231
     },
     {
       "objectId": 386,
       "name": "Caledonian Road",
-      "lon": -0.11847347641237985,
-      "lat": 51.54852353192346,
+      "lon": -0.11847351457484513,
+      "lat": 51.548523528435375,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUCAR",
+      "network": "London Underground",
       "csvLine": 232
     },
     {
       "objectId": 387,
       "name": "Monument",
-      "lon": -0.08611363432542882,
-      "lat": 51.510719671133025,
+      "lon": -0.08611367240640755,
+      "lat": 51.51071966767571,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUMMT",
+      "network": "London Underground",
       "csvLine": 233
     },
     {
       "objectId": 388,
       "name": "Great Portland Street",
-      "lon": -0.1442909711973862,
-      "lat": 51.52384645620309,
+      "lon": -0.14429100928739802,
+      "lat": 51.52384645268944,
       "lines": [
         "metropolitan",
         "circle",
         "hammersmith-city"
       ],
       "rawLines": "Metropolitan, Circle, Hammersmith & City",
+      "atcoCode": "940GZZLUGPS",
+      "network": "London Underground",
       "csvLine": 234
     },
     {
       "objectId": 389,
       "name": "Southfields",
-      "lon": -0.2066534771013345,
-      "lat": 51.44507985784133,
+      "lon": -0.206653514970278,
+      "lat": 51.44507985426534,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUSFS",
+      "network": "London Underground",
       "csvLine": 235
     },
     {
       "objectId": 390,
       "name": "Dagenham Heathway",
-      "lon": 0.14751917346847765,
-      "lat": 51.54161732780605,
+      "lon": 0.1475191351847178,
+      "lat": 51.54161732457351,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLUDGY",
+      "network": "London Underground",
       "csvLine": 236
     },
     {
       "objectId": 391,
-      "name": "Heathrow Terminals 1-2-3",
-      "lon": -0.4524258114844233,
-      "lat": 51.47130365988795,
+      "name": "Heathrow Terminals 2 & 3",
+      "lon": -0.4524258493496285,
+      "lat": 51.47130365607101,
       "lines": [
-        "piccadilly"
+        "piccadilly",
+        "elizabeth"
       ],
-      "rawLines": "Piccadilly",
+      "rawLines": "Piccadilly, Elizabeth line",
+      "atcoCode": "940GZZLUHRC",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 237
     },
     {
       "objectId": 392,
       "name": "Westbourne Park",
-      "lon": -0.20115293263288994,
-      "lat": 51.52092006250626,
+      "lon": -0.20115297069440127,
+      "lat": 51.52092005893704,
       "lines": [
         "hammersmith-city",
         "circle"
       ],
       "rawLines": "Hammersmith & City, Circle",
+      "atcoCode": "940GZZLUWSP",
+      "network": "London Underground",
       "csvLine": 238
     },
     {
       "objectId": 393,
       "name": "Hanger Lane",
-      "lon": -0.2926845249496959,
-      "lat": 51.53018552933825,
+      "lon": -0.2926845630047746,
+      "lat": 51.530185525679556,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUHGR",
+      "network": "London Underground",
       "csvLine": 239
     },
     {
       "objectId": 394,
       "name": "Gants Hill",
-      "lon": 0.06619413225561141,
-      "lat": 51.57653500920319,
+      "lon": 0.06619409393345621,
+      "lat": 51.57653500589388,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUGTH",
+      "network": "London Underground",
       "csvLine": 240
     },
     {
       "objectId": 395,
       "name": "Bromley-by-Bow",
-      "lon": -0.0114614594625467,
-      "lat": 51.524760125717506,
+      "lon": -0.011461497613446444,
+      "lat": 51.52476012233267,
       "lines": [
         "district",
         "hammersmith-city"
       ],
       "rawLines": "District, Hammersmith & City",
+      "atcoCode": "940GZZLUBBB",
+      "network": "London Underground",
       "csvLine": 241
     },
     {
       "objectId": 396,
       "name": "Richmond",
-      "lon": -0.3016691259076597,
-      "lat": 51.463118722979786,
+      "lon": -0.3016691637912623,
+      "lat": 51.46311871931101,
       "lines": [
         "district"
       ],
       "rawLines": "District",
+      "atcoCode": "940GZZLURMD",
+      "network": "London Underground",
       "csvLine": 242
     },
     {
       "objectId": 397,
       "name": "Warwick Avenue",
-      "lon": -0.18360675558678705,
-      "lat": 51.52319886210523,
+      "lon": -0.1836067936603287,
+      "lat": 51.5231988585532,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUWKA",
+      "network": "London Underground",
       "csvLine": 243
     },
     {
       "objectId": 398,
       "name": "St. James's Park",
-      "lon": -0.1336270216533475,
-      "lat": 51.49956127784573,
+      "lon": -0.1336270596864906,
+      "lat": 51.49956127434202,
       "lines": [
         "district",
         "circle"
       ],
       "rawLines": "District, Circle",
+      "atcoCode": "940GZZLUSJP",
+      "network": "London Underground",
       "csvLine": 244
     },
     {
       "objectId": 399,
       "name": "Turnpike Lane",
-      "lon": -0.10297211354184564,
-      "lat": 51.59025232853629,
+      "lon": -0.10297215181592076,
+      "lat": 51.59025232506403,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUTPN",
+      "network": "London Underground",
       "csvLine": 245
     },
     {
       "objectId": 400,
       "name": "Barking",
-      "lon": 0.08018208014455507,
-      "lat": 51.539885097485445,
+      "lon": 0.08018204190651042,
+      "lat": 51.53988509418886,
       "lines": [
         "district",
         "hammersmith-city"
       ],
       "rawLines": "District, Hammersmith & City",
+      "atcoCode": "940GZZLUBKG",
+      "network": "London Underground",
       "csvLine": 246
     },
     {
       "objectId": 433,
       "name": "South Wimbledon",
-      "lon": -0.19330652029319118,
-      "lat": 51.41498929257676,
+      "lon": -0.19330655809142794,
+      "lat": 51.41498928901322,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUSWN",
+      "network": "London Underground",
       "csvLine": 247
     },
     {
       "objectId": 434,
       "name": "Boston Manor",
-      "lon": -0.3255952087308763,
-      "lat": 51.495219674970095,
+      "lon": -0.3255952466883133,
+      "lat": 51.4952196712784,
       "lines": [
         "piccadilly"
       ],
       "rawLines": "Piccadilly",
+      "atcoCode": "940GZZLUBOS",
+      "network": "London Underground",
       "csvLine": 248
     },
     {
       "objectId": 435,
       "name": "Stepney Green",
-      "lon": -0.04659090323887023,
-      "lat": 51.52186169216427,
+      "lon": -0.04659094136562345,
+      "lat": 51.52186168874547,
       "lines": [
         "district",
         "hammersmith-city"
       ],
       "rawLines": "District, Hammersmith & City",
+      "atcoCode": "940GZZLUSGN",
+      "network": "London Underground",
       "csvLine": 249
     },
     {
       "objectId": 436,
       "name": "High Barnet",
-      "lon": -0.19416624688190223,
-      "lat": 51.65052191222786,
+      "lon": -0.1941662852731215,
+      "lat": 51.65052190866783,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUHBT",
+      "network": "London Underground",
       "csvLine": 250
     },
     {
       "objectId": 437,
       "name": "Eastcote",
-      "lon": -0.39736801686353984,
-      "lat": 51.576511969832765,
+      "lon": -0.397368055007064,
+      "lat": 51.57651196607204,
       "lines": [
         "metropolitan",
         "piccadilly"
       ],
       "rawLines": "Metropolitan, Piccadilly",
+      "atcoCode": "940GZZLUEAE",
+      "network": "London Underground",
       "csvLine": 251
     },
     {
       "objectId": 438,
       "name": "Amersham",
-      "lon": -0.6077052134228341,
-      "lat": 51.674145407023566,
+      "lon": -0.607705251770412,
+      "lat": 51.67414540305739,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUAMS",
+      "network": "London Underground",
       "csvLine": 252
     },
     {
       "objectId": 439,
       "name": "Willesden Green",
-      "lon": -0.22271672855408042,
-      "lat": 51.54937241454188,
+      "lon": -0.2227167666798201,
+      "lat": 51.54937241095212,
       "lines": [
         "jubilee"
       ],
       "rawLines": "Jubilee",
+      "atcoCode": "940GZZLUWIG",
+      "network": "London Underground",
       "csvLine": 253
     },
     {
       "objectId": 440,
       "name": "Balham",
-      "lon": -0.15269122947563088,
-      "lat": 51.44362737290878,
+      "lon": -0.1526912673608379,
+      "lat": 51.44362736938545,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUBLM",
+      "network": "London Underground",
       "csvLine": 254
     },
     {
       "objectId": 441,
       "name": "Camden Town",
-      "lon": -0.14262297026124665,
-      "lat": 51.53923059833878,
+      "lon": -0.14262300839064213,
+      "lat": 51.53923059482704,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUCTN",
+      "network": "London Underground",
       "csvLine": 255
     },
     {
       "objectId": 442,
       "name": "Heathrow Terminal 5",
-      "lon": -0.4880396396312293,
-      "lat": 51.4725252187983,
+      "lon": -0.4880396774917363,
+      "lat": 51.47252521494629,
       "lines": [
-        "piccadilly"
+        "piccadilly",
+        "elizabeth"
       ],
-      "rawLines": "Piccadilly",
+      "rawLines": "Piccadilly, Elizabeth line",
+      "atcoCode": "940GZZLUHR5",
+      "network": "London Underground, Elizabeth line",
       "csvLine": 256
     },
     {
       "objectId": 470,
       "name": "Willesden Junction",
-      "lon": -0.2445731603163596,
-      "lat": 51.53240375197415,
+      "lon": -0.2445731983920599,
+      "lat": 51.53240374836267,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUWJN",
+      "network": "London Underground",
       "csvLine": 257
     },
     {
       "objectId": 471,
       "name": "East Finchley",
-      "lon": -0.1650441219039346,
-      "lat": 51.58715402026014,
+      "lon": -0.16504416014556636,
+      "lat": 51.587154016727396,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUEFY",
+      "network": "London Underground",
       "csvLine": 258
     },
     {
       "objectId": 472,
       "name": "Highgate",
-      "lon": -0.14646788226539453,
-      "lat": 51.57784395375154,
+      "lon": -0.1464679204906196,
+      "lat": 51.57784395023675,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUHGT",
+      "network": "London Underground",
       "csvLine": 259
     },
     {
       "objectId": 473,
       "name": "Chesham",
-      "lon": -0.6109804023947352,
-      "lat": 51.70522161796168,
+      "lon": -0.6109804408207582,
+      "lat": 51.70522161399283,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUCSM",
+      "network": "London Underground",
       "csvLine": 260
     },
     {
       "objectId": 474,
       "name": "Rickmansworth",
-      "lon": -0.47370581066277867,
-      "lat": 51.64028836634988,
+      "lon": -0.47370584895014994,
+      "lat": 51.64028836251518,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLURKW",
+      "network": "London Underground",
       "csvLine": 261
     },
     {
       "objectId": 475,
       "name": "Moor Park",
-      "lon": -0.43228696397287464,
-      "lat": 51.62986629669337,
+      "lon": -0.43228700224307076,
+      "lat": 51.62986629289927,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUMPK",
+      "network": "London Underground",
       "csvLine": 262
     },
     {
       "objectId": 476,
       "name": "Northwood",
-      "lon": -0.4239354593141582,
-      "lat": 51.611014101617926,
+      "lon": -0.42393549753855475,
+      "lat": 51.61101409783171,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUNOW",
+      "network": "London Underground",
       "csvLine": 263
     },
     {
       "objectId": 477,
       "name": "Croxley",
-      "lon": -0.44176805492340054,
-      "lat": 51.6470771785801,
+      "lon": -0.44176809323505023,
+      "lat": 51.64707717477699,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUCXY",
+      "network": "London Underground",
       "csvLine": 264
     },
     {
       "objectId": 478,
       "name": "Watford",
-      "lon": -0.4174120635262017,
-      "lat": 51.65748010048808,
+      "lon": -0.41741210186989536,
+      "lat": 51.65748009670914,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUWAF",
+      "network": "London Underground",
       "csvLine": 265
     },
     {
       "objectId": 479,
       "name": "Borough",
-      "lon": -0.0933129512735988,
-      "lat": 51.5011913652754,
+      "lon": -0.09331298932752405,
+      "lat": 51.50119136181092,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUBOR",
+      "network": "London Underground",
       "csvLine": 266
     },
     {
       "objectId": 480,
       "name": "Old Street",
-      "lon": -0.08763720259182553,
-      "lat": 51.52508527631206,
+      "lon": -0.08763724070826495,
+      "lat": 51.52508527285354,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUODS",
+      "network": "London Underground",
       "csvLine": 267
     },
     {
       "objectId": 481,
       "name": "Angel",
-      "lon": -0.10472643840232035,
-      "lat": 51.53148758749647,
+      "lon": -0.10472647652758708,
+      "lat": 51.53148758402147,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUAGL",
+      "network": "London Underground",
       "csvLine": 268
     },
     {
       "objectId": 482,
       "name": "Hendon Central",
-      "lon": -0.2263467398232382,
-      "lat": 51.58317142482077,
+      "lon": -0.22634677803303935,
+      "lat": 51.58317142122805,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUHCL",
+      "network": "London Underground",
       "csvLine": 269
     },
     {
       "objectId": 483,
       "name": "Seven Sisters",
-      "lon": -0.0725100279127818,
-      "lat": 51.58339794718637,
+      "lon": -0.07251006618268922,
+      "lat": 51.583397943743535,
       "lines": [
         "victoria"
       ],
       "rawLines": "Victoria",
+      "atcoCode": "940GZZLUSVS",
+      "network": "London Underground",
       "csvLine": 270
     },
     {
       "objectId": 484,
       "name": "Theydon Bois",
-      "lon": 0.10332766399974981,
-      "lat": 51.671832474283256,
+      "lon": 0.10332762541585737,
+      "lat": 51.671832471010994,
       "lines": [
         "central"
       ],
       "rawLines": "Central",
+      "atcoCode": "940GZZLUTHB",
+      "network": "London Underground",
       "csvLine": 271
     },
     {
       "objectId": 485,
       "name": "Kenton",
-      "lon": -0.31672815541742494,
-      "lat": 51.58161162102015,
+      "lon": -0.3167281935952653,
+      "lat": 51.58161161733881,
       "lines": [
         "bakerloo"
       ],
       "rawLines": "Bakerloo",
+      "atcoCode": "940GZZLUKEN",
+      "network": "London Underground",
       "csvLine": 272
     },
     {
       "objectId": 486,
       "name": "Woodside Park",
-      "lon": -0.1855114363532535,
-      "lat": 51.61808637995582,
+      "lon": -0.1855114746654991,
+      "lat": 51.61808637640367,
       "lines": [
         "northern"
       ],
       "rawLines": "Northern",
+      "atcoCode": "940GZZLUWOP",
+      "network": "London Underground",
       "csvLine": 273
     },
     {
       "objectId": 487,
       "name": "Preston Road",
-      "lon": -0.295129262413792,
-      "lat": 51.572014075601594,
+      "lon": -0.29512930057367726,
+      "lat": 51.572014071941275,
       "lines": [
         "metropolitan"
       ],
       "rawLines": "Metropolitan",
+      "atcoCode": "940GZZLUPRD",
+      "network": "London Underground",
       "csvLine": 274
+    },
+    {
+      "objectId": 488,
+      "name": "Reading",
+      "lon": -0.9729100257170458,
+      "lat": 51.45923999068705,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 275
+    },
+    {
+      "objectId": 489,
+      "name": "Twyford",
+      "lon": -0.863740026022544,
+      "lat": 51.47511999105448,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 276
+    },
+    {
+      "objectId": 490,
+      "name": "Maidenhead",
+      "lon": -0.7227600250937469,
+      "lat": 51.51831999159716,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 277
+    },
+    {
+      "objectId": 491,
+      "name": "Taplow",
+      "lon": -0.6816800254550335,
+      "lat": 51.52345999128834,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 278
+    },
+    {
+      "objectId": 492,
+      "name": "Burnham",
+      "lon": -0.6463500250838496,
+      "lat": 51.52339999110284,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 279
+    },
+    {
+      "objectId": 493,
+      "name": "Slough",
+      "lon": -0.5923900251227683,
+      "lat": 51.5123699917943,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 280
+    },
+    {
+      "objectId": 494,
+      "name": "Langley",
+      "lon": -0.5412100250511572,
+      "lat": 51.50794999113994,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 281
+    },
+    {
+      "objectId": 495,
+      "name": "Iver",
+      "lon": -0.5065400251528203,
+      "lat": 51.50863999176966,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 282
+    },
+    {
+      "objectId": 496,
+      "name": "West Drayton",
+      "lon": -0.4719000254673432,
+      "lat": 51.50980999147066,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 283
+    },
+    {
+      "objectId": 497,
+      "name": "Hayes & Harlington",
+      "lon": -0.419620025602697,
+      "lat": 51.50296999155487,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 284
+    },
+    {
+      "objectId": 498,
+      "name": "Southall",
+      "lon": -0.3774300258121971,
+      "lat": 51.50618999189251,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 285
+    },
+    {
+      "objectId": 499,
+      "name": "Hanwell",
+      "lon": -0.33860002544940987,
+      "lat": 51.51180999142899,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 286
+    },
+    {
+      "objectId": 500,
+      "name": "West Ealing",
+      "lon": -0.3204700249631672,
+      "lat": 51.51350999210496,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 287
+    },
+    {
+      "objectId": 501,
+      "name": "Acton Main Line",
+      "lon": -0.2671600258330373,
+      "lat": 51.5171099919251,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 288
+    },
+    {
+      "objectId": 502,
+      "name": "Custom House",
+      "lon": 0.02669997508187684,
+      "lat": 51.50989999248704,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 289
+    },
+    {
+      "objectId": 503,
+      "name": "Woolwich",
+      "lon": 0.07080997501021691,
+      "lat": 51.49178999216894,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 290
+    },
+    {
+      "objectId": 504,
+      "name": "Abbey Wood",
+      "lon": 0.12040997498095646,
+      "lat": 51.49108999227754,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 291
+    },
+    {
+      "objectId": 505,
+      "name": "Maryland",
+      "lon": 0.006229974368612273,
+      "lat": 51.54619999230494,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 292
+    },
+    {
+      "objectId": 506,
+      "name": "Forest Gate",
+      "lon": 0.024119973805274073,
+      "lat": 51.54954999189264,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 293
+    },
+    {
+      "objectId": 507,
+      "name": "Manor Park",
+      "lon": 0.04577997381701532,
+      "lat": 51.55244999195098,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 294
+    },
+    {
+      "objectId": 508,
+      "name": "Ilford",
+      "lon": 0.06991997366035596,
+      "lat": 51.559049992224956,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 295
+    },
+    {
+      "objectId": 509,
+      "name": "Seven Kings",
+      "lon": 0.0970999746617198,
+      "lat": 51.563859992045344,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 296
+    },
+    {
+      "objectId": 510,
+      "name": "Goodmayes",
+      "lon": 0.11099997431886229,
+      "lat": 51.565499991986655,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 297
+    },
+    {
+      "objectId": 511,
+      "name": "Chadwell Heath",
+      "lon": 0.12905997401154143,
+      "lat": 51.567939992218804,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 298
+    },
+    {
+      "objectId": 512,
+      "name": "Romford",
+      "lon": 0.18341997397060078,
+      "lat": 51.57490999192332,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 299
+    },
+    {
+      "objectId": 513,
+      "name": "Gidea Park",
+      "lon": 0.2052899740817397,
+      "lat": 51.58161999245609,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 300
+    },
+    {
+      "objectId": 514,
+      "name": "Harold Wood",
+      "lon": 0.23300997361985396,
+      "lat": 51.592679991941154,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 301
+    },
+    {
+      "objectId": 515,
+      "name": "Brentwood",
+      "lon": 0.29982997485886437,
+      "lat": 51.61353999225088,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 302
+    },
+    {
+      "objectId": 516,
+      "name": "Shenfield",
+      "lon": 0.3306099740561943,
+      "lat": 51.63113999202084,
+      "lines": [
+        "elizabeth"
+      ],
+      "rawLines": "Elizabeth line",
+      "atcoCode": null,
+      "network": "Elizabeth line",
+      "csvLine": 303
     }
   ],
   "issues": [],

@@ -1,36 +1,140 @@
 {
-  "generatedAt": "2026-11-17T11:49:38.566Z",
+  "generatedAt": "2026-11-17T12:48:53.532Z",
   "status": "warnings",
   "errors": [],
   "warnings": [
     "4 station(s) whose CSV LINES differ from TfL topology (topology is used)"
   ],
   "summary": {
-    "csvRecords": 273,
-    "physicalStations": 272,
-    "interchanges": 80,
-    "edges": 312,
-    "sharedEdges": 57
+    "stationRecords": 302,
+    "physicalStations": 301,
+    "byMode": {
+      "tube": 272,
+      "elizabeth-line": 41
+    },
+    "tflStopsJoined": 318,
+    "interchanges": 84,
+    "edges": 351,
+    "sharedEdges": 59
   },
   "unmatchedStations": {
     "csvStationsWithoutTopologyMatch": [],
     "topologyStopsWithoutCsvMatch": [],
     "nonExactMatches": [
       {
-        "objectId": 182,
-        "csvName": "Shepherd's Bush",
-        "stopId": "940GZZLUSBC",
-        "tflName": "Shepherd's Bush (Central)",
+        "objectId": 492,
+        "csvName": "Burnham",
+        "stopId": "910GBNHAM",
+        "tflName": "Burnham (Berks) Rail Station",
+        "stationId": "910GBNHAM",
         "method": "base-name",
-        "distanceM": 3
+        "distanceM": 12
       },
       {
-        "objectId": 391,
-        "csvName": "Heathrow Terminals 1-2-3",
-        "stopId": "940GZZLUHRC",
-        "tflName": "Heathrow Terminals 2 & 3",
-        "method": "alias",
-        "distanceM": 14
+        "objectId": 494,
+        "csvName": "Langley",
+        "stopId": "910GLANGLEY",
+        "tflName": "Langley (Berks) Rail Station",
+        "stationId": "910GLANGLEY",
+        "method": "base-name",
+        "distanceM": 40
+      },
+      {
+        "objectId": 317,
+        "csvName": "Stratford",
+        "stopId": "910GSTFD",
+        "tflName": "Stratford (London) Rail Station",
+        "stationId": "940GZZLUSTD",
+        "method": "base-name",
+        "distanceM": 56
+      }
+    ],
+    "stationsWithSeveralTflStops": [
+      {
+        "name": "Bond Street",
+        "stopIds": [
+          "910GBONDST",
+          "940GZZLUBND"
+        ]
+      },
+      {
+        "name": "Canary Wharf",
+        "stopIds": [
+          "910GCANWHRF",
+          "940GZZLUCYF"
+        ]
+      },
+      {
+        "name": "Ealing Broadway",
+        "stopIds": [
+          "910GEALINGB",
+          "940GZZLUEBY"
+        ]
+      },
+      {
+        "name": "Farringdon",
+        "stopIds": [
+          "910GFRNDXR",
+          "940GZZLUFCN"
+        ]
+      },
+      {
+        "name": "Heathrow Terminal 4",
+        "stopIds": [
+          "910GHTRWTM4",
+          "940GZZLUHR4"
+        ]
+      },
+      {
+        "name": "Heathrow Terminal 5",
+        "stopIds": [
+          "910GHTRWTM5",
+          "940GZZLUHR5"
+        ]
+      },
+      {
+        "name": "Heathrow Terminals 2 & 3",
+        "stopIds": [
+          "910GHTRWAPT",
+          "940GZZLUHRC"
+        ]
+      },
+      {
+        "name": "Liverpool Street",
+        "stopIds": [
+          "910GLIVST",
+          "910GLIVSTLL",
+          "940GZZLULVT"
+        ]
+      },
+      {
+        "name": "Paddington",
+        "stopIds": [
+          "910GPADTLL",
+          "910GPADTON",
+          "940GZZLUPAC"
+        ]
+      },
+      {
+        "name": "Stratford",
+        "stopIds": [
+          "910GSTFD",
+          "940GZZLUSTD"
+        ]
+      },
+      {
+        "name": "Tottenham Court Road",
+        "stopIds": [
+          "910GTOTCTRD",
+          "940GZZLUTCR"
+        ]
+      },
+      {
+        "name": "Whitechapel",
+        "stopIds": [
+          "910GWCHAPXR",
+          "940GZZLUWPL"
+        ]
       }
     ]
   },
@@ -84,37 +188,40 @@
     "duplicateObjectIds": [],
     "resolution": [
       {
-        "stopId": "940GZZLUPAC",
+        "stationId": "940GZZLUPAC",
         "name": "Paddington",
         "canonicalObjectId": 125,
         "duplicates": [
           {
             "objectId": 171,
             "name": "Paddington",
-            "lon": -0.17539086258650674,
-            "lat": 51.5155036135896,
+            "lon": -0.17539090064369411,
+            "lat": 51.51550361004548,
             "distanceFromCanonicalM": 125
           }
         ]
       }
     ],
-    "note": "Records are merged only when both the name and the location match the same TfL station. Edgware Road, Hammersmith, Paddington (H&C Line) and Shepherd's Bush / Shepherd's Bush Market stay as separate stations."
+    "nameConflicts": [],
+    "note": "Records and TfL stops are merged only when the ATCO code, or both the name and the location, match. Edgware Road, Hammersmith, Paddington (H&C Line) and Shepherd's Bush / Shepherd's Bush Market stay as separate stations; Underground and Elizabeth line platforms of the same station (e.g. Liverpool Street) are one station."
   },
   "lineNameMismatches": [
     {
-      "stopId": "940GZZLUPAC",
+      "stationId": "940GZZLUPAC",
       "name": "Paddington",
       "objectId": 125,
       "topologyLines": [
         "bakerloo",
         "circle",
-        "district"
+        "district",
+        "elizabeth"
       ],
       "csvLines": [
         "bakerloo",
         "circle",
         "district",
-        "hammersmith-city"
+        "hammersmith-city",
+        "elizabeth"
       ],
       "missingInCsv": [],
       "extraInCsv": [
@@ -122,23 +229,25 @@
       ]
     },
     {
-      "stopId": "940GZZLUHSC",
-      "name": "Hammersmith (H&C Line)",
-      "objectId": 297,
+      "stationId": "940GZZLUERC",
+      "name": "Edgware Road (Circle Line)",
+      "objectId": 170,
       "topologyLines": [
         "circle",
+        "district",
         "hammersmith-city"
       ],
       "csvLines": [
-        "hammersmith-city"
+        "circle"
       ],
       "missingInCsv": [
-        "circle"
+        "district",
+        "hammersmith-city"
       ],
       "extraInCsv": []
     },
     {
-      "stopId": "940GZZLUPAH",
+      "stationId": "940GZZLUPAH",
       "name": "Paddington (H&C Line)",
       "objectId": 265,
       "topologyLines": [
@@ -154,20 +263,18 @@
       "extraInCsv": []
     },
     {
-      "stopId": "940GZZLUERC",
-      "name": "Edgware Road (Circle Line)",
-      "objectId": 170,
+      "stationId": "940GZZLUHSC",
+      "name": "Hammersmith (H&C Line)",
+      "objectId": 297,
       "topologyLines": [
         "circle",
-        "district",
         "hammersmith-city"
       ],
       "csvLines": [
-        "circle"
+        "hammersmith-city"
       ],
       "missingInCsv": [
-        "district",
-        "hammersmith-city"
+        "circle"
       ],
       "extraInCsv": []
     }
@@ -326,7 +433,7 @@
         "junctions": [
           "Acton Town (3)",
           "Hatton Cross (3)",
-          "Heathrow Terminals 1-2-3 (3)"
+          "Heathrow Terminals 2 & 3 (3)"
         ],
         "singleDirectionEdges": [
           {
@@ -336,7 +443,7 @@
           },
           {
             "a": "Heathrow Terminal 4",
-            "b": "Heathrow Terminals 1-2-3",
+            "b": "Heathrow Terminals 2 & 3",
             "direction": "outbound"
           }
         ]
@@ -364,6 +471,27 @@
         ],
         "junctions": [],
         "singleDirectionEdges": []
+      },
+      "elizabeth": {
+        "name": "Elizabeth line",
+        "stations": 41,
+        "edges": 41,
+        "components": 1,
+        "termini": [
+          "Abbey Wood",
+          "Heathrow Terminal 4",
+          "Heathrow Terminal 5",
+          "Reading",
+          "Shenfield"
+        ],
+        "junctions": [
+          "Hayes & Harlington (3)",
+          "Heathrow Terminals 2 & 3 (3)",
+          "Liverpool Street (3)",
+          "Stratford (3)",
+          "Whitechapel (3)"
+        ],
+        "singleDirectionEdges": []
       }
     }
   },
@@ -386,9 +514,9 @@
     },
     "generatedBetween": [
       "2026-11-17T11:43:06.827Z",
-      "2026-11-17T11:48:09.577Z"
+      "2026-11-17T12:46:41.413Z"
     ],
-    "stationsWithIsochrones": 272,
+    "stationsWithIsochrones": 301,
     "missing": [],
     "lastRunFailures": [],
     "invalidGeometries": [],
@@ -397,7 +525,7 @@
     "unusuallyLarge": [],
     "radialCoefficientOfVariation": {
       "min": 0.062,
-      "median": 0.198,
+      "median": 0.2,
       "max": 0.558
     }
   }

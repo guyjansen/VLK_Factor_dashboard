@@ -40,9 +40,15 @@ export function parseCsv(text) {
   return rows.filter((r) => !(r.cells.length === 1 && r.cells[0].trim() === ''));
 }
 
+// Two accepted layouts:
+//  - WGS84:  NAME, Longitude, Latitude, LINES, OBJECTID            (original CSV)
+//  - OSGB:   X, Y, OBJECTID, NAME, LINES [, ATCOCODE, NETWORK, ...] (TfL station
+//            export / Underground_and_Elizabeth_Stations.xlsx; X/Y = British
+//            National Grid easting/northing, EPSG:27700)
 export const REQUIRED_COLUMNS = ['NAME', 'Longitude', 'Latitude', 'LINES', 'OBJECTID'];
+export const REQUIRED_COLUMNS_OSGB = ['X', 'Y', 'NAME', 'LINES', 'OBJECTID'];
 
-/** Split "District, Hammersmith & City, Central" into canonical line ids. */
+/** Split "District, Hammersmith & City, Elizabeth line" into canonical line ids. */
 export function parseLines(value) {
   const ids = [];
   const unknown = [];
@@ -52,46 +58,70 @@ export function parseLines(value) {
     .filter(Boolean)
     .forEach((name) => {
       const key = name.toLowerCase().replace(/ line$/, '');
-      const id = TubeConfig.LINE_ID_BY_NAME[key];
+      const id = TubeConfig.LINE_ID_BY_NAME[key] || TubeConfig.LINE_ID_BY_NAME[name.toLowerCase()];
       if (id) { if (!ids.includes(id)) ids.push(id); } else unknown.push(name);
     });
   return { ids, unknown };
 }
 
 /**
- * Parse and validate the supplied station CSV.
- * @returns {{records: Array, issues: Array}}
+ * Validate a station table (header + rows of cells) from CSV or XLSX.
+ * @param {string[]} header
+ * @param {Array<{line:number, cells:any[]}>} rows
+ * @param {{toWgs84?: (x:number, y:number) => [number, number]}} opts  needed for OSGB tables
+ * @returns {{records: Array, issues: Array, coordinateSystem: string}}
  */
-export function parseStationsCsv(text) {
-  const rows = parseCsv(text);
-  if (!rows.length) throw new Error('Station CSV is empty');
-  const header = rows[0].cells.map((h) => h.trim());
-  const missing = REQUIRED_COLUMNS.filter((c) => !header.includes(c));
-  if (missing.length) throw new Error(`Station CSV is missing required column(s): ${missing.join(', ')}`);
-  const idx = Object.fromEntries(REQUIRED_COLUMNS.map((c) => [c, header.indexOf(c)]));
+export function parseStationTable(header, rows, opts = {}) {
+  header = header.map((h) => String(h ?? '').trim());
+  const osgb = REQUIRED_COLUMNS_OSGB.every((c) => header.includes(c)) && !header.includes('Longitude');
+  const required = osgb ? REQUIRED_COLUMNS_OSGB : REQUIRED_COLUMNS;
+  const missing = required.filter((c) => !header.includes(c));
+  if (missing.length) {
+    throw new Error(`Station table is missing required column(s): ${missing.join(', ')} (expected ${REQUIRED_COLUMNS.join(', ')} or ${REQUIRED_COLUMNS_OSGB.join(', ')})`);
+  }
+  if (osgb && !opts.toWgs84) throw new Error('OSGB (X/Y) station table needs a coordinate converter');
+  const idx = Object.fromEntries(header.map((c, i) => [c, i]));
 
   const records = [];
   const issues = [];
-  for (const { line, cells } of rows.slice(1)) {
-    const get = (c) => (cells[idx[c]] ?? '').trim();
+  for (const { line, cells } of rows) {
+    const get = (c) => (idx[c] === undefined ? '' : String(cells[idx[c]] ?? '').trim());
+    if (cells.every((c) => c === null || String(c).trim() === '')) continue;
     const problems = [];
-    if (cells.length !== header.length) problems.push(`expected ${header.length} fields, found ${cells.length}`);
+    if (!osgb && cells.length !== header.length) problems.push(`expected ${header.length} fields, found ${cells.length}`);
     const name = get('NAME').replace(/\s+/g, ' ');
-    const lon = Number(get('Longitude'));
-    const lat = Number(get('Latitude'));
-    const objectId = get('OBJECTID');
+    let lon, lat;
+    if (osgb) {
+      const x = Number(get('X')), y = Number(get('Y'));
+      if (!Number.isFinite(x) || !Number.isFinite(y) || x < 0 || x > 700000 || y < 0 || y > 1300000) problems.push(`X/Y is not a valid British National Grid coordinate: "${get('X')}", "${get('Y')}"`);
+      [lon, lat] = opts.toWgs84(x, y);
+    } else {
+      lon = Number(get('Longitude'));
+      lat = Number(get('Latitude'));
+    }
+    const objectId = get('OBJECTID').replace(/\.0+$/, '');
     if (!name) problems.push('empty NAME');
-    if (!Number.isFinite(lon) || lon < -1.2 || lon > 0.8) problems.push(`Longitude out of London range: "${get('Longitude')}"`);
-    if (!Number.isFinite(lat) || lat < 51.2 || lat > 51.9) problems.push(`Latitude out of London range: "${get('Latitude')}"`);
+    if (!Number.isFinite(lon) || lon < -1.2 || lon > 0.8) problems.push(`longitude out of range for the London region: "${osgb ? get('X') : get('Longitude')}"`);
+    if (!Number.isFinite(lat) || lat < 51.2 || lat > 51.9) problems.push(`latitude out of range for the London region: "${osgb ? get('Y') : get('Latitude')}"`);
     if (!/^\d+$/.test(objectId)) problems.push(`OBJECTID is not an integer: "${objectId}"`);
     const { ids, unknown } = parseLines(get('LINES'));
-    if (!ids.length) problems.push('no recognised London Underground line in LINES');
+    if (!ids.length) problems.push('no recognised London Underground or Elizabeth line in LINES');
     if (unknown.length) issues.push({ type: 'unknown-line-name', line, objectId, name, values: unknown });
     if (problems.length) {
       issues.push({ type: 'malformed-row', line, objectId, name, problems });
       if (!name || !Number.isFinite(lon) || !Number.isFinite(lat)) continue; // unusable
     }
-    records.push({ objectId: Number(objectId), name, lon, lat, lines: ids, rawLines: get('LINES'), csvLine: line });
+    records.push({
+      objectId: Number(objectId), name, lon, lat, lines: ids, rawLines: get('LINES'),
+      atcoCode: get('ATCOCODE') || null, network: get('NETWORK') || null, csvLine: line
+    });
   }
-  return { records, issues };
+  return { records, issues, coordinateSystem: osgb ? 'EPSG:27700 (converted to WGS84)' : 'WGS84' };
+}
+
+/** Parse and validate a station CSV (either layout). */
+export function parseStationsCsv(text, opts) {
+  const rows = parseCsv(text);
+  if (!rows.length) throw new Error('Station CSV is empty');
+  return parseStationTable(rows[0].cells, rows.slice(1), opts);
 }

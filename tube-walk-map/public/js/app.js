@@ -193,7 +193,7 @@
     if (!styleOk && !usingFallback && !e.sourceId && err && (err.status || /fetch|network|style|load|json/i.test(err.message || ''))) { useFallbackStyle(msg); return; }
     if (e.sourceId && !/^(routes|stations|coverage|iso-individual|highlight)$/.test(e.sourceId)) {
       tileErrors++;
-      if (tileErrors === 5) Messages.warning('Some basemap tiles failed to load. The basemap may be incomplete; Underground data is unaffected.', 'tiles');
+      if (tileErrors === 5) Messages.warning('Some basemap tiles failed to load. The basemap may be incomplete; line and station data are unaffected.', 'tiles');
       return;
     }
     if (window.console) console.error(err || e);
@@ -216,7 +216,7 @@
   map.addControl(attribution, 'bottom-right');
 
   function attributionHtml() {
-    var parts = ['Underground data: Powered by TfL Open Data', 'Line colours: TfL Colour standard'];
+    var parts = ['Underground & Elizabeth line data: Powered by TfL Open Data', 'Line colours: TfL Colour standard'];
     var providers = ISO.meta && ISO.meta.providers && ISO.meta.providers.length ? ISO.meta.providers : null;
     parts.push('Walking areas: ' + (providers ? providers.map(escapeHtml).join(', ') : 'pedestrian routing') + ', <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>');
     parts.push('Unofficial; not endorsed by TfL');
@@ -264,7 +264,7 @@
           filter: ['==', ['get', 'seconds'], c.seconds],
           paint: { 'fill-color': c.fill, 'fill-opacity': src === 'coverage' ? state.opacity : state.opacity * 0.45 }
         }, beforeLabels);
-        var linePaint = { 'line-color': dark ? '#d9cff7' : c.outline, 'line-width': src === 'coverage' ? 1.4 : 0.8, 'line-opacity': 0.9 };
+        var linePaint = { 'line-color': dark ? '#c8efe6' : c.outline, 'line-width': src === 'coverage' ? 1.4 : 0.8, 'line-opacity': 0.9 };
         if (c.dash) linePaint['line-dasharray'] = c.dash;
         map.addLayer({ id: pre + '-line-' + c.seconds, type: 'line', source: src, filter: ['==', ['get', 'seconds'], c.seconds], paint: linePaint }, beforeLabels);
       });
@@ -553,7 +553,18 @@
   var stationInputs = {}; // id -> [inputs]
   function buildLineList() {
     var list = $('line-list');
+    var lastMode = null;
     C.LINES.forEach(function (line) {
+      if (line.mode !== lastMode) {
+        // Group header per mode, so the Elizabeth line is clearly separate
+        // from the London Underground.
+        var mode = C.MODES.filter(function (m) { return m.id === line.mode; })[0];
+        list.appendChild(el('li', { className: 'mode-heading' }, [
+          el('span', { text: mode.name }),
+          mode.note ? el('span', { className: 'mode-note', text: ' · ' + mode.note }) : null
+        ]));
+        lastMode = line.mode;
+      }
       var inputId = 'line-' + line.id;
       var listId = 'stations-' + line.id;
       var input = el('input', { type: 'checkbox', id: inputId });
@@ -656,7 +667,7 @@
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol interchange', 'aria-hidden': 'true' }), 'Selected interchange']));
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol unselected', 'aria-hidden': 'true' }), 'Station not selected']));
     var sel = C.LINES.filter(function (l) { return state.lines.has(l.id); });
-    ul.appendChild(el('li', null, [el('strong', { text: 'Selected Underground lines' + (sel.length ? '' : ': none') })]));
+    ul.appendChild(el('li', null, [el('strong', { text: 'Selected lines' + (sel.length ? '' : ': none') })]));
     sel.forEach(function (l) {
       ul.appendChild(el('li', null, [el('span', { className: 'swatch', 'aria-hidden': 'true', style: { '--c': l.colour } }), l.name]));
     });
@@ -676,10 +687,11 @@
     C.LINES.forEach(function (l) {
       var inp = lineInputs[l.id];
       inp.checked = state.lines.has(l.id);
-      // Partially selected when stations were manually removed from this line.
-      var stations = NET.lineStations[l.id];
-      var on = stations.filter(function (s) { return selectedSet.has(s.id); }).length;
-      inp.indeterminate = state.lines.has(l.id) ? on < stations.length : on > 0;
+      // Mixed state only for manual changes: a selected line with stations
+      // removed by hand, or an unselected line with stations added by hand.
+      // (Sharing an interchange with another selected line does not count.)
+      var manual = state.lines.has(l.id) ? selection.removed : selection.added;
+      inp.indeterminate = NET.lineStations[l.id].some(function (s) { return manual.indexOf(s.id) !== -1; });
     });
     syncStationInputs();
     renderSummary();

@@ -256,3 +256,13 @@ body.panel-collapsed .panel { display: none; }
 body.panel-collapsed .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib { max-width: calc(100vw - 170px); }
 @media (max-width: 760px) { .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib { max-width: calc(100vw - 150px); } }
 .fit-ctrl button { color: #333333; }
+
+/* Mode groups in the line list (Underground vs Elizabeth line). */
+.mode-heading {
+  margin: 10px 0 2px; padding-top: 6px; font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted);
+}
+.mode-heading:first-child { margin-top: 0; padding-top: 0; }
+.mode-note { font-weight: 400; text-transform: none; letter-spacing: 0; }
+.h1-sub { font-size: 0.8rem; font-weight: 400; opacity: 0.9; margin-left: 6px; }
+@media (max-width: 760px) { .h1-sub { display: none; } }

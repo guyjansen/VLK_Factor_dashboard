@@ -86,7 +86,7 @@ const haveIso = fs.existsSync(paths.isochrones);
 test('isochrones come from a pedestrian routing engine with recorded provenance', { skip: !haveIso && 'run npm run isochrones' }, () => {
   const iso = readJson(paths.isochrones);
   assert.ok(iso.metadata.providers.length >= 1);
-  for (const f of fs.readdirSync(paths.isoDir).filter((n) => /^940G.*\.json$/.test(n))) {
+  for (const f of fs.readdirSync(paths.isoDir).filter((n) => /^9[14]0G.*\.json$/.test(n))) {
     const rec = readJson(`${paths.isoDir}/${f}`);
     assert.ok(['valhalla', 'openrouteservice'].includes(rec.provider), f);
     assert.ok(['pedestrian', 'foot-walking'].includes(rec.profile), f);
@@ -135,5 +135,5 @@ test('precomputed unions equal fresh unions and dedupe interchanges', { skip: !f
   assert.ok(fresh <= sum);
   const all = unions.features.filter((f) => f.properties.scope === 'all');
   assert.equal(all.length, 3);
-  assert.equal(all[0].properties.stationCount, 272);
+  assert.equal(all[0].properties.stationCount, 301);
 });

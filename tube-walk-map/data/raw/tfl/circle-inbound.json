@@ -3195,7 +3195,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -3250,7 +3249,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",
@@ -4108,7 +4106,6 @@
           ],
           "stopType": "NaptanMetroStation",
           "zone": "1",
-          "hasDisruption": true,
           "lines": [
             {
               "$type": "Tfl.Api.Presentation.Entities.Identifier, Tfl.Api.Presentation.Entities",

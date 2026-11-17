@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generatedAt": "2026-11-17T11:42:26.778Z",
+    "generatedAt": "2026-11-17T12:45:37.190Z",
     "topology": {
-      "source": "TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound}",
+      "source": "TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound} (London Underground lines and the Elizabeth line)",
       "url": "https://api.tfl.gov.uk/",
-      "retrievedAt": "2026-11-17T11:41:02.511Z",
+      "retrievedAt": "2026-11-17T12:44:00.269Z",
       "licence": {
         "name": "Transport for London open data terms (Powered by TfL Open Data)",
         "url": "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service",
@@ -12,12 +12,635 @@
       }
     },
     "stations": {
-      "source": "data/stations.csv",
-      "records": 273
+      "source": "data/Underground_and_Elizabeth_Stations.xlsx",
+      "coordinateSystem": "EPSG:27700 (converted to WGS84)",
+      "records": 302
     },
     "overridesApplied": 1
   },
   "edges": [
+    {
+      "a": "910GABWDXR",
+      "b": "910GWOLWXR",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:14"
+          ]
+        }
+      ],
+      "aName": "Abbey Wood",
+      "bName": "Woolwich",
+      "lengthM": 3435
+    },
+    {
+      "a": "910GACTONML",
+      "b": "940GZZLUEBY",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:10",
+            "outbound:23"
+          ]
+        }
+      ],
+      "aName": "Acton Main Line",
+      "bName": "Ealing Broadway",
+      "lengthM": 2354
+    },
+    {
+      "a": "910GACTONML",
+      "b": "940GZZLUPAC",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "inbound:6",
+            "outbound:13",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "Acton Main Line",
+      "bName": "Paddington",
+      "lengthM": 6309
+    },
+    {
+      "a": "910GBNHAM",
+      "b": "910GSLOUGH",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Burnham",
+      "bName": "Slough",
+      "lengthM": 3930
+    },
+    {
+      "a": "910GBNHAM",
+      "b": "910GTAPLOW",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Burnham",
+      "bName": "Taplow",
+      "lengthM": 2444
+    },
+    {
+      "a": "910GBRTWOOD",
+      "b": "910GHRLDWOD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Brentwood",
+      "bName": "Harold Wood",
+      "lengthM": 5165
+    },
+    {
+      "a": "910GBRTWOOD",
+      "b": "910GSHENFLD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Brentwood",
+      "bName": "Shenfield",
+      "lengthM": 2889
+    },
+    {
+      "a": "910GCHDWLHT",
+      "b": "910GGODMAYS",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Chadwell Heath",
+      "bName": "Goodmayes",
+      "lengthM": 1277
+    },
+    {
+      "a": "910GCHDWLHT",
+      "b": "910GROMFORD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Chadwell Heath",
+      "bName": "Romford",
+      "lengthM": 3836
+    },
+    {
+      "a": "910GCUSTMHS",
+      "b": "910GWOLWXR",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:14"
+          ]
+        }
+      ],
+      "aName": "Custom House",
+      "bName": "Woolwich",
+      "lengthM": 3658
+    },
+    {
+      "a": "910GCUSTMHS",
+      "b": "940GZZLUCYF",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:14"
+          ]
+        }
+      ],
+      "aName": "Custom House",
+      "bName": "Canary Wharf",
+      "lengthM": 3160
+    },
+    {
+      "a": "910GFRSTGT",
+      "b": "910GMANRPK",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Forest Gate",
+      "bName": "Manor Park",
+      "lengthM": 1532
+    },
+    {
+      "a": "910GFRSTGT",
+      "b": "910GMRYLAND",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Forest Gate",
+      "bName": "Maryland",
+      "lengthM": 1292
+    },
+    {
+      "a": "910GGIDEAPK",
+      "b": "910GHRLDWOD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Gidea Park",
+      "bName": "Harold Wood",
+      "lengthM": 2276
+    },
+    {
+      "a": "910GGIDEAPK",
+      "b": "910GROMFORD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Gidea Park",
+      "bName": "Romford",
+      "lengthM": 1685
+    },
+    {
+      "a": "910GGODMAYS",
+      "b": "910GSVNKNGS",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Goodmayes",
+      "bName": "Seven Kings",
+      "lengthM": 978
+    },
+    {
+      "a": "910GHANWELL",
+      "b": "910GSTHALL",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:10",
+            "outbound:23"
+          ]
+        }
+      ],
+      "aName": "Hanwell",
+      "bName": "Southall",
+      "lengthM": 2759
+    },
+    {
+      "a": "910GHANWELL",
+      "b": "910GWEALING",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:10",
+            "outbound:23"
+          ]
+        }
+      ],
+      "aName": "Hanwell",
+      "bName": "West Ealing",
+      "lengthM": 1269
+    },
+    {
+      "a": "910GHAYESAH",
+      "b": "910GSTHALL",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:10",
+            "outbound:23"
+          ]
+        }
+      ],
+      "aName": "Hayes & Harlington",
+      "bName": "Southall",
+      "lengthM": 2942
+    },
+    {
+      "a": "910GHAYESAH",
+      "b": "910GWDRYTON",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Hayes & Harlington",
+      "bName": "West Drayton",
+      "lengthM": 3697
+    },
+    {
+      "a": "910GHAYESAH",
+      "b": "940GZZLUHRC",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:9",
+            "outbound:18"
+          ]
+        }
+      ],
+      "aName": "Hayes & Harlington",
+      "bName": "Heathrow Terminals 2 & 3",
+      "lengthM": 4190
+    },
+    {
+      "a": "910GILFORD",
+      "b": "910GMANRPK",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Ilford",
+      "bName": "Manor Park",
+      "lengthM": 1823
+    },
+    {
+      "a": "910GILFORD",
+      "b": "910GSVNKNGS",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Ilford",
+      "bName": "Seven Kings",
+      "lengthM": 1954
+    },
+    {
+      "a": "910GIVER",
+      "b": "910GLANGLEY",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Iver",
+      "bName": "Langley",
+      "lengthM": 2401
+    },
+    {
+      "a": "910GIVER",
+      "b": "910GWDRYTON",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Iver",
+      "bName": "West Drayton",
+      "lengthM": 2401
+    },
+    {
+      "a": "910GLANGLEY",
+      "b": "910GSLOUGH",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Langley",
+      "bName": "Slough",
+      "lengthM": 3576
+    },
+    {
+      "a": "910GMDNHEAD",
+      "b": "910GTAPLOW",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Maidenhead",
+      "bName": "Taplow",
+      "lengthM": 2899
+    },
+    {
+      "a": "910GMDNHEAD",
+      "b": "910GTWYFORD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Maidenhead",
+      "bName": "Twyford",
+      "lengthM": 10878
+    },
+    {
+      "a": "910GMRYLAND",
+      "b": "940GZZLUSTD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:11",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Maryland",
+      "bName": "Stratford",
+      "lengthM": 872
+    },
+    {
+      "a": "910GRDNGSTN",
+      "b": "910GTWYFORD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Reading",
+      "bName": "Twyford",
+      "lengthM": 7766
+    },
+    {
+      "a": "910GWEALING",
+      "b": "940GZZLUEBY",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:10",
+            "outbound:23"
+          ]
+        }
+      ],
+      "aName": "West Ealing",
+      "bName": "Ealing Broadway",
+      "lengthM": 1357
+    },
     {
       "a": "940GZZBPSUST",
       "b": "940GZZNEUGST",
@@ -1109,6 +1732,46 @@
       "aName": "Bond Street",
       "bName": "Oxford Circus",
       "lengthM": 567
+    },
+    {
+      "a": "940GZZLUBND",
+      "b": "940GZZLUPAC",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:22"
+          ]
+        }
+      ],
+      "aName": "Bond Street",
+      "bName": "Paddington",
+      "lengthM": 1837
+    },
+    {
+      "a": "940GZZLUBND",
+      "b": "940GZZLUTCR",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:22"
+          ]
+        }
+      ],
+      "aName": "Bond Street",
+      "bName": "Tottenham Court Road",
+      "lengthM": 1347
     },
     {
       "a": "940GZZLUBNK",
@@ -2501,6 +3164,26 @@
       "lengthM": 1559
     },
     {
+      "a": "940GZZLUCYF",
+      "b": "940GZZLUWPL",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:14"
+          ]
+        }
+      ],
+      "aName": "Canary Wharf",
+      "bName": "Whitechapel",
+      "lengthM": 3474
+    },
+    {
       "a": "940GZZLUDBN",
       "b": "940GZZLULGN",
       "lines": [
@@ -3528,6 +4211,46 @@
       "lengthM": 1705
     },
     {
+      "a": "940GZZLUFCN",
+      "b": "940GZZLULVT",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:22"
+          ]
+        }
+      ],
+      "aName": "Farringdon",
+      "bName": "Liverpool Street",
+      "lengthM": 1560
+    },
+    {
+      "a": "940GZZLUFCN",
+      "b": "940GZZLUTCR",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:22"
+          ]
+        }
+      ],
+      "aName": "Farringdon",
+      "bName": "Tottenham Court Road",
+      "lengthM": 1807
+    },
+    {
       "a": "940GZZLUFLP",
       "b": "940GZZLUHLT",
       "lines": [
@@ -4389,7 +5112,7 @@
         }
       ],
       "aName": "Hatton Cross",
-      "bName": "Heathrow Terminals 1-2-3",
+      "bName": "Heathrow Terminals 2 & 3",
       "lengthM": 2072
     },
     {
@@ -4544,10 +5267,21 @@
           "branchIds": [
             "outbound:6"
           ]
+        },
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:20"
+          ]
         }
       ],
       "aName": "Heathrow Terminal 4",
-      "bName": "Heathrow Terminals 1-2-3",
+      "bName": "Heathrow Terminals 2 & 3",
       "lengthM": 1493
     },
     {
@@ -4564,10 +5298,21 @@
             "inbound:4",
             "outbound:7"
           ]
+        },
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:21"
+          ]
         }
       ],
       "aName": "Heathrow Terminal 5",
-      "bName": "Heathrow Terminals 1-2-3",
+      "bName": "Heathrow Terminals 2 & 3",
       "lengthM": 2470
     },
     {
@@ -5346,6 +6091,46 @@
       "aName": "Liverpool Street",
       "bName": "Moorgate",
       "lengthM": 437
+    },
+    {
+      "a": "940GZZLULVT",
+      "b": "940GZZLUSTD",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Liverpool Street",
+      "bName": "Stratford",
+      "lengthM": 6112
+    },
+    {
+      "a": "940GZZLULVT",
+      "b": "940GZZLUWPL",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:22"
+          ]
+        }
+      ],
+      "aName": "Liverpool Street",
+      "bName": "Whitechapel",
+      "lengthM": 1572
     },
     {
       "a": "940GZZLULYN",
@@ -6751,6 +7536,26 @@
       "lengthM": 1568
     },
     {
+      "a": "940GZZLUSTD",
+      "b": "940GZZLUWPL",
+      "lines": [
+        {
+          "line": "elizabeth",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:7",
+            "outbound:15"
+          ]
+        }
+      ],
+      "aName": "Stratford",
+      "bName": "Whitechapel",
+      "lengthM": 4634
+    },
+    {
       "a": "940GZZLUSUH",
       "b": "940GZZLUSUT",
       "lines": [
@@ -7608,7 +8413,7 @@
         },
         {
           "id": "940GZZLUHRC",
-          "name": "Heathrow Terminals 1-2-3",
+          "name": "Heathrow Terminals 2 & 3",
           "degree": 3
         }
       ],
@@ -7638,7 +8443,7 @@
             "Hyde Park Corner",
             "Heathrow Terminal 4",
             "Heathrow Terminal 5",
-            "Heathrow Terminals 1-2-3",
+            "Heathrow Terminals 2 & 3",
             "Hammersmith (Dist&Picc Line)",
             "Hounslow Central",
             "Hounslow East",
@@ -7680,7 +8485,7 @@
         },
         {
           "a": "Heathrow Terminal 4",
-          "b": "Heathrow Terminals 1-2-3",
+          "b": "Heathrow Terminals 2 & 3",
           "direction": "outbound"
         }
       ]
@@ -7744,6 +8549,108 @@
           "stations": [
             "Bank",
             "Waterloo"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "elizabeth": {
+      "stationCount": 41,
+      "edgeCount": 41,
+      "termini": [
+        {
+          "id": "910GABWDXR",
+          "name": "Abbey Wood"
+        },
+        {
+          "id": "940GZZLUHR4",
+          "name": "Heathrow Terminal 4"
+        },
+        {
+          "id": "940GZZLUHR5",
+          "name": "Heathrow Terminal 5"
+        },
+        {
+          "id": "910GRDNGSTN",
+          "name": "Reading"
+        },
+        {
+          "id": "910GSHENFLD",
+          "name": "Shenfield"
+        }
+      ],
+      "junctions": [
+        {
+          "id": "910GHAYESAH",
+          "name": "Hayes & Harlington",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUHRC",
+          "name": "Heathrow Terminals 2 & 3",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLULVT",
+          "name": "Liverpool Street",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUSTD",
+          "name": "Stratford",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUWPL",
+          "name": "Whitechapel",
+          "degree": 3
+        }
+      ],
+      "components": [
+        {
+          "size": 41,
+          "stations": [
+            "Abbey Wood",
+            "Acton Main Line",
+            "Burnham",
+            "Brentwood",
+            "Chadwell Heath",
+            "Custom House",
+            "Forest Gate",
+            "Gidea Park",
+            "Goodmayes",
+            "Hanwell",
+            "Hayes & Harlington",
+            "Harold Wood",
+            "Ilford",
+            "Iver",
+            "Langley",
+            "Manor Park",
+            "Maidenhead",
+            "Maryland",
+            "Reading",
+            "Romford",
+            "Shenfield",
+            "Slough",
+            "Southall",
+            "Seven Kings",
+            "Taplow",
+            "Twyford",
+            "West Drayton",
+            "West Ealing",
+            "Woolwich",
+            "Bond Street",
+            "Canary Wharf",
+            "Ealing Broadway",
+            "Farringdon",
+            "Heathrow Terminal 4",
+            "Heathrow Terminal 5",
+            "Heathrow Terminals 2 & 3",
+            "Liverpool Street",
+            "Paddington",
+            "Stratford",
+            "Tottenham Court Road",
+            "Whitechapel"
           ]
         }
       ],

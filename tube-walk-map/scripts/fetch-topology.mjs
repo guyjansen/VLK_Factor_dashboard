@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-// Step 2: download authoritative London Underground topology from the TfL
-// Unified API (Route Sequence endpoint) for every tube line, both directions.
+// Step 2: download authoritative topology from the TfL Unified API (Route
+// Sequence endpoint) for every London Underground line and the Elizabeth
+// line, both directions.
 //
-//   GET https://api.tfl.gov.uk/Line/Mode/tube
+//   GET https://api.tfl.gov.uk/Line/Mode/tube,elizabeth-line
 //   GET https://api.tfl.gov.uk/Line/{lineId}/Route/Sequence/{outbound|inbound}
 //
 // Raw responses are stored unchanged in data/raw/tfl/ together with a
@@ -37,18 +38,19 @@ const manifest = { source: 'TfL Unified API', baseUrl: API, licence: LICENCE, re
 
 let lineIds = TubeConfig.LINES.map((l) => l.id);
 try {
-  const lines = await fetchJsonWithRetry(withKey(`${API}/Line/Mode/tube`), opts);
+  const modes = TubeConfig.MODES.map((m) => m.tflMode).join(',');
+  const lines = await fetchJsonWithRetry(withKey(`${API}/Line/Mode/${modes}`), opts);
   const apiIds = lines.map((l) => l.id).sort();
   const missing = lineIds.filter((id) => !apiIds.includes(id));
   const extra = apiIds.filter((id) => !lineIds.includes(id));
   if (missing.length || extra.length) {
-    console.warn(`WARNING: TfL tube lines differ from configuration. missing=${missing.join(',') || '-'} extra=${extra.join(',') || '-'}`);
+    console.warn(`WARNING: TfL lines differ from configuration. missing=${missing.join(',') || '-'} extra=${extra.join(',') || '-'}`);
     manifest.lineIdMismatch = { missing, extra };
   }
   manifest.apiLineIds = apiIds;
 } catch (err) {
   console.warn(`WARNING: could not list tube lines (${err.message}); using configured line ids.`);
-  manifest.failures.push({ url: `${API}/Line/Mode/tube`, error: err.message });
+  manifest.failures.push({ url: `${API}/Line/Mode/...`, error: err.message });
 }
 
 const only = args.line ? String(args.line).split(',') : null;

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tube Walk Map</title>
-  <meta name="description" content="Unofficial map of the areas you can reach on foot within 1, 2 and 5 minutes of London Underground stations, from pedestrian-network routing.">
+  <meta name="description" content="Unofficial map of the areas you can reach on foot within 1, 2 and 5 minutes of London Underground and Elizabeth line stations, from pedestrian-network routing.">
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="vendor/maplibre-gl.css">
   <link rel="stylesheet" href="styles.css">
@@ -14,7 +14,7 @@
 
   <header class="app-header">
     <div class="brand">
-      <h1>Tube walk map</h1>
+      <h1>Tube walk map <span class="h1-sub">Underground &amp; Elizabeth line</span></h1>
       <p class="disclaimer">Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.</p>
     </div>
     <div class="header-actions">
@@ -36,7 +36,7 @@
 
       <section class="section" aria-labelledby="h-lines">
         <div class="section-head">
-          <h2 id="h-lines">Underground lines</h2>
+          <h2 id="h-lines">Lines</h2>
           <div class="btn-row">
             <button id="select-all" class="btn btn-small" type="button">Select all</button>
             <button id="clear-all" class="btn btn-small" type="button">Clear all</button>
@@ -81,7 +81,7 @@
       <section class="section" aria-labelledby="h-layers">
         <h2 id="h-layers">Map layers</h2>
         <div class="toggle-list">
-          <label class="toggle"><input id="show-routes" type="checkbox" checked> Underground routes</label>
+          <label class="toggle"><input id="show-routes" type="checkbox" checked> Line routes</label>
           <label class="toggle"><input id="show-context" type="checkbox" checked> Unselected lines (faint)</label>
           <label class="toggle"><input id="show-stations" type="checkbox" checked> Stations</label>
         </div>
@@ -104,7 +104,7 @@
     </aside>
 
     <div class="map-wrap">
-      <div id="map" class="map" role="region" aria-label="Map of London Underground lines, stations and walking areas. Use arrow keys to pan and plus or minus to zoom when focused."></div>
+      <div id="map" class="map" role="region" aria-label="Map of London Underground and Elizabeth line routes, stations and walking areas. Use arrow keys to pan and plus or minus to zoom when focused."></div>
       <div id="busy" class="busy" role="status" hidden>Combining walking areas…</div>
       <div id="messages" class="messages" aria-live="assertive"></div>
     </div>
@@ -119,11 +119,14 @@
       <p><strong>Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.</strong></p>
 
       <h3>What the shaded areas show</h3>
-      <p>Each shaded area is the land you can reach on foot within 1, 2 or 5 minutes of walking from a London Underground station. It does not include any time on the train. The areas were calculated by a pedestrian routing engine on the walkable street and path network: footways, paths, crossings and bridges. They are <em>not</em> circles or straight-line distances. Rivers, railways, motorways, parks and private land only make a difference where the routing data includes them.</p>
+      <p>Each shaded area is the land you can reach on foot within 1, 2 or 5 minutes of walking from a London Underground or Elizabeth line station. It does not include any time on the train. The areas were calculated by a pedestrian routing engine on the walkable street and path network: footways, paths, crossings and bridges. They are <em>not</em> circles or straight-line distances. Rivers, railways, motorways, parks and private land only make a difference where the routing data includes them.</p>
       <p>The "combined coverage" view is a true geometric union of the selected stations' areas, calculated separately for each time threshold. A station served by several selected lines counts once.</p>
 
       <h3>Current data</h3>
       <dl id="info-meta" class="meta-list"></dl>
+
+      <h3>Scope</h3>
+      <p>The map covers the 11 London Underground lines and the Elizabeth line. The Elizabeth line is a TfL rail service, not part of the London Underground, so it is listed separately. Its stations as far out as Reading and Shenfield are included. Stations where Underground and Elizabeth line platforms form one station, such as Liverpool Street, Paddington and Whitechapel, appear once with all their lines. London Overground, DLR, trams and National Rail are not shown.</p>
 
       <h3>Limitations</h3>
       <ul>
@@ -136,9 +139,9 @@
 
       <h3>Sources and licences</h3>
       <ul>
-        <li>Station and route order: TfL Unified API (Route Sequence). Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019].</li>
-        <li>Line colours: TfL Colour standard, Issue 11 (August 2026), RGB values.</li>
-        <li>Station coordinates: supplied station dataset (stations.csv).</li>
+        <li>Station and route order: TfL Unified API (Route Sequence) for the Underground lines and the Elizabeth line. Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019].</li>
+        <li>Line colours: TfL Colour standard, Issue 11 (August 2026), RGB values. Underground lines are from section 5; the Elizabeth line is from section 3 (mode colours).</li>
+        <li>Station coordinates: supplied station workbook (Underground_and_Elizabeth_Stations.xlsx). British National Grid coordinates were converted to WGS84.</li>
         <li>Walking areas: <span id="info-provider">routing provider</span>, using OpenStreetMap data © OpenStreetMap contributors, available under the Open Database Licence.</li>
         <li>Basemap: OpenFreeMap, OpenMapTiles schema, © OpenStreetMap contributors.</li>
         <li>Software: MapLibre GL JS (BSD-3-Clause), polygon-clipping (MIT).</li>

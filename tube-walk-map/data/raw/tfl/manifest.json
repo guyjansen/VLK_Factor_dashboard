@@ -6,161 +6,175 @@
     "url": "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service",
     "attribution": "Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019]."
   },
-  "retrievedAt": "2026-11-17T11:41:02.511Z",
+  "retrievedAt": "2026-11-17T12:44:00.269Z",
   "files": [
     {
       "line": "bakerloo",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/bakerloo/Route/Sequence/outbound",
       "file": "data/raw/tfl/bakerloo-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:03.138Z"
+      "retrievedAt": "2026-11-17T12:44:01.034Z"
     },
     {
       "line": "bakerloo",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/bakerloo/Route/Sequence/inbound",
       "file": "data/raw/tfl/bakerloo-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:04.580Z"
+      "retrievedAt": "2026-11-17T12:44:02.453Z"
     },
     {
       "line": "central",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/central/Route/Sequence/outbound",
       "file": "data/raw/tfl/central-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:05.999Z"
+      "retrievedAt": "2026-11-17T12:44:03.883Z"
     },
     {
       "line": "central",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/central/Route/Sequence/inbound",
       "file": "data/raw/tfl/central-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:07.425Z"
+      "retrievedAt": "2026-11-17T12:44:05.312Z"
     },
     {
       "line": "circle",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/circle/Route/Sequence/outbound",
       "file": "data/raw/tfl/circle-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:08.855Z"
+      "retrievedAt": "2026-11-17T12:44:06.733Z"
     },
     {
       "line": "circle",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/circle/Route/Sequence/inbound",
       "file": "data/raw/tfl/circle-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:10.306Z"
+      "retrievedAt": "2026-11-17T12:44:08.157Z"
     },
     {
       "line": "district",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/district/Route/Sequence/outbound",
       "file": "data/raw/tfl/district-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:11.729Z"
+      "retrievedAt": "2026-11-17T12:44:09.582Z"
     },
     {
       "line": "district",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/district/Route/Sequence/inbound",
       "file": "data/raw/tfl/district-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:13.151Z"
+      "retrievedAt": "2026-11-17T12:44:10.996Z"
     },
     {
       "line": "hammersmith-city",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/hammersmith-city/Route/Sequence/outbound",
       "file": "data/raw/tfl/hammersmith-city-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:14.598Z"
+      "retrievedAt": "2026-11-17T12:44:12.417Z"
     },
     {
       "line": "hammersmith-city",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/hammersmith-city/Route/Sequence/inbound",
       "file": "data/raw/tfl/hammersmith-city-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:16.040Z"
+      "retrievedAt": "2026-11-17T12:44:13.833Z"
     },
     {
       "line": "jubilee",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/jubilee/Route/Sequence/outbound",
       "file": "data/raw/tfl/jubilee-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:17.474Z"
+      "retrievedAt": "2026-11-17T12:44:15.256Z"
     },
     {
       "line": "jubilee",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/jubilee/Route/Sequence/inbound",
       "file": "data/raw/tfl/jubilee-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:18.893Z"
+      "retrievedAt": "2026-11-17T12:44:16.861Z"
     },
     {
       "line": "metropolitan",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/metropolitan/Route/Sequence/outbound",
       "file": "data/raw/tfl/metropolitan-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:20.311Z"
+      "retrievedAt": "2026-11-17T12:44:18.275Z"
     },
     {
       "line": "metropolitan",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/metropolitan/Route/Sequence/inbound",
       "file": "data/raw/tfl/metropolitan-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:21.848Z"
+      "retrievedAt": "2026-11-17T12:44:19.695Z"
     },
     {
       "line": "northern",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/northern/Route/Sequence/outbound",
       "file": "data/raw/tfl/northern-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:23.275Z"
+      "retrievedAt": "2026-11-17T12:44:21.110Z"
     },
     {
       "line": "northern",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/northern/Route/Sequence/inbound",
       "file": "data/raw/tfl/northern-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:24.706Z"
+      "retrievedAt": "2026-11-17T12:44:22.529Z"
     },
     {
       "line": "piccadilly",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/piccadilly/Route/Sequence/outbound",
       "file": "data/raw/tfl/piccadilly-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:26.122Z"
+      "retrievedAt": "2026-11-17T12:44:24.131Z"
     },
     {
       "line": "piccadilly",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/piccadilly/Route/Sequence/inbound",
       "file": "data/raw/tfl/piccadilly-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:27.557Z"
+      "retrievedAt": "2026-11-17T12:44:25.551Z"
     },
     {
       "line": "victoria",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/victoria/Route/Sequence/outbound",
       "file": "data/raw/tfl/victoria-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:28.984Z"
+      "retrievedAt": "2026-11-17T12:44:26.964Z"
     },
     {
       "line": "victoria",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/victoria/Route/Sequence/inbound",
       "file": "data/raw/tfl/victoria-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:30.404Z"
+      "retrievedAt": "2026-11-17T12:44:28.380Z"
     },
     {
       "line": "waterloo-city",
       "direction": "outbound",
       "url": "https://api.tfl.gov.uk/Line/waterloo-city/Route/Sequence/outbound",
       "file": "data/raw/tfl/waterloo-city-outbound.json",
-      "retrievedAt": "2026-11-17T11:41:31.830Z"
+      "retrievedAt": "2026-11-17T12:44:29.793Z"
     },
     {
       "line": "waterloo-city",
       "direction": "inbound",
       "url": "https://api.tfl.gov.uk/Line/waterloo-city/Route/Sequence/inbound",
       "file": "data/raw/tfl/waterloo-city-inbound.json",
-      "retrievedAt": "2026-11-17T11:41:33.256Z"
+      "retrievedAt": "2026-11-17T12:44:31.210Z"
+    },
+    {
+      "line": "elizabeth",
+      "direction": "outbound",
+      "url": "https://api.tfl.gov.uk/Line/elizabeth/Route/Sequence/outbound",
+      "file": "data/raw/tfl/elizabeth-outbound.json",
+      "retrievedAt": "2026-11-17T12:44:32.639Z"
+    },
+    {
+      "line": "elizabeth",
+      "direction": "inbound",
+      "url": "https://api.tfl.gov.uk/Line/elizabeth/Route/Sequence/inbound",
+      "file": "data/raw/tfl/elizabeth-inbound.json",
+      "retrievedAt": "2026-11-17T12:44:34.061Z"
     }
   ],
   "failures": [],
@@ -169,6 +183,7 @@
     "central",
     "circle",
     "district",
+    "elizabeth",
     "hammersmith-city",
     "jubilee",
     "metropolitan",
