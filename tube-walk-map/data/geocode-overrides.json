@@ -1,0 +1,95 @@
+{
+  "description": "Reviewed geocoding queries for properties where the plain address is ambiguous in London or missing. Each entry replaces the automatic queries with one more specific query (usually adding the postal district). Reviewed against the first geocoding run (see README).",
+  "overrides": {
+    "B013": {
+      "query": "Bressenden Place, Victoria, London",
+      "reason": "Property name 'n2' matched an unrelated 'N2' building at Heathrow; source street Bressenden Place (street-level)."
+    },
+    "B018": {
+      "query": "Regent Quarter, Kings Cross",
+      "reason": "York Way runs from King's Cross to Tufnell Park; Regents Quarter is at the King's Cross end. Geocoder returns the Regent Quarter area next to King's Cross station.",
+      "precision": "area"
+    },
+    "B052": {
+      "query": "Piccadilly, St James's, London",
+      "reason": "Source street '166/175 Piccadilly Street' does not exist as written; Piccadilly (St James's) used at street level."
+    },
+    "B058": {
+      "query": "16 Soho Square, Soho, London",
+      "reason": "Estate name not found; first listed address (16 Soho Square) used."
+    },
+    "B060": {
+      "query": "Gresse Street, London",
+      "reason": "Source lists two addresses (15 Gresse Street and 12-13 Rathbone Place); Gresse Street used at street level."
+    },
+    "B065": {
+      "query": "St Thomas Street, Southwark, London",
+      "reason": "'14/20 Saint Thomas Street' not matched at house level; St Thomas Street SE1 used."
+    },
+    "B066": {
+      "query": "Chapel Place, Marylebone, London",
+      "reason": "Source says '1 Chapel Street', which geocodes to a residential block in Paddington (NW1). Great Portland Estates' One Chapel Place is on Chapel Place W1G, off Oxford Street. Please confirm."
+    },
+    "B086": {
+      "query": "62 Seymour Street, Marylebone",
+      "reason": "Unqualified 'Seymour Street' matched near Euston; Marble Arch House is on Seymour Street W1H."
+    },
+    "B102": {
+      "query": "45 Seymour Street, Marylebone",
+      "reason": "Unqualified 'Seymour Street' matched near Euston; York House is on Seymour Street W1H (street-level)."
+    },
+    "B123": {
+      "query": "Langham Place, Marylebone, London",
+      "reason": "Unqualified 'Langham Place' matched Harringay (N15); Henry Wood House is on Langham Place W1B."
+    },
+    "B124": {
+      "query": "Cruikshank Street, London",
+      "reason": "Source spells 'Cruickshank Street'; the street is Cruikshank Street WC1X."
+    },
+    "B130": {
+      "query": "Page Street, Westminster, London",
+      "reason": "Unqualified 'Page Street' matched Mill Hill (NW7); Page Street SW1P used."
+    },
+    "B132": {
+      "query": "88 Rosebery Avenue, Clerkenwell",
+      "reason": "Unqualified address matched Tottenham Hale (N17)."
+    },
+    "B133": {
+      "query": "Angel Building, 407 St John Street, London",
+      "reason": "'Saint John Street' matched a college in Battersea. 401 St John Street adjoins the Angel Building (407); that position is used.",
+      "precision": "street"
+    },
+    "B012": {
+      "query": "155 Moorgate, London",
+      "reason": "Source street '155 Moorgate Hall' adds the building name to the street; 155 Moorgate used."
+    },
+    "B035": {
+      "query": "Duke Street St James's, London",
+      "reason": "Workbook lists street 'Piccadilly'; 30 Duke Street is Duke Street St James's, just south of Piccadilly (street-level)."
+    },
+    "B050": {
+      "query": "St Andrew Street, City of London",
+      "reason": "'6 Saint Andrew Street' not matched at house level; street-level used."
+    },
+    "B078": {
+      "query": "Exchange Square, City of London",
+      "reason": "Unqualified 'Exchange Square' matched Croydon; Broadgate's Exchange Square (EC2) used."
+    },
+    "B079": {
+      "query": "Exchange Square, City of London",
+      "reason": "Unqualified '10 Exchange Square' matched Harbour Exchange Square (Isle of Dogs); Broadgate's Exchange Square (EC2) used."
+    },
+    "B103": {
+      "query": "Three Deal Porters, Canada Water",
+      "reason": "Building found by name (address given as 'Deal Porters Way / Canada Water')."
+    },
+    "B125": {
+      "query": "Maple Place, Fitzrovia, London",
+      "reason": "Unqualified '1-5 Maple Place' matched Tottenham (N17); Maple Place W1T (Fitzrovia) used."
+    },
+    "B142": {
+      "query": "White Collar Factory, London",
+      "reason": "Building found by name; its address is Old Street Yard off City Road, so the street check rejected it."
+    }
+  }
+}

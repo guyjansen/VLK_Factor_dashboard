@@ -213,7 +213,11 @@ test('known branch junctions and adjacencies are present', () => {
   assert.ok(hasEdge('elizabeth', 'Paddington', 'Bond Street'));
   assert.ok(hasEdge('elizabeth', 'Whitechapel', 'Canary Wharf'));
   assert.ok(hasEdge('elizabeth', 'Whitechapel', 'Stratford'));
-  assert.ok(hasEdge('elizabeth', 'Liverpool Street', 'Stratford')); // Shenfield trains to the main-line platforms
+  // Eastern branches split at Whitechapel only (no direct Liverpool Street - Stratford link).
+  assert.ok(!hasEdge('elizabeth', 'Liverpool Street', 'Stratford'));
+  assert.ok(!hasEdge('elizabeth', 'Liverpool Street', 'Canary Wharf'));
+  assert.equal(lineAdj('elizabeth').get(byName('Whitechapel').id).size, 3); // Liverpool Street, Stratford, Canary Wharf
+  assert.equal(lineAdj('elizabeth').get(byName('Liverpool Street').id).size, 2);
   assert.ok(hasEdge('elizabeth', 'Hayes & Harlington', 'Heathrow Terminals 2 & 3'));
   assert.ok(hasEdge('elizabeth', 'Hayes & Harlington', 'West Drayton'));
   assert.ok(hasEdge('elizabeth', 'Acton Main Line', 'Paddington'));
@@ -257,4 +261,11 @@ test('station coordinates are WGS84 within the London region (Reading to Shenfie
   }
   // CSV coordinate stays within the join tolerance of the TfL coordinate.
   for (const s of stations) assert.ok(TubeGeometry.haversineM([s.lon, s.lat], [s.tflLon, s.tflLat]) <= 500, s.name);
+});
+
+test('browser scripts are syntactically valid', async () => {
+  const vm = await import('node:vm');
+  for (const f of ['public/js/app.js', 'public/js/union-worker.js', 'public/js/shared/config.js', 'public/js/shared/geometry.js', 'public/js/shared/selection.js']) {
+    assert.doesNotThrow(() => new vm.Script(fs.readFileSync(new URL(`../${f}`, import.meta.url), 'utf8'), { filename: f }), f);
+  }
 });

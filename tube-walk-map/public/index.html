@@ -78,6 +78,17 @@
         <p id="iso-status" class="hint" aria-live="polite"></p>
       </section>
 
+      <section class="section" aria-labelledby="h-buildings">
+        <h2 id="h-buildings">Office buildings</h2>
+        <div class="toggle-list">
+          <label class="toggle"><input id="show-buildings" type="checkbox" checked> Show buildings</label>
+          <label class="toggle"><input id="show-standing" type="checkbox" checked> Standing assets</label>
+          <label class="toggle"><input id="show-developments" type="checkbox" checked> Developments (lighter shade)</label>
+        </div>
+        <ul id="company-list" class="line-list" aria-label="Companies"></ul>
+        <div id="building-stats" class="building-stats" aria-live="polite"></div>
+      </section>
+
       <section class="section" aria-labelledby="h-layers">
         <h2 id="h-layers">Map layers</h2>
         <div class="toggle-list">
@@ -126,7 +137,7 @@
       <dl id="info-meta" class="meta-list"></dl>
 
       <h3>Scope</h3>
-      <p>The map covers the 11 London Underground lines and the Elizabeth line. The Elizabeth line is a TfL rail service, not part of the London Underground, so it is listed separately. Its stations as far out as Reading and Shenfield are included. Stations where Underground and Elizabeth line platforms form one station, such as Liverpool Street, Paddington and Whitechapel, appear once with all their lines. London Overground, DLR, trams and National Rail are not shown.</p>
+      <p>The map covers 12 lines: the 11 London Underground lines and the Elizabeth line, including its stations as far out as Reading and Shenfield. Stations where Underground and Elizabeth line platforms form one station, such as Liverpool Street, Paddington and Whitechapel, appear once with all their lines. London Overground, DLR, trams and National Rail are not shown.</p>
 
       <h3>Limitations</h3>
       <ul>
@@ -144,6 +155,7 @@
         <li>Station coordinates: supplied station workbook (Underground_and_Elizabeth_Stations.xlsx). British National Grid coordinates were converted to WGS84.</li>
         <li>Walking areas: <span id="info-provider">routing provider</span>, using OpenStreetMap data © OpenStreetMap contributors, available under the Open Database Licence.</li>
         <li>Basemap: OpenFreeMap, OpenMapTiles schema, © OpenStreetMap contributors.</li>
+        <li>Office buildings: supplied portfolio workbook (London_office_data.xlsx). Positions were geocoded from the street addresses with Nominatim (© OpenStreetMap contributors, ODbL). 89 buildings matched at building level, 57 at street level and 3 at area level, so some points are approximate. Each building popup shows its match level.</li>
         <li>Software: MapLibre GL JS (BSD-3-Clause), polygon-clipping (MIT).</li>
       </ul>
     </div>

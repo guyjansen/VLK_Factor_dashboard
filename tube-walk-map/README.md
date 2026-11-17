@@ -4,10 +4,12 @@ An interactive map of the areas you can reach **on foot within 1, 2 and 5 minute
 
 > **Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.**
 
-![Status](https://img.shields.io/badge/tests-41%20passing-brightgreen)
+![Status](https://img.shields.io/badge/tests-48%20passing-brightgreen)
 
 - 301 physical stations from 302 station records (the duplicate Paddington record is merged): 272 Underground stations, 41 Elizabeth line stations, 12 of them shared. 11 Underground lines plus the Elizabeth line. 351 track links built from TfL Route Sequence data.
-- The Elizabeth line is a separate mode (TfL rail, not the Underground). It has its own group in the line list and its own entry in the colour config.
+- The Elizabeth line is listed and treated like every other line (select it, combine it, compare buildings against it).
+- **149 office buildings** of Landsec, Great Portland Estates, British Land and Derwent London (`data/London_office_data.xlsx`) are shown as points, one colour per company, with developments in a lighter shade of the same colour. The panel shows live per-company statistics for the current selection: the % of all buildings, standing assets and developments within each selected walking time.
+- **Excel report** `reports/office-station-access.xlsx`: every asset with its walking band, stations and lines, one sheet per company, plus summary, distribution and per-line statistics as live formulas.
 - 903 walking-time polygons (301 stations × 60/120/300 s) generated with Valhalla (`pedestrian` costing, 5.04 km/h = 1.4 m/s).
 - Combined coverage is a true polygon union for each time threshold, computed in a Web Worker in the browser and also precomputed for each line and for the whole network.
 - Works from `npm start` (Express) or as a static site, including opening `index.html` straight from disk.
@@ -38,6 +40,7 @@ An interactive map of the areas you can reach **on foot within 1, 2 and 5 minute
 | Line colours | TfL *Colour standard*, Issue 11, August 2026: §5 "London Underground line colours", and §3 "Mode colours" for the Elizabeth line (RGB values) | — | Reference only. Colours are used to identify lines and do not imply endorsement |
 | Walking isochrones | Valhalla, FOSSGIS e.V. public instance `https://valhalla1.openstreetmap.de` | 2026-11-17 | Valhalla is MIT-licensed. Routing data is © OpenStreetMap contributors (ODbL). The public instance is for light, non-commercial use, so this project sends no more than ~1 request per second |
 | Basemap | OpenFreeMap (`https://openfreemap.org`), OpenMapTiles schema | live | © OpenMapTiles, © OpenStreetMap contributors |
+| Office buildings | Supplied `data/London_office_data.xlsx`; positions geocoded with Nominatim (`https://nominatim.openstreetmap.org`) | 2026-11-17 | Geocoding data © OpenStreetMap contributors (ODbL); Nominatim usage policy respected (≤ 1 request/s, cached) |
 | Software | MapLibre GL JS (BSD-3-Clause), polygon-clipping (MIT), Express (MIT) | | |
 
 The app shows attribution in the map's attribution control, the panel footer and the "About & data" dialog.
@@ -75,7 +78,7 @@ The app shows attribution in the map's attribution control, the panel footer and
 - **Routes are straight segments between adjacent stations** at their real coordinates. They follow the correct station order but not the curved track alignment, because TfL Route Sequence has no track geometry.
 - **Walking origin**: each isochrone starts at the supplied station coordinate, which is usually a centroid and not every entrance. 1-minute areas (~84 m) are very sensitive to this and to how detailed OSM is locally.
 - **Walking assumptions**: foot travel only, no Tube time, 60/120/300 s, 1.4 m/s (Valhalla `walking_speed` 5.04 km/h). Valhalla settings: `denoise 0.1`, `generalize 3 m`. Closures, temporary restrictions and opening hours are not modelled.
-- **Elizabeth line**: included as a separate mode (TfL rail, not the Underground), from Reading and Heathrow in the west to Shenfield and Abbey Wood in the east. Its outer sections run on National Rail tracks with long gaps between stations (Maidenhead–Twyford is ~10.9 km), so the validation limit for Elizabeth line links is 12 km instead of 8 km. Shenfield trains reach Liverpool Street via the main-line platforms (Stratford → Liverpool Street) and others via the tunnel (Stratford → Whitechapel → Liverpool Street); both links come from TfL data. The Heathrow Terminals 2 & 3 → Terminal 4 and → Terminal 5 links are shared with the Piccadilly line and are drawn side by side.
+- **Elizabeth line**: included as a normal line, from Reading and Heathrow in the west to Shenfield and Abbey Wood in the east. (Internally it keeps TfL's mode name `elizabeth-line`, which is needed for the TfL API and the longer validation limit described below.) Its outer sections run on National Rail tracks with long gaps between stations (Maidenhead–Twyford is ~10.9 km), so the validation limit for Elizabeth line links is 12 km instead of 8 km. East of the central tunnel, the line splits at **Whitechapel**: one branch goes to Stratford (towards Shenfield), the other to Canary Wharf (towards Abbey Wood). TfL's data also lists a few Shenfield trains running into the main-line platforms at Liverpool Street, which would draw an extra direct Liverpool Street–Stratford link. On request, that main-line platform stop is removed in `data/topology-overrides.json`, so only the Whitechapel branches are drawn. The Heathrow Terminals 2 & 3 → Terminal 4 and → Terminal 5 links are shared with the Piccadilly line and are drawn side by side.
 - **Walking-area colours** are a teal-green ramp. The earlier violet ramp clashed with the Elizabeth line's purple. Teal is distinct from all line colours except, loosely, the much paler Waterloo & City (a two-station line drawn with a dark casing).
 - London Overground, DLR, trams and National Rail are **out of scope** and not drawn.
 - The screenshot mentioned in the original brief was not among the provided files, so the design does not depend on it.
@@ -122,6 +125,9 @@ tube-walk-map/
 ├── data/
 │   ├── Underground_and_Elizabeth_Stations.xlsx   supplied input (default)
 │   ├── stations.csv              original Underground-only input
+│   ├── London_office_data.xlsx   office portfolio input
+│   ├── geocode-cache.json / geocode-overrides.json
+│   ├── buildings.json / buildings.geojson   geocoded buildings + walking-area membership
 │   ├── station-aliases.json      reviewed join exceptions + special-case notes
 │   ├── topology-overrides.json   reviewed topology corrections
 │   ├── raw/tfl/                  raw TfL Route Sequence responses + manifest.json
@@ -134,6 +140,8 @@ tube-walk-map/
 │   ├── isochrones/<id>.json      per-station cache with provenance (+ _failures.json)
 │   ├── isochrones.geojson        full-precision analysis copy (~630 KB)
 │   └── coverage-unions.geojson   full-precision unions (~980 KB)
+├── reports/
+│   └── office-station-access.xlsx
 └── tests/
     ├── data-validation.test.mjs
     ├── selection-logic.test.mjs
@@ -177,6 +185,32 @@ npm run build
 ### Shareable single-file version
 
 `npm run build` also writes **`dist/tube-walk-map.html`** (~2.7 MB). It is one self-contained file: styles, MapLibre, the app and all station, line and walking-area data are inlined. Email it or put it on any web host, and it opens in a browser with no install. Only the basemap tiles come from the internet (OpenFreeMap); offline, the map uses a plain background. Rebuild just this file with `npm run build:single`. The file is committed, so it is also in the repository at `tube-walk-map/dist/tube-walk-map.html`.
+
+## Office buildings and the Excel report
+
+```bash
+npm run buildings      # parse workbook → geocode (cached) → assign to walking areas
+```
+
+```bash
+npm run report         # write reports/office-station-access.xlsx (Python 3 + openpyxl)
+```
+
+- **Parsing** (`scripts/prepare-buildings.mjs`): the workbook has one block per company. A title row (e.g. "British land Development:") sets the company and whether the rows below are standing assets or developments. Trailing `+`/`*` footnote markers are removed from names and kept in `sourceMarker`.
+- **Geocoding** (`scripts/geocode-buildings.mjs`): the workbook has addresses only, so positions come from OpenStreetMap Nominatim. Requests are rate-limited to ≤ 1 per second and every response is cached in `data/geocode-cache.json`, so re-runs make no requests.
+  - A result is accepted only if it lies on the source street and within 9 km of central London.
+  - A building-level hit without the house number is downgraded to street level.
+  - 22 ambiguous or missing addresses use reviewed queries in `data/geocode-overrides.json`, each with a reason. For example, Langham Place W1 not Harringay, and Exchange Square EC2 not Croydon. The street check alone stops matches such as 70 *Victoria Street* landing on *Queen* Victoria Street.
+  - Result: **89 building-level, 57 street-level and 3 area-level** positions. Street-level points sit on the right street but can be a few hundred metres from the building, so check those before relying on 1- and 2-minute results. **One Chapel Place** is listed as "1 Chapel Street" in the source; it is placed at Chapel Place W1G (Great Portland Estates' building), which should be confirmed.
+- **Assignment** (`scripts/assign-buildings.mjs`): for every building and station, the smallest walking time (60/120/300 s) whose full-precision isochrone contains the building. In the app, a building is "within N min" of the current selection when any selected station's N-minute area contains it, which is the same as lying inside their union.
+- **Map**: the points are circles with a dark outline. Buildings outside the largest selected walking time fade. Click a building for its company, status, address, walking time, stations and geocode precision.
+- **Report** (`scripts/export-portfolio.py` → `reports/office-station-access.xlsx`):
+  - **Summary**: per company, for all buildings, developments only and standing only: counts and cumulative % within ≤ 1, ≤ 2 and ≤ 5 min and beyond. Plus key characteristics: development share of the portfolio, % of all buildings vs % of developments within 2 and 5 min, average distance to the nearest station, and % located at building level.
+  - **Distribution**: the share of buildings in mutually exclusive bands (≤ 1, 1–2, 2–5, > 5 min) per company and status.
+  - **By line**: per company and line, the % of buildings within 1, 2 and 5 min of a station on that line.
+  - **All assets** and one sheet per company: every asset with its geocode, walking band, stations ≤ 1/2/5 min, lines, nearest station, and the best walking time to each line.
+  - **Notes**: method, sources, caveats.
+  - All statistics are live `COUNTIFS` formulas on "All assets" (721 formulas, verified with a LibreOffice recalculation: 0 errors).
 
 ## 6. Data preparation
 
@@ -254,7 +288,7 @@ Or run the whole pipeline: `npm run data:full`.
 npm test
 ```
 
-Expected result: **41 tests, 41 pass, 0 fail**. The tests cover:
+Expected result: **48 tests, 48 pass, 0 fail**. The tests cover:
 
 - **Data validation**: colours equal the PDF RGB values (including the Elizabeth line) and are defined only in the central config; the CSV parser handles quotes, CRLF, BOM and malformed rows; the xlsx reader and BNG conversion reproduce the original CSV coordinates; all 302 records and all 315 TfL stops join; the Elizabeth line has the correct termini, branches and shared stations; Paddington is deduplicated; Edgware Road, Hammersmith and Shepherd's Bush stay separate; interchanges have all their lines; every line forms one connected component; the termini of every line match reality (for example, the Northern line has Morden, Battersea Power Station, Edgware, High Barnet and Mill Hill East); branch junctions exist (Northern Euston–Camden Town and Euston–Mornington Crescent, Metropolitan Chesham/Watford/Uxbridge, District at Earl's Court with degree 5, the Central Hainault loop, the Piccadilly Heathrow loop); no Underground link is longer than 8 km and no Elizabeth line link longer than 12 km; the validation report has no errors.
 - **Selection logic**: single and multiple lines, deduplication of interchanges (including Underground/Elizabeth line ones), manual add and remove, pruning of overrides, select all and clear all, summary text, search that ignores punctuation.

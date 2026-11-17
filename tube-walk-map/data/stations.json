@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-17T12:45:37.190Z",
+    "generatedAt": "2026-11-17T15:32:36.211Z",
     "topology": {
       "source": "TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound} (London Underground lines and the Elizabeth line)",
       "url": "https://api.tfl.gov.uk/",
@@ -16,7 +16,7 @@
       "coordinateSystem": "EPSG:27700 (converted to WGS84)",
       "records": 302
     },
-    "overridesApplied": 1
+    "overridesApplied": 3
   },
   "stations": [
     {
@@ -4940,7 +4940,6 @@
       "id": "940GZZLULVT",
       "hubId": "HUBLST",
       "stopIds": [
-        "910GLIVST",
         "910GLIVSTLL",
         "940GZZLULVT"
       ],
@@ -4955,7 +4954,7 @@
       "atcoCode": "940GZZLULVT",
       "network": "London Underground, Elizabeth line",
       "joinMethod": "atco-code+exact-name",
-      "joinDistanceM": 143,
+      "joinDistanceM": 91,
       "lines": [
         "central",
         "circle",

@@ -1,0 +1,3453 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generatedAt": "2026-11-17T16:00:04.164Z",
+    "source": "data/London_office_data.xlsx",
+    "geocoder": {
+      "name": "Nominatim (OpenStreetMap)",
+      "url": "https://nominatim.openstreetmap.org",
+      "attribution": "Geocoding © OpenStreetMap contributors (ODbL), Nominatim"
+    },
+    "geocodedAt": "2026-11-17T16:00:04.019Z",
+    "isochrones": {
+      "providers": [
+        "Valhalla (FOSSGIS public instance, OpenStreetMap data)"
+      ],
+      "generatedBetween": [
+        "2026-11-17T11:43:06.827Z",
+        "2026-11-17T12:46:41.413Z"
+      ]
+    },
+    "method": "Point-in-polygon of the geocoded building point against each station's full-precision 60/120/300 s pedestrian isochrone.",
+    "caveat": "Building positions come from geocoding street addresses; street-level matches can be off by a few hundred metres."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B001",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Aldersgate Street 140",
+        "propertyKey": 120030,
+        "propertyType": "Office",
+        "street": "140 Aldersgate Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Barbican",
+        "nearestStationM": 108
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.097583,
+          51.5196054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B002",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Buckingham Gate 62",
+        "propertyKey": 120088,
+        "propertyType": "Office",
+        "street": "62 Buckingham Gate",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "St. James's Park",
+        "nearestStationM": 284
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1364181,
+          51.497691
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B003",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Cardinal Place - 80–100 Victoria Street",
+        "propertyKey": 120017,
+        "propertyType": "Office",
+        "street": "Victoria Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 227
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1401126,
+          51.4972547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B004",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "City Gate",
+        "propertyKey": 120123,
+        "propertyType": "Office",
+        "street": "14 Southwark Bridge Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 406
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0954957,
+          51.5053485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B005",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Dashwood House",
+        "propertyKey": 120033,
+        "propertyType": "Office",
+        "street": "69 Old Broad Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 63
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0826894,
+          51.5168841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B006",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Eastbourne Terrace 10",
+        "propertyKey": 416459,
+        "propertyType": "Office",
+        "street": "10 Eastbourne Terrace",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 169
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1795674,
+          51.517067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B007",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Eastbourne Terrace 20",
+        "propertyKey": 120023,
+        "propertyType": "Office",
+        "street": "20 Eastbourne Terrace",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 206
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1790635,
+          51.5166662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B008",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Eastbourne Terrace 30",
+        "propertyKey": 416460,
+        "propertyType": "Office",
+        "street": "30 Eastbourne Terrace",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington",
+        "nearestStationM": 182
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1786092,
+          51.5163996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B009",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Hill House",
+        "propertyKey": 119996,
+        "propertyType": "Office",
+        "street": "1 Little New Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Chancery Lane",
+        "nearestStationM": 453
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1068418,
+          51.5154345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B010",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Myo Kings Cross",
+        "propertyKey": 460621,
+        "propertyType": "Multi-Use",
+        "street": "42–50 York Way, London, N1 9AB,",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "King's Cross St. Pancras",
+        "nearestStationM": 414
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.121924,
+          51.5330601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B011",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Lucent / picadilly lights",
+        "propertyKey": 120001,
+        "propertyType": "Office",
+        "street": "1 Sherwood Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Piccadilly Circus",
+        "nearestStationM": 127
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1353688,
+          51.5105219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B012",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Moorgate Hall",
+        "propertyKey": 119979,
+        "propertyType": "Office",
+        "street": "155 Moorgate Hall",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Moorgate",
+        "nearestStationM": 94
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0881274,
+          51.5187729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B013",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "n2",
+        "propertyKey": 438326,
+        "propertyType": "Office",
+        "street": "Bressenden Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 159
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1424341,
+          51.497774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B014",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "New Street Square",
+        "propertyKey": 119983,
+        "propertyType": "Office",
+        "street": "3-5 New Street Square: London EC4A 3BF, United Kingdom",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Chancery Lane",
+        "nearestStationM": 403
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1073827,
+          51.5157324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B015",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "One New Change",
+        "propertyKey": 119987,
+        "propertyType": "Multi-Use",
+        "street": "1 New Change",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "St. Paul's",
+        "nearestStationM": 218
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0949305,
+          51.5138383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B016",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Palace Street 16",
+        "propertyKey": 416457,
+        "propertyType": "Office",
+        "street": "16 Palace Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 281
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1394964,
+          51.4975784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B017",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Red Lion Court",
+        "propertyKey": 120110,
+        "propertyType": "Office",
+        "street": "46-48 Park Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 375
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0936311,
+          51.5073472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B018",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Regents Quarter",
+        "propertyKey": 469694,
+        "propertyType": "Office",
+        "street": "York Way",
+        "geocodePrecision": "area",
+        "bestWalkMinutes": 5,
+        "nearestStation": "King's Cross St. Pancras",
+        "nearestStationM": 255
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.121758,
+          51.5311084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B019",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "The Forge",
+        "propertyKey": 310049,
+        "propertyType": "Office",
+        "street": "105 Sumner Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 485
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0961828,
+          51.506642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B020",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "The Zig Zag Building",
+        "propertyKey": 120016,
+        "propertyType": "Office",
+        "street": "70 Victoria Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 319
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.138707,
+          51.4972908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B021",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Thirty High",
+        "propertyKey": 460622,
+        "propertyType": "Multi-Use",
+        "street": "Bressenden Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Victoria",
+        "nearestStationM": 114
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.141846,
+          51.4970777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B022",
+        "company": "Landsec",
+        "status": "Standing",
+        "name": "Timber Square",
+        "propertyKey": 367859,
+        "propertyType": "Office",
+        "street": "25 Lavington Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Southwark",
+        "nearestStationM": 484
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0985532,
+          51.5051802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B023",
+        "company": "Landsec",
+        "status": "Development",
+        "name": "Portland House /Thirty High",
+        "propertyKey": 120006,
+        "propertyType": "Office",
+        "street": "Bressenden Place, Victoria, SW1E 5BH",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Victoria",
+        "nearestStationM": 114
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.141846,
+          51.4970777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B024",
+        "company": "Landsec",
+        "status": "Development",
+        "name": "Landmark Court/Liberty of Southwark",
+        "propertyKey": 425686,
+        "propertyType": "Multi-Use",
+        "street": "Southwark Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 370
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0949879,
+          51.5048606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B025",
+        "company": "Landsec",
+        "status": "Development",
+        "name": "Timber Square Phase 2",
+        "propertyKey": 467783,
+        "propertyType": "Office",
+        "street": "Lavington Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Southwark",
+        "nearestStationM": 380
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1000695,
+          51.5050972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B026",
+        "company": "Landsec",
+        "status": "Development",
+        "name": "Westminster City Hall",
+        "propertyKey": 120089,
+        "propertyType": "Office",
+        "street": "64 Victoria Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "St. James's Park",
+        "nearestStationM": 336
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1373436,
+          51.4976144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B027",
+        "company": "Landsec",
+        "status": "Development",
+        "name": "Oval Works",
+        "propertyKey": null,
+        "propertyType": null,
+        "street": "Vauxhall Street, Oval Village,SE11 5RH",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Oval",
+        "nearestStationM": 500
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.115669,
+          51.4858536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B028",
+        "company": "Landsec",
+        "status": "Development",
+        "name": "Nova Place",
+        "propertyKey": 355140,
+        "propertyType": "Office",
+        "street": "Victoria Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "St. James's Park",
+        "nearestStationM": 246
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1300952,
+          51.4992966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B029",
+        "company": "Landsec",
+        "status": "Development",
+        "name": "Nova Victoria North",
+        "propertyKey": 164835,
+        "propertyType": "Office",
+        "street": "11 Bressenden Place",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Victoria",
+        "nearestStationM": 128
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1431405,
+          51.4975531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B030",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Bramah House",
+        "propertyKey": 450764,
+        "propertyType": "Office",
+        "street": "65/71 Bermondsey Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 576
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0824996,
+          51.5024125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B031",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Carrington House",
+        "propertyKey": 109755,
+        "propertyType": "Multi-Use",
+        "street": "126-130 Regent Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 411
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1395931,
+          51.5118508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B032",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Cathedral Street",
+        "propertyKey": 438170,
+        "propertyType": "Multi-Use",
+        "street": "2 Cathedral Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 134
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0902522,
+          51.5062144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B033",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "City Tower",
+        "propertyKey": 175865,
+        "propertyType": "Office",
+        "street": "40 Basinghall Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Moorgate",
+        "nearestStationM": 241
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0918502,
+          51.5168822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B034",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Dufour's Place 10/16",
+        "propertyKey": 124366,
+        "propertyType": "Office",
+        "street": "10/16 Dufour’s Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 372
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1371927,
+          51.5134346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B035",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Duke Street 30",
+        "propertyKey": 209036,
+        "propertyType": "Office",
+        "street": "Piccadilly",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Green Park",
+        "nearestStationM": 329
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1378852,
+          51.5074757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B036",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Elm Yard",
+        "propertyKey": 257955,
+        "propertyType": "Office",
+        "street": "10-16 Elm Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Chancery Lane",
+        "nearestStationM": 546
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1135938,
+          51.5229944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B037",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Elsley House",
+        "propertyKey": 94469,
+        "propertyType": "Multi-Use",
+        "street": "20/30 Great Titchfield Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 270
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1396562,
+          51.517413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B038",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Empire House",
+        "propertyKey": 112003,
+        "propertyType": "Multi-Use",
+        "street": "175 Piccadilly",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Piccadilly Circus",
+        "nearestStationM": 336
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1379567,
+          51.5086288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B039",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Foxglove House",
+        "propertyKey": 469611,
+        "propertyType": "Multi-Use",
+        "street": "166 Piccadilly",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Green Park",
+        "nearestStationM": 200
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1400473,
+          51.5077687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B040",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Gray's Inn Road 200/214",
+        "propertyKey": 197826,
+        "propertyType": "Multi-Use",
+        "street": "200/214 Gray's Inn Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Chancery Lane",
+        "nearestStationM": 596
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1141547,
+          51.5233644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B041",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Hanover Square",
+        "propertyKey": 192200,
+        "propertyType": "Multi-Use",
+        "street": "18 Hanover Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 274
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1448581,
+          51.513888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B042",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Jermyn Street 54/56",
+        "propertyKey": 469610,
+        "propertyType": "Multi-Use",
+        "street": "54-56 Jermyn Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Piccadilly Circus",
+        "nearestStationM": 178
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1353816,
+          51.5088603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B043",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Kent House",
+        "propertyKey": 94473,
+        "propertyType": "Office",
+        "street": "14/17 Market Place",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 152
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1398824,
+          51.5161545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B044",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Kingsland House",
+        "propertyKey": 169784,
+        "propertyType": "Office",
+        "street": "122/124 Regent Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Piccadilly Circus",
+        "nearestStationM": 347
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1385965,
+          51.5107168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B045",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Newman Street 23/24",
+        "propertyKey": 169263,
+        "propertyType": "Multi-Use",
+        "street": "23/24 Newman Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 328
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1355322,
+          51.5177503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B046",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Orchard Court",
+        "propertyKey": 221429,
+        "propertyType": "Multi-Use",
+        "street": "1/9 Portman Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 328
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1544936,
+          51.5159541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B047",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Piccadilly 170",
+        "propertyKey": 460650,
+        "propertyType": "Multi-Use",
+        "street": "170-173 Piccadilly",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Green Park",
+        "nearestStationM": 258
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1392997,
+          51.5080182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B048",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Pollen House",
+        "propertyKey": 94498,
+        "propertyType": "Multi-Use",
+        "street": "10 Cork Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Green Park",
+        "nearestStationM": 364
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1415571,
+          51.5100875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B049",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Portman Square 35",
+        "propertyKey": 176825,
+        "propertyType": "Multi-Use",
+        "street": "35 Portman Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 170
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1560375,
+          51.5148886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B050",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "SIX Saint Andrew Street",
+        "propertyKey": 435213,
+        "propertyType": "Office",
+        "street": "6 Saint Andrew Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Chancery Lane",
+        "nearestStationM": 350
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1069058,
+          51.5170241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B051",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "The Hickman",
+        "propertyKey": 322402,
+        "propertyType": "Office",
+        "street": "2 Whitechapel Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Whitechapel",
+        "nearestStationM": 424
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0660352,
+          51.5175744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B052",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "The Piccadilly Buildings",
+        "propertyKey": 457895,
+        "propertyType": "Multi-Use",
+        "street": "166/175 Piccadilly Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Piccadilly Circus",
+        "nearestStationM": 329
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1379406,
+          51.508732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B053",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Walmar House",
+        "propertyKey": 109779,
+        "propertyType": "Multi-Use",
+        "street": "288-300 Regent Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 104
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1419652,
+          51.516228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B054",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Wardour Street 141",
+        "propertyKey": 450765,
+        "propertyType": "Office",
+        "street": "141 Wardour Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 403
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1344626,
+          51.5138041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B055",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Wells Street 19/23",
+        "propertyKey": 473057,
+        "propertyType": "Office",
+        "street": "19-23 Wells Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 344
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.137768,
+          51.5172614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B056",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "Woolyard",
+        "propertyKey": 469609,
+        "propertyType": "Multi-Use",
+        "street": "52-56 Bermondsey Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 448
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0832261,
+          51.5045784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B057",
+        "company": "Great Portland Estates",
+        "status": "Standing",
+        "name": "10 South Crescent, WC1",
+        "propertyKey": null,
+        "propertyType": null,
+        "street": "10 South Crescent, WC1",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 209
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1322849,
+          51.5192201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B058",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "Soho Square Estate",
+        "propertyKey": null,
+        "propertyType": null,
+        "street": "16/19 Soho Square, 29/43 Oxford Street and 7 Falconberg Mews",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 119
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1319902,
+          51.5159242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B059",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "Minerva House",
+        "propertyKey": 217835,
+        "propertyType": "Office",
+        "street": "5 Montague Close",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 188
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0901646,
+          51.5067223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B060",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "The Howlett",
+        "propertyKey": null,
+        "propertyType": "Office",
+        "street": "15 Gresse Street and 12–13 Rathbone Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 228
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.133308,
+          51.5175302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B061",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "The Courtyard",
+        "propertyKey": 467870,
+        "propertyType": "Multi-Use",
+        "street": "Alfred Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 120
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1328495,
+          51.5200574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B062",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "Whittington House",
+        "propertyKey": 473284,
+        "propertyType": "Office",
+        "street": "19-30 Alfred Place",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 111
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1327549,
+          51.520448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B063",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "Alfred Place 31/34",
+        "propertyKey": 280938,
+        "propertyType": "Office",
+        "street": "31/34 Alfred Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 120
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1328495,
+          51.5200574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B064",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "The Gable",
+        "propertyKey": null,
+        "propertyType": "Office",
+        "street": "Alfred Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 120
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1328495,
+          51.5200574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B065",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "Saint Thomas Yard",
+        "propertyKey": 94521,
+        "propertyType": "Office",
+        "street": "14/20 Saint Thomas Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 457
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0840022,
+          51.502943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B066",
+        "company": "Great Portland Estates",
+        "status": "Development",
+        "name": "One Chapel Place",
+        "propertyKey": 509512,
+        "propertyType": "Office",
+        "street": "1 Chapel Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Bond Street",
+        "nearestStationM": 229
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1467597,
+          51.5153518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B067",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Apex House Appold Studios 18-20",
+        "propertyKey": 322370,
+        "propertyType": "Office",
+        "street": "18-20 Appold Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 295
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0831734,
+          51.5200059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B068",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Baker Street 1-5",
+        "propertyKey": 235293,
+        "propertyType": "Office",
+        "street": "1-5 Baker Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 351
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1551413,
+          51.5164366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B069",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Bishopsgate Nos 158-164",
+        "propertyKey": 519699,
+        "propertyType": "Office",
+        "street": "158-164 Bishopsgate",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 211
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0801956,
+          51.5171125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B070",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate Central",
+        "propertyKey": 523711,
+        "propertyType": "Multi-Use",
+        "street": "Eldon Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 234
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0858465,
+          51.5186774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B071",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate Circle",
+        "propertyKey": 202587,
+        "propertyType": "Office",
+        "street": "Broadgate Circle",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 169
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.083953,
+          51.5188004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B072",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Bishopsgate 135",
+        "propertyKey": 201475,
+        "propertyType": "Office",
+        "street": "135 Bishopsgate",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 264
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0801147,
+          51.5187415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B073",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Bishopsgate 155",
+        "propertyKey": 201472,
+        "propertyType": "Office",
+        "street": "155 Bishopsgate",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 299
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0795741,
+          51.5187959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B074",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Bishopsgate 199",
+        "propertyKey": 201488,
+        "propertyType": "Office",
+        "street": "199 Bishopsgate",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 418
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0794711,
+          51.5203041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B075",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Bishopsgate 201",
+        "propertyKey": 201477,
+        "propertyType": "Office",
+        "street": "201 Bishopsgate",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 492
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0792583,
+          51.5210268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B076",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Broadgate 1-2",
+        "propertyKey": 201671,
+        "propertyType": "Office",
+        "street": "1-2 Broadgate",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 163
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0839643,
+          51.5187465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B077",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Broadwalk House",
+        "propertyKey": 201484,
+        "propertyType": "Office",
+        "street": "5 Appold Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 426
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0811407,
+          51.5209589
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B078",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Exchange House",
+        "propertyKey": 201486,
+        "propertyType": "Office",
+        "street": "Exchange Square",
+        "geocodePrecision": "area",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 322
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0809214,
+          51.5198723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B079",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Exchange Square 10",
+        "propertyKey": 201479,
+        "propertyType": "Office",
+        "street": "10 Exchange Square",
+        "geocodePrecision": "area",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 322
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0809214,
+          51.5198723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B080",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Finsbury Avenue 1",
+        "propertyKey": 201504,
+        "propertyType": "Office",
+        "street": "1 Finsbury Avenue",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 274
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0851116,
+          51.5195135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B081",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Broadgate-Liverpool Street 100",
+        "propertyKey": 187105,
+        "propertyType": "Office",
+        "street": "100 Liverpool Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 71
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0836589,
+          51.5179318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B082",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Crown Place 4-8",
+        "propertyKey": 308107,
+        "propertyType": "Office",
+        "street": "4-8 Crown Place",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Old Street",
+        "nearestStationM": 524
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.081813,
+          51.5220744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B083",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Eldon Street 6/7-9",
+        "propertyKey": 416386,
+        "propertyType": "Office",
+        "street": "6-9 Eldon Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 114
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0843379,
+          51.5180958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B084",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Kingdom Street 2",
+        "propertyKey": 228446,
+        "propertyType": "Office",
+        "street": "2 Kingdom Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 234
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1816755,
+          51.5196153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B085",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Kingdom Street 4",
+        "propertyKey": 228466,
+        "propertyType": "Office",
+        "street": "4 Kingdom Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 297
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1828146,
+          51.519448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B086",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Marble Arch House",
+        "propertyKey": 186557,
+        "propertyType": "Office",
+        "street": "62/64 Seymour Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 274
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1611165,
+          51.5143899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B087",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Norton Folgate",
+        "propertyKey": 230344,
+        "propertyType": "Office",
+        "street": "Norton Folgate",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 537
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0787076,
+          51.5212826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B088",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "One Sheldon Square",
+        "propertyKey": 275951,
+        "propertyType": "Office",
+        "street": "1 Sheldon Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 146
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1807589,
+          51.5189853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B089",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Orsman Road 6",
+        "propertyKey": 347230,
+        "propertyType": "Office",
+        "street": "6 Orsman Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Old Street",
+        "nearestStationM": 1397
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0785484,
+          51.5363054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B090",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Portman Square 10",
+        "propertyKey": 174667,
+        "propertyType": "Office",
+        "street": "10 Portman Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 397
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1546846,
+          51.5167602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B091",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Regent's Place-Brock Street 30",
+        "propertyKey": 308111,
+        "propertyType": "Office",
+        "street": "30 Brock Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 133
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1391078,
+          51.525622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B092",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Regent's Place-Drummond Street 184-192",
+        "propertyKey": 367596,
+        "propertyType": "Office",
+        "street": "184-192 Drummond Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 248
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.140677,
+          51.5262188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B093",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Regent's Place-Euston Road 338",
+        "propertyKey": 201643,
+        "propertyType": "Office",
+        "street": "338 Euston Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Great Portland Street",
+        "nearestStationM": 204
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1416497,
+          51.524666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B094",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Regent's Place-Euston Road 350",
+        "propertyKey": 201645,
+        "propertyType": "Office",
+        "street": "350 Euston Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Great Portland Street",
+        "nearestStationM": 175
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1419938,
+          51.5245001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B095",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Regent's Place-NEQ/Brock Street 10",
+        "propertyKey": 175722,
+        "propertyType": "Office",
+        "street": "10 Brock Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 158
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1396894,
+          51.5256769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B096",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Regent's Place-Triton Square 1/4/7",
+        "propertyKey": 201646,
+        "propertyType": "Office",
+        "street": "1/4/7 Triton Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 212
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1410198,
+          51.5254581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B097",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Regent's Place-Triton Street 10",
+        "propertyKey": 201648,
+        "propertyType": "Office",
+        "street": "10 Triton Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Great Portland Street",
+        "nearestStationM": 173
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1422897,
+          51.524784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B098",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Regent's Place-Triton Street 20",
+        "propertyKey": 201654,
+        "propertyType": "Office",
+        "street": "20 Triton Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Great Portland Street",
+        "nearestStationM": 170
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1427764,
+          51.5250492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B099",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Sheldon Square 3",
+        "propertyKey": 228452,
+        "propertyType": "Office",
+        "street": "3 Sheldon Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 183
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1807498,
+          51.5196203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B100",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "The Dock Shed A2",
+        "propertyKey": 397756,
+        "propertyType": "Multi-Use",
+        "street": "Deal Porters Way",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Canada Water",
+        "nearestStationM": 285
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0491535,
+          51.4954093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B101",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "William Road 7-9",
+        "propertyKey": 308108,
+        "propertyType": "Office",
+        "street": "7-9 William Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 310
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1398026,
+          51.527159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B102",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "York House",
+        "propertyKey": 96592,
+        "propertyType": "Office",
+        "street": "45 Seymour Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 280
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1612621,
+          51.5142545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B103",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Three Deal Porters - Canada Water",
+        "propertyKey": null,
+        "propertyType": null,
+        "street": "Deal Porters Way / Canada Water, London SE16",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Canada Water",
+        "nearestStationM": 128
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0499987,
+          51.4967673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B104",
+        "company": "British Land",
+        "status": "Standing",
+        "name": "Paper Yard",
+        "propertyKey": null,
+        "propertyType": null,
+        "street": "Canada Water, London SE16",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Canada Water",
+        "nearestStationM": 69
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0490838,
+          51.4976669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B105",
+        "company": "British Land",
+        "status": "Development",
+        "name": "Broadgate-Finsbury Avenue 2",
+        "propertyKey": 201505,
+        "propertyType": "Office",
+        "street": "2 Finsbury Avenue",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 298
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0845686,
+          51.5199004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B106",
+        "company": "British Land",
+        "status": "Development",
+        "name": "Broadgate-Appold Street 1",
+        "propertyKey": 201492,
+        "propertyType": "Office",
+        "street": "1 Appold Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 285
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0822252,
+          51.5198429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B107",
+        "company": "British Land",
+        "status": "Development",
+        "name": "Euston Tower",
+        "propertyKey": 201641,
+        "propertyType": "Office",
+        "street": "286 Euston Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 107
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1391424,
+          51.5253537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B108",
+        "company": "British Land",
+        "status": "Development",
+        "name": "The Broadgate Tower",
+        "propertyKey": 201490,
+        "propertyType": "Office",
+        "street": "20 Primrose Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 501
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0797591,
+          51.5213133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B109",
+        "company": "British Land",
+        "status": "Development",
+        "name": "Canada Water-Future Phases",
+        "propertyKey": 171195,
+        "propertyType": "Multi-Use",
+        "street": "Lower Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Canada Water",
+        "nearestStationM": 314
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0508198,
+          51.4951466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B110",
+        "company": "British Land",
+        "status": "Development",
+        "name": "Canada Water-Printworks H1/H2",
+        "propertyKey": 455207,
+        "propertyType": "Multi-Use",
+        "street": "Surrey Quays Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Canada Water",
+        "nearestStationM": 141
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0484926,
+          51.4987791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B111",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Angel Building",
+        "propertyKey": 106761,
+        "propertyType": "Office",
+        "street": "407 Saint John Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Angel",
+        "nearestStationM": 159
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1069432,
+          51.5311106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B112",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Baker Street 25",
+        "propertyKey": 106762,
+        "propertyType": "Multi-Use",
+        "street": "25 Baker Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 463
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1562739,
+          51.5177121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B113",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Blackfriars Road 230",
+        "propertyKey": 423929,
+        "propertyType": "Multi-Use",
+        "street": "230 Blackfriars Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Southwark",
+        "nearestStationM": 179
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.104117,
+          51.505687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B114",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Blue Star House",
+        "propertyKey": 381466,
+        "propertyType": "Office",
+        "street": "234-244 Stockwell Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Brixton",
+        "nearestStationM": 231
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1151544,
+          51.4647375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B115",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Brunel Building",
+        "propertyKey": 106777,
+        "propertyType": "Multi-Use",
+        "street": "55-65 North Wharf Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 94
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1777809,
+          51.5190743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B116",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Charlotte Building",
+        "propertyKey": 106825,
+        "propertyType": "Office",
+        "street": "17 Gresse Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 158
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1327009,
+          51.5168494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B117",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Charlotte Street 76-78",
+        "propertyKey": 106875,
+        "propertyType": "Office",
+        "street": "76-78 Charlotte Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 159
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1358199,
+          51.5195068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B118",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Charlotte Street 80",
+        "propertyKey": 106749,
+        "propertyType": "Multi-Use",
+        "street": "80 Charlotte Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 189
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1368614,
+          51.5212657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B119",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Euston Road 250",
+        "propertyKey": 419428,
+        "propertyType": "Office",
+        "street": "250 Euston Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 110
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1377365,
+          51.5254438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B120",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Farringdon Road 20",
+        "propertyKey": 270156,
+        "propertyType": "Multi-Use",
+        "street": "20 Farringdon Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Farringdon",
+        "nearestStationM": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1055406,
+          51.5203777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B121",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Fitzroy Street 19-23",
+        "propertyKey": 106903,
+        "propertyType": "Multi-Use",
+        "street": "19-23 Fitzroy Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 291
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1387336,
+          51.521923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B122",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Greencoat Place 6-8",
+        "propertyKey": 130059,
+        "propertyType": "Office",
+        "street": "6-8 Greencoat Place",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "St. James's Park",
+        "nearestStationM": 429
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1362001,
+          51.4960472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B123",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Henry Wood House",
+        "propertyKey": 106765,
+        "propertyType": "Multi-Use",
+        "street": "3-7 Langham Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 343
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1437629,
+          51.5181055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B124",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Holford Works",
+        "propertyKey": 413504,
+        "propertyType": "Multi-Use",
+        "street": "Cruickshank Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Angel",
+        "nearestStationM": 483
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1114999,
+          51.5304417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B125",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Maple Place 1-5",
+        "propertyKey": 106929,
+        "propertyType": "Office",
+        "street": "1-5 Maple Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 276
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1375893,
+          51.5220852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B126",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Morelands Buildings",
+        "propertyKey": 106789,
+        "propertyType": "Multi-Use",
+        "street": "5-27 Old Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Barbican",
+        "nearestStationM": 448
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0965713,
+          51.5239923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B127",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Network Building",
+        "propertyKey": 106910,
+        "propertyType": "Multi-Use",
+        "street": "95-100 Tottenham Court Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 214
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1326587,
+          51.5189914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B128",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Oliver's Yard 1",
+        "propertyKey": 106648,
+        "propertyType": "Multi-Use",
+        "street": "1 Oliver’s Yard",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Old Street",
+        "nearestStationM": 79
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.087296,
+          51.524406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B129",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Oxford Street 50",
+        "propertyKey": 291439,
+        "propertyType": "Multi-Use",
+        "street": "50 Oxford Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 153
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1327155,
+          51.5163977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B130",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Page Street 1",
+        "propertyKey": 188373,
+        "propertyType": "Office",
+        "street": "1 Page Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Pimlico",
+        "nearestStationM": 578
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1306515,
+          51.4939148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B131",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Rathbone Studios",
+        "propertyKey": 156903,
+        "propertyType": "Multi-Use",
+        "street": "3-10 Rathbone Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 227
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1336074,
+          51.5171175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B132",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Rosebery Avenue 88",
+        "propertyKey": 106759,
+        "propertyType": "Office",
+        "street": "88 Rosebery Avenue",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Angel",
+        "nearestStationM": 506
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1075011,
+          51.5272797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B133",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Saint John Street 401",
+        "propertyKey": 106894,
+        "propertyType": "Office",
+        "street": "401 Saint John Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Angel",
+        "nearestStationM": 159
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1069432,
+          51.5311106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B134",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Savile Row 25",
+        "propertyKey": 106668,
+        "propertyType": "Multi-Use",
+        "street": "25 Savile Row",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Oxford Circus",
+        "nearestStationM": 405
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1415715,
+          51.5116816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B135",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Soho Place",
+        "propertyKey": 228242,
+        "propertyType": "Office",
+        "street": "1 Oxford Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1310764,
+          51.5162668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B136",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Stephen Street 1-2/Tottenham Court Walk",
+        "propertyKey": 178595,
+        "propertyType": "Multi-Use",
+        "street": "1-2 Stephen Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 210
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1327844,
+          51.5176993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B137",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Tea Building",
+        "propertyKey": 106757,
+        "propertyType": "Office",
+        "street": "56 Shoreditch High Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Old Street",
+        "nearestStationM": 755
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.076932,
+          51.5237636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B138",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "The Featherstone Building",
+        "propertyKey": 359716,
+        "propertyType": "Office",
+        "street": "58-64 City Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Old Street",
+        "nearestStationM": 84
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0882496,
+          51.5244373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B139",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "The White Chapel Building",
+        "propertyKey": 283653,
+        "propertyType": "Office",
+        "street": "10 Whitechapel High Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Aldgate East",
+        "nearestStationM": 164
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0729102,
+          51.514434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B140",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Tottenham Court Road 171--174",
+        "propertyKey": 419431,
+        "propertyType": "Multi-Use",
+        "street": "171-174 Tottenham Court Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1341012,
+          51.5203985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B141",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Tottenham Court Road 88-94",
+        "propertyKey": 106925,
+        "propertyType": "Multi-Use",
+        "street": "88-94 Tottenham Court Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 214
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1326587,
+          51.5189914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B142",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "White Collar Factory",
+        "propertyKey": 106786,
+        "propertyType": "Multi-Use",
+        "street": "86-100 City Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Old Street",
+        "nearestStationM": 36
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0881261,
+          51.525208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B143",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Whitfield Street 43/45-51",
+        "propertyKey": 126802,
+        "propertyType": "Office",
+        "street": "43/45-51 Whitfield Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 1,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 83
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1355339,
+          51.5206514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B144",
+        "company": "Derwent London",
+        "status": "Standing",
+        "name": "Whitfield Street 60",
+        "propertyKey": 106783,
+        "propertyType": "Office",
+        "street": "60 Whitfield Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 155
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1361544,
+          51.5214248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B145",
+        "company": "Derwent London",
+        "status": "Development",
+        "name": "Middlesex House",
+        "propertyKey": 106770,
+        "propertyType": "Office",
+        "street": "34-42 Cleveland Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Goodge Street",
+        "nearestStationM": 245
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1378164,
+          51.5201589
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B146",
+        "company": "Derwent London",
+        "status": "Development",
+        "name": "Greencoat/Gordon House",
+        "propertyKey": 106649,
+        "propertyType": "Office",
+        "street": "Francis Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Victoria",
+        "nearestStationM": 361
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1383772,
+          51.4950051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B147",
+        "company": "Derwent London",
+        "status": "Development",
+        "name": "Holden House",
+        "propertyKey": 106651,
+        "propertyType": "Multi-Use",
+        "street": "54-68 Oxford Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Tottenham Court Road",
+        "nearestStationM": 327
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1351743,
+          51.5159838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B148",
+        "company": "Derwent London",
+        "status": "Development",
+        "name": "Baker Street 38-52/54-60/66",
+        "propertyKey": 423923,
+        "propertyType": "Multi-Use",
+        "street": "38-52/54-60/66 Baker Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 513
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1556872,
+          51.5180907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "B149",
+        "company": "Derwent London",
+        "status": "Development",
+        "name": "Baker Street 50",
+        "propertyKey": 440391,
+        "propertyType": "Multi-Use",
+        "street": "38-52/54-60/66 Baker Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 2,
+        "nearestStation": "Baker Street",
+        "nearestStationM": 103
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1575201,
+          51.5221225
+        ]
+      }
+    }
+  ]
+}

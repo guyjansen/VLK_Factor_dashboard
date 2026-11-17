@@ -114,6 +114,7 @@
   })(window.TUBE_NETWORK);
 
   var ISO = { status: 'loading', meta: null, stations: {}, augmented: false };
+  var BLD = { status: 'loading', meta: null, list: [], byId: {} };
   var COVERAGE = null;
 
   // ------------------------------------------------------------------ state
@@ -133,7 +134,10 @@
     opacity: 0.45,
     showRoutes: true,
     showContext: true,
-    showStations: true
+    showStations: true,
+    showBuildings: true,
+    companies: new Set(C.COMPANIES.map(function (c) { return c.name; })),
+    statuses: new Set(['Standing', 'Development'])
   };
   var selection = S.resolveSelection(NET, state);
   var selectedSet = new Set(selection.stationIds);
@@ -291,6 +295,20 @@
       paint: { 'line-color': ['get', 'colour'], 'line-width': LINE_W, 'line-offset': offsetExpr() }
     });
 
+    // Office buildings: below stations so stations stay clickable.
+    map.addSource('buildings', { type: 'geojson', data: buildingsGeoJSON(), promoteId: 'id' });
+    map.addLayer({
+      id: 'buildings', type: 'circle', source: 'buildings',
+      paint: {
+        'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 3, 13, 5.5, 16, 8, 18, 10],
+        'circle-color': ['get', 'colour'],
+        'circle-stroke-color': dark ? '#ffffff' : '#1a1d21',
+        'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 9, 0.8, 14, 1.4],
+        'circle-opacity': ['case', ['boolean', ['feature-state', 'outside'], false], 0.35, 1],
+        'circle-stroke-opacity': ['case', ['boolean', ['feature-state', 'outside'], false], 0.35, 1]
+      }
+    });
+
     map.addLayer({
       id: 'stations', type: 'circle', source: 'stations',
       paint: {
@@ -320,6 +338,7 @@
 
     applySelectionToMap(true);
     applyLayerVisibility();
+    applyBuildings();
     renderCoverage(lastCoverage);
     renderIndividual();
   }
@@ -548,23 +567,172 @@
     });
   }
 
+  // --------------------------------------------------------- office buildings
+  function companyOf(name) { return C.COMPANY_BY_NAME[name] || { colour: '#666666', developmentColour: '#aaaaaa', name: name }; }
+  function buildingColour(b) { var c = companyOf(b.company); return b.status === 'Development' ? c.developmentColour : c.colour; }
+
+  function buildingsGeoJSON() {
+    return {
+      type: 'FeatureCollection',
+      features: BLD.list.filter(function (b) { return b.lon != null; }).map(function (b) {
+        return { type: 'Feature', id: b.id, properties: { id: b.id, company: b.company, status: b.status, colour: buildingColour(b) }, geometry: { type: 'Point', coordinates: [b.lon, b.lat] } };
+      })
+    };
+  }
+
+  /** Smallest walking time (s) from any SELECTED station, or null if > 5 min. */
+  function buildingBand(b) {
+    var best = null;
+    for (var id in b.stations) {
+      if (!Object.prototype.hasOwnProperty.call(b.stations, id) || !selectedSet.has(id) || !ISO.stations[id]) continue;
+      if (best === null || b.stations[id] < best) best = b.stations[id];
+    }
+    return best;
+  }
+  function maxContour() { var m = 0; state.contours.forEach(function (s) { if (s > m) m = s; }); return m; }
+
+  var prevOutside = {};
+  function applyBuildings() {
+    if (!map.getLayer || !map.getLayer('buildings')) return;
+    var companies = Array.from(state.companies), statuses = Array.from(state.statuses);
+    map.setFilter('buildings', ['all', ['in', ['get', 'company'], ['literal', companies]], ['in', ['get', 'status'], ['literal', statuses]]]);
+    setVis('buildings', state.showBuildings);
+    var limit = maxContour();
+    BLD.list.forEach(function (b) {
+      if (b.lon == null) return;
+      var band = buildingBand(b);
+      // Dim buildings outside the largest enabled walking time of the selection.
+      var outside = ISO.status === 'ready' && limit > 0 && !(band !== null && band <= limit);
+      if (prevOutside[b.id] !== outside) { map.setFeatureState({ source: 'buildings', id: b.id }, { outside: outside }); prevOutside[b.id] = outside; }
+    });
+  }
+
+  function pct(n, d) { return d ? Math.round((100 * n) / d) + '%' : '–'; }
+
+  function renderBuildingStats() {
+    var box = $('building-stats');
+    if (!box) return;
+    box.textContent = '';
+    if (BLD.status === 'loading') { box.appendChild(el('p', { className: 'hint', text: 'Loading buildings…' })); return; }
+    if (BLD.status === 'error') { box.appendChild(el('p', { className: 'hint', text: 'Building data unavailable.' })); return; }
+    if (ISO.status !== 'ready') { box.appendChild(el('p', { className: 'hint', text: 'Waiting for walking areas…' })); return; }
+    var secs = Array.from(state.contours).sort(function (a, b) { return a - b; });
+    if (!secs.length) { box.appendChild(el('p', { className: 'hint', text: 'Turn on a walking-time contour to see how many buildings it covers.' })); return; }
+    var table = el('table', { className: 'bstats' });
+    table.appendChild(el('caption', { text: 'Share of each company’s buildings within walking distance of the ' + selection.stationIds.length + ' selected stations' }));
+    table.appendChild(el('thead', null, [el('tr', null, [
+      el('th', { scope: 'col', text: 'Company' }), el('th', { scope: 'col', text: 'Walk' }),
+      el('th', { scope: 'col', text: 'All', title: 'All buildings (standing + development)' }),
+      el('th', { scope: 'col', text: 'Standing' }), el('th', { scope: 'col', text: 'Develop.', title: 'Developments' })
+    ])]));
+    var tbody = el('tbody');
+    C.COMPANIES.forEach(function (c) {
+      if (!state.companies.has(c.name)) return;
+      var bs = BLD.list.filter(function (b) { return b.company === c.name && b.lon != null; });
+      var st = bs.filter(function (b) { return b.status === 'Standing'; });
+      var dv = bs.filter(function (b) { return b.status === 'Development'; });
+      secs.forEach(function (sec, i) {
+        var within = function (arr) { return arr.filter(function (b) { var x = buildingBand(b); return x !== null && x <= sec; }).length; };
+        var a = within(bs), w = within(st), d = within(dv);
+        var cells = [];
+        if (i === 0) cells.push(el('th', { scope: 'rowgroup', rowspan: String(secs.length), className: 'bstats-company' }, [
+          el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.colour } }), c.name,
+          el('span', { className: 'bstats-n', text: bs.length + ' buildings (' + dv.length + ' dev.)' })
+        ]));
+        cells.push(el('td', { text: '≤ ' + sec / 60 + ' min' }));
+        cells.push(el('td', { text: pct(a, bs.length), title: a + ' of ' + bs.length }));
+        cells.push(el('td', { text: pct(w, st.length), title: w + ' of ' + st.length }));
+        cells.push(el('td', { text: pct(d, dv.length), title: d + ' of ' + dv.length }));
+        tbody.appendChild(el('tr', { className: i === 0 ? 'group-start' : null }, cells));
+      });
+    });
+    table.appendChild(tbody);
+    box.appendChild(table);
+    box.appendChild(el('p', { className: 'hint', text: 'A building counts as within N minutes when it lies inside the N-minute walking area of any selected station. Percentages are cumulative (≤ 5 min includes ≤ 1 min). Hover a percentage for counts.' }));
+  }
+
+  function buildCompanyList() {
+    var ul = $('company-list');
+    C.COMPANIES.forEach(function (c) {
+      var id = 'company-' + c.id;
+      var input = el('input', { type: 'checkbox', id: id });
+      input.checked = state.companies.has(c.name);
+      input.addEventListener('change', function () {
+        if (input.checked) state.companies.add(c.name); else state.companies.delete(c.name);
+        applyBuildings(); renderBuildingStats(); buildLegend();
+      });
+      var n = BLD.list.filter(function (b) { return b.company === c.name; }).length;
+      ul.appendChild(el('li', { className: 'line-row' }, [input, el('label', { for: id }, [
+        el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.colour } }),
+        el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.developmentColour } }),
+        el('span', { className: 'line-name', text: c.name }),
+        el('span', { className: 'count', text: n ? n + ' buildings' : '' })
+      ])]));
+    });
+  }
+
+  function openBuildingPopup(id) {
+    var b = BLD.byId[id];
+    if (!b) return;
+    hoverPopup.remove();
+    var c = companyOf(b.company);
+    var band = buildingBand(b);
+    var near = [];
+    Object.keys(b.stations).forEach(function (sid) {
+      if (selectedSet.has(sid) && ISO.stations[sid]) near.push({ name: NET.byId[sid] ? NET.byId[sid].name : sid, sec: b.stations[sid] });
+    });
+    near.sort(function (x, y) { return x.sec - y.sec || x.name.localeCompare(y.name); });
+    var walk = band === null ? 'More than 5 minutes from every selected station' : 'Within ' + band / 60 + ' min of a selected station';
+    var dl = el('dl', null, [
+      el('dt', { text: 'Company' }), el('dd', { text: b.company }),
+      el('dt', { text: 'Status' }), el('dd', { text: b.status === 'Development' ? 'Development (pipeline)' : 'Standing asset' }),
+      el('dt', { text: 'Type' }), el('dd', { text: b.propertyType || '—' }),
+      el('dt', { text: 'Address' }), el('dd', { text: b.street || '—' }),
+      el('dt', { text: 'Walk' }), el('dd', { text: walk }),
+      el('dt', { text: 'Stations' }), el('dd', { text: near.length ? near.map(function (x) { return x.name + ' (' + x.sec / 60 + ' min)'; }).join(', ') : '—' }),
+      el('dt', { text: 'Nearest' }), el('dd', { text: b.nearest ? b.nearest.name + ', ' + b.nearest.distanceM + ' m straight line' : '—' }),
+      el('dt', { text: 'Located' }), el('dd', { text: { building: 'Building-level match', street: 'Street-level match (approximate)', area: 'Area-level match (approximate)' }[b.precision] || b.precision })
+    ]);
+    var body = el('div', { className: 'popup' }, [
+      el('h3', null, [el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': buildingColour(b) } }), b.name]),
+      dl,
+      b.geocoded ? el('p', { className: 'note', text: 'Geocoded as: ' + b.geocoded }) : null
+    ]);
+    if (infoPopup) infoPopup.remove();
+    infoPopup = new maplibregl.Popup({ offset: 10, maxWidth: '320px', focusAfterOpen: true }).setLngLat([b.lon, b.lat]).setDOMContent(body).addTo(map);
+    void c;
+  }
+
+  function loadBuildings() {
+    loadScript('data/buildings.js').then(function () {
+      var d = window.TUBE_BUILDINGS;
+      if (!d || !Array.isArray(d.buildings)) throw new Error('public/data/buildings.js is not valid building data');
+      BLD.list = d.buildings.filter(function (b) { return b && b.id && b.company; });
+      BLD.list.forEach(function (b) { b.stations = b.stations || {}; BLD.byId[b.id] = b; });
+      BLD.meta = d.meta;
+      BLD.status = 'ready';
+      var unlocated = BLD.list.filter(function (b) { return b.lon == null; }).length;
+      if (unlocated) Messages.warning(unlocated + ' building(s) could not be geocoded and are not shown.', 'bld-unlocated');
+    }).catch(function (err) {
+      BLD.status = 'error';
+      Messages.warning('Office building data could not be loaded (' + err.message + '). Run "npm run buildings".', 'bld-load');
+    }).then(function () {
+      buildCompanyList();
+      var src = map.getSource && map.getSource('buildings');
+      if (src) src.setData(buildingsGeoJSON());
+      prevOutside = {};
+      applyBuildings();
+      renderBuildingStats();
+      buildLegend();
+    });
+  }
+
   // ------------------------------------------------------------------- panel
   var lineInputs = {};
   var stationInputs = {}; // id -> [inputs]
   function buildLineList() {
     var list = $('line-list');
-    var lastMode = null;
     C.LINES.forEach(function (line) {
-      if (line.mode !== lastMode) {
-        // Group header per mode, so the Elizabeth line is clearly separate
-        // from the London Underground.
-        var mode = C.MODES.filter(function (m) { return m.id === line.mode; })[0];
-        list.appendChild(el('li', { className: 'mode-heading' }, [
-          el('span', { text: mode.name }),
-          mode.note ? el('span', { className: 'mode-note', text: ' · ' + mode.note }) : null
-        ]));
-        lastMode = line.mode;
-      }
       var inputId = 'line-' + line.id;
       var listId = 'stations-' + line.id;
       var input = el('input', { type: 'checkbox', id: inputId });
@@ -666,6 +834,18 @@
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol', 'aria-hidden': 'true' }), 'Selected station']));
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol interchange', 'aria-hidden': 'true' }), 'Selected interchange']));
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol unselected', 'aria-hidden': 'true' }), 'Station not selected']));
+    if (BLD.status === 'ready') {
+      ul.appendChild(el('li', null, [el('strong', { text: 'Office buildings (dark = standing, light = development)' })]));
+      C.COMPANIES.forEach(function (c) {
+        if (!state.companies.has(c.name)) return;
+        ul.appendChild(el('li', null, [
+          el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.colour } }),
+          el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.developmentColour } }),
+          c.name + ' — standing / development'
+        ]));
+      });
+      ul.appendChild(el('li', null, [el('span', { className: 'dot faded', 'aria-hidden': 'true', style: { '--c': '#888888' } }), 'Faded: outside the selected walking times']));
+    }
     var sel = C.LINES.filter(function (l) { return state.lines.has(l.id); });
     ul.appendChild(el('li', null, [el('strong', { text: 'Selected lines' + (sel.length ? '' : ': none') })]));
     sel.forEach(function (l) {
@@ -703,8 +883,9 @@
   function onStateChange(opts) {
     selection = S.resolveSelection(NET, state);
     selectedSet = new Set(selection.stationIds);
-    if (map.getSource('stations')) { applySelectionToMap(false); applyLayerVisibility(); }
+    if (map.getSource('stations')) { applySelectionToMap(false); applyLayerVisibility(); applyBuildings(); }
     syncPanel();
+    renderBuildingStats();
     if (opts && opts.coverage === false) return;
     if (lastCoverage) renderCoverage(lastCoverage);
     updateCoverage();
@@ -726,7 +907,11 @@
     state.contours = new Set(initialContours());
     state.mode = 'union';
     state.opacity = 0.45;
-    state.showRoutes = state.showContext = state.showStations = true;
+    state.showRoutes = state.showContext = state.showStations = state.showBuildings = true;
+    state.companies = new Set(C.COMPANIES.map(function (c) { return c.name; }));
+    state.statuses = new Set(['Standing', 'Development']);
+    C.COMPANIES.forEach(function (c) { var i = $('company-' + c.id); if (i) i.checked = true; });
+    $('show-buildings').checked = $('show-standing').checked = $('show-developments').checked = true;
     C.CONTOURS.forEach(function (c) { $('contour-' + c.seconds).checked = state.contours.has(c.seconds); });
     document.querySelector('input[name="mode"][value="union"]').checked = true;
     $('opacity').value = '45'; $('opacity-value').textContent = '45%';
@@ -855,9 +1040,20 @@
     hoverPopup.setLngLat([s.lon, s.lat]).setDOMContent(el('div', null, [s.name, el('br'), el('span', { style: { 'font-weight': '400' }, text: lines })])).addTo(map);
   });
   map.on('mouseleave', 'stations', function () { map.getCanvas().style.cursor = ''; hoverPopup.remove(); });
+  map.on('mousemove', 'buildings', function (e) {
+    if (map.queryRenderedFeatures(e.point, { layers: ['stations'] }).length) return;
+    var f = e.features && e.features[0];
+    var b = f && BLD.byId[f.properties.id];
+    if (!b) return;
+    map.getCanvas().style.cursor = 'pointer';
+    hoverPopup.setLngLat([b.lon, b.lat]).setDOMContent(el('div', null, [b.name, el('br'), el('span', { style: { 'font-weight': '400' }, text: b.company + (b.status === 'Development' ? ' · development' : '') })])).addTo(map);
+  });
+  map.on('mouseleave', 'buildings', function () { map.getCanvas().style.cursor = ''; hoverPopup.remove(); });
   map.on('click', function (e) {
     var hits = map.getLayer('stations') ? map.queryRenderedFeatures([[e.point.x - 6, e.point.y - 6], [e.point.x + 6, e.point.y + 6]], { layers: ['stations'] }) : [];
     if (hits.length && state.showStations) { setHighlight(hits[0].properties.id); openStationPopup(hits[0].properties.id); return; }
+    var bh = map.getLayer('buildings') && state.showBuildings ? map.queryRenderedFeatures([[e.point.x - 5, e.point.y - 5], [e.point.x + 5, e.point.y + 5]], { layers: ['buildings'] }) : [];
+    if (bh.length) { openBuildingPopup(bh[0].properties.id); return; }
     if (ISO.status === 'ready' && state.contours.size) areaPopup(e.lngLat);
   });
 
@@ -909,6 +1105,10 @@
   $('opacity').addEventListener('input', function () { $('opacity-value').textContent = this.value + '%'; setOpacity(Number(this.value) / 100); });
   [['show-routes', 'showRoutes'], ['show-context', 'showContext'], ['show-stations', 'showStations']].forEach(function (p) {
     $(p[0]).addEventListener('change', function () { state[p[1]] = this.checked; applyLayerVisibility(); });
+  });
+  $('show-buildings').addEventListener('change', function () { state.showBuildings = this.checked; applyBuildings(); });
+  [['show-standing', 'Standing'], ['show-developments', 'Development']].forEach(function (p) {
+    $(p[0]).addEventListener('change', function () { if (this.checked) state.statuses.add(p[1]); else state.statuses.delete(p[1]); applyBuildings(); });
   });
 
   function setPanel(open) {
@@ -974,7 +1174,7 @@
 
   // ------------------------------------------------- progressive data loading
   function loadScript(src) {
-    var inlined = { 'data/isochrones.js': 'TUBE_ISOCHRONES', 'data/coverage.js': 'TUBE_COVERAGE' }[src];
+    var inlined = { 'data/isochrones.js': 'TUBE_ISOCHRONES', 'data/coverage.js': 'TUBE_COVERAGE', 'data/buildings.js': 'TUBE_BUILDINGS' }[src];
     if (window.TUBE_SINGLE_FILE && inlined) return window[inlined] ? Promise.resolve() : Promise.reject(new Error(src + ' was not bundled'));
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');
@@ -1020,6 +1220,7 @@
       renderProvenance();
       renderStats();
       onStateChange();
+      loadBuildings();
     });
   }
 
@@ -1080,5 +1281,5 @@
   loadServerConfig();
 
   // Exposed for debugging and automated UI checks only.
-  window.TubeWalkApp = { state: state, getSelection: function () { return selection; }, map: map, iso: ISO };
+  window.TubeWalkApp = { state: state, getSelection: function () { return selection; }, map: map, iso: ISO, buildings: BLD };
 })();

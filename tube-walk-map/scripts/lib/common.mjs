@@ -32,6 +32,13 @@ export const paths = {
   isoFailures: path.join(DATA_DIR, 'isochrones', '_failures.json'),
   isochrones: path.join(DATA_DIR, 'isochrones.geojson'),
   unions: path.join(DATA_DIR, 'coverage-unions.geojson'),
+  officesXlsx: path.join(DATA_DIR, 'London_office_data.xlsx'),
+  buildingsClean: path.join(DATA_DIR, 'buildings.clean.json'),
+  geocodeCache: path.join(DATA_DIR, 'geocode-cache.json'),
+  geocodeOverrides: path.join(DATA_DIR, 'geocode-overrides.json'),
+  buildings: path.join(DATA_DIR, 'buildings.json'),
+  buildingsGeojson: path.join(DATA_DIR, 'buildings.geojson'),
+  publicBuildings: path.join(PUBLIC_DATA_DIR, 'buildings.js'),
   publicNetwork: path.join(PUBLIC_DATA_DIR, 'network.js'),
   publicIsochrones: path.join(PUBLIC_DATA_DIR, 'isochrones.js'),
   publicCoverage: path.join(PUBLIC_DATA_DIR, 'coverage.js')

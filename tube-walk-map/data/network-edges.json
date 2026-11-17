@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-17T12:45:37.190Z",
+    "generatedAt": "2026-11-17T15:32:36.211Z",
     "topology": {
       "source": "TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound} (London Underground lines and the Elizabeth line)",
       "url": "https://api.tfl.gov.uk/",
@@ -16,7 +16,7 @@
       "coordinateSystem": "EPSG:27700 (converted to WGS84)",
       "records": 302
     },
-    "overridesApplied": 1
+    "overridesApplied": 3
   },
   "edges": [
     {
@@ -6094,26 +6094,6 @@
     },
     {
       "a": "940GZZLULVT",
-      "b": "940GZZLUSTD",
-      "lines": [
-        {
-          "line": "elizabeth",
-          "directions": [
-            "inbound",
-            "outbound"
-          ],
-          "branchIds": [
-            "inbound:4",
-            "outbound:16"
-          ]
-        }
-      ],
-      "aName": "Liverpool Street",
-      "bName": "Stratford",
-      "lengthM": 6112
-    },
-    {
-      "a": "940GZZLULVT",
       "b": "940GZZLUWPL",
       "lines": [
         {
@@ -8556,7 +8536,7 @@
     },
     "elizabeth": {
       "stationCount": 41,
-      "edgeCount": 41,
+      "edgeCount": 40,
       "termini": [
         {
           "id": "910GABWDXR",
@@ -8588,16 +8568,6 @@
         {
           "id": "940GZZLUHRC",
           "name": "Heathrow Terminals 2 & 3",
-          "degree": 3
-        },
-        {
-          "id": "940GZZLULVT",
-          "name": "Liverpool Street",
-          "degree": 3
-        },
-        {
-          "id": "940GZZLUSTD",
-          "name": "Stratford",
           "degree": 3
         },
         {

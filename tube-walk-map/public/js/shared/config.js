@@ -8,8 +8,8 @@
  * section 5 "London Underground line colours" for the Underground lines and
  * section 3 "Mode colours" for the Elizabeth line (RGB 96 57 158).
  *
- * The Elizabeth line is not part of the London Underground. It is included as
- * a separate mode ("elizabeth-line") and is grouped separately in the UI.
+ * The Elizabeth line is shown as a line alongside the Underground lines. Its
+ * `mode` is kept only for data handling (TfL API mode name, validation limits).
  */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -64,7 +64,7 @@
 
   var MODES = [
     { id: 'tube', name: 'London Underground', tflMode: 'tube' },
-    { id: 'elizabeth-line', name: 'Elizabeth line', tflMode: 'elizabeth-line', note: 'Not part of the London Underground' }
+    { id: 'elizabeth-line', name: 'Elizabeth line', tflMode: 'elizabeth-line' }
   ];
 
   // Walking-time contours. Colours are a teal-green sequential ramp. The
@@ -77,7 +77,25 @@
     { seconds: 300, minutes: 5, label: '5 minutes', fill: '#9ED9CC', outline: '#4F9E90', dash: [1, 2] }
   ];
 
+  // Office portfolio companies. Each company has its own colour; its
+  // development pipeline uses the same hue mixed 45% towards white ("a bit
+  // lighter"). Hues were chosen to stand apart from each other and from the
+  // teal walking-area fills; points always have a dark outline.
+  function lighten(rgb, t) { return rgb.map(function (v) { return Math.round(v + (255 - v) * t); }); }
+  var COMPANIES = [
+    { id: 'landsec', name: 'Landsec', rgb: [232, 113, 10] },
+    { id: 'gpe', name: 'Great Portland Estates', rgb: [194, 24, 91] },
+    { id: 'british-land', name: 'British Land', rgb: [21, 101, 192] },
+    { id: 'derwent', name: 'Derwent London', rgb: [143, 108, 0] }
+  ].map(function (c) {
+    return Object.freeze({ id: c.id, name: c.name, colour: hex(c.rgb), developmentColour: hex(lighten(c.rgb, 0.45)) });
+  });
+  var COMPANY_BY_NAME = {};
+  COMPANIES.forEach(function (c) { COMPANY_BY_NAME[c.name] = c; });
+
   return Object.freeze({
+    COMPANIES: Object.freeze(COMPANIES),
+    COMPANY_BY_NAME: Object.freeze(COMPANY_BY_NAME),
     LINES: Object.freeze(LINES),
     LINE_BY_ID: Object.freeze(LINE_BY_ID),
     LINE_ID_BY_NAME: Object.freeze(LINE_ID_BY_NAME),

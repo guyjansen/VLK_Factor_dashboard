@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T12:48:53.532Z",
+  "generatedAt": "2026-11-17T15:32:43.450Z",
   "status": "warnings",
   "errors": [],
   "warnings": [
@@ -12,9 +12,9 @@
       "tube": 272,
       "elizabeth-line": 41
     },
-    "tflStopsJoined": 318,
+    "tflStopsJoined": 317,
     "interchanges": 84,
-    "edges": 351,
+    "edges": 350,
     "sharedEdges": 59
   },
   "unmatchedStations": {
@@ -102,7 +102,6 @@
       {
         "name": "Liverpool Street",
         "stopIds": [
-          "910GLIVST",
           "910GLIVSTLL",
           "940GZZLULVT"
         ]
@@ -288,6 +287,22 @@
       "reason": "The TfL Metropolitan outbound sequence has a Wembley Park -> Willesden Green -> Finchley Road branch (branchId 14) next to the correct non-stop Wembley Park -> Finchley Road branch (branchId 13). Metropolitan trains run through Willesden Green without stopping. The inbound sequence goes straight from Finchley Road to Wembley Park, and the supplied CSV lists Willesden Green as Jubilee only. Removing the stop collapses branch 14 into the existing Wembley Park - Finchley Road link, so no connection is invented.",
       "direction": "outbound",
       "branchId": 14
+    },
+    {
+      "line": "elizabeth",
+      "stopId": "910GLIVST",
+      "stopName": "London Liverpool Street (main-line platforms)",
+      "reason": "Requested correction: on this map the Elizabeth line's eastern branches leave the central tunnel at Whitechapel, one towards Stratford/Shenfield and one towards Canary Wharf/Abbey Wood. TfL's Route Sequence data also lists a Shenfield service into the main-line platforms at London Liverpool Street (Stratford -> Liverpool Street non-stop), which drew an extra direct Liverpool Street - Stratford link. Removing that main-line platform stop deletes only that link; Liverpool Street stays on the line through its tunnel platforms (910GLIVSTLL), and no new connection is invented.",
+      "direction": "outbound",
+      "branchId": 16
+    },
+    {
+      "line": "elizabeth",
+      "stopId": "910GLIVST",
+      "stopName": "London Liverpool Street (main-line platforms)",
+      "reason": "Requested correction: on this map the Elizabeth line's eastern branches leave the central tunnel at Whitechapel, one towards Stratford/Shenfield and one towards Canary Wharf/Abbey Wood. TfL's Route Sequence data also lists a Shenfield service into the main-line platforms at London Liverpool Street (Stratford -> Liverpool Street non-stop), which drew an extra direct Liverpool Street - Stratford link. Removing that main-line platform stop deletes only that link; Liverpool Street stays on the line through its tunnel platforms (910GLIVSTLL), and no new connection is invented.",
+      "direction": "inbound",
+      "branchId": 4
     }
   ],
   "unusedTopologyOverrides": [],
@@ -475,7 +490,7 @@
       "elizabeth": {
         "name": "Elizabeth line",
         "stations": 41,
-        "edges": 41,
+        "edges": 40,
         "components": 1,
         "termini": [
           "Abbey Wood",
@@ -487,8 +502,6 @@
         "junctions": [
           "Hayes & Harlington (3)",
           "Heathrow Terminals 2 & 3 (3)",
-          "Liverpool Street (3)",
-          "Stratford (3)",
           "Whitechapel (3)"
         ],
         "singleDirectionEdges": []

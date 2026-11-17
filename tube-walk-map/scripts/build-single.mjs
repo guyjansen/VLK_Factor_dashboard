@@ -25,7 +25,7 @@ let html = read('index.html');
 html = html.replace(/<link rel="stylesheet" href="([^"]+)">/g, (_, href) => `<style>\n${read(href).replace(/<\/style/gi, '<\\/style')}\n</style>`);
 
 // Data loaded lazily by the normal app is bundled up front here.
-const extra = ['data/isochrones.js', 'data/coverage.js'];
+const extra = ['data/isochrones.js', 'data/coverage.js', 'data/buildings.js'];
 html = html.replace(/<script src="([^"]+)"><\/script>/g, (_, src) => {
   if (src === 'config.js') src = 'config.example.js';
   let block = `<script>\n${safeScript(read(src))}\n</script>`;

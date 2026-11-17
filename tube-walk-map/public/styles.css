@@ -266,3 +266,19 @@ body.panel-collapsed .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib { max
 .mode-note { font-weight: 400; text-transform: none; letter-spacing: 0; }
 .h1-sub { font-size: 0.8rem; font-weight: 400; opacity: 0.9; margin-left: 6px; }
 @media (max-width: 760px) { .h1-sub { display: none; } }
+
+/* Office buildings */
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--c); border: 1.5px solid #1a1d21; flex: 0 0 auto; vertical-align: middle; margin-right: 2px; }
+:root[data-theme="dark"] .dot { border-color: #ffffff; }
+.dot.faded { opacity: 0.35; }
+.popup h3 .dot { margin-right: 6px; }
+.building-stats { margin-top: 8px; }
+.bstats { width: 100%; border-collapse: collapse; font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+.bstats caption { text-align: left; font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
+.bstats th, .bstats td { padding: 3px 4px; text-align: right; border-bottom: 1px solid var(--surface-2); }
+.bstats thead th { color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+.bstats th:first-child, .bstats td:first-child { text-align: left; }
+.bstats .bstats-company { text-align: left; font-weight: 600; vertical-align: top; }
+.bstats .bstats-n { display: block; font-weight: 400; color: var(--muted); font-size: 0.72rem; }
+.bstats tr.group-start th, .bstats tr.group-start td { border-top: 1px solid var(--border); }
+.bstats td { white-space: nowrap; }

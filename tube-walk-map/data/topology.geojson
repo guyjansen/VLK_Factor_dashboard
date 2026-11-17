@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "generatedAt": "2026-11-17T12:45:37.190Z",
+    "generatedAt": "2026-11-17T15:32:36.211Z",
     "topology": {
       "source": "TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound} (London Underground lines and the Elizabeth line)",
       "url": "https://api.tfl.gov.uk/",
@@ -17,7 +17,7 @@
       "coordinateSystem": "EPSG:27700 (converted to WGS84)",
       "records": 302
     },
-    "overridesApplied": 1
+    "overridesApplied": 3
   },
   "features": [
     {
@@ -9528,35 +9528,6 @@
           [
             -0.0893115732543296,
             51.51836305206526
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "line": "elizabeth",
-        "lineName": "Elizabeth line",
-        "colour": "#60399E",
-        "from": "940GZZLULVT",
-        "to": "940GZZLUSTD",
-        "fromName": "Liverpool Street",
-        "toName": "Stratford",
-        "directions": "inbound,outbound",
-        "sharedBy": 1,
-        "slot": 0,
-        "lengthM": 6112
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -0.08321334733446416,
-            51.51735236756309
-          ],
-          [
-            -0.0038045314249806317,
-            51.54145647159322
           ]
         ]
       }
