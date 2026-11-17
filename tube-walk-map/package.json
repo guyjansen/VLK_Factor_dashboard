@@ -20,7 +20,8 @@
     "data:full": "npm run fetch-topology && npm run data && npm run isochrones && npm run unions && npm run validate",
     "dev": "node --env-file-if-exists=.env --watch-path=server --watch-path=scripts/lib server/server.mjs",
     "start": "node --env-file-if-exists=.env server/server.mjs",
-    "build": "node scripts/build.mjs",
+    "build": "node scripts/build.mjs && node scripts/build-single.mjs",
+    "build:single": "node scripts/build-single.mjs",
     "test": "node --test \"tests/*.test.mjs\""
   },
   "dependencies": {

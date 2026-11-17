@@ -167,6 +167,10 @@ Production build (checks the data, then writes a self-contained static site to `
 npm run build
 ```
 
+### Shareable single-file version
+
+`npm run build` also writes **`dist/tube-walk-map.html`** (~2.5 MB). It is one self-contained file: styles, MapLibre, the app and all station, line and walking-area data are inlined. Email it or put it on any web host, and it opens in a browser with no install. Only the basemap tiles come from the internet (OpenFreeMap); offline, the map uses a plain background. Rebuild just this file with `npm run build:single`. The file is committed, so it is also in the repository at `tube-walk-map/dist/tube-walk-map.html`.
+
 ## 6. Data preparation
 
 ```bash

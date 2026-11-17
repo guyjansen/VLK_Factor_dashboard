@@ -378,7 +378,8 @@
   var unionCache = new Map(); // key -> {seconds -> {geometry, areaM2, skipped}}
   var lastCoverage = null;    // {seconds -> result}
   var worker = null;
-  var workerBroken = IS_FILE || typeof Worker === 'undefined';
+  // Single-file builds have no separate worker script; unions then run on the main thread.
+  var workerBroken = IS_FILE || !!window.TUBE_SINGLE_FILE || typeof Worker === 'undefined';
   var jobSeq = 0;
   var pending = null;         // {jobId, resolve, reject}
   var busyTimer = null;
@@ -961,6 +962,8 @@
 
   // ------------------------------------------------- progressive data loading
   function loadScript(src) {
+    var inlined = { 'data/isochrones.js': 'TUBE_ISOCHRONES', 'data/coverage.js': 'TUBE_COVERAGE' }[src];
+    if (window.TUBE_SINGLE_FILE && inlined) return window[inlined] ? Promise.resolve() : Promise.reject(new Error(src + ' was not bundled'));
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');
       s.src = src;
@@ -1060,7 +1063,7 @@
   buildContourToggles();
   syncPanel();
   renderProvenance();
-  if (IS_FILE) Messages.info('Opened from disk: unions run on the main thread (Web Workers need http). Use "npm start" for the best performance.', 'file-mode');
+  if (IS_FILE && !window.TUBE_SINGLE_FILE) Messages.info('Opened from disk: unions run on the main thread (Web Workers need http). Use "npm start" for the best performance.', 'file-mode');
   map.once('load', function () { loadIsochrones(); });
   loadServerConfig();
 
