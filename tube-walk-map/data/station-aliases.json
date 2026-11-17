@@ -1,0 +1,22 @@
+{
+  "description": "Documented, reviewed exceptions used when joining data/stations.csv to TfL topology. Every entry needs a reason. Names alone never merge records: an alias must also pass the distance check in build-network.mjs.",
+  "maxJoinDistanceM": 500,
+  "aliases": [
+    {
+      "csvName": "Heathrow Terminals 1-2-3",
+      "stopId": "940GZZLUHRC",
+      "reason": "TfL renamed the station 'Heathrow Terminals 2 & 3' after Terminal 1 closed (2015). Same physical station; CSV uses the old name."
+    }
+  ],
+  "notes": {
+    "940GZZLUPAC": "The CSV has two 'Paddington' records (OBJECTID 125 and 171, about 120 m apart, identical line lists). TfL topology has one Paddington station for the Bakerloo, Circle and District lines, so both records join to it: the record nearest the TfL coordinate is used and the other is kept as a duplicate record. The CSV lists Hammersmith & City for these records, but H&C trains use the separate Paddington (H&C Line) station.",
+    "940GZZLUPAH": "Paddington (H&C Line) is a separate station (own NaPTAN id 940GZZLUPAH) served by the Circle and Hammersmith & City lines. It is not merged with the main Paddington station.",
+    "940GZZLUERC": "Edgware Road (Circle Line) and Edgware Road (Bakerloo) are two separate stations about 170 m apart with no internal interchange, so they are kept apart. This station is served by the Circle, District and Hammersmith & City lines, although the CSV lists only Circle.",
+    "940GZZLUERB": "Edgware Road (Bakerloo) is a separate station from Edgware Road (Circle Line).",
+    "940GZZLUHSD": "Hammersmith has two separate stations: this one (District and Piccadilly) and Hammersmith (H&C Line) on the other side of the road.",
+    "940GZZLUHSC": "Hammersmith (H&C Line) is the western terminus of the Hammersmith & City line and of the Circle line. The CSV lists only Hammersmith & City.",
+    "940GZZLUHRC": "Named 'Heathrow Terminals 1-2-3' in the CSV and 'Heathrow Terminals 2 & 3' by TfL.",
+    "940GZZLUSBC": "Shepherd's Bush (Central) and Shepherd's Bush Market (Circle and Hammersmith & City) are different stations.",
+    "940GZZLUWIG": "Willesden Green is served by the Jubilee line only. TfL's Metropolitan outbound route sequence lists it, but it is removed from the Metropolitan line by data/topology-overrides.json."
+  }
+}

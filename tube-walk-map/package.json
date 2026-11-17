@@ -1,0 +1,31 @@
+{
+  "name": "tube-walk-map",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unofficial interactive map of 1-, 2- and 5-minute pedestrian-network walking areas around London Underground stations.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "scripts": {
+    "postinstall": "node scripts/vendor.mjs",
+    "vendor": "node scripts/vendor.mjs",
+    "prepare-stations": "node scripts/prepare-stations.mjs",
+    "fetch-topology": "node --env-file-if-exists=.env scripts/fetch-topology.mjs",
+    "build-network": "node scripts/build-network.mjs",
+    "validate": "node scripts/validate-network.mjs",
+    "isochrones": "node --env-file-if-exists=.env scripts/generate-isochrones.mjs",
+    "unions": "node scripts/generate-unions.mjs",
+    "data": "npm run prepare-stations && npm run build-network && npm run validate",
+    "data:full": "npm run fetch-topology && npm run data && npm run isochrones && npm run unions && npm run validate",
+    "dev": "node --env-file-if-exists=.env --watch-path=server --watch-path=scripts/lib server/server.mjs",
+    "start": "node --env-file-if-exists=.env server/server.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test \"tests/*.test.mjs\""
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "maplibre-gl": "5.23.0",
+    "polygon-clipping": "0.15.7"
+  }
+}

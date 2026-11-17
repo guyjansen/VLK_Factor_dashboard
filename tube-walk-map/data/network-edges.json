@@ -1,0 +1,7753 @@
+{
+  "meta": {
+    "generatedAt": "2026-11-17T11:42:26.778Z",
+    "topology": {
+      "source": "TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound}",
+      "url": "https://api.tfl.gov.uk/",
+      "retrievedAt": "2026-11-17T11:41:02.511Z",
+      "licence": {
+        "name": "Transport for London open data terms (Powered by TfL Open Data)",
+        "url": "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service",
+        "attribution": "Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019]."
+      }
+    },
+    "stations": {
+      "source": "data/stations.csv",
+      "records": 273
+    },
+    "overridesApplied": 1
+  },
+  "edges": [
+    {
+      "a": "940GZZBPSUST",
+      "b": "940GZZNEUGST",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:7",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Battersea Power Station",
+      "bName": "Nine Elms",
+      "lengthM": 966
+    },
+    {
+      "a": "940GZZLUACT",
+      "b": "940GZZLUCWP",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Acton Town",
+      "bName": "Chiswick Park",
+      "lengthM": 1190
+    },
+    {
+      "a": "940GZZLUACT",
+      "b": "940GZZLUECM",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:10"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Acton Town",
+      "bName": "Ealing Common",
+      "lengthM": 951
+    },
+    {
+      "a": "940GZZLUACT",
+      "b": "940GZZLUSEA",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Acton Town",
+      "bName": "South Ealing",
+      "lengthM": 1912
+    },
+    {
+      "a": "940GZZLUACT",
+      "b": "940GZZLUTNG",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Acton Town",
+      "bName": "Turnham Green",
+      "lengthM": 1959
+    },
+    {
+      "a": "940GZZLUACY",
+      "b": "940GZZLUHGT",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:9",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "Archway",
+      "bName": "Highgate",
+      "lengthM": 1677
+    },
+    {
+      "a": "940GZZLUACY",
+      "b": "940GZZLUTFP",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:9",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "Archway",
+      "bName": "Tufnell Park",
+      "lengthM": 887
+    },
+    {
+      "a": "940GZZLUADE",
+      "b": "940GZZLULVT",
+      "lines": [
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Aldgate East",
+      "bName": "Liverpool Street",
+      "lengthM": 862
+    },
+    {
+      "a": "940GZZLUADE",
+      "b": "940GZZLUTWH",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Aldgate East",
+      "bName": "Tower Hill",
+      "lengthM": 714
+    },
+    {
+      "a": "940GZZLUADE",
+      "b": "940GZZLUWPL",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Aldgate East",
+      "bName": "Whitechapel",
+      "lengthM": 851
+    },
+    {
+      "a": "940GZZLUAGL",
+      "b": "940GZZLUKSX",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Angel",
+      "bName": "King's Cross St. Pancras",
+      "lengthM": 1400
+    },
+    {
+      "a": "940GZZLUAGL",
+      "b": "940GZZLUODS",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Angel",
+      "bName": "Old Street",
+      "lengthM": 1380
+    },
+    {
+      "a": "940GZZLUALD",
+      "b": "940GZZLULVT",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Aldgate",
+      "bName": "Liverpool Street",
+      "lengthM": 601
+    },
+    {
+      "a": "940GZZLUALD",
+      "b": "940GZZLUTWH",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        }
+      ],
+      "aName": "Aldgate",
+      "bName": "Tower Hill",
+      "lengthM": 508
+    },
+    {
+      "a": "940GZZLUALP",
+      "b": "940GZZLUPKR",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Alperton",
+      "bName": "Park Royal",
+      "lengthM": 1932
+    },
+    {
+      "a": "940GZZLUALP",
+      "b": "940GZZLUSUT",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Alperton",
+      "bName": "Sudbury Town",
+      "lengthM": 1565
+    },
+    {
+      "a": "940GZZLUAMS",
+      "b": "940GZZLUCAL",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Amersham",
+      "bName": "Chalfont & Latimer",
+      "lengthM": 3310
+    },
+    {
+      "a": "940GZZLUASG",
+      "b": "940GZZLUBDS",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Arnos Grove",
+      "bName": "Bounds Green",
+      "lengthM": 1205
+    },
+    {
+      "a": "940GZZLUASG",
+      "b": "940GZZLUSGT",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Arnos Grove",
+      "bName": "Southgate",
+      "lengthM": 1795
+    },
+    {
+      "a": "940GZZLUASL",
+      "b": "940GZZLUFPK",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Arsenal",
+      "bName": "Finsbury Park",
+      "lengthM": 663
+    },
+    {
+      "a": "940GZZLUASL",
+      "b": "940GZZLUHWY",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Arsenal",
+      "bName": "Holloway Road",
+      "lengthM": 772
+    },
+    {
+      "a": "940GZZLUBBB",
+      "b": "940GZZLUBWR",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Bromley-by-Bow",
+      "bName": "Bow Road",
+      "lengthM": 980
+    },
+    {
+      "a": "940GZZLUBBB",
+      "b": "940GZZLUWHM",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Bromley-by-Bow",
+      "bName": "West Ham",
+      "lengthM": 1157
+    },
+    {
+      "a": "940GZZLUBBN",
+      "b": "940GZZLUFCN",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Barbican",
+      "bName": "Farringdon",
+      "lengthM": 443
+    },
+    {
+      "a": "940GZZLUBBN",
+      "b": "940GZZLUMGT",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Barbican",
+      "bName": "Moorgate",
+      "lengthM": 688
+    },
+    {
+      "a": "940GZZLUBDS",
+      "b": "940GZZLUWOG",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Bounds Green",
+      "bName": "Wood Green",
+      "lengthM": 1462
+    },
+    {
+      "a": "940GZZLUBEC",
+      "b": "940GZZLUDGY",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Becontree",
+      "bName": "Dagenham Heathway",
+      "lengthM": 1403
+    },
+    {
+      "a": "940GZZLUBEC",
+      "b": "940GZZLUUPY",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Becontree",
+      "bName": "Upney",
+      "lengthM": 1797
+    },
+    {
+      "a": "940GZZLUBKE",
+      "b": "940GZZLUFLP",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Barkingside",
+      "bName": "Fairlop",
+      "lengthM": 1109
+    },
+    {
+      "a": "940GZZLUBKE",
+      "b": "940GZZLUNBP",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Barkingside",
+      "bName": "Newbury Park",
+      "lengthM": 1115
+    },
+    {
+      "a": "940GZZLUBKF",
+      "b": "940GZZLUMSH",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Blackfriars",
+      "bName": "Mansion House",
+      "lengthM": 659
+    },
+    {
+      "a": "940GZZLUBKF",
+      "b": "940GZZLUTMP",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Blackfriars",
+      "bName": "Temple",
+      "lengthM": 739
+    },
+    {
+      "a": "940GZZLUBKG",
+      "b": "940GZZLUEHM",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Barking",
+      "bName": "East Ham",
+      "lengthM": 1893
+    },
+    {
+      "a": "940GZZLUBKG",
+      "b": "940GZZLUUPY",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Barking",
+      "bName": "Upney",
+      "lengthM": 1488
+    },
+    {
+      "a": "940GZZLUBKH",
+      "b": "940GZZLULGN",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Buckhurst Hill",
+      "bName": "Loughton",
+      "lengthM": 1803
+    },
+    {
+      "a": "940GZZLUBKH",
+      "b": "940GZZLUWOF",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Buckhurst Hill",
+      "bName": "Woodford",
+      "lengthM": 2303
+    },
+    {
+      "a": "940GZZLUBLG",
+      "b": "940GZZLULVT",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Bethnal Green",
+      "bName": "Liverpool Street",
+      "lengthM": 2259
+    },
+    {
+      "a": "940GZZLUBLG",
+      "b": "940GZZLUMED",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Bethnal Green",
+      "bName": "Mile End",
+      "lengthM": 1464
+    },
+    {
+      "a": "940GZZLUBLM",
+      "b": "940GZZLUCPS",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Balham",
+      "bName": "Clapham South",
+      "lengthM": 1134
+    },
+    {
+      "a": "940GZZLUBLM",
+      "b": "940GZZLUTBC",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Balham",
+      "bName": "Tooting Bec",
+      "lengthM": 972
+    },
+    {
+      "a": "940GZZLUBLR",
+      "b": "940GZZLUTMH",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Blackhorse Road",
+      "bName": "Tottenham Hale",
+      "lengthM": 1276
+    },
+    {
+      "a": "940GZZLUBLR",
+      "b": "940GZZLUWWL",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Blackhorse Road",
+      "bName": "Walthamstow Central",
+      "lengthM": 1461
+    },
+    {
+      "a": "940GZZLUBMY",
+      "b": "940GZZLUCWR",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Bermondsey",
+      "bName": "Canada Water",
+      "lengthM": 995
+    },
+    {
+      "a": "940GZZLUBMY",
+      "b": "940GZZLULNB",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Bermondsey",
+      "bName": "London Bridge",
+      "lengthM": 1932
+    },
+    {
+      "a": "940GZZLUBND",
+      "b": "940GZZLUBST",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Bond Street",
+      "bName": "Baker Street",
+      "lengthM": 1086
+    },
+    {
+      "a": "940GZZLUBND",
+      "b": "940GZZLUGPK",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Bond Street",
+      "bName": "Green Park",
+      "lengthM": 970
+    },
+    {
+      "a": "940GZZLUBND",
+      "b": "940GZZLUMBA",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Bond Street",
+      "bName": "Marble Arch",
+      "lengthM": 538
+    },
+    {
+      "a": "940GZZLUBND",
+      "b": "940GZZLUOXC",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Bond Street",
+      "bName": "Oxford Circus",
+      "lengthM": 567
+    },
+    {
+      "a": "940GZZLUBNK",
+      "b": "940GZZLULNB",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Bank",
+      "bName": "London Bridge",
+      "lengthM": 931
+    },
+    {
+      "a": "940GZZLUBNK",
+      "b": "940GZZLULVT",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Bank",
+      "bName": "Liverpool Street",
+      "lengthM": 588
+    },
+    {
+      "a": "940GZZLUBNK",
+      "b": "940GZZLUMGT",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Bank",
+      "bName": "Moorgate",
+      "lengthM": 550
+    },
+    {
+      "a": "940GZZLUBNK",
+      "b": "940GZZLUSPU",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Bank",
+      "bName": "St. Paul's",
+      "lengthM": 620
+    },
+    {
+      "a": "940GZZLUBNK",
+      "b": "940GZZLUWLO",
+      "lines": [
+        {
+          "line": "waterloo-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Bank",
+      "bName": "Waterloo",
+      "lengthM": 2087
+    },
+    {
+      "a": "940GZZLUBOR",
+      "b": "940GZZLUEAC",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Borough",
+      "bName": "Elephant & Castle",
+      "lengthM": 807
+    },
+    {
+      "a": "940GZZLUBOR",
+      "b": "940GZZLULNB",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Borough",
+      "bName": "London Bridge",
+      "lengthM": 500
+    },
+    {
+      "a": "940GZZLUBOS",
+      "b": "940GZZLUNFD",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Boston Manor",
+      "bName": "Northfields",
+      "lengthM": 1002
+    },
+    {
+      "a": "940GZZLUBOS",
+      "b": "940GZZLUOSY",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Boston Manor",
+      "bName": "Osterley",
+      "lengthM": 2411
+    },
+    {
+      "a": "940GZZLUBSC",
+      "b": "940GZZLUECT",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Barons Court",
+      "bName": "Earl's Court",
+      "lengthM": 1501
+    },
+    {
+      "a": "940GZZLUBSC",
+      "b": "940GZZLUHSD",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:13"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Barons Court",
+      "bName": "Hammersmith (Dist&Picc Line)",
+      "lengthM": 609
+    },
+    {
+      "a": "940GZZLUBSC",
+      "b": "940GZZLUWKN",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Barons Court",
+      "bName": "West Kensington",
+      "lengthM": 641
+    },
+    {
+      "a": "940GZZLUBST",
+      "b": "940GZZLUERC",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Baker Street",
+      "bName": "Edgware Road (Circle Line)",
+      "lengthM": 819
+    },
+    {
+      "a": "940GZZLUBST",
+      "b": "940GZZLUFYR",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Baker Street",
+      "bName": "Finchley Road",
+      "lengthM": 3166
+    },
+    {
+      "a": "940GZZLUBST",
+      "b": "940GZZLUGPS",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Baker Street",
+      "bName": "Great Portland Street",
+      "lengthM": 888
+    },
+    {
+      "a": "940GZZLUBST",
+      "b": "940GZZLUMYB",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Baker Street",
+      "bName": "Marylebone",
+      "lengthM": 506
+    },
+    {
+      "a": "940GZZLUBST",
+      "b": "940GZZLURGP",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Baker Street",
+      "bName": "Regent's Park",
+      "lengthM": 744
+    },
+    {
+      "a": "940GZZLUBST",
+      "b": "940GZZLUSJW",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Baker Street",
+      "bName": "St. John's Wood",
+      "lengthM": 1800
+    },
+    {
+      "a": "940GZZLUBTK",
+      "b": "940GZZLUCND",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Burnt Oak",
+      "bName": "Colindale",
+      "lengthM": 1272
+    },
+    {
+      "a": "940GZZLUBTK",
+      "b": "940GZZLUEGW",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Burnt Oak",
+      "bName": "Edgware",
+      "lengthM": 1411
+    },
+    {
+      "a": "940GZZLUBTX",
+      "b": "940GZZLUGGN",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Brent Cross",
+      "bName": "Golders Green",
+      "lengthM": 1450
+    },
+    {
+      "a": "940GZZLUBTX",
+      "b": "940GZZLUHCL",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Brent Cross",
+      "bName": "Hendon Central",
+      "lengthM": 1130
+    },
+    {
+      "a": "940GZZLUBWR",
+      "b": "940GZZLUMED",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Bow Road",
+      "bName": "Mile End",
+      "lengthM": 621
+    },
+    {
+      "a": "940GZZLUBWT",
+      "b": "940GZZLUNHG",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Bayswater",
+      "bName": "Notting Hill Gate",
+      "lengthM": 666
+    },
+    {
+      "a": "940GZZLUBWT",
+      "b": "940GZZLUPAC",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Bayswater",
+      "bName": "Paddington",
+      "lengthM": 951
+    },
+    {
+      "a": "940GZZLUBXN",
+      "b": "940GZZLUSKW",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Brixton",
+      "bName": "Stockwell",
+      "lengthM": 1165
+    },
+    {
+      "a": "940GZZLUBZP",
+      "b": "940GZZLUCFM",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Belsize Park",
+      "bName": "Chalk Farm",
+      "lengthM": 1097
+    },
+    {
+      "a": "940GZZLUBZP",
+      "b": "940GZZLUHTD",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Belsize Park",
+      "bName": "Hampstead",
+      "lengthM": 1187
+    },
+    {
+      "a": "940GZZLUCAL",
+      "b": "940GZZLUCSM",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Chalfont & Latimer",
+      "bName": "Chesham",
+      "lengthM": 5395
+    },
+    {
+      "a": "940GZZLUCAL",
+      "b": "940GZZLUCYD",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "Chalfont & Latimer",
+      "bName": "Chorleywood",
+      "lengthM": 3285
+    },
+    {
+      "a": "940GZZLUCAR",
+      "b": "940GZZLUHWY",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Caledonian Road",
+      "bName": "Holloway Road",
+      "lengthM": 593
+    },
+    {
+      "a": "940GZZLUCAR",
+      "b": "940GZZLUKSX",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Caledonian Road",
+      "bName": "King's Cross St. Pancras",
+      "lengthM": 2129
+    },
+    {
+      "a": "940GZZLUCFM",
+      "b": "940GZZLUCTN",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Chalk Farm",
+      "bName": "Camden Town",
+      "lengthM": 863
+    },
+    {
+      "a": "940GZZLUCGN",
+      "b": "940GZZLUHBN",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Covent Garden",
+      "bName": "Holborn",
+      "lengthM": 564
+    },
+    {
+      "a": "940GZZLUCGN",
+      "b": "940GZZLULSQ",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Covent Garden",
+      "bName": "Leicester Square",
+      "lengthM": 336
+    },
+    {
+      "a": "940GZZLUCGT",
+      "b": "940GZZLUNGW",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Canning Town",
+      "bName": "North Greenwich",
+      "lengthM": 1532
+    },
+    {
+      "a": "940GZZLUCGT",
+      "b": "940GZZLUWHM",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Canning Town",
+      "bName": "West Ham",
+      "lengthM": 1595
+    },
+    {
+      "a": "940GZZLUCHL",
+      "b": "940GZZLUHBN",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Chancery Lane",
+      "bName": "Holborn",
+      "lengthM": 617
+    },
+    {
+      "a": "940GZZLUCHL",
+      "b": "940GZZLUSPU",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Chancery Lane",
+      "bName": "St. Paul's",
+      "lengthM": 1039
+    },
+    {
+      "a": "940GZZLUCHX",
+      "b": "940GZZLUEMB",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Charing Cross",
+      "bName": "Embankment",
+      "lengthM": 361
+    },
+    {
+      "a": "940GZZLUCHX",
+      "b": "940GZZLULSQ",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Charing Cross",
+      "bName": "Leicester Square",
+      "lengthM": 453
+    },
+    {
+      "a": "940GZZLUCHX",
+      "b": "940GZZLUPCC",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Charing Cross",
+      "bName": "Piccadilly Circus",
+      "lengthM": 528
+    },
+    {
+      "a": "940GZZLUCKS",
+      "b": "940GZZLUOAK",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Cockfosters",
+      "bName": "Oakwood",
+      "lengthM": 1320
+    },
+    {
+      "a": "940GZZLUCND",
+      "b": "940GZZLUHCL",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Colindale",
+      "bName": "Hendon Central",
+      "lengthM": 2126
+    },
+    {
+      "a": "940GZZLUCPC",
+      "b": "940GZZLUCPN",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Clapham Common",
+      "bName": "Clapham North",
+      "lengthM": 669
+    },
+    {
+      "a": "940GZZLUCPC",
+      "b": "940GZZLUCPS",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Clapham Common",
+      "bName": "Clapham South",
+      "lengthM": 1216
+    },
+    {
+      "a": "940GZZLUCPK",
+      "b": "940GZZLUQBY",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Canons Park",
+      "bName": "Queensbury",
+      "lengthM": 1612
+    },
+    {
+      "a": "940GZZLUCPK",
+      "b": "940GZZLUSTM",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Canons Park",
+      "bName": "Stanmore",
+      "lengthM": 1460
+    },
+    {
+      "a": "940GZZLUCPN",
+      "b": "940GZZLUSKW",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Clapham North",
+      "bName": "Stockwell",
+      "lengthM": 807
+    },
+    {
+      "a": "940GZZLUCSD",
+      "b": "940GZZLUSWN",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Colliers Wood",
+      "bName": "South Wimbledon",
+      "lengthM": 1115
+    },
+    {
+      "a": "940GZZLUCSD",
+      "b": "940GZZLUTBY",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Colliers Wood",
+      "bName": "Tooting Broadway",
+      "lengthM": 1253
+    },
+    {
+      "a": "940GZZLUCST",
+      "b": "940GZZLUMMT",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Cannon Street",
+      "bName": "Monument",
+      "lengthM": 309
+    },
+    {
+      "a": "940GZZLUCST",
+      "b": "940GZZLUMSH",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Cannon Street",
+      "bName": "Mansion House",
+      "lengthM": 258
+    },
+    {
+      "a": "940GZZLUCTN",
+      "b": "940GZZLUEUS",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:15"
+          ]
+        }
+      ],
+      "aName": "Camden Town",
+      "bName": "Euston",
+      "lengthM": 1358
+    },
+    {
+      "a": "940GZZLUCTN",
+      "b": "940GZZLUKSH",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:9",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "Camden Town",
+      "bName": "Kentish Town",
+      "lengthM": 1237
+    },
+    {
+      "a": "940GZZLUCTN",
+      "b": "940GZZLUMTC",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:14"
+          ]
+        }
+      ],
+      "aName": "Camden Town",
+      "bName": "Mornington Crescent",
+      "lengthM": 570
+    },
+    {
+      "a": "940GZZLUCWL",
+      "b": "940GZZLUGGH",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Chigwell",
+      "bName": "Grange Hill",
+      "lengthM": 1257
+    },
+    {
+      "a": "940GZZLUCWL",
+      "b": "940GZZLURVY",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Chigwell",
+      "bName": "Roding Valley",
+      "lengthM": 2202
+    },
+    {
+      "a": "940GZZLUCWP",
+      "b": "940GZZLUTNG",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Chiswick Park",
+      "bName": "Turnham Green",
+      "lengthM": 971
+    },
+    {
+      "a": "940GZZLUCWR",
+      "b": "940GZZLUCYF",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Canada Water",
+      "bName": "Canary Wharf",
+      "lengthM": 2314
+    },
+    {
+      "a": "940GZZLUCXY",
+      "b": "940GZZLUMPK",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:7"
+          ]
+        }
+      ],
+      "aName": "Croxley",
+      "bName": "Moor Park",
+      "lengthM": 2023
+    },
+    {
+      "a": "940GZZLUCXY",
+      "b": "940GZZLUWAF",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:7"
+          ]
+        }
+      ],
+      "aName": "Croxley",
+      "bName": "Watford",
+      "lengthM": 2040
+    },
+    {
+      "a": "940GZZLUCYD",
+      "b": "940GZZLURKW",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "Chorleywood",
+      "bName": "Rickmansworth",
+      "lengthM": 3464
+    },
+    {
+      "a": "940GZZLUCYF",
+      "b": "940GZZLUNGW",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Canary Wharf",
+      "bName": "North Greenwich",
+      "lengthM": 1559
+    },
+    {
+      "a": "940GZZLUDBN",
+      "b": "940GZZLULGN",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Debden",
+      "bName": "Loughton",
+      "lengthM": 2013
+    },
+    {
+      "a": "940GZZLUDBN",
+      "b": "940GZZLUTHB",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Debden",
+      "bName": "Theydon Bois",
+      "lengthM": 3235
+    },
+    {
+      "a": "940GZZLUDGE",
+      "b": "940GZZLUDGY",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Dagenham East",
+      "bName": "Dagenham Heathway",
+      "lengthM": 1307
+    },
+    {
+      "a": "940GZZLUDGE",
+      "b": "940GZZLUEPK",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Dagenham East",
+      "bName": "Elm Park",
+      "lengthM": 2344
+    },
+    {
+      "a": "940GZZLUDOH",
+      "b": "940GZZLUNDN",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Dollis Hill",
+      "bName": "Neasden",
+      "lengthM": 882
+    },
+    {
+      "a": "940GZZLUDOH",
+      "b": "940GZZLUWIG",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Dollis Hill",
+      "bName": "Willesden Green",
+      "lengthM": 1165
+    },
+    {
+      "a": "940GZZLUEAC",
+      "b": "940GZZLUKNG",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Elephant & Castle",
+      "bName": "Kennington",
+      "lengthM": 897
+    },
+    {
+      "a": "940GZZLUEAC",
+      "b": "940GZZLULBN",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Elephant & Castle",
+      "bName": "Lambeth North",
+      "lengthM": 834
+    },
+    {
+      "a": "940GZZLUEAE",
+      "b": "940GZZLURSM",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Eastcote",
+      "bName": "Ruislip Manor",
+      "lengthM": 1054
+    },
+    {
+      "a": "940GZZLUEAE",
+      "b": "940GZZLURYL",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Eastcote",
+      "bName": "Rayners Lane",
+      "lengthM": 1797
+    },
+    {
+      "a": "940GZZLUEAN",
+      "b": "940GZZLUNAN",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "East Acton",
+      "bName": "North Acton",
+      "lengthM": 1170
+    },
+    {
+      "a": "940GZZLUEAN",
+      "b": "940GZZLUWCY",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "East Acton",
+      "bName": "White City",
+      "lengthM": 1645
+    },
+    {
+      "a": "940GZZLUEBY",
+      "b": "940GZZLUECM",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Ealing Broadway",
+      "bName": "Ealing Common",
+      "lengthM": 1077
+    },
+    {
+      "a": "940GZZLUEBY",
+      "b": "940GZZLUWTA",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:7"
+          ]
+        }
+      ],
+      "aName": "Ealing Broadway",
+      "bName": "West Acton",
+      "lengthM": 1426
+    },
+    {
+      "a": "940GZZLUECM",
+      "b": "940GZZLUNEN",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Ealing Common",
+      "bName": "North Ealing",
+      "lengthM": 884
+    },
+    {
+      "a": "940GZZLUECT",
+      "b": "940GZZLUGTR",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Earl's Court",
+      "bName": "Gloucester Road",
+      "lengthM": 710
+    },
+    {
+      "a": "940GZZLUECT",
+      "b": "940GZZLUHSK",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Earl's Court",
+      "bName": "High Street Kensington",
+      "lengthM": 943
+    },
+    {
+      "a": "940GZZLUECT",
+      "b": "940GZZLUKOY",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:7"
+          ]
+        }
+      ],
+      "aName": "Earl's Court",
+      "bName": "Kensington (Olympia)",
+      "lengthM": 1337
+    },
+    {
+      "a": "940GZZLUECT",
+      "b": "940GZZLUWBN",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Earl's Court",
+      "bName": "West Brompton",
+      "lengthM": 549
+    },
+    {
+      "a": "940GZZLUECT",
+      "b": "940GZZLUWKN",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Earl's Court",
+      "bName": "West Kensington",
+      "lengthM": 861
+    },
+    {
+      "a": "940GZZLUEFY",
+      "b": "940GZZLUFYC",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:9",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "East Finchley",
+      "bName": "Finchley Central",
+      "lengthM": 2441
+    },
+    {
+      "a": "940GZZLUEFY",
+      "b": "940GZZLUHGT",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:9",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "East Finchley",
+      "bName": "Highgate",
+      "lengthM": 1649
+    },
+    {
+      "a": "940GZZLUEHM",
+      "b": "940GZZLUUPK",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "East Ham",
+      "bName": "Upton Park",
+      "lengthM": 1298
+    },
+    {
+      "a": "940GZZLUEMB",
+      "b": "940GZZLUTMP",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Embankment",
+      "bName": "Temple",
+      "lengthM": 674
+    },
+    {
+      "a": "940GZZLUEMB",
+      "b": "940GZZLUWLO",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Embankment",
+      "bName": "Waterloo",
+      "lengthM": 698
+    },
+    {
+      "a": "940GZZLUEMB",
+      "b": "940GZZLUWSM",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Embankment",
+      "bName": "Westminster",
+      "lengthM": 761
+    },
+    {
+      "a": "940GZZLUEPG",
+      "b": "940GZZLUTHB",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Epping",
+      "bName": "Theydon Bois",
+      "lengthM": 2526
+    },
+    {
+      "a": "940GZZLUEPK",
+      "b": "940GZZLUHCH",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Elm Park",
+      "bName": "Hornchurch",
+      "lengthM": 1493
+    },
+    {
+      "a": "940GZZLUEPY",
+      "b": "940GZZLUPYB",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "East Putney",
+      "bName": "Putney Bridge",
+      "lengthM": 1025
+    },
+    {
+      "a": "940GZZLUEPY",
+      "b": "940GZZLUSFS",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "East Putney",
+      "bName": "Southfields",
+      "lengthM": 1594
+    },
+    {
+      "a": "940GZZLUERB",
+      "b": "940GZZLUMYB",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Edgware Road (Bakerloo)",
+      "bName": "Marylebone",
+      "lengthM": 456
+    },
+    {
+      "a": "940GZZLUERB",
+      "b": "940GZZLUPAC",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Edgware Road (Bakerloo)",
+      "bName": "Paddington",
+      "lengthM": 589
+    },
+    {
+      "a": "940GZZLUERC",
+      "b": "940GZZLUPAC",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Edgware Road (Circle Line)",
+      "bName": "Paddington",
+      "lengthM": 677
+    },
+    {
+      "a": "940GZZLUERC",
+      "b": "940GZZLUPAH",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Edgware Road (Circle Line)",
+      "bName": "Paddington (H&C Line)",
+      "lengthM": 778
+    },
+    {
+      "a": "940GZZLUESQ",
+      "b": "940GZZLUGPS",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Euston Square",
+      "bName": "Great Portland Street",
+      "lengthM": 615
+    },
+    {
+      "a": "940GZZLUESQ",
+      "b": "940GZZLUKSX",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Euston Square",
+      "bName": "King's Cross St. Pancras",
+      "lengthM": 896
+    },
+    {
+      "a": "940GZZLUEUS",
+      "b": "940GZZLUKSX",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        },
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Euston",
+      "bName": "King's Cross St. Pancras",
+      "lengthM": 705
+    },
+    {
+      "a": "940GZZLUEUS",
+      "b": "940GZZLUMTC",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:14"
+          ]
+        }
+      ],
+      "aName": "Euston",
+      "bName": "Mornington Crescent",
+      "lengthM": 790
+    },
+    {
+      "a": "940GZZLUEUS",
+      "b": "940GZZLUWRR",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Euston",
+      "bName": "Warren Street",
+      "lengthM": 473
+    },
+    {
+      "a": "940GZZLUFBY",
+      "b": "940GZZLUPSG",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Fulham Broadway",
+      "bName": "Parsons Green",
+      "lengthM": 805
+    },
+    {
+      "a": "940GZZLUFBY",
+      "b": "940GZZLUWBN",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Fulham Broadway",
+      "bName": "West Brompton",
+      "lengthM": 726
+    },
+    {
+      "a": "940GZZLUFCN",
+      "b": "940GZZLUKSX",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Farringdon",
+      "bName": "King's Cross St. Pancras",
+      "lengthM": 1705
+    },
+    {
+      "a": "940GZZLUFLP",
+      "b": "940GZZLUHLT",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Fairlop",
+      "bName": "Hainault",
+      "lengthM": 915
+    },
+    {
+      "a": "940GZZLUFPK",
+      "b": "940GZZLUHAI",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Finsbury Park",
+      "bName": "Highbury & Islington",
+      "lengthM": 1917
+    },
+    {
+      "a": "940GZZLUFPK",
+      "b": "940GZZLUMRH",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Finsbury Park",
+      "bName": "Manor House",
+      "lengthM": 1005
+    },
+    {
+      "a": "940GZZLUFPK",
+      "b": "940GZZLUSVS",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Finsbury Park",
+      "bName": "Seven Sisters",
+      "lengthM": 3156
+    },
+    {
+      "a": "940GZZLUFYC",
+      "b": "940GZZLUMHL",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:19"
+          ]
+        }
+      ],
+      "aName": "Finchley Central",
+      "bName": "Mill Hill East",
+      "lengthM": 1456
+    },
+    {
+      "a": "940GZZLUFYC",
+      "b": "940GZZLUWFN",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:18"
+          ]
+        }
+      ],
+      "aName": "Finchley Central",
+      "bName": "West Finchley",
+      "lengthM": 995
+    },
+    {
+      "a": "940GZZLUFYR",
+      "b": "940GZZLUSWC",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Finchley Road",
+      "bName": "Swiss Cottage",
+      "lengthM": 584
+    },
+    {
+      "a": "940GZZLUFYR",
+      "b": "940GZZLUWHP",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Finchley Road",
+      "bName": "West Hampstead",
+      "lengthM": 630
+    },
+    {
+      "a": "940GZZLUFYR",
+      "b": "940GZZLUWYP",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:13",
+            "outbound:14"
+          ]
+        }
+      ],
+      "aName": "Finchley Road",
+      "bName": "Wembley Park",
+      "lengthM": 7084
+    },
+    {
+      "a": "940GZZLUGBY",
+      "b": "940GZZLUKWG",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Gunnersbury",
+      "bName": "Kew Gardens",
+      "lengthM": 1777
+    },
+    {
+      "a": "940GZZLUGBY",
+      "b": "940GZZLUTNG",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Gunnersbury",
+      "bName": "Turnham Green",
+      "lengthM": 1469
+    },
+    {
+      "a": "940GZZLUGDG",
+      "b": "940GZZLUTCR",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Goodge Street",
+      "bName": "Tottenham Court Road",
+      "lengthM": 532
+    },
+    {
+      "a": "940GZZLUGDG",
+      "b": "940GZZLUWRR",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Goodge Street",
+      "bName": "Warren Street",
+      "lengthM": 517
+    },
+    {
+      "a": "940GZZLUGFD",
+      "b": "940GZZLUNHT",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Greenford",
+      "bName": "Northolt",
+      "lengthM": 1656
+    },
+    {
+      "a": "940GZZLUGFD",
+      "b": "940GZZLUPVL",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Greenford",
+      "bName": "Perivale",
+      "lengthM": 1723
+    },
+    {
+      "a": "940GZZLUGGH",
+      "b": "940GZZLUHLT",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Grange Hill",
+      "bName": "Hainault",
+      "lengthM": 1066
+    },
+    {
+      "a": "940GZZLUGGN",
+      "b": "940GZZLUHTD",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Golders Green",
+      "bName": "Hampstead",
+      "lengthM": 2048
+    },
+    {
+      "a": "940GZZLUGHK",
+      "b": "940GZZLUHSC",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Goldhawk Road",
+      "bName": "Hammersmith (H&C Line)",
+      "lengthM": 920
+    },
+    {
+      "a": "940GZZLUGHK",
+      "b": "940GZZLUSBM",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Goldhawk Road",
+      "bName": "Shepherd's Bush Market",
+      "lengthM": 456
+    },
+    {
+      "a": "940GZZLUGPK",
+      "b": "940GZZLUHPC",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Green Park",
+      "bName": "Hyde Park Corner",
+      "lengthM": 925
+    },
+    {
+      "a": "940GZZLUGPK",
+      "b": "940GZZLUOXC",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Green Park",
+      "bName": "Oxford Circus",
+      "lengthM": 942
+    },
+    {
+      "a": "940GZZLUGPK",
+      "b": "940GZZLUPCC",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Green Park",
+      "bName": "Piccadilly Circus",
+      "lengthM": 708
+    },
+    {
+      "a": "940GZZLUGPK",
+      "b": "940GZZLUVIC",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Green Park",
+      "bName": "Victoria",
+      "lengthM": 1164
+    },
+    {
+      "a": "940GZZLUGPK",
+      "b": "940GZZLUWSM",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Green Park",
+      "bName": "Westminster",
+      "lengthM": 1340
+    },
+    {
+      "a": "940GZZLUGTH",
+      "b": "940GZZLUNBP",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Gants Hill",
+      "bName": "Newbury Park",
+      "lengthM": 1642
+    },
+    {
+      "a": "940GZZLUGTH",
+      "b": "940GZZLURBG",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Gants Hill",
+      "bName": "Redbridge",
+      "lengthM": 1437
+    },
+    {
+      "a": "940GZZLUGTR",
+      "b": "940GZZLUHSK",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        }
+      ],
+      "aName": "Gloucester Road",
+      "bName": "High Street Kensington",
+      "lengthM": 885
+    },
+    {
+      "a": "940GZZLUGTR",
+      "b": "940GZZLUSKS",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Gloucester Road",
+      "bName": "South Kensington",
+      "lengthM": 733
+    },
+    {
+      "a": "940GZZLUHAI",
+      "b": "940GZZLUKSX",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Highbury & Islington",
+      "bName": "King's Cross St. Pancras",
+      "lengthM": 2442
+    },
+    {
+      "a": "940GZZLUHAW",
+      "b": "940GZZLUKEN",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Harrow & Wealdstone",
+      "bName": "Kenton",
+      "lengthM": 1709
+    },
+    {
+      "a": "940GZZLUHBN",
+      "b": "940GZZLURSQ",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Holborn",
+      "bName": "Russell Square",
+      "lengthM": 665
+    },
+    {
+      "a": "940GZZLUHBN",
+      "b": "940GZZLUTCR",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Holborn",
+      "bName": "Tottenham Court Road",
+      "lengthM": 709
+    },
+    {
+      "a": "940GZZLUHBT",
+      "b": "940GZZLUTAW",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:18"
+          ]
+        }
+      ],
+      "aName": "High Barnet",
+      "bName": "Totteridge & Whetstone",
+      "lengthM": 2445
+    },
+    {
+      "a": "940GZZLUHCH",
+      "b": "940GZZLUUPB",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Hornchurch",
+      "bName": "Upminster Bridge",
+      "lengthM": 1257
+    },
+    {
+      "a": "940GZZLUHGD",
+      "b": "940GZZLUICK",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Hillingdon",
+      "bName": "Ickenham",
+      "lengthM": 1026
+    },
+    {
+      "a": "940GZZLUHGD",
+      "b": "940GZZLUUXB",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Hillingdon",
+      "bName": "Uxbridge",
+      "lengthM": 2123
+    },
+    {
+      "a": "940GZZLUHGR",
+      "b": "940GZZLUNAN",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Hanger Lane",
+      "bName": "North Acton",
+      "lengthM": 2392
+    },
+    {
+      "a": "940GZZLUHGR",
+      "b": "940GZZLUPVL",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Hanger Lane",
+      "bName": "Perivale",
+      "lengthM": 2248
+    },
+    {
+      "a": "940GZZLUHNX",
+      "b": "940GZZLUHR4",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound"
+          ],
+          "branchIds": [
+            "inbound:3"
+          ]
+        }
+      ],
+      "aName": "Hatton Cross",
+      "bName": "Heathrow Terminal 4",
+      "lengthM": 1785
+    },
+    {
+      "a": "940GZZLUHNX",
+      "b": "940GZZLUHRC",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Hatton Cross",
+      "bName": "Heathrow Terminals 1-2-3",
+      "lengthM": 2072
+    },
+    {
+      "a": "940GZZLUHNX",
+      "b": "940GZZLUHWT",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Hatton Cross",
+      "bName": "Hounslow West",
+      "lengthM": 2723
+    },
+    {
+      "a": "940GZZLUHOH",
+      "b": "940GZZLUNHA",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:15"
+          ]
+        }
+      ],
+      "aName": "Harrow-on-the-Hill",
+      "bName": "North Harrow",
+      "lengthM": 1889
+    },
+    {
+      "a": "940GZZLUHOH",
+      "b": "940GZZLUNKP",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Harrow-on-the-Hill",
+      "bName": "Northwick Park",
+      "lengthM": 1295
+    },
+    {
+      "a": "940GZZLUHOH",
+      "b": "940GZZLUWHW",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Harrow-on-the-Hill",
+      "bName": "West Harrow",
+      "lengthM": 1143
+    },
+    {
+      "a": "940GZZLUHPC",
+      "b": "940GZZLUKNB",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Hyde Park Corner",
+      "bName": "Knightsbridge",
+      "lengthM": 534
+    },
+    {
+      "a": "940GZZLUHPK",
+      "b": "940GZZLUNHG",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Holland Park",
+      "bName": "Notting Hill Gate",
+      "lengthM": 699
+    },
+    {
+      "a": "940GZZLUHPK",
+      "b": "940GZZLUSBC",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Holland Park",
+      "bName": "Shepherd's Bush",
+      "lengthM": 964
+    },
+    {
+      "a": "940GZZLUHR4",
+      "b": "940GZZLUHRC",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "outbound"
+          ],
+          "branchIds": [
+            "outbound:6"
+          ]
+        }
+      ],
+      "aName": "Heathrow Terminal 4",
+      "bName": "Heathrow Terminals 1-2-3",
+      "lengthM": 1493
+    },
+    {
+      "a": "940GZZLUHR5",
+      "b": "940GZZLUHRC",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:7"
+          ]
+        }
+      ],
+      "aName": "Heathrow Terminal 5",
+      "bName": "Heathrow Terminals 1-2-3",
+      "lengthM": 2470
+    },
+    {
+      "a": "940GZZLUHSD",
+      "b": "940GZZLURVP",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Hammersmith (Dist&Picc Line)",
+      "bName": "Ravenscourt Park",
+      "lengthM": 914
+    },
+    {
+      "a": "940GZZLUHSD",
+      "b": "940GZZLUTNG",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Hammersmith (Dist&Picc Line)",
+      "bName": "Turnham Green",
+      "lengthM": 2206
+    },
+    {
+      "a": "940GZZLUHSK",
+      "b": "940GZZLUNHG",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "High Street Kensington",
+      "bName": "Notting Hill Gate",
+      "lengthM": 1005
+    },
+    {
+      "a": "940GZZLUHSN",
+      "b": "940GZZLUSGP",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Harlesden",
+      "bName": "Stonebridge Park",
+      "lengthM": 1491
+    },
+    {
+      "a": "940GZZLUHSN",
+      "b": "940GZZLUWJN",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Harlesden",
+      "bName": "Willesden Junction",
+      "lengthM": 1081
+    },
+    {
+      "a": "940GZZLUHWC",
+      "b": "940GZZLUHWE",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Hounslow Central",
+      "bName": "Hounslow East",
+      "lengthM": 723
+    },
+    {
+      "a": "940GZZLUHWC",
+      "b": "940GZZLUHWT",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Hounslow Central",
+      "bName": "Hounslow West",
+      "lengthM": 1375
+    },
+    {
+      "a": "940GZZLUHWE",
+      "b": "940GZZLUOSY",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Hounslow East",
+      "bName": "Osterley",
+      "lengthM": 932
+    },
+    {
+      "a": "940GZZLUICK",
+      "b": "940GZZLURSP",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Ickenham",
+      "bName": "Ruislip",
+      "lengthM": 1742
+    },
+    {
+      "a": "940GZZLUKBN",
+      "b": "940GZZLUWHP",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kilburn",
+      "bName": "West Hampstead",
+      "lengthM": 1006
+    },
+    {
+      "a": "940GZZLUKBN",
+      "b": "940GZZLUWIG",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kilburn",
+      "bName": "Willesden Green",
+      "lengthM": 1274
+    },
+    {
+      "a": "940GZZLUKBY",
+      "b": "940GZZLUQBY",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kingsbury",
+      "bName": "Queensbury",
+      "lengthM": 1185
+    },
+    {
+      "a": "940GZZLUKBY",
+      "b": "940GZZLUWYP",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kingsbury",
+      "bName": "Wembley Park",
+      "lengthM": 2324
+    },
+    {
+      "a": "940GZZLUKEN",
+      "b": "940GZZLUSKT",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kenton",
+      "bName": "South Kenton",
+      "lengthM": 1393
+    },
+    {
+      "a": "940GZZLUKNB",
+      "b": "940GZZLUSKS",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Knightsbridge",
+      "bName": "South Kensington",
+      "lengthM": 1135
+    },
+    {
+      "a": "940GZZLUKNG",
+      "b": "940GZZLUOVL",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Kennington",
+      "bName": "Oval",
+      "lengthM": 850
+    },
+    {
+      "a": "940GZZLUKNG",
+      "b": "940GZZLUWLO",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Kennington",
+      "bName": "Waterloo",
+      "lengthM": 1777
+    },
+    {
+      "a": "940GZZLUKNG",
+      "b": "940GZZNEUGST",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:7",
+            "outbound:10"
+          ]
+        }
+      ],
+      "aName": "Kennington",
+      "bName": "Nine Elms",
+      "lengthM": 1867
+    },
+    {
+      "a": "940GZZLUKPK",
+      "b": "940GZZLUMVL",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kilburn Park",
+      "bName": "Maida Vale",
+      "lengthM": 811
+    },
+    {
+      "a": "940GZZLUKPK",
+      "b": "940GZZLUQPS",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kilburn Park",
+      "bName": "Queen's Park",
+      "lengthM": 818
+    },
+    {
+      "a": "940GZZLUKSH",
+      "b": "940GZZLUTFP",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:9",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "Kentish Town",
+      "bName": "Tufnell Park",
+      "lengthM": 745
+    },
+    {
+      "a": "940GZZLUKSL",
+      "b": "940GZZLUQPS",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kensal Green",
+      "bName": "Queen's Park",
+      "lengthM": 1350
+    },
+    {
+      "a": "940GZZLUKSL",
+      "b": "940GZZLUWJN",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Kensal Green",
+      "bName": "Willesden Junction",
+      "lengthM": 1405
+    },
+    {
+      "a": "940GZZLUKSX",
+      "b": "940GZZLURSQ",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "King's Cross St. Pancras",
+      "bName": "Russell Square",
+      "lengthM": 749
+    },
+    {
+      "a": "940GZZLUKWG",
+      "b": "940GZZLURMD",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Kew Gardens",
+      "bName": "Richmond",
+      "lengthM": 1926
+    },
+    {
+      "a": "940GZZLULAD",
+      "b": "940GZZLULRD",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Ladbroke Grove",
+      "bName": "Latimer Road",
+      "lengthM": 645
+    },
+    {
+      "a": "940GZZLULAD",
+      "b": "940GZZLUWSP",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Ladbroke Grove",
+      "bName": "Westbourne Park",
+      "lengthM": 784
+    },
+    {
+      "a": "940GZZLULBN",
+      "b": "940GZZLUWLO",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Lambeth North",
+      "bName": "Waterloo",
+      "lengthM": 532
+    },
+    {
+      "a": "940GZZLULGT",
+      "b": "940GZZLUMBA",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Lancaster Gate",
+      "bName": "Marble Arch",
+      "lengthM": 1270
+    },
+    {
+      "a": "940GZZLULGT",
+      "b": "940GZZLUQWY",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Lancaster Gate",
+      "bName": "Queensway",
+      "lengthM": 825
+    },
+    {
+      "a": "940GZZLULNB",
+      "b": "940GZZLUSWK",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "London Bridge",
+      "bName": "Southwark",
+      "lengthM": 1093
+    },
+    {
+      "a": "940GZZLULRD",
+      "b": "940GZZLUWLA",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Latimer Road",
+      "bName": "Wood Lane",
+      "lengthM": 542
+    },
+    {
+      "a": "940GZZLULSQ",
+      "b": "940GZZLUPCC",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Leicester Square",
+      "bName": "Piccadilly Circus",
+      "lengthM": 400
+    },
+    {
+      "a": "940GZZLULSQ",
+      "b": "940GZZLUTCR",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Leicester Square",
+      "bName": "Tottenham Court Road",
+      "lengthM": 582
+    },
+    {
+      "a": "940GZZLULVT",
+      "b": "940GZZLUMGT",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        },
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:16"
+          ]
+        }
+      ],
+      "aName": "Liverpool Street",
+      "bName": "Moorgate",
+      "lengthM": 437
+    },
+    {
+      "a": "940GZZLULYN",
+      "b": "940GZZLULYS",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Leyton",
+      "bName": "Leytonstone",
+      "lengthM": 1609
+    },
+    {
+      "a": "940GZZLULYN",
+      "b": "940GZZLUSTD",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Leyton",
+      "bName": "Stratford",
+      "lengthM": 1688
+    },
+    {
+      "a": "940GZZLULYS",
+      "b": "940GZZLUSNB",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Leytonstone",
+      "bName": "Snaresbrook",
+      "lengthM": 1650
+    },
+    {
+      "a": "940GZZLULYS",
+      "b": "940GZZLUWSD",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Leytonstone",
+      "bName": "Wanstead",
+      "lengthM": 1628
+    },
+    {
+      "a": "940GZZLUMDN",
+      "b": "940GZZLUSWN",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Morden",
+      "bName": "South Wimbledon",
+      "lengthM": 1388
+    },
+    {
+      "a": "940GZZLUMED",
+      "b": "940GZZLUSGN",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Mile End",
+      "bName": "Stepney Green",
+      "lengthM": 963
+    },
+    {
+      "a": "940GZZLUMED",
+      "b": "940GZZLUSTD",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Mile End",
+      "bName": "Stratford",
+      "lengthM": 2748
+    },
+    {
+      "a": "940GZZLUMGT",
+      "b": "940GZZLUODS",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Moorgate",
+      "bName": "Old Street",
+      "lengthM": 756
+    },
+    {
+      "a": "940GZZLUMMT",
+      "b": "940GZZLUTWH",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Monument",
+      "bName": "Tower Hill",
+      "lengthM": 669
+    },
+    {
+      "a": "940GZZLUMPK",
+      "b": "940GZZLUNOW",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:15"
+          ]
+        }
+      ],
+      "aName": "Moor Park",
+      "bName": "Northwood",
+      "lengthM": 2174
+    },
+    {
+      "a": "940GZZLUMPK",
+      "b": "940GZZLURKW",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:17"
+          ]
+        }
+      ],
+      "aName": "Moor Park",
+      "bName": "Rickmansworth",
+      "lengthM": 3085
+    },
+    {
+      "a": "940GZZLUMRH",
+      "b": "940GZZLUTPN",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Manor House",
+      "bName": "Turnpike Lane",
+      "lengthM": 2220
+    },
+    {
+      "a": "940GZZLUMVL",
+      "b": "940GZZLUWKA",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Maida Vale",
+      "bName": "Warwick Avenue",
+      "lengthM": 742
+    },
+    {
+      "a": "940GZZLUNAN",
+      "b": "940GZZLUWTA",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:7"
+          ]
+        }
+      ],
+      "aName": "North Acton",
+      "bName": "West Acton",
+      "lengthM": 1594
+    },
+    {
+      "a": "940GZZLUNDN",
+      "b": "940GZZLUWYP",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Neasden",
+      "bName": "Wembley Park",
+      "lengthM": 2250
+    },
+    {
+      "a": "940GZZLUNEN",
+      "b": "940GZZLUPKR",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "North Ealing",
+      "bName": "Park Royal",
+      "lengthM": 1055
+    },
+    {
+      "a": "940GZZLUNFD",
+      "b": "940GZZLUSEA",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Northfields",
+      "bName": "South Ealing",
+      "lengthM": 404
+    },
+    {
+      "a": "940GZZLUNHA",
+      "b": "940GZZLUPNR",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:15"
+          ]
+        }
+      ],
+      "aName": "North Harrow",
+      "bName": "Pinner",
+      "lengthM": 1553
+    },
+    {
+      "a": "940GZZLUNHG",
+      "b": "940GZZLUQWY",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Notting Hill Gate",
+      "bName": "Queensway",
+      "lengthM": 631
+    },
+    {
+      "a": "940GZZLUNHT",
+      "b": "940GZZLUSRP",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Northolt",
+      "bName": "South Ruislip",
+      "lengthM": 2298
+    },
+    {
+      "a": "940GZZLUNKP",
+      "b": "940GZZLUPRD",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Northwick Park",
+      "bName": "Preston Road",
+      "lengthM": 1740
+    },
+    {
+      "a": "940GZZLUNOW",
+      "b": "940GZZLUNWH",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:15"
+          ]
+        }
+      ],
+      "aName": "Northwood",
+      "bName": "Northwood Hills",
+      "lengthM": 1596
+    },
+    {
+      "a": "940GZZLUNWH",
+      "b": "940GZZLUPNR",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:15"
+          ]
+        }
+      ],
+      "aName": "Northwood Hills",
+      "bName": "Pinner",
+      "lengthM": 2074
+    },
+    {
+      "a": "940GZZLUNWY",
+      "b": "940GZZLUSKT",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "North Wembley",
+      "bName": "South Kenton",
+      "lengthM": 923
+    },
+    {
+      "a": "940GZZLUNWY",
+      "b": "940GZZLUWYC",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "North Wembley",
+      "bName": "Wembley Central",
+      "lengthM": 1226
+    },
+    {
+      "a": "940GZZLUOAK",
+      "b": "940GZZLUSGT",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Oakwood",
+      "bName": "Southgate",
+      "lengthM": 1694
+    },
+    {
+      "a": "940GZZLUOVL",
+      "b": "940GZZLUSKW",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Oval",
+      "bName": "Stockwell",
+      "lengthM": 1335
+    },
+    {
+      "a": "940GZZLUOXC",
+      "b": "940GZZLUPCC",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Oxford Circus",
+      "bName": "Piccadilly Circus",
+      "lengthM": 803
+    },
+    {
+      "a": "940GZZLUOXC",
+      "b": "940GZZLURGP",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Oxford Circus",
+      "bName": "Regent's Park",
+      "lengthM": 942
+    },
+    {
+      "a": "940GZZLUOXC",
+      "b": "940GZZLUTCR",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Oxford Circus",
+      "bName": "Tottenham Court Road",
+      "lengthM": 780
+    },
+    {
+      "a": "940GZZLUOXC",
+      "b": "940GZZLUWRR",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Oxford Circus",
+      "bName": "Warren Street",
+      "lengthM": 1049
+    },
+    {
+      "a": "940GZZLUPAC",
+      "b": "940GZZLUWKA",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Paddington",
+      "bName": "Warwick Avenue",
+      "lengthM": 907
+    },
+    {
+      "a": "940GZZLUPAH",
+      "b": "940GZZLURYO",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Paddington (H&C Line)",
+      "bName": "Royal Oak",
+      "lengthM": 625
+    },
+    {
+      "a": "940GZZLUPCO",
+      "b": "940GZZLUVIC",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Pimlico",
+      "bName": "Victoria",
+      "lengthM": 1041
+    },
+    {
+      "a": "940GZZLUPCO",
+      "b": "940GZZLUVXL",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Pimlico",
+      "bName": "Vauxhall",
+      "lengthM": 755
+    },
+    {
+      "a": "940GZZLUPLW",
+      "b": "940GZZLUUPK",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Plaistow",
+      "bName": "Upton Park",
+      "lengthM": 1342
+    },
+    {
+      "a": "940GZZLUPLW",
+      "b": "940GZZLUWHM",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Plaistow",
+      "bName": "West Ham",
+      "lengthM": 938
+    },
+    {
+      "a": "940GZZLUPRD",
+      "b": "940GZZLUWYP",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Preston Road",
+      "bName": "Wembley Park",
+      "lengthM": 1389
+    },
+    {
+      "a": "940GZZLUPSG",
+      "b": "940GZZLUPYB",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Parsons Green",
+      "bName": "Putney Bridge",
+      "lengthM": 890
+    },
+    {
+      "a": "940GZZLURBG",
+      "b": "940GZZLUWSD",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Redbridge",
+      "bName": "Wanstead",
+      "lengthM": 1162
+    },
+    {
+      "a": "940GZZLURSG",
+      "b": "940GZZLUSRP",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Ruislip Gardens",
+      "bName": "South Ruislip",
+      "lengthM": 928
+    },
+    {
+      "a": "940GZZLURSG",
+      "b": "940GZZLUWRP",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Ruislip Gardens",
+      "bName": "West Ruislip",
+      "lengthM": 2106
+    },
+    {
+      "a": "940GZZLURSM",
+      "b": "940GZZLURSP",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        },
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Ruislip Manor",
+      "bName": "Ruislip",
+      "lengthM": 731
+    },
+    {
+      "a": "940GZZLURVP",
+      "b": "940GZZLUSFB",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Ravenscourt Park",
+      "bName": "Stamford Brook",
+      "lengthM": 713
+    },
+    {
+      "a": "940GZZLURVY",
+      "b": "940GZZLUWOF",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Roding Valley",
+      "bName": "Woodford",
+      "lengthM": 1319
+    },
+    {
+      "a": "940GZZLURYL",
+      "b": "940GZZLUSHH",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Rayners Lane",
+      "bName": "South Harrow",
+      "lengthM": 1786
+    },
+    {
+      "a": "940GZZLURYL",
+      "b": "940GZZLUWHW",
+      "lines": [
+        {
+          "line": "metropolitan",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:2",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Rayners Lane",
+      "bName": "West Harrow",
+      "lengthM": 1345
+    },
+    {
+      "a": "940GZZLURYO",
+      "b": "940GZZLUWSP",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Royal Oak",
+      "bName": "Westbourne Park",
+      "lengthM": 948
+    },
+    {
+      "a": "940GZZLUSBC",
+      "b": "940GZZLUWCY",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:6",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Shepherd's Bush",
+      "bName": "White City",
+      "lengthM": 957
+    },
+    {
+      "a": "940GZZLUSBM",
+      "b": "940GZZLUWLA",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:2"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Shepherd's Bush Market",
+      "bName": "Wood Lane",
+      "lengthM": 488
+    },
+    {
+      "a": "940GZZLUSFB",
+      "b": "940GZZLUTNG",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:3",
+            "outbound:13"
+          ]
+        }
+      ],
+      "aName": "Stamford Brook",
+      "bName": "Turnham Green",
+      "lengthM": 592
+    },
+    {
+      "a": "940GZZLUSFS",
+      "b": "940GZZLUWIP",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Southfields",
+      "bName": "Wimbledon Park",
+      "lengthM": 1333
+    },
+    {
+      "a": "940GZZLUSGN",
+      "b": "940GZZLUWPL",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        },
+        {
+          "line": "hammersmith-city",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Stepney Green",
+      "bName": "Whitechapel",
+      "lengthM": 1015
+    },
+    {
+      "a": "940GZZLUSGP",
+      "b": "940GZZLUWYC",
+      "lines": [
+        {
+          "line": "bakerloo",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Stonebridge Park",
+      "bName": "Wembley Central",
+      "lengthM": 1671
+    },
+    {
+      "a": "940GZZLUSHH",
+      "b": "940GZZLUSUH",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "South Harrow",
+      "bName": "Sudbury Hill",
+      "lengthM": 1362
+    },
+    {
+      "a": "940GZZLUSJP",
+      "b": "940GZZLUVIC",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "St. James's Park",
+      "bName": "Victoria",
+      "lengthM": 743
+    },
+    {
+      "a": "940GZZLUSJP",
+      "b": "940GZZLUWSM",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "St. James's Park",
+      "bName": "Westminster",
+      "lengthM": 573
+    },
+    {
+      "a": "940GZZLUSJW",
+      "b": "940GZZLUSWC",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "St. John's Wood",
+      "bName": "Swiss Cottage",
+      "lengthM": 946
+    },
+    {
+      "a": "940GZZLUSKS",
+      "b": "940GZZLUSSQ",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "South Kensington",
+      "bName": "Sloane Square",
+      "lengthM": 1181
+    },
+    {
+      "a": "940GZZLUSKW",
+      "b": "940GZZLUVXL",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Stockwell",
+      "bName": "Vauxhall",
+      "lengthM": 1544
+    },
+    {
+      "a": "940GZZLUSNB",
+      "b": "940GZZLUSWF",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Snaresbrook",
+      "bName": "South Woodford",
+      "lengthM": 1314
+    },
+    {
+      "a": "940GZZLUSSQ",
+      "b": "940GZZLUVIC",
+      "lines": [
+        {
+          "line": "circle",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:3"
+          ]
+        },
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Sloane Square",
+      "bName": "Victoria",
+      "lengthM": 1022
+    },
+    {
+      "a": "940GZZLUSTD",
+      "b": "940GZZLUWHM",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Stratford",
+      "bName": "West Ham",
+      "lengthM": 1568
+    },
+    {
+      "a": "940GZZLUSUH",
+      "b": "940GZZLUSUT",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:5"
+          ]
+        }
+      ],
+      "aName": "Sudbury Hill",
+      "bName": "Sudbury Town",
+      "lengthM": 1598
+    },
+    {
+      "a": "940GZZLUSVS",
+      "b": "940GZZLUTMH",
+      "lines": [
+        {
+          "line": "victoria",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Seven Sisters",
+      "bName": "Tottenham Hale",
+      "lengthM": 997
+    },
+    {
+      "a": "940GZZLUSWF",
+      "b": "940GZZLUWOF",
+      "lines": [
+        {
+          "line": "central",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:5",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "South Woodford",
+      "bName": "Woodford",
+      "lengthM": 1727
+    },
+    {
+      "a": "940GZZLUSWK",
+      "b": "940GZZLUWLO",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Southwark",
+      "bName": "Waterloo",
+      "lengthM": 632
+    },
+    {
+      "a": "940GZZLUTAW",
+      "b": "940GZZLUWOP",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:18"
+          ]
+        }
+      ],
+      "aName": "Totteridge & Whetstone",
+      "bName": "Woodside Park",
+      "lengthM": 1457
+    },
+    {
+      "a": "940GZZLUTBC",
+      "b": "940GZZLUTBY",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:8",
+            "outbound:11"
+          ]
+        }
+      ],
+      "aName": "Tooting Bec",
+      "bName": "Tooting Broadway",
+      "lengthM": 1113
+    },
+    {
+      "a": "940GZZLUTPN",
+      "b": "940GZZLUWOG",
+      "lines": [
+        {
+          "line": "piccadilly",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:8"
+          ]
+        }
+      ],
+      "aName": "Turnpike Lane",
+      "bName": "Wood Green",
+      "lengthM": 933
+    },
+    {
+      "a": "940GZZLUUPB",
+      "b": "940GZZLUUPM",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:12"
+          ]
+        }
+      ],
+      "aName": "Upminster Bridge",
+      "bName": "Upminster",
+      "lengthM": 1059
+    },
+    {
+      "a": "940GZZLUWFN",
+      "b": "940GZZLUWOP",
+      "lines": [
+        {
+          "line": "northern",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:1",
+            "outbound:18"
+          ]
+        }
+      ],
+      "aName": "West Finchley",
+      "bName": "Woodside Park",
+      "lengthM": 976
+    },
+    {
+      "a": "940GZZLUWIM",
+      "b": "940GZZLUWIP",
+      "lines": [
+        {
+          "line": "district",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:4",
+            "outbound:9"
+          ]
+        }
+      ],
+      "aName": "Wimbledon",
+      "bName": "Wimbledon Park",
+      "lengthM": 1495
+    },
+    {
+      "a": "940GZZLUWLO",
+      "b": "940GZZLUWSM",
+      "lines": [
+        {
+          "line": "jubilee",
+          "directions": [
+            "inbound",
+            "outbound"
+          ],
+          "branchIds": [
+            "inbound:0",
+            "outbound:1"
+          ]
+        }
+      ],
+      "aName": "Waterloo",
+      "bName": "Westminster",
+      "lengthM": 824
+    }
+  ],
+  "lines": {
+    "bakerloo": {
+      "stationCount": 25,
+      "edgeCount": 24,
+      "termini": [
+        {
+          "id": "940GZZLUEAC",
+          "name": "Elephant & Castle"
+        },
+        {
+          "id": "940GZZLUHAW",
+          "name": "Harrow & Wealdstone"
+        }
+      ],
+      "junctions": [],
+      "components": [
+        {
+          "size": 25,
+          "stations": [
+            "Baker Street",
+            "Charing Cross",
+            "Elephant & Castle",
+            "Embankment",
+            "Edgware Road (Bakerloo)",
+            "Harrow & Wealdstone",
+            "Harlesden",
+            "Kenton",
+            "Kilburn Park",
+            "Kensal Green",
+            "Lambeth North",
+            "Maida Vale",
+            "Marylebone",
+            "North Wembley",
+            "Oxford Circus",
+            "Paddington",
+            "Piccadilly Circus",
+            "Queen's Park",
+            "Regent's Park",
+            "Stonebridge Park",
+            "South Kenton",
+            "Willesden Junction",
+            "Warwick Avenue",
+            "Waterloo",
+            "Wembley Central"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "central": {
+      "stationCount": 49,
+      "edgeCount": 49,
+      "termini": [
+        {
+          "id": "940GZZLUEBY",
+          "name": "Ealing Broadway"
+        },
+        {
+          "id": "940GZZLUEPG",
+          "name": "Epping"
+        },
+        {
+          "id": "940GZZLUWRP",
+          "name": "West Ruislip"
+        }
+      ],
+      "junctions": [
+        {
+          "id": "940GZZLULYS",
+          "name": "Leytonstone",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUNAN",
+          "name": "North Acton",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUWOF",
+          "name": "Woodford",
+          "degree": 3
+        }
+      ],
+      "components": [
+        {
+          "size": 49,
+          "stations": [
+            "Barkingside",
+            "Buckhurst Hill",
+            "Bethnal Green",
+            "Bond Street",
+            "Bank",
+            "Chancery Lane",
+            "Chigwell",
+            "Debden",
+            "East Acton",
+            "Ealing Broadway",
+            "Epping",
+            "Fairlop",
+            "Greenford",
+            "Grange Hill",
+            "Gants Hill",
+            "Holborn",
+            "Hanger Lane",
+            "Hainault",
+            "Holland Park",
+            "Loughton",
+            "Lancaster Gate",
+            "Liverpool Street",
+            "Leyton",
+            "Leytonstone",
+            "Marble Arch",
+            "Mile End",
+            "North Acton",
+            "Newbury Park",
+            "Notting Hill Gate",
+            "Northolt",
+            "Oxford Circus",
+            "Perivale",
+            "Queensway",
+            "Redbridge",
+            "Ruislip Gardens",
+            "Roding Valley",
+            "Shepherd's Bush",
+            "Snaresbrook",
+            "St. Paul's",
+            "South Ruislip",
+            "Stratford",
+            "South Woodford",
+            "Tottenham Court Road",
+            "Theydon Bois",
+            "White City",
+            "Woodford",
+            "West Ruislip",
+            "Wanstead",
+            "West Acton"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "circle": {
+      "stationCount": 36,
+      "edgeCount": 36,
+      "termini": [
+        {
+          "id": "940GZZLUHSC",
+          "name": "Hammersmith (H&C Line)"
+        }
+      ],
+      "junctions": [
+        {
+          "id": "940GZZLUERC",
+          "name": "Edgware Road (Circle Line)",
+          "degree": 3
+        }
+      ],
+      "components": [
+        {
+          "size": 36,
+          "stations": [
+            "Aldgate",
+            "Barbican",
+            "Blackfriars",
+            "Baker Street",
+            "Bayswater",
+            "Cannon Street",
+            "Embankment",
+            "Edgware Road (Circle Line)",
+            "Euston Square",
+            "Farringdon",
+            "Goldhawk Road",
+            "Great Portland Street",
+            "Gloucester Road",
+            "Hammersmith (H&C Line)",
+            "High Street Kensington",
+            "King's Cross St. Pancras",
+            "Ladbroke Grove",
+            "Latimer Road",
+            "Liverpool Street",
+            "Moorgate",
+            "Monument",
+            "Mansion House",
+            "Notting Hill Gate",
+            "Paddington",
+            "Paddington (H&C Line)",
+            "Royal Oak",
+            "Shepherd's Bush Market",
+            "St. James's Park",
+            "South Kensington",
+            "Sloane Square",
+            "Temple",
+            "Tower Hill",
+            "Victoria",
+            "Wood Lane",
+            "Westminster",
+            "Westbourne Park"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "district": {
+      "stationCount": 60,
+      "edgeCount": 59,
+      "termini": [
+        {
+          "id": "940GZZLUEBY",
+          "name": "Ealing Broadway"
+        },
+        {
+          "id": "940GZZLUERC",
+          "name": "Edgware Road (Circle Line)"
+        },
+        {
+          "id": "940GZZLUKOY",
+          "name": "Kensington (Olympia)"
+        },
+        {
+          "id": "940GZZLURMD",
+          "name": "Richmond"
+        },
+        {
+          "id": "940GZZLUUPM",
+          "name": "Upminster"
+        },
+        {
+          "id": "940GZZLUWIM",
+          "name": "Wimbledon"
+        }
+      ],
+      "junctions": [
+        {
+          "id": "940GZZLUECT",
+          "name": "Earl's Court",
+          "degree": 5
+        },
+        {
+          "id": "940GZZLUTNG",
+          "name": "Turnham Green",
+          "degree": 3
+        }
+      ],
+      "components": [
+        {
+          "size": 60,
+          "stations": [
+            "Acton Town",
+            "Aldgate East",
+            "Bromley-by-Bow",
+            "Becontree",
+            "Blackfriars",
+            "Barking",
+            "Barons Court",
+            "Bow Road",
+            "Bayswater",
+            "Cannon Street",
+            "Chiswick Park",
+            "Dagenham East",
+            "Dagenham Heathway",
+            "Ealing Broadway",
+            "Ealing Common",
+            "Earl's Court",
+            "East Ham",
+            "Embankment",
+            "Elm Park",
+            "East Putney",
+            "Edgware Road (Circle Line)",
+            "Fulham Broadway",
+            "Gunnersbury",
+            "Gloucester Road",
+            "Hornchurch",
+            "Hammersmith (Dist&Picc Line)",
+            "High Street Kensington",
+            "Kensington (Olympia)",
+            "Kew Gardens",
+            "Mile End",
+            "Monument",
+            "Mansion House",
+            "Notting Hill Gate",
+            "Paddington",
+            "Plaistow",
+            "Parsons Green",
+            "Putney Bridge",
+            "Richmond",
+            "Ravenscourt Park",
+            "Stamford Brook",
+            "Southfields",
+            "Stepney Green",
+            "St. James's Park",
+            "South Kensington",
+            "Sloane Square",
+            "Temple",
+            "Turnham Green",
+            "Tower Hill",
+            "Upminster Bridge",
+            "Upton Park",
+            "Upminster",
+            "Upney",
+            "Victoria",
+            "West Brompton",
+            "West Ham",
+            "Wimbledon",
+            "Wimbledon Park",
+            "West Kensington",
+            "Whitechapel",
+            "Westminster"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "hammersmith-city": {
+      "stationCount": 29,
+      "edgeCount": 28,
+      "termini": [
+        {
+          "id": "940GZZLUBKG",
+          "name": "Barking"
+        },
+        {
+          "id": "940GZZLUHSC",
+          "name": "Hammersmith (H&C Line)"
+        }
+      ],
+      "junctions": [],
+      "components": [
+        {
+          "size": 29,
+          "stations": [
+            "Aldgate East",
+            "Bromley-by-Bow",
+            "Barbican",
+            "Barking",
+            "Baker Street",
+            "Bow Road",
+            "East Ham",
+            "Edgware Road (Circle Line)",
+            "Euston Square",
+            "Farringdon",
+            "Goldhawk Road",
+            "Great Portland Street",
+            "Hammersmith (H&C Line)",
+            "King's Cross St. Pancras",
+            "Ladbroke Grove",
+            "Latimer Road",
+            "Liverpool Street",
+            "Mile End",
+            "Moorgate",
+            "Paddington (H&C Line)",
+            "Plaistow",
+            "Royal Oak",
+            "Shepherd's Bush Market",
+            "Stepney Green",
+            "Upton Park",
+            "West Ham",
+            "Wood Lane",
+            "Whitechapel",
+            "Westbourne Park"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "jubilee": {
+      "stationCount": 27,
+      "edgeCount": 26,
+      "termini": [
+        {
+          "id": "940GZZLUSTM",
+          "name": "Stanmore"
+        },
+        {
+          "id": "940GZZLUSTD",
+          "name": "Stratford"
+        }
+      ],
+      "junctions": [],
+      "components": [
+        {
+          "size": 27,
+          "stations": [
+            "Bermondsey",
+            "Bond Street",
+            "Baker Street",
+            "Canning Town",
+            "Canons Park",
+            "Canada Water",
+            "Canary Wharf",
+            "Dollis Hill",
+            "Finchley Road",
+            "Green Park",
+            "Kilburn",
+            "Kingsbury",
+            "London Bridge",
+            "Neasden",
+            "North Greenwich",
+            "Queensbury",
+            "St. John's Wood",
+            "Stratford",
+            "Stanmore",
+            "Swiss Cottage",
+            "Southwark",
+            "West Ham",
+            "West Hampstead",
+            "Willesden Green",
+            "Waterloo",
+            "Westminster",
+            "Wembley Park"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "metropolitan": {
+      "stationCount": 34,
+      "edgeCount": 33,
+      "termini": [
+        {
+          "id": "940GZZLUALD",
+          "name": "Aldgate"
+        },
+        {
+          "id": "940GZZLUAMS",
+          "name": "Amersham"
+        },
+        {
+          "id": "940GZZLUCSM",
+          "name": "Chesham"
+        },
+        {
+          "id": "940GZZLUUXB",
+          "name": "Uxbridge"
+        },
+        {
+          "id": "940GZZLUWAF",
+          "name": "Watford"
+        }
+      ],
+      "junctions": [
+        {
+          "id": "940GZZLUCAL",
+          "name": "Chalfont & Latimer",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUHOH",
+          "name": "Harrow-on-the-Hill",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUMPK",
+          "name": "Moor Park",
+          "degree": 3
+        }
+      ],
+      "components": [
+        {
+          "size": 34,
+          "stations": [
+            "Aldgate",
+            "Amersham",
+            "Barbican",
+            "Baker Street",
+            "Chalfont & Latimer",
+            "Chesham",
+            "Croxley",
+            "Chorleywood",
+            "Eastcote",
+            "Euston Square",
+            "Farringdon",
+            "Finchley Road",
+            "Great Portland Street",
+            "Hillingdon",
+            "Harrow-on-the-Hill",
+            "Ickenham",
+            "King's Cross St. Pancras",
+            "Liverpool Street",
+            "Moorgate",
+            "Moor Park",
+            "North Harrow",
+            "Northwick Park",
+            "Northwood",
+            "Northwood Hills",
+            "Pinner",
+            "Preston Road",
+            "Rickmansworth",
+            "Ruislip Manor",
+            "Ruislip",
+            "Rayners Lane",
+            "Uxbridge",
+            "Watford",
+            "West Harrow",
+            "Wembley Park"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "northern": {
+      "stationCount": 52,
+      "edgeCount": 53,
+      "termini": [
+        {
+          "id": "940GZZBPSUST",
+          "name": "Battersea Power Station"
+        },
+        {
+          "id": "940GZZLUEGW",
+          "name": "Edgware"
+        },
+        {
+          "id": "940GZZLUHBT",
+          "name": "High Barnet"
+        },
+        {
+          "id": "940GZZLUMHL",
+          "name": "Mill Hill East"
+        },
+        {
+          "id": "940GZZLUMDN",
+          "name": "Morden"
+        }
+      ],
+      "junctions": [
+        {
+          "id": "940GZZLUCTN",
+          "name": "Camden Town",
+          "degree": 4
+        },
+        {
+          "id": "940GZZLUEUS",
+          "name": "Euston",
+          "degree": 4
+        },
+        {
+          "id": "940GZZLUFYC",
+          "name": "Finchley Central",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUKNG",
+          "name": "Kennington",
+          "degree": 4
+        }
+      ],
+      "components": [
+        {
+          "size": 52,
+          "stations": [
+            "Battersea Power Station",
+            "Archway",
+            "Angel",
+            "Balham",
+            "Bank",
+            "Borough",
+            "Burnt Oak",
+            "Brent Cross",
+            "Belsize Park",
+            "Chalk Farm",
+            "Charing Cross",
+            "Colindale",
+            "Clapham Common",
+            "Clapham North",
+            "Clapham South",
+            "Colliers Wood",
+            "Camden Town",
+            "Elephant & Castle",
+            "East Finchley",
+            "Edgware",
+            "Embankment",
+            "Euston",
+            "Finchley Central",
+            "Goodge Street",
+            "Golders Green",
+            "High Barnet",
+            "Hendon Central",
+            "Highgate",
+            "Hampstead",
+            "Kennington",
+            "Kentish Town",
+            "King's Cross St. Pancras",
+            "London Bridge",
+            "Leicester Square",
+            "Morden",
+            "Moorgate",
+            "Mill Hill East",
+            "Mornington Crescent",
+            "Old Street",
+            "Oval",
+            "Stockwell",
+            "South Wimbledon",
+            "Totteridge & Whetstone",
+            "Tooting Bec",
+            "Tooting Broadway",
+            "Tottenham Court Road",
+            "Tufnell Park",
+            "West Finchley",
+            "Waterloo",
+            "Woodside Park",
+            "Warren Street",
+            "Nine Elms"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "piccadilly": {
+      "stationCount": 53,
+      "edgeCount": 53,
+      "termini": [
+        {
+          "id": "940GZZLUCKS",
+          "name": "Cockfosters"
+        },
+        {
+          "id": "940GZZLUHR5",
+          "name": "Heathrow Terminal 5"
+        },
+        {
+          "id": "940GZZLUUXB",
+          "name": "Uxbridge"
+        }
+      ],
+      "junctions": [
+        {
+          "id": "940GZZLUACT",
+          "name": "Acton Town",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUHNX",
+          "name": "Hatton Cross",
+          "degree": 3
+        },
+        {
+          "id": "940GZZLUHRC",
+          "name": "Heathrow Terminals 1-2-3",
+          "degree": 3
+        }
+      ],
+      "components": [
+        {
+          "size": 53,
+          "stations": [
+            "Acton Town",
+            "Alperton",
+            "Arnos Grove",
+            "Arsenal",
+            "Bounds Green",
+            "Boston Manor",
+            "Barons Court",
+            "Caledonian Road",
+            "Covent Garden",
+            "Cockfosters",
+            "Eastcote",
+            "Ealing Common",
+            "Earl's Court",
+            "Finsbury Park",
+            "Green Park",
+            "Gloucester Road",
+            "Holborn",
+            "Hillingdon",
+            "Hatton Cross",
+            "Hyde Park Corner",
+            "Heathrow Terminal 4",
+            "Heathrow Terminal 5",
+            "Heathrow Terminals 1-2-3",
+            "Hammersmith (Dist&Picc Line)",
+            "Hounslow Central",
+            "Hounslow East",
+            "Hounslow West",
+            "Holloway Road",
+            "Ickenham",
+            "Knightsbridge",
+            "King's Cross St. Pancras",
+            "Leicester Square",
+            "Manor House",
+            "North Ealing",
+            "Northfields",
+            "Oakwood",
+            "Osterley",
+            "Piccadilly Circus",
+            "Park Royal",
+            "Ruislip Manor",
+            "Ruislip",
+            "Russell Square",
+            "Rayners Lane",
+            "South Ealing",
+            "Southgate",
+            "South Harrow",
+            "South Kensington",
+            "Sudbury Hill",
+            "Sudbury Town",
+            "Turnham Green",
+            "Turnpike Lane",
+            "Uxbridge",
+            "Wood Green"
+          ]
+        }
+      ],
+      "singleDirectionEdges": [
+        {
+          "a": "Hatton Cross",
+          "b": "Heathrow Terminal 4",
+          "direction": "inbound"
+        },
+        {
+          "a": "Heathrow Terminal 4",
+          "b": "Heathrow Terminals 1-2-3",
+          "direction": "outbound"
+        }
+      ]
+    },
+    "victoria": {
+      "stationCount": 16,
+      "edgeCount": 15,
+      "termini": [
+        {
+          "id": "940GZZLUBXN",
+          "name": "Brixton"
+        },
+        {
+          "id": "940GZZLUWWL",
+          "name": "Walthamstow Central"
+        }
+      ],
+      "junctions": [],
+      "components": [
+        {
+          "size": 16,
+          "stations": [
+            "Blackhorse Road",
+            "Brixton",
+            "Euston",
+            "Finsbury Park",
+            "Green Park",
+            "Highbury & Islington",
+            "King's Cross St. Pancras",
+            "Oxford Circus",
+            "Pimlico",
+            "Stockwell",
+            "Seven Sisters",
+            "Tottenham Hale",
+            "Victoria",
+            "Vauxhall",
+            "Warren Street",
+            "Walthamstow Central"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    },
+    "waterloo-city": {
+      "stationCount": 2,
+      "edgeCount": 1,
+      "termini": [
+        {
+          "id": "940GZZLUBNK",
+          "name": "Bank"
+        },
+        {
+          "id": "940GZZLUWLO",
+          "name": "Waterloo"
+        }
+      ],
+      "junctions": [],
+      "components": [
+        {
+          "size": 2,
+          "stations": [
+            "Bank",
+            "Waterloo"
+          ]
+        }
+      ],
+      "singleDirectionEdges": []
+    }
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "generatedAt": "2026-11-17T11:49:38.566Z",
+  "status": "warnings",
+  "errors": [],
+  "warnings": [
+    "4 station(s) whose CSV LINES differ from TfL topology (topology is used)"
+  ],
+  "summary": {
+    "csvRecords": 273,
+    "physicalStations": 272,
+    "interchanges": 80,
+    "edges": 312,
+    "sharedEdges": 57
+  },
+  "unmatchedStations": {
+    "csvStationsWithoutTopologyMatch": [],
+    "topologyStopsWithoutCsvMatch": [],
+    "nonExactMatches": [
+      {
+        "objectId": 182,
+        "csvName": "Shepherd's Bush",
+        "stopId": "940GZZLUSBC",
+        "tflName": "Shepherd's Bush (Central)",
+        "method": "base-name",
+        "distanceM": 3
+      },
+      {
+        "objectId": 391,
+        "csvName": "Heathrow Terminals 1-2-3",
+        "stopId": "940GZZLUHRC",
+        "tflName": "Heathrow Terminals 2 & 3",
+        "method": "alias",
+        "distanceM": 14
+      }
+    ]
+  },
+  "duplicates": {
+    "duplicateNames": [
+      {
+        "name": "Paddington",
+        "objectIds": [
+          125,
+          171
+        ],
+        "maxSeparationM": 125
+      }
+    ],
+    "duplicateCoordinates": [],
+    "recordsWithin200m": [
+      {
+        "objectIds": [
+          125,
+          171
+        ],
+        "names": [
+          "Paddington",
+          "Paddington"
+        ],
+        "distanceM": 125
+      },
+      {
+        "objectIds": [
+          170,
+          272
+        ],
+        "names": [
+          "Edgware Road (Circle Line)",
+          "Edgware Road (Bakerloo)"
+        ],
+        "distanceM": 184
+      },
+      {
+        "objectIds": [
+          276,
+          388
+        ],
+        "names": [
+          "Regent's Park",
+          "Great Portland Street"
+        ],
+        "distanceM": 154
+      }
+    ],
+    "duplicateObjectIds": [],
+    "resolution": [
+      {
+        "stopId": "940GZZLUPAC",
+        "name": "Paddington",
+        "canonicalObjectId": 125,
+        "duplicates": [
+          {
+            "objectId": 171,
+            "name": "Paddington",
+            "lon": -0.17539086258650674,
+            "lat": 51.5155036135896,
+            "distanceFromCanonicalM": 125
+          }
+        ]
+      }
+    ],
+    "note": "Records are merged only when both the name and the location match the same TfL station. Edgware Road, Hammersmith, Paddington (H&C Line) and Shepherd's Bush / Shepherd's Bush Market stay as separate stations."
+  },
+  "lineNameMismatches": [
+    {
+      "stopId": "940GZZLUPAC",
+      "name": "Paddington",
+      "objectId": 125,
+      "topologyLines": [
+        "bakerloo",
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "circle",
+        "district",
+        "hammersmith-city"
+      ],
+      "missingInCsv": [],
+      "extraInCsv": [
+        "hammersmith-city"
+      ]
+    },
+    {
+      "stopId": "940GZZLUHSC",
+      "name": "Hammersmith (H&C Line)",
+      "objectId": 297,
+      "topologyLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "hammersmith-city"
+      ],
+      "missingInCsv": [
+        "circle"
+      ],
+      "extraInCsv": []
+    },
+    {
+      "stopId": "940GZZLUPAH",
+      "name": "Paddington (H&C Line)",
+      "objectId": 265,
+      "topologyLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "hammersmith-city"
+      ],
+      "missingInCsv": [
+        "circle"
+      ],
+      "extraInCsv": []
+    },
+    {
+      "stopId": "940GZZLUERC",
+      "name": "Edgware Road (Circle Line)",
+      "objectId": 170,
+      "topologyLines": [
+        "circle",
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle"
+      ],
+      "missingInCsv": [
+        "district",
+        "hammersmith-city"
+      ],
+      "extraInCsv": []
+    }
+  ],
+  "csvParseIssues": [],
+  "topologyOverridesApplied": [
+    {
+      "line": "metropolitan",
+      "stopId": "940GZZLUWIG",
+      "stopName": "Willesden Green",
+      "reason": "The TfL Metropolitan outbound sequence has a Wembley Park -> Willesden Green -> Finchley Road branch (branchId 14) next to the correct non-stop Wembley Park -> Finchley Road branch (branchId 13). Metropolitan trains run through Willesden Green without stopping. The inbound sequence goes straight from Finchley Road to Wembley Park, and the supplied CSV lists Willesden Green as Jubilee only. Removing the stop collapses branch 14 into the existing Wembley Park - Finchley Road link, so no connection is invented.",
+      "direction": "outbound",
+      "branchId": 14
+    }
+  ],
+  "unusedTopologyOverrides": [],
+  "network": {
+    "disconnectedSegments": [],
+    "longEdges": [],
+    "stationsWithoutEdges": [],
+    "lines": {
+      "bakerloo": {
+        "name": "Bakerloo",
+        "stations": 25,
+        "edges": 24,
+        "components": 1,
+        "termini": [
+          "Elephant & Castle",
+          "Harrow & Wealdstone"
+        ],
+        "junctions": [],
+        "singleDirectionEdges": []
+      },
+      "central": {
+        "name": "Central",
+        "stations": 49,
+        "edges": 49,
+        "components": 1,
+        "termini": [
+          "Ealing Broadway",
+          "Epping",
+          "West Ruislip"
+        ],
+        "junctions": [
+          "Leytonstone (3)",
+          "North Acton (3)",
+          "Woodford (3)"
+        ],
+        "singleDirectionEdges": []
+      },
+      "circle": {
+        "name": "Circle",
+        "stations": 36,
+        "edges": 36,
+        "components": 1,
+        "termini": [
+          "Hammersmith (H&C Line)"
+        ],
+        "junctions": [
+          "Edgware Road (Circle Line) (3)"
+        ],
+        "singleDirectionEdges": []
+      },
+      "district": {
+        "name": "District",
+        "stations": 60,
+        "edges": 59,
+        "components": 1,
+        "termini": [
+          "Ealing Broadway",
+          "Edgware Road (Circle Line)",
+          "Kensington (Olympia)",
+          "Richmond",
+          "Upminster",
+          "Wimbledon"
+        ],
+        "junctions": [
+          "Earl's Court (5)",
+          "Turnham Green (3)"
+        ],
+        "singleDirectionEdges": []
+      },
+      "hammersmith-city": {
+        "name": "Hammersmith & City",
+        "stations": 29,
+        "edges": 28,
+        "components": 1,
+        "termini": [
+          "Barking",
+          "Hammersmith (H&C Line)"
+        ],
+        "junctions": [],
+        "singleDirectionEdges": []
+      },
+      "jubilee": {
+        "name": "Jubilee",
+        "stations": 27,
+        "edges": 26,
+        "components": 1,
+        "termini": [
+          "Stanmore",
+          "Stratford"
+        ],
+        "junctions": [],
+        "singleDirectionEdges": []
+      },
+      "metropolitan": {
+        "name": "Metropolitan",
+        "stations": 34,
+        "edges": 33,
+        "components": 1,
+        "termini": [
+          "Aldgate",
+          "Amersham",
+          "Chesham",
+          "Uxbridge",
+          "Watford"
+        ],
+        "junctions": [
+          "Chalfont & Latimer (3)",
+          "Harrow-on-the-Hill (3)",
+          "Moor Park (3)"
+        ],
+        "singleDirectionEdges": []
+      },
+      "northern": {
+        "name": "Northern",
+        "stations": 52,
+        "edges": 53,
+        "components": 1,
+        "termini": [
+          "Battersea Power Station",
+          "Edgware",
+          "High Barnet",
+          "Mill Hill East",
+          "Morden"
+        ],
+        "junctions": [
+          "Camden Town (4)",
+          "Euston (4)",
+          "Finchley Central (3)",
+          "Kennington (4)"
+        ],
+        "singleDirectionEdges": []
+      },
+      "piccadilly": {
+        "name": "Piccadilly",
+        "stations": 53,
+        "edges": 53,
+        "components": 1,
+        "termini": [
+          "Cockfosters",
+          "Heathrow Terminal 5",
+          "Uxbridge"
+        ],
+        "junctions": [
+          "Acton Town (3)",
+          "Hatton Cross (3)",
+          "Heathrow Terminals 1-2-3 (3)"
+        ],
+        "singleDirectionEdges": [
+          {
+            "a": "Hatton Cross",
+            "b": "Heathrow Terminal 4",
+            "direction": "inbound"
+          },
+          {
+            "a": "Heathrow Terminal 4",
+            "b": "Heathrow Terminals 1-2-3",
+            "direction": "outbound"
+          }
+        ]
+      },
+      "victoria": {
+        "name": "Victoria",
+        "stations": 16,
+        "edges": 15,
+        "components": 1,
+        "termini": [
+          "Brixton",
+          "Walthamstow Central"
+        ],
+        "junctions": [],
+        "singleDirectionEdges": []
+      },
+      "waterloo-city": {
+        "name": "Waterloo & City",
+        "stations": 2,
+        "edges": 1,
+        "components": 1,
+        "termini": [
+          "Bank",
+          "Waterloo"
+        ],
+        "junctions": [],
+        "singleDirectionEdges": []
+      }
+    }
+  },
+  "isochrones": {
+    "status": "complete",
+    "providers": [
+      "Valhalla (FOSSGIS public instance, OpenStreetMap data)"
+    ],
+    "parameters": {
+      "costing": "pedestrian",
+      "walking_speed_kmh": 5.04,
+      "contours_seconds": [
+        60,
+        120,
+        300
+      ],
+      "polygons": true,
+      "denoise": 0.1,
+      "generalize_m": 3
+    },
+    "generatedBetween": [
+      "2026-11-17T11:43:06.827Z",
+      "2026-11-17T11:48:09.577Z"
+    ],
+    "stationsWithIsochrones": 272,
+    "missing": [],
+    "lastRunFailures": [],
+    "invalidGeometries": [],
+    "nestingViolations": [],
+    "circularLooking": [],
+    "unusuallyLarge": [],
+    "radialCoefficientOfVariation": {
+      "min": 0.062,
+      "median": 0.198,
+      "max": 0.558
+    }
+  }
+}

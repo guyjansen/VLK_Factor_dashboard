@@ -1,0 +1,2563 @@
+{
+  "generatedAt": "2026-11-17T11:42:26.778Z",
+  "maxJoinDistanceM": 500,
+  "matches": [
+    {
+      "objectId": 111,
+      "csvName": "St. Paul's",
+      "stopId": "940GZZLUSPU",
+      "tflName": "St. Paul's",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 112,
+      "csvName": "Mile End",
+      "stopId": "940GZZLUMED",
+      "tflName": "Mile End",
+      "method": "exact-name",
+      "distanceM": 15
+    },
+    {
+      "objectId": 113,
+      "csvName": "Bethnal Green",
+      "stopId": "940GZZLUBLG",
+      "tflName": "Bethnal Green",
+      "method": "exact-name",
+      "distanceM": 56
+    },
+    {
+      "objectId": 114,
+      "csvName": "Leyton",
+      "stopId": "940GZZLULYN",
+      "tflName": "Leyton",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 115,
+      "csvName": "Snaresbrook",
+      "stopId": "940GZZLUSNB",
+      "tflName": "Snaresbrook",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 116,
+      "csvName": "Leytonstone",
+      "stopId": "940GZZLULYS",
+      "tflName": "Leytonstone",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 117,
+      "csvName": "Wanstead",
+      "stopId": "940GZZLUWSD",
+      "tflName": "Wanstead",
+      "method": "exact-name",
+      "distanceM": 13
+    },
+    {
+      "objectId": 118,
+      "csvName": "South Woodford",
+      "stopId": "940GZZLUSWF",
+      "tflName": "South Woodford",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 119,
+      "csvName": "Newbury Park",
+      "stopId": "940GZZLUNBP",
+      "tflName": "Newbury Park",
+      "method": "exact-name",
+      "distanceM": 6
+    },
+    {
+      "objectId": 120,
+      "csvName": "Barkingside",
+      "stopId": "940GZZLUBKE",
+      "tflName": "Barkingside",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 121,
+      "csvName": "Fairlop",
+      "stopId": "940GZZLUFLP",
+      "tflName": "Fairlop",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 122,
+      "csvName": "Woodford",
+      "stopId": "940GZZLUWOF",
+      "tflName": "Woodford",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 123,
+      "csvName": "Roding Valley",
+      "stopId": "940GZZLURVY",
+      "tflName": "Roding Valley",
+      "method": "exact-name",
+      "distanceM": 14
+    },
+    {
+      "objectId": 124,
+      "csvName": "Chigwell",
+      "stopId": "940GZZLUCWL",
+      "tflName": "Chigwell",
+      "method": "exact-name",
+      "distanceM": 48
+    },
+    {
+      "objectId": 125,
+      "csvName": "Paddington",
+      "stopId": "940GZZLUPAC",
+      "tflName": "Paddington",
+      "method": "exact-name",
+      "distanceM": 21
+    },
+    {
+      "objectId": 126,
+      "csvName": "Plaistow",
+      "stopId": "940GZZLUPLW",
+      "tflName": "Plaistow",
+      "method": "exact-name",
+      "distanceM": 34
+    },
+    {
+      "objectId": 127,
+      "csvName": "Upton Park",
+      "stopId": "940GZZLUUPK",
+      "tflName": "Upton Park",
+      "method": "exact-name",
+      "distanceM": 6
+    },
+    {
+      "objectId": 128,
+      "csvName": "East Ham",
+      "stopId": "940GZZLUEHM",
+      "tflName": "East Ham",
+      "method": "exact-name",
+      "distanceM": 124
+    },
+    {
+      "objectId": 129,
+      "csvName": "Ruislip Gardens",
+      "stopId": "940GZZLURSG",
+      "tflName": "Ruislip Gardens",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 130,
+      "csvName": "South Ruislip",
+      "stopId": "940GZZLUSRP",
+      "tflName": "South Ruislip",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 131,
+      "csvName": "Northolt",
+      "stopId": "940GZZLUNHT",
+      "tflName": "Northolt",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 132,
+      "csvName": "West Ruislip",
+      "stopId": "940GZZLUWRP",
+      "tflName": "West Ruislip",
+      "method": "exact-name",
+      "distanceM": 18
+    },
+    {
+      "objectId": 133,
+      "csvName": "Upney",
+      "stopId": "940GZZLUUPY",
+      "tflName": "Upney",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 134,
+      "csvName": "Brent Cross",
+      "stopId": "940GZZLUBTX",
+      "tflName": "Brent Cross",
+      "method": "exact-name",
+      "distanceM": 11
+    },
+    {
+      "objectId": 135,
+      "csvName": "Colindale",
+      "stopId": "940GZZLUCND",
+      "tflName": "Colindale",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 136,
+      "csvName": "Burnt Oak",
+      "stopId": "940GZZLUBTK",
+      "tflName": "Burnt Oak",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 137,
+      "csvName": "Mill Hill East",
+      "stopId": "940GZZLUMHL",
+      "tflName": "Mill Hill East",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 138,
+      "csvName": "Golders Green",
+      "stopId": "940GZZLUGGN",
+      "tflName": "Golders Green",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 139,
+      "csvName": "Finchley Central",
+      "stopId": "940GZZLUFYC",
+      "tflName": "Finchley Central",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 140,
+      "csvName": "Sudbury Hill",
+      "stopId": "940GZZLUSUH",
+      "tflName": "Sudbury Hill",
+      "method": "exact-name",
+      "distanceM": 13
+    },
+    {
+      "objectId": 141,
+      "csvName": "Sudbury Town",
+      "stopId": "940GZZLUSUT",
+      "tflName": "Sudbury Town",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 142,
+      "csvName": "South Ealing",
+      "stopId": "940GZZLUSEA",
+      "tflName": "South Ealing",
+      "method": "exact-name",
+      "distanceM": 13
+    },
+    {
+      "objectId": 143,
+      "csvName": "Park Royal",
+      "stopId": "940GZZLUPKR",
+      "tflName": "Park Royal",
+      "method": "exact-name",
+      "distanceM": 76
+    },
+    {
+      "objectId": 144,
+      "csvName": "Alperton",
+      "stopId": "940GZZLUALP",
+      "tflName": "Alperton",
+      "method": "exact-name",
+      "distanceM": 26
+    },
+    {
+      "objectId": 145,
+      "csvName": "Hyde Park Corner",
+      "stopId": "940GZZLUHPC",
+      "tflName": "Hyde Park Corner",
+      "method": "exact-name",
+      "distanceM": 122
+    },
+    {
+      "objectId": 146,
+      "csvName": "Knightsbridge",
+      "stopId": "940GZZLUKNB",
+      "tflName": "Knightsbridge",
+      "method": "exact-name",
+      "distanceM": 82
+    },
+    {
+      "objectId": 147,
+      "csvName": "Leicester Square",
+      "stopId": "940GZZLULSQ",
+      "tflName": "Leicester Square",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 148,
+      "csvName": "Covent Garden",
+      "stopId": "940GZZLUCGN",
+      "tflName": "Covent Garden",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 149,
+      "csvName": "Russell Square",
+      "stopId": "940GZZLURSQ",
+      "tflName": "Russell Square",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 150,
+      "csvName": "Holloway Road",
+      "stopId": "940GZZLUHWY",
+      "tflName": "Holloway Road",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 151,
+      "csvName": "Arsenal",
+      "stopId": "940GZZLUASL",
+      "tflName": "Arsenal",
+      "method": "exact-name",
+      "distanceM": 13
+    },
+    {
+      "objectId": 152,
+      "csvName": "Arnos Grove",
+      "stopId": "940GZZLUASG",
+      "tflName": "Arnos Grove",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 153,
+      "csvName": "Southgate",
+      "stopId": "940GZZLUSGT",
+      "tflName": "Southgate",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 154,
+      "csvName": "Cockfosters",
+      "stopId": "940GZZLUCKS",
+      "tflName": "Cockfosters",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 155,
+      "csvName": "Oakwood",
+      "stopId": "940GZZLUOAK",
+      "tflName": "Oakwood",
+      "method": "exact-name",
+      "distanceM": 77
+    },
+    {
+      "objectId": 156,
+      "csvName": "Manor House",
+      "stopId": "940GZZLUMRH",
+      "tflName": "Manor House",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 157,
+      "csvName": "Temple",
+      "stopId": "940GZZLUTMP",
+      "tflName": "Temple",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 158,
+      "csvName": "Blackfriars",
+      "stopId": "940GZZLUBKF",
+      "tflName": "Blackfriars",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 159,
+      "csvName": "Mansion House",
+      "stopId": "940GZZLUMSH",
+      "tflName": "Mansion House",
+      "method": "exact-name",
+      "distanceM": 34
+    },
+    {
+      "objectId": 160,
+      "csvName": "Cannon Street",
+      "stopId": "940GZZLUCST",
+      "tflName": "Cannon Street",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 161,
+      "csvName": "Tower Hill",
+      "stopId": "940GZZLUTWH",
+      "tflName": "Tower Hill",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 162,
+      "csvName": "Aldgate",
+      "stopId": "940GZZLUALD",
+      "tflName": "Aldgate",
+      "method": "exact-name",
+      "distanceM": 30
+    },
+    {
+      "objectId": 163,
+      "csvName": "Liverpool Street",
+      "stopId": "940GZZLULVT",
+      "tflName": "Liverpool Street",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 164,
+      "csvName": "Moorgate",
+      "stopId": "940GZZLUMGT",
+      "tflName": "Moorgate",
+      "method": "exact-name",
+      "distanceM": 72
+    },
+    {
+      "objectId": 165,
+      "csvName": "Barbican",
+      "stopId": "940GZZLUBBN",
+      "tflName": "Barbican",
+      "method": "exact-name",
+      "distanceM": 56
+    },
+    {
+      "objectId": 166,
+      "csvName": "Farringdon",
+      "stopId": "940GZZLUFCN",
+      "tflName": "Farringdon",
+      "method": "exact-name",
+      "distanceM": 31
+    },
+    {
+      "objectId": 167,
+      "csvName": "King's Cross St. Pancras",
+      "stopId": "940GZZLUKSX",
+      "tflName": "King's Cross St. Pancras",
+      "method": "exact-name",
+      "distanceM": 147
+    },
+    {
+      "objectId": 168,
+      "csvName": "Euston Square",
+      "stopId": "940GZZLUESQ",
+      "tflName": "Euston Square",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 169,
+      "csvName": "Baker Street",
+      "stopId": "940GZZLUBST",
+      "tflName": "Baker Street",
+      "method": "exact-name",
+      "distanceM": 14
+    },
+    {
+      "objectId": 170,
+      "csvName": "Edgware Road (Circle Line)",
+      "stopId": "940GZZLUERC",
+      "tflName": "Edgware Road (Circle Line)",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 171,
+      "csvName": "Paddington",
+      "stopId": "940GZZLUPAC",
+      "tflName": "Paddington",
+      "method": "exact-name",
+      "distanceM": 122
+    },
+    {
+      "objectId": 172,
+      "csvName": "Bayswater",
+      "stopId": "940GZZLUBWT",
+      "tflName": "Bayswater",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 173,
+      "csvName": "High Street Kensington",
+      "stopId": "940GZZLUHSK",
+      "tflName": "High Street Kensington",
+      "method": "exact-name",
+      "distanceM": 79
+    },
+    {
+      "objectId": 174,
+      "csvName": "Gloucester Road",
+      "stopId": "940GZZLUGTR",
+      "tflName": "Gloucester Road",
+      "method": "exact-name",
+      "distanceM": 77
+    },
+    {
+      "objectId": 175,
+      "csvName": "South Kensington",
+      "stopId": "940GZZLUSKS",
+      "tflName": "South Kensington",
+      "method": "exact-name",
+      "distanceM": 67
+    },
+    {
+      "objectId": 176,
+      "csvName": "Chiswick Park",
+      "stopId": "940GZZLUCWP",
+      "tflName": "Chiswick Park",
+      "method": "exact-name",
+      "distanceM": 42
+    },
+    {
+      "objectId": 177,
+      "csvName": "Wimbledon Park",
+      "stopId": "940GZZLUWIP",
+      "tflName": "Wimbledon Park",
+      "method": "exact-name",
+      "distanceM": 72
+    },
+    {
+      "objectId": 178,
+      "csvName": "East Putney",
+      "stopId": "940GZZLUEPY",
+      "tflName": "East Putney",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 179,
+      "csvName": "West Kensington",
+      "stopId": "940GZZLUWKN",
+      "tflName": "West Kensington",
+      "method": "exact-name",
+      "distanceM": 90
+    },
+    {
+      "objectId": 180,
+      "csvName": "Parsons Green",
+      "stopId": "940GZZLUPSG",
+      "tflName": "Parsons Green",
+      "method": "exact-name",
+      "distanceM": 52
+    },
+    {
+      "objectId": 181,
+      "csvName": "White City",
+      "stopId": "940GZZLUWCY",
+      "tflName": "White City",
+      "method": "exact-name",
+      "distanceM": 31
+    },
+    {
+      "objectId": 182,
+      "csvName": "Shepherd's Bush",
+      "stopId": "940GZZLUSBC",
+      "tflName": "Shepherd's Bush (Central)",
+      "method": "base-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 183,
+      "csvName": "Holland Park",
+      "stopId": "940GZZLUHPK",
+      "tflName": "Holland Park",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 184,
+      "csvName": "Becontree",
+      "stopId": "940GZZLUBEC",
+      "tflName": "Becontree",
+      "method": "exact-name",
+      "distanceM": 23
+    },
+    {
+      "objectId": 185,
+      "csvName": "Victoria",
+      "stopId": "940GZZLUVIC",
+      "tflName": "Victoria",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 186,
+      "csvName": "Brixton",
+      "stopId": "940GZZLUBXN",
+      "tflName": "Brixton",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 187,
+      "csvName": "Pimlico",
+      "stopId": "940GZZLUPCO",
+      "tflName": "Pimlico",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 188,
+      "csvName": "Vauxhall",
+      "stopId": "940GZZLUVXL",
+      "tflName": "Vauxhall",
+      "method": "exact-name",
+      "distanceM": 6
+    },
+    {
+      "objectId": 189,
+      "csvName": "Warren Street",
+      "stopId": "940GZZLUWRR",
+      "tflName": "Warren Street",
+      "method": "exact-name",
+      "distanceM": 47
+    },
+    {
+      "objectId": 190,
+      "csvName": "Dagenham East",
+      "stopId": "940GZZLUDGE",
+      "tflName": "Dagenham East",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 191,
+      "csvName": "Elm Park",
+      "stopId": "940GZZLUEPK",
+      "tflName": "Elm Park",
+      "method": "exact-name",
+      "distanceM": 6
+    },
+    {
+      "objectId": 192,
+      "csvName": "Hornchurch",
+      "stopId": "940GZZLUHCH",
+      "tflName": "Hornchurch",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 193,
+      "csvName": "Upminster Bridge",
+      "stopId": "940GZZLUUPB",
+      "tflName": "Upminster Bridge",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 194,
+      "csvName": "Shepherd's Bush Market",
+      "stopId": "940GZZLUSBM",
+      "tflName": "Shepherd's Bush Market",
+      "method": "exact-name",
+      "distanceM": 57
+    },
+    {
+      "objectId": 195,
+      "csvName": "Goldhawk Road",
+      "stopId": "940GZZLUGHK",
+      "tflName": "Goldhawk Road",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 196,
+      "csvName": "Latimer Road",
+      "stopId": "940GZZLULRD",
+      "tflName": "Latimer Road",
+      "method": "exact-name",
+      "distanceM": 9
+    },
+    {
+      "objectId": 197,
+      "csvName": "Ladbroke Grove",
+      "stopId": "940GZZLULAD",
+      "tflName": "Ladbroke Grove",
+      "method": "exact-name",
+      "distanceM": 38
+    },
+    {
+      "objectId": 198,
+      "csvName": "Royal Oak",
+      "stopId": "940GZZLURYO",
+      "tflName": "Royal Oak",
+      "method": "exact-name",
+      "distanceM": 67
+    },
+    {
+      "objectId": 199,
+      "csvName": "Earl's Court",
+      "stopId": "940GZZLUECT",
+      "tflName": "Earl's Court",
+      "method": "exact-name",
+      "distanceM": 17
+    },
+    {
+      "objectId": 200,
+      "csvName": "Queen's Park",
+      "stopId": "940GZZLUQPS",
+      "tflName": "Queen's Park",
+      "method": "exact-name",
+      "distanceM": 83
+    },
+    {
+      "objectId": 201,
+      "csvName": "Notting Hill Gate",
+      "stopId": "940GZZLUNHG",
+      "tflName": "Notting Hill Gate",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 202,
+      "csvName": "Lancaster Gate",
+      "stopId": "940GZZLULGT",
+      "tflName": "Lancaster Gate",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 203,
+      "csvName": "Marble Arch",
+      "stopId": "940GZZLUMBA",
+      "tflName": "Marble Arch",
+      "method": "exact-name",
+      "distanceM": 112
+    },
+    {
+      "objectId": 204,
+      "csvName": "Bond Street",
+      "stopId": "940GZZLUBND",
+      "tflName": "Bond Street",
+      "method": "exact-name",
+      "distanceM": 9
+    },
+    {
+      "objectId": 205,
+      "csvName": "Perivale",
+      "stopId": "940GZZLUPVL",
+      "tflName": "Perivale",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 206,
+      "csvName": "Greenford",
+      "stopId": "940GZZLUGFD",
+      "tflName": "Greenford",
+      "method": "exact-name",
+      "distanceM": 36
+    },
+    {
+      "objectId": 207,
+      "csvName": "North Acton",
+      "stopId": "940GZZLUNAN",
+      "tflName": "North Acton",
+      "method": "exact-name",
+      "distanceM": 10
+    },
+    {
+      "objectId": 208,
+      "csvName": "Putney Bridge",
+      "stopId": "940GZZLUPYB",
+      "tflName": "Putney Bridge",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 209,
+      "csvName": "Bank",
+      "stopId": "940GZZLUBNK",
+      "tflName": "Bank",
+      "method": "exact-name",
+      "distanceM": 85
+    },
+    {
+      "objectId": 210,
+      "csvName": "Oxford Circus",
+      "stopId": "940GZZLUOXC",
+      "tflName": "Oxford Circus",
+      "method": "exact-name",
+      "distanceM": 22
+    },
+    {
+      "objectId": 211,
+      "csvName": "Holborn",
+      "stopId": "940GZZLUHBN",
+      "tflName": "Holborn",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 212,
+      "csvName": "Chancery Lane",
+      "stopId": "940GZZLUCHL",
+      "tflName": "Chancery Lane",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 213,
+      "csvName": "Canada Water",
+      "stopId": "940GZZLUCWR",
+      "tflName": "Canada Water",
+      "method": "exact-name",
+      "distanceM": 40
+    },
+    {
+      "objectId": 214,
+      "csvName": "Bermondsey",
+      "stopId": "940GZZLUBMY",
+      "tflName": "Bermondsey",
+      "method": "exact-name",
+      "distanceM": 26
+    },
+    {
+      "objectId": 215,
+      "csvName": "Canary Wharf",
+      "stopId": "940GZZLUCYF",
+      "tflName": "Canary Wharf",
+      "method": "exact-name",
+      "distanceM": 35
+    },
+    {
+      "objectId": 216,
+      "csvName": "North Greenwich",
+      "stopId": "940GZZLUNGW",
+      "tflName": "North Greenwich",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 217,
+      "csvName": "Canning Town",
+      "stopId": "940GZZLUCGT",
+      "tflName": "Canning Town",
+      "method": "exact-name",
+      "distanceM": 65
+    },
+    {
+      "objectId": 218,
+      "csvName": "Kilburn",
+      "stopId": "940GZZLUKBN",
+      "tflName": "Kilburn",
+      "method": "exact-name",
+      "distanceM": 41
+    },
+    {
+      "objectId": 219,
+      "csvName": "West Hampstead",
+      "stopId": "940GZZLUWHP",
+      "tflName": "West Hampstead",
+      "method": "exact-name",
+      "distanceM": 64
+    },
+    {
+      "objectId": 220,
+      "csvName": "Swiss Cottage",
+      "stopId": "940GZZLUSWC",
+      "tflName": "Swiss Cottage",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 221,
+      "csvName": "Finchley Road",
+      "stopId": "940GZZLUFYR",
+      "tflName": "Finchley Road",
+      "method": "exact-name",
+      "distanceM": 97
+    },
+    {
+      "objectId": 222,
+      "csvName": "Colliers Wood",
+      "stopId": "940GZZLUCSD",
+      "tflName": "Colliers Wood",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 223,
+      "csvName": "Archway",
+      "stopId": "940GZZLUACY",
+      "tflName": "Archway",
+      "method": "exact-name",
+      "distanceM": 106
+    },
+    {
+      "objectId": 224,
+      "csvName": "Tooting Broadway",
+      "stopId": "940GZZLUTBY",
+      "tflName": "Tooting Broadway",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 225,
+      "csvName": "Tooting Bec",
+      "stopId": "940GZZLUTBC",
+      "tflName": "Tooting Bec",
+      "method": "exact-name",
+      "distanceM": 43
+    },
+    {
+      "objectId": 226,
+      "csvName": "Clapham South",
+      "stopId": "940GZZLUCPS",
+      "tflName": "Clapham South",
+      "method": "exact-name",
+      "distanceM": 70
+    },
+    {
+      "objectId": 227,
+      "csvName": "Clapham Common",
+      "stopId": "940GZZLUCPC",
+      "tflName": "Clapham Common",
+      "method": "exact-name",
+      "distanceM": 94
+    },
+    {
+      "objectId": 228,
+      "csvName": "Clapham North",
+      "stopId": "940GZZLUCPN",
+      "tflName": "Clapham North",
+      "method": "exact-name",
+      "distanceM": 80
+    },
+    {
+      "objectId": 229,
+      "csvName": "Goodge Street",
+      "stopId": "940GZZLUGDG",
+      "tflName": "Goodge Street",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 230,
+      "csvName": "Tottenham Court Road",
+      "stopId": "940GZZLUTCR",
+      "tflName": "Tottenham Court Road",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 231,
+      "csvName": "Hampstead",
+      "stopId": "940GZZLUHTD",
+      "tflName": "Hampstead",
+      "method": "exact-name",
+      "distanceM": 83
+    },
+    {
+      "objectId": 232,
+      "csvName": "Mornington Crescent",
+      "stopId": "940GZZLUMTC",
+      "tflName": "Mornington Crescent",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 233,
+      "csvName": "Chalk Farm",
+      "stopId": "940GZZLUCFM",
+      "tflName": "Chalk Farm",
+      "method": "exact-name",
+      "distanceM": 59
+    },
+    {
+      "objectId": 234,
+      "csvName": "Kentish Town",
+      "stopId": "940GZZLUKSH",
+      "tflName": "Kentish Town",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 235,
+      "csvName": "Tufnell Park",
+      "stopId": "940GZZLUTFP",
+      "tflName": "Tufnell Park",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 236,
+      "csvName": "Oval",
+      "stopId": "940GZZLUOVL",
+      "tflName": "Oval",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 237,
+      "csvName": "Kennington",
+      "stopId": "940GZZLUKNG",
+      "tflName": "Kennington",
+      "method": "exact-name",
+      "distanceM": 0
+    },
+    {
+      "objectId": 238,
+      "csvName": "East Acton",
+      "stopId": "940GZZLUEAN",
+      "tflName": "East Acton",
+      "method": "exact-name",
+      "distanceM": 6
+    },
+    {
+      "objectId": 239,
+      "csvName": "Chalfont & Latimer",
+      "stopId": "940GZZLUCAL",
+      "tflName": "Chalfont & Latimer",
+      "method": "exact-name",
+      "distanceM": 6
+    },
+    {
+      "objectId": 240,
+      "csvName": "Chorleywood",
+      "stopId": "940GZZLUCYD",
+      "tflName": "Chorleywood",
+      "method": "exact-name",
+      "distanceM": 10
+    },
+    {
+      "objectId": 241,
+      "csvName": "Wood Lane",
+      "stopId": "940GZZLUWLA",
+      "tflName": "Wood Lane",
+      "method": "exact-name",
+      "distanceM": 84
+    },
+    {
+      "objectId": 242,
+      "csvName": "Highbury & Islington",
+      "stopId": "940GZZLUHAI",
+      "tflName": "Highbury & Islington",
+      "method": "exact-name",
+      "distanceM": 123
+    },
+    {
+      "objectId": 243,
+      "csvName": "Blackhorse Road",
+      "stopId": "940GZZLUBLR",
+      "tflName": "Blackhorse Road",
+      "method": "exact-name",
+      "distanceM": 45
+    },
+    {
+      "objectId": 244,
+      "csvName": "Tottenham Hale",
+      "stopId": "940GZZLUTMH",
+      "tflName": "Tottenham Hale",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 245,
+      "csvName": "Queensway",
+      "stopId": "940GZZLUQWY",
+      "tflName": "Queensway",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 246,
+      "csvName": "Buckhurst Hill",
+      "stopId": "940GZZLUBKH",
+      "tflName": "Buckhurst Hill",
+      "method": "exact-name",
+      "distanceM": 69
+    },
+    {
+      "objectId": 247,
+      "csvName": "Loughton",
+      "stopId": "940GZZLULGN",
+      "tflName": "Loughton",
+      "method": "exact-name",
+      "distanceM": 17
+    },
+    {
+      "objectId": 248,
+      "csvName": "Hainault",
+      "stopId": "940GZZLUHLT",
+      "tflName": "Hainault",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 249,
+      "csvName": "Grange Hill",
+      "stopId": "940GZZLUGGH",
+      "tflName": "Grange Hill",
+      "method": "exact-name",
+      "distanceM": 27
+    },
+    {
+      "objectId": 250,
+      "csvName": "Debden",
+      "stopId": "940GZZLUDBN",
+      "tflName": "Debden",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 251,
+      "csvName": "Epping",
+      "stopId": "940GZZLUEPG",
+      "tflName": "Epping",
+      "method": "exact-name",
+      "distanceM": 21
+    },
+    {
+      "objectId": 252,
+      "csvName": "Redbridge",
+      "stopId": "940GZZLURBG",
+      "tflName": "Redbridge",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 253,
+      "csvName": "Dollis Hill",
+      "stopId": "940GZZLUDOH",
+      "tflName": "Dollis Hill",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 254,
+      "csvName": "Kingsbury",
+      "stopId": "940GZZLUKBY",
+      "tflName": "Kingsbury",
+      "method": "exact-name",
+      "distanceM": 25
+    },
+    {
+      "objectId": 255,
+      "csvName": "Queensbury",
+      "stopId": "940GZZLUQBY",
+      "tflName": "Queensbury",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 256,
+      "csvName": "South Kenton",
+      "stopId": "940GZZLUSKT",
+      "tflName": "South Kenton",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 257,
+      "csvName": "Harrow & Wealdstone",
+      "stopId": "940GZZLUHAW",
+      "tflName": "Harrow & Wealdstone",
+      "method": "exact-name",
+      "distanceM": 34
+    },
+    {
+      "objectId": 258,
+      "csvName": "Stonebridge Park",
+      "stopId": "940GZZLUSGP",
+      "tflName": "Stonebridge Park",
+      "method": "exact-name",
+      "distanceM": 47
+    },
+    {
+      "objectId": 259,
+      "csvName": "Embankment",
+      "stopId": "940GZZLUEMB",
+      "tflName": "Embankment",
+      "method": "exact-name",
+      "distanceM": 56
+    },
+    {
+      "objectId": 260,
+      "csvName": "South Harrow",
+      "stopId": "940GZZLUSHH",
+      "tflName": "South Harrow",
+      "method": "exact-name",
+      "distanceM": 47
+    },
+    {
+      "objectId": 261,
+      "csvName": "Kensal Green",
+      "stopId": "940GZZLUKSL",
+      "tflName": "Kensal Green",
+      "method": "exact-name",
+      "distanceM": 37
+    },
+    {
+      "objectId": 262,
+      "csvName": "Harlesden",
+      "stopId": "940GZZLUHSN",
+      "tflName": "Harlesden",
+      "method": "exact-name",
+      "distanceM": 65
+    },
+    {
+      "objectId": 263,
+      "csvName": "Wembley Central",
+      "stopId": "940GZZLUWYC",
+      "tflName": "Wembley Central",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 264,
+      "csvName": "North Wembley",
+      "stopId": "940GZZLUNWY",
+      "tflName": "North Wembley",
+      "method": "exact-name",
+      "distanceM": 19
+    },
+    {
+      "objectId": 265,
+      "csvName": "Paddington (H&C Line)",
+      "stopId": "940GZZLUPAH",
+      "tflName": "Paddington (H&C Line)",
+      "method": "exact-name",
+      "distanceM": 50
+    },
+    {
+      "objectId": 266,
+      "csvName": "Kew Gardens",
+      "stopId": "940GZZLUKWG",
+      "tflName": "Kew Gardens",
+      "method": "exact-name",
+      "distanceM": 15
+    },
+    {
+      "objectId": 267,
+      "csvName": "Gunnersbury",
+      "stopId": "940GZZLUGBY",
+      "tflName": "Gunnersbury",
+      "method": "exact-name",
+      "distanceM": 11
+    },
+    {
+      "objectId": 268,
+      "csvName": "Piccadilly Circus",
+      "stopId": "940GZZLUPCC",
+      "tflName": "Piccadilly Circus",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 269,
+      "csvName": "Charing Cross",
+      "stopId": "940GZZLUCHX",
+      "tflName": "Charing Cross",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 270,
+      "csvName": "Elephant & Castle",
+      "stopId": "940GZZLUEAC",
+      "tflName": "Elephant & Castle",
+      "method": "exact-name",
+      "distanceM": 150
+    },
+    {
+      "objectId": 271,
+      "csvName": "Lambeth North",
+      "stopId": "940GZZLULBN",
+      "tflName": "Lambeth North",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 272,
+      "csvName": "Edgware Road (Bakerloo)",
+      "stopId": "940GZZLUERB",
+      "tflName": "Edgware Road (Bakerloo)",
+      "method": "exact-name",
+      "distanceM": 20
+    },
+    {
+      "objectId": 273,
+      "csvName": "Maida Vale",
+      "stopId": "940GZZLUMVL",
+      "tflName": "Maida Vale",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 274,
+      "csvName": "Kilburn Park",
+      "stopId": "940GZZLUKPK",
+      "tflName": "Kilburn Park",
+      "method": "exact-name",
+      "distanceM": 15
+    },
+    {
+      "objectId": 275,
+      "csvName": "Marylebone",
+      "stopId": "940GZZLUMYB",
+      "tflName": "Marylebone",
+      "method": "exact-name",
+      "distanceM": 74
+    },
+    {
+      "objectId": 276,
+      "csvName": "Regent's Park",
+      "stopId": "940GZZLURGP",
+      "tflName": "Regent's Park",
+      "method": "exact-name",
+      "distanceM": 12
+    },
+    {
+      "objectId": 277,
+      "csvName": "Sloane Square",
+      "stopId": "940GZZLUSSQ",
+      "tflName": "Sloane Square",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 278,
+      "csvName": "Ravenscourt Park",
+      "stopId": "940GZZLURVP",
+      "tflName": "Ravenscourt Park",
+      "method": "exact-name",
+      "distanceM": 9
+    },
+    {
+      "objectId": 279,
+      "csvName": "Hammersmith (Dist&Picc Line)",
+      "stopId": "940GZZLUHSD",
+      "tflName": "Hammersmith (Dist&Picc Line)",
+      "method": "exact-name",
+      "distanceM": 52
+    },
+    {
+      "objectId": 280,
+      "csvName": "Belsize Park",
+      "stopId": "940GZZLUBZP",
+      "tflName": "Belsize Park",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 281,
+      "csvName": "Wood Green",
+      "stopId": "940GZZLUWOG",
+      "tflName": "Wood Green",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 282,
+      "csvName": "Bounds Green",
+      "stopId": "940GZZLUBDS",
+      "tflName": "Bounds Green",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 283,
+      "csvName": "Westminster",
+      "stopId": "940GZZLUWSM",
+      "tflName": "Westminster",
+      "method": "exact-name",
+      "distanceM": 68
+    },
+    {
+      "objectId": 284,
+      "csvName": "Kensington (Olympia)",
+      "stopId": "940GZZLUKOY",
+      "tflName": "Kensington (Olympia)",
+      "method": "exact-name",
+      "distanceM": 15
+    },
+    {
+      "objectId": 285,
+      "csvName": "Euston",
+      "stopId": "940GZZLUEUS",
+      "tflName": "Euston",
+      "method": "exact-name",
+      "distanceM": 57
+    },
+    {
+      "objectId": 286,
+      "csvName": "Waterloo",
+      "stopId": "940GZZLUWLO",
+      "tflName": "Waterloo",
+      "method": "exact-name",
+      "distanceM": 28
+    },
+    {
+      "objectId": 287,
+      "csvName": "Upminster",
+      "stopId": "940GZZLUUPM",
+      "tflName": "Upminster",
+      "method": "exact-name",
+      "distanceM": 16
+    },
+    {
+      "objectId": 288,
+      "csvName": "West Ham",
+      "stopId": "940GZZLUWHM",
+      "tflName": "West Ham",
+      "method": "exact-name",
+      "distanceM": 56
+    },
+    {
+      "objectId": 289,
+      "csvName": "Walthamstow Central",
+      "stopId": "940GZZLUWWL",
+      "tflName": "Walthamstow Central",
+      "method": "exact-name",
+      "distanceM": 114
+    },
+    {
+      "objectId": 290,
+      "csvName": "Ealing Broadway",
+      "stopId": "940GZZLUEBY",
+      "tflName": "Ealing Broadway",
+      "method": "exact-name",
+      "distanceM": 31
+    },
+    {
+      "objectId": 291,
+      "csvName": "Acton Town",
+      "stopId": "940GZZLUACT",
+      "tflName": "Acton Town",
+      "method": "exact-name",
+      "distanceM": 55
+    },
+    {
+      "objectId": 292,
+      "csvName": "Ealing Common",
+      "stopId": "940GZZLUECM",
+      "tflName": "Ealing Common",
+      "method": "exact-name",
+      "distanceM": 67
+    },
+    {
+      "objectId": 293,
+      "csvName": "Green Park",
+      "stopId": "940GZZLUGPK",
+      "tflName": "Green Park",
+      "method": "exact-name",
+      "distanceM": 19
+    },
+    {
+      "objectId": 294,
+      "csvName": "Finsbury Park",
+      "stopId": "940GZZLUFPK",
+      "tflName": "Finsbury Park",
+      "method": "exact-name",
+      "distanceM": 47
+    },
+    {
+      "objectId": 295,
+      "csvName": "Stockwell",
+      "stopId": "940GZZLUSKW",
+      "tflName": "Stockwell",
+      "method": "exact-name",
+      "distanceM": 48
+    },
+    {
+      "objectId": 296,
+      "csvName": "Morden",
+      "stopId": "940GZZLUMDN",
+      "tflName": "Morden",
+      "method": "exact-name",
+      "distanceM": 44
+    },
+    {
+      "objectId": 297,
+      "csvName": "Hammersmith (H&C Line)",
+      "stopId": "940GZZLUHSC",
+      "tflName": "Hammersmith (H&C Line)",
+      "method": "exact-name",
+      "distanceM": 44
+    },
+    {
+      "objectId": 298,
+      "csvName": "Hatton Cross",
+      "stopId": "940GZZLUHNX",
+      "tflName": "Hatton Cross",
+      "method": "exact-name",
+      "distanceM": 23
+    },
+    {
+      "objectId": 299,
+      "csvName": "Hounslow West",
+      "stopId": "940GZZLUHWT",
+      "tflName": "Hounslow West",
+      "method": "exact-name",
+      "distanceM": 55
+    },
+    {
+      "objectId": 300,
+      "csvName": "Hounslow Central",
+      "stopId": "940GZZLUHWC",
+      "tflName": "Hounslow Central",
+      "method": "exact-name",
+      "distanceM": 20
+    },
+    {
+      "objectId": 301,
+      "csvName": "Hounslow East",
+      "stopId": "940GZZLUHWE",
+      "tflName": "Hounslow East",
+      "method": "exact-name",
+      "distanceM": 11
+    },
+    {
+      "objectId": 302,
+      "csvName": "Osterley",
+      "stopId": "940GZZLUOSY",
+      "tflName": "Osterley",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 303,
+      "csvName": "Northfields",
+      "stopId": "940GZZLUNFD",
+      "tflName": "Northfields",
+      "method": "exact-name",
+      "distanceM": 125
+    },
+    {
+      "objectId": 304,
+      "csvName": "Barons Court",
+      "stopId": "940GZZLUBSC",
+      "tflName": "Barons Court",
+      "method": "exact-name",
+      "distanceM": 87
+    },
+    {
+      "objectId": 305,
+      "csvName": "Fulham Broadway",
+      "stopId": "940GZZLUFBY",
+      "tflName": "Fulham Broadway",
+      "method": "exact-name",
+      "distanceM": 89
+    },
+    {
+      "objectId": 306,
+      "csvName": "West Brompton",
+      "stopId": "940GZZLUWBN",
+      "tflName": "West Brompton",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 307,
+      "csvName": "Stamford Brook",
+      "stopId": "940GZZLUSFB",
+      "tflName": "Stamford Brook",
+      "method": "exact-name",
+      "distanceM": 21
+    },
+    {
+      "objectId": 308,
+      "csvName": "Turnham Green",
+      "stopId": "940GZZLUTNG",
+      "tflName": "Turnham Green",
+      "method": "exact-name",
+      "distanceM": 21
+    },
+    {
+      "objectId": 309,
+      "csvName": "Aldgate East",
+      "stopId": "940GZZLUADE",
+      "tflName": "Aldgate East",
+      "method": "exact-name",
+      "distanceM": 96
+    },
+    {
+      "objectId": 310,
+      "csvName": "Whitechapel",
+      "stopId": "940GZZLUWPL",
+      "tflName": "Whitechapel",
+      "method": "exact-name",
+      "distanceM": 55
+    },
+    {
+      "objectId": 311,
+      "csvName": "Bow Road",
+      "stopId": "940GZZLUBWR",
+      "tflName": "Bow Road",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 312,
+      "csvName": "Wembley Park",
+      "stopId": "940GZZLUWYP",
+      "tflName": "Wembley Park",
+      "method": "exact-name",
+      "distanceM": 83
+    },
+    {
+      "objectId": 313,
+      "csvName": "Neasden",
+      "stopId": "940GZZLUNDN",
+      "tflName": "Neasden",
+      "method": "exact-name",
+      "distanceM": 104
+    },
+    {
+      "objectId": 314,
+      "csvName": "Totteridge & Whetstone",
+      "stopId": "940GZZLUTAW",
+      "tflName": "Totteridge & Whetstone",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 315,
+      "csvName": "Heathrow Terminal 4",
+      "stopId": "940GZZLUHR4",
+      "tflName": "Heathrow Terminal 4",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 316,
+      "csvName": "West Acton",
+      "stopId": "940GZZLUWTA",
+      "tflName": "West Acton",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 317,
+      "csvName": "Stratford",
+      "stopId": "940GZZLUSTD",
+      "tflName": "Stratford",
+      "method": "exact-name",
+      "distanceM": 46
+    },
+    {
+      "objectId": 318,
+      "csvName": "Uxbridge",
+      "stopId": "940GZZLUUXB",
+      "tflName": "Uxbridge",
+      "method": "exact-name",
+      "distanceM": 25
+    },
+    {
+      "objectId": 319,
+      "csvName": "Hillingdon",
+      "stopId": "940GZZLUHGD",
+      "tflName": "Hillingdon",
+      "method": "exact-name",
+      "distanceM": 40
+    },
+    {
+      "objectId": 320,
+      "csvName": "Ickenham",
+      "stopId": "940GZZLUICK",
+      "tflName": "Ickenham",
+      "method": "exact-name",
+      "distanceM": 26
+    },
+    {
+      "objectId": 321,
+      "csvName": "Ruislip",
+      "stopId": "940GZZLURSP",
+      "tflName": "Ruislip",
+      "method": "exact-name",
+      "distanceM": 10
+    },
+    {
+      "objectId": 322,
+      "csvName": "Ruislip Manor",
+      "stopId": "940GZZLURSM",
+      "tflName": "Ruislip Manor",
+      "method": "exact-name",
+      "distanceM": 86
+    },
+    {
+      "objectId": 323,
+      "csvName": "Northwood Hills",
+      "stopId": "940GZZLUNWH",
+      "tflName": "Northwood Hills",
+      "method": "exact-name",
+      "distanceM": 65
+    },
+    {
+      "objectId": 324,
+      "csvName": "West Harrow",
+      "stopId": "940GZZLUWHW",
+      "tflName": "West Harrow",
+      "method": "exact-name",
+      "distanceM": 18
+    },
+    {
+      "objectId": 325,
+      "csvName": "Rayners Lane",
+      "stopId": "940GZZLURYL",
+      "tflName": "Rayners Lane",
+      "method": "exact-name",
+      "distanceM": 23
+    },
+    {
+      "objectId": 326,
+      "csvName": "North Harrow",
+      "stopId": "940GZZLUNHA",
+      "tflName": "North Harrow",
+      "method": "exact-name",
+      "distanceM": 16
+    },
+    {
+      "objectId": 327,
+      "csvName": "Pinner",
+      "stopId": "940GZZLUPNR",
+      "tflName": "Pinner",
+      "method": "exact-name",
+      "distanceM": 8
+    },
+    {
+      "objectId": 328,
+      "csvName": "Harrow-on-the-Hill",
+      "stopId": "940GZZLUHOH",
+      "tflName": "Harrow-on-the-Hill",
+      "method": "exact-name",
+      "distanceM": 41
+    },
+    {
+      "objectId": 329,
+      "csvName": "Northwick Park",
+      "stopId": "940GZZLUNKP",
+      "tflName": "Northwick Park",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 330,
+      "csvName": "Stanmore",
+      "stopId": "940GZZLUSTM",
+      "tflName": "Stanmore",
+      "method": "exact-name",
+      "distanceM": 14
+    },
+    {
+      "objectId": 331,
+      "csvName": "Canons Park",
+      "stopId": "940GZZLUCPK",
+      "tflName": "Canons Park",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 332,
+      "csvName": "St. John's Wood",
+      "stopId": "940GZZLUSJW",
+      "tflName": "St. John's Wood",
+      "method": "exact-name",
+      "distanceM": 77
+    },
+    {
+      "objectId": 333,
+      "csvName": "Southwark",
+      "stopId": "940GZZLUSWK",
+      "tflName": "Southwark",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 334,
+      "csvName": "London Bridge",
+      "stopId": "940GZZLULNB",
+      "tflName": "London Bridge",
+      "method": "exact-name",
+      "distanceM": 91
+    },
+    {
+      "objectId": 335,
+      "csvName": "Wimbledon",
+      "stopId": "940GZZLUWIM",
+      "tflName": "Wimbledon",
+      "method": "exact-name",
+      "distanceM": 26
+    },
+    {
+      "objectId": 336,
+      "csvName": "West Finchley",
+      "stopId": "940GZZLUWFN",
+      "tflName": "West Finchley",
+      "method": "exact-name",
+      "distanceM": 7
+    },
+    {
+      "objectId": 379,
+      "csvName": "Battersea Power Station",
+      "stopId": "940GZZBPSUST",
+      "tflName": "Battersea Power Station",
+      "method": "exact-name",
+      "distanceM": 101
+    },
+    {
+      "objectId": 380,
+      "csvName": "Nine Elms",
+      "stopId": "940GZZNEUGST",
+      "tflName": "Nine Elms",
+      "method": "exact-name",
+      "distanceM": 74
+    },
+    {
+      "objectId": 384,
+      "csvName": "Edgware",
+      "stopId": "940GZZLUEGW",
+      "tflName": "Edgware",
+      "method": "exact-name",
+      "distanceM": 12
+    },
+    {
+      "objectId": 385,
+      "csvName": "North Ealing",
+      "stopId": "940GZZLUNEN",
+      "tflName": "North Ealing",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 386,
+      "csvName": "Caledonian Road",
+      "stopId": "940GZZLUCAR",
+      "tflName": "Caledonian Road",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 387,
+      "csvName": "Monument",
+      "stopId": "940GZZLUMMT",
+      "tflName": "Monument",
+      "method": "exact-name",
+      "distanceM": 10
+    },
+    {
+      "objectId": 388,
+      "csvName": "Great Portland Street",
+      "stopId": "940GZZLUGPS",
+      "tflName": "Great Portland Street",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 389,
+      "csvName": "Southfields",
+      "stopId": "940GZZLUSFS",
+      "tflName": "Southfields",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 390,
+      "csvName": "Dagenham Heathway",
+      "stopId": "940GZZLUDGY",
+      "tflName": "Dagenham Heathway",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 391,
+      "csvName": "Heathrow Terminals 1-2-3",
+      "stopId": "940GZZLUHRC",
+      "tflName": "Heathrow Terminals 2 & 3",
+      "method": "alias",
+      "distanceM": 14
+    },
+    {
+      "objectId": 392,
+      "csvName": "Westbourne Park",
+      "stopId": "940GZZLUWSP",
+      "tflName": "Westbourne Park",
+      "method": "exact-name",
+      "distanceM": 22
+    },
+    {
+      "objectId": 393,
+      "csvName": "Hanger Lane",
+      "stopId": "940GZZLUHGR",
+      "tflName": "Hanger Lane",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 394,
+      "csvName": "Gants Hill",
+      "stopId": "940GZZLUGTH",
+      "tflName": "Gants Hill",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 395,
+      "csvName": "Bromley-by-Bow",
+      "stopId": "940GZZLUBBB",
+      "tflName": "Bromley-by-Bow",
+      "method": "exact-name",
+      "distanceM": 10
+    },
+    {
+      "objectId": 396,
+      "csvName": "Richmond",
+      "stopId": "940GZZLURMD",
+      "tflName": "Richmond",
+      "method": "exact-name",
+      "distanceM": 27
+    },
+    {
+      "objectId": 397,
+      "csvName": "Warwick Avenue",
+      "stopId": "940GZZLUWKA",
+      "tflName": "Warwick Avenue",
+      "method": "exact-name",
+      "distanceM": 14
+    },
+    {
+      "objectId": 398,
+      "csvName": "St. James's Park",
+      "stopId": "940GZZLUSJP",
+      "tflName": "St. James's Park",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 399,
+      "csvName": "Turnpike Lane",
+      "stopId": "940GZZLUTPN",
+      "tflName": "Turnpike Lane",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 400,
+      "csvName": "Barking",
+      "stopId": "940GZZLUBKG",
+      "tflName": "Barking",
+      "method": "exact-name",
+      "distanceM": 87
+    },
+    {
+      "objectId": 433,
+      "csvName": "South Wimbledon",
+      "stopId": "940GZZLUSWN",
+      "tflName": "South Wimbledon",
+      "method": "exact-name",
+      "distanceM": 97
+    },
+    {
+      "objectId": 434,
+      "csvName": "Boston Manor",
+      "stopId": "940GZZLUBOS",
+      "tflName": "Boston Manor",
+      "method": "exact-name",
+      "distanceM": 65
+    },
+    {
+      "objectId": 435,
+      "csvName": "Stepney Green",
+      "stopId": "940GZZLUSGN",
+      "tflName": "Stepney Green",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 436,
+      "csvName": "High Barnet",
+      "stopId": "940GZZLUHBT",
+      "tflName": "High Barnet",
+      "method": "exact-name",
+      "distanceM": 9
+    },
+    {
+      "objectId": 437,
+      "csvName": "Eastcote",
+      "stopId": "940GZZLUEAE",
+      "tflName": "Eastcote",
+      "method": "exact-name",
+      "distanceM": 1
+    },
+    {
+      "objectId": 438,
+      "csvName": "Amersham",
+      "stopId": "940GZZLUAMS",
+      "tflName": "Amersham",
+      "method": "exact-name",
+      "distanceM": 2
+    },
+    {
+      "objectId": 439,
+      "csvName": "Willesden Green",
+      "stopId": "940GZZLUWIG",
+      "tflName": "Willesden Green",
+      "method": "exact-name",
+      "distanceM": 85
+    },
+    {
+      "objectId": 440,
+      "csvName": "Balham",
+      "stopId": "940GZZLUBLM",
+      "tflName": "Balham",
+      "method": "exact-name",
+      "distanceM": 43
+    },
+    {
+      "objectId": 441,
+      "csvName": "Camden Town",
+      "stopId": "940GZZLUCTN",
+      "tflName": "Camden Town",
+      "method": "exact-name",
+      "distanceM": 11
+    },
+    {
+      "objectId": 442,
+      "csvName": "Heathrow Terminal 5",
+      "stopId": "940GZZLUHR5",
+      "tflName": "Heathrow Terminal 5",
+      "method": "exact-name",
+      "distanceM": 326
+    },
+    {
+      "objectId": 470,
+      "csvName": "Willesden Junction",
+      "stopId": "940GZZLUWJN",
+      "tflName": "Willesden Junction",
+      "method": "exact-name",
+      "distanceM": 26
+    },
+    {
+      "objectId": 471,
+      "csvName": "East Finchley",
+      "stopId": "940GZZLUEFY",
+      "tflName": "East Finchley",
+      "method": "exact-name",
+      "distanceM": 3
+    },
+    {
+      "objectId": 472,
+      "csvName": "Highgate",
+      "stopId": "940GZZLUHGT",
+      "tflName": "Highgate",
+      "method": "exact-name",
+      "distanceM": 55
+    },
+    {
+      "objectId": 473,
+      "csvName": "Chesham",
+      "stopId": "940GZZLUCSM",
+      "tflName": "Chesham",
+      "method": "exact-name",
+      "distanceM": 18
+    },
+    {
+      "objectId": 474,
+      "csvName": "Rickmansworth",
+      "stopId": "940GZZLURKW",
+      "tflName": "Rickmansworth",
+      "method": "exact-name",
+      "distanceM": 9
+    },
+    {
+      "objectId": 475,
+      "csvName": "Moor Park",
+      "stopId": "940GZZLUMPK",
+      "tflName": "Moor Park",
+      "method": "exact-name",
+      "distanceM": 12
+    },
+    {
+      "objectId": 476,
+      "csvName": "Northwood",
+      "stopId": "940GZZLUNOW",
+      "tflName": "Northwood",
+      "method": "exact-name",
+      "distanceM": 9
+    },
+    {
+      "objectId": 477,
+      "csvName": "Croxley",
+      "stopId": "940GZZLUCXY",
+      "tflName": "Croxley",
+      "method": "exact-name",
+      "distanceM": 5
+    },
+    {
+      "objectId": 478,
+      "csvName": "Watford",
+      "stopId": "940GZZLUWAF",
+      "tflName": "Watford",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 479,
+      "csvName": "Borough",
+      "stopId": "940GZZLUBOR",
+      "tflName": "Borough",
+      "method": "exact-name",
+      "distanceM": 4
+    },
+    {
+      "objectId": 480,
+      "csvName": "Old Street",
+      "stopId": "940GZZLUODS",
+      "tflName": "Old Street",
+      "method": "exact-name",
+      "distanceM": 87
+    },
+    {
+      "objectId": 481,
+      "csvName": "Angel",
+      "stopId": "940GZZLUAGL",
+      "tflName": "Angel",
+      "method": "exact-name",
+      "distanceM": 119
+    },
+    {
+      "objectId": 482,
+      "csvName": "Hendon Central",
+      "stopId": "940GZZLUHCL",
+      "tflName": "Hendon Central",
+      "method": "exact-name",
+      "distanceM": 15
+    },
+    {
+      "objectId": 483,
+      "csvName": "Seven Sisters",
+      "stopId": "940GZZLUSVS",
+      "tflName": "Seven Sisters",
+      "method": "exact-name",
+      "distanceM": 9
+    },
+    {
+      "objectId": 484,
+      "csvName": "Theydon Bois",
+      "stopId": "940GZZLUTHB",
+      "tflName": "Theydon Bois",
+      "method": "exact-name",
+      "distanceM": 19
+    },
+    {
+      "objectId": 485,
+      "csvName": "Kenton",
+      "stopId": "940GZZLUKEN",
+      "tflName": "Kenton",
+      "method": "exact-name",
+      "distanceM": 20
+    },
+    {
+      "objectId": 486,
+      "csvName": "Woodside Park",
+      "stopId": "940GZZLUWOP",
+      "tflName": "Woodside Park",
+      "method": "exact-name",
+      "distanceM": 10
+    },
+    {
+      "objectId": 487,
+      "csvName": "Preston Road",
+      "stopId": "940GZZLUPRD",
+      "tflName": "Preston Road",
+      "method": "exact-name",
+      "distanceM": 5
+    }
+  ],
+  "unmatchedCsv": [],
+  "topologyStopsWithoutCsv": [],
+  "duplicateResolutions": [
+    {
+      "stopId": "940GZZLUPAC",
+      "name": "Paddington",
+      "canonicalObjectId": 125,
+      "duplicates": [
+        {
+          "objectId": 171,
+          "name": "Paddington",
+          "lon": -0.17539086258650674,
+          "lat": 51.5155036135896,
+          "distanceFromCanonicalM": 125
+        }
+      ]
+    }
+  ],
+  "lineMismatches": [
+    {
+      "stopId": "940GZZLUPAC",
+      "name": "Paddington",
+      "objectId": 125,
+      "topologyLines": [
+        "bakerloo",
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "circle",
+        "district",
+        "hammersmith-city"
+      ],
+      "missingInCsv": [],
+      "extraInCsv": [
+        "hammersmith-city"
+      ]
+    },
+    {
+      "stopId": "940GZZLUHSC",
+      "name": "Hammersmith (H&C Line)",
+      "objectId": 297,
+      "topologyLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "hammersmith-city"
+      ],
+      "missingInCsv": [
+        "circle"
+      ],
+      "extraInCsv": []
+    },
+    {
+      "stopId": "940GZZLUPAH",
+      "name": "Paddington (H&C Line)",
+      "objectId": 265,
+      "topologyLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "hammersmith-city"
+      ],
+      "missingInCsv": [
+        "circle"
+      ],
+      "extraInCsv": []
+    },
+    {
+      "stopId": "940GZZLUERC",
+      "name": "Edgware Road (Circle Line)",
+      "objectId": 170,
+      "topologyLines": [
+        "circle",
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle"
+      ],
+      "missingInCsv": [
+        "district",
+        "hammersmith-city"
+      ],
+      "extraInCsv": []
+    }
+  ],
+  "overridesApplied": [
+    {
+      "line": "metropolitan",
+      "stopId": "940GZZLUWIG",
+      "stopName": "Willesden Green",
+      "reason": "The TfL Metropolitan outbound sequence has a Wembley Park -> Willesden Green -> Finchley Road branch (branchId 14) next to the correct non-stop Wembley Park -> Finchley Road branch (branchId 13). Metropolitan trains run through Willesden Green without stopping. The inbound sequence goes straight from Finchley Road to Wembley Park, and the supplied CSV lists Willesden Green as Jubilee only. Removing the stop collapses branch 14 into the existing Wembley Park - Finchley Road link, so no connection is invented.",
+      "direction": "outbound",
+      "branchId": 14
+    }
+  ],
+  "unusedOverrides": [],
+  "rawSummary": [
+    {
+      "line": "bakerloo",
+      "direction": "outbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Elephant & Castle ↔ Harrow & Wealdstone "
+      ]
+    },
+    {
+      "line": "bakerloo",
+      "direction": "inbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Harrow & Wealdstone ↔ Elephant & Castle "
+      ]
+    },
+    {
+      "line": "central",
+      "direction": "outbound",
+      "sequences": 7,
+      "orderedRoutes": [
+        "Ealing Broadway ↔ Epping ",
+        "Ealing Broadway ↔ Hainault ",
+        "West Ruislip ↔ Epping ",
+        "West Ruislip ↔ Hainault  via Woodford",
+        "West Ruislip ↔ Hainault  via Newbury Park"
+      ]
+    },
+    {
+      "line": "central",
+      "direction": "inbound",
+      "sequences": 7,
+      "orderedRoutes": [
+        "Epping ↔ West Ruislip ",
+        "Epping ↔ Ealing Broadway ",
+        "Hainault ↔ West Ruislip  via Newbury Park",
+        "Hainault ↔ Ealing Broadway ",
+        "Hainault ↔ West Ruislip  via Woodford"
+      ]
+    },
+    {
+      "line": "circle",
+      "direction": "outbound",
+      "sequences": 2,
+      "orderedRoutes": [
+        "Hammersmith (H&C Line) ↔ Edgware Road (Circle Line) "
+      ]
+    },
+    {
+      "line": "circle",
+      "direction": "inbound",
+      "sequences": 2,
+      "orderedRoutes": [
+        "Edgware Road (Circle Line) ↔ Hammersmith (H&C Line) "
+      ]
+    },
+    {
+      "line": "district",
+      "direction": "outbound",
+      "sequences": 7,
+      "orderedRoutes": [
+        "Ealing Broadway ↔ Upminster ",
+        "Ealing Broadway ↔ Edgware Road (Circle Line) ",
+        "Kensington (Olympia) ↔ Edgware Road (Circle Line) ",
+        "Richmond ↔ Upminster ",
+        "Richmond ↔ Edgware Road (Circle Line) ",
+        "Wimbledon ↔ Upminster ",
+        "Wimbledon ↔ Edgware Road (Circle Line) "
+      ]
+    },
+    {
+      "line": "district",
+      "direction": "inbound",
+      "sequences": 7,
+      "orderedRoutes": [
+        "Edgware Road (Circle Line) ↔ Kensington (Olympia) ",
+        "Edgware Road (Circle Line) ↔ Wimbledon ",
+        "Edgware Road (Circle Line) ↔ Ealing Broadway ",
+        "Edgware Road (Circle Line) ↔ Richmond ",
+        "Upminster ↔ Wimbledon ",
+        "Upminster ↔ Ealing Broadway ",
+        "Upminster ↔ Richmond "
+      ]
+    },
+    {
+      "line": "hammersmith-city",
+      "direction": "outbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Hammersmith (H&C Line) ↔ Barking "
+      ]
+    },
+    {
+      "line": "hammersmith-city",
+      "direction": "inbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Barking ↔ Hammersmith (H&C Line) "
+      ]
+    },
+    {
+      "line": "jubilee",
+      "direction": "outbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Stanmore ↔ Stratford "
+      ]
+    },
+    {
+      "line": "jubilee",
+      "direction": "inbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Stratford ↔ Stanmore "
+      ]
+    },
+    {
+      "line": "metropolitan",
+      "direction": "outbound",
+      "sequences": 10,
+      "orderedRoutes": [
+        "Amersham ↔ Aldgate ",
+        "Chesham ↔ Aldgate ",
+        "Uxbridge ↔ Aldgate ",
+        "Watford ↔ Aldgate "
+      ]
+    },
+    {
+      "line": "metropolitan",
+      "direction": "inbound",
+      "sequences": 7,
+      "orderedRoutes": [
+        "Aldgate ↔ Watford ",
+        "Aldgate ↔ Amersham ",
+        "Aldgate ↔ Chesham ",
+        "Aldgate ↔ Uxbridge "
+      ]
+    },
+    {
+      "line": "northern",
+      "direction": "outbound",
+      "sequences": 10,
+      "orderedRoutes": [
+        "Battersea Power Station ↔ Edgware ",
+        "Battersea Power Station ↔ High Barnet ",
+        "Morden ↔ Edgware  via Bank",
+        "Morden ↔ Mill Hill East  via Bank",
+        "Morden ↔ High Barnet  via Bank",
+        "Morden ↔ Edgware  via Charing Cross",
+        "Morden ↔ Mill Hill East  via Charing Cross",
+        "Morden ↔ High Barnet  via Charing Cross"
+      ]
+    },
+    {
+      "line": "northern",
+      "direction": "inbound",
+      "sequences": 10,
+      "orderedRoutes": [
+        "Edgware ↔ Morden  via Bank",
+        "Edgware ↔ Battersea Power Station ",
+        "Edgware ↔ Morden  via Charing Cross",
+        "High Barnet ↔ Morden  via Bank",
+        "High Barnet ↔ Battersea Power Station ",
+        "High Barnet ↔ Morden  via Charing Cross",
+        "Mill Hill East ↔ Morden  via Bank",
+        "Mill Hill East ↔ Morden  via Charing Cross"
+      ]
+    },
+    {
+      "line": "piccadilly",
+      "direction": "outbound",
+      "sequences": 5,
+      "orderedRoutes": [
+        "Heathrow Terminal 4 ↔ Cockfosters ",
+        "Heathrow Terminal 5 ↔ Cockfosters ",
+        "Uxbridge ↔ Cockfosters "
+      ]
+    },
+    {
+      "line": "piccadilly",
+      "direction": "inbound",
+      "sequences": 5,
+      "orderedRoutes": [
+        "Cockfosters ↔ Uxbridge ",
+        "Cockfosters ↔ Heathrow Terminal 4 ",
+        "Cockfosters ↔ Heathrow Terminal 5 "
+      ]
+    },
+    {
+      "line": "victoria",
+      "direction": "outbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Brixton ↔ Walthamstow Central "
+      ]
+    },
+    {
+      "line": "victoria",
+      "direction": "inbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Walthamstow Central ↔ Brixton "
+      ]
+    },
+    {
+      "line": "waterloo-city",
+      "direction": "outbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Waterloo ↔ Bank "
+      ]
+    },
+    {
+      "line": "waterloo-city",
+      "direction": "inbound",
+      "sequences": 1,
+      "orderedRoutes": [
+        "Bank ↔ Waterloo "
+      ]
+    }
+  ],
+  "csvIssues": [],
+  "csvDuplicates": {
+    "duplicateNames": [
+      {
+        "name": "Paddington",
+        "objectIds": [
+          125,
+          171
+        ],
+        "maxSeparationM": 125
+      }
+    ],
+    "duplicateCoordinates": [],
+    "nearDuplicates": [
+      {
+        "objectIds": [
+          125,
+          171
+        ],
+        "names": [
+          "Paddington",
+          "Paddington"
+        ],
+        "distanceM": 125
+      },
+      {
+        "objectIds": [
+          170,
+          272
+        ],
+        "names": [
+          "Edgware Road (Circle Line)",
+          "Edgware Road (Bakerloo)"
+        ],
+        "distanceM": 184
+      },
+      {
+        "objectIds": [
+          276,
+          388
+        ],
+        "names": [
+          "Regent's Park",
+          "Great Portland Street"
+        ],
+        "distanceM": 154
+      }
+    ],
+    "duplicateObjectIds": []
+  }
+}

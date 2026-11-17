@@ -1,0 +1,6505 @@
+{
+  "meta": {
+    "generatedAt": "2026-11-17T11:42:26.778Z",
+    "topology": {
+      "source": "TfL Unified API — /Line/{id}/Route/Sequence/{outbound|inbound}",
+      "url": "https://api.tfl.gov.uk/",
+      "retrievedAt": "2026-11-17T11:41:02.511Z",
+      "licence": {
+        "name": "Transport for London open data terms (Powered by TfL Open Data)",
+        "url": "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service",
+        "attribution": "Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019]."
+      }
+    },
+    "stations": {
+      "source": "data/stations.csv",
+      "records": 273
+    },
+    "overridesApplied": 1
+  },
+  "stations": [
+    {
+      "id": "940GZZLUACT",
+      "hubId": "940GZZLUACT",
+      "name": "Acton Town",
+      "tflName": "Acton Town",
+      "lon": -0.28002176408560275,
+      "lat": 51.50264555083834,
+      "tflLon": -0.280462,
+      "tflLat": 51.503057,
+      "coordinateSource": "csv",
+      "objectId": 291,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 55,
+      "lines": [
+        "district",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "district",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUALD",
+      "hubId": "940GZZLUALD",
+      "name": "Aldgate",
+      "tflName": "Aldgate",
+      "lon": -0.07584896688802757,
+      "lat": 51.51449244157986,
+      "tflLon": -0.075689,
+      "tflLat": 51.514246,
+      "coordinateSource": "csv",
+      "objectId": 162,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 30,
+      "lines": [
+        "circle",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "circle",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUADE",
+      "hubId": "940GZZLUADE",
+      "name": "Aldgate East",
+      "tflName": "Aldgate East",
+      "lon": -0.07115364166807008,
+      "lat": 51.51542691621208,
+      "tflLon": -0.072384,
+      "tflLat": 51.515037,
+      "coordinateSource": "csv",
+      "objectId": 309,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 96,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUALP",
+      "hubId": "940GZZLUALP",
+      "name": "Alperton",
+      "tflName": "Alperton",
+      "lon": -0.299949349972513,
+      "lat": 51.540730963558445,
+      "tflLon": -0.29961,
+      "tflLat": 51.540627,
+      "coordinateSource": "csv",
+      "objectId": 144,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 26,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUAMS",
+      "hubId": "HUBAMR",
+      "name": "Amersham",
+      "tflName": "Amersham",
+      "lon": -0.6077052134228341,
+      "lat": 51.674145407023566,
+      "tflLon": -0.607714,
+      "tflLat": 51.674126,
+      "coordinateSource": "csv",
+      "objectId": 438,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUAGL",
+      "hubId": "940GZZLUAGL",
+      "name": "Angel",
+      "tflName": "Angel",
+      "lon": -0.10472643840232035,
+      "lat": 51.53148758749647,
+      "tflLon": -0.10635,
+      "tflLat": 51.53184,
+      "coordinateSource": "csv",
+      "objectId": 481,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 119,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUACY",
+      "hubId": "940GZZLUACY",
+      "name": "Archway",
+      "tflName": "Archway",
+      "lon": -0.13505202452388373,
+      "lat": 51.56453819250787,
+      "tflLon": -0.134819,
+      "tflLat": 51.565478,
+      "coordinateSource": "csv",
+      "objectId": 223,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 106,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUASG",
+      "hubId": "940GZZLUASG",
+      "name": "Arnos Grove",
+      "tflName": "Arnos Grove",
+      "lon": -0.1330451742909319,
+      "lat": 51.61645247794506,
+      "tflLon": -0.133062,
+      "tflLat": 51.616446,
+      "coordinateSource": "csv",
+      "objectId": 152,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUASL",
+      "hubId": "940GZZLUASL",
+      "name": "Arsenal",
+      "tflName": "Arsenal",
+      "lon": -0.10728530327692844,
+      "lat": 51.55861585603557,
+      "tflLon": -0.107457,
+      "tflLat": 51.558655,
+      "coordinateSource": "csv",
+      "objectId": 151,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 13,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBST",
+      "hubId": "940GZZLUBST",
+      "name": "Baker Street",
+      "tflName": "Baker Street",
+      "lon": -0.1570581597729946,
+      "lat": 51.5230020037108,
+      "tflLon": -0.15713,
+      "tflLat": 51.522883,
+      "coordinateSource": "csv",
+      "objectId": 169,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 14,
+      "lines": [
+        "bakerloo",
+        "circle",
+        "hammersmith-city",
+        "jubilee",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "circle",
+        "hammersmith-city",
+        "jubilee",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBLM",
+      "hubId": "HUBBAL",
+      "name": "Balham",
+      "tflName": "Balham",
+      "lon": -0.15269122947563088,
+      "lat": 51.44362737290878,
+      "tflLon": -0.152997,
+      "tflLat": 51.443288,
+      "coordinateSource": "csv",
+      "objectId": 440,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 43,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBNK",
+      "hubId": "HUBBAN",
+      "name": "Bank",
+      "tflName": "Bank",
+      "lon": -0.08890808727118107,
+      "lat": 51.513425435909184,
+      "tflLon": -0.090047,
+      "tflLat": 51.513132,
+      "coordinateSource": "csv",
+      "objectId": 209,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 85,
+      "lines": [
+        "central",
+        "northern",
+        "waterloo-city"
+      ],
+      "csvLines": [
+        "central",
+        "northern",
+        "waterloo-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBBN",
+      "hubId": "940GZZLUBBN",
+      "name": "Barbican",
+      "tflName": "Barbican",
+      "lon": -0.09879996291215272,
+      "lat": 51.520208600153815,
+      "tflLon": -0.097993,
+      "tflLat": 51.520275,
+      "coordinateSource": "csv",
+      "objectId": 165,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 56,
+      "lines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBKG",
+      "hubId": "HUBBKG",
+      "name": "Barking",
+      "tflName": "Barking",
+      "lon": 0.08018208014455507,
+      "lat": 51.539885097485445,
+      "tflLon": 0.081053,
+      "tflLat": 51.539321,
+      "coordinateSource": "csv",
+      "objectId": 400,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 87,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBKE",
+      "hubId": "940GZZLUBKE",
+      "name": "Barkingside",
+      "tflName": "Barkingside",
+      "lon": 0.08862520423436726,
+      "lat": 51.58570377518845,
+      "tflLon": 0.088585,
+      "tflLat": 51.585689,
+      "coordinateSource": "csv",
+      "objectId": 120,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBSC",
+      "hubId": "940GZZLUBSC",
+      "name": "Barons Court",
+      "tflName": "Barons Court",
+      "lon": -0.21468405012348488,
+      "lat": 51.49029837209941,
+      "tflLon": -0.213427,
+      "tflLat": 51.490311,
+      "coordinateSource": "csv",
+      "objectId": 304,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 87,
+      "lines": [
+        "district",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "district",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZBPSUST",
+      "hubId": "940GZZBPSUST",
+      "name": "Battersea Power Station",
+      "tflName": "Battersea Power Station",
+      "lon": -0.1434008238398742,
+      "lat": 51.47947593806482,
+      "tflLon": -0.142142,
+      "tflLat": 51.479932,
+      "coordinateSource": "csv",
+      "objectId": 379,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 101,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBWT",
+      "hubId": "940GZZLUBWT",
+      "name": "Bayswater",
+      "tflName": "Bayswater",
+      "lon": -0.1879225224209527,
+      "lat": 51.51232394663448,
+      "tflLon": -0.187938,
+      "tflLat": 51.512284,
+      "coordinateSource": "csv",
+      "objectId": 172,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBEC",
+      "hubId": "940GZZLUBEC",
+      "name": "Becontree",
+      "tflName": "Becontree",
+      "lon": 0.1273417848283317,
+      "lat": 51.54034470776378,
+      "tflLon": 0.127016,
+      "tflLat": 51.540331,
+      "coordinateSource": "csv",
+      "objectId": 184,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 23,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBZP",
+      "hubId": "940GZZLUBZP",
+      "name": "Belsize Park",
+      "tflName": "Belsize Park",
+      "lon": -0.16462098681641185,
+      "lat": 51.55032570077621,
+      "tflLon": -0.164648,
+      "tflLat": 51.550311,
+      "coordinateSource": "csv",
+      "objectId": 280,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBMY",
+      "hubId": "940GZZLUBMY",
+      "name": "Bermondsey",
+      "tflName": "Bermondsey",
+      "lon": -0.06435917646629304,
+      "lat": 51.49770238120657,
+      "tflLon": -0.063993,
+      "tflLat": 51.49775,
+      "coordinateSource": "csv",
+      "objectId": 214,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 26,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBLG",
+      "hubId": "940GZZLUBLG",
+      "name": "Bethnal Green",
+      "tflName": "Bethnal Green",
+      "lon": -0.05469030192583057,
+      "lat": 51.527237667207054,
+      "tflLon": -0.055506,
+      "tflLat": 51.527222,
+      "coordinateSource": "csv",
+      "objectId": 113,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 56,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBKF",
+      "hubId": "HUBBFR",
+      "name": "Blackfriars",
+      "tflName": "Blackfriars",
+      "lon": -0.10362963813725404,
+      "lat": 51.51162476747557,
+      "tflLon": -0.103659,
+      "tflLat": 51.511581,
+      "coordinateSource": "csv",
+      "objectId": 158,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBLR",
+      "hubId": "HUBBHO",
+      "name": "Blackhorse Road",
+      "tflName": "Blackhorse Road",
+      "lon": -0.041793873795219,
+      "lat": 51.586840594392974,
+      "tflLon": -0.04115,
+      "tflLat": 51.586919,
+      "coordinateSource": "csv",
+      "objectId": 243,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 45,
+      "lines": [
+        "victoria"
+      ],
+      "csvLines": [
+        "victoria"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBND",
+      "hubId": "HUBBDS",
+      "name": "Bond Street",
+      "tflName": "Bond Street",
+      "lon": -0.1496811425789451,
+      "lat": 51.51437958002913,
+      "tflLon": -0.149723,
+      "tflLat": 51.514304,
+      "coordinateSource": "csv",
+      "objectId": 204,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 9,
+      "lines": [
+        "central",
+        "jubilee"
+      ],
+      "csvLines": [
+        "central",
+        "jubilee"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBOR",
+      "hubId": "940GZZLUBOR",
+      "name": "Borough",
+      "tflName": "Borough",
+      "lon": -0.0933129512735988,
+      "lat": 51.5011913652754,
+      "tflLon": -0.09337,
+      "tflLat": 51.501199,
+      "coordinateSource": "csv",
+      "objectId": 479,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBOS",
+      "hubId": "940GZZLUBOS",
+      "name": "Boston Manor",
+      "tflName": "Boston Manor",
+      "lon": -0.3255952087308763,
+      "lat": 51.495219674970095,
+      "tflLon": -0.324939,
+      "tflLat": 51.495635,
+      "coordinateSource": "csv",
+      "objectId": 434,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 65,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBDS",
+      "hubId": "940GZZLUBDS",
+      "name": "Bounds Green",
+      "tflName": "Bounds Green",
+      "lon": -0.12434197787111509,
+      "lat": 51.60706378685743,
+      "tflLon": -0.124235,
+      "tflLat": 51.607034,
+      "coordinateSource": "csv",
+      "objectId": 282,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBWR",
+      "hubId": "940GZZLUBWR",
+      "name": "Bow Road",
+      "tflName": "Bow Road",
+      "lon": -0.02520321216907312,
+      "lat": 51.526902665586434,
+      "tflLon": -0.025128,
+      "tflLat": 51.52694,
+      "coordinateSource": "csv",
+      "objectId": 311,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBTX",
+      "hubId": "940GZZLUBTX",
+      "name": "Brent Cross",
+      "tflName": "Brent Cross",
+      "lon": -0.21378475842151334,
+      "lat": 51.576668983672164,
+      "tflLon": -0.213622,
+      "tflLat": 51.57665,
+      "coordinateSource": "csv",
+      "objectId": 134,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 11,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBXN",
+      "hubId": "HUBBRX",
+      "name": "Brixton",
+      "tflName": "Brixton",
+      "lon": -0.1148949328839154,
+      "lat": 51.46266709356466,
+      "tflLon": -0.114888,
+      "tflLat": 51.462618,
+      "coordinateSource": "csv",
+      "objectId": 186,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "victoria"
+      ],
+      "csvLines": [
+        "victoria"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBBB",
+      "hubId": "940GZZLUBBB",
+      "name": "Bromley-by-Bow",
+      "tflName": "Bromley-by-Bow",
+      "lon": -0.0114614594625467,
+      "lat": 51.524760125717506,
+      "tflLon": -0.011538,
+      "tflLat": 51.524839,
+      "coordinateSource": "csv",
+      "objectId": 395,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 10,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBKH",
+      "hubId": "940GZZLUBKH",
+      "name": "Buckhurst Hill",
+      "tflName": "Buckhurst Hill",
+      "lon": 0.04682407515656278,
+      "lat": 51.625982897027,
+      "tflLon": 0.046757,
+      "tflLat": 51.626605,
+      "coordinateSource": "csv",
+      "objectId": 246,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 69,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUBTK",
+      "hubId": "940GZZLUBTK",
+      "name": "Burnt Oak",
+      "tflName": "Burnt Oak",
+      "lon": -0.26399369483295404,
+      "lat": 51.602834176714175,
+      "tflLon": -0.264048,
+      "tflLat": 51.602774,
+      "coordinateSource": "csv",
+      "objectId": 136,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCAR",
+      "hubId": "940GZZLUCAR",
+      "name": "Caledonian Road",
+      "tflName": "Caledonian Road",
+      "lon": -0.11847347641237985,
+      "lat": 51.54852353192346,
+      "tflLon": -0.118493,
+      "tflLat": 51.548519,
+      "coordinateSource": "csv",
+      "objectId": 386,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCTN",
+      "hubId": "940GZZLUCTN",
+      "name": "Camden Town",
+      "tflName": "Camden Town",
+      "lon": -0.14262297026124665,
+      "lat": 51.53923059833878,
+      "tflLon": -0.14274,
+      "tflLat": 51.539292,
+      "coordinateSource": "csv",
+      "objectId": 441,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 11,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCWR",
+      "hubId": "HUBZCW",
+      "name": "Canada Water",
+      "tflName": "Canada Water",
+      "lon": -0.049987164956990765,
+      "lat": 51.49792096344705,
+      "tflLon": -0.049405,
+      "tflLat": 51.497931,
+      "coordinateSource": "csv",
+      "objectId": 213,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 40,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCYF",
+      "hubId": "HUBCAW",
+      "name": "Canary Wharf",
+      "tflName": "Canary Wharf",
+      "lon": -0.01775363971134798,
+      "lat": 51.50343011540573,
+      "tflLon": -0.018246,
+      "tflLat": 51.503488,
+      "coordinateSource": "csv",
+      "objectId": 215,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 35,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCGT",
+      "hubId": "HUBCAN",
+      "name": "Canning Town",
+      "tflName": "Canning Town",
+      "lon": 0.00794669828970189,
+      "lat": 51.51412171801386,
+      "tflLon": 0.008322,
+      "tflLat": 51.513584,
+      "coordinateSource": "csv",
+      "objectId": 217,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 65,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCST",
+      "hubId": "HUBCST",
+      "name": "Cannon Street",
+      "tflName": "Cannon Street",
+      "lon": -0.09041192056785469,
+      "lat": 51.511473069259,
+      "tflLon": -0.090432,
+      "tflLat": 51.51151,
+      "coordinateSource": "csv",
+      "objectId": 160,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCPK",
+      "hubId": "940GZZLUCPK",
+      "name": "Canons Park",
+      "tflName": "Canons Park",
+      "lon": -0.29469410620588665,
+      "lat": 51.60770907048488,
+      "tflLon": -0.294693,
+      "tflLat": 51.607701,
+      "coordinateSource": "csv",
+      "objectId": 331,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCAL",
+      "hubId": "HUBCFO",
+      "name": "Chalfont & Latimer",
+      "tflName": "Chalfont & Latimer",
+      "lon": -0.5607234520464773,
+      "lat": 51.668031426229064,
+      "tflLon": -0.560689,
+      "tflLat": 51.667985,
+      "coordinateSource": "csv",
+      "objectId": 239,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 6,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCFM",
+      "hubId": "940GZZLUCFM",
+      "name": "Chalk Farm",
+      "tflName": "Chalk Farm",
+      "lon": -0.15264214766916676,
+      "lat": 51.54385835909765,
+      "tflLon": -0.153388,
+      "tflLat": 51.544118,
+      "coordinateSource": "csv",
+      "objectId": 233,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 59,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCHL",
+      "hubId": "940GZZLUCHL",
+      "name": "Chancery Lane",
+      "tflName": "Chancery Lane",
+      "lon": -0.11156930260294359,
+      "lat": 51.51824890350831,
+      "tflLon": -0.111583,
+      "tflLat": 51.518247,
+      "coordinateSource": "csv",
+      "objectId": 212,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCHX",
+      "hubId": "HUBCHX",
+      "name": "Charing Cross",
+      "tflName": "Charing Cross",
+      "lon": -0.1273836832203838,
+      "lat": 51.50737795073341,
+      "tflLon": -0.127277,
+      "tflLat": 51.50741,
+      "coordinateSource": "csv",
+      "objectId": 269,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "bakerloo",
+        "northern"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "northern"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCSM",
+      "hubId": "940GZZLUCSM",
+      "name": "Chesham",
+      "tflName": "Chesham",
+      "lon": -0.6109804023947352,
+      "lat": 51.70522161796168,
+      "tflLon": -0.611247,
+      "tflLat": 51.705208,
+      "coordinateSource": "csv",
+      "objectId": 473,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 18,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCWL",
+      "hubId": "940GZZLUCWL",
+      "name": "Chigwell",
+      "tflName": "Chigwell",
+      "lon": 0.0755949749891976,
+      "lat": 51.61765286220907,
+      "tflLon": 0.075041,
+      "tflLat": 51.617916,
+      "coordinateSource": "csv",
+      "objectId": 124,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 48,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCWP",
+      "hubId": "940GZZLUCWP",
+      "name": "Chiswick Park",
+      "tflName": "Chiswick Park",
+      "lon": -0.26857152550054486,
+      "lat": 51.49466748590177,
+      "tflLon": -0.267972,
+      "tflLat": 51.494627,
+      "coordinateSource": "csv",
+      "objectId": 176,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 42,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCYD",
+      "hubId": "HUBCLW",
+      "name": "Chorleywood",
+      "tflName": "Chorleywood",
+      "lon": -0.5185530310182181,
+      "lat": 51.65429398451199,
+      "tflLon": -0.518461,
+      "tflLat": 51.654358,
+      "coordinateSource": "csv",
+      "objectId": 240,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 10,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCPC",
+      "hubId": "940GZZLUCPC",
+      "name": "Clapham Common",
+      "tflName": "Clapham Common",
+      "lon": -0.13719253566731915,
+      "lat": 51.46221051259463,
+      "tflLon": -0.138317,
+      "tflLat": 51.461742,
+      "coordinateSource": "csv",
+      "objectId": 227,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 94,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCPN",
+      "hubId": "940GZZLUCPN",
+      "name": "Clapham North",
+      "tflName": "Clapham North",
+      "lon": -0.12935895070321768,
+      "lat": 51.46572960060881,
+      "tflLon": -0.130016,
+      "tflLat": 51.465135,
+      "coordinateSource": "csv",
+      "objectId": 228,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 80,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCPS",
+      "hubId": "940GZZLUCPS",
+      "name": "Clapham South",
+      "tflName": "Clapham South",
+      "lon": -0.14721241263243376,
+      "lat": 51.45323695245536,
+      "tflLon": -0.147582,
+      "tflLat": 51.452654,
+      "coordinateSource": "csv",
+      "objectId": 226,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 70,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCKS",
+      "hubId": "940GZZLUCKS",
+      "name": "Cockfosters",
+      "tflName": "Cockfosters",
+      "lon": -0.14916314678277617,
+      "lat": 51.65152862765704,
+      "tflLon": -0.149171,
+      "tflLat": 51.65152,
+      "coordinateSource": "csv",
+      "objectId": 154,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCND",
+      "hubId": "940GZZLUCND",
+      "name": "Colindale",
+      "tflName": "Colindale",
+      "lon": -0.24993805686952955,
+      "lat": 51.59544539419721,
+      "tflLon": -0.249919,
+      "tflLat": 51.595424,
+      "coordinateSource": "csv",
+      "objectId": 135,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCSD",
+      "hubId": "940GZZLUCSD",
+      "name": "Colliers Wood",
+      "tflName": "Colliers Wood",
+      "lon": -0.17805799608697154,
+      "lat": 51.41815971696416,
+      "tflLon": -0.178086,
+      "tflLat": 51.41816,
+      "coordinateSource": "csv",
+      "objectId": 222,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCGN",
+      "hubId": "940GZZLUCGN",
+      "name": "Covent Garden",
+      "tflName": "Covent Garden",
+      "lon": -0.12436702786860558,
+      "lat": 51.513144508444505,
+      "tflLon": -0.124436,
+      "tflLat": 51.513093,
+      "coordinateSource": "csv",
+      "objectId": 148,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUCXY",
+      "hubId": "940GZZLUCXY",
+      "name": "Croxley",
+      "tflName": "Croxley",
+      "lon": -0.44176805492340054,
+      "lat": 51.6470771785801,
+      "tflLon": -0.441718,
+      "tflLat": 51.647044,
+      "coordinateSource": "csv",
+      "objectId": 477,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUDGE",
+      "hubId": "940GZZLUDGE",
+      "name": "Dagenham East",
+      "tflName": "Dagenham East",
+      "lon": 0.16597604681459355,
+      "lat": 51.54416043622838,
+      "tflLon": 0.166017,
+      "tflLat": 51.544096,
+      "coordinateSource": "csv",
+      "objectId": 190,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUDGY",
+      "hubId": "940GZZLUDGY",
+      "name": "Dagenham Heathway",
+      "tflName": "Dagenham Heathway",
+      "lon": 0.14751917346847765,
+      "lat": 51.54161732780605,
+      "tflLon": 0.147527,
+      "tflLat": 51.541639,
+      "coordinateSource": "csv",
+      "objectId": 390,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUDBN",
+      "hubId": "940GZZLUDBN",
+      "name": "Debden",
+      "tflName": "Debden",
+      "lon": 0.08376689656236329,
+      "lat": 51.6453918793904,
+      "tflLon": 0.083782,
+      "tflLat": 51.645386,
+      "coordinateSource": "csv",
+      "objectId": 250,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUDOH",
+      "hubId": "940GZZLUDOH",
+      "name": "Dollis Hill",
+      "tflName": "Dollis Hill",
+      "lon": -0.23904076572437893,
+      "lat": 51.55196194099086,
+      "tflLon": -0.239068,
+      "tflLat": 51.551955,
+      "coordinateSource": "csv",
+      "objectId": 253,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEBY",
+      "hubId": "HUBEAL",
+      "name": "Ealing Broadway",
+      "tflName": "Ealing Broadway",
+      "lon": -0.301005548648285,
+      "lat": 51.51500454109758,
+      "tflLon": -0.301457,
+      "tflLat": 51.515017,
+      "coordinateSource": "csv",
+      "objectId": 290,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 31,
+      "lines": [
+        "central",
+        "district"
+      ],
+      "csvLines": [
+        "central",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUECM",
+      "hubId": "940GZZLUECM",
+      "name": "Ealing Common",
+      "tflName": "Ealing Common",
+      "lon": -0.28814377331699453,
+      "lat": 51.50954325566993,
+      "tflLon": -0.288265,
+      "tflLat": 51.51014,
+      "coordinateSource": "csv",
+      "objectId": 292,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 67,
+      "lines": [
+        "district",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "district",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUECT",
+      "hubId": "940GZZLUECT",
+      "name": "Earl's Court",
+      "tflName": "Earl's Court",
+      "lon": -0.19317540262977842,
+      "lat": 51.49198454803539,
+      "tflLon": -0.193378,
+      "tflLat": 51.492063,
+      "coordinateSource": "csv",
+      "objectId": 199,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 17,
+      "lines": [
+        "district",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "district",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEAN",
+      "hubId": "940GZZLUEAN",
+      "name": "East Acton",
+      "tflName": "East Acton",
+      "lon": -0.2471625219934364,
+      "lat": 51.51659745054098,
+      "tflLon": -0.247248,
+      "tflLat": 51.516612,
+      "coordinateSource": "csv",
+      "objectId": 238,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 6,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEFY",
+      "hubId": "940GZZLUEFY",
+      "name": "East Finchley",
+      "tflName": "East Finchley",
+      "lon": -0.1650441219039346,
+      "lat": 51.58715402026014,
+      "tflLon": -0.165012,
+      "tflLat": 51.587131,
+      "coordinateSource": "csv",
+      "objectId": 471,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEHM",
+      "hubId": "940GZZLUEHM",
+      "name": "East Ham",
+      "tflName": "East Ham",
+      "lon": 0.052826568311649,
+      "lat": 51.53940709913807,
+      "tflLon": 0.051186,
+      "tflLat": 51.538948,
+      "coordinateSource": "csv",
+      "objectId": 128,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 124,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEPY",
+      "hubId": "940GZZLUEPY",
+      "name": "East Putney",
+      "tflName": "East Putney",
+      "lon": -0.2110636822805433,
+      "lat": 51.459149587092405,
+      "tflLon": -0.211,
+      "tflLat": 51.459205,
+      "coordinateSource": "csv",
+      "objectId": 178,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEAE",
+      "hubId": "940GZZLUEAE",
+      "name": "Eastcote",
+      "tflName": "Eastcote",
+      "lon": -0.39736801686353984,
+      "lat": 51.576511969832765,
+      "tflLon": -0.397373,
+      "tflLat": 51.576506,
+      "coordinateSource": "csv",
+      "objectId": 437,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEGW",
+      "hubId": "940GZZLUEGW",
+      "name": "Edgware",
+      "tflName": "Edgware",
+      "lon": -0.27477777123740055,
+      "lat": 51.61360827412279,
+      "tflLon": -0.274928,
+      "tflLat": 51.613653,
+      "coordinateSource": "csv",
+      "objectId": 384,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 12,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUERB",
+      "hubId": "940GZZLUERB",
+      "name": "Edgware Road (Bakerloo)",
+      "tflName": "Edgware Road (Bakerloo)",
+      "lon": -0.1702481178612425,
+      "lat": 51.52046920147198,
+      "tflLon": -0.17015,
+      "tflLat": 51.520299,
+      "coordinateSource": "csv",
+      "objectId": 272,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 20,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": "Edgware Road (Bakerloo) is a separate station from Edgware Road (Circle Line)."
+    },
+    {
+      "id": "940GZZLUERC",
+      "hubId": "940GZZLUERC",
+      "name": "Edgware Road (Circle Line)",
+      "tflName": "Edgware Road (Circle Line)",
+      "lon": -0.16777316638890663,
+      "lat": 51.51987245129845,
+      "tflLon": -0.167832,
+      "tflLat": 51.519858,
+      "coordinateSource": "csv",
+      "objectId": 170,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "circle",
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": "Edgware Road (Circle Line) and Edgware Road (Bakerloo) are two separate stations about 170 m apart with no internal interchange, so they are kept apart. This station is served by the Circle, District and Hammersmith & City lines, although the CSV lists only Circle."
+    },
+    {
+      "id": "940GZZLUEAC",
+      "hubId": "HUBEPH",
+      "name": "Elephant & Castle",
+      "tflName": "Elephant & Castle",
+      "lon": -0.10118627610280032,
+      "lat": 51.49583746787788,
+      "tflLon": -0.100606,
+      "tflLat": 51.494536,
+      "coordinateSource": "csv",
+      "objectId": 270,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 150,
+      "lines": [
+        "bakerloo",
+        "northern"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "northern"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEPK",
+      "hubId": "940GZZLUEPK",
+      "name": "Elm Park",
+      "tflName": "Elm Park",
+      "lon": 0.1986662037147443,
+      "lat": 51.549719886941844,
+      "tflLon": 0.19864,
+      "tflLat": 51.549775,
+      "coordinateSource": "csv",
+      "objectId": 191,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 6,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEMB",
+      "hubId": "940GZZLUEMB",
+      "name": "Embankment",
+      "tflName": "Embankment",
+      "lon": -0.12216953430795731,
+      "lat": 51.50745185655674,
+      "tflLon": -0.122666,
+      "tflLat": 51.507058,
+      "coordinateSource": "csv",
+      "objectId": 259,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 56,
+      "lines": [
+        "bakerloo",
+        "circle",
+        "district",
+        "northern"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "circle",
+        "district",
+        "northern"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEPG",
+      "hubId": "940GZZLUEPG",
+      "name": "Epping",
+      "tflName": "Epping",
+      "lon": 0.11399961918418978,
+      "lat": 51.69356092525262,
+      "tflLon": 0.113767,
+      "tflLat": 51.69368,
+      "coordinateSource": "csv",
+      "objectId": 251,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 21,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUEUS",
+      "hubId": "HUBEUS",
+      "name": "Euston",
+      "tflName": "Euston",
+      "lon": -0.13459860915117344,
+      "lat": 51.52808458451346,
+      "tflLon": -0.133785,
+      "tflLat": 51.527999,
+      "coordinateSource": "csv",
+      "objectId": 285,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 57,
+      "lines": [
+        "northern",
+        "victoria"
+      ],
+      "csvLines": [
+        "northern",
+        "victoria"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUESQ",
+      "hubId": "940GZZLUESQ",
+      "name": "Euston Square",
+      "tflName": "Euston Square",
+      "lon": -0.13587687351584915,
+      "lat": 51.525633154752434,
+      "tflLon": -0.135829,
+      "tflLat": 51.525604,
+      "coordinateSource": "csv",
+      "objectId": 168,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUFLP",
+      "hubId": "940GZZLUFLP",
+      "name": "Fairlop",
+      "tflName": "Fairlop",
+      "lon": 0.09105309597165903,
+      "lat": 51.595558107334746,
+      "tflLon": 0.091004,
+      "tflLat": 51.595618,
+      "coordinateSource": "csv",
+      "objectId": 121,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUFCN",
+      "hubId": "HUBZFD",
+      "name": "Farringdon",
+      "tflName": "Farringdon",
+      "lon": -0.10519198867818359,
+      "lat": 51.52047027577585,
+      "tflLon": -0.104913,
+      "tflLat": 51.520252,
+      "coordinateSource": "csv",
+      "objectId": 166,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 31,
+      "lines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUFYC",
+      "hubId": "940GZZLUFYC",
+      "name": "Finchley Central",
+      "tflName": "Finchley Central",
+      "lon": -0.19255484880487297,
+      "lat": 51.60093175153773,
+      "tflLon": -0.192527,
+      "tflLat": 51.600921,
+      "coordinateSource": "csv",
+      "objectId": 139,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUFYR",
+      "hubId": "940GZZLUFYR",
+      "name": "Finchley Road",
+      "tflName": "Finchley Road",
+      "lon": -0.18109153879636952,
+      "lat": 51.54723083836693,
+      "tflLon": -0.179845,
+      "tflLat": 51.546825,
+      "coordinateSource": "csv",
+      "objectId": 221,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 97,
+      "lines": [
+        "jubilee",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "jubilee",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUFPK",
+      "hubId": "HUBFPK",
+      "name": "Finsbury Park",
+      "tflName": "Finsbury Park",
+      "lon": -0.10667934765407905,
+      "lat": 51.56457021452156,
+      "tflLon": -0.106825,
+      "tflLat": 51.564158,
+      "coordinateSource": "csv",
+      "objectId": 294,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 47,
+      "lines": [
+        "piccadilly",
+        "victoria"
+      ],
+      "csvLines": [
+        "piccadilly",
+        "victoria"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUFBY",
+      "hubId": "940GZZLUFBY",
+      "name": "Fulham Broadway",
+      "tflName": "Fulham Broadway",
+      "lon": -0.19476643999333534,
+      "lat": 51.48076777565934,
+      "tflLon": -0.195422,
+      "tflLat": 51.480081,
+      "coordinateSource": "csv",
+      "objectId": 305,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 89,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGTH",
+      "hubId": "940GZZLUGTH",
+      "name": "Gants Hill",
+      "tflName": "Gants Hill",
+      "lon": 0.06619413225561141,
+      "lat": 51.57653500920319,
+      "tflLon": 0.066185,
+      "tflLat": 51.576544,
+      "coordinateSource": "csv",
+      "objectId": 394,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGTR",
+      "hubId": "940GZZLUGTR",
+      "name": "Gloucester Road",
+      "tflName": "Gloucester Road",
+      "lon": -0.18373468987431105,
+      "lat": 51.49448863919927,
+      "tflLon": -0.182658,
+      "tflLat": 51.494316,
+      "coordinateSource": "csv",
+      "objectId": 174,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 77,
+      "lines": [
+        "circle",
+        "district",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "circle",
+        "district",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGGN",
+      "hubId": "940GZZLUGGN",
+      "name": "Golders Green",
+      "tflName": "Golders Green",
+      "lon": -0.19402225224523736,
+      "lat": 51.57228620318889,
+      "tflLon": -0.194039,
+      "tflLat": 51.572259,
+      "coordinateSource": "csv",
+      "objectId": 138,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGHK",
+      "hubId": "940GZZLUGHK",
+      "name": "Goldhawk Road",
+      "tflName": "Goldhawk Road",
+      "lon": -0.22664486415404567,
+      "lat": 51.50199179519617,
+      "tflLon": -0.226715,
+      "tflLat": 51.502005,
+      "coordinateSource": "csv",
+      "objectId": 195,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGDG",
+      "hubId": "940GZZLUGDG",
+      "name": "Goodge Street",
+      "tflName": "Goodge Street",
+      "lon": -0.13434290236565843,
+      "lat": 51.520601842773736,
+      "tflLon": -0.134361,
+      "tflLat": 51.520599,
+      "coordinateSource": "csv",
+      "objectId": 229,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGGH",
+      "hubId": "940GZZLUGGH",
+      "name": "Grange Hill",
+      "tflName": "Grange Hill",
+      "lon": 0.09232184221334147,
+      "lat": 51.61319815416051,
+      "tflLon": 0.092066,
+      "tflLat": 51.613378,
+      "coordinateSource": "csv",
+      "objectId": 249,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 27,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGPS",
+      "hubId": "940GZZLUGPS",
+      "name": "Great Portland Street",
+      "tflName": "Great Portland Street",
+      "lon": -0.1442909711973862,
+      "lat": 51.52384645620309,
+      "tflLon": -0.144262,
+      "tflLat": 51.52384,
+      "coordinateSource": "csv",
+      "objectId": 388,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGPK",
+      "hubId": "940GZZLUGPK",
+      "name": "Green Park",
+      "tflName": "Green Park",
+      "lon": -0.14254189011089013,
+      "lat": 51.50686769929983,
+      "tflLon": -0.142787,
+      "tflLat": 51.506947,
+      "coordinateSource": "csv",
+      "objectId": 293,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 19,
+      "lines": [
+        "jubilee",
+        "piccadilly",
+        "victoria"
+      ],
+      "csvLines": [
+        "jubilee",
+        "piccadilly",
+        "victoria"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGFD",
+      "hubId": "HUBGFD",
+      "name": "Greenford",
+      "tflName": "Greenford",
+      "lon": -0.3465040750206399,
+      "lat": 51.54259127112355,
+      "tflLon": -0.34605,
+      "tflLat": 51.542424,
+      "coordinateSource": "csv",
+      "objectId": 206,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 36,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUGBY",
+      "hubId": "HUBGUN",
+      "name": "Gunnersbury",
+      "tflName": "Gunnersbury",
+      "lon": -0.2751361823945699,
+      "lat": 51.491741910939425,
+      "tflLon": -0.275267,
+      "tflLat": 51.491803,
+      "coordinateSource": "csv",
+      "objectId": 267,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 11,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHLT",
+      "hubId": "940GZZLUHLT",
+      "name": "Hainault",
+      "tflName": "Hainault",
+      "lon": 0.09350819615879127,
+      "lat": 51.6036401975141,
+      "tflLon": 0.093482,
+      "tflLat": 51.603659,
+      "coordinateSource": "csv",
+      "objectId": 248,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHSD",
+      "hubId": "HUBHMS",
+      "name": "Hammersmith (Dist&Picc Line)",
+      "tflName": "Hammersmith (Dist&Picc Line)",
+      "lon": -0.22304188389888033,
+      "lat": 51.49199951963806,
+      "tflLon": -0.22362,
+      "tflLat": 51.4923,
+      "coordinateSource": "csv",
+      "objectId": 279,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 52,
+      "lines": [
+        "district",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "district",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": "Hammersmith has two separate stations: this one (District and Piccadilly) and Hammersmith (H&C Line) on the other side of the road."
+    },
+    {
+      "id": "940GZZLUHSC",
+      "hubId": "HUBHMS",
+      "name": "Hammersmith (H&C Line)",
+      "tflName": "Hammersmith (H&C Line)",
+      "lon": -0.2249293587788519,
+      "lat": 51.49378399419851,
+      "tflLon": -0.22503,
+      "tflLat": 51.49339,
+      "coordinateSource": "csv",
+      "objectId": 297,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 44,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": "Hammersmith (H&C Line) is the western terminus of the Hammersmith & City line and of the Circle line. The CSV lists only Hammersmith & City."
+    },
+    {
+      "id": "940GZZLUHTD",
+      "hubId": "940GZZLUHTD",
+      "name": "Hampstead",
+      "tflName": "Hampstead",
+      "lon": -0.17852309354375814,
+      "lat": 51.5565898798849,
+      "tflLon": -0.177464,
+      "tflLat": 51.556239,
+      "coordinateSource": "csv",
+      "objectId": 231,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 83,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHGR",
+      "hubId": "940GZZLUHGR",
+      "name": "Hanger Lane",
+      "tflName": "Hanger Lane",
+      "lon": -0.2926845249496959,
+      "lat": 51.53018552933825,
+      "tflLon": -0.292704,
+      "tflLat": 51.530177,
+      "coordinateSource": "csv",
+      "objectId": 393,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHSN",
+      "hubId": "HUBHDN",
+      "name": "Harlesden",
+      "tflName": "Harlesden",
+      "lon": -0.2585901442236528,
+      "lat": 51.5366984829526,
+      "tflLon": -0.257883,
+      "tflLat": 51.53631,
+      "coordinateSource": "csv",
+      "objectId": 262,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 65,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHAW",
+      "hubId": "HUBHRW",
+      "name": "Harrow & Wealdstone",
+      "tflName": "Harrow & Wealdstone",
+      "lon": -0.3348864548890388,
+      "lat": 51.59204382510434,
+      "tflLon": -0.335217,
+      "tflLat": 51.592268,
+      "coordinateSource": "csv",
+      "objectId": 257,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 34,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHOH",
+      "hubId": "HUBHOH",
+      "name": "Harrow-on-the-Hill",
+      "tflName": "Harrow-on-the-Hill",
+      "lon": -0.3367522322346986,
+      "lat": 51.57941460314498,
+      "tflLon": -0.337225,
+      "tflLat": 51.579195,
+      "coordinateSource": "csv",
+      "objectId": 328,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 41,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHNX",
+      "hubId": "940GZZLUHNX",
+      "name": "Hatton Cross",
+      "tflName": "Hatton Cross",
+      "lon": -0.42346421038625753,
+      "lat": 51.46662784627763,
+      "tflLon": -0.423191,
+      "tflLat": 51.466747,
+      "coordinateSource": "csv",
+      "objectId": 298,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 23,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHR4",
+      "hubId": "HUBHX4",
+      "name": "Heathrow Terminal 4",
+      "tflName": "Heathrow Terminal 4",
+      "lon": -0.44571396376058325,
+      "lat": 51.45854050640025,
+      "tflLon": -0.445771,
+      "tflLat": 51.458524,
+      "coordinateSource": "csv",
+      "objectId": 315,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHR5",
+      "hubId": "HUBHX5",
+      "name": "Heathrow Terminal 5",
+      "tflName": "Heathrow Terminal 5",
+      "lon": -0.4880396396312293,
+      "lat": 51.4725252187983,
+      "tflLon": -0.49056,
+      "tflLat": 51.470052,
+      "coordinateSource": "csv",
+      "objectId": 442,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 326,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHRC",
+      "hubId": "HUBH13",
+      "name": "Heathrow Terminals 1-2-3",
+      "tflName": "Heathrow Terminals 2 & 3",
+      "lon": -0.4524258114844233,
+      "lat": 51.47130365988795,
+      "tflLon": -0.452265,
+      "tflLat": 51.471235,
+      "coordinateSource": "csv",
+      "objectId": 391,
+      "joinMethod": "alias",
+      "joinDistanceM": 14,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": "Named 'Heathrow Terminals 1-2-3' in the CSV and 'Heathrow Terminals 2 & 3' by TfL."
+    },
+    {
+      "id": "940GZZLUHCL",
+      "hubId": "940GZZLUHCL",
+      "name": "Hendon Central",
+      "tflName": "Hendon Central",
+      "lon": -0.2263467398232382,
+      "lat": 51.58317142482077,
+      "tflLon": -0.226424,
+      "tflLat": 51.583301,
+      "coordinateSource": "csv",
+      "objectId": 482,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 15,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHBT",
+      "hubId": "940GZZLUHBT",
+      "name": "High Barnet",
+      "tflName": "High Barnet",
+      "lon": -0.19416624688190223,
+      "lat": 51.65052191222786,
+      "tflLon": -0.194298,
+      "tflLat": 51.650541,
+      "coordinateSource": "csv",
+      "objectId": 436,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 9,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHSK",
+      "hubId": "940GZZLUHSK",
+      "name": "High Street Kensington",
+      "tflName": "High Street Kensington",
+      "lon": -0.19220609592531968,
+      "lat": 51.500445098932744,
+      "tflLon": -0.192792,
+      "tflLat": 51.501055,
+      "coordinateSource": "csv",
+      "objectId": 173,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 79,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHAI",
+      "hubId": "HUBHHY",
+      "name": "Highbury & Islington",
+      "tflName": "Highbury & Islington",
+      "lon": -0.10373671479788171,
+      "lat": 51.5474243924603,
+      "tflLon": -0.103324,
+      "tflLat": 51.54635,
+      "coordinateSource": "csv",
+      "objectId": 242,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 123,
+      "lines": [
+        "victoria"
+      ],
+      "csvLines": [
+        "victoria"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHGT",
+      "hubId": "940GZZLUHGT",
+      "name": "Highgate",
+      "tflName": "Highgate",
+      "lon": -0.14646788226539453,
+      "lat": 51.57784395375154,
+      "tflLon": -0.145857,
+      "tflLat": 51.577532,
+      "coordinateSource": "csv",
+      "objectId": 472,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 55,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHGD",
+      "hubId": "940GZZLUHGD",
+      "name": "Hillingdon",
+      "tflName": "Hillingdon",
+      "lon": -0.44938394891092626,
+      "lat": 51.55394931648672,
+      "tflLon": -0.449828,
+      "tflLat": 51.553715,
+      "coordinateSource": "csv",
+      "objectId": 319,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 40,
+      "lines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHBN",
+      "hubId": "940GZZLUHBN",
+      "name": "Holborn",
+      "tflName": "Holborn",
+      "lon": -0.12041642112778311,
+      "lat": 51.5175781351181,
+      "tflLon": -0.120475,
+      "tflLat": 51.51758,
+      "coordinateSource": "csv",
+      "objectId": 211,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "central",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "central",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHPK",
+      "hubId": "940GZZLUHPK",
+      "name": "Holland Park",
+      "tflName": "Holland Park",
+      "lon": -0.20566045316838816,
+      "lat": 51.5071535735316,
+      "tflLon": -0.205679,
+      "tflLat": 51.507143,
+      "coordinateSource": "csv",
+      "objectId": 183,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHWY",
+      "hubId": "940GZZLUHWY",
+      "name": "Holloway Road",
+      "tflName": "Holloway Road",
+      "lon": -0.11326351342118741,
+      "lat": 51.55275576448648,
+      "tflLon": -0.113244,
+      "tflLat": 51.552697,
+      "coordinateSource": "csv",
+      "objectId": 150,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHCH",
+      "hubId": "940GZZLUHCH",
+      "name": "Hornchurch",
+      "tflName": "Hornchurch",
+      "lon": 0.21910684007400003,
+      "lat": 51.55404895710733,
+      "tflLon": 0.219116,
+      "tflLat": 51.554093,
+      "coordinateSource": "csv",
+      "objectId": 192,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHWC",
+      "hubId": "940GZZLUHWC",
+      "name": "Hounslow Central",
+      "tflName": "Hounslow Central",
+      "lon": -0.3662939172379908,
+      "lat": 51.47131979963469,
+      "tflLon": -0.366578,
+      "tflLat": 51.471295,
+      "coordinateSource": "csv",
+      "objectId": 300,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 20,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHWE",
+      "hubId": "940GZZLUHWE",
+      "name": "Hounslow East",
+      "tflName": "Hounslow East",
+      "lon": -0.35633446056928547,
+      "lat": 51.47326292270873,
+      "tflLon": -0.356474,
+      "tflLat": 51.473213,
+      "coordinateSource": "csv",
+      "objectId": 301,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 11,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHWT",
+      "hubId": "940GZZLUHWT",
+      "name": "Hounslow West",
+      "tflName": "Hounslow West",
+      "lon": -0.38579398315426044,
+      "lat": 51.47361867347103,
+      "tflLon": -0.386544,
+      "tflLat": 51.473469,
+      "coordinateSource": "csv",
+      "objectId": 299,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 55,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUHPC",
+      "hubId": "940GZZLUHPC",
+      "name": "Hyde Park Corner",
+      "tflName": "Hyde Park Corner",
+      "lon": -0.15414966922837586,
+      "lat": 51.5027515504957,
+      "tflLon": -0.152441,
+      "tflLat": 51.503035,
+      "coordinateSource": "csv",
+      "objectId": 145,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 122,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUICK",
+      "hubId": "940GZZLUICK",
+      "name": "Ickenham",
+      "tflName": "Ickenham",
+      "lon": -0.44204013678137116,
+      "lat": 51.56196897211082,
+      "tflLon": -0.442225,
+      "tflLat": 51.56177,
+      "coordinateSource": "csv",
+      "objectId": 320,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 26,
+      "lines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKNG",
+      "hubId": "940GZZLUKNG",
+      "name": "Kennington",
+      "tflName": "Kennington",
+      "lon": -0.10596541286235016,
+      "lat": 51.48834003191997,
+      "tflLon": -0.105963,
+      "tflLat": 51.488337,
+      "coordinateSource": "csv",
+      "objectId": 237,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 0,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKSL",
+      "hubId": "HUBKNL",
+      "name": "Kensal Green",
+      "tflName": "Kensal Green",
+      "lon": -0.2244787816465951,
+      "lat": 51.530571777558116,
+      "tflLon": -0.225016,
+      "tflLat": 51.530539,
+      "coordinateSource": "csv",
+      "objectId": 261,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 37,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKOY",
+      "hubId": "HUBKPA",
+      "name": "Kensington (Olympia)",
+      "tflName": "Kensington (Olympia)",
+      "lon": -0.21012996310043217,
+      "lat": 51.49773548808454,
+      "tflLon": -0.210015,
+      "tflLat": 51.497624,
+      "coordinateSource": "csv",
+      "objectId": 284,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 15,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKSH",
+      "hubId": "HUBKTN",
+      "name": "Kentish Town",
+      "tflName": "Kentish Town",
+      "lon": -0.1407479399821426,
+      "lat": 51.55029387744979,
+      "tflLon": -0.140733,
+      "tflLat": 51.550312,
+      "coordinateSource": "csv",
+      "objectId": 234,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKEN",
+      "hubId": "HUBKNT",
+      "name": "Kenton",
+      "tflName": "Kenton",
+      "lon": -0.31672815541742494,
+      "lat": 51.58161162102015,
+      "tflLon": -0.31691,
+      "tflLat": 51.581756,
+      "coordinateSource": "csv",
+      "objectId": 485,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 20,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKWG",
+      "hubId": "HUBKWG",
+      "name": "Kew Gardens",
+      "tflName": "Kew Gardens",
+      "lon": -0.28504091647405505,
+      "lat": 51.47699774458654,
+      "tflLon": -0.285241,
+      "tflLat": 51.477058,
+      "coordinateSource": "csv",
+      "objectId": 266,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 15,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKBN",
+      "hubId": "940GZZLUKBN",
+      "name": "Kilburn",
+      "tflName": "Kilburn",
+      "lon": -0.20471489160119855,
+      "lat": 51.546953022454446,
+      "tflLon": -0.204248,
+      "tflLat": 51.547183,
+      "coordinateSource": "csv",
+      "objectId": 218,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 41,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKPK",
+      "hubId": "940GZZLUKPK",
+      "name": "Kilburn Park",
+      "tflName": "Kilburn Park",
+      "lon": -0.1940203229099902,
+      "lat": 51.534947545387965,
+      "tflLon": -0.194232,
+      "tflLat": 51.534979,
+      "coordinateSource": "csv",
+      "objectId": 274,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 15,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKSX",
+      "hubId": "HUBKGX",
+      "name": "King's Cross St. Pancras",
+      "tflName": "King's Cross St. Pancras",
+      "lon": -0.12477613021792856,
+      "lat": 51.529785143075884,
+      "tflLon": -0.123194,
+      "tflLat": 51.530663,
+      "coordinateSource": "csv",
+      "objectId": 167,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 147,
+      "lines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan",
+        "northern",
+        "piccadilly",
+        "victoria"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan",
+        "northern",
+        "piccadilly",
+        "victoria"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKBY",
+      "hubId": "940GZZLUKBY",
+      "name": "Kingsbury",
+      "tflName": "Kingsbury",
+      "lon": -0.2786447440288867,
+      "lat": 51.584641087244194,
+      "tflLon": -0.27879,
+      "tflLat": 51.584845,
+      "coordinateSource": "csv",
+      "objectId": 254,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 25,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUKNB",
+      "hubId": "940GZZLUKNB",
+      "name": "Knightsbridge",
+      "tflName": "Knightsbridge",
+      "lon": -0.16146611606618974,
+      "lat": 51.50124118729131,
+      "tflLon": -0.160508,
+      "tflLat": 51.501669,
+      "coordinateSource": "csv",
+      "objectId": 146,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 82,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULAD",
+      "hubId": "940GZZLULAD",
+      "name": "Ladbroke Grove",
+      "tflName": "Ladbroke Grove",
+      "lon": -0.21090185775767434,
+      "lat": 51.51732053919889,
+      "tflLon": -0.210391,
+      "tflLat": 51.517449,
+      "coordinateSource": "csv",
+      "objectId": 197,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 38,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULBN",
+      "hubId": "940GZZLULBN",
+      "name": "Lambeth North",
+      "tflName": "Lambeth North",
+      "lon": -0.1122327661467621,
+      "lat": 51.498842228801465,
+      "tflLon": -0.112315,
+      "tflLat": 51.498808,
+      "coordinateSource": "csv",
+      "objectId": 271,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULGT",
+      "hubId": "940GZZLULGT",
+      "name": "Lancaster Gate",
+      "tflName": "Lancaster Gate",
+      "lon": -0.17544510185673504,
+      "lat": 51.51168719578341,
+      "tflLon": -0.175494,
+      "tflLat": 51.511723,
+      "coordinateSource": "csv",
+      "objectId": 202,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULRD",
+      "hubId": "940GZZLULRD",
+      "name": "Latimer Road",
+      "tflName": "Latimer Road",
+      "lon": -0.21785393577321283,
+      "lat": 51.513458663999614,
+      "tflLon": -0.217799,
+      "tflLat": 51.513389,
+      "coordinateSource": "csv",
+      "objectId": 196,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 9,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULSQ",
+      "hubId": "940GZZLULSQ",
+      "name": "Leicester Square",
+      "tflName": "Leicester Square",
+      "lon": -0.128332134429999,
+      "lat": 51.51140465728606,
+      "tflLon": -0.128426,
+      "tflLat": 51.511386,
+      "coordinateSource": "csv",
+      "objectId": 147,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "northern",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "northern",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULYN",
+      "hubId": "940GZZLULYN",
+      "name": "Leyton",
+      "tflName": "Leyton",
+      "lon": -0.00548715538242508,
+      "lat": 51.55660356521063,
+      "tflLon": -0.005523,
+      "tflLat": 51.556589,
+      "coordinateSource": "csv",
+      "objectId": 114,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULYS",
+      "hubId": "940GZZLULYS",
+      "name": "Leytonstone",
+      "tflName": "Leytonstone",
+      "lon": 0.008183219874044318,
+      "lat": 51.568320494028455,
+      "tflLon": 0.008194,
+      "tflLat": 51.568324,
+      "coordinateSource": "csv",
+      "objectId": 116,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULVT",
+      "hubId": "HUBLST",
+      "name": "Liverpool Street",
+      "tflName": "Liverpool Street",
+      "lon": -0.08321330923554981,
+      "lat": 51.51735237101746,
+      "tflLon": -0.083182,
+      "tflLat": 51.517372,
+      "coordinateSource": "csv",
+      "objectId": 163,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central",
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "central",
+        "circle",
+        "hammersmith-city",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULNB",
+      "hubId": "HUBLBG",
+      "name": "London Bridge",
+      "tflName": "London Bridge",
+      "lon": -0.08964851723570844,
+      "lat": 51.50506500549169,
+      "tflLon": -0.088873,
+      "tflLat": 51.505721,
+      "coordinateSource": "csv",
+      "objectId": 334,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 91,
+      "lines": [
+        "jubilee",
+        "northern"
+      ],
+      "csvLines": [
+        "jubilee",
+        "northern"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLULGN",
+      "hubId": "940GZZLULGN",
+      "name": "Loughton",
+      "tflName": "Loughton",
+      "lon": 0.05533810169999307,
+      "lat": 51.64131224348847,
+      "tflLon": 0.055476,
+      "tflLat": 51.641443,
+      "coordinateSource": "csv",
+      "objectId": 247,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 17,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMVL",
+      "hubId": "940GZZLUMVL",
+      "name": "Maida Vale",
+      "tflName": "Maida Vale",
+      "lon": -0.18582932871164548,
+      "lat": 51.529729085515065,
+      "tflLon": -0.185758,
+      "tflLat": 51.529777,
+      "coordinateSource": "csv",
+      "objectId": 273,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMRH",
+      "hubId": "940GZZLUMRH",
+      "name": "Manor House",
+      "tflName": "Manor House",
+      "lon": -0.09606483069595965,
+      "lat": 51.57075126410129,
+      "tflLon": -0.096118,
+      "tflLat": 51.570738,
+      "coordinateSource": "csv",
+      "objectId": 156,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMSH",
+      "hubId": "940GZZLUMSH",
+      "name": "Mansion House",
+      "tflName": "Mansion House",
+      "lon": -0.094105792133622,
+      "lat": 51.51181640319618,
+      "tflLon": -0.094009,
+      "tflLat": 51.512117,
+      "coordinateSource": "csv",
+      "objectId": 159,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 34,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMBA",
+      "hubId": "940GZZLUMBA",
+      "name": "Marble Arch",
+      "tflName": "Marble Arch",
+      "lon": -0.1573589906802929,
+      "lat": 51.51359976087709,
+      "tflLon": -0.158953,
+      "tflLat": 51.513424,
+      "coordinateSource": "csv",
+      "objectId": 203,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 112,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMYB",
+      "hubId": "HUBMYB",
+      "name": "Marylebone",
+      "tflName": "Marylebone",
+      "lon": -0.16424026631880048,
+      "lat": 51.52215890700219,
+      "tflLon": -0.163207,
+      "tflLat": 51.522322,
+      "coordinateSource": "csv",
+      "objectId": 275,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 74,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMED",
+      "hubId": "940GZZLUMED",
+      "name": "Mile End",
+      "tflName": "Mile End",
+      "lon": -0.033768063294587126,
+      "lat": 51.52523491887216,
+      "tflLon": -0.03364,
+      "tflLat": 51.525122,
+      "coordinateSource": "csv",
+      "objectId": 112,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 15,
+      "lines": [
+        "central",
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "central",
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMHL",
+      "hubId": "940GZZLUMHL",
+      "name": "Mill Hill East",
+      "tflName": "Mill Hill East",
+      "lon": -0.21006141993144073,
+      "lat": 51.608233232687525,
+      "tflLon": -0.209986,
+      "tflLat": 51.608229,
+      "coordinateSource": "csv",
+      "objectId": 137,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMMT",
+      "hubId": "940GZZLUMMT",
+      "name": "Monument",
+      "tflName": "Monument",
+      "lon": -0.08611363432542882,
+      "lat": 51.510719671133025,
+      "tflLon": -0.085969,
+      "tflLat": 51.5107,
+      "coordinateSource": "csv",
+      "objectId": 387,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 10,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMPK",
+      "hubId": "940GZZLUMPK",
+      "name": "Moor Park",
+      "tflName": "Moor Park",
+      "lon": -0.43228696397287464,
+      "lat": 51.62986629669337,
+      "tflLon": -0.432454,
+      "tflLat": 51.629845,
+      "coordinateSource": "csv",
+      "objectId": 475,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 12,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMGT",
+      "hubId": "HUBZMG",
+      "name": "Moorgate",
+      "tflName": "Moorgate",
+      "lon": -0.08931153515551986,
+      "lat": 51.51836305552553,
+      "tflLon": -0.088322,
+      "tflLat": 51.518176,
+      "coordinateSource": "csv",
+      "objectId": 164,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 72,
+      "lines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan",
+        "northern"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city",
+        "metropolitan",
+        "northern"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMDN",
+      "hubId": "940GZZLUMDN",
+      "name": "Morden",
+      "tflName": "Morden",
+      "lon": -0.19475485350439264,
+      "lat": 51.40253820130652,
+      "tflLon": -0.194839,
+      "tflLat": 51.402142,
+      "coordinateSource": "csv",
+      "objectId": 296,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 44,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUMTC",
+      "hubId": "940GZZLUMTC",
+      "name": "Mornington Crescent",
+      "tflName": "Mornington Crescent",
+      "lon": -0.13874979864115178,
+      "lat": 51.534704942339104,
+      "tflLon": -0.138789,
+      "tflLat": 51.534679,
+      "coordinateSource": "csv",
+      "objectId": 232,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNDN",
+      "hubId": "940GZZLUNDN",
+      "name": "Neasden",
+      "tflName": "Neasden",
+      "lon": -0.2511708953836603,
+      "lat": 51.554426400499004,
+      "tflLon": -0.249837,
+      "tflLat": 51.553986,
+      "coordinateSource": "csv",
+      "objectId": 313,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 104,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNBP",
+      "hubId": "940GZZLUNBP",
+      "name": "Newbury Park",
+      "tflName": "Newbury Park",
+      "lon": 0.08992082990646201,
+      "lat": 51.57570573751538,
+      "tflLon": 0.090004,
+      "tflLat": 51.575726,
+      "coordinateSource": "csv",
+      "objectId": 119,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 6,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZNEUGST",
+      "hubId": "940GZZNEUGST",
+      "name": "Nine Elms",
+      "tflName": "Nine Elms",
+      "lon": -0.12948529538068784,
+      "lat": 51.48013931574214,
+      "tflLon": -0.128476,
+      "tflLat": 51.479912,
+      "coordinateSource": "csv",
+      "objectId": 380,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 74,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNAN",
+      "hubId": "940GZZLUNAN",
+      "name": "North Acton",
+      "tflName": "North Acton",
+      "lon": -0.2597600781194744,
+      "lat": 51.523611766196794,
+      "tflLon": -0.259755,
+      "tflLat": 51.523524,
+      "coordinateSource": "csv",
+      "objectId": 207,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 10,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNEN",
+      "hubId": "940GZZLUNEN",
+      "name": "North Ealing",
+      "tflName": "North Ealing",
+      "lon": -0.2888251159580139,
+      "lat": 51.517482284384876,
+      "tflLon": -0.288868,
+      "tflLat": 51.517505,
+      "coordinateSource": "csv",
+      "objectId": 385,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNGW",
+      "hubId": "HUBNGW",
+      "name": "North Greenwich",
+      "tflName": "North Greenwich",
+      "lon": 0.004287576712352386,
+      "lat": 51.50053431205634,
+      "tflLon": 0.004287,
+      "tflLat": 51.50047,
+      "coordinateSource": "csv",
+      "objectId": 216,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNHA",
+      "hubId": "940GZZLUNHA",
+      "name": "North Harrow",
+      "tflName": "North Harrow",
+      "lon": -0.3626047009909967,
+      "lat": 51.58494710527484,
+      "tflLon": -0.362408,
+      "tflLat": 51.584872,
+      "coordinateSource": "csv",
+      "objectId": 326,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 16,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNWY",
+      "hubId": "HUBNWB",
+      "name": "North Wembley",
+      "tflName": "North Wembley",
+      "lon": -0.3038826458342014,
+      "lat": 51.562393713680144,
+      "tflLon": -0.304,
+      "tflLat": 51.562551,
+      "coordinateSource": "csv",
+      "objectId": 264,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 19,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNFD",
+      "hubId": "940GZZLUNFD",
+      "name": "Northfields",
+      "tflName": "Northfields",
+      "lon": -0.31299492833767906,
+      "lat": 51.49965470504596,
+      "tflLon": -0.314719,
+      "tflLat": 51.499319,
+      "coordinateSource": "csv",
+      "objectId": 303,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 125,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNHT",
+      "hubId": "940GZZLUNHT",
+      "name": "Northolt",
+      "tflName": "Northolt",
+      "lon": -0.36865042407239057,
+      "lat": 51.548259260589994,
+      "tflLon": -0.368699,
+      "tflLat": 51.548236,
+      "coordinateSource": "csv",
+      "objectId": 131,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNKP",
+      "hubId": "940GZZLUNKP",
+      "name": "Northwick Park",
+      "tflName": "Northwick Park",
+      "lon": -0.31806633884631424,
+      "lat": 51.57847500401296,
+      "tflLon": -0.318056,
+      "tflLat": 51.578481,
+      "coordinateSource": "csv",
+      "objectId": 329,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNOW",
+      "hubId": "940GZZLUNOW",
+      "name": "Northwood",
+      "tflName": "Northwood",
+      "lon": -0.4239354593141582,
+      "lat": 51.611014101617926,
+      "tflLon": -0.423829,
+      "tflLat": 51.611053,
+      "coordinateSource": "csv",
+      "objectId": 476,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 9,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNWH",
+      "hubId": "940GZZLUNWH",
+      "name": "Northwood Hills",
+      "tflName": "Northwood Hills",
+      "lon": -0.4087463545441836,
+      "lat": 51.60019223372048,
+      "tflLon": -0.409464,
+      "tflLat": 51.600572,
+      "coordinateSource": "csv",
+      "objectId": 323,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 65,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUNHG",
+      "hubId": "940GZZLUNHG",
+      "name": "Notting Hill Gate",
+      "tflName": "Notting Hill Gate",
+      "lon": -0.19608997336265582,
+      "lat": 51.509156012573975,
+      "tflLon": -0.196104,
+      "tflLat": 51.509128,
+      "coordinateSource": "csv",
+      "objectId": 201,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central",
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "central",
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUOAK",
+      "hubId": "940GZZLUOAK",
+      "name": "Oakwood",
+      "tflName": "Oakwood",
+      "lon": -0.13126893872170828,
+      "lat": 51.64733362819432,
+      "tflLon": -0.132182,
+      "tflLat": 51.647726,
+      "coordinateSource": "csv",
+      "objectId": 155,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 77,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUODS",
+      "hubId": "HUBOLD",
+      "name": "Old Street",
+      "tflName": "Old Street",
+      "lon": -0.08763720259182553,
+      "lat": 51.52508527631206,
+      "tflLon": -0.08777,
+      "tflLat": 51.525864,
+      "coordinateSource": "csv",
+      "objectId": 480,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 87,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUOSY",
+      "hubId": "940GZZLUOSY",
+      "name": "Osterley",
+      "tflName": "Osterley",
+      "lon": -0.3522207467968353,
+      "lat": 51.4812434687809,
+      "tflLon": -0.352224,
+      "tflLat": 51.481274,
+      "coordinateSource": "csv",
+      "objectId": 302,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUOVL",
+      "hubId": "940GZZLUOVL",
+      "name": "Oval",
+      "tflName": "Oval",
+      "lon": -0.1124062491167189,
+      "lat": 51.48183745351276,
+      "tflLon": -0.112439,
+      "tflLat": 51.48185,
+      "coordinateSource": "csv",
+      "objectId": 236,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUOXC",
+      "hubId": "940GZZLUOXC",
+      "name": "Oxford Circus",
+      "tflName": "Oxford Circus",
+      "lon": -0.14163045969608393,
+      "lat": 51.515319726422334,
+      "tflLon": -0.141903,
+      "tflLat": 51.515224,
+      "coordinateSource": "csv",
+      "objectId": 210,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 22,
+      "lines": [
+        "bakerloo",
+        "central",
+        "victoria"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "central",
+        "victoria"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPAC",
+      "hubId": "HUBPAD",
+      "name": "Paddington",
+      "tflName": "Paddington",
+      "lon": -0.17598969226411743,
+      "lat": 51.51656148278404,
+      "tflLon": -0.175689,
+      "tflLat": 51.516581,
+      "coordinateSource": "csv",
+      "objectId": 125,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 21,
+      "lines": [
+        "bakerloo",
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "circle",
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [
+        {
+          "objectId": 171,
+          "name": "Paddington",
+          "lon": -0.17539086258650674,
+          "lat": 51.5155036135896,
+          "distanceFromCanonicalM": 125
+        }
+      ],
+      "note": "The CSV has two 'Paddington' records (OBJECTID 125 and 171, about 120 m apart, identical line lists). TfL topology has one Paddington station for the Bakerloo, Circle and District lines, so both records join to it: the record nearest the TfL coordinate is used and the other is kept as a duplicate record. The CSV lists Hammersmith & City for these records, but H&C trains use the separate Paddington (H&C Line) station."
+    },
+    {
+      "id": "940GZZLUPAH",
+      "hubId": "HUBPAD",
+      "name": "Paddington (H&C Line)",
+      "tflName": "Paddington (H&C Line)",
+      "lon": -0.17879726299159643,
+      "lat": 51.51851327530939,
+      "tflLon": -0.178306,
+      "tflLat": 51.518187,
+      "coordinateSource": "csv",
+      "objectId": 265,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 50,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": "Paddington (H&C Line) is a separate station (own NaPTAN id 940GZZLUPAH) served by the Circle and Hammersmith & City lines. It is not merged with the main Paddington station."
+    },
+    {
+      "id": "940GZZLUPKR",
+      "hubId": "940GZZLUPKR",
+      "name": "Park Royal",
+      "tflName": "Park Royal",
+      "lon": -0.28396753015599946,
+      "lat": 51.526479964901434,
+      "tflLon": -0.284341,
+      "tflLat": 51.527123,
+      "coordinateSource": "csv",
+      "objectId": 143,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 76,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPSG",
+      "hubId": "940GZZLUPSG",
+      "name": "Parsons Green",
+      "tflName": "Parsons Green",
+      "lon": -0.20176352486363486,
+      "lat": 51.47498535708651,
+      "tflLon": -0.20117,
+      "tflLat": 51.475277,
+      "coordinateSource": "csv",
+      "objectId": 180,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 52,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPVL",
+      "hubId": "940GZZLUPVL",
+      "name": "Perivale",
+      "tflName": "Perivale",
+      "lon": -0.32342516922982106,
+      "lat": 51.5367509216631,
+      "tflLon": -0.323446,
+      "tflLat": 51.536717,
+      "coordinateSource": "csv",
+      "objectId": 205,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPCC",
+      "hubId": "940GZZLUPCC",
+      "name": "Piccadilly Circus",
+      "tflName": "Piccadilly Circus",
+      "lon": -0.1336873864316472,
+      "lat": 51.51006061519836,
+      "tflLon": -0.133798,
+      "tflLat": 51.51005,
+      "coordinateSource": "csv",
+      "objectId": 268,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "bakerloo",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPCO",
+      "hubId": "940GZZLUPCO",
+      "name": "Pimlico",
+      "tflName": "Pimlico",
+      "lon": -0.13370871250340682,
+      "lat": 51.489081972458365,
+      "tflLon": -0.133761,
+      "tflLat": 51.489097,
+      "coordinateSource": "csv",
+      "objectId": 187,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "victoria"
+      ],
+      "csvLines": [
+        "victoria"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPNR",
+      "hubId": "940GZZLUPNR",
+      "name": "Pinner",
+      "tflName": "Pinner",
+      "lon": -0.38116191894249885,
+      "lat": 51.592825567877355,
+      "tflLon": -0.381161,
+      "tflLat": 51.592901,
+      "coordinateSource": "csv",
+      "objectId": 327,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPLW",
+      "hubId": "940GZZLUPLW",
+      "name": "Plaistow",
+      "tflName": "Plaistow",
+      "lon": 0.01698872064506072,
+      "lat": 51.53123134107084,
+      "tflLon": 0.017451,
+      "tflLat": 51.531341,
+      "coordinateSource": "csv",
+      "objectId": 126,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 34,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPRD",
+      "hubId": "940GZZLUPRD",
+      "name": "Preston Road",
+      "tflName": "Preston Road",
+      "lon": -0.295129262413792,
+      "lat": 51.572014075601594,
+      "tflLon": -0.295107,
+      "tflLat": 51.571972,
+      "coordinateSource": "csv",
+      "objectId": 487,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUPYB",
+      "hubId": "940GZZLUPYB",
+      "name": "Putney Bridge",
+      "tflName": "Putney Bridge",
+      "lon": -0.2087270375114135,
+      "lat": 51.46825546825846,
+      "tflLon": -0.208731,
+      "tflLat": 51.468262,
+      "coordinateSource": "csv",
+      "objectId": 208,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUQPS",
+      "hubId": "HUBQPW",
+      "name": "Queen's Park",
+      "tflName": "Queen's Park",
+      "lon": -0.2057416029735368,
+      "lat": 51.533978210095334,
+      "tflLon": -0.204574,
+      "tflLat": 51.534158,
+      "coordinateSource": "csv",
+      "objectId": 200,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 83,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUQBY",
+      "hubId": "940GZZLUQBY",
+      "name": "Queensbury",
+      "tflName": "Queensbury",
+      "lon": -0.2862217775472735,
+      "lat": 51.59419745209295,
+      "tflLon": -0.286219,
+      "tflLat": 51.594188,
+      "coordinateSource": "csv",
+      "objectId": 255,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUQWY",
+      "hubId": "940GZZLUQWY",
+      "name": "Queensway",
+      "tflName": "Queensway",
+      "lon": -0.18713829824007047,
+      "lat": 51.51025217607452,
+      "tflLon": -0.187152,
+      "tflLat": 51.510312,
+      "coordinateSource": "csv",
+      "objectId": 245,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURVP",
+      "hubId": "940GZZLURVP",
+      "name": "Ravenscourt Park",
+      "tflName": "Ravenscourt Park",
+      "lon": -0.23577535697187463,
+      "lat": 51.494167735828476,
+      "tflLon": -0.235881,
+      "tflLat": 51.494122,
+      "coordinateSource": "csv",
+      "objectId": 278,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 9,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURYL",
+      "hubId": "940GZZLURYL",
+      "name": "Rayners Lane",
+      "tflName": "Rayners Lane",
+      "lon": -0.3714462140203309,
+      "lat": 51.575195361923186,
+      "tflLon": -0.371127,
+      "tflLat": 51.575147,
+      "coordinateSource": "csv",
+      "objectId": 325,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 23,
+      "lines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURBG",
+      "hubId": "940GZZLURBG",
+      "name": "Redbridge",
+      "tflName": "Redbridge",
+      "lon": 0.04541027413893245,
+      "lat": 51.576249813818855,
+      "tflLon": 0.04536,
+      "tflLat": 51.576243,
+      "coordinateSource": "csv",
+      "objectId": 252,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURGP",
+      "hubId": "940GZZLURGP",
+      "name": "Regent's Park",
+      "tflName": "Regent's Park",
+      "lon": -0.14631312455288237,
+      "lat": 51.52327838474291,
+      "tflLon": -0.146444,
+      "tflLat": 51.523344,
+      "coordinateSource": "csv",
+      "objectId": 276,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 12,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURMD",
+      "hubId": "HUBRMD",
+      "name": "Richmond",
+      "tflName": "Richmond",
+      "lon": -0.3016691259076597,
+      "lat": 51.463118722979786,
+      "tflLon": -0.301336,
+      "tflLat": 51.463237,
+      "coordinateSource": "csv",
+      "objectId": 396,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 27,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURKW",
+      "hubId": "HUBRIC",
+      "name": "Rickmansworth",
+      "tflName": "Rickmansworth",
+      "lon": -0.47370581066277867,
+      "lat": 51.64028836634988,
+      "tflLon": -0.473703,
+      "tflLat": 51.640207,
+      "coordinateSource": "csv",
+      "objectId": 474,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 9,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURVY",
+      "hubId": "940GZZLURVY",
+      "name": "Roding Valley",
+      "tflName": "Roding Valley",
+      "lon": 0.04370965024464847,
+      "lat": 51.61707861416649,
+      "tflLon": 0.043647,
+      "tflLat": 51.617199,
+      "coordinateSource": "csv",
+      "objectId": 123,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 14,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURYO",
+      "hubId": "940GZZLURYO",
+      "name": "Royal Oak",
+      "tflName": "Royal Oak",
+      "lon": -0.18778627332991857,
+      "lat": 51.519048130119494,
+      "tflLon": -0.188748,
+      "tflLat": 51.519113,
+      "coordinateSource": "csv",
+      "objectId": 198,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 67,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURSP",
+      "hubId": "940GZZLURSP",
+      "name": "Ruislip",
+      "tflName": "Ruislip",
+      "lon": -0.4217906669062553,
+      "lat": 51.57129177940531,
+      "tflLon": -0.421898,
+      "tflLat": 51.571354,
+      "coordinateSource": "csv",
+      "objectId": 321,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 10,
+      "lines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURSG",
+      "hubId": "940GZZLURSG",
+      "name": "Ruislip Gardens",
+      "tflName": "Ruislip Gardens",
+      "lon": -0.4107169346271762,
+      "lat": 51.56077549009729,
+      "tflLon": -0.41071,
+      "tflLat": 51.560736,
+      "coordinateSource": "csv",
+      "objectId": 129,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURSM",
+      "hubId": "940GZZLURSM",
+      "name": "Ruislip Manor",
+      "tflName": "Ruislip Manor",
+      "lon": -0.411812431756392,
+      "lat": 51.573476142150504,
+      "tflLon": -0.412973,
+      "tflLat": 51.573202,
+      "coordinateSource": "csv",
+      "objectId": 322,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 86,
+      "lines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLURSQ",
+      "hubId": "940GZZLURSQ",
+      "name": "Russell Square",
+      "tflName": "Russell Square",
+      "lon": -0.1242697810208252,
+      "lat": 51.52305918332612,
+      "tflLon": -0.124285,
+      "tflLat": 51.523073,
+      "coordinateSource": "csv",
+      "objectId": 149,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSVS",
+      "hubId": "HUBSVS",
+      "name": "Seven Sisters",
+      "tflName": "Seven Sisters",
+      "lon": -0.0725100279127818,
+      "lat": 51.58339794718637,
+      "tflLon": -0.072584,
+      "tflLat": 51.58333,
+      "coordinateSource": "csv",
+      "objectId": 483,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 9,
+      "lines": [
+        "victoria"
+      ],
+      "csvLines": [
+        "victoria"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSBC",
+      "hubId": "HUBSPB",
+      "name": "Shepherd's Bush",
+      "tflName": "Shepherd's Bush (Central)",
+      "lon": -0.2188348749838903,
+      "lat": 51.50435277171325,
+      "tflLon": -0.218813,
+      "tflLat": 51.504376,
+      "coordinateSource": "csv",
+      "objectId": 182,
+      "joinMethod": "base-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": "Shepherd's Bush (Central) and Shepherd's Bush Market (Circle and Hammersmith & City) are different stations."
+    },
+    {
+      "id": "940GZZLUSBM",
+      "hubId": "940GZZLUSBM",
+      "name": "Shepherd's Bush Market",
+      "tflName": "Shepherd's Bush Market",
+      "lon": -0.22629592219219624,
+      "lat": 51.50609054189476,
+      "tflLon": -0.226375,
+      "tflLat": 51.505579,
+      "coordinateSource": "csv",
+      "objectId": 194,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 57,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSSQ",
+      "hubId": "940GZZLUSSQ",
+      "name": "Sloane Square",
+      "tflName": "Sloane Square",
+      "lon": -0.1563353394945677,
+      "lat": 51.49233693461083,
+      "tflLon": -0.156377,
+      "tflLat": 51.49227,
+      "coordinateSource": "csv",
+      "objectId": 277,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSNB",
+      "hubId": "940GZZLUSNB",
+      "name": "Snaresbrook",
+      "tflName": "Snaresbrook",
+      "lon": 0.021393426338283436,
+      "lat": 51.58067707711797,
+      "tflLon": 0.02144,
+      "tflLat": 51.580678,
+      "coordinateSource": "csv",
+      "objectId": 115,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSEA",
+      "hubId": "940GZZLUSEA",
+      "name": "South Ealing",
+      "tflName": "South Ealing",
+      "lon": -0.30750525770727977,
+      "lat": 51.50089966685759,
+      "tflLon": -0.307424,
+      "tflLat": 51.501003,
+      "coordinateSource": "csv",
+      "objectId": 142,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 13,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSHH",
+      "hubId": "940GZZLUSHH",
+      "name": "South Harrow",
+      "tflName": "South Harrow",
+      "lon": -0.3520927569079474,
+      "lat": 51.564549549948175,
+      "tflLon": -0.352492,
+      "tflLat": 51.564888,
+      "coordinateSource": "csv",
+      "objectId": 260,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 47,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSKS",
+      "hubId": "940GZZLUSKS",
+      "name": "South Kensington",
+      "tflName": "South Kensington",
+      "lon": -0.17316504691138462,
+      "lat": 51.49408858708188,
+      "tflLon": -0.174138,
+      "tflLat": 51.494094,
+      "coordinateSource": "csv",
+      "objectId": 175,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 67,
+      "lines": [
+        "circle",
+        "district",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "circle",
+        "district",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSKT",
+      "hubId": "HUBSOK",
+      "name": "South Kenton",
+      "tflName": "South Kenton",
+      "lon": -0.3083734923397721,
+      "lat": 51.570212909100526,
+      "tflLon": -0.308433,
+      "tflLat": 51.570232,
+      "coordinateSource": "csv",
+      "objectId": 256,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSRP",
+      "hubId": "HUBSRU",
+      "name": "South Ruislip",
+      "tflName": "South Ruislip",
+      "lon": -0.39886613068870685,
+      "lat": 51.55686021118094,
+      "tflLon": -0.398915,
+      "tflLat": 51.556853,
+      "coordinateSource": "csv",
+      "objectId": 130,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSWN",
+      "hubId": "940GZZLUSWN",
+      "name": "South Wimbledon",
+      "tflName": "South Wimbledon",
+      "lon": -0.19330652029319118,
+      "lat": 51.41498929257676,
+      "tflLon": -0.192005,
+      "tflLat": 51.415309,
+      "coordinateSource": "csv",
+      "objectId": 433,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 97,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSWF",
+      "hubId": "940GZZLUSWF",
+      "name": "South Woodford",
+      "tflName": "South Woodford",
+      "lon": 0.027362518469825348,
+      "lat": 51.591892453017074,
+      "tflLon": 0.027338,
+      "tflLat": 51.591907,
+      "coordinateSource": "csv",
+      "objectId": 118,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSFS",
+      "hubId": "940GZZLUSFS",
+      "name": "Southfields",
+      "tflName": "Southfields",
+      "lon": -0.2066534771013345,
+      "lat": 51.44507985784133,
+      "tflLon": -0.206602,
+      "tflLat": 51.445073,
+      "coordinateSource": "csv",
+      "objectId": 389,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSGT",
+      "hubId": "940GZZLUSGT",
+      "name": "Southgate",
+      "tflName": "Southgate",
+      "lon": -0.1277625393853033,
+      "lat": 51.63225854371172,
+      "tflLon": -0.127816,
+      "tflLat": 51.632315,
+      "coordinateSource": "csv",
+      "objectId": 153,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSWK",
+      "hubId": "940GZZLUSWK",
+      "name": "Southwark",
+      "tflName": "Southwark",
+      "lon": -0.1053973366341109,
+      "lat": 51.50428757953954,
+      "tflLon": -0.105331,
+      "tflLat": 51.50427,
+      "coordinateSource": "csv",
+      "objectId": 333,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSJP",
+      "hubId": "940GZZLUSJP",
+      "name": "St. James's Park",
+      "tflName": "St. James's Park",
+      "lon": -0.1336270216533475,
+      "lat": 51.49956127784573,
+      "tflLon": -0.133608,
+      "tflLat": 51.499544,
+      "coordinateSource": "csv",
+      "objectId": 398,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSJW",
+      "hubId": "940GZZLUSJW",
+      "name": "St. John's Wood",
+      "tflName": "St. John's Wood",
+      "lon": -0.17414757419359148,
+      "lat": 51.535204969887026,
+      "tflLon": -0.173948,
+      "tflLat": 51.534521,
+      "coordinateSource": "csv",
+      "objectId": 332,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 77,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSPU",
+      "hubId": "940GZZLUSPU",
+      "name": "St. Paul's",
+      "tflName": "St. Paul's",
+      "lon": -0.09751775310793301,
+      "lat": 51.514952875698356,
+      "tflLon": -0.097567,
+      "tflLat": 51.514936,
+      "coordinateSource": "csv",
+      "objectId": 111,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSFB",
+      "hubId": "940GZZLUSFB",
+      "name": "Stamford Brook",
+      "tflName": "Stamford Brook",
+      "lon": -0.24600122518353934,
+      "lat": 51.4949181050598,
+      "tflLon": -0.245704,
+      "tflLat": 51.494917,
+      "coordinateSource": "csv",
+      "objectId": 307,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 21,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSTM",
+      "hubId": "940GZZLUSTM",
+      "name": "Stanmore",
+      "tflName": "Stanmore",
+      "lon": -0.3032624771028668,
+      "lat": 51.61971092780402,
+      "tflLon": -0.303266,
+      "tflLat": 51.619839,
+      "coordinateSource": "csv",
+      "objectId": 330,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 14,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSGN",
+      "hubId": "940GZZLUSGN",
+      "name": "Stepney Green",
+      "tflName": "Stepney Green",
+      "lon": -0.04659090323887023,
+      "lat": 51.52186169216427,
+      "tflLon": -0.046596,
+      "tflLat": 51.521858,
+      "coordinateSource": "csv",
+      "objectId": 435,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSKW",
+      "hubId": "940GZZLUSKW",
+      "name": "Stockwell",
+      "tflName": "Stockwell",
+      "lon": -0.12304218836550214,
+      "lat": 51.47182845729258,
+      "tflLon": -0.122644,
+      "tflLat": 51.472184,
+      "coordinateSource": "csv",
+      "objectId": 295,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 48,
+      "lines": [
+        "northern",
+        "victoria"
+      ],
+      "csvLines": [
+        "northern",
+        "victoria"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSGP",
+      "hubId": "HUBSBP",
+      "name": "Stonebridge Park",
+      "tflName": "Stonebridge Park",
+      "lon": -0.27646679490996795,
+      "lat": 51.54419264973252,
+      "tflLon": -0.275892,
+      "tflLat": 51.543959,
+      "coordinateSource": "csv",
+      "objectId": 258,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 47,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSTD",
+      "hubId": "HUBSRA",
+      "name": "Stratford",
+      "tflName": "Stratford",
+      "lon": -0.0038044932283004124,
+      "lat": 51.541456474970374,
+      "tflLon": -0.003458,
+      "tflLat": 51.541806,
+      "coordinateSource": "csv",
+      "objectId": 317,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 46,
+      "lines": [
+        "central",
+        "jubilee"
+      ],
+      "csvLines": [
+        "central",
+        "jubilee"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSUH",
+      "hubId": "940GZZLUSUH",
+      "name": "Sudbury Hill",
+      "tflName": "Sudbury Hill",
+      "lon": -0.3366239412564384,
+      "lat": 51.55696518658866,
+      "tflLon": -0.336435,
+      "tflLat": 51.556946,
+      "coordinateSource": "csv",
+      "objectId": 140,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 13,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSUT",
+      "hubId": "940GZZLUSUT",
+      "name": "Sudbury Town",
+      "tflName": "Sudbury Town",
+      "lon": -0.3157464873310852,
+      "lat": 51.550805806993615,
+      "tflLon": -0.315745,
+      "tflLat": 51.550815,
+      "coordinateSource": "csv",
+      "objectId": 141,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUSWC",
+      "hubId": "940GZZLUSWC",
+      "name": "Swiss Cottage",
+      "tflName": "Swiss Cottage",
+      "lon": -0.17483983477545229,
+      "lat": 51.54370542648981,
+      "tflLon": -0.174894,
+      "tflLat": 51.543681,
+      "coordinateSource": "csv",
+      "objectId": 220,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTMP",
+      "hubId": "940GZZLUTMP",
+      "name": "Temple",
+      "tflName": "Temple",
+      "lon": -0.1142517165435635,
+      "lat": 51.51098440371512,
+      "tflLon": -0.11426,
+      "tflLat": 51.511006,
+      "coordinateSource": "csv",
+      "objectId": 157,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTHB",
+      "hubId": "940GZZLUTHB",
+      "name": "Theydon Bois",
+      "tflName": "Theydon Bois",
+      "lon": 0.10332766399974981,
+      "lat": 51.671832474283256,
+      "tflLon": 0.103085,
+      "tflLat": 51.671759,
+      "coordinateSource": "csv",
+      "objectId": 484,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 19,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTBC",
+      "hubId": "940GZZLUTBC",
+      "name": "Tooting Bec",
+      "tflName": "Tooting Bec",
+      "lon": -0.15923362533504307,
+      "lat": 51.43589927439103,
+      "tflLon": -0.159736,
+      "tflLat": 51.435678,
+      "coordinateSource": "csv",
+      "objectId": 225,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 43,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTBY",
+      "hubId": "940GZZLUTBY",
+      "name": "Tooting Broadway",
+      "tflName": "Tooting Broadway",
+      "lon": -0.16838983681417344,
+      "lat": 51.42767600459317,
+      "tflLon": -0.168374,
+      "tflLat": 51.42763,
+      "coordinateSource": "csv",
+      "objectId": 224,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTCR",
+      "hubId": "HUBTCR",
+      "name": "Tottenham Court Road",
+      "tflName": "Tottenham Court Road",
+      "lon": -0.1305038755407188,
+      "lat": 51.51645724635473,
+      "tflLon": -0.13041,
+      "tflLat": 51.516426,
+      "coordinateSource": "csv",
+      "objectId": 230,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "central",
+        "northern"
+      ],
+      "csvLines": [
+        "central",
+        "northern"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTMH",
+      "hubId": "HUBTOM",
+      "name": "Tottenham Hale",
+      "tflName": "Tottenham Hale",
+      "lon": -0.06016465065370944,
+      "lat": 51.588048703622064,
+      "tflLon": -0.060241,
+      "tflLat": 51.588108,
+      "coordinateSource": "csv",
+      "objectId": 244,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 8,
+      "lines": [
+        "victoria"
+      ],
+      "csvLines": [
+        "victoria"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTAW",
+      "hubId": "940GZZLUTAW",
+      "name": "Totteridge & Whetstone",
+      "tflName": "Totteridge & Whetstone",
+      "lon": -0.1792054604098072,
+      "lat": 51.63058779485697,
+      "tflLon": -0.17921,
+      "tflLat": 51.630597,
+      "coordinateSource": "csv",
+      "objectId": 314,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 1,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTWH",
+      "hubId": "940GZZLUTWH",
+      "name": "Tower Hill",
+      "tflName": "Tower Hill",
+      "lon": -0.07652627141943263,
+      "lat": 51.50994511580925,
+      "tflLon": -0.076546,
+      "tflLat": 51.509971,
+      "coordinateSource": "csv",
+      "objectId": 161,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "circle",
+        "district"
+      ],
+      "csvLines": [
+        "circle",
+        "district"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTFP",
+      "hubId": "940GZZLUTFP",
+      "name": "Tufnell Park",
+      "tflName": "Tufnell Park",
+      "lon": -0.13846565572304778,
+      "lat": 51.55684430975304,
+      "tflLon": -0.138433,
+      "tflLat": 51.556822,
+      "coordinateSource": "csv",
+      "objectId": 235,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTNG",
+      "hubId": "940GZZLUTNG",
+      "name": "Turnham Green",
+      "tflName": "Turnham Green",
+      "lon": -0.2545503301237331,
+      "lat": 51.4949578319235,
+      "tflLon": -0.254555,
+      "tflLat": 51.495148,
+      "coordinateSource": "csv",
+      "objectId": 308,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 21,
+      "lines": [
+        "district",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "district",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUTPN",
+      "hubId": "940GZZLUTPN",
+      "name": "Turnpike Lane",
+      "tflName": "Turnpike Lane",
+      "lon": -0.10297211354184564,
+      "lat": 51.59025232853629,
+      "tflLon": -0.102953,
+      "tflLat": 51.590272,
+      "coordinateSource": "csv",
+      "objectId": 399,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUUPM",
+      "hubId": "HUBUPM",
+      "name": "Upminster",
+      "tflName": "Upminster",
+      "lon": 0.25111551581131547,
+      "lat": 51.55908765486934,
+      "tflLon": 0.250882,
+      "tflLat": 51.559063,
+      "coordinateSource": "csv",
+      "objectId": 287,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 16,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUUPB",
+      "hubId": "940GZZLUUPB",
+      "name": "Upminster Bridge",
+      "tflName": "Upminster Bridge",
+      "lon": 0.23582667980199254,
+      "lat": 51.558496054141195,
+      "tflLon": 0.235809,
+      "tflLat": 51.55856,
+      "coordinateSource": "csv",
+      "objectId": 193,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUUPY",
+      "hubId": "940GZZLUUPY",
+      "name": "Upney",
+      "tflName": "Upney",
+      "lon": 0.10155366360748233,
+      "lat": 51.53835457119145,
+      "tflLon": 0.10153,
+      "tflLat": 51.538372,
+      "coordinateSource": "csv",
+      "objectId": 133,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUUPK",
+      "hubId": "940GZZLUUPK",
+      "name": "Upton Park",
+      "tflName": "Upton Park",
+      "lon": 0.03521015765496934,
+      "lat": 51.53538004104193,
+      "tflLon": 0.035263,
+      "tflLat": 51.53534,
+      "coordinateSource": "csv",
+      "objectId": 127,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 6,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUUXB",
+      "hubId": "940GZZLUUXB",
+      "name": "Uxbridge",
+      "tflName": "Uxbridge",
+      "lon": -0.4776347848292753,
+      "lat": 51.54646222722115,
+      "tflLon": -0.477949,
+      "tflLat": 51.546565,
+      "coordinateSource": "csv",
+      "objectId": 318,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 25,
+      "lines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "csvLines": [
+        "metropolitan",
+        "piccadilly"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUVXL",
+      "hubId": "HUBVXH",
+      "name": "Vauxhall",
+      "tflName": "Vauxhall",
+      "lon": -0.12425212298282715,
+      "lat": 51.48569743810505,
+      "tflLon": -0.124204,
+      "tflLat": 51.485743,
+      "coordinateSource": "csv",
+      "objectId": 188,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 6,
+      "lines": [
+        "victoria"
+      ],
+      "csvLines": [
+        "victoria"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUVIC",
+      "hubId": "HUBVIC",
+      "name": "Victoria",
+      "tflName": "Victoria",
+      "lon": -0.14308928980094832,
+      "lat": 51.49640097859263,
+      "tflLon": -0.143102,
+      "tflLat": 51.496359,
+      "coordinateSource": "csv",
+      "objectId": 185,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "circle",
+        "district",
+        "victoria"
+      ],
+      "csvLines": [
+        "circle",
+        "district",
+        "victoria"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWWL",
+      "hubId": "HUBWHC",
+      "name": "Walthamstow Central",
+      "tflName": "Walthamstow Central",
+      "lon": -0.0215170203946605,
+      "lat": 51.58311960662003,
+      "tflLon": -0.019885,
+      "tflLat": 51.582965,
+      "coordinateSource": "csv",
+      "objectId": 289,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 114,
+      "lines": [
+        "victoria"
+      ],
+      "csvLines": [
+        "victoria"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWSD",
+      "hubId": "940GZZLUWSD",
+      "name": "Wanstead",
+      "tflName": "Wanstead",
+      "lon": 0.028620677765270462,
+      "lat": 51.57560161289604,
+      "tflLon": 0.028527,
+      "tflLat": 51.575501,
+      "coordinateSource": "csv",
+      "objectId": 117,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 13,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWRR",
+      "hubId": "940GZZLUWRR",
+      "name": "Warren Street",
+      "tflName": "Warren Street",
+      "lon": -0.13834177714005547,
+      "lat": 51.524527123997764,
+      "tflLon": -0.138321,
+      "tflLat": 51.524951,
+      "coordinateSource": "csv",
+      "objectId": 189,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 47,
+      "lines": [
+        "northern",
+        "victoria"
+      ],
+      "csvLines": [
+        "northern",
+        "victoria"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWKA",
+      "hubId": "940GZZLUWKA",
+      "name": "Warwick Avenue",
+      "tflName": "Warwick Avenue",
+      "lon": -0.18360675558678705,
+      "lat": 51.52319886210523,
+      "tflLon": -0.183783,
+      "tflLat": 51.523263,
+      "coordinateSource": "csv",
+      "objectId": 397,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 14,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWLO",
+      "hubId": "HUBWAT",
+      "name": "Waterloo",
+      "tflName": "Waterloo",
+      "lon": -0.11442663408154648,
+      "lat": 51.50342525720376,
+      "tflLon": -0.11478,
+      "tflLat": 51.503299,
+      "coordinateSource": "csv",
+      "objectId": 286,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 28,
+      "lines": [
+        "bakerloo",
+        "jubilee",
+        "northern",
+        "waterloo-city"
+      ],
+      "csvLines": [
+        "bakerloo",
+        "jubilee",
+        "northern",
+        "waterloo-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWAF",
+      "hubId": "940GZZLUWAF",
+      "name": "Watford",
+      "tflName": "Watford",
+      "lon": -0.4174120635262017,
+      "lat": 51.65748010048808,
+      "tflLon": -0.417377,
+      "tflLat": 51.657446,
+      "coordinateSource": "csv",
+      "objectId": 478,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 4,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWYC",
+      "hubId": "HUBWMB",
+      "name": "Wembley Central",
+      "tflName": "Wembley Central",
+      "lon": -0.2968265595489338,
+      "lat": 51.55228164027704,
+      "tflLon": -0.296852,
+      "tflLat": 51.552304,
+      "coordinateSource": "csv",
+      "objectId": 263,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWYP",
+      "hubId": "940GZZLUWYP",
+      "name": "Wembley Park",
+      "tflName": "Wembley Park",
+      "lon": -0.28005006150968614,
+      "lat": 51.56376083873252,
+      "tflLon": -0.279262,
+      "tflLat": 51.563198,
+      "coordinateSource": "csv",
+      "objectId": 312,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 83,
+      "lines": [
+        "jubilee",
+        "metropolitan"
+      ],
+      "csvLines": [
+        "jubilee",
+        "metropolitan"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWTA",
+      "hubId": "940GZZLUWTA",
+      "name": "West Acton",
+      "tflName": "West Acton",
+      "lon": -0.2809538703054756,
+      "lat": 51.517980197246935,
+      "tflLon": -0.28098,
+      "tflLat": 51.518001,
+      "coordinateSource": "csv",
+      "objectId": 316,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 3,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWBN",
+      "hubId": "HUBWBP",
+      "name": "West Brompton",
+      "tflName": "West Brompton",
+      "lon": -0.19557175970385998,
+      "lat": 51.487279564113926,
+      "tflLon": -0.195599,
+      "tflLat": 51.487268,
+      "coordinateSource": "csv",
+      "objectId": 306,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWFN",
+      "hubId": "940GZZLUWFN",
+      "name": "West Finchley",
+      "tflName": "West Finchley",
+      "lon": -0.18834268491450493,
+      "lat": 51.60948689407505,
+      "tflLon": -0.188362,
+      "tflLat": 51.609426,
+      "coordinateSource": "csv",
+      "objectId": 336,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 7,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWHM",
+      "hubId": "HUBWEH",
+      "name": "West Ham",
+      "tflName": "West Ham",
+      "lon": 0.0042827258459676954,
+      "lat": 51.5282792316888,
+      "tflLon": 0.005055,
+      "tflLat": 51.528136,
+      "coordinateSource": "csv",
+      "objectId": 288,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 56,
+      "lines": [
+        "district",
+        "hammersmith-city",
+        "jubilee"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city",
+        "jubilee"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWHP",
+      "hubId": "HUBWHD",
+      "name": "West Hampstead",
+      "tflName": "West Hampstead",
+      "lon": -0.19016960275566852,
+      "lat": 51.546801915703966,
+      "tflLon": -0.191059,
+      "tflLat": 51.546638,
+      "coordinateSource": "csv",
+      "objectId": 219,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 64,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWHW",
+      "hubId": "940GZZLUWHW",
+      "name": "West Harrow",
+      "tflName": "West Harrow",
+      "lon": -0.35329028029996584,
+      "lat": 51.57956661616709,
+      "tflLon": -0.3534,
+      "tflLat": 51.57971,
+      "coordinateSource": "csv",
+      "objectId": 324,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 18,
+      "lines": [
+        "metropolitan"
+      ],
+      "csvLines": [
+        "metropolitan"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWKN",
+      "hubId": "940GZZLUWKN",
+      "name": "West Kensington",
+      "tflName": "West Kensington",
+      "lon": -0.20545700029973243,
+      "lat": 51.490790555082114,
+      "tflLon": -0.206636,
+      "tflLat": 51.490459,
+      "coordinateSource": "csv",
+      "objectId": 179,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 90,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWRP",
+      "hubId": "HUBWRU",
+      "name": "West Ruislip",
+      "tflName": "West Ruislip",
+      "lon": -0.43764707604605596,
+      "lat": 51.56962926058854,
+      "tflLon": -0.437886,
+      "tflLat": 51.569688,
+      "coordinateSource": "csv",
+      "objectId": 132,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 18,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWSP",
+      "hubId": "940GZZLUWSP",
+      "name": "Westbourne Park",
+      "tflName": "Westbourne Park",
+      "lon": -0.20115293263288994,
+      "lat": 51.52092006250626,
+      "tflLon": -0.201065,
+      "tflLat": 51.52111,
+      "coordinateSource": "csv",
+      "objectId": 392,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 22,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWSM",
+      "hubId": "HUBWSM",
+      "name": "Westminster",
+      "tflName": "Westminster",
+      "lon": -0.1256586526219809,
+      "lat": 51.5009642958388,
+      "tflLon": -0.124861,
+      "tflLat": 51.50132,
+      "coordinateSource": "csv",
+      "objectId": 283,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 68,
+      "lines": [
+        "circle",
+        "district",
+        "jubilee"
+      ],
+      "csvLines": [
+        "circle",
+        "district",
+        "jubilee"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWCY",
+      "hubId": "940GZZLUWCY",
+      "name": "White City",
+      "tflName": "White City",
+      "lon": -0.22446214525403546,
+      "lat": 51.5122152625013,
+      "tflLon": -0.224297,
+      "tflLat": 51.511959,
+      "coordinateSource": "csv",
+      "objectId": 181,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 31,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWPL",
+      "hubId": "HUBZWL",
+      "name": "Whitechapel",
+      "tflName": "Whitechapel",
+      "lon": -0.06076871394741355,
+      "lat": 51.51953209733413,
+      "tflLon": -0.059971,
+      "tflLat": 51.519518,
+      "coordinateSource": "csv",
+      "objectId": 310,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 55,
+      "lines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "district",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWIG",
+      "hubId": "940GZZLUWIG",
+      "name": "Willesden Green",
+      "tflName": "Willesden Green",
+      "lon": -0.22271672855408042,
+      "lat": 51.54937241454188,
+      "tflLon": -0.221537,
+      "tflLat": 51.549146,
+      "coordinateSource": "csv",
+      "objectId": 439,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 85,
+      "lines": [
+        "jubilee"
+      ],
+      "csvLines": [
+        "jubilee"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": "Willesden Green is served by the Jubilee line only. TfL's Metropolitan outbound route sequence lists it, but it is removed from the Metropolitan line by data/topology-overrides.json."
+    },
+    {
+      "id": "940GZZLUWJN",
+      "hubId": "HUBWIJ",
+      "name": "Willesden Junction",
+      "tflName": "Willesden Junction",
+      "lon": -0.2445731603163596,
+      "lat": 51.53240375197415,
+      "tflLon": -0.244283,
+      "tflLat": 51.532259,
+      "coordinateSource": "csv",
+      "objectId": 470,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 26,
+      "lines": [
+        "bakerloo"
+      ],
+      "csvLines": [
+        "bakerloo"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWIM",
+      "hubId": "HUBWIM",
+      "name": "Wimbledon",
+      "tflName": "Wimbledon",
+      "lon": -0.2065150560922177,
+      "lat": 51.42143496760067,
+      "tflLon": -0.206573,
+      "tflLat": 51.421207,
+      "coordinateSource": "csv",
+      "objectId": 335,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 26,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWIP",
+      "hubId": "940GZZLUWIP",
+      "name": "Wimbledon Park",
+      "tflName": "Wimbledon Park",
+      "lon": -0.19908634010842738,
+      "lat": 51.434055248289106,
+      "tflLon": -0.199719,
+      "tflLat": 51.434573,
+      "coordinateSource": "csv",
+      "objectId": 177,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 72,
+      "lines": [
+        "district"
+      ],
+      "csvLines": [
+        "district"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWOG",
+      "hubId": "940GZZLUWOG",
+      "name": "Wood Green",
+      "tflName": "Wood Green",
+      "lon": -0.10985901912398979,
+      "lat": 51.5974714659873,
+      "tflLon": -0.109886,
+      "tflLat": 51.597479,
+      "coordinateSource": "csv",
+      "objectId": 281,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 2,
+      "lines": [
+        "piccadilly"
+      ],
+      "csvLines": [
+        "piccadilly"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWLA",
+      "hubId": "940GZZLUWLA",
+      "name": "Wood Lane",
+      "tflName": "Wood Lane",
+      "lon": -0.223589832503072,
+      "lat": 51.510140640931624,
+      "tflLon": -0.22453,
+      "tflLat": 51.509669,
+      "coordinateSource": "csv",
+      "objectId": 241,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 84,
+      "lines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "csvLines": [
+        "circle",
+        "hammersmith-city"
+      ],
+      "interchange": true,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWOF",
+      "hubId": "940GZZLUWOF",
+      "name": "Woodford",
+      "tflName": "Woodford",
+      "lon": 0.03401185348011002,
+      "lat": 51.60686112070409,
+      "tflLon": 0.03397,
+      "tflLat": 51.606899,
+      "coordinateSource": "csv",
+      "objectId": 122,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 5,
+      "lines": [
+        "central"
+      ],
+      "csvLines": [
+        "central"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    },
+    {
+      "id": "940GZZLUWOP",
+      "hubId": "940GZZLUWOP",
+      "name": "Woodside Park",
+      "tflName": "Woodside Park",
+      "lon": -0.1855114363532535,
+      "lat": 51.61808637995582,
+      "tflLon": -0.18542,
+      "tflLat": 51.618014,
+      "coordinateSource": "csv",
+      "objectId": 486,
+      "joinMethod": "exact-name",
+      "joinDistanceM": 10,
+      "lines": [
+        "northern"
+      ],
+      "csvLines": [
+        "northern"
+      ],
+      "interchange": false,
+      "duplicateRecords": [],
+      "note": null
+    }
+  ]
+}

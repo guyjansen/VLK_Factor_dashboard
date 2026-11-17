@@ -1,0 +1,11 @@
+{
+  "description": "Reviewed corrections applied to TfL Route Sequence data. Each correction is listed in data/validation-report.json. Do not add an entry without evidence.",
+  "removeStops": [
+    {
+      "line": "metropolitan",
+      "stopId": "940GZZLUWIG",
+      "stopName": "Willesden Green",
+      "reason": "The TfL Metropolitan outbound sequence has a Wembley Park -> Willesden Green -> Finchley Road branch (branchId 14) next to the correct non-stop Wembley Park -> Finchley Road branch (branchId 13). Metropolitan trains run through Willesden Green without stopping. The inbound sequence goes straight from Finchley Road to Wembley Park, and the supplied CSV lists Willesden Green as Jubilee only. Removing the stop collapses branch 14 into the existing Wembley Park - Finchley Road link, so no connection is invented."
+    }
+  ]
+}

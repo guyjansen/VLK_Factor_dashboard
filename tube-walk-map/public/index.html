@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tube Walk Map</title>
+  <meta name="description" content="Unofficial map of the areas you can reach on foot within 1, 2 and 5 minutes of London Underground stations, from pedestrian-network routing.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="vendor/maplibre-gl.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#panel">Skip to map controls</a>
+
+  <header class="app-header">
+    <div class="brand">
+      <h1>Tube walk map</h1>
+      <p class="disclaimer">Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.</p>
+    </div>
+    <div class="header-actions">
+      <button id="theme-toggle" class="btn btn-ghost" type="button" aria-label="Colour theme: automatic">
+        <span aria-hidden="true">◐</span><span class="btn-text" id="theme-label">Auto</span>
+      </button>
+      <button id="info-open" class="btn btn-ghost" type="button" aria-haspopup="dialog">
+        <span aria-hidden="true">ⓘ</span><span class="btn-text">About &amp; data</span>
+      </button>
+      <button id="panel-toggle" class="btn btn-ghost" type="button" aria-expanded="true" aria-controls="panel">
+        <span aria-hidden="true">☰</span><span class="btn-text" id="panel-toggle-label">Hide controls</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside id="panel" class="panel" aria-label="Map controls" tabindex="-1">
+      <p id="summary" class="summary" role="status" aria-live="polite">Loading…</p>
+
+      <section class="section" aria-labelledby="h-lines">
+        <div class="section-head">
+          <h2 id="h-lines">Underground lines</h2>
+          <div class="btn-row">
+            <button id="select-all" class="btn btn-small" type="button">Select all</button>
+            <button id="clear-all" class="btn btn-small" type="button">Clear all</button>
+          </div>
+        </div>
+        <ul id="line-list" class="line-list" aria-describedby="lines-help"></ul>
+        <p id="lines-help" class="hint">Expand a line to add or remove single stations. A station shared by several selected lines is counted once.</p>
+      </section>
+
+      <section class="section" aria-labelledby="h-search">
+        <h2 id="h-search">Find a station</h2>
+        <div class="search">
+          <label for="station-search" class="visually-hidden">Search stations by name</label>
+          <input id="station-search" type="search" autocomplete="off" spellcheck="false" placeholder="e.g. King's Cross" aria-controls="search-results" aria-describedby="search-help">
+        </div>
+        <p id="search-help" class="hint">Choose a name to show it on the map. Tick the box to include the station in the coverage.</p>
+        <ul id="search-results" class="search-results" aria-label="Search results"></ul>
+      </section>
+
+      <section class="section" aria-labelledby="h-walk">
+        <h2 id="h-walk">Walking time</h2>
+        <fieldset class="fieldset">
+          <legend>Contours</legend>
+          <div id="contour-toggles" class="toggle-list"></div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend>Polygon display</legend>
+          <div class="toggle-list">
+            <label class="toggle"><input type="radio" name="mode" value="union" checked> Combined coverage (union)</label>
+            <label class="toggle"><input type="radio" name="mode" value="individual"> Individual station areas</label>
+          </div>
+        </fieldset>
+        <div class="range">
+          <label for="opacity">Fill opacity</label>
+          <input id="opacity" type="range" min="10" max="90" step="5" value="45" aria-describedby="opacity-value">
+          <output id="opacity-value" for="opacity">45%</output>
+        </div>
+        <dl id="coverage-stats" class="stats" aria-label="Combined walking area"></dl>
+        <p id="iso-status" class="hint" aria-live="polite"></p>
+      </section>
+
+      <section class="section" aria-labelledby="h-layers">
+        <h2 id="h-layers">Map layers</h2>
+        <div class="toggle-list">
+          <label class="toggle"><input id="show-routes" type="checkbox" checked> Underground routes</label>
+          <label class="toggle"><input id="show-context" type="checkbox" checked> Unselected lines (faint)</label>
+          <label class="toggle"><input id="show-stations" type="checkbox" checked> Stations</label>
+        </div>
+      </section>
+
+      <section class="section actions" aria-label="View actions">
+        <button id="fit" class="btn" type="button">Fit to selection</button>
+        <button id="reset" class="btn" type="button">Reset</button>
+      </section>
+
+      <section class="section" aria-labelledby="h-legend">
+        <h2 id="h-legend">Legend</h2>
+        <ul id="legend" class="legend"></ul>
+      </section>
+
+      <footer class="panel-footer">
+        <p id="provenance"></p>
+        <p>Data: Powered by TfL Open Data · © OpenStreetMap contributors · Basemap: OpenFreeMap / OpenMapTiles. <button id="info-open-2" class="link-btn" type="button">Methodology and licences</button></p>
+      </footer>
+    </aside>
+
+    <div class="map-wrap">
+      <div id="map" class="map" role="region" aria-label="Map of London Underground lines, stations and walking areas. Use arrow keys to pan and plus or minus to zoom when focused."></div>
+      <div id="busy" class="busy" role="status" hidden>Combining walking areas…</div>
+      <div id="messages" class="messages" aria-live="assertive"></div>
+    </div>
+  </main>
+
+  <dialog id="info-dialog" class="dialog" aria-labelledby="info-title">
+    <div class="dialog-head">
+      <h2 id="info-title">About this map</h2>
+      <button id="info-close" class="btn btn-small" type="button">Close</button>
+    </div>
+    <div class="dialog-body">
+      <p><strong>Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.</strong></p>
+
+      <h3>What the shaded areas show</h3>
+      <p>Each shaded area is the land you can reach on foot within 1, 2 or 5 minutes of walking from a London Underground station. It does not include any time on the train. The areas were calculated by a pedestrian routing engine on the walkable street and path network: footways, paths, crossings and bridges. They are <em>not</em> circles or straight-line distances. Rivers, railways, motorways, parks and private land only make a difference where the routing data includes them.</p>
+      <p>The "combined coverage" view is a true geometric union of the selected stations' areas, calculated separately for each time threshold. A station served by several selected lines counts once.</p>
+
+      <h3>Current data</h3>
+      <dl id="info-meta" class="meta-list"></dl>
+
+      <h3>Limitations</h3>
+      <ul>
+        <li>Each walk starts from one coordinate per station, usually the station centroid supplied in the source data. Real entrances can be up to a few hundred metres away, especially at large interchanges.</li>
+        <li>1-minute areas (about 84 m of walking) are very sensitive to where that coordinate sits and how detailed the pedestrian network is around it.</li>
+        <li>Results depend on OpenStreetMap data and the routing provider's pedestrian profile (default speed about 1.4 m/s, or 5 km/h). Mapping gaps, steps and lifts, gates, and opening hours may be missing or simplified.</li>
+        <li>Construction closures, temporary diversions and station access restrictions are not represented.</li>
+        <li>Line routes are drawn as straight segments between adjacent stations in TfL route order. They do not follow the exact track alignment.</li>
+      </ul>
+
+      <h3>Sources and licences</h3>
+      <ul>
+        <li>Station and route order: TfL Unified API (Route Sequence). Powered by TfL Open Data. Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019].</li>
+        <li>Line colours: TfL Colour standard, Issue 11 (August 2026), RGB values.</li>
+        <li>Station coordinates: supplied station dataset (stations.csv).</li>
+        <li>Walking areas: <span id="info-provider">routing provider</span>, using OpenStreetMap data © OpenStreetMap contributors, available under the Open Database Licence.</li>
+        <li>Basemap: OpenFreeMap, OpenMapTiles schema, © OpenStreetMap contributors.</li>
+        <li>Software: MapLibre GL JS (BSD-3-Clause), polygon-clipping (MIT).</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <noscript><p class="noscript">This map needs JavaScript.</p></noscript>
+
+  <script src="vendor/maplibre-gl.js"></script>
+  <script src="vendor/polygon-clipping.umd.min.js"></script>
+  <script src="js/shared/config.js"></script>
+  <script src="js/shared/geometry.js"></script>
+  <script src="js/shared/selection.js"></script>
+  <script src="config.js"></script>
+  <script src="data/network.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
