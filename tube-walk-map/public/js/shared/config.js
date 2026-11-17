@@ -72,9 +72,8 @@
   // City is a much lighter, bluer turquoise). Each contour also has its own
   // outline dash pattern, so state does not depend on colour alone.
   var CONTOURS = [
-    { seconds: 60, minutes: 1, label: '1 minute', fill: '#00594F', outline: '#003A33', dash: null },
-    { seconds: 120, minutes: 2, label: '2 minutes', fill: '#2A9D8F', outline: '#1D6F65', dash: [4, 2] },
-    { seconds: 300, minutes: 5, label: '5 minutes', fill: '#9ED9CC', outline: '#4F9E90', dash: [1, 2] }
+    { seconds: 300, minutes: 5, label: '5 minutes', fill: '#1F8A7D', outline: '#13594F', dash: null },
+    { seconds: 600, minutes: 10, label: '10 minutes', fill: '#9ED9CC', outline: '#4F9E90', dash: [4, 2] }
   ];
 
   // Office portfolio companies. Each company has its own colour; its
@@ -101,7 +100,7 @@
     LINE_ID_BY_NAME: Object.freeze(LINE_ID_BY_NAME),
     MODES: Object.freeze(MODES),
     CONTOURS: Object.freeze(CONTOURS),
-    CONTOUR_SECONDS: Object.freeze([60, 120, 300]),
+    CONTOUR_SECONDS: Object.freeze([300, 600]),
     WALKING_SPEED_MPS: 1.4,
     // Approximate Greater London extent [west, south, east, north].
     LONDON_BOUNDS: Object.freeze([-0.62, 51.39, 0.27, 51.71]),

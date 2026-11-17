@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Assign every geocoded office building to the walking areas it lies in.
-// For each building and each station, the smallest of 60/120/300 s whose
+// For each building and each station, the smallest contour (300/600 s) whose
 // full-precision isochrone contains the building point is recorded. A
 // building is "within N min" of a selection of stations when any selected
 // station's N-minute area contains it, which is the same as lying inside
@@ -56,7 +56,7 @@ const meta = {
   geocoder: doc.geocoder,
   geocodedAt: doc.geocodedAt,
   isochrones: { providers: iso.metadata?.providers, generatedBetween: iso.metadata?.isochronesGeneratedBetween },
-  method: 'Point-in-polygon of the geocoded building point against each station\'s full-precision 60/120/300 s pedestrian isochrone.',
+  method: 'Point-in-polygon of the geocoded building point against each station\'s full-precision 300/600 s (5/10 min) pedestrian isochrones.',
   caveat: 'Building positions come from geocoding street addresses; street-level matches can be off by a few hundred metres.'
 };
 writeJson(paths.buildings, { meta, buildings: out });
@@ -83,6 +83,6 @@ console.log(`Buildings: ${out.length}, located: ${located.length}, not found: ${
 for (const c of TubeConfig.COMPANIES) {
   const bs = located.filter((b) => b.company === c.name);
   const pct = (sec) => `${Math.round((100 * bs.filter((b) => b.bestSeconds && b.bestSeconds <= sec).length) / (bs.length || 1))}%`;
-  console.log(`  ${c.name.padEnd(24)} ${String(bs.length).padStart(3)} located · ≤1 min ${pct(60)} · ≤2 min ${pct(120)} · ≤5 min ${pct(300)}`);
+  console.log(`  ${c.name.padEnd(24)} ${String(bs.length).padStart(3)} located · ≤5 min ${pct(300)} · ≤10 min ${pct(600)}`);
 }
 console.log(`Wrote ${rel(paths.buildings)}, ${rel(paths.buildingsGeojson)}, ${rel(paths.publicBuildings)}`);

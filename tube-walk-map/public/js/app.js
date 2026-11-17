@@ -123,8 +123,10 @@
     return C.LINES.map(function (l) { return l.id; });
   }
   function initialContours() {
-    var c = Array.isArray(APP.initialContours) ? APP.initialContours : C.CONTOUR_SECONDS;
-    return c.filter(function (s) { return C.CONTOUR_SECONDS.indexOf(s) !== -1; });
+    var c = (Array.isArray(APP.initialContours) ? APP.initialContours : C.CONTOUR_SECONDS)
+      .filter(function (s) { return C.CONTOUR_SECONDS.indexOf(s) !== -1; });
+    // An older config.js may list retired contours (60/120 s): fall back to all.
+    return c.length === C.CONTOUR_SECONDS.length || (Array.isArray(APP.initialContours) && APP.initialContours.every(function (s) { return C.CONTOUR_SECONDS.indexOf(s) !== -1; })) ? c : C.CONTOUR_SECONDS.slice();
   }
   var state = {
     lines: new Set(initialLines()),
@@ -648,7 +650,7 @@
     });
     table.appendChild(tbody);
     box.appendChild(table);
-    box.appendChild(el('p', { className: 'hint', text: 'A building counts as within N minutes when it lies inside the N-minute walking area of any selected station. Percentages are cumulative (≤ 5 min includes ≤ 1 min). Hover a percentage for counts.' }));
+    box.appendChild(el('p', { className: 'hint', text: 'A building counts as within N minutes when it lies inside the N-minute walking area of any selected station. Percentages are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for counts.' }));
   }
 
   function buildCompanyList() {
@@ -973,7 +975,7 @@
     var walk;
     if (ISO.status === 'loading') walk = 'Loading…';
     else if (ISO.status === 'error') walk = 'Walking-area data unavailable';
-    else if (iso) walk = 'Available (1, 2 and 5 min), generated ' + fmtDate(iso.at);
+    else if (iso) walk = 'Available (' + C.CONTOURS.map(function (c) { return c.minutes; }).join(' and ') + ' min), generated ' + fmtDate(iso.at);
     else walk = 'Not generated yet';
     var dl = el('dl', null, [
       el('dt', { text: 'Coordinates' }), el('dd', { text: fmtCoord(s.lat, s.lon) }),

@@ -23,16 +23,42 @@ export function readCached(stationId) {
   try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; }
 }
 
-/** A cached record is reusable when it was produced with identical inputs. */
+// Contours are cached individually: each feature records the parameter hash
+// of the request that produced it (excluding the contour list), so adding a
+// contour later (e.g. 600 s) fetches only that contour and leaves the
+// existing polygons (e.g. 300 s) untouched.
+const baseParams = (params) => { const { contours_seconds, ...rest } = params; void contours_seconds; return rest; };
+const featureHash = (providerId, params, origin) => parametersHash(providerId, baseParams(params), origin);
+
+/** Hash a cached feature was made with (supports records written before per-contour hashes). */
+function hashOf(record, feature) {
+  if (feature.properties.paramsHash) return feature.properties.paramsHash;
+  if (!record.parameters || !record.origin) return null;
+  // Legacy record: one request for all its contours; its hash covered them.
+  const origin = { lon: record.origin[0], lat: record.origin[1] };
+  if (record.paramsHash !== parametersHash(record.provider, record.parameters, origin)) return null;
+  return featureHash(record.provider, record.parameters, origin);
+}
+
+/** Contours (seconds) of a cached record that are reusable with these inputs. */
+export function usableContours(record, providerId, params, origin) {
+  if (!record || !Array.isArray(record.features) || record.provider !== providerId) return [];
+  const want = featureHash(providerId, params, origin);
+  return record.features
+    .filter((f) => hashOf(record, f) === want && TubeGeometry.isValidPolygonal(f.geometry))
+    .map((f) => f.properties.seconds);
+}
+
+/** A cached record is reusable when every configured contour was produced with identical inputs. */
 export function isCacheValid(record, providerId, params, origin) {
-  if (!record || !Array.isArray(record.features)) return false;
-  if (record.paramsHash !== parametersHash(providerId, params, origin)) return false;
-  return TubeConfig.CONTOUR_SECONDS.every((s) => record.features.some((f) => f.properties.seconds === s && TubeGeometry.isValidPolygonal(f.geometry)));
+  const have = usableContours(record, providerId, params, origin);
+  return TubeConfig.CONTOUR_SECONDS.every((s) => have.includes(s));
 }
 
 /**
- * Compute (or reuse) the 60/120/300 s isochrones for one station.
- * @returns {Promise<{record: object, fromCache: boolean}>}
+ * Compute (or reuse) the configured contours (TubeConfig.CONTOUR_SECONDS) for
+ * one station. Only missing contours are requested from the provider.
+ * @returns {Promise<{record: object, fromCache: boolean, requested: number[]}>}
  */
 export async function computeStation(provider, station, { force = false, fetchOpts = {} } = {}) {
   const seconds = TubeConfig.CONTOUR_SECONDS.slice();
@@ -40,18 +66,29 @@ export async function computeStation(provider, station, { force = false, fetchOp
   const params = provider.parameters(seconds, speed);
   const origin = { lon: station.lon, lat: station.lat };
   const cached = readCached(station.id);
-  if (!force && isCacheValid(cached, provider.id, params, origin)) return { record: cached, fromCache: true };
+  const have = force ? [] : usableContours(cached, provider.id, params, origin);
+  const missing = seconds.filter((x) => !have.includes(x));
+  const hash = featureHash(provider.id, params, origin);
+  const keep = (cached?.features || [])
+    .filter((f) => have.includes(f.properties.seconds) && seconds.includes(f.properties.seconds))
+    .map((f) => ({ ...f, properties: { ...f.properties, paramsHash: hashOf(cached, f), generatedAt: f.properties.generatedAt || cached.generatedAt } }));
+  if (!missing.length) {
+    const record = { ...cached, features: keep };
+    return { record, fromCache: true, requested: [] };
+  }
 
-  const contours = await provider.isochrone(origin, seconds, speed, fetchOpts);
-  const features = contours.map(({ seconds: s, geometry }) => {
+  const now = new Date().toISOString();
+  const contours = await provider.isochrone(origin, missing, speed, fetchOpts);
+  const fresh = contours.map(({ seconds: s, geometry }) => {
     const polys = TubeGeometry.toPolygons(geometry);
     if (!polys.length) throw new Error(`Provider returned invalid ${s}s geometry for ${station.name}`);
     return {
       type: 'Feature',
-      properties: { stationId: station.id, stationName: station.name, seconds: s, minutes: s / 60, areaM2: Math.round(TubeGeometry.areaM2(polys)) },
+      properties: { stationId: station.id, stationName: station.name, seconds: s, minutes: s / 60, areaM2: Math.round(TubeGeometry.areaM2(polys)), paramsHash: hash, generatedAt: now, requestedContours: missing },
       geometry: TubeGeometry.toGeometry(polys)
     };
   });
+  const features = keep.concat(fresh).sort((p, q) => p.properties.seconds - q.properties.seconds);
   const record = {
     stationId: station.id,
     stationName: station.name,
@@ -60,11 +97,11 @@ export async function computeStation(provider, station, { force = false, fetchOp
     provider: provider.id,
     providerName: provider.name,
     profile: provider.profile,
-    parameters: params,
-    paramsHash: parametersHash(provider.id, params, origin),
-    generatedAt: new Date().toISOString(),
+    parameters: { ...params, contours_seconds: features.map((f) => f.properties.seconds) },
+    paramsHash: parametersHash(provider.id, { ...params, contours_seconds: features.map((f) => f.properties.seconds) }, origin),
+    generatedAt: features.map((f) => f.properties.generatedAt).sort().slice(-1)[0],
     features
   };
   writeJson(stationFile(station.id), record, false);
-  return { record, fromCache: false };
+  return { record, fromCache: false, requested: missing };
 }

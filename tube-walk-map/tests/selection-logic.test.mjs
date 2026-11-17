@@ -79,7 +79,7 @@ test('real network: Elizabeth + Central counts shared stations once', () => {
 
 test('summary text', () => {
   assert.equal(S.summaryText({ lineCount: 3, stationCount: 58, minutes: [5] }), '3 lines selected · 58 unique stations · 5-minute coverage enabled');
-  assert.equal(S.summaryText({ lineCount: 1, stationCount: 1, minutes: [1, 2, 5] }), '1 line selected · 1 unique station · 1-, 2- and 5-minute coverage enabled');
+  assert.equal(S.summaryText({ lineCount: 1, stationCount: 1, minutes: [5, 10] }), '1 line selected · 1 unique station · 5- and 10-minute coverage enabled');
   assert.equal(S.summaryText({ lineCount: 0, stationCount: 0, minutes: [] }), '0 lines selected · 0 unique stations · no walking-time coverage shown');
   assert.match(S.summaryText({ lineCount: 1, stationCount: 2, minutes: [2], added: 1, removed: 2 }), /1 added, 2 removed manually$/);
 });

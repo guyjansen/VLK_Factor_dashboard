@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tube Walk Map</title>
-  <meta name="description" content="Unofficial map of the areas you can reach on foot within 1, 2 and 5 minutes of London Underground and Elizabeth line stations, from pedestrian-network routing.">
+  <meta name="description" content="Unofficial map of the areas you can reach on foot within 5 and 10 minutes of London Underground and Elizabeth line stations, from pedestrian-network routing.">
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="vendor/maplibre-gl.css">
   <link rel="stylesheet" href="styles.css">
@@ -130,7 +130,7 @@
       <p><strong>Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.</strong></p>
 
       <h3>What the shaded areas show</h3>
-      <p>Each shaded area is the land you can reach on foot within 1, 2 or 5 minutes of walking from a London Underground or Elizabeth line station. It does not include any time on the train. The areas were calculated by a pedestrian routing engine on the walkable street and path network: footways, paths, crossings and bridges. They are <em>not</em> circles or straight-line distances. Rivers, railways, motorways, parks and private land only make a difference where the routing data includes them.</p>
+      <p>Each shaded area is the land you can reach on foot within 5 or 10 minutes of walking from a London Underground or Elizabeth line station. It does not include any time on the train. The areas were calculated by a pedestrian routing engine on the walkable street and path network: footways, paths, crossings and bridges. They are <em>not</em> circles or straight-line distances. Rivers, railways, motorways, parks and private land only make a difference where the routing data includes them.</p>
       <p>The "combined coverage" view is a true geometric union of the selected stations' areas, calculated separately for each time threshold. A station served by several selected lines counts once.</p>
 
       <h3>Current data</h3>
@@ -142,7 +142,7 @@
       <h3>Limitations</h3>
       <ul>
         <li>Each walk starts from one coordinate per station, usually the station centroid supplied in the source data. Real entrances can be up to a few hundred metres away, especially at large interchanges.</li>
-        <li>1-minute areas (about 84 m of walking) are very sensitive to where that coordinate sits and how detailed the pedestrian network is around it.</li>
+        <li>The walking times start at that one coordinate, so the real walk from a given entrance can be shorter or longer by a minute or more at large stations.</li>
         <li>Results depend on OpenStreetMap data and the routing provider's pedestrian profile (default speed about 1.4 m/s, or 5 km/h). Mapping gaps, steps and lifts, gates, and opening hours may be missing or simplified.</li>
         <li>Construction closures, temporary diversions and station access restrictions are not represented.</li>
         <li>Line routes are drawn as straight segments between adjacent stations in TfL route order. They do not follow the exact track alignment.</li>

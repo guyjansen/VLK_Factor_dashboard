@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Step 4: generate 60/120/300-second pedestrian-network isochrones for each
+// Step 4: generate pedestrian-network isochrones (TubeConfig.CONTOUR_SECONDS,
+// currently 300 and 600 s) for each
 // physical station through a routing engine (Valhalla by default).
 //
 // Usage:
@@ -66,7 +67,7 @@ if (!args['assemble-only']) {
     try {
       requested++;
       await limit(() => computeStation(provider, s, {
-        force: true,
+        force: !!args.force, // otherwise only contours missing from the cache are requested
         fetchOpts: { retries: 5, onRetry: ({ attempt, delay, error }) => console.warn(`    retry ${attempt} for ${s.name} in ${Math.round(delay)} ms (${error.code})`) }
       }));
       console.log(`  [${done}/${targets.length}] ${s.name} ✓`);
@@ -96,6 +97,7 @@ for (const s of all) {
   if (!provenance.latest || rec.generatedAt > provenance.latest) provenance.latest = rec.generatedAt;
   const g = {};
   for (const f of rec.features) {
+    if (!TubeConfig.CONTOUR_SECONDS.includes(f.properties.seconds)) continue; // e.g. retired 60/120 s contours
     features.push({
       type: 'Feature',
       properties: { ...f.properties, provider: rec.provider, profile: rec.profile, generatedAt: rec.generatedAt },

@@ -15,5 +15,5 @@ window.TUBE_APP_CONFIG = {
   apiBase: '',
   // Initial state.
   initialLines: 'all', // 'all' or an array of line ids, e.g. ['victoria']
-  initialContours: [60, 120, 300]
+  initialContours: [300, 600]
 };

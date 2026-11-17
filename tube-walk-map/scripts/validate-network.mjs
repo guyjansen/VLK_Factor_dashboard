@@ -75,7 +75,7 @@ if (iso) {
     const g = byStation.get(s.id);
     if (!g) continue;
     const a = TubeConfig.CONTOUR_SECONDS.map((sec) => (g[sec] ? TubeGeometry.areaM2(g[sec]) : NaN));
-    if (!(a[0] <= a[1] * 1.001 && a[1] <= a[2] * 1.001)) nestingViolations.push({ name: s.name, areasM2: a.map(Math.round) });
+    if (!a.every((v, i) => i === 0 || a[i - 1] <= v * 1.001)) nestingViolations.push({ name: s.name, areasM2: a.map(Math.round) });
     const st = g[300] && TubeGeometry.radialStats(g[300], [s.lon, s.lat]);
     if (st) {
       cvs.push(st.cv);

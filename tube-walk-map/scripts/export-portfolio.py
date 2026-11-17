@@ -31,7 +31,7 @@ LINES = [  # same order and names as public/js/shared/config.js
     ('northern', 'Northern'), ('piccadilly', 'Piccadilly'), ('victoria', 'Victoria'),
     ('waterloo-city', 'Waterloo & City'), ('elizabeth', 'Elizabeth line')]
 COMPANIES = [('Landsec', 'E8710A'), ('Great Portland Estates', 'C2185B'), ('British Land', '1565C0'), ('Derwent London', '8F6C00')]
-BANDS = [(1, '≤ 1 min'), (2, '≤ 2 min'), (5, '≤ 5 min')]
+BANDS = [(5, '≤ 5 min'), (10, '≤ 10 min')]
 
 FONT = 'Arial'
 F = Font(name=FONT, size=10)
@@ -95,9 +95,9 @@ def main():
     # ------------------------------------------------------------ All assets
     cols = ['Asset ID', 'Company', 'Status', 'Property name', 'Property key', 'Property type', 'Address (source)',
             'Latitude', 'Longitude', 'Geocode precision', 'Geocoded as', 'Best walk time to a station (min)',
-            'Walk band', 'Stations ≤ 1 min', 'Stations ≤ 2 min', 'Stations ≤ 5 min', 'Lines ≤ 5 min',
+            'Walk band', 'Stations ≤ 5 min', 'Stations ≤ 10 min', 'Lines ≤ 10 min',
             'Nearest station (straight line)', 'Distance to nearest station (m)'] + [f'{n} (min)' for _, n in LINES]
-    widths = [8, 20, 12, 34, 11, 11, 32, 10, 10, 11, 48, 12, 10, 26, 30, 40, 34, 24, 12] + [10] * len(LINES)
+    widths = [8, 20, 12, 34, 11, 11, 32, 10, 10, 11, 48, 12, 10, 34, 48, 36, 24, 12] + [10] * len(LINES)
 
     def write_assets(ws, rows, first_data_row=2):
         header(ws, 1, cols, widths=widths)
@@ -106,8 +106,8 @@ def main():
             lines5 = sorted({l for sid in b['stations'] for l in st_by[sid]['lines']}, key=[x for x, _ in LINES].index)
             vals = [b['id'], b['company'], b['status'], b['name'], b['propertyKey'], b['propertyType'], b['street'],
                     b['lat'], b['lon'], b['geocode']['precision'], b['geocode']['displayName'], best,
-                    f'=IF(L{r}="","> 5 min",IF(L{r}<=1,"≤ 1 min",IF(L{r}<=2,"1–2 min","2–5 min")))',
-                    names_within(b, 1), names_within(b, 2), names_within(b, 5),
+                    f'=IF(L{r}="","> 10 min",IF(L{r}<=5,"≤ 5 min","5–10 min"))',
+                    names_within(b, 5), names_within(b, 10),
                     ', '.join(line_name[l] for l in lines5),
                     (b.get('nearestStation') or {}).get('name'), (b.get('nearestStation') or {}).get('distanceM')]
             vals += [best_for(b, lid) for lid, _ in LINES]
@@ -117,8 +117,8 @@ def main():
                 cell.border = BOX
                 if c in (8, 9):
                     cell.number_format = '0.00000'
-                elif c in (12, 19) or c >= 20:
-                    cell.number_format = '0' if c != 19 else INT
+                elif c in (12, 18) or c >= 19:
+                    cell.number_format = '0' if c != 18 else INT
                     cell.alignment = Alignment(horizontal='center')
             fill = dict(COMPANIES).get(b['company'])
             if fill:
@@ -132,7 +132,7 @@ def main():
     n = len(buildings)
     last = n + 1
     A = lambda col: f"'All assets'!${col}$2:${col}${last}"  # noqa: E731
-    COMPANY, STATUS, BEST, PREC, DIST = A('B'), A('C'), A('L'), A('J'), A('S')
+    COMPANY, STATUS, BEST, PREC, DIST = A('B'), A('C'), A('L'), A('J'), A('R')
 
     for cname, colour in COMPANIES:
         ws = wb.create_sheet(cname[:31])
@@ -143,8 +143,8 @@ def main():
     s = summary
     s['A1'] = 'Office portfolios: walking access to London Underground and Elizabeth line stations'
     s['A1'].font = FT
-    s['A2'] = ('Share of each company’s buildings inside the 1-, 2- and 5-minute pedestrian walking areas of any of the 301 stations '
-               '(12 lines). Percentages are cumulative (≤ 5 min includes ≤ 1 min). All figures are formulas on the "All assets" sheet.')
+    s['A2'] = ('Share of each company’s buildings inside the 5- and 10-minute pedestrian walking areas of any of the 301 stations '
+               '(12 lines). Percentages are cumulative (≤ 10 min includes ≤ 5 min). All figures are formulas on the "All assets" sheet.')
     s['A2'].font = FI
     s.merge_cells('A2:N2')
     s.row_dimensions[2].height = 30
@@ -152,7 +152,7 @@ def main():
 
     def company_table(top, title, status):
         s.cell(row=top, column=1, value=title).font = FB
-        labels = ['Company', 'Buildings'] + [x for m, lab in BANDS for x in (f'{lab} (n)', f'{lab} (%)')] + ['> 5 min (n)', '> 5 min (%)']
+        labels = ['Company', 'Buildings'] + [x for m, lab in BANDS for x in (f'{lab} (n)', f'{lab} (%)')] + ['> 10 min (n)', '> 10 min (%)']
         header(s, top + 1, labels)
         crit_status = f',{STATUS},"{status}"' if status else ''
         rows = []
@@ -197,7 +197,7 @@ def main():
     top = end + 3
     s.cell(row=top, column=1, value='Key characteristics per company').font = FB
     labels = ['Company', 'Buildings', 'Developments', 'Developments as % of portfolio', '% of all buildings ≤ 5 min',
-              '% of developments ≤ 5 min', '% of all buildings ≤ 2 min', '% of developments ≤ 2 min',
+              '% of developments ≤ 5 min', '% of all buildings ≤ 10 min', '% of developments ≤ 10 min',
               'Average distance to nearest station (m)', 'Located at building level (%)']
     header(s, top + 1, labels)
     rows = []
@@ -211,8 +211,8 @@ def main():
             f'=IF(B{r}=0,0,C{r}/B{r})',
             f'=IF(B{r}=0,0,COUNTIFS({COMPANY},$A{r},{BEST},"<=5")/B{r})',
             f'=IF(C{r}=0,0,COUNTIFS({COMPANY},$A{r},{STATUS},"Development",{BEST},"<=5")/C{r})',
-            f'=IF(B{r}=0,0,COUNTIFS({COMPANY},$A{r},{BEST},"<=2")/B{r})',
-            f'=IF(C{r}=0,0,COUNTIFS({COMPANY},$A{r},{STATUS},"Development",{BEST},"<=2")/C{r})',
+            f'=IF(B{r}=0,0,COUNTIFS({COMPANY},$A{r},{BEST},"<=10")/B{r})',
+            f'=IF(C{r}=0,0,COUNTIFS({COMPANY},$A{r},{STATUS},"Development",{BEST},"<=10")/C{r})',
             f'=IFERROR(AVERAGEIFS({DIST},{COMPANY},$A{r}),0)',
             f'=IF(B{r}=0,0,COUNTIFS({COMPANY},$A{r},{PREC},"building")/B{r})'
         ]
@@ -241,9 +241,9 @@ def main():
     d['A1'].font = FT
     d['A2'] = 'Each building is counted once, in the band of its shortest walk to any station. Formulas on the "All assets" sheet.'
     d['A2'].font = FI
-    bands = [('≤ 1 min', '"<=1"', None), ('1–2 min', '">1"', '"<=2"'), ('2–5 min', '">2"', '"<=5"')]
-    labels = ['Company', 'Status', 'Buildings'] + [x for b in bands for x in (f'{b[0]} (n)', f'{b[0]} (%)')] + ['> 5 min (n)', '> 5 min (%)']
-    header(d, 4, labels, widths=[26, 14, 11] + [11] * 8)
+    bands = [('≤ 5 min', '"<=5"', None), ('5–10 min', '">5"', '"<=10"')]
+    labels = ['Company', 'Status', 'Buildings'] + [x for b in bands for x in (f'{b[0]} (n)', f'{b[0]} (%)')] + ['> 10 min (n)', '> 10 min (%)']
+    header(d, 4, labels, widths=[26, 14, 11] + [11] * 6)
     r = 5
     for cname, colour in COMPANIES:
         for status in ['All', 'Standing', 'Development']:
@@ -257,7 +257,7 @@ def main():
                 d.cell(row=r, column=col, value=f'=COUNTIFS({COMPANY},$A{r}{sc}{crit})')
                 d.cell(row=r, column=col + 1, value=f'=IF($C{r}=0,0,{get_column_letter(col)}{r}/$C{r})')
                 col += 2
-            d.cell(row=r, column=col, value=f'=$C{r}-D{r}-F{r}-H{r}')
+            d.cell(row=r, column=col, value=f'=$C{r}-D{r}-F{r}')
             d.cell(row=r, column=col + 1, value=f'=IF($C{r}=0,0,{get_column_letter(col)}{r}/$C{r})')
             for c in range(1, col + 2):
                 cell = d.cell(row=r, column=c)
@@ -279,7 +279,7 @@ def main():
     bl['A2'].alignment = Alignment(wrap_text=True, vertical='top')
     bl.row_dimensions[2].height = 30
     row = 4
-    first_line_col = 20  # column T in All assets
+    first_line_col = 19  # column S in All assets
     for m, lab in BANDS:
         bl.cell(row=row, column=1, value=f'Buildings {lab} of a station on the line').font = FB
         header(bl, row + 1, ['Company'] + [n for _, n in LINES], widths=[26] + [12] * len(LINES))
@@ -304,10 +304,10 @@ def main():
         ('Generated', datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')),
         ('Portfolio source', 'London_office_data.xlsx (supplied). Section titles define company and status: rows under "… developments" are Development; all other rows are Standing. Trailing "+" and "*" markers on property names are footnote markers in the source and were removed from names.'),
         ('Stations', '301 physical stations on the 11 London Underground lines and the Elizabeth line (Underground_and_Elizabeth_Stations.xlsx, joined to TfL Unified API route data).'),
-        ('Walking areas', 'Pedestrian isochrones of 1, 2 and 5 minutes from each station coordinate, computed with Valhalla (pedestrian costing, 5.04 km/h ≈ 1.4 m/s) on OpenStreetMap data. Isochrones generated ' + ' – '.join(x[:10] for x in (meta.get('isochrones', {}).get('generatedBetween') or []) if x) + '. They follow the street network, so they are not circles.'),
-        ('Method', 'A building is "within N min" when its point lies inside the N-minute walking area of at least one station (point-in-polygon on full-precision polygons). "Best walk time" is the smallest such N. Blank means more than 5 minutes from every station.'),
+        ('Walking areas', 'Pedestrian isochrones of 5 and 10 minutes from each station coordinate, computed with Valhalla (pedestrian costing, 5.04 km/h ≈ 1.4 m/s) on OpenStreetMap data. Isochrones generated ' + ' – '.join(x[:10] for x in (meta.get('isochrones', {}).get('generatedBetween') or []) if x) + '. They follow the street network, so they are not circles.'),
+        ('Method', 'A building is "within N min" when its point lies inside the N-minute walking area of at least one station (point-in-polygon on full-precision polygons). "Best walk time" is the smallest such N. Blank means more than 10 minutes from every station.'),
         ('Geocoding', 'The source has street addresses only. Positions come from Nominatim (OpenStreetMap). Each result had to lie on the source street. Ambiguous addresses used reviewed queries with the postal district (see comments in the "Geocoded as" column). Precision: building = house or building matched; street = street matched without house number (point is on the street, possibly hundreds of metres from the building); area = locality only.'),
-        ('Caveats', 'Station coordinates are centroids, not entrances. 1-minute results are very sensitive to this. Street- and area-level geocodes can move a building between bands. Check those rows before relying on 1- and 2-minute figures.'),
+        ('Caveats', 'Station coordinates are centroids, not entrances, so a real walk from a given entrance can differ by a minute or more at large stations. Street- and area-level geocodes can move a building between the 5- and 10-minute bands. Check those rows before relying on borderline cases.'),
         ('Attribution', 'Station and route data: Powered by TfL Open Data. Map and routing data © OpenStreetMap contributors (ODbL). Unofficial analysis; not affiliated with or endorsed by Transport for London or the listed companies.'),
     ]
     nt['A1'] = 'Notes, method and sources'

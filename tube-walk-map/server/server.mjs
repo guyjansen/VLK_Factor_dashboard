@@ -3,7 +3,7 @@
 //  - serves the static app in public/ with security and cache headers
 //  - GET  /api/health         liveness + data status
 //  - GET  /api/config         which optional server features are enabled
-//  - POST /api/isochrone      {stationId} -> 60/120/300 s isochrones for a KNOWN
+//  - POST /api/isochrone      {stationId} -> 300/600 s isochrones for a KNOWN
 //                             station, computed server-side (keys never reach
 //                             the browser), cached on disk, rate limited.
 // The browser normally uses the precomputed data in public/data and works

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-17T16:00:04.164Z",
+    "generatedAt": "2026-11-17T16:29:53.694Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
@@ -13,11 +13,11 @@
         "Valhalla (FOSSGIS public instance, OpenStreetMap data)"
       ],
       "generatedBetween": [
-        "2026-11-17T11:43:06.827Z",
-        "2026-11-17T12:46:41.413Z"
+        "2026-11-17T16:23:58.274Z",
+        "2026-11-17T16:29:32.859Z"
       ]
     },
-    "method": "Point-in-polygon of the geocoded building point against each station's full-precision 60/120/300 s pedestrian isochrone.",
+    "method": "Point-in-polygon of the geocoded building point against each station's full-precision 300/600 s (5/10 min) pedestrian isochrones.",
     "caveat": "Building positions come from geocoding street addresses; street-level matches can be off by a few hundred metres."
   },
   "buildings": [
@@ -44,9 +44,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUBBN": 120
+        "940GZZLUBBN": 300,
+        "940GZZLUFCN": 600,
+        "940GZZLUSPU": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUBBN",
         "name": "Barbican",
@@ -76,7 +78,8 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUSJP": 300
+        "940GZZLUSJP": 300,
+        "940GZZLUVIC": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -108,6 +111,7 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
       },
       "bestSeconds": 300,
@@ -141,8 +145,12 @@
           "City Gate, London -> City Gate, 99, Mile End Road"
         ]
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUMSH": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULNB",
         "name": "London Bridge",
@@ -172,9 +180,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 60
+        "940GZZLUALD": 600,
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLULVT",
         "name": "Liverpool Street",
@@ -203,8 +213,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULGT": 600,
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUPAH",
         "name": "Paddington (H&C Line)",
@@ -233,8 +247,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULGT": 600,
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUPAH",
         "name": "Paddington (H&C Line)",
@@ -264,7 +282,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUPAC": 300
+        "940GZZLULGT": 600,
+        "940GZZLUPAC": 300,
+        "940GZZLUPAH": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -295,8 +315,13 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBKF": 600,
+        "940GZZLUCHL": 600,
+        "940GZZLUFCN": 600,
+        "940GZZLUSPU": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUCHL",
         "name": "Chancery Lane",
@@ -325,8 +350,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUKSX": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUKSX",
         "name": "King's Cross St. Pancras",
@@ -356,9 +383,12 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUPCC": 120
+        "940GZZLUGPK": 600,
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUPCC",
         "name": "Piccadilly Circus",
@@ -388,9 +418,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUMGT": 120
+        "940GZZLULVT": 600,
+        "940GZZLUMGT": 300,
+        "940GZZLUODS": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUMGT",
         "name": "Moorgate",
@@ -420,6 +452,7 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
       },
       "bestSeconds": 300,
@@ -451,8 +484,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBKF": 600,
+        "940GZZLUCHL": 600,
+        "940GZZLUFCN": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUCHL",
         "name": "Chancery Lane",
@@ -482,6 +519,8 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUBNK": 600,
+        "940GZZLUCST": 600,
         "940GZZLUMSH": 300,
         "940GZZLUSPU": 300
       },
@@ -515,6 +554,7 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
       },
       "bestSeconds": 300,
@@ -546,8 +586,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUCST": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUMSH": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULNB",
         "name": "London Bridge",
@@ -608,8 +652,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUMSH": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULNB",
         "name": "London Bridge",
@@ -641,6 +689,7 @@
         ]
       },
       "stations": {
+        "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
       },
       "bestSeconds": 300,
@@ -673,9 +722,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUVIC": 120
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUVIC",
         "name": "Victoria",
@@ -706,8 +756,12 @@
           "Timber Square, London -> Fulham Timber, Ellerslie Square, Ellerslie Square Industrial Estate"
         ]
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUSWK": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUSWK",
         "name": "Southwark",
@@ -737,9 +791,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUVIC": 120
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUVIC",
         "name": "Victoria",
@@ -769,6 +824,7 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUBOR": 600,
         "940GZZLULNB": 300
       },
       "bestSeconds": 300,
@@ -800,8 +856,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUSWK": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUSWK",
         "name": "Southwark",
@@ -831,7 +891,8 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUSJP": 300
+        "940GZZLUSJP": 300,
+        "940GZZLUVIC": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -862,8 +923,11 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUOVL": 600,
+        "940GZZLUVXL": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUOVL",
         "name": "Oval",
@@ -926,9 +990,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUVIC": 120
+        "940GZZLUVIC": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUVIC",
         "name": "Victoria",
@@ -959,8 +1023,10 @@
           "Bramah House, London -> Bramah House, 9, Gatliff Road"
         ]
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULNB": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULNB",
         "name": "London Bridge",
@@ -991,8 +1057,12 @@
           "Carrington House, London -> Carrington House, 6, Hertford Street"
         ]
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUGPK": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUOXC",
         "name": "Oxford Circus",
@@ -1022,9 +1092,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULNB": 120
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 300,
+        "940GZZLUMMT": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLULNB",
         "name": "London Bridge",
@@ -1055,8 +1127,16 @@
           "City Tower, London -> City Tower, 3, Limeharbour"
         ]
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBNK": 600,
+        "940GZZLUBBN": 600,
+        "940GZZLUCST": 600,
+        "940GZZLULVT": 600,
+        "940GZZLUMSH": 600,
+        "940GZZLUMGT": 600,
+        "940GZZLUSPU": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUMGT",
         "name": "Moorgate",
@@ -1085,8 +1165,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 600,
+        "940GZZLUTCR": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUOXC",
         "name": "Oxford Circus",
@@ -1116,7 +1200,8 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGPK": 300
+        "940GZZLUGPK": 300,
+        "940GZZLUPCC": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1147,8 +1232,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUCHL": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUCHL",
         "name": "Chancery Lane",
@@ -1178,7 +1265,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUOXC": 300
+        "940GZZLUGDG": 600,
+        "940GZZLUOXC": 300,
+        "940GZZLUTCR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1213,6 +1302,7 @@
       },
       "stations": {
         "940GZZLUGPK": 300,
+        "940GZZLULSQ": 600,
         "940GZZLUPCC": 300
       },
       "bestSeconds": 300,
@@ -1245,7 +1335,8 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGPK": 300
+        "940GZZLUGPK": 300,
+        "940GZZLUPCC": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1276,8 +1367,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUCHL": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUCHL",
         "name": "Chancery Lane",
@@ -1340,6 +1433,8 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUGPK": 600,
+        "940GZZLULSQ": 600,
         "940GZZLUPCC": 300
       },
       "bestSeconds": 300,
@@ -1372,7 +1467,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUOXC": 300
+        "940GZZLUBND": 600,
+        "940GZZLUGDG": 600,
+        "940GZZLUOXC": 300,
+        "940GZZLUTCR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1406,6 +1504,9 @@
         ]
       },
       "stations": {
+        "940GZZLUGPK": 600,
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
         "940GZZLUPCC": 300
       },
       "bestSeconds": 300,
@@ -1438,7 +1539,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 300
+        "940GZZLUGDG": 300,
+        "940GZZLUOXC": 600,
+        "940GZZLUTCR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1469,8 +1572,11 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBND": 600,
+        "940GZZLUMBA": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUMBA",
         "name": "Marble Arch",
@@ -1500,7 +1606,8 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGPK": 300
+        "940GZZLUGPK": 300,
+        "940GZZLUPCC": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1531,8 +1638,13 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBND": 600,
+        "940GZZLUGPK": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUGPK",
         "name": "Green Park",
@@ -1562,6 +1674,7 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUBND": 600,
         "940GZZLUMBA": 300
       },
       "bestSeconds": 300,
@@ -1594,7 +1707,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUCHL": 300
+        "940GZZLUBKF": 600,
+        "940GZZLUCHL": 300,
+        "940GZZLUFCN": 600,
+        "940GZZLUSPU": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1627,8 +1743,12 @@
           "The Hickman, London -> T Patton The Plumbing Place, Hickman Avenue, Highams Park"
         ]
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUALD": 600,
+        "940GZZLUADE": 600,
+        "940GZZLUWPL": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUWPL",
         "name": "Whitechapel",
@@ -1659,6 +1779,7 @@
       },
       "stations": {
         "940GZZLUGPK": 300,
+        "940GZZLULSQ": 600,
         "940GZZLUPCC": 300
       },
       "bestSeconds": 300,
@@ -1691,9 +1812,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUOXC": 120
+        "940GZZLUBND": 600,
+        "940GZZLUGDG": 600,
+        "940GZZLUOXC": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUOXC",
         "name": "Oxford Circus",
@@ -1722,8 +1845,13 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 600,
+        "940GZZLUTCR": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUTCR",
         "name": "Tottenham Court Road",
@@ -1752,8 +1880,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUGDG": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUTCR": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUOXC",
         "name": "Oxford Circus",
@@ -1784,8 +1916,10 @@
           "Woolyard, London -> Woolyard, St Olave's Estate, Bermondsey Village"
         ]
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULNB": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULNB",
         "name": "London Bridge",
@@ -1816,7 +1950,8 @@
       },
       "stations": {
         "940GZZLUGDG": 300,
-        "940GZZLUTCR": 300
+        "940GZZLUTCR": 300,
+        "940GZZLUWRR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1848,9 +1983,14 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUTCR": 120
+        "940GZZLUCGN": 600,
+        "940GZZLUGDG": 600,
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 600,
+        "940GZZLUTCR": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUTCR",
         "name": "Tottenham Court Road",
@@ -1880,7 +2020,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULNB": 300
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 300,
+        "940GZZLUMMT": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -1912,6 +2054,8 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUGDG": 600,
+        "940GZZLUOXC": 600,
         "940GZZLUTCR": 300
       },
       "bestSeconds": 300,
@@ -1946,9 +2090,12 @@
         ]
       },
       "stations": {
-        "940GZZLUGDG": 120
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 300,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUGDG",
         "name": "Goodge Street",
@@ -1978,9 +2125,12 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 120
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 300,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUGDG",
         "name": "Goodge Street",
@@ -2010,9 +2160,12 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 120
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 300,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUGDG",
         "name": "Goodge Street",
@@ -2044,9 +2197,12 @@
         ]
       },
       "stations": {
-        "940GZZLUGDG": 120
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 300,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUGDG",
         "name": "Goodge Street",
@@ -2075,8 +2231,10 @@
         "note": "'14/20 Saint Thomas Street' not matched at house level; St Thomas Street SE1 used.",
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULNB": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULNB",
         "name": "London Bridge",
@@ -2107,6 +2265,7 @@
       },
       "stations": {
         "940GZZLUBND": 300,
+        "940GZZLUMBA": 600,
         "940GZZLUOXC": 300
       },
       "bestSeconds": 300,
@@ -2139,7 +2298,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 300
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600,
+        "940GZZLUODS": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2170,8 +2331,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBST": 600,
+        "940GZZLUBND": 600,
+        "940GZZLUMBA": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUMBA",
         "name": "Marble Arch",
@@ -2201,7 +2366,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 300
+        "940GZZLUALD": 600,
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2234,7 +2401,8 @@
       },
       "stations": {
         "940GZZLULVT": 300,
-        "940GZZLUMGT": 300
+        "940GZZLUMGT": 300,
+        "940GZZLUODS": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2266,7 +2434,8 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 300
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2298,7 +2467,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 300
+        "940GZZLUALD": 600,
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2330,6 +2501,7 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUALD": 600,
         "940GZZLULVT": 300
       },
       "bestSeconds": 300,
@@ -2361,8 +2533,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULVT": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULVT",
         "name": "Liverpool Street",
@@ -2391,8 +2565,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULVT": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULVT",
         "name": "Liverpool Street",
@@ -2424,7 +2600,8 @@
         ]
       },
       "stations": {
-        "940GZZLULVT": 300
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2455,8 +2632,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULVT": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULVT",
         "name": "Liverpool Street",
@@ -2550,7 +2729,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 300
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600,
+        "940GZZLUODS": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2582,9 +2763,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 60
+        "940GZZLUALD": 600,
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLULVT",
         "name": "Liverpool Street",
@@ -2613,8 +2796,11 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULVT": 600,
+        "940GZZLUODS": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUODS",
         "name": "Old Street",
@@ -2644,9 +2830,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 120
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLULVT",
         "name": "Liverpool Street",
@@ -2676,7 +2863,8 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUPAH": 300
+        "940GZZLUPAH": 300,
+        "940GZZLUWKA": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2708,7 +2896,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUPAH": 300
+        "940GZZLUPAH": 300,
+        "940GZZLURYO": 600,
+        "940GZZLUWKA": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2771,8 +2961,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULVT": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULVT",
         "name": "Liverpool Street",
@@ -2802,7 +2994,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUPAH": 300
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 300,
+        "940GZZLURYO": 600,
+        "940GZZLUWKA": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -2863,8 +3058,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBST": 600,
+        "940GZZLUBND": 600,
+        "940GZZLUMBA": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUMBA",
         "name": "Marble Arch",
@@ -2894,10 +3093,13 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUEUS": 600,
         "940GZZLUESQ": 300,
-        "940GZZLUWRR": 120
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 600,
+        "940GZZLUWRR": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUWRR",
         "name": "Warren Street",
@@ -2927,6 +3129,9 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUEUS": 600,
+        "940GZZLUESQ": 600,
+        "940GZZLUGPS": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -2959,7 +3164,10 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 600,
         "940GZZLUGPS": 300,
+        "940GZZLURGP": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -2992,7 +3200,10 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 600,
         "940GZZLUGPS": 300,
+        "940GZZLURGP": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -3025,7 +3236,10 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUEUS": 600,
         "940GZZLUESQ": 300,
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -3058,7 +3272,11 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUEUS": 600,
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 600,
         "940GZZLUGPS": 300,
+        "940GZZLURGP": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -3091,7 +3309,9 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUESQ": 600,
         "940GZZLUGPS": 300,
+        "940GZZLURGP": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -3124,7 +3344,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGPS": 300
+        "940GZZLUESQ": 600,
+        "940GZZLUGPS": 300,
+        "940GZZLURGP": 600,
+        "940GZZLUWRR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -3156,7 +3379,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUPAH": 300
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 300,
+        "940GZZLURYO": 600,
+        "940GZZLUWKA": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -3187,8 +3413,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUCWR": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUCWR",
         "name": "Canada Water",
@@ -3218,6 +3446,9 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUEUS": 600,
+        "940GZZLUESQ": 600,
+        "940GZZLUGPS": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -3314,9 +3545,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUCWR": 120
+        "940GZZLUCWR": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUCWR",
         "name": "Canada Water",
@@ -3346,7 +3577,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 300
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600,
+        "940GZZLUODS": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -3378,7 +3611,8 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLULVT": 300
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -3410,10 +3644,13 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUEUS": 600,
         "940GZZLUESQ": 300,
-        "940GZZLUWRR": 120
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 600,
+        "940GZZLUWRR": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUWRR",
         "name": "Warren Street",
@@ -3442,8 +3679,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLULVT": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLULVT",
         "name": "Liverpool Street",
@@ -3472,8 +3711,10 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUCWR": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUCWR",
         "name": "Canada Water",
@@ -3566,8 +3807,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBST": 600,
+        "940GZZLUBND": 600,
+        "940GZZLUMBA": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUMBA",
         "name": "Marble Arch",
@@ -3597,6 +3842,7 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUBKF": 600,
         "940GZZLUSWK": 300
       },
       "bestSeconds": 300,
@@ -3661,7 +3907,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUPAH": 300
+        "940GZZLUERB": 600,
+        "940GZZLUERC": 600,
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 300,
+        "940GZZLUWKA": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -3693,6 +3943,9 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUGDG": 600,
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
         "940GZZLUTCR": 300
       },
       "bestSeconds": 300,
@@ -3725,7 +3978,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 300
+        "940GZZLUGDG": 300,
+        "940GZZLUOXC": 600,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -3757,7 +4013,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 300
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 300,
+        "940GZZLUGPS": 600,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -3789,10 +4049,13 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUEUS": 600,
         "940GZZLUESQ": 300,
-        "940GZZLUWRR": 120
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 600,
+        "940GZZLUWRR": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUWRR",
         "name": "Warren Street",
@@ -3822,9 +4085,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUFCN": 60
+        "940GZZLUBBN": 600,
+        "940GZZLUCHL": 600,
+        "940GZZLUFCN": 300
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUFCN",
         "name": "Farringdon",
@@ -3854,6 +4119,9 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -3885,8 +4153,11 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUSJP",
         "name": "St. James's Park",
@@ -3916,6 +4187,9 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUBND": 600,
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 600,
         "940GZZLUOXC": 300
       },
       "bestSeconds": 300,
@@ -3947,8 +4221,10 @@
         "note": "Source spells 'Cruickshank Street'; the street is Cruikshank Street WC1X.",
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUAGL": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUAGL",
         "name": "Angel",
@@ -3978,7 +4254,9 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
+        "940GZZLUGPS": 600,
         "940GZZLUWRR": 300
       },
       "bestSeconds": 300,
@@ -4010,8 +4288,11 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBBN": 600,
+        "940GZZLUODS": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUBBN",
         "name": "Barbican",
@@ -4044,7 +4325,8 @@
       },
       "stations": {
         "940GZZLUGDG": 300,
-        "940GZZLUTCR": 300
+        "940GZZLUTCR": 300,
+        "940GZZLUWRR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -4076,9 +4358,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUODS": 60
+        "940GZZLUMGT": 600,
+        "940GZZLUODS": 300
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUODS",
         "name": "Old Street",
@@ -4108,9 +4391,12 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUTCR": 120
+        "940GZZLUGDG": 600,
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUTCR": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUTCR",
         "name": "Tottenham Court Road",
@@ -4139,8 +4425,11 @@
         "note": "Unqualified 'Page Street' matched Mill Hill (NW7); Page Street SW1P used.",
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUPCO": 600,
+        "940GZZLUSJP": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUPCO",
         "name": "Pimlico",
@@ -4170,6 +4459,8 @@
         "rejected": []
       },
       "stations": {
+        "940GZZLUGDG": 600,
+        "940GZZLUOXC": 600,
         "940GZZLUTCR": 300
       },
       "bestSeconds": 300,
@@ -4201,8 +4492,10 @@
         "note": "Unqualified address matched Tottenham Hale (N17).",
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUAGL": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUAGL",
         "name": "Angel",
@@ -4263,8 +4556,13 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBND": 600,
+        "940GZZLUGPK": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUOXC",
         "name": "Oxford Circus",
@@ -4294,9 +4592,14 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUTCR": 60
+        "940GZZLUCGN": 600,
+        "940GZZLUGDG": 600,
+        "940GZZLUHBN": 600,
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUTCR": 300
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUTCR",
         "name": "Tottenham Court Road",
@@ -4327,6 +4630,7 @@
       },
       "stations": {
         "940GZZLUGDG": 300,
+        "940GZZLUOXC": 600,
         "940GZZLUTCR": 300
       },
       "bestSeconds": 300,
@@ -4389,9 +4693,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUODS": 60
+        "940GZZLUODS": 300
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUODS",
         "name": "Old Street",
@@ -4422,9 +4726,10 @@
       },
       "stations": {
         "940GZZLUALD": 300,
-        "940GZZLUADE": 120
+        "940GZZLUADE": 300,
+        "940GZZLUTWH": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUADE",
         "name": "Aldgate East",
@@ -4454,9 +4759,12 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 60
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 300,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUGDG",
         "name": "Goodge Street",
@@ -4487,7 +4795,8 @@
       },
       "stations": {
         "940GZZLUGDG": 300,
-        "940GZZLUTCR": 300
+        "940GZZLUTCR": 300,
+        "940GZZLUWRR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -4519,9 +4828,9 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUODS": 60
+        "940GZZLUODS": 300
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUODS",
         "name": "Old Street",
@@ -4551,9 +4860,12 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 60
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 300,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
-      "bestSeconds": 60,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUGDG",
         "name": "Goodge Street",
@@ -4583,10 +4895,13 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 120,
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 300,
+        "940GZZLUGPS": 600,
+        "940GZZLUTCR": 600,
         "940GZZLUWRR": 300
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUGDG",
         "name": "Goodge Street",
@@ -4616,7 +4931,11 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUGDG": 300
+        "940GZZLUGDG": 300,
+        "940GZZLUGPS": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUTCR": 600,
+        "940GZZLUWRR": 600
       },
       "bestSeconds": 300,
       "nearestStation": {
@@ -4647,8 +4966,11 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUVIC",
         "name": "Victoria",
@@ -4680,6 +5002,9 @@
         ]
       },
       "stations": {
+        "940GZZLUGDG": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 600,
         "940GZZLUTCR": 300
       },
       "bestSeconds": 300,
@@ -4711,8 +5036,12 @@
         "note": null,
         "rejected": []
       },
-      "stations": {},
-      "bestSeconds": null,
+      "stations": {
+        "940GZZLUBST": 600,
+        "940GZZLUBND": 600,
+        "940GZZLUMBA": 600
+      },
+      "bestSeconds": 600,
       "nearestStation": {
         "id": "940GZZLUMBA",
         "name": "Marble Arch",
@@ -4742,9 +5071,10 @@
         "rejected": []
       },
       "stations": {
-        "940GZZLUBST": 120
+        "940GZZLUBST": 300,
+        "940GZZLUMYB": 600
       },
-      "bestSeconds": 120,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUBST",
         "name": "Baker Street",

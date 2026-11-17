@@ -91,11 +91,11 @@ test('isochrones come from a pedestrian routing engine with recorded provenance'
     assert.ok(['valhalla', 'openrouteservice'].includes(rec.provider), f);
     assert.ok(['pedestrian', 'foot-walking'].includes(rec.profile), f);
     assert.ok(rec.generatedAt && rec.parameters && rec.paramsHash, f);
-    assert.deepEqual(rec.features.map((x) => x.properties.seconds), [60, 120, 300]);
+    assert.deepEqual(rec.features.map((x) => x.properties.seconds), [300, 600]);
   }
 });
 
-test('isochrones are not circular buffers and are nested 1 ⊆ 2 ⊆ 5 minutes', { skip: !haveIso && 'run npm run isochrones' }, () => {
+test('isochrones are not circular buffers and are nested 5 ⊆ 10 minutes', { skip: !haveIso && 'run npm run isochrones' }, () => {
   const iso = readJson(paths.isochrones);
   const stations = readJson(paths.stations).stations;
   const by = new Map();
@@ -108,10 +108,11 @@ test('isochrones are not circular buffers and are nested 1 ⊆ 2 ⊆ 5 minutes',
     const g = by.get(s.id);
     if (!g) continue;
     for (const sec of TubeConfig.CONTOUR_SECONDS) assert.ok(G.isValidPolygonal(g[sec]), `${s.name} ${sec}`);
-    const [a1, a2, a5] = [g[60], g[120], g[300]].map((x) => G.areaM2(x));
-    assert.ok(a1 <= a2 * 1.001 && a2 <= a5 * 1.001, `${s.name} nesting ${a1} ${a2} ${a5}`);
-    // A 300 s walk at ~1.4 m/s can never exceed a 420 m radius circle.
+    const [a5, a10] = [g[300], g[600]].map((x) => G.areaM2(x));
+    assert.ok(a5 <= a10 * 1.001, `${s.name} nesting ${a5} ${a10}`);
+    // A walk at ~1.4 m/s can never exceed 420 m (5 min) or 840 m (10 min) in a straight line.
     assert.ok(a5 < Math.PI * 420 * 420 * 1.15, `${s.name} 5-min area too large: ${a5}`);
+    assert.ok(a10 < Math.PI * 840 * 840 * 1.15, `${s.name} 10-min area too large: ${a10}`);
     const st = G.radialStats(g[300], [s.lon, s.lat]);
     if (st.cv > 0.08) irregular++;
   }
@@ -134,6 +135,6 @@ test('precomputed unions equal fresh unions and dedupe interchanges', { skip: !f
   const sum = geoms.reduce((s, g) => s + G.areaM2(g), 0);
   assert.ok(fresh <= sum);
   const all = unions.features.filter((f) => f.properties.scope === 'all');
-  assert.equal(all.length, 3);
+  assert.equal(all.length, 2);
   assert.equal(all[0].properties.stationCount, 301);
 });

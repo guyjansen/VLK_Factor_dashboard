@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T15:32:43.450Z",
+  "generatedAt": "2026-11-17T16:29:53.583Z",
   "status": "warnings",
   "errors": [],
   "warnings": [
@@ -517,17 +517,16 @@
       "costing": "pedestrian",
       "walking_speed_kmh": 5.04,
       "contours_seconds": [
-        60,
-        120,
-        300
+        300,
+        600
       ],
       "polygons": true,
       "denoise": 0.1,
       "generalize_m": 3
     },
     "generatedBetween": [
-      "2026-11-17T11:43:06.827Z",
-      "2026-11-17T12:46:41.413Z"
+      "2026-11-17T16:23:58.274Z",
+      "2026-11-17T16:29:32.859Z"
     ],
     "stationsWithIsochrones": 301,
     "missing": [],

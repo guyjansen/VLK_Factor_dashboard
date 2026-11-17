@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "generatedAt": "2026-11-17T16:00:04.164Z",
+    "generatedAt": "2026-11-17T16:29:53.694Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
@@ -14,11 +14,11 @@
         "Valhalla (FOSSGIS public instance, OpenStreetMap data)"
       ],
       "generatedBetween": [
-        "2026-11-17T11:43:06.827Z",
-        "2026-11-17T12:46:41.413Z"
+        "2026-11-17T16:23:58.274Z",
+        "2026-11-17T16:29:32.859Z"
       ]
     },
-    "method": "Point-in-polygon of the geocoded building point against each station's full-precision 60/120/300 s pedestrian isochrone.",
+    "method": "Point-in-polygon of the geocoded building point against each station's full-precision 300/600 s (5/10 min) pedestrian isochrones.",
     "caveat": "Building positions come from geocoding street addresses; street-level matches can be off by a few hundred metres."
   },
   "features": [
@@ -33,7 +33,7 @@
         "propertyType": "Office",
         "street": "140 Aldersgate Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Barbican",
         "nearestStationM": 108
       },
@@ -102,7 +102,7 @@
         "propertyType": "Office",
         "street": "14 Southwark Bridge Road",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "London Bridge",
         "nearestStationM": 406
       },
@@ -125,7 +125,7 @@
         "propertyType": "Office",
         "street": "69 Old Broad Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Liverpool Street",
         "nearestStationM": 63
       },
@@ -148,7 +148,7 @@
         "propertyType": "Office",
         "street": "10 Eastbourne Terrace",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Paddington (H&C Line)",
         "nearestStationM": 169
       },
@@ -171,7 +171,7 @@
         "propertyType": "Office",
         "street": "20 Eastbourne Terrace",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Paddington (H&C Line)",
         "nearestStationM": 206
       },
@@ -217,7 +217,7 @@
         "propertyType": "Office",
         "street": "1 Little New Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Chancery Lane",
         "nearestStationM": 453
       },
@@ -240,7 +240,7 @@
         "propertyType": "Multi-Use",
         "street": "42–50 York Way, London, N1 9AB,",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "King's Cross St. Pancras",
         "nearestStationM": 414
       },
@@ -263,7 +263,7 @@
         "propertyType": "Office",
         "street": "1 Sherwood Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Piccadilly Circus",
         "nearestStationM": 127
       },
@@ -286,7 +286,7 @@
         "propertyType": "Office",
         "street": "155 Moorgate Hall",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Moorgate",
         "nearestStationM": 94
       },
@@ -332,7 +332,7 @@
         "propertyType": "Office",
         "street": "3-5 New Street Square: London EC4A 3BF, United Kingdom",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Chancery Lane",
         "nearestStationM": 403
       },
@@ -401,7 +401,7 @@
         "propertyType": "Office",
         "street": "46-48 Park Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "London Bridge",
         "nearestStationM": 375
       },
@@ -447,7 +447,7 @@
         "propertyType": "Office",
         "street": "105 Sumner Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "London Bridge",
         "nearestStationM": 485
       },
@@ -493,7 +493,7 @@
         "propertyType": "Multi-Use",
         "street": "Bressenden Place",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Victoria",
         "nearestStationM": 114
       },
@@ -516,7 +516,7 @@
         "propertyType": "Office",
         "street": "25 Lavington Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Southwark",
         "nearestStationM": 484
       },
@@ -539,7 +539,7 @@
         "propertyType": "Office",
         "street": "Bressenden Place, Victoria, SW1E 5BH",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Victoria",
         "nearestStationM": 114
       },
@@ -585,7 +585,7 @@
         "propertyType": "Office",
         "street": "Lavington Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Southwark",
         "nearestStationM": 380
       },
@@ -631,7 +631,7 @@
         "propertyType": null,
         "street": "Vauxhall Street, Oval Village,SE11 5RH",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Oval",
         "nearestStationM": 500
       },
@@ -677,7 +677,7 @@
         "propertyType": "Office",
         "street": "11 Bressenden Place",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Victoria",
         "nearestStationM": 128
       },
@@ -700,7 +700,7 @@
         "propertyType": "Office",
         "street": "65/71 Bermondsey Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "London Bridge",
         "nearestStationM": 576
       },
@@ -723,7 +723,7 @@
         "propertyType": "Multi-Use",
         "street": "126-130 Regent Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Oxford Circus",
         "nearestStationM": 411
       },
@@ -746,7 +746,7 @@
         "propertyType": "Multi-Use",
         "street": "2 Cathedral Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "London Bridge",
         "nearestStationM": 134
       },
@@ -769,7 +769,7 @@
         "propertyType": "Office",
         "street": "40 Basinghall Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Moorgate",
         "nearestStationM": 241
       },
@@ -792,7 +792,7 @@
         "propertyType": "Office",
         "street": "10/16 Dufour’s Place",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Oxford Circus",
         "nearestStationM": 372
       },
@@ -838,7 +838,7 @@
         "propertyType": "Office",
         "street": "10-16 Elm Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Chancery Lane",
         "nearestStationM": 546
       },
@@ -930,7 +930,7 @@
         "propertyType": "Multi-Use",
         "street": "200/214 Gray's Inn Road",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Chancery Lane",
         "nearestStationM": 596
       },
@@ -1068,7 +1068,7 @@
         "propertyType": "Multi-Use",
         "street": "1/9 Portman Square",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Marble Arch",
         "nearestStationM": 328
       },
@@ -1114,7 +1114,7 @@
         "propertyType": "Multi-Use",
         "street": "10 Cork Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Green Park",
         "nearestStationM": 364
       },
@@ -1183,7 +1183,7 @@
         "propertyType": "Office",
         "street": "2 Whitechapel Road",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Whitechapel",
         "nearestStationM": 424
       },
@@ -1229,7 +1229,7 @@
         "propertyType": "Multi-Use",
         "street": "288-300 Regent Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Oxford Circus",
         "nearestStationM": 104
       },
@@ -1252,7 +1252,7 @@
         "propertyType": "Office",
         "street": "141 Wardour Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Tottenham Court Road",
         "nearestStationM": 403
       },
@@ -1275,7 +1275,7 @@
         "propertyType": "Office",
         "street": "19-23 Wells Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Oxford Circus",
         "nearestStationM": 344
       },
@@ -1298,7 +1298,7 @@
         "propertyType": "Multi-Use",
         "street": "52-56 Bermondsey Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "London Bridge",
         "nearestStationM": 448
       },
@@ -1344,7 +1344,7 @@
         "propertyType": null,
         "street": "16/19 Soho Square, 29/43 Oxford Street and 7 Falconberg Mews",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Tottenham Court Road",
         "nearestStationM": 119
       },
@@ -1413,7 +1413,7 @@
         "propertyType": "Multi-Use",
         "street": "Alfred Place",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Goodge Street",
         "nearestStationM": 120
       },
@@ -1436,7 +1436,7 @@
         "propertyType": "Office",
         "street": "19-30 Alfred Place",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Goodge Street",
         "nearestStationM": 111
       },
@@ -1459,7 +1459,7 @@
         "propertyType": "Office",
         "street": "31/34 Alfred Place",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Goodge Street",
         "nearestStationM": 120
       },
@@ -1482,7 +1482,7 @@
         "propertyType": "Office",
         "street": "Alfred Place",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Goodge Street",
         "nearestStationM": 120
       },
@@ -1505,7 +1505,7 @@
         "propertyType": "Office",
         "street": "14/20 Saint Thomas Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "London Bridge",
         "nearestStationM": 457
       },
@@ -1574,7 +1574,7 @@
         "propertyType": "Office",
         "street": "1-5 Baker Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Marble Arch",
         "nearestStationM": 351
       },
@@ -1712,7 +1712,7 @@
         "propertyType": "Office",
         "street": "199 Bishopsgate",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Liverpool Street",
         "nearestStationM": 418
       },
@@ -1735,7 +1735,7 @@
         "propertyType": "Office",
         "street": "201 Bishopsgate",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Liverpool Street",
         "nearestStationM": 492
       },
@@ -1781,7 +1781,7 @@
         "propertyType": "Office",
         "street": "5 Appold Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Liverpool Street",
         "nearestStationM": 426
       },
@@ -1873,7 +1873,7 @@
         "propertyType": "Office",
         "street": "100 Liverpool Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Liverpool Street",
         "nearestStationM": 71
       },
@@ -1896,7 +1896,7 @@
         "propertyType": "Office",
         "street": "4-8 Crown Place",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Old Street",
         "nearestStationM": 524
       },
@@ -1919,7 +1919,7 @@
         "propertyType": "Office",
         "street": "6-9 Eldon Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Liverpool Street",
         "nearestStationM": 114
       },
@@ -2011,7 +2011,7 @@
         "propertyType": "Office",
         "street": "Norton Folgate",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Liverpool Street",
         "nearestStationM": 537
       },
@@ -2080,7 +2080,7 @@
         "propertyType": "Office",
         "street": "10 Portman Square",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Marble Arch",
         "nearestStationM": 397
       },
@@ -2103,7 +2103,7 @@
         "propertyType": "Office",
         "street": "30 Brock Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Warren Street",
         "nearestStationM": 133
       },
@@ -2310,7 +2310,7 @@
         "propertyType": "Multi-Use",
         "street": "Deal Porters Way",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Canada Water",
         "nearestStationM": 285
       },
@@ -2402,7 +2402,7 @@
         "propertyType": null,
         "street": "Canada Water, London SE16",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Canada Water",
         "nearestStationM": 69
       },
@@ -2471,7 +2471,7 @@
         "propertyType": "Office",
         "street": "286 Euston Road",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Warren Street",
         "nearestStationM": 107
       },
@@ -2494,7 +2494,7 @@
         "propertyType": "Office",
         "street": "20 Primrose Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Liverpool Street",
         "nearestStationM": 501
       },
@@ -2517,7 +2517,7 @@
         "propertyType": "Multi-Use",
         "street": "Lower Road",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Canada Water",
         "nearestStationM": 314
       },
@@ -2586,7 +2586,7 @@
         "propertyType": "Multi-Use",
         "street": "25 Baker Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Marble Arch",
         "nearestStationM": 463
       },
@@ -2747,7 +2747,7 @@
         "propertyType": "Office",
         "street": "250 Euston Road",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Warren Street",
         "nearestStationM": 110
       },
@@ -2770,7 +2770,7 @@
         "propertyType": "Multi-Use",
         "street": "20 Farringdon Road",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Farringdon",
         "nearestStationM": 26
       },
@@ -2816,7 +2816,7 @@
         "propertyType": "Office",
         "street": "6-8 Greencoat Place",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "St. James's Park",
         "nearestStationM": 429
       },
@@ -2862,7 +2862,7 @@
         "propertyType": "Multi-Use",
         "street": "Cruickshank Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Angel",
         "nearestStationM": 483
       },
@@ -2908,7 +2908,7 @@
         "propertyType": "Multi-Use",
         "street": "5-27 Old Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Barbican",
         "nearestStationM": 448
       },
@@ -2954,7 +2954,7 @@
         "propertyType": "Multi-Use",
         "street": "1 Oliver’s Yard",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Old Street",
         "nearestStationM": 79
       },
@@ -2977,7 +2977,7 @@
         "propertyType": "Multi-Use",
         "street": "50 Oxford Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Tottenham Court Road",
         "nearestStationM": 153
       },
@@ -3000,7 +3000,7 @@
         "propertyType": "Office",
         "street": "1 Page Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Pimlico",
         "nearestStationM": 578
       },
@@ -3046,7 +3046,7 @@
         "propertyType": "Office",
         "street": "88 Rosebery Avenue",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Angel",
         "nearestStationM": 506
       },
@@ -3092,7 +3092,7 @@
         "propertyType": "Multi-Use",
         "street": "25 Savile Row",
         "geocodePrecision": "building",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Oxford Circus",
         "nearestStationM": 405
       },
@@ -3115,7 +3115,7 @@
         "propertyType": "Office",
         "street": "1 Oxford Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Tottenham Court Road",
         "nearestStationM": 45
       },
@@ -3184,7 +3184,7 @@
         "propertyType": "Office",
         "street": "58-64 City Road",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Old Street",
         "nearestStationM": 84
       },
@@ -3207,7 +3207,7 @@
         "propertyType": "Office",
         "street": "10 Whitechapel High Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Aldgate East",
         "nearestStationM": 164
       },
@@ -3230,7 +3230,7 @@
         "propertyType": "Multi-Use",
         "street": "171-174 Tottenham Court Road",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Goodge Street",
         "nearestStationM": 28
       },
@@ -3276,7 +3276,7 @@
         "propertyType": "Multi-Use",
         "street": "86-100 City Road",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Old Street",
         "nearestStationM": 36
       },
@@ -3299,7 +3299,7 @@
         "propertyType": "Office",
         "street": "43/45-51 Whitfield Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 1,
+        "bestWalkMinutes": 5,
         "nearestStation": "Goodge Street",
         "nearestStationM": 83
       },
@@ -3322,7 +3322,7 @@
         "propertyType": "Office",
         "street": "60 Whitfield Street",
         "geocodePrecision": "building",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Goodge Street",
         "nearestStationM": 155
       },
@@ -3368,7 +3368,7 @@
         "propertyType": "Office",
         "street": "Francis Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Victoria",
         "nearestStationM": 361
       },
@@ -3414,7 +3414,7 @@
         "propertyType": "Multi-Use",
         "street": "38-52/54-60/66 Baker Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": null,
+        "bestWalkMinutes": 10,
         "nearestStation": "Marble Arch",
         "nearestStationM": 513
       },
@@ -3437,7 +3437,7 @@
         "propertyType": "Multi-Use",
         "street": "38-52/54-60/66 Baker Street",
         "geocodePrecision": "street",
-        "bestWalkMinutes": 2,
+        "bestWalkMinutes": 5,
         "nearestStation": "Baker Street",
         "nearestStationM": 103
       },

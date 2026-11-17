@@ -1,6 +1,6 @@
 # Tube walk map
 
-An interactive map of the areas you can reach **on foot within 1, 2 and 5 minutes** of London Underground and Elizabeth line stations. Line routes follow authoritative TfL route order, and the walking areas are pedestrian-network isochrones produced by a routing engine.
+An interactive map of the areas you can reach **on foot within 5 and 10 minutes** of London Underground and Elizabeth line stations. Line routes follow authoritative TfL route order, and the walking areas are pedestrian-network isochrones produced by a routing engine.
 
 > **Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.**
 
@@ -10,7 +10,7 @@ An interactive map of the areas you can reach **on foot within 1, 2 and 5 minute
 - The Elizabeth line is listed and treated like every other line (select it, combine it, compare buildings against it).
 - **149 office buildings** of Landsec, Great Portland Estates, British Land and Derwent London (`data/London_office_data.xlsx`) are shown as points, one colour per company, with developments in a lighter shade of the same colour. The panel shows live per-company statistics for the current selection: the % of all buildings, standing assets and developments within each selected walking time.
 - **Excel report** `reports/office-station-access.xlsx`: every asset with its walking band, stations and lines, one sheet per company, plus summary, distribution and per-line statistics as live formulas.
-- 903 walking-time polygons (301 stations × 60/120/300 s) generated with Valhalla (`pedestrian` costing, 5.04 km/h = 1.4 m/s).
+- 602 walking-time polygons (301 stations × 300/600 s, i.e. 5 and 10 minutes) generated with Valhalla (`pedestrian` costing, 5.04 km/h = 1.4 m/s).
 - Combined coverage is a true polygon union for each time threshold, computed in a Web Worker in the browser and also precomputed for each line and for the whole network.
 - Works from `npm start` (Express) or as a static site, including opening `index.html` straight from disk.
 
@@ -76,8 +76,9 @@ The app shows attribution in the map's attribution control, the panel footer and
   - **Shepherd's Bush** (Central) and **Shepherd's Bush Market** are different stations.
 - **Line membership comes from the topology.** Four station-table line lists disagree with TfL: Paddington lists H&C; Paddington (H&C Line) and Hammersmith (H&C Line) omit Circle; Edgware Road (Circle Line) omits District and H&C. All four are reported, and the popup notes the difference.
 - **Routes are straight segments between adjacent stations** at their real coordinates. They follow the correct station order but not the curved track alignment, because TfL Route Sequence has no track geometry.
-- **Walking origin**: each isochrone starts at the supplied station coordinate, which is usually a centroid and not every entrance. 1-minute areas (~84 m) are very sensitive to this and to how detailed OSM is locally.
-- **Walking assumptions**: foot travel only, no Tube time, 60/120/300 s, 1.4 m/s (Valhalla `walking_speed` 5.04 km/h). Valhalla settings: `denoise 0.1`, `generalize 3 m`. Closures, temporary restrictions and opening hours are not modelled.
+- **Walking origin**: each isochrone starts at the supplied station coordinate, which is usually a centroid and not every entrance. At large stations, a real walk from a given entrance can differ by a minute or more.
+- **Contours**: 5 and 10 minutes (the original 1- and 2-minute contours were removed on request). Each contour is cached and requested separately, so adding the 10-minute contour left the existing 5-minute polygons exactly as they were (same Valhalla output).
+- **Walking assumptions**: foot travel only, no Tube time, 300 and 600 s (5 and 10 min), 1.4 m/s (Valhalla `walking_speed` 5.04 km/h). Valhalla settings: `denoise 0.1`, `generalize 3 m`. Closures, temporary restrictions and opening hours are not modelled.
 - **Elizabeth line**: included as a normal line, from Reading and Heathrow in the west to Shenfield and Abbey Wood in the east. (Internally it keeps TfL's mode name `elizabeth-line`, which is needed for the TfL API and the longer validation limit described below.) Its outer sections run on National Rail tracks with long gaps between stations (Maidenhead–Twyford is ~10.9 km), so the validation limit for Elizabeth line links is 12 km instead of 8 km. East of the central tunnel, the line splits at **Whitechapel**: one branch goes to Stratford (towards Shenfield), the other to Canary Wharf (towards Abbey Wood). TfL's data also lists a few Shenfield trains running into the main-line platforms at Liverpool Street, which would draw an extra direct Liverpool Street–Stratford link. On request, that main-line platform stop is removed in `data/topology-overrides.json`, so only the Whitechapel branches are drawn. The Heathrow Terminals 2 & 3 → Terminal 4 and → Terminal 5 links are shared with the Piccadilly line and are drawn side by side.
 - **Walking-area colours** are a teal-green ramp. The earlier violet ramp clashed with the Elizabeth line's purple. Teal is distinct from all line colours except, loosely, the much paler Waterloo & City (a two-station line drawn with a dark casing).
 - London Overground, DLR, trams and National Rail are **out of scope** and not drawn.
@@ -201,14 +202,14 @@ npm run report         # write reports/office-station-access.xlsx (Python 3 + op
   - A result is accepted only if it lies on the source street and within 9 km of central London.
   - A building-level hit without the house number is downgraded to street level.
   - 22 ambiguous or missing addresses use reviewed queries in `data/geocode-overrides.json`, each with a reason. For example, Langham Place W1 not Harringay, and Exchange Square EC2 not Croydon. The street check alone stops matches such as 70 *Victoria Street* landing on *Queen* Victoria Street.
-  - Result: **89 building-level, 57 street-level and 3 area-level** positions. Street-level points sit on the right street but can be a few hundred metres from the building, so check those before relying on 1- and 2-minute results. **One Chapel Place** is listed as "1 Chapel Street" in the source; it is placed at Chapel Place W1G (Great Portland Estates' building), which should be confirmed.
-- **Assignment** (`scripts/assign-buildings.mjs`): for every building and station, the smallest walking time (60/120/300 s) whose full-precision isochrone contains the building. In the app, a building is "within N min" of the current selection when any selected station's N-minute area contains it, which is the same as lying inside their union.
+  - Result: **89 building-level, 57 street-level and 3 area-level** positions. Street-level points sit on the right street but can be a few hundred metres from the building, so check those for buildings near the edge of a 5- or 10-minute area. **One Chapel Place** is listed as "1 Chapel Street" in the source; it is placed at Chapel Place W1G (Great Portland Estates' building), which should be confirmed.
+- **Assignment** (`scripts/assign-buildings.mjs`): for every building and station, the smallest walking time (300/600 s) whose full-precision isochrone contains the building. In the app, a building is "within N min" of the current selection when any selected station's N-minute area contains it, which is the same as lying inside their union.
 - **Map**: the points are circles with a dark outline. Buildings outside the largest selected walking time fade. Click a building for its company, status, address, walking time, stations and geocode precision.
 - **Report** (`scripts/export-portfolio.py` → `reports/office-station-access.xlsx`):
-  - **Summary**: per company, for all buildings, developments only and standing only: counts and cumulative % within ≤ 1, ≤ 2 and ≤ 5 min and beyond. Plus key characteristics: development share of the portfolio, % of all buildings vs % of developments within 2 and 5 min, average distance to the nearest station, and % located at building level.
-  - **Distribution**: the share of buildings in mutually exclusive bands (≤ 1, 1–2, 2–5, > 5 min) per company and status.
-  - **By line**: per company and line, the % of buildings within 1, 2 and 5 min of a station on that line.
-  - **All assets** and one sheet per company: every asset with its geocode, walking band, stations ≤ 1/2/5 min, lines, nearest station, and the best walking time to each line.
+  - **Summary**: per company, for all buildings, developments only and standing only: counts and cumulative % within ≤ 5 and ≤ 10 min and beyond. Plus key characteristics: development share of the portfolio, % of all buildings vs % of developments within 2 and 5 min, average distance to the nearest station, and % located at building level.
+  - **Distribution**: the share of buildings in mutually exclusive bands (≤ 5, 5–10, > 10 min) per company and status.
+  - **By line**: per company and line, the % of buildings within 5 and 10 min of a station on that line.
+  - **All assets** and one sheet per company: every asset with its geocode, walking band, stations ≤ 5/10 min, lines, nearest station, and the best walking time to each line.
   - **Notes**: method, sources, caveats.
   - All statistics are live `COUNTIFS` formulas on "All assets" (721 formulas, verified with a LibreOffice recalculation: 0 errors).
 
@@ -292,7 +293,7 @@ Expected result: **48 tests, 48 pass, 0 fail**. The tests cover:
 
 - **Data validation**: colours equal the PDF RGB values (including the Elizabeth line) and are defined only in the central config; the CSV parser handles quotes, CRLF, BOM and malformed rows; the xlsx reader and BNG conversion reproduce the original CSV coordinates; all 302 records and all 315 TfL stops join; the Elizabeth line has the correct termini, branches and shared stations; Paddington is deduplicated; Edgware Road, Hammersmith and Shepherd's Bush stay separate; interchanges have all their lines; every line forms one connected component; the termini of every line match reality (for example, the Northern line has Morden, Battersea Power Station, Edgware, High Barnet and Mill Hill East); branch junctions exist (Northern Euston–Camden Town and Euston–Mornington Crescent, Metropolitan Chesham/Watford/Uxbridge, District at Earl's Court with degree 5, the Central Hainault loop, the Piccadilly Heathrow loop); no Underground link is longer than 8 km and no Elizabeth line link longer than 12 km; the validation report has no errors.
 - **Selection logic**: single and multiple lines, deduplication of interchanges (including Underground/Elizabeth line ones), manual add and remove, pruning of overrides, select all and clear all, summary text, search that ignores punctuation.
-- **Geometry**: union of overlaps, holes and disjoint parts; skipping invalid geometry; simplification; radial-irregularity detection. For the generated data: every isochrone records a routing provider and profile; 1-minute ⊆ 2-minute ⊆ 5-minute by area; no 5-minute area exceeds what 300 s at 1.4 m/s allows; more than 90% are irregular (buffers would be circular); precomputed unions match fresh unions.
+- **Geometry**: union of overlaps, holes and disjoint parts; skipping invalid geometry; simplification; radial-irregularity detection. For the generated data: every isochrone records a routing provider and profile; 5-minute ⊆ 10-minute by area; no area exceeds what 300 s / 600 s at 1.4 m/s allows; more than 90% are irregular (buffers would be circular); precomputed unions match fresh unions.
 
 `npm run validate` writes `data/validation-report.json`. Its current status is `warnings` (four CSV line-list mismatches), with 0 errors, 0 unmatched stations or stops, 0 failed or missing isochrones (301/301), 0 invalid geometries, 0 nesting violations and 0 circular-looking polygons. The radial coefficient of variation of the 5-minute polygons has a median of 0.198.
 
@@ -328,7 +329,7 @@ The map never creates DOM elements per vertex. Polygons are WebGL layers updated
 | A4 | Interchanges show all lines | ✅ | `stations.json` `lines`; popup chips; tests |
 | B1 | TfL digital RGB for every line | ✅ | `config.js`; test against PDF values |
 | B2 | Colours defined centrally | ✅ | `config.js`; test that the app has no hard-coded line colours |
-| C1 | 1/2/5-minute contours from a pedestrian routing engine | ✅ | Valhalla `pedestrian`; provenance in each cache file |
+| C1 | 5- and 10-minute contours from a pedestrian routing engine (1 and 2 minutes removed on request) | ✅ | Valhalla `pedestrian`; provenance in each cache file |
 | C2 | Shapes follow the network, not buffers | ✅ | Radial CV check in validation and tests |
 | C3 | Line view combines all unique stations | ✅ | `selection.js`; `generate-unions.mjs` |
 | C4 | Multi-line selection deduplicates interchanges | ✅ | NaPTAN-keyed selection; tests |
