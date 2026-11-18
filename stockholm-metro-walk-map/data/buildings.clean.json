@@ -1,7 +1,7 @@
 {
   "source": "data/FABG_property_list_FY25.xlsx",
   "sheet": "Properties",
-  "preparedAt": "2026-11-18T15:25:27.146Z",
+  "preparedAt": "2026-11-18T15:30:29.377Z",
   "statusRule": "Standing = Classification \"Investment\"; Development = \"Development\" or \"Land & project\".",
   "buildings": [
     {
@@ -5695,7 +5695,7 @@
     }
   ],
   "issues": [],
-  "geocodedAt": "2026-11-18T15:25:57.478Z",
+  "geocodedAt": "2026-11-18T15:32:11.489Z",
   "geocoder": {
     "name": "Nominatim (OpenStreetMap)",
     "url": "https://nominatim.openstreetmap.org",

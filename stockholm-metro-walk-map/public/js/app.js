@@ -1,5 +1,5 @@
 /*
- * Tube walk map: browser application.
+ * Stockholm metro walk map: browser application.
  * Classic script (no modules) so it also runs from file://.
  * All text from data is inserted with textContent / DOM APIs, never innerHTML.
  */
@@ -39,7 +39,7 @@
     if (!iso) return 'unknown';
     var d = new Date(iso);
     if (isNaN(d)) return 'unknown';
-    return d.toLocaleString('en-GB', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' });
+    return d.toLocaleString('en-GB', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Stockholm' });
   }
   function fmtCoord(lat, lon) {
     return Math.abs(lat).toFixed(5) + '° ' + (lat >= 0 ? 'N' : 'S') + ', ' + Math.abs(lon).toFixed(5) + '° ' + (lon >= 0 ? 'E' : 'W');
@@ -93,7 +93,7 @@
     var lineStations = {};
     C.LINES.forEach(function (l) { lineStations[l.id] = []; });
     stations.forEach(function (s) { s.lines.forEach(function (l) { lineStations[l].push(s); }); });
-    Object.keys(lineStations).forEach(function (l) { lineStations[l].sort(function (a, b) { return a.name.localeCompare(b.name, 'en-GB'); }); });
+    Object.keys(lineStations).forEach(function (l) { lineStations[l].sort(function (a, b) { return a.name.localeCompare(b.name, 'sv'); }); });
 
     var routeFeatures = [];
     (raw.edges || []).forEach(function (e) {
@@ -171,9 +171,9 @@
   var map = new maplibregl.Map({
     container: 'map',
     style: BASEMAPS[effectiveTheme()],
-    bounds: C.LONDON_BOUNDS,
+    bounds: C.CITY_BOUNDS,
     fitBoundsOptions: { padding: 16 },
-    maxBounds: [[-1.4, 51.0], [1.0, 52.0]],
+    maxBounds: [[17.2, 58.9], [18.9, 59.75]],
     minZoom: 8,
     maxZoom: 18,
     attributionControl: false,
@@ -223,10 +223,10 @@
   map.addControl(attribution, 'bottom-right');
 
   function attributionHtml() {
-    var parts = ['Underground & Elizabeth line data: Powered by TfL Open Data', 'Line colours: TfL Colour standard'];
+    var parts = ['Metro data: SL via Trafiklab (GTFS Regional, CC0)', 'Line colours: SL'];
     var providers = ISO.meta && ISO.meta.providers && ISO.meta.providers.length ? ISO.meta.providers : null;
     parts.push('Walking areas: ' + (providers ? providers.map(escapeHtml).join(', ') : 'pedestrian routing') + ', <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>');
-    parts.push('Unofficial; not endorsed by TfL');
+    parts.push('Unofficial; not endorsed by SL');
     return parts;
   }
 
@@ -577,13 +577,13 @@
   function buildingsGeoJSON() {
     return {
       type: 'FeatureCollection',
-      features: BLD.list.filter(function (b) { return b.lon != null; }).map(function (b) {
+      features: BLD.list.filter(function (b) { return b.inAnalysis && b.lon != null; }).map(function (b) {
         return { type: 'Feature', id: b.id, properties: { id: b.id, company: b.company, status: b.status, colour: buildingColour(b) }, geometry: { type: 'Point', coordinates: [b.lon, b.lat] } };
       })
     };
   }
 
-  /** Smallest walking time (s) from any SELECTED station, or null if > 5 min. */
+  /** Smallest walking time (s) from any SELECTED station, or null if beyond the largest contour. */
   function buildingBand(b) {
     var best = null;
     for (var id in b.stations) {
@@ -602,7 +602,7 @@
     setVis('buildings', state.showBuildings);
     var limit = maxContour();
     BLD.list.forEach(function (b) {
-      if (b.lon == null) return;
+      if (b.lon == null || !b.inAnalysis) return;
       var band = buildingBand(b);
       // Dim buildings outside the largest enabled walking time of the selection.
       var outside = ISO.status === 'ready' && limit > 0 && !(band !== null && band <= limit);
@@ -619,7 +619,7 @@
     return r + '%';
   }
 
-  var fmtInt = function (v) { return Math.round(v).toLocaleString('en-GB'); };
+  var fmtInt = function (v) { return Math.round(v).toLocaleString('sv-SE'); };
   function hasSizes() { return BLD.list.some(function (b) { return b.sqm > 0; }); }
 
   function renderBuildingStats() {
@@ -637,16 +637,16 @@
     var bySqm = state.buildingMeasure === 'sqm' && hasSizes();
     // Count mode: every building weighs 1. Floor-area mode: weight = sqm, and
     // buildings with an unknown size are left out of numerator and denominator.
-    var included = function (b) { return b.lon != null && (!bySqm || b.sqm > 0); };
+    var included = function (b) { return b.inAnalysis && (!bySqm || b.sqm > 0); };
     var weight = function (b) { return bySqm ? b.sqm : 1; };
     var sum = function (arr) { return arr.reduce(function (t, b) { return t + weight(b); }, 0); };
-    var amount = function (v) { return bySqm ? fmtInt(v) + ' m²' : fmtInt(v) + (v === 1 ? ' building' : ' buildings'); };
+    var amount = function (v) { return bySqm ? fmtInt(v) + ' m²' : fmtInt(v) + (v === 1 ? ' property' : ' properties'); };
 
     var table = el('table', { className: 'bstats' });
-    table.appendChild(el('caption', { text: (bySqm ? 'Share of each company’s floor area (sqm)' : 'Share of each company’s buildings') + ' within walking distance of the ' + selection.stationIds.length + ' selected stations' }));
+    table.appendChild(el('caption', { text: (bySqm ? 'Share of each company’s floor area (sqm)' : 'Share of each company’s properties') + ' within walking distance of the ' + selection.stationIds.length + ' selected stations' }));
     table.appendChild(el('thead', null, [el('tr', null, [
       el('th', { scope: 'col', text: 'Company' }), el('th', { scope: 'col', text: 'Walk' }),
-      el('th', { scope: 'col', text: 'All', title: bySqm ? 'All floor area (standing + development)' : 'All buildings (standing + development)' }),
+      el('th', { scope: 'col', text: 'All', title: bySqm ? 'All floor area (standing + development)' : 'All properties (standing + development)' }),
       el('th', { scope: 'col', text: 'Standing' }), el('th', { scope: 'col', text: 'Develop.', title: 'Developments' })
     ])]));
     var tbody = el('tbody');
@@ -657,7 +657,7 @@
       var dv = bs.filter(function (b) { return b.status === 'Development'; });
       var totalLabel = bySqm
         ? fmtInt(sum(bs)) + ' m² (' + fmtInt(sum(dv)) + ' m² dev.)'
-        : bs.length + ' buildings (' + dv.length + ' dev.)';
+        : bs.length + ' properties (' + dv.length + ' dev.)';
       secs.forEach(function (sec, i) {
         var within = function (arr) { return sum(arr.filter(function (b) { var x = buildingBand(b); return x !== null && x <= sec; })); };
         var a = within(bs), w = within(st), d = within(dv);
@@ -677,12 +677,14 @@
     table.appendChild(tbody);
     box.appendChild(table);
     var note = bySqm
-      ? 'Floor area counts as within N minutes when its building lies inside the N-minute walking area of any selected station. Percentages are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for square metres.'
-      : 'A building counts as within N minutes when it lies inside the N-minute walking area of any selected station. Percentages are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for counts.';
+      ? 'Floor area counts as within N minutes when its property lies inside the N-minute walking area of any selected station. Shares are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for square metres.'
+      : 'A property counts as within N minutes when it lies inside the N-minute walking area of any selected station. Shares are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for counts.';
     box.appendChild(el('p', { className: 'hint', text: note }));
+    var out = BLD.list.filter(function (b) { return state.companies.has(b.company) && !b.inAnalysis; });
+    if (out.length) box.appendChild(el('p', { className: 'hint', text: 'Not counted (' + out.length + '): ' + out.map(function (b) { return b.name + ' — ' + (b.notInAnalysisReason || 'not located'); }).join('; ') + '.' }));
     if (bySqm) {
-      var unknown = BLD.list.filter(function (b) { return state.companies.has(b.company) && !(b.sqm > 0); });
-      if (unknown.length) box.appendChild(el('p', { className: 'hint', text: 'No floor area in the source for: ' + unknown.map(function (b) { return b.name + ' (' + b.company + ')'; }).join(', ') + '. Excluded from floor-area shares.' }));
+      var unknown = BLD.list.filter(function (b) { return state.companies.has(b.company) && b.inAnalysis && !(b.sqm > 0); });
+      if (unknown.length) box.appendChild(el('p', { className: 'hint', text: 'Floor area unknown (0 or blank in the source) for ' + unknown.length + ' propert' + (unknown.length === 1 ? 'y' : 'ies') + ': ' + unknown.map(function (b) { return b.name; }).join(', ') + '. These are left out of floor-area shares, not counted as zero.' }));
     }
   }
 
@@ -696,12 +698,12 @@
         if (input.checked) state.companies.add(c.name); else state.companies.delete(c.name);
         applyBuildings(); renderBuildingStats(); buildLegend();
       });
-      var n = BLD.list.filter(function (b) { return b.company === c.name; }).length;
+      var n = BLD.list.filter(function (b) { return b.company === c.name && b.inAnalysis; }).length;
       ul.appendChild(el('li', { className: 'line-row' }, [input, el('label', { for: id }, [
         el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.colour } }),
         el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.developmentColour } }),
         el('span', { className: 'line-name', text: c.name }),
-        el('span', { className: 'count', text: n ? n + ' buildings' : '' })
+        el('span', { className: 'count', text: n ? n + ' mapped' : '' })
       ])]));
     });
   }
@@ -714,20 +716,25 @@
     var band = buildingBand(b);
     var near = [];
     Object.keys(b.stations).forEach(function (sid) {
-      if (selectedSet.has(sid) && ISO.stations[sid]) near.push({ name: NET.byId[sid] ? NET.byId[sid].name : sid, sec: b.stations[sid] });
+      if (selectedSet.has(sid) && ISO.stations[sid] && b.stations[sid] <= maxContour()) near.push({ name: NET.byId[sid] ? NET.byId[sid].name : sid, sec: b.stations[sid] });
     });
     near.sort(function (x, y) { return x.sec - y.sec || x.name.localeCompare(y.name); });
-    var walk = band === null ? 'More than 5 minutes from every selected station' : 'Within ' + band / 60 + ' min of a selected station';
+    var maxSel = maxContour();
+    var walk = ISO.status !== 'ready' ? 'Walking areas not loaded'
+      : !maxSel ? 'No walking time selected'
+      : band === null || band > maxSel ? 'Not within ' + maxSel / 60 + ' min of any selected station'
+      : 'Within ' + band / 60 + ' min of a selected station';
+    var precision = { building: 'Building (house number matched)', street: 'Street (house number not matched; approximate)', area: 'Area / district only (approximate)' }[b.precision] || b.precision;
     var dl = el('dl', null, [
       el('dt', { text: 'Company' }), el('dd', { text: b.company }),
-      el('dt', { text: 'Status' }), el('dd', { text: b.status === 'Development' ? 'Development (pipeline)' : 'Standing asset' }),
+      el('dt', { text: 'Status' }), el('dd', { text: (b.status === 'Development' ? 'Development' : 'Standing asset') + ' (source: ' + (b.classification || '—') + ')' }),
       el('dt', { text: 'Type' }), el('dd', { text: b.propertyType || '—' }),
-      el('dt', { text: 'Floor area' }), el('dd', { text: b.sqm > 0 ? fmtInt(b.sqm) + ' m²' : 'Not given in source' }),
-      el('dt', { text: 'Address' }), el('dd', { text: b.street || '—' }),
+      el('dt', { text: 'Address' }), el('dd', { text: (b.street || 'No address in source') + (b.area ? ', ' + b.area : '') }),
+      el('dt', { text: 'Floor area' }), el('dd', { text: b.sqm > 0 ? fmtInt(b.sqm) + ' m² lettable' : 'Unknown (0 or blank in source)' }),
       el('dt', { text: 'Walk' }), el('dd', { text: walk }),
-      el('dt', { text: 'Stations' }), el('dd', { text: near.length ? near.map(function (x) { return x.name + ' (' + x.sec / 60 + ' min)'; }).join(', ') : '—' }),
-      el('dt', { text: 'Nearest' }), el('dd', { text: b.nearest ? b.nearest.name + ', ' + b.nearest.distanceM + ' m straight line' : '—' }),
-      el('dt', { text: 'Located' }), el('dd', { text: { building: 'Building-level match', street: 'Street-level match (approximate)', area: 'Area-level match (approximate)' }[b.precision] || b.precision })
+      el('dt', { text: 'In reach' }), el('dd', { text: near.length ? near.map(function (x) { return x.name + ' (' + x.sec / 60 + ' min)'; }).join(', ') : '—' }),
+      el('dt', { text: 'Nearest' }), el('dd', { text: b.nearest ? b.nearest.name + ', ' + fmtInt(b.nearest.distanceM) + ' m straight line' : '—' }),
+      el('dt', { text: 'Geocode' }), el('dd', { text: precision })
     ]);
     var body = el('div', { className: 'popup' }, [
       el('h3', null, [el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': buildingColour(b) } }), b.name]),
@@ -747,11 +754,11 @@
       BLD.list.forEach(function (b) { b.stations = b.stations || {}; BLD.byId[b.id] = b; });
       BLD.meta = d.meta;
       BLD.status = 'ready';
-      var unlocated = BLD.list.filter(function (b) { return b.lon == null; }).length;
-      if (unlocated) Messages.warning(unlocated + ' building(s) could not be geocoded and are not shown.', 'bld-unlocated');
+      var notIn = BLD.list.filter(function (b) { return !b.inAnalysis; }).length;
+      if (notIn) Messages.info(notIn + ' propert' + (notIn === 1 ? 'y is' : 'ies are') + ' not mapped or counted (outside the network area or not located). See the property statistics.', 'bld-unlocated');
     }).catch(function (err) {
       BLD.status = 'error';
-      Messages.warning('Office building data could not be loaded (' + err.message + '). Run "npm run buildings".', 'bld-load');
+      Messages.warning('Property data could not be loaded (' + err.message + '). Run "npm run buildings". Lines and stations are unaffected.', 'bld-load');
     }).then(function () {
       buildCompanyList();
       var src = map.getSource && map.getSource('buildings');
@@ -794,6 +801,7 @@
           el('label', { for: inputId }, [
             el('span', { className: 'swatch', 'aria-hidden': 'true', style: { '--c': line.colour } }),
             el('span', { className: 'line-name', text: line.name }),
+            el('span', { className: 'routes', text: line.routes.join(' · ') }),
             el('span', { className: 'count', text: stations.length + ' stations' })
           ]),
           expand
@@ -871,7 +879,7 @@
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol interchange', 'aria-hidden': 'true' }), 'Selected interchange']));
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol unselected', 'aria-hidden': 'true' }), 'Station not selected']));
     if (BLD.status === 'ready') {
-      ul.appendChild(el('li', null, [el('strong', { text: 'Office buildings (dark = standing, light = development)' })]));
+      ul.appendChild(el('li', null, [el('strong', { text: 'Properties (dark = standing, light = development)' })]));
       C.COMPANIES.forEach(function (c) {
         if (!state.companies.has(c.name)) return;
         ul.appendChild(el('li', null, [
@@ -958,7 +966,7 @@
     closePopups();
     setHighlight(null);
     onStateChange();
-    map.fitBounds(C.LONDON_BOUNDS, { padding: fitPadding() });
+    map.fitBounds(C.CITY_BOUNDS, { padding: fitPadding() });
   }
 
   function fitPadding() {
@@ -969,7 +977,7 @@
   }
   function fitToSelection() {
     var pts = selection.stationIds.map(function (id) { var s = NET.byId[id]; return [s.lon, s.lat]; });
-    if (!pts.length) { map.fitBounds(C.LONDON_BOUNDS, { padding: fitPadding() }); Messages.info('Nothing is selected, so the map shows all of London.', 'fit-empty'); return; }
+    if (!pts.length) { map.fitBounds(C.CITY_BOUNDS, { padding: fitPadding() }); Messages.info('Nothing is selected, so the map shows the whole network.', 'fit-empty'); return; }
     var b = G.bbox(pts);
     var pad = state.contours.size ? 0.0065 : 0.002; // keep 5-minute areas in view
     map.fitBounds([[b[0] - pad, b[1] - pad * 0.62], [b[2] + pad, b[3] + pad * 0.62]], { padding: fitPadding(), maxZoom: 16, duration: 0 });
@@ -1017,17 +1025,13 @@
       el('dt', { text: 'Coordinates' }), el('dd', { text: fmtCoord(s.lat, s.lon) }),
       el('dt', { text: 'Walking area' }), el('dd', { text: walk }),
       el('dt', { text: 'In coverage' }), el('dd', { text: selected ? (iso ? 'Yes' : 'Selected, but no walking area') : 'No (not selected)' }),
-      el('dt', { text: 'Station ID' }), el('dd', { text: s.id + (s.objectId != null ? ' · CSV OBJECTID ' + s.objectId : '') })
+      el('dt', { text: 'Routes' }), el('dd', { text: (s.routes || []).map(function (r) { return 'linje ' + r; }).join(', ') || '—' }),
+      el('dt', { text: 'Station ID' }), el('dd', { text: s.id + ' · ' + (s.platformCount || 0) + ' platform record(s)' })
     ]);
     var notes = [];
-    var missing = s.lines.filter(function (l) { return s.csvLines.indexOf(l) === -1; });
-    var extra = s.csvLines.filter(function (l) { return s.lines.indexOf(l) === -1; });
-    if (missing.length || extra.length) {
-      notes.push('Source CSV lists ' + (s.csvLines.map(function (l) { return C.LINE_BY_ID[l].name; }).join(', ') || 'no lines') + '; TfL topology is used.');
-    }
-    if (s.duplicateRecords && s.duplicateRecords.length) notes.push('Duplicate CSV record(s) merged: OBJECTID ' + s.duplicateRecords.map(function (d) { return d.objectId; }).join(', ') + '.');
+    if (s.parentStopIds && s.parentStopIds.length > 1) notes.push('One physical station made of ' + s.parentStopIds.length + ' operator station records (' + s.parentStopIds.join(', ') + ').');
+    notes.push('Walking areas start at the operator\'s station coordinate (' + (s.coordinateSource || 'centroid') + '), not at an entrance.');
     if (s.note) notes.push(s.note);
-    if (s.unmatched) notes.push('Not found in TfL topology: drawn as a station but not connected to any line.');
 
     var toggle = el('button', { className: 'btn', type: 'button', text: selected ? 'Remove from selection' : 'Add to selection' });
     toggle.addEventListener('click', function () { toggleStation(id); openStationPopup(id); });

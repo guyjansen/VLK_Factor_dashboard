@@ -1,271 +1,152 @@
-// Data and network correctness tests. Run with: npm test
+// Data validation: colours, station identity, topology against reality.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { paths, readJson, MetroConfig, MetroGeometry } from '../scripts/lib/common.mjs';
-import { parseCsv, parseStationsCsv, parseStationTable, parseLines } from '../scripts/lib/csv.mjs';
-import { readFirstSheet } from '../scripts/lib/xlsx.mjs';
-import { osgbToWgs84 } from '../scripts/lib/osgb.mjs';
-import { nameKey, baseNameKey } from '../scripts/lib/names.mjs';
+import path from 'node:path';
+import { ROOT, paths, readJson, MetroConfig as C } from '../scripts/lib/common.mjs';
 
-const stations = readJson(paths.stations).stations;
-const edgesDoc = readJson(paths.edges);
-const join = readJson(paths.joinReport);
-const byName = (n) => stations.find((s) => s.name === n);
-const lineAdj = (lineId) => {
-  const adj = new Map();
-  for (const e of edgesDoc.edges) {
-    if (!e.lines.some((l) => l.line === lineId)) continue;
-    for (const [x, y] of [[e.a, e.b], [e.b, e.a]]) {
-      if (!adj.has(x)) adj.set(x, new Set());
-      adj.get(x).add(y);
+const haveNet = fs.existsSync(paths.edges);
+const skip = !haveNet && 'run npm run fetch-topology && npm run data';
+const stations = haveNet ? readJson(paths.stations).stations : [];
+const edgesDoc = haveNet ? readJson(paths.edges) : { edges: [], lines: {} };
+const join = haveNet ? readJson(paths.joinReport) : null;
+const byName = (n) => stations.filter((s) => s.name === n);
+const one = (n) => { const m = byName(n); assert.equal(m.length, 1, `exactly one station called ${n} (found ${m.length})`); return m[0]; };
+
+// ------------------------------------------------------------------ colours
+test('line colours equal SL\'s official screen colours', () => {
+  const official = readJson(paths.colourManifest).extracted;
+  const css = fs.readFileSync(path.join(path.dirname(paths.colourManifest), 'sl-se-stylesheet.css'), 'utf8');
+  for (const l of C.LINES) {
+    const hex = official[l.cssToken];
+    assert.ok(css.includes(`${l.cssToken}:${hex}`), `${l.cssToken} in archived stylesheet`);
+    assert.equal(l.colour, hex.toUpperCase(), l.id);
+    assert.deepEqual([...l.rgb], [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)), l.id);
+  }
+  assert.deepEqual(C.LINES.map((l) => l.rgb.join(',')), ['0,125,184', '215,29,36', '20,133,65']);
+});
+
+test('colours are defined only in the shared config', () => {
+  const colours = [...C.LINES.map((l) => l.colour), ...C.CONTOURS.flatMap((c) => [c.fill, c.outline]), ...C.COMPANIES.flatMap((c) => [c.colour, c.developmentColour])];
+  const files = [];
+  (function walk(d) {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) { if (!['node_modules', 'vendor', 'data', 'raw', 'dist', 'reports', '.git'].includes(e.name)) walk(p); }
+      else if (/\.(m?js|css|html|py)$/.test(e.name) && !p.endsWith(path.join('shared', 'config.js'))) files.push(p);
     }
+  })(ROOT);
+  for (const f of files) {
+    const text = fs.readFileSync(f, 'utf8').toUpperCase();
+    for (const c of colours) assert.ok(!text.includes(c.toUpperCase()), `${path.relative(ROOT, f)} hard-codes ${c}`);
   }
-  return adj;
+});
+
+test('walking-area and company colours do not clash with line colours', () => {
+  const dist = (a, b) => Math.hypot(...[1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16) - parseInt(b.slice(i, i + 2), 16)));
+  for (const l of C.LINES) {
+    for (const c of C.CONTOURS) assert.ok(dist(l.colour, c.fill) > 120, `${c.label} vs ${l.name}`);
+    for (const c of C.COMPANIES) assert.ok(dist(l.colour, c.colour) > 120, `${c.name} vs ${l.name}`);
+  }
+  assert.deepEqual(C.CONTOUR_SECONDS, [300, 600]);
+  assert.equal(C.WALKING_SPEED_MPS, 1.4);
+});
+
+// --------------------------------------------------------------- sources
+test('topology comes from the stored GTFS download with a manifest', { skip }, () => {
+  const m = readJson(paths.topologyManifest);
+  assert.match(m.url, /opendata\.samtrafiken\.se\/gtfs\/sl\/sl\.zip\?key=REDACTED$/);
+  assert.ok(m.retrievedAt && m.archive.sha256.length === 64);
+  assert.match(m.licence.name, /CC0/);
+  const routes = m.metroSubset.routes.map((r) => r.shortName).sort((a, b) => a - b);
+  for (const r of Object.keys(C.LINE_ID_BY_ROUTE)) assert.ok(routes.includes(r), `route ${r} in feed`);
+  // The key never reaches the repository.
+  for (const f of fs.readdirSync(paths.gtfsMetro)) assert.ok(!/key=(?!REDACTED)\w/.test(fs.readFileSync(path.join(paths.gtfsMetro, f), 'utf8')), f);
+});
+
+test('every edge is a consecutive pair in an operator stop pattern (no inferred connections)', { skip }, () => {
+  const { patterns } = readJson(path.join(paths.gtfsMetro, 'patterns.json'));
+  const stopTo = new Map();
+  stations.forEach((s) => s.platformStopIds.forEach((p) => stopTo.set(p, s.id)));
+  const pairs = new Set();
+  for (const p of patterns) for (let i = 0; i + 1 < p.stopIds.length; i++) {
+    const a = stopTo.get(p.stopIds[i]), b = stopTo.get(p.stopIds[i + 1]);
+    pairs.add(`${a}|${b}|${C.LINE_ID_BY_ROUTE[p.route]}`); pairs.add(`${b}|${a}|${C.LINE_ID_BY_ROUTE[p.route]}`);
+  }
+  const removed = readJson(paths.overrides).addEdges || [];
+  for (const e of edgesDoc.edges) for (const l of e.lines) {
+    const added = removed.some((o) => o.line === l.line && [o.a, o.b].sort().join() === [e.aName, e.bName].sort().join());
+    assert.ok(added || pairs.has(`${e.a}|${e.b}|${l.line}`), `${e.aName}–${e.bName} (${l.line})`);
+  }
+});
+
+// --------------------------------------------------------------- stations
+test('every operator record joins a station; no merges of conflicting names', { skip }, () => {
+  assert.deepEqual(join.unmappedPatternStops, []);
+  assert.deepEqual(join.nameConflicts, []);
+  assert.deepEqual(join.unusedAliases, []);
+  const mapped = new Set(stations.flatMap((s) => s.platformStopIds));
+  const clean = readJson(paths.stationsClean);
+  for (const p of clean.platforms) assert.ok(mapped.has(p.stopId), `platform ${p.stopId} ${p.name}`);
+  for (const l of join.links) assert.ok(l.distanceM <= join.maxJoinDistanceM, `${l.aName}–${l.bName}`);
+  assert.equal(new Set(stations.map((s) => s.id)).size, stations.length);
+});
+
+test('physical stations: 100 metro stations, interchanges merged once', { skip }, () => {
+  assert.equal(stations.length, 100);
+  assert.deepEqual(one('T-Centralen').lines, ['blue', 'red', 'green']);
+  assert.deepEqual(one('Fridhemsplan').lines, ['blue', 'green']);
+  assert.deepEqual(one('Slussen').lines, ['red', 'green']);
+  assert.deepEqual(one('Gamla stan').lines, ['red', 'green']);
+  assert.deepEqual(stations.filter((s) => s.interchange).map((s) => s.name).sort(), ['Fridhemsplan', 'Gamla stan', 'Slussen', 'T-Centralen']);
+});
+
+test('known separate complexes with similar names stay separate', { skip }, () => {
+  const pairs = [['Rådhuset', 'Rådmansgatan'], ['Hallonbergen', 'Hallunda'], ['Alby', 'Alvik'], ['Solna centrum', 'Solna strand'],
+    ['Stadshagen', 'Stadion'], ['Skarpnäck', 'Skärmarbrink'], ['Hagsätra', 'Hägerstensåsen'], ['Mälarhöjden', 'Mariatorget'],
+    ['Tekniska högskolan', 'Telefonplan'], ['Västra skogen', 'Västertorp'], ['Kista', 'Kungsträdgården']];
+  for (const [a, b] of pairs) assert.notEqual(one(a).id, one(b).id, `${a} / ${b}`);
+});
+
+// ------------------------------------------------------------------ network
+const expectLine = {
+  blue: { termini: ['Akalla', 'Hjulsta', 'Kungsträdgården'], junctions: ['Västra skogen'] },
+  red: { termini: ['Fruängen', 'Mörby centrum', 'Norsborg', 'Ropsten'], junctions: ['Liljeholmen', 'Östermalmstorg'] },
+  green: { termini: ['Farsta strand', 'Hagsätra', 'Hässelby strand', 'Skarpnäck'], junctions: ['Gullmarsplan', 'Skärmarbrink'] }
 };
-const nameOf = (id) => stations.find((s) => s.id === id).name;
-const hasEdge = (line, a, b) => edgesDoc.edges.some((e) => e.lines.some((l) => l.line === line) &&
-  ((nameOf(e.a) === a && nameOf(e.b) === b) || (nameOf(e.a) === b && nameOf(e.b) === a)));
+// Route termini as given in the brief: Hjulsta / Akalla ↔ Kungsträdgården; Norsborg ↔ Ropsten,
+// Fruängen ↔ Mörby centrum; Åkeshov ↔ Skarpnäck, Alvik ↔ Farsta strand, Hässelby strand ↔ Hagsätra.
+const expectRoute = {
+  10: ['Hjulsta', 'Kungsträdgården'], 11: ['Akalla', 'Kungsträdgården'],
+  13: ['Norsborg', 'Ropsten'], 14: ['Fruängen', 'Mörby centrum'],
+  17: ['Skarpnäck', 'Åkeshov'], 18: ['Alvik', 'Farsta strand'], 19: ['Hagsätra', 'Hässelby strand']
+};
+const sv = (a) => a.slice().sort((x, y) => x.localeCompare(y, 'sv'));
 
-// ------------------------------------------------------------- colours
-test('line colours match TfL Colour standard Issue 11 RGB values (sections 5 and 3)', () => {
-  const expected = {
-    bakerloo: [178, 99, 0], central: [220, 36, 31], circle: [255, 200, 10], district: [0, 125, 50],
-    'hammersmith-city': [245, 137, 166], jubilee: [131, 141, 147], metropolitan: [155, 0, 88],
-    northern: [0, 0, 0], piccadilly: [0, 25, 168], victoria: [3, 155, 229], 'waterloo-city': [118, 208, 189],
-    elizabeth: [96, 57, 158] // section 3 "Mode colours"
-  };
-  assert.equal(MetroConfig.LINES.length, 12);
-  assert.equal(MetroConfig.LINES.filter((l) => l.mode === 'tube').length, 11);
-  assert.equal(MetroConfig.LINE_BY_ID.elizabeth.mode, 'elizabeth-line');
-  for (const l of MetroConfig.LINES) {
-    assert.deepEqual([...l.rgb], expected[l.id], l.name);
-    assert.equal(l.colour, '#' + expected[l.id].map((v) => v.toString(16).padStart(2, '0')).join('').toUpperCase());
-  }
-  assert.equal(MetroConfig.LINE_BY_ID.circle.colour, '#FFC80A');
-  assert.equal(MetroConfig.LINE_BY_ID['hammersmith-city'].colour, '#F589A6');
-});
-
-test('colours are defined only in the central config (no hard-coded line hex in app code)', () => {
-  const app = fs.readFileSync(new URL('../public/js/app.js', import.meta.url), 'utf8');
-  for (const l of MetroConfig.LINES) {
-    if (l.id === 'northern') continue; // #000000 is too generic to check
-    assert.ok(!app.toUpperCase().includes(l.colour), `${l.name} colour hard-coded in app.js`);
-  }
-});
-
-// ------------------------------------------------------------- CSV parsing
-test('CSV parser handles quotes, embedded commas, escaped quotes, CRLF and BOM', () => {
-  const rows = parseCsv('﻿a,b,c\r\n"x, y","He said ""hi""",3\r\nplain,,\n');
-  assert.deepEqual(rows.map((r) => r.cells), [['a', 'b', 'c'], ['x, y', 'He said "hi"', '3'], ['plain', '', '']]);
-  assert.throws(() => parseCsv('a,"unterminated\n'), /Unterminated/);
-});
-
-test('LINES field splits into canonical ids and keeps "Hammersmith & City" whole', () => {
-  assert.deepEqual(parseLines('District, Hammersmith & City, Central').ids, ['district', 'hammersmith-city', 'central']);
-  assert.deepEqual(parseLines('  Waterloo & City ,Northern').ids, ['waterloo-city', 'northern']);
-  assert.deepEqual(parseLines('Overground').unknown, ['Overground']);
-  assert.deepEqual(parseLines('Central, Jubilee, Elizabeth line').ids, ['central', 'jubilee', 'elizabeth']);
-});
-
-test('station CSV: malformed rows are reported, valid names keep punctuation', () => {
-  const csv = 'NAME,Longitude,Latitude,LINES,OBJECTID\n' +
-    '"St. John\'s Wood",-0.174,51.535,Jubilee,1\n' +
-    'Bad Row,abc,51.5,Central,2\n' +
-    'Harrow-on-the-Hill,-0.336,51.579,"Metropolitan",x\n';
-  const { records, issues } = parseStationsCsv(csv);
-  assert.equal(records[0].name, "St. John's Wood");
-  assert.ok(issues.some((i) => i.type === 'malformed-row' && i.objectId === '2'));
-  assert.ok(issues.some((i) => i.type === 'malformed-row' && /OBJECTID/.test(i.problems.join())));
-  assert.throws(() => parseStationsCsv('NAME,Longitude\nx,1\n'), /missing required column/);
-});
-
-test('original Underground CSV still parses without issues', () => {
-  const { records, issues } = parseStationsCsv(fs.readFileSync(paths.csv, 'utf8'));
-  assert.equal(records.length, 273);
-  assert.equal(issues.length, 0);
-});
-
-test('station workbook (xlsx, British National Grid) parses and converts to WGS84', () => {
-  const rows = readFirstSheet(paths.xlsx);
-  assert.deepEqual(rows[0].slice(0, 5), ['X', 'Y', 'OBJECTID', 'NAME', 'LINES']);
-  const { records, issues, coordinateSystem } = parseStationTable(rows[0], rows.slice(1).map((cells, i) => ({ line: i + 2, cells })), { toWgs84: osgbToWgs84 });
-  assert.match(coordinateSystem, /27700/);
-  assert.equal(records.length, 302);
-  assert.equal(issues.length, 0);
-  assert.equal(records.filter((r) => r.lines.includes('elizabeth')).length, 42); // incl. both Paddington records
-  // The converted coordinates reproduce the original WGS84 CSV for all 273 shared records.
-  const old = new Map(parseStationsCsv(fs.readFileSync(paths.csv, 'utf8')).records.map((r) => [r.objectId, r]));
-  let compared = 0;
-  for (const r of records) {
-    const o = old.get(r.objectId);
-    if (!o) continue;
-    compared++;
-    assert.ok(MetroGeometry.haversineM([r.lon, r.lat], [o.lon, o.lat]) < 0.5, r.name);
-  }
-  assert.equal(compared, 273);
-});
-
-test('OSGB conversion is plausible for a known point (Reading station)', () => {
-  const [lon, lat] = osgbToWgs84(471454.5635, 173862.6427);
-  assert.ok(MetroGeometry.haversineM([lon, lat], [-0.9719, 51.4588]) < 120, `${lon},${lat}`);
-});
-
-test('every station record and every TfL stop joins; no conflicting merges', () => {
-  assert.equal(join.csvRecordCount, 302);
-  assert.equal(join.unmatchedCsv.length, 0, JSON.stringify(join.unmatchedCsv));
-  assert.equal(join.topologyStopsWithoutCsv.length, 0, JSON.stringify(join.topologyStopsWithoutCsv));
-  assert.equal(join.groupNameConflicts.length, 0);
-});
-
-test('name keys normalise punctuation but keep qualifiers', () => {
-  assert.equal(nameKey("St. Paul's Underground Station"), nameKey("St. Paul's"));
-  assert.equal(nameKey('Paddington (H&C Line)-Underground'), 'paddington (h and c line)');
-  assert.notEqual(nameKey('Edgware Road (Circle Line)'), nameKey('Edgware Road (Bakerloo)'));
-  assert.equal(baseNameKey('Edgware Road (Bakerloo)'), 'edgware road');
-});
-
-// ------------------------------------------------------- special stations
-test('duplicate Paddington records collapse to one physical station; H&C Paddington stays separate', () => {
-  const pads = stations.filter((s) => /^Paddington/.test(s.name));
-  assert.equal(pads.length, 2);
-  const main = byName('Paddington');
-  assert.equal(main.duplicateRecords.length, 1);
-  assert.deepEqual(main.lines, ['bakerloo', 'circle', 'district', 'elizabeth']);
-  // Underground, Elizabeth line core and National Rail terminus stops are one station.
-  assert.deepEqual(main.stopIds, ['910GPADTLL', '910GPADTON', '940GZZLUPAC']);
-  assert.deepEqual(byName('Paddington (H&C Line)').lines, ['circle', 'hammersmith-city']);
-});
-
-test('Edgware Road, Hammersmith and Shepherd\'s Bush stations are not merged', () => {
-  assert.notEqual(byName('Edgware Road (Circle Line)').id, byName('Edgware Road (Bakerloo)').id);
-  assert.notEqual(byName('Hammersmith (Dist&Picc Line)').id, byName('Hammersmith (H&C Line)').id);
-  assert.notEqual(byName("Shepherd's Bush").id, byName("Shepherd's Bush Market").id);
-  assert.equal(byName('Heathrow Terminals 2 & 3').id, '940GZZLUHRC');
-  assert.equal(stations.length, 301);
-  assert.equal(stations.filter((s) => s.modes.includes('tube')).length, 272);
-  assert.equal(stations.filter((s) => s.modes.includes('elizabeth-line')).length, 41);
-});
-
-test('interchange stations list every line they serve', () => {
-  assert.deepEqual(byName("King's Cross St. Pancras").lines, ['circle', 'hammersmith-city', 'metropolitan', 'northern', 'piccadilly', 'victoria']);
-  assert.deepEqual(byName('Bank').lines, ['central', 'northern', 'waterloo-city']);
-  assert.deepEqual(byName('Baker Street').lines, ['bakerloo', 'circle', 'hammersmith-city', 'jubilee', 'metropolitan']);
-  assert.ok(byName('Edgware Road (Circle Line)').lines.includes('district'));
-  assert.deepEqual(byName('Liverpool Street').lines, ['central', 'circle', 'hammersmith-city', 'metropolitan', 'elizabeth']);
-  assert.deepEqual(byName('Whitechapel').lines, ['district', 'hammersmith-city', 'elizabeth']);
-  assert.deepEqual(byName('Stratford').lines, ['central', 'jubilee', 'elizabeth']);
-  assert.deepEqual(byName('Reading').lines, ['elizabeth']);
-});
-
-// ------------------------------------------------------------ topology
-test('every line is a single connected network', () => {
-  for (const l of MetroConfig.LINES) {
-    assert.equal(edgesDoc.lines[l.id].components.length, 1, `${l.name} is disconnected`);
-  }
-});
-
-test('termini match the real network (branches represented)', () => {
-  const expected = {
-    bakerloo: ['Elephant & Castle', 'Harrow & Wealdstone'],
-    central: ['Ealing Broadway', 'Epping', 'West Ruislip'], // Hainault loop closes via Woodford
-    circle: ['Hammersmith (H&C Line)'],                      // spiral: loop + Hammersmith tail
-    district: ['Ealing Broadway', 'Edgware Road (Circle Line)', 'Kensington (Olympia)', 'Richmond', 'Upminster', 'Wimbledon'],
-    'hammersmith-city': ['Barking', 'Hammersmith (H&C Line)'],
-    jubilee: ['Stanmore', 'Stratford'],
-    metropolitan: ['Aldgate', 'Amersham', 'Chesham', 'Uxbridge', 'Watford'],
-    northern: ['Battersea Power Station', 'Edgware', 'High Barnet', 'Mill Hill East', 'Morden'],
-    piccadilly: ['Cockfosters', 'Heathrow Terminal 5', 'Uxbridge'], // T4 is on a loop
-    victoria: ['Brixton', 'Walthamstow Central'],
-    'waterloo-city': ['Bank', 'Waterloo'],
-    elizabeth: ['Abbey Wood', 'Heathrow Terminal 4', 'Heathrow Terminal 5', 'Reading', 'Shenfield']
-  };
-  for (const [id, termini] of Object.entries(expected)) {
-    assert.deepEqual(edgesDoc.lines[id].termini.map((t) => t.name).sort(), termini.slice().sort(), id);
-  }
-});
-
-test('known branch junctions and adjacencies are present', () => {
-  // Northern: both central branches and the Battersea extension.
-  assert.ok(hasEdge('northern', 'Euston', 'Camden Town'));           // Bank branch
-  assert.ok(hasEdge('northern', 'Euston', 'Mornington Crescent'));   // Charing Cross branch
-  assert.ok(hasEdge('northern', 'Kennington', 'Nine Elms'));
-  assert.ok(hasEdge('northern', 'Finchley Central', 'Mill Hill East'));
-  // Metropolitan: fast section and branches; no stop at Willesden Green.
-  assert.ok(hasEdge('metropolitan', 'Finchley Road', 'Wembley Park'));
-  assert.ok(!byName('Willesden Green').lines.includes('metropolitan'));
-  assert.ok(hasEdge('metropolitan', 'Chalfont & Latimer', 'Chesham'));
-  assert.ok(hasEdge('metropolitan', 'Moor Park', 'Croxley'));
-  // District branches at Earl's Court and Turnham Green.
-  assert.equal(lineAdj('district').get(byName("Earl's Court").id).size, 5);
-  assert.ok(hasEdge('district', 'Turnham Green', 'Gunnersbury'));
-  // Central Hainault loop.
-  assert.ok(hasEdge('central', 'Woodford', 'Roding Valley'));
-  assert.ok(hasEdge('central', 'Leytonstone', 'Wanstead'));
-  // Piccadilly Heathrow loop.
-  assert.ok(hasEdge('piccadilly', 'Hatton Cross', 'Heathrow Terminal 4'));
-  assert.ok(hasEdge('piccadilly', 'Heathrow Terminal 4', 'Heathrow Terminals 2 & 3'));
-  assert.ok(hasEdge('piccadilly', 'Heathrow Terminals 2 & 3', 'Heathrow Terminal 5'));
-  // Circle and H&C share the Paddington (H&C Line) - Hammersmith section.
-  const shared = edgesDoc.edges.find((e) => [nameOf(e.a), nameOf(e.b)].sort().join('|') === ['Goldhawk Road', 'Hammersmith (H&C Line)'].sort().join('|'));
-  assert.deepEqual(shared.lines.map((l) => l.line), ['circle', 'hammersmith-city']);
-  // Elizabeth line: central tunnel, both eastern branches, both western branches.
-  assert.ok(hasEdge('elizabeth', 'Paddington', 'Bond Street'));
-  assert.ok(hasEdge('elizabeth', 'Whitechapel', 'Canary Wharf'));
-  assert.ok(hasEdge('elizabeth', 'Whitechapel', 'Stratford'));
-  // Eastern branches split at Whitechapel only (no direct Liverpool Street - Stratford link).
-  assert.ok(!hasEdge('elizabeth', 'Liverpool Street', 'Stratford'));
-  assert.ok(!hasEdge('elizabeth', 'Liverpool Street', 'Canary Wharf'));
-  assert.equal(lineAdj('elizabeth').get(byName('Whitechapel').id).size, 3); // Liverpool Street, Stratford, Canary Wharf
-  assert.equal(lineAdj('elizabeth').get(byName('Liverpool Street').id).size, 2);
-  assert.ok(hasEdge('elizabeth', 'Hayes & Harlington', 'Heathrow Terminals 2 & 3'));
-  assert.ok(hasEdge('elizabeth', 'Hayes & Harlington', 'West Drayton'));
-  assert.ok(hasEdge('elizabeth', 'Acton Main Line', 'Paddington'));
-  // Heathrow tracks shared with the Piccadilly line are drawn side by side.
-  const t5 = edgesDoc.edges.find((e) => [nameOf(e.a), nameOf(e.b)].sort().join('|') === 'Heathrow Terminal 5|Heathrow Terminals 2 & 3');
-  assert.deepEqual(t5.lines.map((l) => l.line), ['piccadilly', 'elizabeth']);
-});
-
-test('no edge cuts across London (no implausibly long links from wrong ordering)', () => {
-  const isTube = (e) => e.lines.some((l) => MetroConfig.LINE_BY_ID[l.line].mode === 'tube');
-  const longestTube = Math.max(...edgesDoc.edges.filter(isTube).map((e) => e.lengthM));
-  assert.ok(longestTube < 8000, `longest Underground edge ${longestTube} m`);
-  const longestEliz = Math.max(...edgesDoc.edges.filter((e) => !isTube(e)).map((e) => e.lengthM));
-  assert.ok(longestEliz < 12000, `longest Elizabeth line edge ${longestEliz} m`); // Maidenhead–Twyford ~10.9 km
-  // Each edge joins stations that are adjacent in TfL route sequences, so a
-  // line's edge count must be close to its station count (tree + a few loops).
-  for (const l of MetroConfig.LINES) {
+for (const l of C.LINES) {
+  test(`${l.name}: one connected tree with the real termini and branch junctions`, { skip }, () => {
     const s = edgesDoc.lines[l.id];
-    assert.ok(s.edgeCount >= s.stationCount - 1 && s.edgeCount <= s.stationCount + 2, `${l.name}: ${s.edgeCount} edges for ${s.stationCount} stations`);
-  }
+    assert.equal(s.components.length, 1, 'connected');
+    assert.equal(s.cycles, 0, 'no cycles');
+    assert.deepEqual(sv(s.termini), sv(expectLine[l.id].termini));
+    assert.deepEqual(sv(s.junctions.map((j) => j.name)), sv(expectLine[l.id].junctions));
+    for (const r of l.routes) {
+      const rs = s.routes[r];
+      assert.equal(rs.components.length, 1, `route ${r} connected`);
+      assert.deepEqual(sv(rs.termini), sv(expectRoute[r]), `route ${r} termini`);
+    }
+  });
+}
+
+test('red and green share track Slussen–Gamla stan–T-Centralen (drawn side by side)', { skip }, () => {
+  const shared = edgesDoc.edges.filter((e) => e.lines.length > 1).map((e) => [e.aName, e.bName].sort().join('–')).sort();
+  assert.deepEqual(shared, ['Gamla stan–Slussen', 'Gamla stan–T-Centralen']);
+  for (const e of edgesDoc.edges.filter((x) => x.lines.length > 1)) assert.deepEqual(e.lines.map((x) => x.line), ['red', 'green']);
 });
 
-test('edge endpoints exist and every station on a line has a track connection', () => {
-  const ids = new Set(stations.map((s) => s.id));
-  for (const e of edgesDoc.edges) { assert.ok(ids.has(e.a)); assert.ok(ids.has(e.b)); }
-  for (const s of stations) {
-    for (const l of s.lines) assert.ok(lineAdj(l).has(s.id), `${s.name} not connected on ${l}`);
-  }
-});
-
-test('validation report exists and has no errors', () => {
-  const report = readJson(paths.validation);
-  assert.deepEqual(report.errors, []);
-  for (const key of ['unmatchedStations', 'duplicates', 'lineNameMismatches', 'network', 'isochrones']) assert.ok(key in report, key);
-  assert.ok(Array.isArray(report.network.disconnectedSegments));
-});
-
-test('station coordinates are WGS84 within the London region (Reading to Shenfield)', () => {
-  for (const s of stations) {
-    assert.ok(s.lon > -1.0 && s.lon < 0.35 && s.lat > 51.38 && s.lat < 51.72, s.name);
-  }
-  // CSV coordinate stays within the join tolerance of the TfL coordinate.
-  for (const s of stations) assert.ok(MetroGeometry.haversineM([s.lon, s.lat], [s.tflLon, s.tflLat]) <= 500, s.name);
-});
-
-test('browser scripts are syntactically valid', async () => {
-  const vm = await import('node:vm');
-  for (const f of ['public/js/app.js', 'public/js/union-worker.js', 'public/js/shared/config.js', 'public/js/shared/geometry.js', 'public/js/shared/selection.js']) {
-    assert.doesNotThrow(() => new vm.Script(fs.readFileSync(new URL(`../${f}`, import.meta.url), 'utf8'), { filename: f }), f);
-  }
+test('no implausibly long edges; validation report has no errors', { skip }, () => {
+  for (const e of edgesDoc.edges) assert.ok(e.lengthM < 3500, `${e.aName}–${e.bName} ${e.lengthM} m`);
+  const v = readJson(paths.validation);
+  assert.deepEqual(v.errors, []);
+  assert.deepEqual(v.unusedOverrides, []);
 });

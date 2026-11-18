@@ -1,100 +1,143 @@
-// Office-building pipeline tests: parsing, geocoding quality gates, area assignment.
+// Portfolio tests: parsing, address handling, geocode sanity, size join,
+// fresh point-in-polygon checks, report verification and browser-script syntax.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { paths, readJson, MetroConfig, MetroGeometry as G } from '../scripts/lib/common.mjs';
+import path from 'node:path';
+import vm from 'node:vm';
+import { ROOT, paths, readJson, MetroConfig as C, MetroGeometry as G } from '../scripts/lib/common.mjs';
+import { expandStreet, parseAddress } from '../scripts/lib/address.mjs';
 
 const clean = readJson(paths.buildingsClean);
-const out = readJson(paths.buildings).buildings;
-const stations = new Map(readJson(paths.stations).stations.map((s) => [s.id, s]));
+const byId = Object.fromEntries(clean.buildings.map((b) => [b.id, b]));
+const haveAssigned = fs.existsSync(paths.buildings);
 
-test('workbook parses into four companies with standing and development blocks', () => {
-  assert.equal(clean.buildings.length, 149);
-  assert.deepEqual(clean.issues, []);
-  const count = (c, s) => clean.buildings.filter((b) => b.company === c && b.status === s).length;
-  assert.deepEqual([count('Landsec', 'Standing'), count('Landsec', 'Development')], [22, 7]);
-  assert.deepEqual([count('Great Portland Estates', 'Standing'), count('Great Portland Estates', 'Development')], [28, 9]);
-  assert.deepEqual([count('British Land', 'Standing'), count('British Land', 'Development')], [38, 6]);
-  assert.deepEqual([count('Derwent London', 'Standing'), count('Derwent London', 'Development')], [34, 5]);
-  assert.ok(clean.buildings.every((b) => MetroConfig.COMPANY_BY_NAME[b.company]));
-  // Footnote markers are removed from names but kept.
-  const timber = clean.buildings.find((b) => b.sourceName === 'Timber Square+');
-  assert.equal(timber.name, 'Timber Square');
-  assert.equal(timber.sourceMarker, '+');
+// ------------------------------------------------------------------ parsing
+test('workbook parsing: counts per company, status and classification', () => {
+  const bs = clean.buildings;
+  assert.equal(bs.length, 99);
+  assert.ok(bs.every((b) => b.company === 'Fabege'));
+  const count = (f) => bs.filter(f).length;
+  assert.equal(count((b) => b.classification === 'Investment'), 66);
+  assert.equal(count((b) => b.classification === 'Development'), 14);
+  assert.equal(count((b) => b.classification === 'Land & project'), 19);
+  // Standing = Investment; Development = Development + Land & project (user decision).
+  assert.ok(bs.every((b) => b.status === (b.classification === 'Investment' ? 'Standing' : 'Development')));
+  assert.equal(count((b) => !b.excluded && b.status === 'Standing'), 64);
+  assert.equal(count((b) => !b.excluded && b.status === 'Development'), 33);
+  assert.deepEqual(bs.filter((b) => b.excluded).map((b) => b.area), ['Borås', 'Borås']);
+  assert.equal(new Set(bs.map((b) => b.id)).size, 99);
+  assert.deepEqual(clean.issues.filter((i) => i.type !== 'area-sum-mismatch'), []);
 });
 
-test('company colours are distinct and developments are a lighter shade of the same colour', () => {
-  const lum = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)).reduce((s, v) => s + v, 0);
-  const colours = MetroConfig.COMPANIES.map((c) => c.colour);
-  assert.equal(new Set(colours).size, colours.length);
-  for (const c of MetroConfig.COMPANIES) assert.ok(lum(c.developmentColour) > lum(c.colour), c.name);
-});
-
-test('every building is geocoded inside London on its source street area', () => {
-  for (const b of clean.buildings) {
-    assert.ok(Number.isFinite(b.lon) && Number.isFinite(b.lat), `${b.name} not located`);
-    // Whole portfolio is central/inner London.
-    assert.ok(G.haversineM([b.lon, b.lat], [-0.1246, 51.5074]) < 9000, `${b.name} implausibly far out`);
-    assert.ok(['building', 'street', 'area'].includes(b.geocode.precision));
-  }
-  const byPrec = clean.buildings.reduce((m, b) => ((m[b.geocode.precision] = (m[b.geocode.precision] || 0) + 1), m), {});
-  assert.ok(byPrec.building >= 80, JSON.stringify(byPrec));
-});
-
-test('known geocoding traps are avoided', () => {
-  const at = (name) => clean.buildings.find((b) => b.name === name);
-  // 70 Victoria Street (SW1), not Queen Victoria Street (EC4).
-  assert.ok(at('The Zig Zag Building').lat < 51.5 && at('The Zig Zag Building').lon < -0.13);
-  // Broadgate's Exchange Square, not Harbour Exchange Square (Isle of Dogs) or Croydon.
-  assert.ok(G.haversineM([at('Broadgate-Exchange House').lon, at('Broadgate-Exchange House').lat], [-0.0809, 51.5199]) < 400);
-  // n2 is on Bressenden Place, not at Heathrow.
-  assert.ok(at('n2').lon > -0.15 && at('n2').lon < -0.13);
-  // Langham Place W1, not Harringay.
-  assert.ok(at('Henry Wood House').lat < 51.53);
-});
-
-test('area assignment matches a fresh point-in-polygon check', () => {
-  const iso = readJson(paths.isochrones);
-  const polys = iso.features.map((f) => ({ id: f.properties.stationId, s: f.properties.seconds, p: G.toPolygons(f.geometry) }));
-  for (const b of out.filter((_, i) => i % 7 === 0)) { // sample for speed
-    const expect = {};
-    for (const x of polys) if (G.pointInPolygons([b.lon, b.lat], x.p) && (expect[x.id] === undefined || x.s < expect[x.id])) expect[x.id] = x.s;
-    assert.deepEqual(b.stations, expect, b.name);
-    const secs = Object.values(expect);
-    assert.equal(b.bestSeconds, secs.length ? Math.min(...secs) : null);
-    for (const id of Object.keys(b.stations)) assert.ok(stations.has(id));
+test('abbreviated Swedish street names are expanded, full names kept', () => {
+  assert.equal(expandStreet('Döbelnsg').street, 'Döbelnsgatan');
+  assert.equal(expandStreet('Svetsarv').street, 'Svetsarvägen');
+  assert.equal(expandStreet('Gamla Brog').street, 'Gamla Brogatan');
+  assert.equal(expandStreet('Birger Jarlsg').street, 'Birger Jarlsgatan');
+  for (const full of ['Råsta strandväg', 'Hammarby Fabriksväg', 'Hammarby Kaj', 'Hammarby Allé', 'Gustav III:s boulevard', 'Garvis Carlssons gata', 'Mathildatorget', 'Frösundaleden', 'Glödlampsgränd']) {
+    assert.equal(expandStreet(full).street, full);
   }
 });
 
-test('Excel report exists with the expected sheets', { skip: !fs.existsSync(new URL('../reports/office-station-access.xlsx', import.meta.url)) && 'run npm run report' }, async () => {
-  const { readFirstSheet } = await import('../scripts/lib/xlsx.mjs');
-  const rows = readFirstSheet(new URL('../reports/office-station-access.xlsx', import.meta.url).pathname);
-  assert.match(String(rows[0][0]), /walking access/i);
+test('address parsing keeps every street and listed house number', () => {
+  assert.deepEqual(parseAddress('Döbelnsg 20, 24, Kungstensg 21–23, Rådmansg 40, 42, Tuleg 7 A–B 13').map((a) => [a.street, a.numbers]),
+    [['Döbelnsgatan', ['20', '24']], ['Kungstensgatan', ['21']], ['Rådmansgatan', ['40', '42']], ['Tulegatan', ['7A']]]);
+  assert.deepEqual(parseAddress('Hammarby Kaj 12, Hammarby Kaj 14–18').map((a) => [a.street, a.numbers]), [['Hammarby Kaj', ['12', '14']]]);
+  assert.deepEqual(parseAddress('Malmskillnadsg 47 A, B').map((a) => a.numbers), [['47A']]);
+  assert.deepEqual(parseAddress('Kungsbroplan 3, etc.').map((a) => a.street), ['Kungsbroplan']);
+  assert.deepEqual(parseAddress('Glasfibergatan 6–14 and others').map((a) => [a.street, a.number]), [['Glasfibergatan', '6']]);
+  assert.deepEqual(parseAddress('Gustav III:s boulevard').map((a) => [a.street, a.number]), [['Gustav III:s boulevard', null]]);
+  assert.deepEqual(parseAddress(null), []);
 });
 
-test('floor areas import by Asset ID; zero/blank sizes are unknown, not zero', () => {
-  const sizes = readJson(paths.buildingSizes);
-  assert.equal(Object.keys(sizes.sizes).length, 148);
-  assert.deepEqual(sizes.unknown.map((u) => u.id), ['B109']); // Canada Water-Future Phases has size 0 in the source
-  const total = Object.values(sizes.sizes).reduce((s, v) => s + v, 0);
-  assert.ok(Math.abs(total - 2219091) < 5, String(total));
-  assert.equal(out.find((b) => b.id === 'B109').sqm, null);
+// ---------------------------------------------------------------- geocoding
+test('every property has a recorded geocode precision; counts are reported', () => {
+  const allowed = ['building', 'street', 'area', 'unlocated', 'excluded'];
+  for (const b of clean.buildings) assert.ok(allowed.includes(b.geocode?.precision), b.id);
+  const tally = clean.buildings.reduce((m, b) => ((m[b.geocode.precision] = (m[b.geocode.precision] || 0) + 1), m), {});
+  assert.deepEqual(clean.geocodePrecisionCounts, tally);
+  assert.equal(tally.excluded, 2);
+  assert.ok(tally.building >= 60, JSON.stringify(tally));
 });
 
-test('floor-area shares (all stations) match the SQM table in the annotated workbook', () => {
-  // Reference: "Distribution" sheet of London_Offices_-_Map_data_inc._sqm.xlsx (share of sqm within 5 min).
-  const expected = {
-    Landsec: { All: 0.65703, Standing: 0.58786, Development: 0.79525 },
-    'Great Portland Estates': { All: 0.63694, Standing: 0.55717, Development: 0.85309 },
-    'British Land': { All: 0.80246, Standing: 0.79312, Development: 0.83338 },
-    'Derwent London': { All: 0.73068, Standing: 0.75217, Development: 0.52252 }
-  };
-  for (const [company, byStatus] of Object.entries(expected)) {
-    for (const [status, share] of Object.entries(byStatus)) {
-      const bs = out.filter((b) => b.company === company && (status === 'All' || b.status === status) && b.sqm > 0);
-      const total = bs.reduce((s, b) => s + b.sqm, 0);
-      const within = bs.filter((b) => b.bestSeconds !== null && b.bestSeconds <= 300).reduce((s, b) => s + b.sqm, 0);
-      assert.ok(Math.abs(within / total - share) < 0.0005, `${company} ${status}: ${within / total} vs ${share}`);
+test('geocodes are plausible: inside Stockholm county, on the source street, near the centre', () => {
+  for (const b of clean.buildings.filter((x) => x.lon != null)) {
+    assert.ok(b.lon > 17.55 && b.lon < 18.75 && b.lat > 58.95 && b.lat < 59.65, `${b.id} outside the county box`);
+    assert.ok(G.haversineM([b.lon, b.lat], C.CITY_CENTRE) < 30000, `${b.id} too far from the centre`);
+    if (b.geocode.method === 'address' || b.geocode.method === 'street') {
+      const streets = b.addresses.map((a) => a.street.toLowerCase());
+      assert.ok(streets.includes(String(b.geocode.road).toLowerCase()), `${b.id} on ${b.geocode.road}`);
     }
   }
+  const inner = clean.buildings.filter((b) => b.region === 'Stockholm inner city');
+  for (const b of inner) assert.ok(G.haversineM([b.lon, b.lat], C.CITY_CENTRE) < 4000, `${b.id} inner-city property far from the centre`);
+});
+
+test('known geocoding traps are handled', () => {
+  const d = (a, b) => G.haversineM([byId[a].lon, byId[a].lat], [byId[b].lon, byId[b].lat]);
+  // "Enlundavägen" is a typo for Englundavägen (Solna Business Park).
+  assert.equal(byId['FAB-SOL-33'].geocode.road, 'Englundavägen');
+  assert.ok(d('FAB-SOL-33', 'FAB-SOL-32') < 300);
+  // Sveavägen 149 sits between 143–147 and 159, not 500 m south.
+  assert.ok(d('FAB-SIC-10', 'FAB-SIC-11') < 300 && d('FAB-SIC-10', 'FAB-SIC-12') < 300);
+  // Malmskillnadsgatan 47 is in the same block as Luntmakargatan 18.
+  assert.ok(d('FAB-SIC-20', 'FAB-SIC-19') < 300);
+  // Long Kolonnvägen: No. 24 next to No. 22 (Arenastaden), 57–59 next to 43–55 (Ulriksdal).
+  assert.ok(d('FAB-SOL-12', 'FAB-SOL-15') < 300 && d('FAB-SOL-44', 'FAB-SOL-43') < 300);
+  // Haga Norra properties are in Haga Norra / Hagalund, not in Skytteholm or Ulriksdal.
+  for (const id of ['FAB-SOL-36', 'FAB-SOL-37', 'FAB-SOL-41']) assert.ok(d(id, 'FAB-SOL-35') < 700, id);
+  // A municipality is never accepted as an "area" location.
+  assert.equal(byId['FAB-OTH-01'].geocode.precision, 'unlocated');
+  const ov = readJson(paths.geocodeReview);
+  assert.deepEqual(ov.unusedOverrides, []);
+});
+
+// -------------------------------------------------------------------- sizes
+test('floor areas join by asset ID with a name check; 0 or blank is unknown', () => {
+  const sizes = readJson(paths.buildingSizes);
+  assert.equal(Object.keys(sizes.sizes).length + sizes.unknown.length, 99);
+  assert.ok(Object.values(sizes.sizes).every((v) => v > 0));
+  for (const u of sizes.unknown) assert.ok(!(u.id in sizes.sizes));
+  assert.equal(sizes.sizes['FAB-SOL-13'], 72234); // Pyramiden 4
+  assert.ok(sizes.unknown.some((u) => u.id === 'FAB-SIC-05')); // Bocken 46: 0 in source
+  for (const [id, v] of Object.entries(sizes.sizes)) assert.equal(v, byId[id].totalLettableSqmSource, id);
+});
+
+// ------------------------------------------------- assignment & statistics
+test('fresh point-in-polygon checks reproduce every assignment', { skip: !haveAssigned && 'run npm run buildings' }, () => {
+  const iso = readJson(paths.isochrones);
+  const bdoc = readJson(paths.buildings);
+  const polys = iso.features.map((f) => ({ id: f.properties.stationId, sec: f.properties.seconds, p: G.toPolygons(f.geometry) }));
+  for (const b of bdoc.buildings) {
+    if (!b.inAnalysis) { assert.deepEqual(b.stations, {}); continue; }
+    const fresh = {};
+    for (const x of polys) if (G.pointInPolygons([b.lon, b.lat], x.p)) fresh[x.id] = Math.min(fresh[x.id] ?? Infinity, x.sec);
+    assert.deepEqual(fresh, b.stations, b.id);
+  }
+  // Not-in-analysis properties: Borås (2) and unlocated.
+  assert.deepEqual(bdoc.buildings.filter((b) => !b.inAnalysis).map((b) => b.id).sort(), ['FAB-OTH-01', 'FAB-OTH-03', 'FAB-OTH-04']);
+});
+
+test('Excel report recalculates without errors and matches the pipeline', { skip: !fs.existsSync(path.join(ROOT, 'reports', 'report-verification.json')) && 'run npm run report' }, () => {
+  const v = readJson(path.join(ROOT, 'reports', 'report-verification.json'));
+  assert.equal(v.status, 'ok');
+  assert.deepEqual(v.formulaErrors, []);
+  assert.deepEqual(v.mismatches, []);
+  assert.ok(v.checkedCells > 50 && v.totalFormulas > 100);
+});
+
+// ------------------------------------------------------------ browser code
+test('all browser scripts and generated data files parse', () => {
+  const files = [];
+  (function walk(d) {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) { if (e.name !== 'vendor') walk(p); } else if (e.name.endsWith('.js')) files.push(p);
+    }
+  })(path.join(ROOT, 'public'));
+  assert.ok(files.length >= 6);
+  for (const f of files) assert.doesNotThrow(() => new vm.Script(fs.readFileSync(f, 'utf8'), { filename: f }), path.relative(ROOT, f));
+  const app = fs.readFileSync(path.join(ROOT, 'public', 'js', 'app.js'), 'utf8');
+  assert.ok(!/\.innerHTML\s*=/.test(app), 'app.js must not assign innerHTML');
 });

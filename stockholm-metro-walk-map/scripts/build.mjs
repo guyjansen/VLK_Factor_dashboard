@@ -30,7 +30,7 @@ for (const f of ['vendor/maplibre-gl.js', 'vendor/maplibre-gl.css', 'vendor/poly
 const net = checkBrowserData(paths.publicNetwork, 'METRO_NETWORK', true);
 const iso = checkBrowserData(paths.publicIsochrones, 'METRO_ISOCHRONES', false);
 checkBrowserData(paths.publicCoverage, 'METRO_COVERAGE', false);
-if (net && net.stations.length < 250) errors.push(`network.js has only ${net.stations.length} stations`);
+if (net && net.stations.length < 90) errors.push(`network.js has only ${net.stations.length} stations`);
 if (iso && iso.meta.missing?.length) warnings.push(`${iso.meta.missing.length} station(s) have no isochrones`);
 if (fs.existsSync(paths.validation)) {
   const v = JSON.parse(fs.readFileSync(paths.validation, 'utf8'));

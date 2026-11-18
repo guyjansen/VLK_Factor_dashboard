@@ -1,4 +1,4 @@
-/* Tube walk map — restrained, TfL-inspired styling (not an official TfL design). */
+/* Stockholm metro walk map — restrained, neutral styling (not an SL design). */
 :root {
   --font: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   --bg: #ffffff;
@@ -7,14 +7,14 @@
   --text: #1a1d21;
   --muted: #555c66;
   --border: #d5d9de;
-  --accent: #0019a8;          /* TfL corporate blue (RGB 0 25 168) */
+  --accent: #2b3a4f;          /* neutral slate, distinct from the SL line colours */
   --accent-contrast: #ffffff;
   --focus: #ffb000;
-  --header-bg: #0019a8;
+  --header-bg: #1f2a37;
   --header-text: #ffffff;
   --error-bg: #fdecec;  --error-border: #c1121f;
   --warn-bg: #fff6e0;   --warn-border: #a86b00;
-  --info-bg: #e8eefc;   --info-border: #0019a8;
+  --info-bg: #eef1f5;   --info-border: #2b3a4f;
   --panel-width: 360px;
   --header-h: 56px;
   color-scheme: light;
@@ -26,13 +26,13 @@
   --text: #eef0f2;
   --muted: #aab1ba;
   --border: #3a4049;
-  --accent: #8ea2ff;
+  --accent: #a9bdd6;
   --accent-contrast: #0b0d10;
-  --header-bg: #0b1150;
+  --header-bg: #0e141b;
   --header-text: #ffffff;
   --error-bg: #3a1214;  --error-border: #ff6b6b;
   --warn-bg: #3a2a08;   --warn-border: #f0b429;
-  --info-bg: #141c3d;   --info-border: #8ea2ff;
+  --info-bg: #18202b;   --info-border: #a9bdd6;
   color-scheme: dark;
 }
 
@@ -125,6 +125,7 @@ body.panel-collapsed .panel { display: none; }
 :root[data-theme="dark"] .swatch { box-shadow: 0 0 0 1px rgba(255,255,255,0.6); }
 .line-name { font-weight: 600; }
 .count { margin-left: auto; color: var(--muted); font-size: 0.8rem; }
+.routes { color: var(--muted); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
 .expand {
   flex: 0 0 auto; width: 34px; height: 32px; border: 1px solid transparent; border-radius: 4px;
   background: transparent; cursor: pointer; color: var(--muted);

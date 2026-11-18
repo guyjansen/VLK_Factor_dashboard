@@ -135,7 +135,7 @@
       if (n.indexOf(q) === 0 || n.split(' ').some(function (w) { return w.indexOf(q) === 0; })) prefix.push(s);
       else if (n.indexOf(q) !== -1) contains.push(s);
     });
-    var cmp = function (a, b) { return a.name.localeCompare(b.name, 'en-GB'); };
+    var cmp = function (a, b) { return a.name.localeCompare(b.name, 'sv'); };
     return prefix.sort(cmp).concat(contains.sort(cmp)).slice(0, limit || 20);
   }
 

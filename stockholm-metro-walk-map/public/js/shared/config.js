@@ -71,12 +71,12 @@
 
   // Portfolio companies. Each company has its own colour; developments use
   // the same hue mixed 45% towards white ("a lighter shade"). Gold was chosen
-  // to stand apart from the three line colours and the violet walking areas.
+  // (amber) to stand apart from the three line colours and the violet walking areas.
   // Add further companies here (suggested free hues: #8C510A brown,
   // #D6338A magenta, #2F4F4F slate).
   function lighten(rgb, t) { return rgb.map(function (v) { return Math.round(v + (255 - v) * t); }); }
   var COMPANIES = [
-    { id: 'fabege', name: 'Fabege', rgb: [201, 138, 0] }
+    { id: 'fabege', name: 'Fabege', rgb: [214, 160, 0] }
   ].map(function (c) {
     return Object.freeze({ id: c.id, name: c.name, rgb: Object.freeze(c.rgb.slice()), colour: hex(c.rgb), developmentColour: hex(lighten(c.rgb, 0.45)) });
   });

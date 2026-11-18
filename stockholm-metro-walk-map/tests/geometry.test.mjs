@@ -63,21 +63,21 @@ test('Douglas-Peucker simplification keeps rings valid and closed', () => {
   assert.deepEqual(ring[0], ring[ring.length - 1]);
 });
 
-test('haversine distance is correct (Bank to St Paul\'s ~ 600 m)', () => {
-  const d = G.haversineM([-0.08891, 51.51343], [-0.09752, 51.51495]);
-  assert.ok(d > 580 && d < 640, String(d));
+test('haversine distance is correct (T-Centralen to Slussen ~ 1.3 km)', () => {
+  const d = G.haversineM([18.0596, 59.3313], [18.0717, 59.3195]);
+  assert.ok(d > 1300 && d < 1600, String(d));
 });
 
 test('radialStats distinguishes a circle from an irregular shape', () => {
-  const k = Math.cos(51.5 * Math.PI / 180); // degrees of latitude per degree of longitude, in metres
+  const k = Math.cos(59.3 * Math.PI / 180); // keeps the shape round in metres
   const ring = (n, radius) => {
     const pts = [];
-    for (let i = 0; i <= n; i++) { const t = (i / n) * 2 * Math.PI; const r = radius(i); pts.push([Math.cos(t) * r, 51.5 + Math.sin(t) * r * k]); }
+    for (let i = 0; i <= n; i++) { const t = (i / n) * 2 * Math.PI; const r = radius(i); pts.push([18 + Math.cos(t) * r, 59.3 + Math.sin(t) * r * k]); }
     pts[pts.length - 1] = pts[0];
     return { type: 'Polygon', coordinates: [pts] };
   };
-  assert.ok(G.radialStats(ring(72, () => 0.006), [0, 51.5]).cv < 0.01);
-  assert.ok(G.radialStats(ring(40, (i) => (i % 2 ? 0.006 : 0.002)), [0, 51.5]).cv > 0.3);
+  assert.ok(G.radialStats(ring(72, () => 0.006), [18, 59.3]).cv < 0.01);
+  assert.ok(G.radialStats(ring(40, (i) => (i % 2 ? 0.006 : 0.002)), [18, 59.3]).cv > 0.3);
 });
 
 // ----------------------------------------------- generated isochrone checks
@@ -86,7 +86,7 @@ const haveIso = fs.existsSync(paths.isochrones);
 test('isochrones come from a pedestrian routing engine with recorded provenance', { skip: !haveIso && 'run npm run isochrones' }, () => {
   const iso = readJson(paths.isochrones);
   assert.ok(iso.metadata.providers.length >= 1);
-  for (const f of fs.readdirSync(paths.isoDir).filter((n) => /^9[14]0G.*\.json$/.test(n))) {
+  for (const f of fs.readdirSync(paths.isoDir).filter((n) => /^SL.*\.json$/.test(n))) {
     const rec = readJson(`${paths.isoDir}/${f}`);
     assert.ok(['valhalla', 'openrouteservice'].includes(rec.provider), f);
     assert.ok(['pedestrian', 'foot-walking'].includes(rec.profile), f);
@@ -124,17 +124,25 @@ test('precomputed unions equal fresh unions and dedupe interchanges', { skip: !f
   const unions = readJson(paths.unions);
   const iso = readJson(paths.isochrones);
   const stations = readJson(paths.stations).stations;
-  const vic = stations.filter((s) => s.lines.includes('victoria')).map((s) => s.id);
-  const geoms = iso.features.filter((f) => f.properties.seconds === 300 && vic.includes(f.properties.stationId)).map((f) => f.geometry);
-  assert.equal(geoms.length, 16);
-  const fresh = G.areaM2(G.unionGeometries(geoms, pc).polygons);
-  const pre = unions.features.find((f) => f.properties.id === 'victoria' && f.properties.seconds === 300);
-  assert.ok(Math.abs(pre.properties.areaKm2 * 1e6 - fresh) / fresh < 0.001);
-  assert.equal(pre.properties.stationCount, 16);
-  // Union is strictly smaller than the sum where station areas overlap.
-  const sum = geoms.reduce((s, g) => s + G.areaM2(g), 0);
-  assert.ok(fresh <= sum);
+  for (const l of MetroConfig.LINES) {
+    for (const sec of MetroConfig.CONTOUR_SECONDS) {
+      const ids = stations.filter((s) => s.lines.includes(l.id)).map((s) => s.id);
+      const geoms = iso.features.filter((f) => f.properties.seconds === sec && ids.includes(f.properties.stationId)).map((f) => f.geometry);
+      assert.equal(geoms.length, ids.length, `${l.id} ${sec}`);
+      const freshPolys = G.unionGeometries(geoms, pc).polygons;
+      const pre = unions.features.find((f) => f.properties.id === l.id && f.properties.seconds === sec);
+      assert.equal(pre.properties.stationCount, ids.length);
+      // Same area and (near) zero symmetric difference.
+      const prePolys = G.toPolygons(pre.geometry);
+      const fresh = G.areaM2(freshPolys);
+      assert.ok(Math.abs(pre.properties.areaKm2 * 1e6 - fresh) / fresh < 0.001, `${l.id} ${sec} area`);
+      const xor = G.areaM2(pc.xor(prePolys, freshPolys));
+      assert.ok(xor / fresh < 0.001, `${l.id} ${sec} symmetric difference ${xor}`);
+      assert.ok(fresh <= geoms.reduce((s, g) => s + G.areaM2(g), 0));
+    }
+  }
+  // All-network union counts each physical station once.
   const all = unions.features.filter((f) => f.properties.scope === 'all');
-  assert.equal(all.length, 2);
-  assert.equal(all[0].properties.stationCount, 301);
+  assert.equal(all.length, MetroConfig.CONTOUR_SECONDS.length);
+  assert.equal(all[0].properties.stationCount, stations.filter((s) => s.lines.length).length);
 });
