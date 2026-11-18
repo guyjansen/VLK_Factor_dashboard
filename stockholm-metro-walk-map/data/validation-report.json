@@ -1,0 +1,179 @@
+{
+  "generatedAt": "2026-11-18T15:45:31.181Z",
+  "status": "warnings",
+  "errors": [],
+  "warnings": [
+    "OpenStreetMap cross-check not available (reference data missing)"
+  ],
+  "summary": {
+    "platformRecords": 223,
+    "parentStationRecords": 100,
+    "physicalStations": 100,
+    "interchanges": [
+      "Fridhemsplan",
+      "Gamla stan",
+      "Slussen",
+      "T-Centralen"
+    ],
+    "edges": 100,
+    "sharedEdges": [
+      "Slussen–Gamla stan",
+      "Gamla stan–T-Centralen"
+    ]
+  },
+  "unmatchedRecords": {
+    "orphanPlatforms": [],
+    "passThroughStopsExcluded": [
+      {
+        "stopId": "9022001003242001",
+        "name": "Kymlinge söderut",
+        "parentStation": "9021001003242000",
+        "routes": [
+          "11"
+        ],
+        "reason": "No trip allows boarding or alighting here (GTFS pickup_type = drop_off_type = 1): trains pass through without stopping for passengers."
+      },
+      {
+        "stopId": "9022001003241001",
+        "name": "Kymlinge norrut",
+        "parentStation": "9021001003241000",
+        "routes": [
+          "11"
+        ],
+        "reason": "No trip allows boarding or alighting here (GTFS pickup_type = drop_off_type = 1): trains pass through without stopping for passengers."
+      }
+    ],
+    "rejectedLinks": [],
+    "unmappedPatternStops": [],
+    "osmStationsWithoutOperatorMatch": null,
+    "stationsWithoutOsmMatch": null
+  },
+  "duplicates": {
+    "stationsWithSeveralParentRecords": [],
+    "sameNameKeptSeparate": [],
+    "nameConflicts": [],
+    "note": "Operator records are merged only by parent_station ID, a documented alias or an equal normalised name, and only within the join distance."
+  },
+  "lineNameMismatches": null,
+  "overridesApplied": [],
+  "unusedOverrides": [],
+  "aliasesApplied": [],
+  "osmCrossCheck": {
+    "status": "not-available",
+    "note": "data/raw/osm/metro-stations.json missing (Overpass unreachable or skipped)."
+  },
+  "network": {
+    "disconnectedSegments": [],
+    "cycles": [],
+    "longEdges": [],
+    "stationsWithoutEdges": [],
+    "lines": {
+      "blue": {
+        "name": "Blue line",
+        "stations": 20,
+        "edges": 19,
+        "components": 1,
+        "termini": [
+          "Akalla",
+          "Hjulsta",
+          "Kungsträdgården"
+        ],
+        "junctions": [
+          "Västra skogen (3)"
+        ],
+        "routes": {
+          "10": {
+            "stations": 14,
+            "termini": [
+              "Hjulsta",
+              "Kungsträdgården"
+            ]
+          },
+          "11": {
+            "stations": 12,
+            "termini": [
+              "Akalla",
+              "Kungsträdgården"
+            ]
+          }
+        }
+      },
+      "red": {
+        "name": "Red line",
+        "stations": 36,
+        "edges": 35,
+        "components": 1,
+        "termini": [
+          "Fruängen",
+          "Mörby centrum",
+          "Norsborg",
+          "Ropsten"
+        ],
+        "junctions": [
+          "Liljeholmen (3)",
+          "Östermalmstorg (3)"
+        ],
+        "routes": {
+          "13": {
+            "stations": 31,
+            "termini": [
+              "Mörby centrum",
+              "Norsborg",
+              "Ropsten"
+            ]
+          },
+          "14": {
+            "stations": 25,
+            "termini": [
+              "Fruängen",
+              "Mörby centrum",
+              "Sätra"
+            ]
+          }
+        }
+      },
+      "green": {
+        "name": "Green line",
+        "stations": 49,
+        "edges": 48,
+        "components": 1,
+        "termini": [
+          "Farsta strand",
+          "Hagsätra",
+          "Hässelby strand",
+          "Skarpnäck"
+        ],
+        "junctions": [
+          "Gullmarsplan (3)",
+          "Skärmarbrink (3)"
+        ],
+        "routes": {
+          "17": {
+            "stations": 32,
+            "termini": [
+              "Hässelby strand",
+              "Skarpnäck"
+            ]
+          },
+          "18": {
+            "stations": 35,
+            "termini": [
+              "Farsta strand",
+              "Hässelby strand"
+            ]
+          },
+          "19": {
+            "stations": 35,
+            "termini": [
+              "Hagsätra",
+              "Hässelby strand"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "isochrones": {
+    "status": "not-generated"
+  }
+}

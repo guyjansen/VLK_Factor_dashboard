@@ -1,0 +1,2641 @@
+{
+  "meta": {
+    "generatedAt": "2026-11-18T15:45:09.771Z",
+    "topology": {
+      "source": "SL static GTFS (GTFS Regional) via Trafiklab / Samtrafiken: stop sequences of all metro trips",
+      "url": "https://opendata.samtrafiken.se/gtfs/sl/sl.zip?key=REDACTED",
+      "retrievedAt": "2026-11-18T15:43:27.267Z",
+      "feedVersion": "2026-11-18",
+      "feedValidity": [
+        null,
+        null
+      ],
+      "licence": {
+        "name": "CC0 1.0 Universal (Public Domain Dedication)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "terms": "https://www.trafiklab.se/api/gtfs-datasets/gtfs-regional/",
+        "attribution": "Timetable data: SL via Trafiklab.se / Samtrafiken (GTFS Regional, CC0 1.0)"
+      },
+      "patterns": 94
+    },
+    "colours": {
+      "source": "sl.se design-system stylesheet (--color-metro-*)",
+      "retrievedAt": "2026-11-18T15:13:58+00:00"
+    },
+    "overridesApplied": 0
+  },
+  "stations": [
+    {
+      "id": "SL9021001001221000",
+      "name": "Abrahamsberg",
+      "lon": 17.953172,
+      "lat": 59.336563,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001221000"
+      ],
+      "platformStopIds": [
+        "9022001001221001",
+        "9022001001221002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003271000",
+      "name": "Akalla",
+      "lon": 17.917376,
+      "lat": 59.413817,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003271000"
+      ],
+      "platformStopIds": [
+        "9022001003271002"
+      ],
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002761000",
+      "name": "Alby",
+      "lon": 17.845357,
+      "lat": 59.239495,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002761000"
+      ],
+      "platformStopIds": [
+        "9022001002761001",
+        "9022001002761002",
+        "9022001002761003"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001201000",
+      "name": "Alvik",
+      "lon": 17.981303,
+      "lat": 59.333528,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001201000"
+      ],
+      "platformStopIds": [
+        "9022001001201001",
+        "9022001001201002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002611000",
+      "name": "Aspudden",
+      "lon": 18.00184,
+      "lat": 59.306512,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002611000"
+      ],
+      "platformStopIds": [
+        "9022001002611001",
+        "9022001002611002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002631000",
+      "name": "Axelsberg",
+      "lon": 17.975516,
+      "lat": 59.304378,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002631000"
+      ],
+      "platformStopIds": [
+        "9022001002631001",
+        "9022001002631002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001941000",
+      "name": "Bagarmossen",
+      "lon": 18.131215,
+      "lat": 59.276262,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001941000"
+      ],
+      "platformStopIds": [
+        "9022001001941001",
+        "9022001001941002"
+      ],
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001661000",
+      "name": "Bandhagen",
+      "lon": 18.049656,
+      "lat": 59.270403,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001661000"
+      ],
+      "platformStopIds": [
+        "9022001001661001",
+        "9022001001661002"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002241000",
+      "name": "Bergshamra",
+      "lon": 18.037494,
+      "lat": 59.380727,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002241000"
+      ],
+      "platformStopIds": [
+        "9022001002241001",
+        "9022001002241002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001921000",
+      "name": "Björkhagen",
+      "lon": 18.115337,
+      "lat": 59.291651,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001921000"
+      ],
+      "platformStopIds": [
+        "9022001001921001",
+        "9022001001921002"
+      ],
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001271000",
+      "name": "Blackeberg",
+      "lon": 17.88285,
+      "lat": 59.34837,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001271000"
+      ],
+      "platformStopIds": [
+        "9022001001271001",
+        "9022001001271002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001811000",
+      "name": "Blåsut",
+      "lon": 18.091151,
+      "lat": 59.291166,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001811000"
+      ],
+      "platformStopIds": [
+        "9022001001811001",
+        "9022001001811002"
+      ],
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002651000",
+      "name": "Bredäng",
+      "lon": 17.936023,
+      "lat": 59.294802,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002651000"
+      ],
+      "platformStopIds": [
+        "9022001002651001",
+        "9022001002651002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001231000",
+      "name": "Brommaplan",
+      "lon": 17.939641,
+      "lat": 59.338284,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001231000"
+      ],
+      "platformStopIds": [
+        "9022001001231001",
+        "9022001001231002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002251000",
+      "name": "Danderyds sjukhus",
+      "lon": 18.041797,
+      "lat": 59.390617,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002251000"
+      ],
+      "platformStopIds": [
+        "9022001002251001",
+        "9022001002251002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003441000",
+      "name": "Duvbo",
+      "lon": 17.962933,
+      "lat": 59.368117,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003441000"
+      ],
+      "platformStopIds": [
+        "9022001003441001",
+        "9022001003441002"
+      ],
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001621000",
+      "name": "Enskede gård",
+      "lon": 18.070392,
+      "lat": 59.289028,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001621000"
+      ],
+      "platformStopIds": [
+        "9022001001621001",
+        "9022001001621002"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001871000",
+      "name": "Farsta",
+      "lon": 18.093724,
+      "lat": 59.243531,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001871000"
+      ],
+      "platformStopIds": [
+        "9022001001871001",
+        "9022001001871002"
+      ],
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001881000",
+      "name": "Farsta strand",
+      "lon": 18.101217,
+      "lat": 59.235453,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001881000"
+      ],
+      "platformStopIds": [
+        "9022001001881001"
+      ],
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002751000",
+      "name": "Fittja",
+      "lon": 17.861027,
+      "lat": 59.247446,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002751000"
+      ],
+      "platformStopIds": [
+        "9022001002751001",
+        "9022001002751002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001151000",
+      "name": "Fridhemsplan",
+      "lon": 18.031202,
+      "lat": 59.333017,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001151000"
+      ],
+      "platformStopIds": [
+        "9022001001151001",
+        "9022001001151002",
+        "9022001001151003",
+        "9022001001151004"
+      ],
+      "routes": [
+        "10",
+        "11",
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "blue",
+        "green"
+      ],
+      "interchange": true,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002851000",
+      "name": "Fruängen",
+      "lon": 17.96494,
+      "lat": 59.286384,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002851000"
+      ],
+      "platformStopIds": [
+        "9022001002851001",
+        "9022001002851002"
+      ],
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001021000",
+      "name": "Gamla stan",
+      "lon": 18.067171,
+      "lat": 59.323286,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001021000"
+      ],
+      "platformStopIds": [
+        "9022001001021001",
+        "9022001001021002",
+        "9022001001021003",
+        "9022001001021004"
+      ],
+      "routes": [
+        "13",
+        "14",
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "red",
+        "green"
+      ],
+      "interchange": true,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001611000",
+      "name": "Globen",
+      "lon": 18.078015,
+      "lat": 59.294247,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001611000"
+      ],
+      "platformStopIds": [
+        "9022001001611001",
+        "9022001001611002"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001851000",
+      "name": "Gubbängen",
+      "lon": 18.082138,
+      "lat": 59.263324,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001851000"
+      ],
+      "platformStopIds": [
+        "9022001001851001",
+        "9022001001851002"
+      ],
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001551000",
+      "name": "Gullmarsplan",
+      "lon": 18.080985,
+      "lat": 59.299155,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001551000"
+      ],
+      "platformStopIds": [
+        "9022001001551001",
+        "9022001001551002",
+        "9022001001551004",
+        "9022001001551009"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002121000",
+      "name": "Gärdet",
+      "lon": 18.098981,
+      "lat": 59.345169,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002121000"
+      ],
+      "platformStopIds": [
+        "9022001002121001",
+        "9022001002121002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001721000",
+      "name": "Hagsätra",
+      "lon": 18.013188,
+      "lat": 59.262172,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001721000"
+      ],
+      "platformStopIds": [
+        "9022001001721001"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003231000",
+      "name": "Hallonbergen",
+      "lon": 17.969241,
+      "lat": 59.374385,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003231000"
+      ],
+      "platformStopIds": [
+        "9022001003231001",
+        "9022001003231002",
+        "9022001003231003"
+      ],
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002771000",
+      "name": "Hallunda",
+      "lon": 17.825251,
+      "lat": 59.243328,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002771000"
+      ],
+      "platformStopIds": [
+        "9022001002771001",
+        "9022001002771002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001911000",
+      "name": "Hammarbyhöjden",
+      "lon": 18.104557,
+      "lat": 59.294747,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001911000"
+      ],
+      "platformStopIds": [
+        "9022001001911001",
+        "9022001001911002"
+      ],
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003481000",
+      "name": "Hjulsta",
+      "lon": 17.888694,
+      "lat": 59.396773,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003481000"
+      ],
+      "platformStopIds": [
+        "9022001003481002"
+      ],
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002531000",
+      "name": "Hornstull",
+      "lon": 18.03541,
+      "lat": 59.316014,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002531000"
+      ],
+      "platformStopIds": [
+        "9022001002531001",
+        "9022001002531002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003261000",
+      "name": "Husby",
+      "lon": 17.926915,
+      "lat": 59.409713,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003261000"
+      ],
+      "platformStopIds": [
+        "9022001003261001",
+        "9022001003261002"
+      ],
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003411000",
+      "name": "Huvudsta",
+      "lon": 17.986937,
+      "lat": 59.349727,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003411000"
+      ],
+      "platformStopIds": [
+        "9022001003411001",
+        "9022001003411002"
+      ],
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002831000",
+      "name": "Hägerstensåsen",
+      "lon": 17.978441,
+      "lat": 59.29517,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002831000"
+      ],
+      "platformStopIds": [
+        "9022001002831001",
+        "9022001002831002"
+      ],
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001321000",
+      "name": "Hässelby gård",
+      "lon": 17.844341,
+      "lat": 59.367057,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001321000"
+      ],
+      "platformStopIds": [
+        "9022001001321001",
+        "9022001001321002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001331000",
+      "name": "Hässelby strand",
+      "lon": 17.832466,
+      "lat": 59.361742,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001331000"
+      ],
+      "platformStopIds": [
+        "9022001001331002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001701000",
+      "name": "Högdalen",
+      "lon": 18.042986,
+      "lat": 59.263788,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001701000"
+      ],
+      "platformStopIds": [
+        "9022001001701001",
+        "9022001001701002",
+        "9022001001701003",
+        "9022001001701004"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001861000",
+      "name": "Hökarängen",
+      "lon": 18.082506,
+      "lat": 59.257926,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001861000"
+      ],
+      "platformStopIds": [
+        "9022001001861001",
+        "9022001001861002"
+      ],
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001111000",
+      "name": "Hötorget",
+      "lon": 18.062963,
+      "lat": 59.33561,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001111000"
+      ],
+      "platformStopIds": [
+        "9022001001111001",
+        "9022001001111002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001261000",
+      "name": "Islandstorget",
+      "lon": 17.893245,
+      "lat": 59.345995,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001261000"
+      ],
+      "platformStopIds": [
+        "9022001001261001",
+        "9022001001261002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001311000",
+      "name": "Johannelund",
+      "lon": 17.858141,
+      "lat": 59.367923,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001311000"
+      ],
+      "platformStopIds": [
+        "9022001001311001",
+        "9022001001311002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002111000",
+      "name": "Karlaplan",
+      "lon": 18.091998,
+      "lat": 59.338988,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002111000"
+      ],
+      "platformStopIds": [
+        "9022001002111001",
+        "9022001002111002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003251000",
+      "name": "Kista",
+      "lon": 17.942676,
+      "lat": 59.40295,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003251000"
+      ],
+      "platformStopIds": [
+        "9022001003251001",
+        "9022001003251002"
+      ],
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001171000",
+      "name": "Kristineberg",
+      "lon": 18.003096,
+      "lat": 59.332722,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001171000"
+      ],
+      "platformStopIds": [
+        "9022001001171001",
+        "9022001001171002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003031000",
+      "name": "Kungsträdgården",
+      "lon": 18.073588,
+      "lat": 59.330859,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003031000"
+      ],
+      "platformStopIds": [
+        "9022001003031001",
+        "9022001003031002"
+      ],
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001931000",
+      "name": "Kärrtorp",
+      "lon": 18.114485,
+      "lat": 59.284509,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001931000"
+      ],
+      "platformStopIds": [
+        "9022001001931001",
+        "9022001001931002"
+      ],
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002601000",
+      "name": "Liljeholmen",
+      "lon": 18.023044,
+      "lat": 59.310688,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002601000"
+      ],
+      "platformStopIds": [
+        "9022001002601001",
+        "9022001002601003",
+        "9022001002601004",
+        "9022001002601005"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002511000",
+      "name": "Mariatorget",
+      "lon": 18.062006,
+      "lat": 59.316784,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002511000"
+      ],
+      "platformStopIds": [
+        "9022001002511001",
+        "9022001002511002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002741000",
+      "name": "Masmo",
+      "lon": 17.881372,
+      "lat": 59.249912,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002741000"
+      ],
+      "platformStopIds": [
+        "9022001002741001",
+        "9022001002741002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001511000",
+      "name": "Medborgarplatsen",
+      "lon": 18.073436,
+      "lat": 59.314879,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001511000"
+      ],
+      "platformStopIds": [
+        "9022001001511001",
+        "9022001001511002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002811000",
+      "name": "Midsommarkransen",
+      "lon": 18.011776,
+      "lat": 59.302023,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002811000"
+      ],
+      "platformStopIds": [
+        "9022001002811001",
+        "9022001002811002"
+      ],
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002641000",
+      "name": "Mälarhöjden",
+      "lon": 17.957705,
+      "lat": 59.301234,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002641000"
+      ],
+      "platformStopIds": [
+        "9022001002641001",
+        "9022001002641002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002301000",
+      "name": "Mörby centrum",
+      "lon": 18.036657,
+      "lat": 59.398261,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002301000"
+      ],
+      "platformStopIds": [
+        "9022001002301001",
+        "9022001002301002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002781000",
+      "name": "Norsborg",
+      "lon": 17.815024,
+      "lat": 59.243787,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002781000"
+      ],
+      "platformStopIds": [
+        "9022001002781001",
+        "9022001002781002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003221000",
+      "name": "Näckrosen",
+      "lon": 17.98196,
+      "lat": 59.367427,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003221000"
+      ],
+      "platformStopIds": [
+        "9022001003221001",
+        "9022001003221002"
+      ],
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001131000",
+      "name": "Odenplan",
+      "lon": 18.048653,
+      "lat": 59.342763,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001131000"
+      ],
+      "platformStopIds": [
+        "9022001001131001",
+        "9022001001131002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003461000",
+      "name": "Rinkeby",
+      "lon": 17.928064,
+      "lat": 59.388157,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003461000"
+      ],
+      "platformStopIds": [
+        "9022001003461001",
+        "9022001003461002",
+        "9022001003461003"
+      ],
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003451000",
+      "name": "Rissne",
+      "lon": 17.939694,
+      "lat": 59.375899,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003451000"
+      ],
+      "platformStopIds": [
+        "9022001003451001",
+        "9022001003451002"
+      ],
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002131000",
+      "name": "Ropsten",
+      "lon": 18.10272,
+      "lat": 59.357451,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002131000"
+      ],
+      "platformStopIds": [
+        "9022001002131001",
+        "9022001002131002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001281000",
+      "name": "Råcksta",
+      "lon": 17.881625,
+      "lat": 59.354504,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001281000"
+      ],
+      "platformStopIds": [
+        "9022001001281001",
+        "9022001001281002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003131000",
+      "name": "Rådhuset",
+      "lon": 18.045008,
+      "lat": 59.329858,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003131000"
+      ],
+      "platformStopIds": [
+        "9022001003131001",
+        "9022001003131002"
+      ],
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001121000",
+      "name": "Rådmansgatan",
+      "lon": 18.057907,
+      "lat": 59.340879,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001121000"
+      ],
+      "platformStopIds": [
+        "9022001001121001",
+        "9022001001121002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001711000",
+      "name": "Rågsved",
+      "lon": 18.028361,
+      "lat": 59.256697,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001711000"
+      ],
+      "platformStopIds": [
+        "9022001001711001",
+        "9022001001711002"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001141000",
+      "name": "S:t Eriksplan",
+      "lon": 18.037415,
+      "lat": 59.340288,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001141000"
+      ],
+      "platformStopIds": [
+        "9022001001141001",
+        "9022001001141002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001821000",
+      "name": "Sandsborg",
+      "lon": 18.091932,
+      "lat": 59.285675,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001821000"
+      ],
+      "platformStopIds": [
+        "9022001001821001",
+        "9022001001821002"
+      ],
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001521000",
+      "name": "Skanstull",
+      "lon": 18.076103,
+      "lat": 59.308499,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001521000"
+      ],
+      "platformStopIds": [
+        "9022001001521001",
+        "9022001001521002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001951000",
+      "name": "Skarpnäck",
+      "lon": 18.133627,
+      "lat": 59.26697,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001951000"
+      ],
+      "platformStopIds": [
+        "9022001001951001",
+        "9022001001951002"
+      ],
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001831000",
+      "name": "Skogskyrkogården",
+      "lon": 18.095518,
+      "lat": 59.278967,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001831000"
+      ],
+      "platformStopIds": [
+        "9022001001831001",
+        "9022001001831002"
+      ],
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002711000",
+      "name": "Skärholmen",
+      "lon": 17.907048,
+      "lat": 59.27699,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002711000"
+      ],
+      "platformStopIds": [
+        "9022001002711001",
+        "9022001002711002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001601000",
+      "name": "Skärmarbrink",
+      "lon": 18.090351,
+      "lat": 59.295273,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001601000"
+      ],
+      "platformStopIds": [
+        "9022001001601001",
+        "9022001001601002",
+        "9022001001601003",
+        "9022001001601004"
+      ],
+      "routes": [
+        "17",
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001011000",
+      "name": "Slussen",
+      "lon": 18.071617,
+      "lat": 59.319534,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001011000"
+      ],
+      "platformStopIds": [
+        "9022001001011001",
+        "9022001001011002",
+        "9022001001011003",
+        "9022001001011004"
+      ],
+      "routes": [
+        "13",
+        "14",
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "red",
+        "green"
+      ],
+      "interchange": true,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001631000",
+      "name": "Sockenplan",
+      "lon": 18.070893,
+      "lat": 59.283622,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001631000"
+      ],
+      "platformStopIds": [
+        "9022001001631001",
+        "9022001001631002"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003211000",
+      "name": "Solna centrum",
+      "lon": 17.997759,
+      "lat": 59.359534,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003211000"
+      ],
+      "platformStopIds": [
+        "9022001003211001",
+        "9022001003211002"
+      ],
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003421000",
+      "name": "Solna strand",
+      "lon": 17.973211,
+      "lat": 59.354669,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003421000"
+      ],
+      "platformStopIds": [
+        "9022001003421001",
+        "9022001003421002"
+      ],
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002211000",
+      "name": "Stadion",
+      "lon": 18.081942,
+      "lat": 59.340803,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002211000"
+      ],
+      "platformStopIds": [
+        "9022001002211001",
+        "9022001002211002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003161000",
+      "name": "Stadshagen",
+      "lon": 18.015653,
+      "lat": 59.337449,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003161000"
+      ],
+      "platformStopIds": [
+        "9022001003161001",
+        "9022001003161002"
+      ],
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001211000",
+      "name": "Stora mossen",
+      "lon": 17.965347,
+      "lat": 59.334669,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001211000"
+      ],
+      "platformStopIds": [
+        "9022001001211001",
+        "9022001001211002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001651000",
+      "name": "Stureby",
+      "lon": 18.055645,
+      "lat": 59.274628,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001651000"
+      ],
+      "platformStopIds": [
+        "9022001001651001",
+        "9022001001651002"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003431000",
+      "name": "Sundbybergs centrum",
+      "lon": 17.973032,
+      "lat": 59.360533,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003431000"
+      ],
+      "platformStopIds": [
+        "9022001003431001",
+        "9022001003431002"
+      ],
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001641000",
+      "name": "Svedmyra",
+      "lon": 18.067949,
+      "lat": 59.278012,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001641000"
+      ],
+      "platformStopIds": [
+        "9022001001641001",
+        "9022001001641002"
+      ],
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002701000",
+      "name": "Sätra",
+      "lon": 17.921296,
+      "lat": 59.285003,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002701000"
+      ],
+      "platformStopIds": [
+        "9022001002701001",
+        "9022001002701002",
+        "9022001002701003",
+        "9022001002701004"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001051000",
+      "name": "T-Centralen",
+      "lon": 18.061694,
+      "lat": 59.33166,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001051000"
+      ],
+      "platformStopIds": [
+        "9022001001051001",
+        "9022001001051002",
+        "9022001001051003",
+        "9022001001051004",
+        "9022001001051005",
+        "9022001001051006"
+      ],
+      "routes": [
+        "10",
+        "11",
+        "13",
+        "14",
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "blue",
+        "red",
+        "green"
+      ],
+      "interchange": true,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001841000",
+      "name": "Tallkrogen",
+      "lon": 18.085545,
+      "lat": 59.271257,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001841000"
+      ],
+      "platformStopIds": [
+        "9022001001841001",
+        "9022001001841002"
+      ],
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002221000",
+      "name": "Tekniska högskolan",
+      "lon": 18.069324,
+      "lat": 59.34654,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002221000"
+      ],
+      "platformStopIds": [
+        "9022001002221001",
+        "9022001002221002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002821000",
+      "name": "Telefonplan",
+      "lon": 17.997344,
+      "lat": 59.298252,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002821000"
+      ],
+      "platformStopIds": [
+        "9022001002821001",
+        "9022001002821002"
+      ],
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003471000",
+      "name": "Tensta",
+      "lon": 17.902487,
+      "lat": 59.394129,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003471000"
+      ],
+      "platformStopIds": [
+        "9022001003471001",
+        "9022001003471002"
+      ],
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001161000",
+      "name": "Thorildsplan",
+      "lon": 18.015855,
+      "lat": 59.331496,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001161000"
+      ],
+      "platformStopIds": [
+        "9022001001161001",
+        "9022001001161002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002231000",
+      "name": "Universitetet",
+      "lon": 18.054093,
+      "lat": 59.365316,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002231000"
+      ],
+      "platformStopIds": [
+        "9022001002231001",
+        "9022001002231002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002721000",
+      "name": "Vårberg",
+      "lon": 17.890176,
+      "lat": 59.27595,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002721000"
+      ],
+      "platformStopIds": [
+        "9022001002721001",
+        "9022001002721002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002731000",
+      "name": "Vårby gård",
+      "lon": 17.88468,
+      "lat": 59.264365,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002731000"
+      ],
+      "platformStopIds": [
+        "9022001002731001",
+        "9022001002731002"
+      ],
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001301000",
+      "name": "Vällingby",
+      "lon": 17.872066,
+      "lat": 59.363242,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001301000"
+      ],
+      "platformStopIds": [
+        "9022001001301001",
+        "9022001001301002",
+        "9022001001301003",
+        "9022001001301004"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002841000",
+      "name": "Västertorp",
+      "lon": 17.966709,
+      "lat": 59.291355,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002841000"
+      ],
+      "platformStopIds": [
+        "9022001002841001",
+        "9022001002841002"
+      ],
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001003201000",
+      "name": "Västra skogen",
+      "lon": 18.003402,
+      "lat": 59.348022,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001003201000"
+      ],
+      "platformStopIds": [
+        "9022001003201001",
+        "9022001003201002",
+        "9022001003201003"
+      ],
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002521000",
+      "name": "Zinkensdamm",
+      "lon": 18.049608,
+      "lat": 59.317911,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002521000"
+      ],
+      "platformStopIds": [
+        "9022001002521001",
+        "9022001002521002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001241000",
+      "name": "Åkeshov",
+      "lon": 17.92343,
+      "lat": 59.342132,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001241000"
+      ],
+      "platformStopIds": [
+        "9022001001241001",
+        "9022001001241002",
+        "9022001001241003",
+        "9022001001241004"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001001251000",
+      "name": "Ängbyplan",
+      "lon": 17.90713,
+      "lat": 59.341951,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001001251000"
+      ],
+      "platformStopIds": [
+        "9022001001251001",
+        "9022001001251002"
+      ],
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002621000",
+      "name": "Örnsberg",
+      "lon": 17.989131,
+      "lat": 59.30543,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002621000"
+      ],
+      "platformStopIds": [
+        "9022001002621001",
+        "9022001002621002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    },
+    {
+      "id": "SL9021001002101000",
+      "name": "Östermalmstorg",
+      "lon": 18.076384,
+      "lat": 59.334968,
+      "coordinateSource": "GTFS parent station",
+      "parentStopIds": [
+        "9021001002101000"
+      ],
+      "platformStopIds": [
+        "9022001002101001",
+        "9022001002101002"
+      ],
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ],
+      "interchange": false,
+      "joinMethods": [
+        "parent-station-id"
+      ],
+      "note": null
+    }
+  ]
+}

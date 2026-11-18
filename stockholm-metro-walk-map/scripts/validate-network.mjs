@@ -30,10 +30,11 @@ const failuresDoc = readJson(paths.isoFailures, null);
 
 const errors = [];
 const warnings = [];
-// Longest real inter-station gaps on the Stockholm metro are about 2 km
-// (e.g. Universitetet–Bergshamra, Hallonbergen–Kista); 3.5 km leaves margin
-// while still catching a wrong join across the city.
-const MAX_EDGE_M = { metro: 3500 };
+// Longest real inter-station gap on the Stockholm metro: Hallonbergen–Kista,
+// about 3.5 km straight line (trains pass the never-opened Kymlinge station
+// in between). Every other gap is under 2.3 km (Tekniska högskolan–
+// Universitetet). 4 km still catches a wrong join across the city.
+const MAX_EDGE_M = { metro: 4000 };
 const SNAP_TOLERANCE_M = 150; // origin snapping + polygon grid of the routing engine
 
 const disconnected = [];
@@ -140,6 +141,7 @@ const report = {
   },
   unmatchedRecords: {
     orphanPlatforms: join.orphanPlatforms,
+    passThroughStopsExcluded: join.nonPassengerStops,
     rejectedLinks: join.rejectedLinks,
     unmappedPatternStops: join.unmappedPatternStops,
     osmStationsWithoutOperatorMatch: osm.status === 'checked' ? osm.unmatchedOsm : null,

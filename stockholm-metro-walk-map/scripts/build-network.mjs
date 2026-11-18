@@ -174,7 +174,8 @@ const unmappedStops = new Set();
 for (const p of patternsDoc.patterns) {
   const line = MetroConfig.LINE_ID_BY_ROUTE[p.route];
   if (!line) continue;
-  const ids = p.stopIds.map((s) => { const id = stopToStation.get(s); if (!id) unmappedStops.add(s); return id; });
+  // Consecutive PASSENGER calls: pass-through stops (see prepare-stations) are skipped.
+  const ids = p.stopIds.filter((s, i) => p.passenger[i]).map((s) => { const id = stopToStation.get(s); if (!id) unmappedStops.add(s); return id; });
   for (let i = 0; i + 1 < ids.length; i++) {
     const a = ids[i], b = ids[i + 1];
     if (!a || !b || a === b) continue;
@@ -253,6 +254,7 @@ writeJson(paths.joinReport, {
   links, rejectedLinks, nameConflicts, separatedSameName,
   unmappedPatternStops: [...unmappedStops],
   orphanPlatforms: clean.orphanPlatforms,
+  nonPassengerStops: clean.nonPassengerStops,
   aliasesApplied, unusedAliases,
   overridesApplied, unusedOverrides,
   osmCrossCheck: osmCheck,

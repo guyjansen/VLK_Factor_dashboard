@@ -1,0 +1,8 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,route_desc
+9011001001000000,14010000000001001,10,Blå linjen,401,tunnelbanans blå linje
+9011001001100000,14010000000001001,11,Blå linjen,401,tunnelbanans blå linje
+9011001001300000,14010000000001001,13,Röda linjen,401,tunnelbanans röda linje
+9011001001400000,14010000000001001,14,Röda linjen,401,tunnelbanans röda linje
+9011001001700000,14010000000001001,17,Gröna linjen,401,tunnelbanans gröna linje
+9011001001800000,14010000000001001,18,Gröna linjen,401,tunnelbanans gröna linje
+9011001001900000,14010000000001001,19,Gröna linjen,401,tunnelbanans gröna linje

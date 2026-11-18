@@ -69,9 +69,13 @@ test('every edge is a consecutive pair in an operator stop pattern (no inferred 
   const stopTo = new Map();
   stations.forEach((s) => s.platformStopIds.forEach((p) => stopTo.set(p, s.id)));
   const pairs = new Set();
-  for (const p of patterns) for (let i = 0; i + 1 < p.stopIds.length; i++) {
+  for (const p0 of patterns) {
+    // Consecutive passenger calls (pass-through stops such as Kymlinge are skipped).
+    const p = { ...p0, stopIds: p0.stopIds.filter((s, i) => p0.passenger[i]) };
+    for (let i = 0; i + 1 < p.stopIds.length; i++) {
     const a = stopTo.get(p.stopIds[i]), b = stopTo.get(p.stopIds[i + 1]);
     pairs.add(`${a}|${b}|${C.LINE_ID_BY_ROUTE[p.route]}`); pairs.add(`${b}|${a}|${C.LINE_ID_BY_ROUTE[p.route]}`);
+    }
   }
   const removed = readJson(paths.overrides).addEdges || [];
   for (const e of edgesDoc.edges) for (const l of e.lines) {
@@ -101,6 +105,13 @@ test('physical stations: 100 metro stations, interchanges merged once', { skip }
   assert.deepEqual(stations.filter((s) => s.interchange).map((s) => s.name).sort(), ['Fridhemsplan', 'Gamla stan', 'Slussen', 'T-Centralen']);
 });
 
+test('Kymlinge (never opened, trains pass through) is not a station', { skip }, () => {
+  assert.equal(byName('Kymlinge norrut').length + byName('Kymlinge söderut').length, 0);
+  const np = join.nonPassengerStops.map((s) => s.name).sort();
+  assert.deepEqual(np, ['Kymlinge norrut', 'Kymlinge söderut']);
+  assert.ok(edgesDoc.edges.some((e) => [e.aName, e.bName].sort().join() === 'Hallonbergen,Kista'));
+});
+
 test('known separate complexes with similar names stay separate', { skip }, () => {
   const pairs = [['Rådhuset', 'Rådmansgatan'], ['Hallonbergen', 'Hallunda'], ['Alby', 'Alvik'], ['Solna centrum', 'Solna strand'],
     ['Stadshagen', 'Stadion'], ['Skarpnäck', 'Skärmarbrink'], ['Hagsätra', 'Hägerstensåsen'], ['Mälarhöjden', 'Mariatorget'],
@@ -114,7 +125,9 @@ const expectLine = {
   red: { termini: ['Fruängen', 'Mörby centrum', 'Norsborg', 'Ropsten'], junctions: ['Liljeholmen', 'Östermalmstorg'] },
   green: { termini: ['Farsta strand', 'Hagsätra', 'Hässelby strand', 'Skarpnäck'], junctions: ['Gullmarsplan', 'Skärmarbrink'] }
 };
-// Route termini as given in the brief: Hjulsta / Akalla ↔ Kungsträdgården; Norsborg ↔ Ropsten,
+// Main-service termini of each route as given in the brief (the endpoints of
+// its most frequent stop pattern in each direction; extensions and short
+// turns, e.g. 17/18 to Hässelby strand, are real but less frequent): Hjulsta / Akalla ↔ Kungsträdgården; Norsborg ↔ Ropsten,
 // Fruängen ↔ Mörby centrum; Åkeshov ↔ Skarpnäck, Alvik ↔ Farsta strand, Hässelby strand ↔ Hagsätra.
 const expectRoute = {
   10: ['Hjulsta', 'Kungsträdgården'], 11: ['Akalla', 'Kungsträdgården'],
@@ -130,10 +143,20 @@ for (const l of C.LINES) {
     assert.equal(s.cycles, 0, 'no cycles');
     assert.deepEqual(sv(s.termini), sv(expectLine[l.id].termini));
     assert.deepEqual(sv(s.junctions.map((j) => j.name)), sv(expectLine[l.id].junctions));
+    const { patterns } = readJson(path.join(paths.gtfsMetro, 'patterns.json'));
+    const stopName = new Map();
+    stations.forEach((st) => st.platformStopIds.forEach((p) => stopName.set(p, st.name)));
     for (const r of l.routes) {
       const rs = s.routes[r];
       assert.equal(rs.components.length, 1, `route ${r} connected`);
-      assert.deepEqual(sv(rs.termini), sv(expectRoute[r]), `route ${r} termini`);
+      assert.equal(rs.cycles, 0, `route ${r} no cycles`);
+      for (const dir of ['0', '1']) {
+        const main = patterns.filter((p) => p.route === r && p.directionId === dir).sort((a, b) => b.trips - a.trips)[0];
+        const calls = main.stopIds.filter((x, i) => main.passenger[i]).map((x) => stopName.get(x));
+        assert.deepEqual(sv([calls[0], calls[calls.length - 1]]), sv(expectRoute[r]), `route ${r} direction ${dir} main pattern`);
+      }
+      // Every route terminus in the data is a real station on the line.
+      for (const tname of rs.termini) assert.equal(one(tname).lines.includes(l.id), true);
     }
   });
 }
@@ -145,7 +168,10 @@ test('red and green share track Slussen–Gamla stan–T-Centralen (drawn side b
 });
 
 test('no implausibly long edges; validation report has no errors', { skip }, () => {
-  for (const e of edgesDoc.edges) assert.ok(e.lengthM < 3500, `${e.aName}–${e.bName} ${e.lengthM} m`);
+  // Hallonbergen–Kista (~3.5 km, past the unopened Kymlinge) is the only gap over 2.3 km.
+  const long = edgesDoc.edges.filter((e) => e.lengthM > 2300).map((e) => [e.aName, e.bName].sort().join('–'));
+  assert.deepEqual(long, ['Hallonbergen–Kista']);
+  for (const e of edgesDoc.edges) assert.ok(e.lengthM < 4000, `${e.aName}–${e.bName} ${e.lengthM} m`);
   const v = readJson(paths.validation);
   assert.deepEqual(v.errors, []);
   assert.deepEqual(v.unusedOverrides, []);

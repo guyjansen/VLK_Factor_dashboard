@@ -39,15 +39,25 @@ for (const s of stopsRows) {
   byId.set(rec.stopId, rec);
 }
 
-// Routes / lines that call at each platform (from the trip patterns).
+// Routes / lines that SERVE each platform (from the trip patterns). A stop
+// at which no trip ever allows boarding or alighting (GTFS pickup_type and
+// drop_off_type both 1) is a pass-through point, not a station: it is listed
+// in nonPassengerStops and left out of the network.
+if (!patterns.every((p) => Array.isArray(p.passenger))) fail('patterns.json lacks passenger flags', 'Run "npm run fetch-topology" again (no download needed).');
 const platformRoutes = new Map();
+const passThrough = new Map();
 for (const p of patterns) {
   const route = p.route || routeShort.get(p.routeId);
-  for (const id of p.stopIds) {
+  p.stopIds.forEach((id, i) => {
+    if (!p.passenger[i]) { if (!passThrough.has(id)) passThrough.set(id, new Set()); passThrough.get(id).add(route); return; }
     if (!platformRoutes.has(id)) platformRoutes.set(id, new Set());
     platformRoutes.get(id).add(route);
-  }
+  });
 }
+const nonPassengerStops = [...passThrough].filter(([id]) => !platformRoutes.has(id)).map(([id, routesSet]) => {
+  const r = byId.get(id);
+  return { stopId: id, name: r?.name || null, parentStation: r?.parentStation || null, routes: [...routesSet].sort(), reason: 'No trip allows boarding or alighting here (GTFS pickup_type = drop_off_type = 1): trains pass through without stopping for passengers.' };
+});
 const lineOfRoute = (r) => MetroConfig.LINE_ID_BY_ROUTE[r];
 const platforms = [...platformRoutes.keys()].map((id) => {
   const rec = byId.get(id);
@@ -89,12 +99,13 @@ writeJson(paths.stationsClean, {
   coordinateSystem: 'WGS84 (EPSG:4326) in both sources; no conversion applied',
   preparedAt: new Date().toISOString(),
   counts: { platforms: platforms.length, parents: parents.length, orphanPlatforms: orphanPlatforms.length, entrancesInFeed: entrances, osm: osm ? osm.records.length : null },
-  platforms, parents, orphanPlatforms,
+  platforms, parents, orphanPlatforms, nonPassengerStops,
   osm,
   sameNameParents: [...keyGroups.values()].filter((g) => g.length > 1).map((g) => g.map((p) => ({ stopId: p.stopId, name: p.name }))),
   issues
 });
 console.log(`GTFS: ${platforms.length} metro platform stop(s) in ${parents.length} parent station(s); ${orphanPlatforms.length} without parent; ${entrances} entrance record(s) in the feed.`);
+console.log(`Pass-through stops excluded: ${nonPassengerStops.map((s) => `${s.name} (${s.stopId})`).join(', ') || 'none'}`);
 console.log(`OSM reference: ${osm ? `${osm.records.filter((r) => r.status === 'in-service').length} in service, ${osm.records.filter((r) => r.status !== 'in-service').length} not in service` : 'not available'}`);
 if (issues.length) console.log(`Issues: ${JSON.stringify(issues).slice(0, 500)}`);
 console.log(`Wrote ${rel(paths.stationsClean)}`);

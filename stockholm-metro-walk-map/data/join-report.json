@@ -1,0 +1,1830 @@
+{
+  "generatedAt": "2026-11-18T15:45:09.771Z",
+  "maxJoinDistanceM": 500,
+  "counts": {
+    "platforms": 223,
+    "parents": 100,
+    "stations": 100,
+    "links": 223
+  },
+  "links": [
+    {
+      "a": "9022001003481002",
+      "aName": "Hjulsta",
+      "b": "9021001003481000",
+      "bName": "Hjulsta",
+      "method": "parent-station-id",
+      "distanceM": 5
+    },
+    {
+      "a": "9022001003471002",
+      "aName": "Tensta",
+      "b": "9021001003471000",
+      "bName": "Tensta",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001003461002",
+      "aName": "Rinkeby",
+      "b": "9021001003461000",
+      "bName": "Rinkeby",
+      "method": "parent-station-id",
+      "distanceM": 29
+    },
+    {
+      "a": "9022001003451002",
+      "aName": "Rissne",
+      "b": "9021001003451000",
+      "bName": "Rissne",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001003441002",
+      "aName": "Duvbo",
+      "b": "9021001003441000",
+      "bName": "Duvbo",
+      "method": "parent-station-id",
+      "distanceM": 9
+    },
+    {
+      "a": "9022001003431002",
+      "aName": "Sundbybergs centrum",
+      "b": "9021001003431000",
+      "bName": "Sundbybergs centrum",
+      "method": "parent-station-id",
+      "distanceM": 20
+    },
+    {
+      "a": "9022001003421002",
+      "aName": "Solna strand",
+      "b": "9021001003421000",
+      "bName": "Solna strand",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001003411002",
+      "aName": "Huvudsta",
+      "b": "9021001003411000",
+      "bName": "Huvudsta",
+      "method": "parent-station-id",
+      "distanceM": 19
+    },
+    {
+      "a": "9022001003201003",
+      "aName": "Västra skogen",
+      "b": "9021001003201000",
+      "bName": "Västra skogen",
+      "method": "parent-station-id",
+      "distanceM": 7
+    },
+    {
+      "a": "9022001003161002",
+      "aName": "Stadshagen",
+      "b": "9021001003161000",
+      "bName": "Stadshagen",
+      "method": "parent-station-id",
+      "distanceM": 14
+    },
+    {
+      "a": "9022001001151004",
+      "aName": "Fridhemsplan",
+      "b": "9021001001151000",
+      "bName": "Fridhemsplan",
+      "method": "parent-station-id",
+      "distanceM": 16
+    },
+    {
+      "a": "9022001003131002",
+      "aName": "Rådhuset",
+      "b": "9021001003131000",
+      "bName": "Rådhuset",
+      "method": "parent-station-id",
+      "distanceM": 28
+    },
+    {
+      "a": "9022001001051006",
+      "aName": "T-Centralen",
+      "b": "9021001001051000",
+      "bName": "T-Centralen",
+      "method": "parent-station-id",
+      "distanceM": 87
+    },
+    {
+      "a": "9022001003031001",
+      "aName": "Kungsträdgården",
+      "b": "9021001003031000",
+      "bName": "Kungsträdgården",
+      "method": "parent-station-id",
+      "distanceM": 65
+    },
+    {
+      "a": "9022001003031002",
+      "aName": "Kungsträdgården",
+      "b": "9021001003031000",
+      "bName": "Kungsträdgården",
+      "method": "parent-station-id",
+      "distanceM": 64
+    },
+    {
+      "a": "9022001001051005",
+      "aName": "T-Centralen",
+      "b": "9021001001051000",
+      "bName": "T-Centralen",
+      "method": "parent-station-id",
+      "distanceM": 88
+    },
+    {
+      "a": "9022001003131001",
+      "aName": "Rådhuset",
+      "b": "9021001003131000",
+      "bName": "Rådhuset",
+      "method": "parent-station-id",
+      "distanceM": 29
+    },
+    {
+      "a": "9022001001151003",
+      "aName": "Fridhemsplan",
+      "b": "9021001001151000",
+      "bName": "Fridhemsplan",
+      "method": "parent-station-id",
+      "distanceM": 22
+    },
+    {
+      "a": "9022001003161001",
+      "aName": "Stadshagen",
+      "b": "9021001003161000",
+      "bName": "Stadshagen",
+      "method": "parent-station-id",
+      "distanceM": 14
+    },
+    {
+      "a": "9022001003201001",
+      "aName": "Västra skogen",
+      "b": "9021001003201000",
+      "bName": "Västra skogen",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001003411001",
+      "aName": "Huvudsta",
+      "b": "9021001003411000",
+      "bName": "Huvudsta",
+      "method": "parent-station-id",
+      "distanceM": 19
+    },
+    {
+      "a": "9022001003421001",
+      "aName": "Solna strand",
+      "b": "9021001003421000",
+      "bName": "Solna strand",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001003431001",
+      "aName": "Sundbybergs centrum",
+      "b": "9021001003431000",
+      "bName": "Sundbybergs centrum",
+      "method": "parent-station-id",
+      "distanceM": 22
+    },
+    {
+      "a": "9022001003441001",
+      "aName": "Duvbo",
+      "b": "9021001003441000",
+      "bName": "Duvbo",
+      "method": "parent-station-id",
+      "distanceM": 9
+    },
+    {
+      "a": "9022001003451001",
+      "aName": "Rissne",
+      "b": "9021001003451000",
+      "bName": "Rissne",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001003461001",
+      "aName": "Rinkeby",
+      "b": "9021001003461000",
+      "bName": "Rinkeby",
+      "method": "parent-station-id",
+      "distanceM": 29
+    },
+    {
+      "a": "9022001003471001",
+      "aName": "Tensta",
+      "b": "9021001003471000",
+      "bName": "Tensta",
+      "method": "parent-station-id",
+      "distanceM": 5
+    },
+    {
+      "a": "9022001003461003",
+      "aName": "Rinkeby",
+      "b": "9021001003461000",
+      "bName": "Rinkeby",
+      "method": "parent-station-id",
+      "distanceM": 31
+    },
+    {
+      "a": "9022001003271002",
+      "aName": "Akalla",
+      "b": "9021001003271000",
+      "bName": "Akalla",
+      "method": "parent-station-id",
+      "distanceM": 147
+    },
+    {
+      "a": "9022001003261002",
+      "aName": "Husby",
+      "b": "9021001003261000",
+      "bName": "Husby",
+      "method": "parent-station-id",
+      "distanceM": 16
+    },
+    {
+      "a": "9022001003251002",
+      "aName": "Kista",
+      "b": "9021001003251000",
+      "bName": "Kista",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001003231002",
+      "aName": "Hallonbergen",
+      "b": "9021001003231000",
+      "bName": "Hallonbergen",
+      "method": "parent-station-id",
+      "distanceM": 23
+    },
+    {
+      "a": "9022001003221002",
+      "aName": "Näckrosen",
+      "b": "9021001003221000",
+      "bName": "Näckrosen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001003211002",
+      "aName": "Solna centrum",
+      "b": "9021001003211000",
+      "bName": "Solna centrum",
+      "method": "parent-station-id",
+      "distanceM": 16
+    },
+    {
+      "a": "9022001003201002",
+      "aName": "Västra skogen",
+      "b": "9021001003201000",
+      "bName": "Västra skogen",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001003211001",
+      "aName": "Solna centrum",
+      "b": "9021001003211000",
+      "bName": "Solna centrum",
+      "method": "parent-station-id",
+      "distanceM": 14
+    },
+    {
+      "a": "9022001003221001",
+      "aName": "Näckrosen",
+      "b": "9021001003221000",
+      "bName": "Näckrosen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001003231001",
+      "aName": "Hallonbergen",
+      "b": "9021001003231000",
+      "bName": "Hallonbergen",
+      "method": "parent-station-id",
+      "distanceM": 9
+    },
+    {
+      "a": "9022001003251001",
+      "aName": "Kista",
+      "b": "9021001003251000",
+      "bName": "Kista",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001003261001",
+      "aName": "Husby",
+      "b": "9021001003261000",
+      "bName": "Husby",
+      "method": "parent-station-id",
+      "distanceM": 14
+    },
+    {
+      "a": "9022001003231003",
+      "aName": "Hallonbergen",
+      "b": "9021001003231000",
+      "bName": "Hallonbergen",
+      "method": "parent-station-id",
+      "distanceM": 27
+    },
+    {
+      "a": "9022001002131002",
+      "aName": "Ropsten",
+      "b": "9021001002131000",
+      "bName": "Ropsten",
+      "method": "parent-station-id",
+      "distanceM": 21
+    },
+    {
+      "a": "9022001002121002",
+      "aName": "Gärdet",
+      "b": "9021001002121000",
+      "bName": "Gärdet",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002111002",
+      "aName": "Karlaplan",
+      "b": "9021001002111000",
+      "bName": "Karlaplan",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001002101002",
+      "aName": "Östermalmstorg",
+      "b": "9021001002101000",
+      "bName": "Östermalmstorg",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001051004",
+      "aName": "T-Centralen",
+      "b": "9021001001051000",
+      "bName": "T-Centralen",
+      "method": "parent-station-id",
+      "distanceM": 47
+    },
+    {
+      "a": "9022001001021004",
+      "aName": "Gamla stan",
+      "b": "9021001001021000",
+      "bName": "Gamla stan",
+      "method": "parent-station-id",
+      "distanceM": 13
+    },
+    {
+      "a": "9022001001011004",
+      "aName": "Slussen",
+      "b": "9021001001011000",
+      "bName": "Slussen",
+      "method": "parent-station-id",
+      "distanceM": 29
+    },
+    {
+      "a": "9022001002511002",
+      "aName": "Mariatorget",
+      "b": "9021001002511000",
+      "bName": "Mariatorget",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002521002",
+      "aName": "Zinkensdamm",
+      "b": "9021001002521000",
+      "bName": "Zinkensdamm",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002531002",
+      "aName": "Hornstull",
+      "b": "9021001002531000",
+      "bName": "Hornstull",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001002601004",
+      "aName": "Liljeholmen",
+      "b": "9021001002601000",
+      "bName": "Liljeholmen",
+      "method": "parent-station-id",
+      "distanceM": 8
+    },
+    {
+      "a": "9022001002611002",
+      "aName": "Aspudden",
+      "b": "9021001002611000",
+      "bName": "Aspudden",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002621002",
+      "aName": "Örnsberg",
+      "b": "9021001002621000",
+      "bName": "Örnsberg",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002631002",
+      "aName": "Axelsberg",
+      "b": "9021001002631000",
+      "bName": "Axelsberg",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001002641002",
+      "aName": "Mälarhöjden",
+      "b": "9021001002641000",
+      "bName": "Mälarhöjden",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001002651002",
+      "aName": "Bredäng",
+      "b": "9021001002651000",
+      "bName": "Bredäng",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002701002",
+      "aName": "Sätra",
+      "b": "9021001002701000",
+      "bName": "Sätra",
+      "method": "parent-station-id",
+      "distanceM": 14
+    },
+    {
+      "a": "9022001002711002",
+      "aName": "Skärholmen",
+      "b": "9021001002711000",
+      "bName": "Skärholmen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002721002",
+      "aName": "Vårberg",
+      "b": "9021001002721000",
+      "bName": "Vårberg",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001002731002",
+      "aName": "Vårby gård",
+      "b": "9021001002731000",
+      "bName": "Vårby gård",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001002741002",
+      "aName": "Masmo",
+      "b": "9021001002741000",
+      "bName": "Masmo",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001002751002",
+      "aName": "Fittja",
+      "b": "9021001002751000",
+      "bName": "Fittja",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001002761002",
+      "aName": "Alby",
+      "b": "9021001002761000",
+      "bName": "Alby",
+      "method": "parent-station-id",
+      "distanceM": 12
+    },
+    {
+      "a": "9022001002771002",
+      "aName": "Hallunda",
+      "b": "9021001002771000",
+      "bName": "Hallunda",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002781001",
+      "aName": "Norsborg",
+      "b": "9021001002781000",
+      "bName": "Norsborg",
+      "method": "parent-station-id",
+      "distanceM": 30
+    },
+    {
+      "a": "9022001002301002",
+      "aName": "Mörby centrum",
+      "b": "9021001002301000",
+      "bName": "Mörby centrum",
+      "method": "parent-station-id",
+      "distanceM": 15
+    },
+    {
+      "a": "9022001002251002",
+      "aName": "Danderyds sjukhus",
+      "b": "9021001002251000",
+      "bName": "Danderyds sjukhus",
+      "method": "parent-station-id",
+      "distanceM": 13
+    },
+    {
+      "a": "9022001002241002",
+      "aName": "Bergshamra",
+      "b": "9021001002241000",
+      "bName": "Bergshamra",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002231002",
+      "aName": "Universitetet",
+      "b": "9021001002231000",
+      "bName": "Universitetet",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002221002",
+      "aName": "Tekniska högskolan",
+      "b": "9021001002221000",
+      "bName": "Tekniska högskolan",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002211002",
+      "aName": "Stadion",
+      "b": "9021001002211000",
+      "bName": "Stadion",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002761003",
+      "aName": "Alby",
+      "b": "9021001002761000",
+      "bName": "Alby",
+      "method": "parent-station-id",
+      "distanceM": 25
+    },
+    {
+      "a": "9022001002701003",
+      "aName": "Sätra",
+      "b": "9021001002701000",
+      "bName": "Sätra",
+      "method": "parent-station-id",
+      "distanceM": 8
+    },
+    {
+      "a": "9022001002781002",
+      "aName": "Norsborg",
+      "b": "9021001002781000",
+      "bName": "Norsborg",
+      "method": "parent-station-id",
+      "distanceM": 30
+    },
+    {
+      "a": "9022001002771001",
+      "aName": "Hallunda",
+      "b": "9021001002771000",
+      "bName": "Hallunda",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001002761001",
+      "aName": "Alby",
+      "b": "9021001002761000",
+      "bName": "Alby",
+      "method": "parent-station-id",
+      "distanceM": 13
+    },
+    {
+      "a": "9022001002751001",
+      "aName": "Fittja",
+      "b": "9021001002751000",
+      "bName": "Fittja",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001002741001",
+      "aName": "Masmo",
+      "b": "9021001002741000",
+      "bName": "Masmo",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001002731001",
+      "aName": "Vårby gård",
+      "b": "9021001002731000",
+      "bName": "Vårby gård",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001002721001",
+      "aName": "Vårberg",
+      "b": "9021001002721000",
+      "bName": "Vårberg",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001002711001",
+      "aName": "Skärholmen",
+      "b": "9021001002711000",
+      "bName": "Skärholmen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002701001",
+      "aName": "Sätra",
+      "b": "9021001002701000",
+      "bName": "Sätra",
+      "method": "parent-station-id",
+      "distanceM": 13
+    },
+    {
+      "a": "9022001002651001",
+      "aName": "Bredäng",
+      "b": "9021001002651000",
+      "bName": "Bredäng",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002641001",
+      "aName": "Mälarhöjden",
+      "b": "9021001002641000",
+      "bName": "Mälarhöjden",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001002631001",
+      "aName": "Axelsberg",
+      "b": "9021001002631000",
+      "bName": "Axelsberg",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001002621001",
+      "aName": "Örnsberg",
+      "b": "9021001002621000",
+      "bName": "Örnsberg",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002611001",
+      "aName": "Aspudden",
+      "b": "9021001002611000",
+      "bName": "Aspudden",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002601001",
+      "aName": "Liljeholmen",
+      "b": "9021001002601000",
+      "bName": "Liljeholmen",
+      "method": "parent-station-id",
+      "distanceM": 10
+    },
+    {
+      "a": "9022001002531001",
+      "aName": "Hornstull",
+      "b": "9021001002531000",
+      "bName": "Hornstull",
+      "method": "parent-station-id",
+      "distanceM": 5
+    },
+    {
+      "a": "9022001002521001",
+      "aName": "Zinkensdamm",
+      "b": "9021001002521000",
+      "bName": "Zinkensdamm",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002511001",
+      "aName": "Mariatorget",
+      "b": "9021001002511000",
+      "bName": "Mariatorget",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001011003",
+      "aName": "Slussen",
+      "b": "9021001001011000",
+      "bName": "Slussen",
+      "method": "parent-station-id",
+      "distanceM": 19
+    },
+    {
+      "a": "9022001001021003",
+      "aName": "Gamla stan",
+      "b": "9021001001021000",
+      "bName": "Gamla stan",
+      "method": "parent-station-id",
+      "distanceM": 20
+    },
+    {
+      "a": "9022001001051001",
+      "aName": "T-Centralen",
+      "b": "9021001001051000",
+      "bName": "T-Centralen",
+      "method": "parent-station-id",
+      "distanceM": 47
+    },
+    {
+      "a": "9022001002101001",
+      "aName": "Östermalmstorg",
+      "b": "9021001002101000",
+      "bName": "Östermalmstorg",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001002111001",
+      "aName": "Karlaplan",
+      "b": "9021001002111000",
+      "bName": "Karlaplan",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001002121001",
+      "aName": "Gärdet",
+      "b": "9021001002121000",
+      "bName": "Gärdet",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002701004",
+      "aName": "Sätra",
+      "b": "9021001002701000",
+      "bName": "Sätra",
+      "method": "parent-station-id",
+      "distanceM": 19
+    },
+    {
+      "a": "9022001002601003",
+      "aName": "Liljeholmen",
+      "b": "9021001002601000",
+      "bName": "Liljeholmen",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001002131001",
+      "aName": "Ropsten",
+      "b": "9021001002131000",
+      "bName": "Ropsten",
+      "method": "parent-station-id",
+      "distanceM": 21
+    },
+    {
+      "a": "9022001002811002",
+      "aName": "Midsommarkransen",
+      "b": "9021001002811000",
+      "bName": "Midsommarkransen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002821002",
+      "aName": "Telefonplan",
+      "b": "9021001002821000",
+      "bName": "Telefonplan",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001002831002",
+      "aName": "Hägerstensåsen",
+      "b": "9021001002831000",
+      "bName": "Hägerstensåsen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002841002",
+      "aName": "Västertorp",
+      "b": "9021001002841000",
+      "bName": "Västertorp",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002851001",
+      "aName": "Fruängen",
+      "b": "9021001002851000",
+      "bName": "Fruängen",
+      "method": "parent-station-id",
+      "distanceM": 42
+    },
+    {
+      "a": "9022001002601005",
+      "aName": "Liljeholmen",
+      "b": "9021001002601000",
+      "bName": "Liljeholmen",
+      "method": "parent-station-id",
+      "distanceM": 9
+    },
+    {
+      "a": "9022001002851002",
+      "aName": "Fruängen",
+      "b": "9021001002851000",
+      "bName": "Fruängen",
+      "method": "parent-station-id",
+      "distanceM": 41
+    },
+    {
+      "a": "9022001002841001",
+      "aName": "Västertorp",
+      "b": "9021001002841000",
+      "bName": "Västertorp",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002831001",
+      "aName": "Hägerstensåsen",
+      "b": "9021001002831000",
+      "bName": "Hägerstensåsen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002821001",
+      "aName": "Telefonplan",
+      "b": "9021001002821000",
+      "bName": "Telefonplan",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001002811001",
+      "aName": "Midsommarkransen",
+      "b": "9021001002811000",
+      "bName": "Midsommarkransen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002211001",
+      "aName": "Stadion",
+      "b": "9021001002211000",
+      "bName": "Stadion",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001002221001",
+      "aName": "Tekniska högskolan",
+      "b": "9021001002221000",
+      "bName": "Tekniska högskolan",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002231001",
+      "aName": "Universitetet",
+      "b": "9021001002231000",
+      "bName": "Universitetet",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002241001",
+      "aName": "Bergshamra",
+      "b": "9021001002241000",
+      "bName": "Bergshamra",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001002251001",
+      "aName": "Danderyds sjukhus",
+      "b": "9021001002251000",
+      "bName": "Danderyds sjukhus",
+      "method": "parent-station-id",
+      "distanceM": 13
+    },
+    {
+      "a": "9022001002301001",
+      "aName": "Mörby centrum",
+      "b": "9021001002301000",
+      "bName": "Mörby centrum",
+      "method": "parent-station-id",
+      "distanceM": 15
+    },
+    {
+      "a": "9022001001241004",
+      "aName": "Åkeshov",
+      "b": "9021001001241000",
+      "bName": "Åkeshov",
+      "method": "parent-station-id",
+      "distanceM": 5
+    },
+    {
+      "a": "9022001001231002",
+      "aName": "Brommaplan",
+      "b": "9021001001231000",
+      "bName": "Brommaplan",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001221002",
+      "aName": "Abrahamsberg",
+      "b": "9021001001221000",
+      "bName": "Abrahamsberg",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001211002",
+      "aName": "Stora mossen",
+      "b": "9021001001211000",
+      "bName": "Stora mossen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001201002",
+      "aName": "Alvik",
+      "b": "9021001001201000",
+      "bName": "Alvik",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001171002",
+      "aName": "Kristineberg",
+      "b": "9021001001171000",
+      "bName": "Kristineberg",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001161002",
+      "aName": "Thorildsplan",
+      "b": "9021001001161000",
+      "bName": "Thorildsplan",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001151002",
+      "aName": "Fridhemsplan",
+      "b": "9021001001151000",
+      "bName": "Fridhemsplan",
+      "method": "parent-station-id",
+      "distanceM": 23
+    },
+    {
+      "a": "9022001001141002",
+      "aName": "S:t Eriksplan",
+      "b": "9021001001141000",
+      "bName": "S:t Eriksplan",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001131002",
+      "aName": "Odenplan",
+      "b": "9021001001131000",
+      "bName": "Odenplan",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001121002",
+      "aName": "Rådmansgatan",
+      "b": "9021001001121000",
+      "bName": "Rådmansgatan",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001111002",
+      "aName": "Hötorget",
+      "b": "9021001001111000",
+      "bName": "Hötorget",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001051002",
+      "aName": "T-Centralen",
+      "b": "9021001001051000",
+      "bName": "T-Centralen",
+      "method": "parent-station-id",
+      "distanceM": 29
+    },
+    {
+      "a": "9022001001021002",
+      "aName": "Gamla stan",
+      "b": "9021001001021000",
+      "bName": "Gamla stan",
+      "method": "parent-station-id",
+      "distanceM": 11
+    },
+    {
+      "a": "9022001001011002",
+      "aName": "Slussen",
+      "b": "9021001001011000",
+      "bName": "Slussen",
+      "method": "parent-station-id",
+      "distanceM": 36
+    },
+    {
+      "a": "9022001001511002",
+      "aName": "Medborgarplatsen",
+      "b": "9021001001511000",
+      "bName": "Medborgarplatsen",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001521002",
+      "aName": "Skanstull",
+      "b": "9021001001521000",
+      "bName": "Skanstull",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001551002",
+      "aName": "Gullmarsplan",
+      "b": "9021001001551000",
+      "bName": "Gullmarsplan",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001601002",
+      "aName": "Skärmarbrink",
+      "b": "9021001001601000",
+      "bName": "Skärmarbrink",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001911002",
+      "aName": "Hammarbyhöjden",
+      "b": "9021001001911000",
+      "bName": "Hammarbyhöjden",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001921002",
+      "aName": "Björkhagen",
+      "b": "9021001001921000",
+      "bName": "Björkhagen",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001931002",
+      "aName": "Kärrtorp",
+      "b": "9021001001931000",
+      "bName": "Kärrtorp",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001941002",
+      "aName": "Bagarmossen",
+      "b": "9021001001941000",
+      "bName": "Bagarmossen",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001951001",
+      "aName": "Skarpnäck",
+      "b": "9021001001951000",
+      "bName": "Skarpnäck",
+      "method": "parent-station-id",
+      "distanceM": 49
+    },
+    {
+      "a": "9022001001331002",
+      "aName": "Hässelby strand",
+      "b": "9021001001331000",
+      "bName": "Hässelby strand",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001321002",
+      "aName": "Hässelby gård",
+      "b": "9021001001321000",
+      "bName": "Hässelby gård",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001311002",
+      "aName": "Johannelund",
+      "b": "9021001001311000",
+      "bName": "Johannelund",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001301002",
+      "aName": "Vällingby",
+      "b": "9021001001301000",
+      "bName": "Vällingby",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001001281002",
+      "aName": "Råcksta",
+      "b": "9021001001281000",
+      "bName": "Råcksta",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001271002",
+      "aName": "Blackeberg",
+      "b": "9021001001271000",
+      "bName": "Blackeberg",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001261002",
+      "aName": "Islandstorget",
+      "b": "9021001001261000",
+      "bName": "Islandstorget",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001251002",
+      "aName": "Ängbyplan",
+      "b": "9021001001251000",
+      "bName": "Ängbyplan",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001241002",
+      "aName": "Åkeshov",
+      "b": "9021001001241000",
+      "bName": "Åkeshov",
+      "method": "parent-station-id",
+      "distanceM": 12
+    },
+    {
+      "a": "9022001001301004",
+      "aName": "Vällingby",
+      "b": "9021001001301000",
+      "bName": "Vällingby",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001001551004",
+      "aName": "Gullmarsplan",
+      "b": "9021001001551000",
+      "bName": "Gullmarsplan",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001951002",
+      "aName": "Skarpnäck",
+      "b": "9021001001951000",
+      "bName": "Skarpnäck",
+      "method": "parent-station-id",
+      "distanceM": 50
+    },
+    {
+      "a": "9022001001941001",
+      "aName": "Bagarmossen",
+      "b": "9021001001941000",
+      "bName": "Bagarmossen",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001931001",
+      "aName": "Kärrtorp",
+      "b": "9021001001931000",
+      "bName": "Kärrtorp",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001921001",
+      "aName": "Björkhagen",
+      "b": "9021001001921000",
+      "bName": "Björkhagen",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001911001",
+      "aName": "Hammarbyhöjden",
+      "b": "9021001001911000",
+      "bName": "Hammarbyhöjden",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001601001",
+      "aName": "Skärmarbrink",
+      "b": "9021001001601000",
+      "bName": "Skärmarbrink",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001551001",
+      "aName": "Gullmarsplan",
+      "b": "9021001001551000",
+      "bName": "Gullmarsplan",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001521001",
+      "aName": "Skanstull",
+      "b": "9021001001521000",
+      "bName": "Skanstull",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001511001",
+      "aName": "Medborgarplatsen",
+      "b": "9021001001511000",
+      "bName": "Medborgarplatsen",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001011001",
+      "aName": "Slussen",
+      "b": "9021001001011000",
+      "bName": "Slussen",
+      "method": "parent-station-id",
+      "distanceM": 36
+    },
+    {
+      "a": "9022001001021001",
+      "aName": "Gamla stan",
+      "b": "9021001001021000",
+      "bName": "Gamla stan",
+      "method": "parent-station-id",
+      "distanceM": 13
+    },
+    {
+      "a": "9022001001051003",
+      "aName": "T-Centralen",
+      "b": "9021001001051000",
+      "bName": "T-Centralen",
+      "method": "parent-station-id",
+      "distanceM": 30
+    },
+    {
+      "a": "9022001001111001",
+      "aName": "Hötorget",
+      "b": "9021001001111000",
+      "bName": "Hötorget",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001121001",
+      "aName": "Rådmansgatan",
+      "b": "9021001001121000",
+      "bName": "Rådmansgatan",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001131001",
+      "aName": "Odenplan",
+      "b": "9021001001131000",
+      "bName": "Odenplan",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001141001",
+      "aName": "S:t Eriksplan",
+      "b": "9021001001141000",
+      "bName": "S:t Eriksplan",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001151001",
+      "aName": "Fridhemsplan",
+      "b": "9021001001151000",
+      "bName": "Fridhemsplan",
+      "method": "parent-station-id",
+      "distanceM": 17
+    },
+    {
+      "a": "9022001001161001",
+      "aName": "Thorildsplan",
+      "b": "9021001001161000",
+      "bName": "Thorildsplan",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001171001",
+      "aName": "Kristineberg",
+      "b": "9021001001171000",
+      "bName": "Kristineberg",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001201001",
+      "aName": "Alvik",
+      "b": "9021001001201000",
+      "bName": "Alvik",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001211001",
+      "aName": "Stora mossen",
+      "b": "9021001001211000",
+      "bName": "Stora mossen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001221001",
+      "aName": "Abrahamsberg",
+      "b": "9021001001221000",
+      "bName": "Abrahamsberg",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001231001",
+      "aName": "Brommaplan",
+      "b": "9021001001231000",
+      "bName": "Brommaplan",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001241003",
+      "aName": "Åkeshov",
+      "b": "9021001001241000",
+      "bName": "Åkeshov",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001241001",
+      "aName": "Åkeshov",
+      "b": "9021001001241000",
+      "bName": "Åkeshov",
+      "method": "parent-station-id",
+      "distanceM": 13
+    },
+    {
+      "a": "9022001001251001",
+      "aName": "Ängbyplan",
+      "b": "9021001001251000",
+      "bName": "Ängbyplan",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001261001",
+      "aName": "Islandstorget",
+      "b": "9021001001261000",
+      "bName": "Islandstorget",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001271001",
+      "aName": "Blackeberg",
+      "b": "9021001001271000",
+      "bName": "Blackeberg",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001281001",
+      "aName": "Råcksta",
+      "b": "9021001001281000",
+      "bName": "Råcksta",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001301001",
+      "aName": "Vällingby",
+      "b": "9021001001301000",
+      "bName": "Vällingby",
+      "method": "parent-station-id",
+      "distanceM": 5
+    },
+    {
+      "a": "9022001001311001",
+      "aName": "Johannelund",
+      "b": "9021001001311000",
+      "bName": "Johannelund",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001321001",
+      "aName": "Hässelby gård",
+      "b": "9021001001321000",
+      "bName": "Hässelby gård",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001301003",
+      "aName": "Vällingby",
+      "b": "9021001001301000",
+      "bName": "Vällingby",
+      "method": "parent-station-id",
+      "distanceM": 6
+    },
+    {
+      "a": "9022001001601004",
+      "aName": "Skärmarbrink",
+      "b": "9021001001601000",
+      "bName": "Skärmarbrink",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001811002",
+      "aName": "Blåsut",
+      "b": "9021001001811000",
+      "bName": "Blåsut",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001821002",
+      "aName": "Sandsborg",
+      "b": "9021001001821000",
+      "bName": "Sandsborg",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001831002",
+      "aName": "Skogskyrkogården",
+      "b": "9021001001831000",
+      "bName": "Skogskyrkogården",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001841002",
+      "aName": "Tallkrogen",
+      "b": "9021001001841000",
+      "bName": "Tallkrogen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001851002",
+      "aName": "Gubbängen",
+      "b": "9021001001851000",
+      "bName": "Gubbängen",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001861002",
+      "aName": "Hökarängen",
+      "b": "9021001001861000",
+      "bName": "Hökarängen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001871002",
+      "aName": "Farsta",
+      "b": "9021001001871000",
+      "bName": "Farsta",
+      "method": "parent-station-id",
+      "distanceM": 5
+    },
+    {
+      "a": "9022001001881001",
+      "aName": "Farsta strand",
+      "b": "9021001001881000",
+      "bName": "Farsta strand",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001871001",
+      "aName": "Farsta",
+      "b": "9021001001871000",
+      "bName": "Farsta",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001001861001",
+      "aName": "Hökarängen",
+      "b": "9021001001861000",
+      "bName": "Hökarängen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001851001",
+      "aName": "Gubbängen",
+      "b": "9021001001851000",
+      "bName": "Gubbängen",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001841001",
+      "aName": "Tallkrogen",
+      "b": "9021001001841000",
+      "bName": "Tallkrogen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001831001",
+      "aName": "Skogskyrkogården",
+      "b": "9021001001831000",
+      "bName": "Skogskyrkogården",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001821001",
+      "aName": "Sandsborg",
+      "b": "9021001001821000",
+      "bName": "Sandsborg",
+      "method": "parent-station-id",
+      "distanceM": 0
+    },
+    {
+      "a": "9022001001811001",
+      "aName": "Blåsut",
+      "b": "9021001001811000",
+      "bName": "Blåsut",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001601003",
+      "aName": "Skärmarbrink",
+      "b": "9021001001601000",
+      "bName": "Skärmarbrink",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001611002",
+      "aName": "Globen",
+      "b": "9021001001611000",
+      "bName": "Globen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001621002",
+      "aName": "Enskede gård",
+      "b": "9021001001621000",
+      "bName": "Enskede gård",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001001631002",
+      "aName": "Sockenplan",
+      "b": "9021001001631000",
+      "bName": "Sockenplan",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001641002",
+      "aName": "Svedmyra",
+      "b": "9021001001641000",
+      "bName": "Svedmyra",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001651002",
+      "aName": "Stureby",
+      "b": "9021001001651000",
+      "bName": "Stureby",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001661002",
+      "aName": "Bandhagen",
+      "b": "9021001001661000",
+      "bName": "Bandhagen",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001701002",
+      "aName": "Högdalen",
+      "b": "9021001001701000",
+      "bName": "Högdalen",
+      "method": "parent-station-id",
+      "distanceM": 10
+    },
+    {
+      "a": "9022001001711002",
+      "aName": "Rågsved",
+      "b": "9021001001711000",
+      "bName": "Rågsved",
+      "method": "parent-station-id",
+      "distanceM": 6
+    },
+    {
+      "a": "9022001001721001",
+      "aName": "Hagsätra",
+      "b": "9021001001721000",
+      "bName": "Hagsätra",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001701004",
+      "aName": "Högdalen",
+      "b": "9021001001701000",
+      "bName": "Högdalen",
+      "method": "parent-station-id",
+      "distanceM": 22
+    },
+    {
+      "a": "9022001001711001",
+      "aName": "Rågsved",
+      "b": "9021001001711000",
+      "bName": "Rågsved",
+      "method": "parent-station-id",
+      "distanceM": 6
+    },
+    {
+      "a": "9022001001701001",
+      "aName": "Högdalen",
+      "b": "9021001001701000",
+      "bName": "Högdalen",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001001661001",
+      "aName": "Bandhagen",
+      "b": "9021001001661000",
+      "bName": "Bandhagen",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001651001",
+      "aName": "Stureby",
+      "b": "9021001001651000",
+      "bName": "Stureby",
+      "method": "parent-station-id",
+      "distanceM": 3
+    },
+    {
+      "a": "9022001001641001",
+      "aName": "Svedmyra",
+      "b": "9021001001641000",
+      "bName": "Svedmyra",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001631001",
+      "aName": "Sockenplan",
+      "b": "9021001001631000",
+      "bName": "Sockenplan",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001621001",
+      "aName": "Enskede gård",
+      "b": "9021001001621000",
+      "bName": "Enskede gård",
+      "method": "parent-station-id",
+      "distanceM": 4
+    },
+    {
+      "a": "9022001001611001",
+      "aName": "Globen",
+      "b": "9021001001611000",
+      "bName": "Globen",
+      "method": "parent-station-id",
+      "distanceM": 1
+    },
+    {
+      "a": "9022001001551009",
+      "aName": "Gullmarsplan",
+      "b": "9021001001551000",
+      "bName": "Gullmarsplan",
+      "method": "parent-station-id",
+      "distanceM": 2
+    },
+    {
+      "a": "9022001001701003",
+      "aName": "Högdalen",
+      "b": "9021001001701000",
+      "bName": "Högdalen",
+      "method": "parent-station-id",
+      "distanceM": 10
+    }
+  ],
+  "rejectedLinks": [],
+  "nameConflicts": [],
+  "separatedSameName": [],
+  "unmappedPatternStops": [],
+  "orphanPlatforms": [],
+  "nonPassengerStops": [
+    {
+      "stopId": "9022001003242001",
+      "name": "Kymlinge söderut",
+      "parentStation": "9021001003242000",
+      "routes": [
+        "11"
+      ],
+      "reason": "No trip allows boarding or alighting here (GTFS pickup_type = drop_off_type = 1): trains pass through without stopping for passengers."
+    },
+    {
+      "stopId": "9022001003241001",
+      "name": "Kymlinge norrut",
+      "parentStation": "9021001003241000",
+      "routes": [
+        "11"
+      ],
+      "reason": "No trip allows boarding or alighting here (GTFS pickup_type = drop_off_type = 1): trains pass through without stopping for passengers."
+    }
+  ],
+  "aliasesApplied": [],
+  "unusedAliases": [],
+  "overridesApplied": [],
+  "unusedOverrides": [],
+  "osmCrossCheck": {
+    "status": "not-available",
+    "note": "data/raw/osm/metro-stations.json missing (Overpass unreachable or skipped)."
+  },
+  "prepareIssues": []
+}

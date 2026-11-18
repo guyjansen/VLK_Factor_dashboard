@@ -120,7 +120,7 @@ const meta = {
   totalStations: all.length,
   missing,
   failures: failuresDoc.failures || [],
-  originNote: 'Isochrones start at the operator's parent-station coordinate (a centroid), not at individual entrances.',
+  originNote: 'Isochrones start at the operator parent-station coordinate (a centroid), not at individual entrances.',
   attribution: provenance.providers.size ? [...provenance.providers].map((p) => /openrouteservice/i.test(p)
     ? 'openrouteservice © HeiGIT, OpenStreetMap data © OpenStreetMap contributors (ODbL)'
     : 'Valhalla routing (FOSSGIS e.V. public instance), OpenStreetMap data © OpenStreetMap contributors (ODbL)') : []

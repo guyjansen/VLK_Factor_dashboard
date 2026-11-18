@@ -1,0 +1,15 @@
+agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_fare_url
+14010000000001001,AB Storstockholms Lokaltrafik,https://sl.se/,Europe/Stockholm,sv,https://sl.se/
+14010000000001917,Upplands lokaltrafik,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000000001939,Länstrafiken Sörmland,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000000001961,AB SL Kundtjänst,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000000001983,Kommuner i Stockholms Län,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000000002005,Färdtjänstnämnden,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000000002027,Vägverket Färjerederiet AB,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000000002049,People Travel Group AB,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000000002071,Waxholmsbolaget Ångfartygs AB,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000000002093,SJ AB,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000205921809,Trafikverket,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000224253857,A-train AB,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000227825352,A-Train AB,https://www.resrobot.se/,Europe/Stockholm,sv,
+14010000522162990,Roslagens sjötrafik,https://www.resrobot.se/,Europe/Stockholm,sv,

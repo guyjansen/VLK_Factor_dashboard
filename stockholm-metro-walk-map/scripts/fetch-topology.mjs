@@ -146,9 +146,13 @@ for (const [tripId, rows] of seqs) {
   const t = trips.get(tripId);
   const stopIds = rows.map((r) => r[1]);
   const key = `${t.route_id}|${t.direction_id}|${stopIds.join('>')}`;
-  if (!patterns.has(key)) patterns.set(key, { routeId: t.route_id, route: routeById.get(t.route_id).route_short_name, directionId: t.direction_id, stopIds, trips: 0, headsigns: new Set(), serviceIds: new Set(), exampleTripId: tripId });
+  if (!patterns.has(key)) patterns.set(key, { routeId: t.route_id, route: routeById.get(t.route_id).route_short_name, directionId: t.direction_id, stopIds, trips: 0, headsigns: new Set(), serviceIds: new Set(), exampleTripId: tripId, passenger: stopIds.map(() => false) });
   const p = patterns.get(key);
   p.trips++;
+  // GTFS pickup_type / drop_off_type 1 = no boarding / no alighting. A stop
+  // where neither is ever allowed (in any trip of the pattern) is passed
+  // through without serving passengers (e.g. the never-opened Kymlinge).
+  rows.forEach((r, i) => { if (r[2][idx.pickup_type] !== '1' || r[2][idx.drop_off_type] !== '1') p.passenger[i] = true; });
   if (t.trip_headsign) p.headsigns.add(t.trip_headsign);
   p.serviceIds.add(t.service_id);
 }
@@ -159,7 +163,7 @@ const patternList = [...patterns.values()].map((p, i) => {
   return {
     id: `P${String(i + 1).padStart(3, '0')}`, route: p.route, routeId: p.routeId, directionId: p.directionId,
     trips: p.trips, serviceDays: days.size, firstDay: sortedDays[0] || null, lastDay: sortedDays[sortedDays.length - 1] || null,
-    headsigns: [...p.headsigns].sort(), exampleTripId: p.exampleTripId, stopIds: p.stopIds
+    headsigns: [...p.headsigns].sort(), exampleTripId: p.exampleTripId, stopIds: p.stopIds, passenger: p.passenger
   };
 }).sort((a, b) => a.route.localeCompare(b.route) || a.directionId.localeCompare(b.directionId) || b.trips - a.trips);
 console.log(`Distinct stop patterns: ${patternList.length}`);
@@ -183,7 +187,7 @@ const stRowsOut = patternList.flatMap((p) => seqs.get(p.exampleTripId).map((r) =
 write('stop_times.txt', stRowsOut);
 for (const f of ['agency.txt', 'feed_info.txt']) if (zip.has(f)) fs.writeFileSync(path.join(paths.gtfsMetro, f), zip.readText(f));
 writeJson(path.join(paths.gtfsMetro, 'patterns.json'), {
-  note: 'Distinct stop sequences of all metro trips in the feed (one row per route, direction and exact sequence), with how many trips and service days use each. trips.txt / stop_times.txt in this folder hold one verbatim example trip per pattern.',
+  note: 'Distinct stop sequences of all metro trips in the feed (one row per route, direction and exact sequence), with how many trips and service days use each. passenger[i] is true when any trip of the pattern allows boarding or alighting at stopIds[i] (GTFS pickup_type/drop_off_type not both 1). trips.txt / stop_times.txt in this folder hold one verbatim example trip per pattern.',
   patterns: patternList
 });
 

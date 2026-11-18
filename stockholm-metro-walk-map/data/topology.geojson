@@ -1,0 +1,2988 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generatedAt": "2026-11-18T15:45:09.771Z",
+    "topology": {
+      "source": "SL static GTFS (GTFS Regional) via Trafiklab / Samtrafiken: stop sequences of all metro trips",
+      "url": "https://opendata.samtrafiken.se/gtfs/sl/sl.zip?key=REDACTED",
+      "retrievedAt": "2026-11-18T15:43:27.267Z",
+      "feedVersion": "2026-11-18",
+      "feedValidity": [
+        null,
+        null
+      ],
+      "licence": {
+        "name": "CC0 1.0 Universal (Public Domain Dedication)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "terms": "https://www.trafiklab.se/api/gtfs-datasets/gtfs-regional/",
+        "attribution": "Timetable data: SL via Trafiklab.se / Samtrafiken (GTFS Regional, CC0 1.0)"
+      },
+      "patterns": 94
+    },
+    "colours": {
+      "source": "sl.se design-system stylesheet (--color-metro-*)",
+      "retrievedAt": "2026-11-18T15:13:58+00:00"
+    },
+    "overridesApplied": 0
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001001011000",
+        "to": "SL9021001001021000",
+        "fromName": "Slussen",
+        "toName": "Gamla stan",
+        "sharedBy": 2,
+        "slot": -0.5,
+        "lengthM": 488
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.071617,
+            59.319534
+          ],
+          [
+            18.067171,
+            59.323286
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001011000",
+        "to": "SL9021001001021000",
+        "fromName": "Slussen",
+        "toName": "Gamla stan",
+        "sharedBy": 2,
+        "slot": 0.5,
+        "lengthM": 488
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.071617,
+            59.319534
+          ],
+          [
+            18.067171,
+            59.323286
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001011000",
+        "to": "SL9021001001511000",
+        "fromName": "Slussen",
+        "toName": "Medborgarplatsen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 528
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.071617,
+            59.319534
+          ],
+          [
+            18.073436,
+            59.314879
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001001011000",
+        "to": "SL9021001002511000",
+        "fromName": "Slussen",
+        "toName": "Mariatorget",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 625
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.071617,
+            59.319534
+          ],
+          [
+            18.062006,
+            59.316784
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001001021000",
+        "to": "SL9021001001051000",
+        "fromName": "Gamla stan",
+        "toName": "T-Centralen",
+        "sharedBy": 2,
+        "slot": -0.5,
+        "lengthM": 982
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.067171,
+            59.323286
+          ],
+          [
+            18.061694,
+            59.33166
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001021000",
+        "to": "SL9021001001051000",
+        "fromName": "Gamla stan",
+        "toName": "T-Centralen",
+        "sharedBy": 2,
+        "slot": 0.5,
+        "lengthM": 982
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.067171,
+            59.323286
+          ],
+          [
+            18.061694,
+            59.33166
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001051000",
+        "to": "SL9021001001111000",
+        "fromName": "T-Centralen",
+        "toName": "Hötorget",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 445
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.061694,
+            59.33166
+          ],
+          [
+            18.062963,
+            59.33561
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001001051000",
+        "to": "SL9021001002101000",
+        "fromName": "T-Centralen",
+        "toName": "Östermalmstorg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 911
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.061694,
+            59.33166
+          ],
+          [
+            18.076384,
+            59.334968
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10,11",
+        "from": "SL9021001001051000",
+        "to": "SL9021001003031000",
+        "fromName": "T-Centralen",
+        "toName": "Kungsträdgården",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 680
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.061694,
+            59.33166
+          ],
+          [
+            18.073588,
+            59.330859
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10,11",
+        "from": "SL9021001001051000",
+        "to": "SL9021001003131000",
+        "fromName": "T-Centralen",
+        "toName": "Rådhuset",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 967
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.061694,
+            59.33166
+          ],
+          [
+            18.045008,
+            59.329858
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001111000",
+        "to": "SL9021001001121000",
+        "fromName": "Hötorget",
+        "toName": "Rådmansgatan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 652
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.062963,
+            59.33561
+          ],
+          [
+            18.057907,
+            59.340879
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001121000",
+        "to": "SL9021001001131000",
+        "fromName": "Rådmansgatan",
+        "toName": "Odenplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 565
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.057907,
+            59.340879
+          ],
+          [
+            18.048653,
+            59.342763
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001131000",
+        "to": "SL9021001001141000",
+        "fromName": "Odenplan",
+        "toName": "S:t Eriksplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 694
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.048653,
+            59.342763
+          ],
+          [
+            18.037415,
+            59.340288
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001141000",
+        "to": "SL9021001001151000",
+        "fromName": "S:t Eriksplan",
+        "toName": "Fridhemsplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 882
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.037415,
+            59.340288
+          ],
+          [
+            18.031202,
+            59.333017
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001151000",
+        "to": "SL9021001001161000",
+        "fromName": "Fridhemsplan",
+        "toName": "Thorildsplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 887
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.031202,
+            59.333017
+          ],
+          [
+            18.015855,
+            59.331496
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10,11",
+        "from": "SL9021001001151000",
+        "to": "SL9021001003131000",
+        "fromName": "Fridhemsplan",
+        "toName": "Rådhuset",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 858
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.031202,
+            59.333017
+          ],
+          [
+            18.045008,
+            59.329858
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10,11",
+        "from": "SL9021001001151000",
+        "to": "SL9021001003161000",
+        "fromName": "Fridhemsplan",
+        "toName": "Stadshagen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1010
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.031202,
+            59.333017
+          ],
+          [
+            18.015653,
+            59.337449
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001161000",
+        "to": "SL9021001001171000",
+        "fromName": "Thorildsplan",
+        "toName": "Kristineberg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 736
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.015855,
+            59.331496
+          ],
+          [
+            18.003096,
+            59.332722
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001171000",
+        "to": "SL9021001001201000",
+        "fromName": "Kristineberg",
+        "toName": "Alvik",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1239
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.003096,
+            59.332722
+          ],
+          [
+            17.981303,
+            59.333528
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001201000",
+        "to": "SL9021001001211000",
+        "fromName": "Alvik",
+        "toName": "Stora mossen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 914
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.981303,
+            59.333528
+          ],
+          [
+            17.965347,
+            59.334669
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001211000",
+        "to": "SL9021001001221000",
+        "fromName": "Stora mossen",
+        "toName": "Abrahamsberg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 722
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.965347,
+            59.334669
+          ],
+          [
+            17.953172,
+            59.336563
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001221000",
+        "to": "SL9021001001231000",
+        "fromName": "Abrahamsberg",
+        "toName": "Brommaplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 791
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.953172,
+            59.336563
+          ],
+          [
+            17.939641,
+            59.338284
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001231000",
+        "to": "SL9021001001241000",
+        "fromName": "Brommaplan",
+        "toName": "Åkeshov",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1014
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.939641,
+            59.338284
+          ],
+          [
+            17.92343,
+            59.342132
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001241000",
+        "to": "SL9021001001251000",
+        "fromName": "Åkeshov",
+        "toName": "Ängbyplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 924
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.92343,
+            59.342132
+          ],
+          [
+            17.90713,
+            59.341951
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001251000",
+        "to": "SL9021001001261000",
+        "fromName": "Ängbyplan",
+        "toName": "Islandstorget",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 907
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.90713,
+            59.341951
+          ],
+          [
+            17.893245,
+            59.345995
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001261000",
+        "to": "SL9021001001271000",
+        "fromName": "Islandstorget",
+        "toName": "Blackeberg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 646
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.893245,
+            59.345995
+          ],
+          [
+            17.88285,
+            59.34837
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001271000",
+        "to": "SL9021001001281000",
+        "fromName": "Blackeberg",
+        "toName": "Råcksta",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 686
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.88285,
+            59.34837
+          ],
+          [
+            17.881625,
+            59.354504
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001281000",
+        "to": "SL9021001001301000",
+        "fromName": "Råcksta",
+        "toName": "Vällingby",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1112
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.881625,
+            59.354504
+          ],
+          [
+            17.872066,
+            59.363242
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001301000",
+        "to": "SL9021001001311000",
+        "fromName": "Vällingby",
+        "toName": "Johannelund",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 945
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.872066,
+            59.363242
+          ],
+          [
+            17.858141,
+            59.367923
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001311000",
+        "to": "SL9021001001321000",
+        "fromName": "Johannelund",
+        "toName": "Hässelby gård",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 788
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.858141,
+            59.367923
+          ],
+          [
+            17.844341,
+            59.367057
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001321000",
+        "to": "SL9021001001331000",
+        "fromName": "Hässelby gård",
+        "toName": "Hässelby strand",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 896
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.844341,
+            59.367057
+          ],
+          [
+            17.832466,
+            59.361742
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001511000",
+        "to": "SL9021001001521000",
+        "fromName": "Medborgarplatsen",
+        "toName": "Skanstull",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 725
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.073436,
+            59.314879
+          ],
+          [
+            18.076103,
+            59.308499
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18,19",
+        "from": "SL9021001001521000",
+        "to": "SL9021001001551000",
+        "fromName": "Skanstull",
+        "toName": "Gullmarsplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1075
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.076103,
+            59.308499
+          ],
+          [
+            18.080985,
+            59.299155
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17,18",
+        "from": "SL9021001001551000",
+        "to": "SL9021001001601000",
+        "fromName": "Gullmarsplan",
+        "toName": "Skärmarbrink",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 685
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.080985,
+            59.299155
+          ],
+          [
+            18.090351,
+            59.295273
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001551000",
+        "to": "SL9021001001611000",
+        "fromName": "Gullmarsplan",
+        "toName": "Globen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 571
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.080985,
+            59.299155
+          ],
+          [
+            18.078015,
+            59.294247
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "18",
+        "from": "SL9021001001601000",
+        "to": "SL9021001001811000",
+        "fromName": "Skärmarbrink",
+        "toName": "Blåsut",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 459
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.090351,
+            59.295273
+          ],
+          [
+            18.091151,
+            59.291166
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17",
+        "from": "SL9021001001601000",
+        "to": "SL9021001001911000",
+        "fromName": "Skärmarbrink",
+        "toName": "Hammarbyhöjden",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 809
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.090351,
+            59.295273
+          ],
+          [
+            18.104557,
+            59.294747
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001611000",
+        "to": "SL9021001001621000",
+        "fromName": "Globen",
+        "toName": "Enskede gård",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 724
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.078015,
+            59.294247
+          ],
+          [
+            18.070392,
+            59.289028
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001621000",
+        "to": "SL9021001001631000",
+        "fromName": "Enskede gård",
+        "toName": "Sockenplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 602
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.070392,
+            59.289028
+          ],
+          [
+            18.070893,
+            59.283622
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001631000",
+        "to": "SL9021001001641000",
+        "fromName": "Sockenplan",
+        "toName": "Svedmyra",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 646
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.070893,
+            59.283622
+          ],
+          [
+            18.067949,
+            59.278012
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001641000",
+        "to": "SL9021001001651000",
+        "fromName": "Svedmyra",
+        "toName": "Stureby",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 794
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.067949,
+            59.278012
+          ],
+          [
+            18.055645,
+            59.274628
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001651000",
+        "to": "SL9021001001661000",
+        "fromName": "Stureby",
+        "toName": "Bandhagen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 580
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.055645,
+            59.274628
+          ],
+          [
+            18.049656,
+            59.270403
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001661000",
+        "to": "SL9021001001701000",
+        "fromName": "Bandhagen",
+        "toName": "Högdalen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 827
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.049656,
+            59.270403
+          ],
+          [
+            18.042986,
+            59.263788
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001701000",
+        "to": "SL9021001001711000",
+        "fromName": "Högdalen",
+        "toName": "Rågsved",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1146
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.042986,
+            59.263788
+          ],
+          [
+            18.028361,
+            59.256697
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "19",
+        "from": "SL9021001001711000",
+        "to": "SL9021001001721000",
+        "fromName": "Rågsved",
+        "toName": "Hagsätra",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1056
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.028361,
+            59.256697
+          ],
+          [
+            18.013188,
+            59.262172
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "18",
+        "from": "SL9021001001811000",
+        "to": "SL9021001001821000",
+        "fromName": "Blåsut",
+        "toName": "Sandsborg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 612
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.091151,
+            59.291166
+          ],
+          [
+            18.091932,
+            59.285675
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "18",
+        "from": "SL9021001001821000",
+        "to": "SL9021001001831000",
+        "fromName": "Sandsborg",
+        "toName": "Skogskyrkogården",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 773
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.091932,
+            59.285675
+          ],
+          [
+            18.095518,
+            59.278967
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "18",
+        "from": "SL9021001001831000",
+        "to": "SL9021001001841000",
+        "fromName": "Skogskyrkogården",
+        "toName": "Tallkrogen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1028
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.095518,
+            59.278967
+          ],
+          [
+            18.085545,
+            59.271257
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "18",
+        "from": "SL9021001001841000",
+        "to": "SL9021001001851000",
+        "fromName": "Tallkrogen",
+        "toName": "Gubbängen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 903
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.085545,
+            59.271257
+          ],
+          [
+            18.082138,
+            59.263324
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "18",
+        "from": "SL9021001001851000",
+        "to": "SL9021001001861000",
+        "fromName": "Gubbängen",
+        "toName": "Hökarängen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 601
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.082138,
+            59.263324
+          ],
+          [
+            18.082506,
+            59.257926
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "18",
+        "from": "SL9021001001861000",
+        "to": "SL9021001001871000",
+        "fromName": "Hökarängen",
+        "toName": "Farsta",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1723
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.082506,
+            59.257926
+          ],
+          [
+            18.093724,
+            59.243531
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "18",
+        "from": "SL9021001001871000",
+        "to": "SL9021001001881000",
+        "fromName": "Farsta",
+        "toName": "Farsta strand",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 994
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.093724,
+            59.243531
+          ],
+          [
+            18.101217,
+            59.235453
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17",
+        "from": "SL9021001001911000",
+        "to": "SL9021001001921000",
+        "fromName": "Hammarbyhöjden",
+        "toName": "Björkhagen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 702
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.104557,
+            59.294747
+          ],
+          [
+            18.115337,
+            59.291651
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17",
+        "from": "SL9021001001921000",
+        "to": "SL9021001001931000",
+        "fromName": "Björkhagen",
+        "toName": "Kärrtorp",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 796
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.115337,
+            59.291651
+          ],
+          [
+            18.114485,
+            59.284509
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17",
+        "from": "SL9021001001931000",
+        "to": "SL9021001001941000",
+        "fromName": "Kärrtorp",
+        "toName": "Bagarmossen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1321
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.114485,
+            59.284509
+          ],
+          [
+            18.131215,
+            59.276262
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "green",
+        "lineName": "Green line",
+        "colour": "#148541",
+        "routes": "17",
+        "from": "SL9021001001941000",
+        "to": "SL9021001001951000",
+        "fromName": "Bagarmossen",
+        "toName": "Skarpnäck",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1042
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.131215,
+            59.276262
+          ],
+          [
+            18.133627,
+            59.26697
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002101000",
+        "to": "SL9021001002111000",
+        "fromName": "Östermalmstorg",
+        "toName": "Karlaplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 992
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.076384,
+            59.334968
+          ],
+          [
+            18.091998,
+            59.338988
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002101000",
+        "to": "SL9021001002211000",
+        "fromName": "Östermalmstorg",
+        "toName": "Stadion",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 721
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.076384,
+            59.334968
+          ],
+          [
+            18.081942,
+            59.340803
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002111000",
+        "to": "SL9021001002121000",
+        "fromName": "Karlaplan",
+        "toName": "Gärdet",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 793
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.091998,
+            59.338988
+          ],
+          [
+            18.098981,
+            59.345169
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002121000",
+        "to": "SL9021001002131000",
+        "fromName": "Gärdet",
+        "toName": "Ropsten",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1382
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.098981,
+            59.345169
+          ],
+          [
+            18.10272,
+            59.357451
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002211000",
+        "to": "SL9021001002221000",
+        "fromName": "Stadion",
+        "toName": "Tekniska högskolan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 959
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.081942,
+            59.340803
+          ],
+          [
+            18.069324,
+            59.34654
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002221000",
+        "to": "SL9021001002231000",
+        "fromName": "Tekniska högskolan",
+        "toName": "Universitetet",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 2259
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.069324,
+            59.34654
+          ],
+          [
+            18.054093,
+            59.365316
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002231000",
+        "to": "SL9021001002241000",
+        "fromName": "Universitetet",
+        "toName": "Bergshamra",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1955
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.054093,
+            59.365316
+          ],
+          [
+            18.037494,
+            59.380727
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002241000",
+        "to": "SL9021001002251000",
+        "fromName": "Bergshamra",
+        "toName": "Danderyds sjukhus",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1126
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.037494,
+            59.380727
+          ],
+          [
+            18.041797,
+            59.390617
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002251000",
+        "to": "SL9021001002301000",
+        "fromName": "Danderyds sjukhus",
+        "toName": "Mörby centrum",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 898
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.041797,
+            59.390617
+          ],
+          [
+            18.036657,
+            59.398261
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002511000",
+        "to": "SL9021001002521000",
+        "fromName": "Mariatorget",
+        "toName": "Zinkensdamm",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 715
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.062006,
+            59.316784
+          ],
+          [
+            18.049608,
+            59.317911
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002521000",
+        "to": "SL9021001002531000",
+        "fromName": "Zinkensdamm",
+        "toName": "Hornstull",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 833
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.049608,
+            59.317911
+          ],
+          [
+            18.03541,
+            59.316014
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002531000",
+        "to": "SL9021001002601000",
+        "fromName": "Hornstull",
+        "toName": "Liljeholmen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 918
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.03541,
+            59.316014
+          ],
+          [
+            18.023044,
+            59.310688
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002601000",
+        "to": "SL9021001002611000",
+        "fromName": "Liljeholmen",
+        "toName": "Aspudden",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1290
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.023044,
+            59.310688
+          ],
+          [
+            18.00184,
+            59.306512
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "14",
+        "from": "SL9021001002601000",
+        "to": "SL9021001002811000",
+        "fromName": "Liljeholmen",
+        "toName": "Midsommarkransen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1156
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.023044,
+            59.310688
+          ],
+          [
+            18.011776,
+            59.302023
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002611000",
+        "to": "SL9021001002621000",
+        "fromName": "Aspudden",
+        "toName": "Örnsberg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 731
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.00184,
+            59.306512
+          ],
+          [
+            17.989131,
+            59.30543
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002621000",
+        "to": "SL9021001002631000",
+        "fromName": "Örnsberg",
+        "toName": "Axelsberg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 782
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.989131,
+            59.30543
+          ],
+          [
+            17.975516,
+            59.304378
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002631000",
+        "to": "SL9021001002641000",
+        "fromName": "Axelsberg",
+        "toName": "Mälarhöjden",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1070
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.975516,
+            59.304378
+          ],
+          [
+            17.957705,
+            59.301234
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002641000",
+        "to": "SL9021001002651000",
+        "fromName": "Mälarhöjden",
+        "toName": "Bredäng",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1424
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.957705,
+            59.301234
+          ],
+          [
+            17.936023,
+            59.294802
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13,14",
+        "from": "SL9021001002651000",
+        "to": "SL9021001002701000",
+        "fromName": "Bredäng",
+        "toName": "Sätra",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1374
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.936023,
+            59.294802
+          ],
+          [
+            17.921296,
+            59.285003
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002701000",
+        "to": "SL9021001002711000",
+        "fromName": "Sätra",
+        "toName": "Skärholmen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1204
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.921296,
+            59.285003
+          ],
+          [
+            17.907048,
+            59.27699
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002711000",
+        "to": "SL9021001002721000",
+        "fromName": "Skärholmen",
+        "toName": "Vårberg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 965
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.907048,
+            59.27699
+          ],
+          [
+            17.890176,
+            59.27595
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002721000",
+        "to": "SL9021001002731000",
+        "fromName": "Vårberg",
+        "toName": "Vårby gård",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1326
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.890176,
+            59.27595
+          ],
+          [
+            17.88468,
+            59.264365
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002731000",
+        "to": "SL9021001002741000",
+        "fromName": "Vårby gård",
+        "toName": "Masmo",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1618
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.88468,
+            59.264365
+          ],
+          [
+            17.881372,
+            59.249912
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002741000",
+        "to": "SL9021001002751000",
+        "fromName": "Masmo",
+        "toName": "Fittja",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1189
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.881372,
+            59.249912
+          ],
+          [
+            17.861027,
+            59.247446
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002751000",
+        "to": "SL9021001002761000",
+        "fromName": "Fittja",
+        "toName": "Alby",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1255
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.861027,
+            59.247446
+          ],
+          [
+            17.845357,
+            59.239495
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002761000",
+        "to": "SL9021001002771000",
+        "fromName": "Alby",
+        "toName": "Hallunda",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1220
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.845357,
+            59.239495
+          ],
+          [
+            17.825251,
+            59.243328
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "13",
+        "from": "SL9021001002771000",
+        "to": "SL9021001002781000",
+        "fromName": "Hallunda",
+        "toName": "Norsborg",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 584
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.825251,
+            59.243328
+          ],
+          [
+            17.815024,
+            59.243787
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "14",
+        "from": "SL9021001002811000",
+        "to": "SL9021001002821000",
+        "fromName": "Midsommarkransen",
+        "toName": "Telefonplan",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 920
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.011776,
+            59.302023
+          ],
+          [
+            17.997344,
+            59.298252
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "14",
+        "from": "SL9021001002821000",
+        "to": "SL9021001002831000",
+        "fromName": "Telefonplan",
+        "toName": "Hägerstensåsen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1127
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.997344,
+            59.298252
+          ],
+          [
+            17.978441,
+            59.29517
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "14",
+        "from": "SL9021001002831000",
+        "to": "SL9021001002841000",
+        "fromName": "Hägerstensåsen",
+        "toName": "Västertorp",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 790
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.978441,
+            59.29517
+          ],
+          [
+            17.966709,
+            59.291355
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "red",
+        "lineName": "Red line",
+        "colour": "#D71D24",
+        "routes": "14",
+        "from": "SL9021001002841000",
+        "to": "SL9021001002851000",
+        "fromName": "Västertorp",
+        "toName": "Fruängen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 562
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.966709,
+            59.291355
+          ],
+          [
+            17.96494,
+            59.286384
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10,11",
+        "from": "SL9021001003161000",
+        "to": "SL9021001003201000",
+        "fromName": "Stadshagen",
+        "toName": "Västra skogen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1366
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.015653,
+            59.337449
+          ],
+          [
+            18.003402,
+            59.348022
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "11",
+        "from": "SL9021001003201000",
+        "to": "SL9021001003211000",
+        "fromName": "Västra skogen",
+        "toName": "Solna centrum",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1319
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.003402,
+            59.348022
+          ],
+          [
+            17.997759,
+            59.359534
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10",
+        "from": "SL9021001003201000",
+        "to": "SL9021001003411000",
+        "fromName": "Västra skogen",
+        "toName": "Huvudsta",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 952
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.003402,
+            59.348022
+          ],
+          [
+            17.986937,
+            59.349727
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "11",
+        "from": "SL9021001003211000",
+        "to": "SL9021001003221000",
+        "fromName": "Solna centrum",
+        "toName": "Näckrosen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1254
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.997759,
+            59.359534
+          ],
+          [
+            17.98196,
+            59.367427
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "11",
+        "from": "SL9021001003221000",
+        "to": "SL9021001003231000",
+        "fromName": "Näckrosen",
+        "toName": "Hallonbergen",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1057
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.98196,
+            59.367427
+          ],
+          [
+            17.969241,
+            59.374385
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "11",
+        "from": "SL9021001003231000",
+        "to": "SL9021001003251000",
+        "fromName": "Hallonbergen",
+        "toName": "Kista",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 3514
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.969241,
+            59.374385
+          ],
+          [
+            17.942676,
+            59.40295
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "11",
+        "from": "SL9021001003251000",
+        "to": "SL9021001003261000",
+        "fromName": "Kista",
+        "toName": "Husby",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1167
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.942676,
+            59.40295
+          ],
+          [
+            17.926915,
+            59.409713
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "11",
+        "from": "SL9021001003261000",
+        "to": "SL9021001003271000",
+        "fromName": "Husby",
+        "toName": "Akalla",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 707
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.926915,
+            59.409713
+          ],
+          [
+            17.917376,
+            59.413817
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10",
+        "from": "SL9021001003411000",
+        "to": "SL9021001003421000",
+        "fromName": "Huvudsta",
+        "toName": "Solna strand",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 953
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.986937,
+            59.349727
+          ],
+          [
+            17.973211,
+            59.354669
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10",
+        "from": "SL9021001003421000",
+        "to": "SL9021001003431000",
+        "fromName": "Solna strand",
+        "toName": "Sundbybergs centrum",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 652
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.973211,
+            59.354669
+          ],
+          [
+            17.973032,
+            59.360533
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10",
+        "from": "SL9021001003431000",
+        "to": "SL9021001003441000",
+        "fromName": "Sundbybergs centrum",
+        "toName": "Duvbo",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1019
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.973032,
+            59.360533
+          ],
+          [
+            17.962933,
+            59.368117
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10",
+        "from": "SL9021001003441000",
+        "to": "SL9021001003451000",
+        "fromName": "Duvbo",
+        "toName": "Rissne",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1575
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.962933,
+            59.368117
+          ],
+          [
+            17.939694,
+            59.375899
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10",
+        "from": "SL9021001003451000",
+        "to": "SL9021001003461000",
+        "fromName": "Rissne",
+        "toName": "Rinkeby",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1514
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.939694,
+            59.375899
+          ],
+          [
+            17.928064,
+            59.388157
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10",
+        "from": "SL9021001003461000",
+        "to": "SL9021001003471000",
+        "fromName": "Rinkeby",
+        "toName": "Tensta",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 1593
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.928064,
+            59.388157
+          ],
+          [
+            17.902487,
+            59.394129
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "line": "blue",
+        "lineName": "Blue line",
+        "colour": "#007DB8",
+        "routes": "10",
+        "from": "SL9021001003471000",
+        "to": "SL9021001003481000",
+        "fromName": "Tensta",
+        "toName": "Hjulsta",
+        "sharedBy": 1,
+        "slot": 0,
+        "lengthM": 834
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.902487,
+            59.394129
+          ],
+          [
+            17.888694,
+            59.396773
+          ]
+        ]
+      }
+    }
+  ]
+}

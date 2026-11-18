@@ -1,0 +1,4439 @@
+{
+  "source": {
+    "gtfs": "data/raw/gtfs-sl/metro",
+    "osm": null
+  },
+  "coordinateSystem": "WGS84 (EPSG:4326) in both sources; no conversion applied",
+  "preparedAt": "2026-11-18T15:45:09.609Z",
+  "counts": {
+    "platforms": 223,
+    "parents": 100,
+    "orphanPlatforms": 0,
+    "entrancesInFeed": 227,
+    "osm": null
+  },
+  "platforms": [
+    {
+      "stopId": "9022001003481002",
+      "name": "Hjulsta",
+      "lon": 17.888732,
+      "lat": 59.396728,
+      "locationType": "0",
+      "parentStation": "9021001003481000",
+      "platformCode": "2",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003471002",
+      "name": "Tensta",
+      "lon": 17.902436,
+      "lat": 59.394157,
+      "locationType": "0",
+      "parentStation": "9021001003471000",
+      "platformCode": "2",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003461002",
+      "name": "Rinkeby",
+      "lon": 17.928548,
+      "lat": 59.388254,
+      "locationType": "0",
+      "parentStation": "9021001003461000",
+      "platformCode": "4",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003451002",
+      "name": "Rissne",
+      "lon": 17.939719,
+      "lat": 59.375889,
+      "locationType": "0",
+      "parentStation": "9021001003451000",
+      "platformCode": "2",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003441002",
+      "name": "Duvbo",
+      "lon": 17.962786,
+      "lat": 59.368156,
+      "locationType": "0",
+      "parentStation": "9021001003441000",
+      "platformCode": "2",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003431002",
+      "name": "Sundbybergs centrum",
+      "lon": 17.972692,
+      "lat": 59.360495,
+      "locationType": "0",
+      "parentStation": "9021001003431000",
+      "platformCode": "2",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003421002",
+      "name": "Solna strand",
+      "lon": 17.973202,
+      "lat": 59.35466,
+      "locationType": "0",
+      "parentStation": "9021001003421000",
+      "platformCode": "2",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003411002",
+      "name": "Huvudsta",
+      "lon": 17.98692,
+      "lat": 59.349557,
+      "locationType": "0",
+      "parentStation": "9021001003411000",
+      "platformCode": "2",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003201003",
+      "name": "Västra skogen",
+      "lon": 18.003475,
+      "lat": 59.347972,
+      "locationType": "0",
+      "parentStation": "9021001003201000",
+      "platformCode": "3",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003161002",
+      "name": "Stadshagen",
+      "lon": 18.015886,
+      "lat": 59.337495,
+      "locationType": "0",
+      "parentStation": "9021001003161000",
+      "platformCode": "2",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001001151004",
+      "name": "Fridhemsplan",
+      "lon": 18.030914,
+      "lat": 59.333031,
+      "locationType": "0",
+      "parentStation": "9021001001151000",
+      "platformCode": "4",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003131002",
+      "name": "Rådhuset",
+      "lon": 18.045074,
+      "lat": 59.330112,
+      "locationType": "0",
+      "parentStation": "9021001003131000",
+      "platformCode": "2",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001001051006",
+      "name": "T-Centralen",
+      "lon": 18.06199,
+      "lat": 59.332429,
+      "locationType": "0",
+      "parentStation": "9021001001051000",
+      "platformCode": "6",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003031001",
+      "name": "Kungsträdgården",
+      "lon": 18.072651,
+      "lat": 59.330516,
+      "locationType": "0",
+      "parentStation": "9021001003031000",
+      "platformCode": "1",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003031002",
+      "name": "Kungsträdgården",
+      "lon": 18.073633,
+      "lat": 59.330286,
+      "locationType": "0",
+      "parentStation": "9021001003031000",
+      "platformCode": "2",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001001051005",
+      "name": "T-Centralen",
+      "lon": 18.061991,
+      "lat": 59.332438,
+      "locationType": "0",
+      "parentStation": "9021001001051000",
+      "platformCode": "5",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003131001",
+      "name": "Rådhuset",
+      "lon": 18.04504,
+      "lat": 59.330122,
+      "locationType": "0",
+      "parentStation": "9021001003131000",
+      "platformCode": "1",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001001151003",
+      "name": "Fridhemsplan",
+      "lon": 18.030807,
+      "lat": 59.333015,
+      "locationType": "0",
+      "parentStation": "9021001001151000",
+      "platformCode": "3",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003161001",
+      "name": "Stadshagen",
+      "lon": 18.015786,
+      "lat": 59.33756,
+      "locationType": "0",
+      "parentStation": "9021001003161000",
+      "platformCode": "1",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003201001",
+      "name": "Västra skogen",
+      "lon": 18.003374,
+      "lat": 59.348037,
+      "locationType": "0",
+      "parentStation": "9021001003201000",
+      "platformCode": "1",
+      "routes": [
+        "10",
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003411001",
+      "name": "Huvudsta",
+      "lon": 17.987008,
+      "lat": 59.349564,
+      "locationType": "0",
+      "parentStation": "9021001003411000",
+      "platformCode": "1",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003421001",
+      "name": "Solna strand",
+      "lon": 17.973221,
+      "lat": 59.354678,
+      "locationType": "0",
+      "parentStation": "9021001003421000",
+      "platformCode": "1",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003431001",
+      "name": "Sundbybergs centrum",
+      "lon": 17.972657,
+      "lat": 59.360495,
+      "locationType": "0",
+      "parentStation": "9021001003431000",
+      "platformCode": "1",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003441001",
+      "name": "Duvbo",
+      "lon": 17.96308,
+      "lat": 59.368079,
+      "locationType": "0",
+      "parentStation": "9021001003441000",
+      "platformCode": "1",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003451001",
+      "name": "Rissne",
+      "lon": 17.939668,
+      "lat": 59.375908,
+      "locationType": "0",
+      "parentStation": "9021001003451000",
+      "platformCode": "1",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003461001",
+      "name": "Rinkeby",
+      "lon": 17.928499,
+      "lat": 59.3883,
+      "locationType": "0",
+      "parentStation": "9021001003461000",
+      "platformCode": "2",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003471001",
+      "name": "Tensta",
+      "lon": 17.902574,
+      "lat": 59.394127,
+      "locationType": "0",
+      "parentStation": "9021001003471000",
+      "platformCode": "1",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003461003",
+      "name": "Rinkeby",
+      "lon": 17.928314,
+      "lat": 59.388403,
+      "locationType": "0",
+      "parentStation": "9021001003461000",
+      "platformCode": "3",
+      "routes": [
+        "10"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003271002",
+      "name": "Akalla",
+      "lon": 17.91559,
+      "lat": 59.414782,
+      "locationType": "0",
+      "parentStation": "9021001003271000",
+      "platformCode": "2",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003261002",
+      "name": "Husby",
+      "lon": 17.926743,
+      "lat": 59.409599,
+      "locationType": "0",
+      "parentStation": "9021001003261000",
+      "platformCode": "2",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003251002",
+      "name": "Kista",
+      "lon": 17.942684,
+      "lat": 59.402941,
+      "locationType": "0",
+      "parentStation": "9021001003251000",
+      "platformCode": "2",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003231002",
+      "name": "Hallonbergen",
+      "lon": 17.969399,
+      "lat": 59.374197,
+      "locationType": "0",
+      "parentStation": "9021001003231000",
+      "platformCode": "4",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003221002",
+      "name": "Näckrosen",
+      "lon": 17.981977,
+      "lat": 59.367417,
+      "locationType": "0",
+      "parentStation": "9021001003221000",
+      "platformCode": "2",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003211002",
+      "name": "Solna centrum",
+      "lon": 17.997926,
+      "lat": 59.359422,
+      "locationType": "0",
+      "parentStation": "9021001003211000",
+      "platformCode": "2",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003201002",
+      "name": "Västra skogen",
+      "lon": 18.003357,
+      "lat": 59.348055,
+      "locationType": "0",
+      "parentStation": "9021001003201000",
+      "platformCode": "4",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003211001",
+      "name": "Solna centrum",
+      "lon": 17.997628,
+      "lat": 59.359636,
+      "locationType": "0",
+      "parentStation": "9021001003211000",
+      "platformCode": "1",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003221001",
+      "name": "Näckrosen",
+      "lon": 17.981961,
+      "lat": 59.367436,
+      "locationType": "0",
+      "parentStation": "9021001003221000",
+      "platformCode": "1",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003231001",
+      "name": "Hallonbergen",
+      "lon": 17.969126,
+      "lat": 59.374327,
+      "locationType": "0",
+      "parentStation": "9021001003231000",
+      "platformCode": "2",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003251001",
+      "name": "Kista",
+      "lon": 17.942668,
+      "lat": 59.402959,
+      "locationType": "0",
+      "parentStation": "9021001003251000",
+      "platformCode": "1",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003261001",
+      "name": "Husby",
+      "lon": 17.926696,
+      "lat": 59.409663,
+      "locationType": "0",
+      "parentStation": "9021001003261000",
+      "platformCode": "1",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001003231003",
+      "name": "Hallonbergen",
+      "lon": 17.969198,
+      "lat": 59.374631,
+      "locationType": "0",
+      "parentStation": "9021001003231000",
+      "platformCode": "3",
+      "routes": [
+        "11"
+      ],
+      "lines": [
+        "blue"
+      ]
+    },
+    {
+      "stopId": "9022001002131002",
+      "name": "Ropsten",
+      "lon": 18.102365,
+      "lat": 59.357403,
+      "locationType": "0",
+      "parentStation": "9021001002131000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002121002",
+      "name": "Gärdet",
+      "lon": 18.09899,
+      "lat": 59.345178,
+      "locationType": "0",
+      "parentStation": "9021001002121000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002111002",
+      "name": "Karlaplan",
+      "lon": 18.091998,
+      "lat": 59.338988,
+      "locationType": "0",
+      "parentStation": "9021001002111000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002101002",
+      "name": "Östermalmstorg",
+      "lon": 18.076384,
+      "lat": 59.334968,
+      "locationType": "0",
+      "parentStation": "9021001002101000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001001051004",
+      "name": "T-Centralen",
+      "lon": 18.060875,
+      "lat": 59.331575,
+      "locationType": "0",
+      "parentStation": "9021001001051000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001001021004",
+      "name": "Gamla stan",
+      "lon": 18.067181,
+      "lat": 59.323167,
+      "locationType": "0",
+      "parentStation": "9021001001021000",
+      "platformCode": "3",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001001011004",
+      "name": "Slussen",
+      "lon": 18.072105,
+      "lat": 59.319601,
+      "locationType": "0",
+      "parentStation": "9021001001011000",
+      "platformCode": "3",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002511002",
+      "name": "Mariatorget",
+      "lon": 18.062023,
+      "lat": 59.316783,
+      "locationType": "0",
+      "parentStation": "9021001002511000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002521002",
+      "name": "Zinkensdamm",
+      "lon": 18.049626,
+      "lat": 59.317919,
+      "locationType": "0",
+      "parentStation": "9021001002521000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002531002",
+      "name": "Hornstull",
+      "lon": 18.035339,
+      "lat": 59.316006,
+      "locationType": "0",
+      "parentStation": "9021001002531000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002601004",
+      "name": "Liljeholmen",
+      "lon": 18.022932,
+      "lat": 59.310646,
+      "locationType": "0",
+      "parentStation": "9021001002601000",
+      "platformCode": "5",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002611002",
+      "name": "Aspudden",
+      "lon": 18.001858,
+      "lat": 59.306511,
+      "locationType": "0",
+      "parentStation": "9021001002611000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002621002",
+      "name": "Örnsberg",
+      "lon": 17.989122,
+      "lat": 59.305425,
+      "locationType": "0",
+      "parentStation": "9021001002621000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002631002",
+      "name": "Axelsberg",
+      "lon": 17.975464,
+      "lat": 59.304379,
+      "locationType": "0",
+      "parentStation": "9021001002631000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002641002",
+      "name": "Mälarhöjden",
+      "lon": 17.957669,
+      "lat": 59.301217,
+      "locationType": "0",
+      "parentStation": "9021001002641000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002651002",
+      "name": "Bredäng",
+      "lon": 17.93604,
+      "lat": 59.294802,
+      "locationType": "0",
+      "parentStation": "9021001002651000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002701002",
+      "name": "Sätra",
+      "lon": 17.921056,
+      "lat": 59.285025,
+      "locationType": "0",
+      "parentStation": "9021001002701000",
+      "platformCode": "4",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002711002",
+      "name": "Skärholmen",
+      "lon": 17.90703,
+      "lat": 59.276991,
+      "locationType": "0",
+      "parentStation": "9021001002711000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002721002",
+      "name": "Vårberg",
+      "lon": 17.890246,
+      "lat": 59.275958,
+      "locationType": "0",
+      "parentStation": "9021001002721000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002731002",
+      "name": "Vårby gård",
+      "lon": 17.884646,
+      "lat": 59.264392,
+      "locationType": "0",
+      "parentStation": "9021001002731000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002741002",
+      "name": "Masmo",
+      "lon": 17.881345,
+      "lat": 59.249907,
+      "locationType": "0",
+      "parentStation": "9021001002741000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002751002",
+      "name": "Fittja",
+      "lon": 17.861054,
+      "lat": 59.247464,
+      "locationType": "0",
+      "parentStation": "9021001002751000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002761002",
+      "name": "Alby",
+      "lon": 17.845374,
+      "lat": 59.239387,
+      "locationType": "0",
+      "parentStation": "9021001002761000",
+      "platformCode": "4",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002771002",
+      "name": "Hallunda",
+      "lon": 17.825242,
+      "lat": 59.243328,
+      "locationType": "0",
+      "parentStation": "9021001002771000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002781001",
+      "name": "Norsborg",
+      "lon": 17.815538,
+      "lat": 59.243739,
+      "locationType": "0",
+      "parentStation": "9021001002781000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002301002",
+      "name": "Mörby centrum",
+      "lon": 18.036891,
+      "lat": 59.398203,
+      "locationType": "0",
+      "parentStation": "9021001002301000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002251002",
+      "name": "Danderyds sjukhus",
+      "lon": 18.041839,
+      "lat": 59.390728,
+      "locationType": "0",
+      "parentStation": "9021001002251000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002241002",
+      "name": "Bergshamra",
+      "lon": 18.037502,
+      "lat": 59.380718,
+      "locationType": "0",
+      "parentStation": "9021001002241000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002231002",
+      "name": "Universitetet",
+      "lon": 18.054075,
+      "lat": 59.365316,
+      "locationType": "0",
+      "parentStation": "9021001002231000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002221002",
+      "name": "Tekniska högskolan",
+      "lon": 18.069333,
+      "lat": 59.34654,
+      "locationType": "0",
+      "parentStation": "9021001002221000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002211002",
+      "name": "Stadion",
+      "lon": 18.081942,
+      "lat": 59.340798,
+      "locationType": "0",
+      "parentStation": "9021001002211000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002761003",
+      "name": "Alby",
+      "lon": 17.845253,
+      "lat": 59.239712,
+      "locationType": "0",
+      "parentStation": "9021001002761000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002701003",
+      "name": "Sätra",
+      "lon": 17.921421,
+      "lat": 59.284974,
+      "locationType": "0",
+      "parentStation": "9021001002701000",
+      "platformCode": "3",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002781002",
+      "name": "Norsborg",
+      "lon": 17.81451,
+      "lat": 59.243836,
+      "locationType": "0",
+      "parentStation": "9021001002781000",
+      "platformCode": "2",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002771001",
+      "name": "Hallunda",
+      "lon": 17.825259,
+      "lat": 59.243328,
+      "locationType": "0",
+      "parentStation": "9021001002771000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002761001",
+      "name": "Alby",
+      "lon": 17.845444,
+      "lat": 59.239386,
+      "locationType": "0",
+      "parentStation": "9021001002761000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002751001",
+      "name": "Fittja",
+      "lon": 17.861,
+      "lat": 59.247429,
+      "locationType": "0",
+      "parentStation": "9021001002751000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002741001",
+      "name": "Masmo",
+      "lon": 17.881398,
+      "lat": 59.249916,
+      "locationType": "0",
+      "parentStation": "9021001002741000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002731001",
+      "name": "Vårby gård",
+      "lon": 17.884713,
+      "lat": 59.264338,
+      "locationType": "0",
+      "parentStation": "9021001002731000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002721001",
+      "name": "Vårberg",
+      "lon": 17.890105,
+      "lat": 59.275943,
+      "locationType": "0",
+      "parentStation": "9021001002721000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002711001",
+      "name": "Skärholmen",
+      "lon": 17.907065,
+      "lat": 59.27699,
+      "locationType": "0",
+      "parentStation": "9021001002711000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002701001",
+      "name": "Sätra",
+      "lon": 17.921093,
+      "lat": 59.28506,
+      "locationType": "0",
+      "parentStation": "9021001002701000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002651001",
+      "name": "Bredäng",
+      "lon": 17.936005,
+      "lat": 59.294802,
+      "locationType": "0",
+      "parentStation": "9021001002651000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002641001",
+      "name": "Mälarhöjden",
+      "lon": 17.957741,
+      "lat": 59.301251,
+      "locationType": "0",
+      "parentStation": "9021001002641000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002631001",
+      "name": "Axelsberg",
+      "lon": 17.975569,
+      "lat": 59.304377,
+      "locationType": "0",
+      "parentStation": "9021001002631000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002621001",
+      "name": "Örnsberg",
+      "lon": 17.98914,
+      "lat": 59.305434,
+      "locationType": "0",
+      "parentStation": "9021001002621000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002611001",
+      "name": "Aspudden",
+      "lon": 18.001823,
+      "lat": 59.306521,
+      "locationType": "0",
+      "parentStation": "9021001002611000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002601001",
+      "name": "Liljeholmen",
+      "lon": 18.023184,
+      "lat": 59.310741,
+      "locationType": "0",
+      "parentStation": "9021001002601000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002531001",
+      "name": "Hornstull",
+      "lon": 18.035499,
+      "lat": 59.31603,
+      "locationType": "0",
+      "parentStation": "9021001002531000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002521001",
+      "name": "Zinkensdamm",
+      "lon": 18.049607,
+      "lat": 59.317902,
+      "locationType": "0",
+      "parentStation": "9021001002521000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002511001",
+      "name": "Mariatorget",
+      "lon": 18.062024,
+      "lat": 59.316792,
+      "locationType": "0",
+      "parentStation": "9021001002511000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001001011003",
+      "name": "Slussen",
+      "lon": 18.071958,
+      "lat": 59.319533,
+      "locationType": "0",
+      "parentStation": "9021001001011000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001001021003",
+      "name": "Gamla stan",
+      "lon": 18.066957,
+      "lat": 59.323147,
+      "locationType": "0",
+      "parentStation": "9021001001021000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001001051001",
+      "name": "T-Centralen",
+      "lon": 18.060875,
+      "lat": 59.331575,
+      "locationType": "0",
+      "parentStation": "9021001001051000",
+      "platformCode": "3",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002101001",
+      "name": "Östermalmstorg",
+      "lon": 18.076384,
+      "lat": 59.334968,
+      "locationType": "0",
+      "parentStation": "9021001002101000",
+      "platformCode": "1",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002111001",
+      "name": "Karlaplan",
+      "lon": 18.091998,
+      "lat": 59.338988,
+      "locationType": "0",
+      "parentStation": "9021001002111000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002121001",
+      "name": "Gärdet",
+      "lon": 18.098971,
+      "lat": 59.34516,
+      "locationType": "0",
+      "parentStation": "9021001002121000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002701004",
+      "name": "Sätra",
+      "lon": 17.921613,
+      "lat": 59.284953,
+      "locationType": "0",
+      "parentStation": "9021001002701000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002601003",
+      "name": "Liljeholmen",
+      "lon": 18.023094,
+      "lat": 59.310706,
+      "locationType": "0",
+      "parentStation": "9021001002601000",
+      "platformCode": "2",
+      "routes": [
+        "13",
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002131001",
+      "name": "Ropsten",
+      "lon": 18.103075,
+      "lat": 59.357498,
+      "locationType": "0",
+      "parentStation": "9021001002131000",
+      "platformCode": "1",
+      "routes": [
+        "13"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002811002",
+      "name": "Midsommarkransen",
+      "lon": 18.01176,
+      "lat": 59.302032,
+      "locationType": "0",
+      "parentStation": "9021001002811000",
+      "platformCode": "2",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002821002",
+      "name": "Telefonplan",
+      "lon": 17.997371,
+      "lat": 59.298256,
+      "locationType": "0",
+      "parentStation": "9021001002821000",
+      "platformCode": "2",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002831002",
+      "name": "Hägerstensåsen",
+      "lon": 17.978459,
+      "lat": 59.295178,
+      "locationType": "0",
+      "parentStation": "9021001002831000",
+      "platformCode": "2",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002841002",
+      "name": "Västertorp",
+      "lon": 17.966718,
+      "lat": 59.29136,
+      "locationType": "0",
+      "parentStation": "9021001002841000",
+      "platformCode": "2",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002851001",
+      "name": "Fruängen",
+      "lon": 17.964847,
+      "lat": 59.286757,
+      "locationType": "0",
+      "parentStation": "9021001002851000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002601005",
+      "name": "Liljeholmen",
+      "lon": 18.022914,
+      "lat": 59.310638,
+      "locationType": "0",
+      "parentStation": "9021001002601000",
+      "platformCode": "3",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002851002",
+      "name": "Fruängen",
+      "lon": 17.964831,
+      "lat": 59.286746,
+      "locationType": "0",
+      "parentStation": "9021001002851000",
+      "platformCode": "2",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002841001",
+      "name": "Västertorp",
+      "lon": 17.9667,
+      "lat": 59.291351,
+      "locationType": "0",
+      "parentStation": "9021001002841000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002831001",
+      "name": "Hägerstensåsen",
+      "lon": 17.978423,
+      "lat": 59.295161,
+      "locationType": "0",
+      "parentStation": "9021001002831000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002821001",
+      "name": "Telefonplan",
+      "lon": 17.997318,
+      "lat": 59.298248,
+      "locationType": "0",
+      "parentStation": "9021001002821000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002811001",
+      "name": "Midsommarkransen",
+      "lon": 18.01176,
+      "lat": 59.302032,
+      "locationType": "0",
+      "parentStation": "9021001002811000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002211001",
+      "name": "Stadion",
+      "lon": 18.081942,
+      "lat": 59.340807,
+      "locationType": "0",
+      "parentStation": "9021001002211000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002221001",
+      "name": "Tekniska högskolan",
+      "lon": 18.069315,
+      "lat": 59.346541,
+      "locationType": "0",
+      "parentStation": "9021001002221000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002231001",
+      "name": "Universitetet",
+      "lon": 18.054094,
+      "lat": 59.365325,
+      "locationType": "0",
+      "parentStation": "9021001002231000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002241001",
+      "name": "Bergshamra",
+      "lon": 18.037486,
+      "lat": 59.380737,
+      "locationType": "0",
+      "parentStation": "9021001002241000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002251001",
+      "name": "Danderyds sjukhus",
+      "lon": 18.041754,
+      "lat": 59.390505,
+      "locationType": "0",
+      "parentStation": "9021001002251000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001002301001",
+      "name": "Mörby centrum",
+      "lon": 18.036423,
+      "lat": 59.398319,
+      "locationType": "0",
+      "parentStation": "9021001002301000",
+      "platformCode": "1",
+      "routes": [
+        "14"
+      ],
+      "lines": [
+        "red"
+      ]
+    },
+    {
+      "stopId": "9022001001241004",
+      "name": "Åkeshov",
+      "lon": 17.923362,
+      "lat": 59.342156,
+      "locationType": "0",
+      "parentStation": "9021001001241000",
+      "platformCode": "3",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001231002",
+      "name": "Brommaplan",
+      "lon": 17.939641,
+      "lat": 59.338284,
+      "locationType": "0",
+      "parentStation": "9021001001231000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001221002",
+      "name": "Abrahamsberg",
+      "lon": 17.953172,
+      "lat": 59.336563,
+      "locationType": "0",
+      "parentStation": "9021001001221000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001211002",
+      "name": "Stora mossen",
+      "lon": 17.965338,
+      "lat": 59.334673,
+      "locationType": "0",
+      "parentStation": "9021001001211000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001201002",
+      "name": "Alvik",
+      "lon": 17.981276,
+      "lat": 59.333528,
+      "locationType": "0",
+      "parentStation": "9021001001201000",
+      "platformCode": "4",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001171002",
+      "name": "Kristineberg",
+      "lon": 18.00307,
+      "lat": 59.332723,
+      "locationType": "0",
+      "parentStation": "9021001001171000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001161002",
+      "name": "Thorildsplan",
+      "lon": 18.015873,
+      "lat": 59.331501,
+      "locationType": "0",
+      "parentStation": "9021001001161000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001151002",
+      "name": "Fridhemsplan",
+      "lon": 18.031598,
+      "lat": 59.333047,
+      "locationType": "0",
+      "parentStation": "9021001001151000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001141002",
+      "name": "S:t Eriksplan",
+      "lon": 18.037415,
+      "lat": 59.340284,
+      "locationType": "0",
+      "parentStation": "9021001001141000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001131002",
+      "name": "Odenplan",
+      "lon": 18.048706,
+      "lat": 59.342766,
+      "locationType": "0",
+      "parentStation": "9021001001131000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001121002",
+      "name": "Rådmansgatan",
+      "lon": 18.057916,
+      "lat": 59.340874,
+      "locationType": "0",
+      "parentStation": "9021001001121000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001111002",
+      "name": "Hötorget",
+      "lon": 18.062964,
+      "lat": 59.335615,
+      "locationType": "0",
+      "parentStation": "9021001001111000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001051002",
+      "name": "T-Centralen",
+      "lon": 18.061257,
+      "lat": 59.331521,
+      "locationType": "0",
+      "parentStation": "9021001001051000",
+      "platformCode": "4",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001021002",
+      "name": "Gamla stan",
+      "lon": 18.067083,
+      "lat": 59.323377,
+      "locationType": "0",
+      "parentStation": "9021001001021000",
+      "platformCode": "4",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001011002",
+      "name": "Slussen",
+      "lon": 18.07223,
+      "lat": 59.319625,
+      "locationType": "0",
+      "parentStation": "9021001001011000",
+      "platformCode": "4",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001511002",
+      "name": "Medborgarplatsen",
+      "lon": 18.073402,
+      "lat": 59.314889,
+      "locationType": "0",
+      "parentStation": "9021001001511000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001521002",
+      "name": "Skanstull",
+      "lon": 18.076111,
+      "lat": 59.308498,
+      "locationType": "0",
+      "parentStation": "9021001001521000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001551002",
+      "name": "Gullmarsplan",
+      "lon": 18.080986,
+      "lat": 59.299166,
+      "locationType": "0",
+      "parentStation": "9021001001551000",
+      "platformCode": "4",
+      "routes": [
+        "17",
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001601002",
+      "name": "Skärmarbrink",
+      "lon": 18.090363,
+      "lat": 59.295266,
+      "locationType": "0",
+      "parentStation": "9021001001601000",
+      "platformCode": "4",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001911002",
+      "name": "Hammarbyhöjden",
+      "lon": 18.104531,
+      "lat": 59.294747,
+      "locationType": "0",
+      "parentStation": "9021001001911000",
+      "platformCode": "2",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001921002",
+      "name": "Björkhagen",
+      "lon": 18.11533,
+      "lat": 59.291665,
+      "locationType": "0",
+      "parentStation": "9021001001921000",
+      "platformCode": "2",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001931002",
+      "name": "Kärrtorp",
+      "lon": 18.114478,
+      "lat": 59.284532,
+      "locationType": "0",
+      "parentStation": "9021001001931000",
+      "platformCode": "2",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001941002",
+      "name": "Bagarmossen",
+      "lon": 18.131213,
+      "lat": 59.276235,
+      "locationType": "0",
+      "parentStation": "9021001001941000",
+      "platformCode": "2",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001951001",
+      "name": "Skarpnäck",
+      "lon": 18.134049,
+      "lat": 59.267359,
+      "locationType": "0",
+      "parentStation": "9021001001951000",
+      "platformCode": "1",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001331002",
+      "name": "Hässelby strand",
+      "lon": 17.832466,
+      "lat": 59.361742,
+      "locationType": "0",
+      "parentStation": "9021001001331000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001321002",
+      "name": "Hässelby gård",
+      "lon": 17.844394,
+      "lat": 59.36707,
+      "locationType": "0",
+      "parentStation": "9021001001321000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001311002",
+      "name": "Johannelund",
+      "lon": 17.85815,
+      "lat": 59.367922,
+      "locationType": "0",
+      "parentStation": "9021001001311000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001301002",
+      "name": "Vällingby",
+      "lon": 17.872011,
+      "lat": 59.363268,
+      "locationType": "0",
+      "parentStation": "9021001001301000",
+      "platformCode": "4",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001281002",
+      "name": "Råcksta",
+      "lon": 17.881624,
+      "lat": 59.354495,
+      "locationType": "0",
+      "parentStation": "9021001001281000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001271002",
+      "name": "Blackeberg",
+      "lon": 17.88285,
+      "lat": 59.34837,
+      "locationType": "0",
+      "parentStation": "9021001001271000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001261002",
+      "name": "Islandstorget",
+      "lon": 17.893219,
+      "lat": 59.345995,
+      "locationType": "0",
+      "parentStation": "9021001001261000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001251002",
+      "name": "Ängbyplan",
+      "lon": 17.907174,
+      "lat": 59.341946,
+      "locationType": "0",
+      "parentStation": "9021001001251000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001241002",
+      "name": "Åkeshov",
+      "lon": 17.923296,
+      "lat": 59.342212,
+      "locationType": "0",
+      "parentStation": "9021001001241000",
+      "platformCode": "4",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001301004",
+      "name": "Vällingby",
+      "lon": 17.872113,
+      "lat": 59.363221,
+      "locationType": "0",
+      "parentStation": "9021001001301000",
+      "platformCode": "3",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001551004",
+      "name": "Gullmarsplan",
+      "lon": 18.081001,
+      "lat": 59.29913,
+      "locationType": "0",
+      "parentStation": "9021001001551000",
+      "platformCode": "3",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001951002",
+      "name": "Skarpnäck",
+      "lon": 18.133205,
+      "lat": 59.26658,
+      "locationType": "0",
+      "parentStation": "9021001001951000",
+      "platformCode": "2",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001941001",
+      "name": "Bagarmossen",
+      "lon": 18.131218,
+      "lat": 59.276288,
+      "locationType": "0",
+      "parentStation": "9021001001941000",
+      "platformCode": "1",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001931001",
+      "name": "Kärrtorp",
+      "lon": 18.114492,
+      "lat": 59.284486,
+      "locationType": "0",
+      "parentStation": "9021001001931000",
+      "platformCode": "1",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001921001",
+      "name": "Björkhagen",
+      "lon": 18.115345,
+      "lat": 59.291637,
+      "locationType": "0",
+      "parentStation": "9021001001921000",
+      "platformCode": "1",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001911001",
+      "name": "Hammarbyhöjden",
+      "lon": 18.104584,
+      "lat": 59.294746,
+      "locationType": "0",
+      "parentStation": "9021001001911000",
+      "platformCode": "1",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001601001",
+      "name": "Skärmarbrink",
+      "lon": 18.090363,
+      "lat": 59.295266,
+      "locationType": "0",
+      "parentStation": "9021001001601000",
+      "platformCode": "1",
+      "routes": [
+        "17"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001551001",
+      "name": "Gullmarsplan",
+      "lon": 18.080969,
+      "lat": 59.299184,
+      "locationType": "0",
+      "parentStation": "9021001001551000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001521001",
+      "name": "Skanstull",
+      "lon": 18.076094,
+      "lat": 59.308499,
+      "locationType": "0",
+      "parentStation": "9021001001521000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001511001",
+      "name": "Medborgarplatsen",
+      "lon": 18.07347,
+      "lat": 59.314869,
+      "locationType": "0",
+      "parentStation": "9021001001511000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001011001",
+      "name": "Slussen",
+      "lon": 18.072214,
+      "lat": 59.319644,
+      "locationType": "0",
+      "parentStation": "9021001001011000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001021001",
+      "name": "Gamla stan",
+      "lon": 18.067161,
+      "lat": 59.323401,
+      "locationType": "0",
+      "parentStation": "9021001001021000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001051003",
+      "name": "T-Centralen",
+      "lon": 18.06124,
+      "lat": 59.331522,
+      "locationType": "0",
+      "parentStation": "9021001001051000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001111001",
+      "name": "Hötorget",
+      "lon": 18.062963,
+      "lat": 59.335606,
+      "locationType": "0",
+      "parentStation": "9021001001111000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001121001",
+      "name": "Rådmansgatan",
+      "lon": 18.057899,
+      "lat": 59.340884,
+      "locationType": "0",
+      "parentStation": "9021001001121000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001131001",
+      "name": "Odenplan",
+      "lon": 18.0486,
+      "lat": 59.342759,
+      "locationType": "0",
+      "parentStation": "9021001001131000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001141001",
+      "name": "S:t Eriksplan",
+      "lon": 18.037416,
+      "lat": 59.340293,
+      "locationType": "0",
+      "parentStation": "9021001001141000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001151001",
+      "name": "Fridhemsplan",
+      "lon": 18.031488,
+      "lat": 59.332977,
+      "locationType": "0",
+      "parentStation": "9021001001151000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001161001",
+      "name": "Thorildsplan",
+      "lon": 18.015837,
+      "lat": 59.331492,
+      "locationType": "0",
+      "parentStation": "9021001001161000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001171001",
+      "name": "Kristineberg",
+      "lon": 18.003123,
+      "lat": 59.332722,
+      "locationType": "0",
+      "parentStation": "9021001001171000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001201001",
+      "name": "Alvik",
+      "lon": 17.981329,
+      "lat": 59.333528,
+      "locationType": "0",
+      "parentStation": "9021001001201000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001211001",
+      "name": "Stora mossen",
+      "lon": 17.965355,
+      "lat": 59.334664,
+      "locationType": "0",
+      "parentStation": "9021001001211000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001221001",
+      "name": "Abrahamsberg",
+      "lon": 17.953172,
+      "lat": 59.336563,
+      "locationType": "0",
+      "parentStation": "9021001001221000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001231001",
+      "name": "Brommaplan",
+      "lon": 17.939641,
+      "lat": 59.338284,
+      "locationType": "0",
+      "parentStation": "9021001001231000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001241003",
+      "name": "Åkeshov",
+      "lon": 17.923463,
+      "lat": 59.342109,
+      "locationType": "0",
+      "parentStation": "9021001001241000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001241001",
+      "name": "Åkeshov",
+      "lon": 17.923599,
+      "lat": 59.342052,
+      "locationType": "0",
+      "parentStation": "9021001001241000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001251001",
+      "name": "Ängbyplan",
+      "lon": 17.907087,
+      "lat": 59.341956,
+      "locationType": "0",
+      "parentStation": "9021001001251000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001261001",
+      "name": "Islandstorget",
+      "lon": 17.893271,
+      "lat": 59.345994,
+      "locationType": "0",
+      "parentStation": "9021001001261000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001271001",
+      "name": "Blackeberg",
+      "lon": 17.88285,
+      "lat": 59.34837,
+      "locationType": "0",
+      "parentStation": "9021001001271000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001281001",
+      "name": "Råcksta",
+      "lon": 17.881625,
+      "lat": 59.354513,
+      "locationType": "0",
+      "parentStation": "9021001001281000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001301001",
+      "name": "Vällingby",
+      "lon": 17.872011,
+      "lat": 59.363277,
+      "locationType": "0",
+      "parentStation": "9021001001301000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001311001",
+      "name": "Johannelund",
+      "lon": 17.858132,
+      "lat": 59.367923,
+      "locationType": "0",
+      "parentStation": "9021001001311000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001321001",
+      "name": "Hässelby gård",
+      "lon": 17.844287,
+      "lat": 59.367044,
+      "locationType": "0",
+      "parentStation": "9021001001321000",
+      "platformCode": "1",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001301003",
+      "name": "Vällingby",
+      "lon": 17.87213,
+      "lat": 59.363203,
+      "locationType": "0",
+      "parentStation": "9021001001301000",
+      "platformCode": "2",
+      "routes": [
+        "17",
+        "18",
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001601004",
+      "name": "Skärmarbrink",
+      "lon": 18.090346,
+      "lat": 59.295275,
+      "locationType": "0",
+      "parentStation": "9021001001601000",
+      "platformCode": "3",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001811002",
+      "name": "Blåsut",
+      "lon": 18.091141,
+      "lat": 59.291149,
+      "locationType": "0",
+      "parentStation": "9021001001811000",
+      "platformCode": "2",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001821002",
+      "name": "Sandsborg",
+      "lon": 18.091932,
+      "lat": 59.285675,
+      "locationType": "0",
+      "parentStation": "9021001001821000",
+      "platformCode": "2",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001831002",
+      "name": "Skogskyrkogården",
+      "lon": 18.095518,
+      "lat": 59.278967,
+      "locationType": "0",
+      "parentStation": "9021001001831000",
+      "platformCode": "2",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001841002",
+      "name": "Tallkrogen",
+      "lon": 18.085527,
+      "lat": 59.271248,
+      "locationType": "0",
+      "parentStation": "9021001001841000",
+      "platformCode": "2",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001851002",
+      "name": "Gubbängen",
+      "lon": 18.082138,
+      "lat": 59.263324,
+      "locationType": "0",
+      "parentStation": "9021001001851000",
+      "platformCode": "2",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001861002",
+      "name": "Hökarängen",
+      "lon": 18.082514,
+      "lat": 59.257921,
+      "locationType": "0",
+      "parentStation": "9021001001861000",
+      "platformCode": "2",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001871002",
+      "name": "Farsta",
+      "lon": 18.093813,
+      "lat": 59.243547,
+      "locationType": "0",
+      "parentStation": "9021001001871000",
+      "platformCode": "2",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001881001",
+      "name": "Farsta strand",
+      "lon": 18.101218,
+      "lat": 59.235462,
+      "locationType": "0",
+      "parentStation": "9021001001881000",
+      "platformCode": "1",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001871001",
+      "name": "Farsta",
+      "lon": 18.093653,
+      "lat": 59.243524,
+      "locationType": "0",
+      "parentStation": "9021001001871000",
+      "platformCode": "1",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001861001",
+      "name": "Hökarängen",
+      "lon": 18.082497,
+      "lat": 59.25793,
+      "locationType": "0",
+      "parentStation": "9021001001861000",
+      "platformCode": "1",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001851001",
+      "name": "Gubbängen",
+      "lon": 18.082138,
+      "lat": 59.263324,
+      "locationType": "0",
+      "parentStation": "9021001001851000",
+      "platformCode": "1",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001841001",
+      "name": "Tallkrogen",
+      "lon": 18.085563,
+      "lat": 59.271266,
+      "locationType": "0",
+      "parentStation": "9021001001841000",
+      "platformCode": "1",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001831001",
+      "name": "Skogskyrkogården",
+      "lon": 18.095518,
+      "lat": 59.278967,
+      "locationType": "0",
+      "parentStation": "9021001001831000",
+      "platformCode": "1",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001821001",
+      "name": "Sandsborg",
+      "lon": 18.091932,
+      "lat": 59.285675,
+      "locationType": "0",
+      "parentStation": "9021001001821000",
+      "platformCode": "1",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001811001",
+      "name": "Blåsut",
+      "lon": 18.091161,
+      "lat": 59.291184,
+      "locationType": "0",
+      "parentStation": "9021001001811000",
+      "platformCode": "1",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001601003",
+      "name": "Skärmarbrink",
+      "lon": 18.09033,
+      "lat": 59.295285,
+      "locationType": "0",
+      "parentStation": "9021001001601000",
+      "platformCode": "2",
+      "routes": [
+        "18"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001611002",
+      "name": "Globen",
+      "lon": 18.078024,
+      "lat": 59.294252,
+      "locationType": "0",
+      "parentStation": "9021001001611000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001621002",
+      "name": "Enskede gård",
+      "lon": 18.070425,
+      "lat": 59.288996,
+      "locationType": "0",
+      "parentStation": "9021001001621000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001631002",
+      "name": "Sockenplan",
+      "lon": 18.070911,
+      "lat": 59.283636,
+      "locationType": "0",
+      "parentStation": "9021001001631000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001641002",
+      "name": "Svedmyra",
+      "lon": 18.06794,
+      "lat": 59.278003,
+      "locationType": "0",
+      "parentStation": "9021001001641000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001651002",
+      "name": "Stureby",
+      "lon": 18.055698,
+      "lat": 59.274632,
+      "locationType": "0",
+      "parentStation": "9021001001651000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001661002",
+      "name": "Bandhagen",
+      "lon": 18.049647,
+      "lat": 59.27039,
+      "locationType": "0",
+      "parentStation": "9021001001661000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001701002",
+      "name": "Högdalen",
+      "lon": 18.042945,
+      "lat": 59.263699,
+      "locationType": "0",
+      "parentStation": "9021001001701000",
+      "platformCode": "4",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001711002",
+      "name": "Rågsved",
+      "lon": 18.02828,
+      "lat": 59.256667,
+      "locationType": "0",
+      "parentStation": "9021001001711000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001721001",
+      "name": "Hagsätra",
+      "lon": 18.013153,
+      "lat": 59.262173,
+      "locationType": "0",
+      "parentStation": "9021001001721000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001701004",
+      "name": "Högdalen",
+      "lon": 18.043016,
+      "lat": 59.263985,
+      "locationType": "0",
+      "parentStation": "9021001001701000",
+      "platformCode": "3",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001711001",
+      "name": "Rågsved",
+      "lon": 18.028442,
+      "lat": 59.256727,
+      "locationType": "0",
+      "parentStation": "9021001001711000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001701001",
+      "name": "Högdalen",
+      "lon": 18.043037,
+      "lat": 59.263769,
+      "locationType": "0",
+      "parentStation": "9021001001701000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001661001",
+      "name": "Bandhagen",
+      "lon": 18.049666,
+      "lat": 59.270417,
+      "locationType": "0",
+      "parentStation": "9021001001661000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001651001",
+      "name": "Stureby",
+      "lon": 18.055592,
+      "lat": 59.274625,
+      "locationType": "0",
+      "parentStation": "9021001001651000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001641001",
+      "name": "Svedmyra",
+      "lon": 18.067959,
+      "lat": 59.27802,
+      "locationType": "0",
+      "parentStation": "9021001001641000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001631001",
+      "name": "Sockenplan",
+      "lon": 18.070874,
+      "lat": 59.283609,
+      "locationType": "0",
+      "parentStation": "9021001001631000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001621001",
+      "name": "Enskede gård",
+      "lon": 18.070359,
+      "lat": 59.28906,
+      "locationType": "0",
+      "parentStation": "9021001001621000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001611001",
+      "name": "Globen",
+      "lon": 18.078006,
+      "lat": 59.294243,
+      "locationType": "0",
+      "parentStation": "9021001001611000",
+      "platformCode": "1",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001551009",
+      "name": "Gullmarsplan",
+      "lon": 18.080984,
+      "lat": 59.299139,
+      "locationType": "0",
+      "parentStation": "9021001001551000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    },
+    {
+      "stopId": "9022001001701003",
+      "name": "Högdalen",
+      "lon": 18.042945,
+      "lat": 59.263699,
+      "locationType": "0",
+      "parentStation": "9021001001701000",
+      "platformCode": "2",
+      "routes": [
+        "19"
+      ],
+      "lines": [
+        "green"
+      ]
+    }
+  ],
+  "parents": [
+    {
+      "stopId": "9021001003481000",
+      "name": "Hjulsta",
+      "lon": 17.888694,
+      "lat": 59.396773,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003471000",
+      "name": "Tensta",
+      "lon": 17.902487,
+      "lat": 59.394129,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003461000",
+      "name": "Rinkeby",
+      "lon": 17.928064,
+      "lat": 59.388157,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003451000",
+      "name": "Rissne",
+      "lon": 17.939694,
+      "lat": 59.375899,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003441000",
+      "name": "Duvbo",
+      "lon": 17.962933,
+      "lat": 59.368117,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003431000",
+      "name": "Sundbybergs centrum",
+      "lon": 17.973032,
+      "lat": 59.360533,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003421000",
+      "name": "Solna strand",
+      "lon": 17.973211,
+      "lat": 59.354669,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003411000",
+      "name": "Huvudsta",
+      "lon": 17.986937,
+      "lat": 59.349727,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003201000",
+      "name": "Västra skogen",
+      "lon": 18.003402,
+      "lat": 59.348022,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003161000",
+      "name": "Stadshagen",
+      "lon": 18.015653,
+      "lat": 59.337449,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001151000",
+      "name": "Fridhemsplan",
+      "lon": 18.031202,
+      "lat": 59.333017,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003131000",
+      "name": "Rådhuset",
+      "lon": 18.045008,
+      "lat": 59.329858,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001051000",
+      "name": "T-Centralen",
+      "lon": 18.061694,
+      "lat": 59.33166,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003031000",
+      "name": "Kungsträdgården",
+      "lon": 18.073588,
+      "lat": 59.330859,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003271000",
+      "name": "Akalla",
+      "lon": 17.917376,
+      "lat": 59.413817,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003261000",
+      "name": "Husby",
+      "lon": 17.926915,
+      "lat": 59.409713,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003251000",
+      "name": "Kista",
+      "lon": 17.942676,
+      "lat": 59.40295,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003231000",
+      "name": "Hallonbergen",
+      "lon": 17.969241,
+      "lat": 59.374385,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003221000",
+      "name": "Näckrosen",
+      "lon": 17.98196,
+      "lat": 59.367427,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001003211000",
+      "name": "Solna centrum",
+      "lon": 17.997759,
+      "lat": 59.359534,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002131000",
+      "name": "Ropsten",
+      "lon": 18.10272,
+      "lat": 59.357451,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002121000",
+      "name": "Gärdet",
+      "lon": 18.098981,
+      "lat": 59.345169,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002111000",
+      "name": "Karlaplan",
+      "lon": 18.091998,
+      "lat": 59.338988,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002101000",
+      "name": "Östermalmstorg",
+      "lon": 18.076384,
+      "lat": 59.334968,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001021000",
+      "name": "Gamla stan",
+      "lon": 18.067171,
+      "lat": 59.323286,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001011000",
+      "name": "Slussen",
+      "lon": 18.071617,
+      "lat": 59.319534,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002511000",
+      "name": "Mariatorget",
+      "lon": 18.062006,
+      "lat": 59.316784,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002521000",
+      "name": "Zinkensdamm",
+      "lon": 18.049608,
+      "lat": 59.317911,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002531000",
+      "name": "Hornstull",
+      "lon": 18.03541,
+      "lat": 59.316014,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002601000",
+      "name": "Liljeholmen",
+      "lon": 18.023044,
+      "lat": 59.310688,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002611000",
+      "name": "Aspudden",
+      "lon": 18.00184,
+      "lat": 59.306512,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002621000",
+      "name": "Örnsberg",
+      "lon": 17.989131,
+      "lat": 59.30543,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002631000",
+      "name": "Axelsberg",
+      "lon": 17.975516,
+      "lat": 59.304378,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002641000",
+      "name": "Mälarhöjden",
+      "lon": 17.957705,
+      "lat": 59.301234,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002651000",
+      "name": "Bredäng",
+      "lon": 17.936023,
+      "lat": 59.294802,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002701000",
+      "name": "Sätra",
+      "lon": 17.921296,
+      "lat": 59.285003,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002711000",
+      "name": "Skärholmen",
+      "lon": 17.907048,
+      "lat": 59.27699,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002721000",
+      "name": "Vårberg",
+      "lon": 17.890176,
+      "lat": 59.27595,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002731000",
+      "name": "Vårby gård",
+      "lon": 17.88468,
+      "lat": 59.264365,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002741000",
+      "name": "Masmo",
+      "lon": 17.881372,
+      "lat": 59.249912,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002751000",
+      "name": "Fittja",
+      "lon": 17.861027,
+      "lat": 59.247446,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002761000",
+      "name": "Alby",
+      "lon": 17.845357,
+      "lat": 59.239495,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002771000",
+      "name": "Hallunda",
+      "lon": 17.825251,
+      "lat": 59.243328,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002781000",
+      "name": "Norsborg",
+      "lon": 17.815024,
+      "lat": 59.243787,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002301000",
+      "name": "Mörby centrum",
+      "lon": 18.036657,
+      "lat": 59.398261,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002251000",
+      "name": "Danderyds sjukhus",
+      "lon": 18.041797,
+      "lat": 59.390617,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002241000",
+      "name": "Bergshamra",
+      "lon": 18.037494,
+      "lat": 59.380727,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002231000",
+      "name": "Universitetet",
+      "lon": 18.054093,
+      "lat": 59.365316,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002221000",
+      "name": "Tekniska högskolan",
+      "lon": 18.069324,
+      "lat": 59.34654,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002211000",
+      "name": "Stadion",
+      "lon": 18.081942,
+      "lat": 59.340803,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002811000",
+      "name": "Midsommarkransen",
+      "lon": 18.011776,
+      "lat": 59.302023,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002821000",
+      "name": "Telefonplan",
+      "lon": 17.997344,
+      "lat": 59.298252,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002831000",
+      "name": "Hägerstensåsen",
+      "lon": 17.978441,
+      "lat": 59.29517,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002841000",
+      "name": "Västertorp",
+      "lon": 17.966709,
+      "lat": 59.291355,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001002851000",
+      "name": "Fruängen",
+      "lon": 17.96494,
+      "lat": 59.286384,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001241000",
+      "name": "Åkeshov",
+      "lon": 17.92343,
+      "lat": 59.342132,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001231000",
+      "name": "Brommaplan",
+      "lon": 17.939641,
+      "lat": 59.338284,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001221000",
+      "name": "Abrahamsberg",
+      "lon": 17.953172,
+      "lat": 59.336563,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001211000",
+      "name": "Stora mossen",
+      "lon": 17.965347,
+      "lat": 59.334669,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001201000",
+      "name": "Alvik",
+      "lon": 17.981303,
+      "lat": 59.333528,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001171000",
+      "name": "Kristineberg",
+      "lon": 18.003096,
+      "lat": 59.332722,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001161000",
+      "name": "Thorildsplan",
+      "lon": 18.015855,
+      "lat": 59.331496,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001141000",
+      "name": "S:t Eriksplan",
+      "lon": 18.037415,
+      "lat": 59.340288,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001131000",
+      "name": "Odenplan",
+      "lon": 18.048653,
+      "lat": 59.342763,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001121000",
+      "name": "Rådmansgatan",
+      "lon": 18.057907,
+      "lat": 59.340879,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001111000",
+      "name": "Hötorget",
+      "lon": 18.062963,
+      "lat": 59.33561,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001511000",
+      "name": "Medborgarplatsen",
+      "lon": 18.073436,
+      "lat": 59.314879,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001521000",
+      "name": "Skanstull",
+      "lon": 18.076103,
+      "lat": 59.308499,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001551000",
+      "name": "Gullmarsplan",
+      "lon": 18.080985,
+      "lat": 59.299155,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001601000",
+      "name": "Skärmarbrink",
+      "lon": 18.090351,
+      "lat": 59.295273,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001911000",
+      "name": "Hammarbyhöjden",
+      "lon": 18.104557,
+      "lat": 59.294747,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001921000",
+      "name": "Björkhagen",
+      "lon": 18.115337,
+      "lat": 59.291651,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001931000",
+      "name": "Kärrtorp",
+      "lon": 18.114485,
+      "lat": 59.284509,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001941000",
+      "name": "Bagarmossen",
+      "lon": 18.131215,
+      "lat": 59.276262,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001951000",
+      "name": "Skarpnäck",
+      "lon": 18.133627,
+      "lat": 59.26697,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001331000",
+      "name": "Hässelby strand",
+      "lon": 17.832466,
+      "lat": 59.361742,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001321000",
+      "name": "Hässelby gård",
+      "lon": 17.844341,
+      "lat": 59.367057,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001311000",
+      "name": "Johannelund",
+      "lon": 17.858141,
+      "lat": 59.367923,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001301000",
+      "name": "Vällingby",
+      "lon": 17.872066,
+      "lat": 59.363242,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001281000",
+      "name": "Råcksta",
+      "lon": 17.881625,
+      "lat": 59.354504,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001271000",
+      "name": "Blackeberg",
+      "lon": 17.88285,
+      "lat": 59.34837,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001261000",
+      "name": "Islandstorget",
+      "lon": 17.893245,
+      "lat": 59.345995,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001251000",
+      "name": "Ängbyplan",
+      "lon": 17.90713,
+      "lat": 59.341951,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001811000",
+      "name": "Blåsut",
+      "lon": 18.091151,
+      "lat": 59.291166,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001821000",
+      "name": "Sandsborg",
+      "lon": 18.091932,
+      "lat": 59.285675,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001831000",
+      "name": "Skogskyrkogården",
+      "lon": 18.095518,
+      "lat": 59.278967,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001841000",
+      "name": "Tallkrogen",
+      "lon": 18.085545,
+      "lat": 59.271257,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001851000",
+      "name": "Gubbängen",
+      "lon": 18.082138,
+      "lat": 59.263324,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001861000",
+      "name": "Hökarängen",
+      "lon": 18.082506,
+      "lat": 59.257926,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001871000",
+      "name": "Farsta",
+      "lon": 18.093724,
+      "lat": 59.243531,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001881000",
+      "name": "Farsta strand",
+      "lon": 18.101217,
+      "lat": 59.235453,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001611000",
+      "name": "Globen",
+      "lon": 18.078015,
+      "lat": 59.294247,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001621000",
+      "name": "Enskede gård",
+      "lon": 18.070392,
+      "lat": 59.289028,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001631000",
+      "name": "Sockenplan",
+      "lon": 18.070893,
+      "lat": 59.283622,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001641000",
+      "name": "Svedmyra",
+      "lon": 18.067949,
+      "lat": 59.278012,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001651000",
+      "name": "Stureby",
+      "lon": 18.055645,
+      "lat": 59.274628,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001661000",
+      "name": "Bandhagen",
+      "lon": 18.049656,
+      "lat": 59.270403,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001701000",
+      "name": "Högdalen",
+      "lon": 18.042986,
+      "lat": 59.263788,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001711000",
+      "name": "Rågsved",
+      "lon": 18.028361,
+      "lat": 59.256697,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    },
+    {
+      "stopId": "9021001001721000",
+      "name": "Hagsätra",
+      "lon": 18.013188,
+      "lat": 59.262172,
+      "locationType": "1",
+      "parentStation": null,
+      "platformCode": null
+    }
+  ],
+  "orphanPlatforms": [],
+  "nonPassengerStops": [
+    {
+      "stopId": "9022001003242001",
+      "name": "Kymlinge söderut",
+      "parentStation": "9021001003242000",
+      "routes": [
+        "11"
+      ],
+      "reason": "No trip allows boarding or alighting here (GTFS pickup_type = drop_off_type = 1): trains pass through without stopping for passengers."
+    },
+    {
+      "stopId": "9022001003241001",
+      "name": "Kymlinge norrut",
+      "parentStation": "9021001003241000",
+      "routes": [
+        "11"
+      ],
+      "reason": "No trip allows boarding or alighting here (GTFS pickup_type = drop_off_type = 1): trains pass through without stopping for passengers."
+    }
+  ],
+  "osm": null,
+  "sameNameParents": [],
+  "issues": []
+}

@@ -1,0 +1,146 @@
+{
+  "source": "SL static GTFS (GTFS Regional, operator \"sl\") published by Samtrafiken via Trafiklab",
+  "url": "https://opendata.samtrafiken.se/gtfs/sl/sl.zip?key=REDACTED",
+  "documentation": "https://www.trafiklab.se/api/gtfs-datasets/gtfs-regional/",
+  "overview": "https://www.trafiklab.se/api/netex-datasets/overview/",
+  "licence": {
+    "name": "CC0 1.0 Universal (Public Domain Dedication)",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "terms": "https://www.trafiklab.se/api/gtfs-datasets/gtfs-regional/",
+    "attribution": "Timetable data: SL via Trafiklab.se / Samtrafiken (GTFS Regional, CC0 1.0)"
+  },
+  "retrievedAt": "2026-11-18T15:43:27.267Z",
+  "lastCheckedAt": "2026-11-18T15:43:27.267Z",
+  "http": {
+    "status": 200,
+    "etag": "\"dd28b1c405bd9014471e9ea770e708fd\"",
+    "lastModified": "Wed, 18 Nov 2026 01:08:40 GMT",
+    "contentType": "application/zip"
+  },
+  "archive": {
+    "file": "data/raw/gtfs-sl/sl.zip",
+    "bytes": 58088907,
+    "sha256": "0ac8319cb7dad565fc5c54dde643b1cbb12477b1704a0e23d7ae4cdb24eb7fc3",
+    "entries": [
+      {
+        "name": "shapes.txt",
+        "bytes": 148400653
+      },
+      {
+        "name": "feed_info.txt",
+        "bytes": 144
+      },
+      {
+        "name": "calendar_dates.txt",
+        "bytes": 811114
+      },
+      {
+        "name": "routes.txt",
+        "bytes": 30054
+      },
+      {
+        "name": "transfers.txt",
+        "bytes": 1393140
+      },
+      {
+        "name": "stops.txt",
+        "bytes": 1460505
+      },
+      {
+        "name": "stop_times.txt",
+        "bytes": 215170304
+      },
+      {
+        "name": "attributions.txt",
+        "bytes": 3980559
+      },
+      {
+        "name": "calendar.txt",
+        "bytes": 36056
+      },
+      {
+        "name": "agency.txt",
+        "bytes": 1278
+      },
+      {
+        "name": "trips.txt",
+        "bytes": 8374518
+      },
+      {
+        "name": "booking_rules.txt",
+        "bytes": 8218
+      }
+    ],
+    "committed": false
+  },
+  "feedInfo": {
+    "feed_id": "SE-sl",
+    "feed_publisher_name": "Samtrafiken i Sverige AB",
+    "feed_publisher_url": "https://www.samtrafiken.se",
+    "feed_lang": "sv",
+    "feed_version": "2026-11-18"
+  },
+  "metroSubset": {
+    "folder": "data/raw/gtfs-sl/metro",
+    "routeTypes": [
+      "1",
+      "401"
+    ],
+    "routes": [
+      {
+        "routeId": "9011001001000000",
+        "shortName": "10",
+        "longName": "Blå linjen",
+        "type": "401",
+        "colour": null
+      },
+      {
+        "routeId": "9011001001100000",
+        "shortName": "11",
+        "longName": "Blå linjen",
+        "type": "401",
+        "colour": null
+      },
+      {
+        "routeId": "9011001001300000",
+        "shortName": "13",
+        "longName": "Röda linjen",
+        "type": "401",
+        "colour": null
+      },
+      {
+        "routeId": "9011001001400000",
+        "shortName": "14",
+        "longName": "Röda linjen",
+        "type": "401",
+        "colour": null
+      },
+      {
+        "routeId": "9011001001700000",
+        "shortName": "17",
+        "longName": "Gröna linjen",
+        "type": "401",
+        "colour": null
+      },
+      {
+        "routeId": "9011001001800000",
+        "shortName": "18",
+        "longName": "Gröna linjen",
+        "type": "401",
+        "colour": null
+      },
+      {
+        "routeId": "9011001001900000",
+        "shortName": "19",
+        "longName": "Gröna linjen",
+        "type": "401",
+        "colour": null
+      }
+    ],
+    "trips": 20006,
+    "patterns": 94,
+    "stops": 561,
+    "note": "Verbatim rows from the archive: all metro routes, the stops they use with their parent stations and sibling stops, and one example trip (with its stop_times) per distinct stop pattern."
+  },
+  "ignoredMetroRoutes": []
+}
