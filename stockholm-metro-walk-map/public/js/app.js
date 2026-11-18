@@ -307,13 +307,24 @@
       paint: { 'line-color': ['get', 'colour'], 'line-width': LINE_W, 'line-offset': offsetExpr() }
     });
 
-    // Office buildings: below stations so stations stay clickable.
+    // Properties: below stations so stations stay clickable. Fill = age
+    // colour; developments get a thin dark concentric ring (shape, not colour).
     map.addSource('buildings', { type: 'geojson', data: buildingsGeoJSON(), promoteId: 'id' });
+    map.addLayer({
+      id: 'buildings-dev-ring', type: 'circle', source: 'buildings', filter: ['==', ['get', 'status'], 'Development'],
+      paint: {
+        'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 5.6, 13, 9, 16, 12.5, 18, 15],
+        'circle-color': 'rgba(0,0,0,0)',
+        'circle-stroke-color': dark ? '#ffffff' : '#1a1d21',
+        'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 9, 0.9, 14, 1.5],
+        'circle-stroke-opacity': ['case', ['boolean', ['feature-state', 'outside'], false], 0.3, 0.9]
+      }
+    });
     map.addLayer({
       id: 'buildings', type: 'circle', source: 'buildings',
       paint: {
         'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 3, 13, 5.5, 16, 8, 18, 10],
-        'circle-color': ['get', 'colour'],
+        'circle-color': ageColourExpr(),
         'circle-stroke-color': dark ? '#ffffff' : '#1a1d21',
         'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 9, 0.8, 14, 1.4],
         'circle-opacity': ['case', ['boolean', ['feature-state', 'outside'], false], 0.35, 1],
@@ -581,13 +592,33 @@
 
   // --------------------------------------------------------- office buildings
   function companyOf(name) { return C.COMPANY_BY_NAME[name] || { colour: '#666666', developmentColour: '#aaaaaa', name: name }; }
-  function buildingColour(b) { var c = companyOf(b.company); return b.status === 'Development' ? c.developmentColour : c.colour; }
+  /** MapLibre expression: construction year -> colour along C.AGE_RAMP (-1 = unknown). */
+  function ageColourExpr() {
+    var stops = [];
+    C.AGE_RAMP.forEach(function (s) { stops.push(s[0], s[1]); });
+    return ['case', ['<', ['get', 'year'], 0], C.AGE_UNKNOWN, ['interpolate', ['linear'], ['get', 'year']].concat(stops)];
+  }
+  /** Same ramp in JS (popup and legend swatches), linear interpolation between stops. */
+  function ageColour(year) {
+    if (year == null) return C.AGE_UNKNOWN;
+    var r = C.AGE_RAMP;
+    if (year <= r[0][0]) return r[0][1];
+    for (var i = 1; i < r.length; i++) {
+      if (year <= r[i][0]) {
+        var t = (year - r[i - 1][0]) / (r[i][0] - r[i - 1][0]);
+        var a = r[i - 1][1], b = r[i][1];
+        return C.hexFromRgb([1, 3, 5].map(function (k) { return Math.round(parseInt(a.substr(k, 2), 16) * (1 - t) + parseInt(b.substr(k, 2), 16) * t); }));
+      }
+    }
+    return r[r.length - 1][1];
+  }
+  function buildingColour(b) { return ageColour(b.yearBuilt); }
 
   function buildingsGeoJSON() {
     return {
       type: 'FeatureCollection',
       features: BLD.list.filter(function (b) { return b.inAnalysis && b.lon != null; }).map(function (b) {
-        return { type: 'Feature', id: b.id, properties: { id: b.id, company: b.company, status: b.status, colour: buildingColour(b) }, geometry: { type: 'Point', coordinates: [b.lon, b.lat] } };
+        return { type: 'Feature', id: b.id, properties: { id: b.id, company: b.company, status: b.status, year: b.yearBuilt == null ? -1 : b.yearBuilt }, geometry: { type: 'Point', coordinates: [b.lon, b.lat] } };
       })
     };
   }
@@ -607,8 +638,11 @@
   function applyBuildings() {
     if (!map.getLayer || !map.getLayer('buildings')) return;
     var companies = Array.from(state.companies), statuses = Array.from(state.statuses);
-    map.setFilter('buildings', ['all', ['in', ['get', 'company'], ['literal', companies]], ['in', ['get', 'status'], ['literal', statuses]]]);
+    var flt = ['all', ['in', ['get', 'company'], ['literal', companies]], ['in', ['get', 'status'], ['literal', statuses]]];
+    map.setFilter('buildings', flt);
+    map.setFilter('buildings-dev-ring', flt.concat([['==', ['get', 'status'], 'Development']]));
     setVis('buildings', state.showBuildings);
+    setVis('buildings-dev-ring', state.showBuildings);
     var limit = maxContour();
     BLD.list.forEach(function (b) {
       if (b.lon == null || !b.inAnalysis) return;
@@ -710,7 +744,6 @@
       var n = BLD.list.filter(function (b) { return b.company === c.name && b.inAnalysis; }).length;
       ul.appendChild(el('li', { className: 'line-row' }, [input, el('label', { for: id }, [
         el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.colour } }),
-        el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.developmentColour } }),
         el('span', { className: 'line-name', text: c.name }),
         el('span', { className: 'count', text: n ? n + ' mapped' : '' })
       ])]));
@@ -738,6 +771,7 @@
       el('dt', { text: 'Company' }), el('dd', { text: b.company }),
       el('dt', { text: 'Status' }), el('dd', { text: (b.status === 'Development' ? 'Development' : 'Standing asset') + ' (source: ' + (b.classification || '—') + ')' }),
       el('dt', { text: 'Type' }), el('dd', { text: b.propertyType || '—' }),
+      el('dt', { text: 'Built' }), el('dd', { text: b.constructionYear ? b.constructionYear + (String(b.constructionYear).indexOf('/') !== -1 ? ' (colour uses ' + b.yearBuilt + ', the latest)' : '') : 'Not given in source' }),
       el('dt', { text: 'Address' }), el('dd', { text: (b.street || 'No address in source') + (b.area ? ', ' + b.area : '') }),
       el('dt', { text: 'Floor area' }), el('dd', { text: b.sqm > 0 ? fmtInt(b.sqm) + ' m² lettable' : 'Unknown (0 or blank in source)' }),
       el('dt', { text: 'Walk' }), el('dd', { text: walk }),
@@ -888,15 +922,16 @@
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol interchange', 'aria-hidden': 'true' }), 'Selected interchange']));
     ul.appendChild(el('li', null, [el('span', { className: 'station-symbol unselected', 'aria-hidden': 'true' }), 'Station not selected']));
     if (BLD.status === 'ready') {
-      ul.appendChild(el('li', null, [el('strong', { text: 'Properties (dark = standing, light = development)' })]));
-      C.COMPANIES.forEach(function (c) {
-        if (!state.companies.has(c.name)) return;
-        ul.appendChild(el('li', null, [
-          el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.colour } }),
-          el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.developmentColour } }),
-          c.name + ' — standing / development'
-        ]));
-      });
+      ul.appendChild(el('li', null, [el('strong', { text: 'Properties: colour = construction year' })]));
+      var first = C.AGE_RAMP[0][0], last = C.AGE_RAMP[C.AGE_RAMP.length - 1][0];
+      var grad = 'linear-gradient(to right, ' + C.AGE_RAMP.map(function (s) { return s[1] + ' ' + (100 * (s[0] - first) / (last - first)).toFixed(1) + '%'; }).join(', ') + ')';
+      ul.appendChild(el('li', { className: 'age-legend' }, [
+        el('span', { className: 'age-ramp', 'aria-hidden': 'true', style: { background: grad } }),
+        el('span', { className: 'age-labels' }, [el('span', { text: 'old (' + first + ')' }), el('span', { text: 'new (' + last + ')' })])
+      ]));
+      ul.appendChild(el('li', null, [el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': C.AGE_UNKNOWN } }), 'Year not given in the source']));
+      ul.appendChild(el('li', null, [el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': ageColour(1965) } }), 'Standing asset (plain dot)']));
+      ul.appendChild(el('li', null, [el('span', { className: 'dot dev-ring', 'aria-hidden': 'true', style: { '--c': ageColour(1965) } }), 'Development (dot with an outer ring)']));
       ul.appendChild(el('li', null, [el('span', { className: 'dot faded', 'aria-hidden': 'true', style: { '--c': '#888888' } }), 'Faded: outside the selected walking times']));
     }
     var sel = C.LINES.filter(function (l) { return state.lines.has(l.id); });

@@ -23,6 +23,16 @@ export function expandStreet(name) {
  * Bare numbers after a street belong to that street; of a range only the
  * first number is used ("21–23" -> 21).
  */
+/**
+ * Construction year used for the age colour: the LATEST four-digit year in the
+ * source value ("1902/2002" -> 2002, i.e. the most recent build or rebuild;
+ * decision confirmed by the user). Blank -> null (unknown, never guessed).
+ */
+export function yearBuilt(raw) {
+  const years = String(raw ?? '').match(/\b(1[6-9]\d{2}|20\d{2})\b/g);
+  return years ? Math.max(...years.map(Number)) : null;
+}
+
 export function parseAddress(raw) {
   const out = [];
   const text = clean(raw).replace(/,?\s*(etc\.?|and others)$/i, '');

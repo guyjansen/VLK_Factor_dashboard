@@ -142,12 +142,12 @@ def main():
     # ------------------------------------------------------------ All assets
     cols = ['Asset ID', 'Company', 'Status', 'Source classification', 'Property name', 'Region', 'Area', 'Address (source)',
             'Municipality', 'In analysis', 'Not in analysis because', 'Latitude', 'Longitude', 'Geocode precision',
-            'Geocoded as', 'Geocode query', 'Floor area (sqm)', 'Property type (from area mix)',
+            'Geocoded as', 'Geocode query', 'Floor area (sqm)', 'Property type (from area mix)', 'Construction year (source)', 'Year built (latest; map colour)',
             'Best walk to any station (min)', 'Walk band'] + \
            [f'Stations ≤ {m} min' for m in MINUTES] + [f'Lines ≤ {MAXM} min', 'Nearest station (straight line)',
                                                       'Distance to nearest station (m)', 'Nearest station lines'] + \
            [f'{n} (min)' for _, n, _ in LINES]
-    widths = [12, 10, 12, 14, 22, 18, 18, 36, 12, 9, 34, 10, 10, 11, 48, 30, 12, 30, 12, 15] + [34] * len(MINUTES) + \
+    widths = [12, 10, 12, 14, 22, 18, 18, 36, 12, 9, 34, 10, 10, 11, 48, 30, 12, 30, 13, 12, 12, 15] + [34] * len(MINUTES) + \
              [26, 20, 12, 18] + [11] * len(LINES)
     CI = {name: i + 1 for i, name in enumerate(cols)}
     L = lambda name: get_column_letter(CI[name])  # noqa: E731
@@ -168,6 +168,7 @@ def main():
                 'Not in analysis because': b['notInAnalysisReason'], 'Latitude': b['lat'], 'Longitude': b['lon'],
                 'Geocode precision': g['precision'], 'Geocoded as': g.get('displayName'), 'Geocode query': g.get('query'),
                 'Floor area (sqm)': b['sqm'] if b['sqm'] else None, 'Property type (from area mix)': b['propertyType'],
+                'Construction year (source)': b.get('constructionYear'), 'Year built (latest; map colour)': b.get('yearBuilt'),
                 'Best walk to any station (min)': best(b) if inA else None,
                 'Walk band': (f'=IF({L("In analysis")}{r}="No","Not in analysis",IF({L("Best walk to any station (min)")}{r}="",'
                               f'"> {MAXM} min",IF({L("Best walk to any station (min)")}{r}<={MINUTES[0]},"≤ {MINUTES[0]} min",'
@@ -420,6 +421,7 @@ def main():
                       'use reviewed overrides (see comments in "Geocoded as"). Precision counts: ' + ', '.join(f'{k} {v}' for k, v in prec.items()) +
                       '. building = house number matched; street = street matched without the house number (can be a few hundred metres off); '
                       'area = district or same-quarter neighbour only.'),
+        ('Construction year', 'Source column "Construction year". Where two years are given (e.g. 1902/2002) the latest is used for the map colour (blue = old, red = new); blank = unknown (grey on the map).'),
         ('Floor area', 'Total lettable area (sqm) from the same workbook, joined by asset ID with a company and property-name check. '
                        '0 or blank = unknown: excluded from floor-area shares (not treated as zero).'),
         ('Caveats', 'Station coordinates are operator centroids, not entrances; a real walk can differ by a minute or more. Street- and area-level positions '

@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { ROOT, paths, readJson, MetroConfig as C, MetroGeometry as G } from '../scripts/lib/common.mjs';
-import { expandStreet, parseAddress } from '../scripts/lib/address.mjs';
+import { expandStreet, parseAddress, yearBuilt } from '../scripts/lib/address.mjs';
 
 const clean = readJson(paths.buildingsClean);
 const byId = Object.fromEntries(clean.buildings.map((b) => [b.id, b]));
@@ -49,6 +49,19 @@ test('address parsing keeps every street and listed house number', () => {
   assert.deepEqual(parseAddress('Glasfibergatan 6–14 and others').map((a) => [a.street, a.number]), [['Glasfibergatan', '6']]);
   assert.deepEqual(parseAddress('Gustav III:s boulevard').map((a) => [a.street, a.number]), [['Gustav III:s boulevard', null]]);
   assert.deepEqual(parseAddress(null), []);
+});
+
+test('construction year: latest year is used, blank stays unknown', () => {
+  assert.equal(yearBuilt('1902/2002'), 2002);
+  assert.equal(yearBuilt('1904/1929'), 1929);
+  assert.equal(yearBuilt('1963'), 1963);
+  assert.equal(yearBuilt(1963), 1963);
+  assert.equal(yearBuilt(null), null);
+  assert.equal(yearBuilt(''), null);
+  assert.equal(byId['FAB-SIC-01'].yearBuilt, 2002);
+  assert.equal(byId['FAB-SIC-17'].yearBuilt, 1881);
+  assert.equal(clean.buildings.filter((b) => b.yearBuilt == null).length, 14);
+  for (const b of clean.buildings) if (b.yearBuilt != null) assert.ok(b.yearBuilt >= 1800 && b.yearBuilt <= 2026, b.id);
 });
 
 // ---------------------------------------------------------------- geocoding

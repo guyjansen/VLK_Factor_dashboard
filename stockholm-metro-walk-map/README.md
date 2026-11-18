@@ -141,12 +141,12 @@ Every non-building result and every override was checked by hand (`data/geocode-
   - Station search (ignores diacritics: "ostermalmstorg" finds Östermalmstorg).
   - A toggle per threshold; union or individual polygons; opacity; show/hide routes, unselected lines, stations and properties; fit to selection; reset.
   - A live ARIA summary such as "3 lines selected · 100 unique stations · 5- and 10-minute coverage enabled".
-- Properties: amber points (developments a lighter amber) with a dark outline. They fade when outside the selected walking times. Filters by company and standing/development.
-- Property popups: company, status (with source classification), type, address, floor area, walking time, stations within reach, nearest station, geocode precision.
+- Properties: points coloured by **construction year**, continuously from blue (old) to red (new), with a dark outline and a gradient legend. Where the source gives two years (Apotekaren 22 "1902/2002", Läraren 13 "1904/1929", Ormträsket 10 "1962/1967") the **latest** year is used (your decision); the popup shows the full source value. The 14 properties without a year are grey, never given a guessed year. **Developments carry a thin dark outer ring** (a shape cue, so it works on every age colour and in both themes); standing assets are plain dots. Points fade when outside the selected walking times. Filters by company and standing/development.
+- Property popups: company, status (with source classification), type, construction year, address, floor area, walking time, stations within reach, nearest station, geocode precision.
 - Statistics table: per company, the share of all / standing / development properties within each threshold of the current selection, by count or floor area; hover for absolute values. A rounded 100% or 0% is only shown when exact (otherwise e.g. 99.9% / 0.1%). Properties not in the analysis, and unknown floor areas, are listed under the table.
 - Robustness: network data loads first. Isochrones, unions and properties load progressively, and lines and stations keep working if any of them fail; errors appear as readable banners. All data text goes through `textContent` (no `innerHTML`).
 - Accessibility: keyboard operable, labelled controls, visible focus, ARIA live summary. Thresholds are told apart by outline pattern (solid / dashed), not only colour. Below 760 px the panel becomes a bottom sheet; it works at 320 px.
-- Colours: blue `#007DB8`, red `#D71D24`, green `#148541` (SL); walking areas violet (5 min) and lavender (10 min); Fabege amber. All are defined only in `public/js/shared/config.js`; a test enforces this and checks that no fill or company colour is close to a line colour.
+- Colours: blue `#007DB8`, red `#D71D24`, green `#148541` (SL); walking areas violet (5 min) and lavender (10 min); property age ramp from deep indigo (1880) through pale blue and yellow to dark crimson (2025). Stops sit near the quantiles of the portfolio's years, because most buildings are from 1950–1970 or after 2010. The ramp ends are deliberately not SL's line blue and red. Fabege amber marks the company in the statistics table. All colours are defined only in `public/js/shared/config.js`; tests enforce this and check that walking-area, company and age colours stay clear of the line colours.
 
 ### Architecture
 - `public/js/shared/{config,geometry,selection}.js`: UMD modules shared by browser, Node pipeline and tests.
@@ -163,7 +163,7 @@ Every non-building result and every override was checked by hand (`data/geocode-
 | Summary | Cumulative shares (≤ 5, ≤ 10 min) by count and by floor area, for all / standing / development; geocode precision counts |
 | Distribution | Exclusive bands (≤ 5, 5–10, > 10 min) by count and floor area |
 | By line | Per company and line (and status), share within each threshold, by count and floor area |
-| All assets / Fabege | Asset rows: geocode (lat/lon, query, result), precision, best walk band, stations per band, lines, nearest station and distance, best minutes per line, floor area, scope |
+| All assets / Fabege | Asset rows: construction year (source and year used), geocode (lat/lon, query, result), precision, best walk band, stations per band, lines, nearest station and distance, best minutes per line, floor area, scope |
 | Notes | Method, sources, caveats |
 
 All statistics are live `COUNTIFS`/`SUMIFS` formulas. `npm run report` then runs `scripts/verify-report.py`, which:
@@ -195,7 +195,7 @@ Percentages between 99.95% and 100% display as ">99.9%", and those between 0% an
 
 ## Acceptance checklist
 
-Verified on 2026-11-18 (`npm test`: 46 passed, 0 failed, 0 skipped; `npm run validate`: no errors, 1 warning).
+Verified on 2026-11-18 (`npm test`: 47 passed, 0 failed, 0 skipped; `npm run validate`: no errors, 1 warning).
 
 - [x] Colours equal SL's RGB values (archived sl.se stylesheet) and are defined only in `config.js` (test greps every source file)
 - [x] Topology only from operator GTFS stop sequences; raw download + manifest (URL, date, licence, SHA-256); every edge is a consecutive passenger-call pair (test)

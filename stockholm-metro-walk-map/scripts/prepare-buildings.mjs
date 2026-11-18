@@ -21,7 +21,7 @@
 import fs from 'node:fs';
 import { paths, writeJson, rel, fail } from './lib/common.mjs';
 import { readSheet } from './lib/xlsx.mjs';
-import { parseAddress } from './lib/address.mjs';
+import { parseAddress, yearBuilt } from './lib/address.mjs';
 
 const COMPANY = 'Fabege';
 const REGION_CODES = { 'Stockholm inner city': 'SIC', Solna: 'SOL', 'Hammarby Sjöstad': 'HSJ', Flemingsberg: 'FLB', Other: 'OTH' };
@@ -100,6 +100,7 @@ rows.slice(1).forEach((r, i) => {
     usesSqm: uses,
     totalLettableSqmSource: total,
     constructionYear: clean(r[C['Construction year']]) || null,
+    yearBuilt: yearBuilt(r[C['Construction year']]),
     environmentallyCertified: clean(r[C['Environmentally certified (Yes/No)']]) || null,
     taxValueKSEK: Number(r[C['Tax value (SEK 000s, 31/12/2025)']]) || null,
     sourcePage: r[C['Source page']] ?? null,
@@ -118,6 +119,7 @@ if (hard.length) fail(`portfolio workbook problems:\n  ${hard.map((x) => `row ${
 writeJson(paths.buildingsClean, {
   source: rel(paths.portfolioXlsx), sheet: 'Properties', preparedAt: new Date().toISOString(),
   statusRule: 'Standing = Classification "Investment"; Development = "Development" or "Land & project".',
+  yearRule: 'yearBuilt = latest year in "Construction year" (e.g. 1902/2002 -> 2002); blank = unknown.',
   buildings, issues
 });
 const tally = {};

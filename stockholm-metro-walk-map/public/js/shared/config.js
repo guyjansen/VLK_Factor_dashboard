@@ -80,6 +80,20 @@
   ].map(function (c) {
     return Object.freeze({ id: c.id, name: c.name, rgb: Object.freeze(c.rgb.slice()), colour: hex(c.rgb), developmentColour: hex(lighten(c.rgb, 0.45)) });
   });
+  // Property points are coloured by construction year (latest year in the
+  // source), continuously from blue (old) to red (new). Stops sit near the
+  // quantiles of the portfolio's years (most buildings are from 1950–1970 or
+  // after 2010), so the ramp uses its full range. The ends are a deep indigo
+  // and a dark crimson, never SL's exact line blue or red; points are also
+  // circles with a dark outline, unlike the cased lines.
+  var AGE_RAMP = [
+    [1880, '#2A3A8C'], [1930, '#4A74B4'], [1955, '#9CC5E0'], [1970, '#FDE29A'],
+    [1990, '#F4A06A'], [2010, '#D6604D'], [2025, '#8E1027']
+  ];
+  var AGE_UNKNOWN = '#A3A8AF';
+  // Developments are marked by shape, not colour: a thin dark concentric ring
+  // around the dot (works on every age colour and in both themes).
+
   var COMPANY_BY_NAME = {};
   COMPANIES.forEach(function (c) { COMPANY_BY_NAME[c.name] = c; });
 
@@ -87,6 +101,8 @@
     CITY: 'Stockholm',
     COMPANIES: Object.freeze(COMPANIES),
     COMPANY_BY_NAME: Object.freeze(COMPANY_BY_NAME),
+    AGE_RAMP: Object.freeze(AGE_RAMP.map(function (s) { return Object.freeze(s.slice()); })),
+    AGE_UNKNOWN: AGE_UNKNOWN,
     LINES: Object.freeze(LINES),
     LINE_BY_ID: Object.freeze(LINE_BY_ID),
     LINE_ID_BY_ROUTE: Object.freeze(LINE_ID_BY_ROUTE),

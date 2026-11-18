@@ -293,3 +293,9 @@ body.panel-collapsed .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib { max
 .segmented label + label span { border-left: 1px solid var(--border); }
 .segmented input:checked + span { background: var(--accent); color: var(--accent-contrast); font-weight: 600; }
 .segmented input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: -3px; }
+
+/* Property age legend and the development ring (shape, not colour). */
+.dot.dev-ring { box-shadow: 0 0 0 2px var(--surface), 0 0 0 3.5px var(--text); margin: 0 5px 0 4px; }
+.legend li.age-legend { display: block; }
+.legend .age-ramp { display: block; width: 100%; max-width: 260px; height: 12px; border-radius: 3px; border: 1px solid var(--border); margin: 2px 0; }
+.legend .age-labels { display: flex; justify-content: space-between; width: 100%; max-width: 260px; font-size: 0.8rem; color: var(--muted); }

@@ -5,7 +5,7 @@
     "column": "Total lettable area (sqm)",
     "unit": "sqm",
     "joinedOn": "asset ID (region + listing no.) with company and property-name check",
-    "importedAt": "2026-11-18T15:26:02.893Z",
+    "importedAt": "2026-11-18T16:02:30.250Z",
     "note": "A size of 0 or blank is treated as unknown and excluded from floor-area shares."
   },
   "sizes": {

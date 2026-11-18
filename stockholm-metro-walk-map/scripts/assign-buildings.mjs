@@ -73,6 +73,7 @@ const meta = {
   generatedAt: new Date().toISOString(),
   source: doc.source,
   statusRule: doc.statusRule,
+  yearRule: doc.yearRule,
   geocoder: doc.geocoder,
   geocodedAt: doc.geocodedAt,
   precisionCounts: out.reduce((m, b) => ((m[b.geocode.precision] = (m[b.geocode.precision] || 0) + 1), m), {}),
@@ -87,7 +88,7 @@ writeJson(paths.buildingsGeojson, {
   type: 'FeatureCollection', metadata: meta,
   features: out.filter((b) => b.inAnalysis).map((b) => ({
     type: 'Feature',
-    properties: { id: b.id, company: b.company, status: b.status, classification: b.classification, name: b.name, sqm: b.sqm, propertyType: b.propertyType, address: b.street, geocodePrecision: b.geocode.precision, bestWalkMinutes: b.bestSeconds ? b.bestSeconds / 60 : null, nearestStation: b.nearestStation?.name, nearestStationM: b.nearestStation?.distanceM },
+    properties: { id: b.id, company: b.company, status: b.status, classification: b.classification, name: b.name, constructionYear: b.constructionYear, yearBuilt: b.yearBuilt, sqm: b.sqm, propertyType: b.propertyType, address: b.street, geocodePrecision: b.geocode.precision, bestWalkMinutes: b.bestSeconds ? b.bestSeconds / 60 : null, nearestStation: b.nearestStation?.name, nearestStationM: b.nearestStation?.distanceM },
     geometry: { type: 'Point', coordinates: [b.lon, b.lat] }
   }))
 });
@@ -96,7 +97,7 @@ writeBrowserData(paths.publicBuildings, 'METRO_BUILDINGS', {
   meta,
   buildings: out.map((b) => ({
     id: b.id, company: b.company, status: b.status, classification: b.classification, name: b.name, street: b.street, area: b.area,
-    propertyType: b.propertyType, lon: b.lon == null ? null : r6(b.lon), lat: b.lat == null ? null : r6(b.lat),
+    propertyType: b.propertyType, constructionYear: b.constructionYear, yearBuilt: b.yearBuilt, lon: b.lon == null ? null : r6(b.lon), lat: b.lat == null ? null : r6(b.lat),
     precision: b.geocode.precision, geocoded: b.geocode.displayName, stations: b.stations, nearest: b.nearestStation, sqm: b.sqm,
     inAnalysis: b.inAnalysis, notInAnalysisReason: b.notInAnalysisReason
   }))

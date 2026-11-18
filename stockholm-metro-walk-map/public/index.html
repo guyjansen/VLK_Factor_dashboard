@@ -83,7 +83,7 @@
         <div class="toggle-list">
           <label class="toggle"><input id="show-buildings" type="checkbox" checked> Show properties</label>
           <label class="toggle"><input id="show-standing" type="checkbox" checked> Standing assets</label>
-          <label class="toggle"><input id="show-developments" type="checkbox" checked> Developments (lighter shade)</label>
+          <label class="toggle"><input id="show-developments" type="checkbox" checked> Developments (ringed)</label>
         </div>
         <ul id="company-list" class="line-list" aria-label="Companies"></ul>
         <fieldset id="measure-toggle" class="fieldset measure-toggle" hidden>
@@ -166,7 +166,7 @@
         <li>Station cross-check: OpenStreetMap (the data behind railsmaps.com), © OpenStreetMap contributors, ODbL.</li>
         <li>Walking areas: <span id="info-provider">routing provider</span>, using OpenStreetMap data © OpenStreetMap contributors (ODbL).</li>
         <li>Basemap: OpenFreeMap, OpenMapTiles schema, © OpenStreetMap contributors.</li>
-        <li>Properties: Fabege property list FY2025 (supplied workbook). Positions geocoded with Nominatim (© OpenStreetMap contributors, ODbL). Standing = "Investment"; Development = "Development" or "Land &amp; project" in the source classification.</li>
+        <li>Properties: Fabege property list FY2025 (supplied workbook). Points are coloured by construction year from blue (old) to red (new), using the latest year where two are given (e.g. 1902/2002 → 2002); grey = year not given. Developments have an outer ring. Positions geocoded with Nominatim (© OpenStreetMap contributors, ODbL). Standing = "Investment"; Development = "Development" or "Land &amp; project" in the source classification.</li>
         <li>Software: MapLibre GL JS (BSD-3-Clause), polygon-clipping (MIT).</li>
       </ul>
     </div>

@@ -27,7 +27,7 @@ test('line colours equal SL\'s official screen colours', () => {
 });
 
 test('colours are defined only in the shared config', () => {
-  const colours = [...C.LINES.map((l) => l.colour), ...C.CONTOURS.flatMap((c) => [c.fill, c.outline]), ...C.COMPANIES.flatMap((c) => [c.colour, c.developmentColour])];
+  const colours = [...C.LINES.map((l) => l.colour), ...C.CONTOURS.flatMap((c) => [c.fill, c.outline]), ...C.COMPANIES.flatMap((c) => [c.colour, c.developmentColour]), ...C.AGE_RAMP.map((s) => s[1]), C.AGE_UNKNOWN];
   const files = [];
   (function walk(d) {
     for (const e of fs.readdirSync(d, { withFileTypes: true })) {
@@ -48,6 +48,13 @@ test('walking-area and company colours do not clash with line colours', () => {
     for (const c of C.CONTOURS) assert.ok(dist(l.colour, c.fill) > 120, `${c.label} vs ${l.name}`);
     for (const c of C.COMPANIES) assert.ok(dist(l.colour, c.colour) > 120, `${c.name} vs ${l.name}`);
   }
+  // Age ramp: blue (old) -> red (new), increasing years, never SL's exact line blue/red.
+  const years = C.AGE_RAMP.map((s) => s[0]);
+  assert.deepEqual(years, years.slice().sort((a, b) => a - b));
+  const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const [old, nw] = [rgb(C.AGE_RAMP[0][1]), rgb(C.AGE_RAMP[C.AGE_RAMP.length - 1][1])];
+  assert.ok(old[2] > old[0] && nw[0] > nw[2], 'old end is blue, new end is red');
+  for (const l of C.LINES) for (const [, c] of C.AGE_RAMP) assert.ok(dist(l.colour, c) > 70, `age colour ${c} too close to ${l.name}`);
   assert.deepEqual(C.CONTOUR_SECONDS, [300, 600]);
   assert.equal(C.WALKING_SPEED_MPS, 1.4);
 });
