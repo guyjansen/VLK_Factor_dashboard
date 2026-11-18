@@ -1,0 +1,2386 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generatedAt": "2026-11-18T15:48:37.177Z",
+    "source": "data/FABG_property_list_FY25.xlsx",
+    "statusRule": "Standing = Classification \"Investment\"; Development = \"Development\" or \"Land & project\".",
+    "geocoder": {
+      "name": "Nominatim (OpenStreetMap)",
+      "url": "https://nominatim.openstreetmap.org",
+      "attribution": "Geocoding © OpenStreetMap contributors (ODbL), Nominatim",
+      "maxKmFromCentre": 30,
+      "viewbox": "17.55,59.65,18.75,58.95"
+    },
+    "geocodedAt": "2026-11-18T15:32:11.489Z",
+    "precisionCounts": {
+      "building": 70,
+      "street": 22,
+      "area": 4,
+      "unlocated": 1,
+      "excluded": 2
+    },
+    "sizes": {
+      "source": "data/FABG_property_list_FY25.xlsx",
+      "column": "Total lettable area (sqm)",
+      "unit": "sqm",
+      "known": 79,
+      "unknown": [
+        "FAB-SIC-05",
+        "FAB-SIC-23",
+        "FAB-SOL-01",
+        "FAB-SOL-02",
+        "FAB-SOL-03",
+        "FAB-SOL-04",
+        "FAB-SOL-07",
+        "FAB-SOL-08",
+        "FAB-SOL-29",
+        "FAB-SOL-36",
+        "FAB-SOL-37",
+        "FAB-SOL-40",
+        "FAB-SOL-42",
+        "FAB-SOL-48",
+        "FAB-SOL-49",
+        "FAB-HSJ-04",
+        "FAB-FLB-03",
+        "FAB-FLB-04",
+        "FAB-FLB-05",
+        "FAB-OTH-01"
+      ],
+      "note": "A size of 0 or blank is treated as unknown and excluded from floor-area shares."
+    },
+    "isochrones": {
+      "providers": [
+        "Valhalla (FOSSGIS public instance, OpenStreetMap data)"
+      ],
+      "generatedBetween": [
+        "2026-11-18T15:46:35.702Z",
+        "2026-11-18T15:48:24.663Z"
+      ]
+    },
+    "notInAnalysis": [
+      {
+        "id": "FAB-OTH-01",
+        "name": "Tekniken 1",
+        "reason": "Not located (No street address in the source and no district-level match.)"
+      },
+      {
+        "id": "FAB-OTH-03",
+        "name": "Daggkåpan 2",
+        "reason": "Borås is about 400 km from Stockholm, outside the metro network scope (excluded by decision; listed, not mapped)."
+      },
+      {
+        "id": "FAB-OTH-04",
+        "name": "Solrosen 16",
+        "reason": "Borås is about 400 km from Stockholm, outside the metro network scope (excluded by decision; listed, not mapped)."
+      }
+    ],
+    "method": "Point-in-polygon of the geocoded property point against each station's full-precision 300/600 s (5/10 min) pedestrian isochrones.",
+    "caveat": "Property positions come from geocoding street addresses; street- and area-level matches can be off by a few hundred metres."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-01",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Apotekaren 22",
+        "sqm": 28325,
+        "propertyType": "Office (89% of lettable area)",
+        "address": "Döbelnsg 20, 24, Kungstensg 21–23, Rådmansg 40, 42, Tuleg 7 A–B 13",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Rådmansgatan",
+        "nearestStationM": 202
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0612885,
+          59.3414374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-02",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Barnhusväderkvarnen 36",
+        "sqm": 25607,
+        "propertyType": "Office (55% of lettable area)",
+        "address": "Rådmansg 61–65",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Rådmansgatan",
+        "nearestStationM": 208
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0555381,
+          59.3394562
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-03",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Bocken 35",
+        "sqm": 14865,
+        "propertyType": "Office (97% of lettable area)",
+        "address": "Lästmakarg 22–24",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 333
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0688239,
+          59.3354555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-04",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Bocken 39",
+        "sqm": 20433,
+        "propertyType": "Office (81% of lettable area)",
+        "address": "Lästmakarg 20, Kungsg 7–15",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 372
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0695256,
+          59.3354906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-05",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Bocken 46",
+        "sqm": null,
+        "propertyType": "No lettable area reported",
+        "address": "Regeringsgatan 56",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 274
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0677754,
+          59.3354349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-06",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Bocken 47",
+        "sqm": 1325,
+        "propertyType": "Retail (50% of lettable area)",
+        "address": "Lästmakarg 8",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Östermalmstorg",
+        "nearestStationM": 257
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.071997,
+          59.3355319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-07",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Bocken 52",
+        "sqm": 2353,
+        "propertyType": "Residential (94% of lettable area)",
+        "address": "Lästmakarg 14–16",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Östermalmstorg",
+        "nearestStationM": 371
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0699326,
+          59.3355456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-08",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Drabanten 3",
+        "sqm": 6630,
+        "propertyType": "Office (96% of lettable area)",
+        "address": "Kungsbroplan 3, etc.",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Rådhuset",
+        "nearestStationM": 334
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0498122,
+          59.3315913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-09",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Fenix 1",
+        "sqm": 3753,
+        "propertyType": "Office (93% of lettable area)",
+        "address": "Barnhusgatan 3",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 301
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0578733,
+          59.3363838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-10",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Getingen 13",
+        "sqm": 17234,
+        "propertyType": "Office (64% of lettable area)",
+        "address": "Sveavägen 149",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Odenplan",
+        "nearestStationM": 797
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0476908,
+          59.3499154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-11",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Getingen 14",
+        "sqm": 12735,
+        "propertyType": "Office (65% of lettable area)",
+        "address": "Sveavägen 143–147",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Odenplan",
+        "nearestStationM": 794
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0487861,
+          59.3499017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-12",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Getingen 15",
+        "sqm": 25456,
+        "propertyType": "Office (53% of lettable area)",
+        "address": "Sveavägen 159",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Odenplan",
+        "nearestStationM": 805
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.046248,
+          59.3499016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-13",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Hägern Mindre 7",
+        "sqm": 13779,
+        "propertyType": "Office (70% of lettable area)",
+        "address": "Drottninggatan 27–29",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "T-Centralen",
+        "nearestStationM": 176
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0643327,
+          59.3308334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-14",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Islandet 3",
+        "sqm": 10084,
+        "propertyType": "Office (97% of lettable area)",
+        "address": "Holländargatan 11–13",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 180
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0604688,
+          59.3366118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-15",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Läraren 13",
+        "sqm": 6878,
+        "propertyType": "Office (100% of lettable area)",
+        "address": "Torsgatan 4",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 583
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0526836,
+          59.3354334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-16",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Mimer 5",
+        "sqm": 12061,
+        "propertyType": "Office (97% of lettable area)",
+        "address": "Hagagatan 25 A–C, Vanadisvägen 9",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Odenplan",
+        "nearestStationM": 451
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0504322,
+          59.3467182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-17",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Norrtälje 24",
+        "sqm": 7139,
+        "propertyType": "Office (89% of lettable area)",
+        "address": "Engelbrektsgatan 5–7",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 517
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0697455,
+          59.3387196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-18",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Ormträsket 10",
+        "sqm": 20022,
+        "propertyType": "Office (77% of lettable area)",
+        "address": "Sveavägen 166–170, 186",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Odenplan",
+        "nearestStationM": 921
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0487328,
+          59.3510452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-19",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Oxen Mindre 33",
+        "sqm": 10346,
+        "propertyType": "Office (65% of lettable area)",
+        "address": "Luntmakarg 18",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 202
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0637574,
+          59.3373836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-20",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Oxen Mindre 38",
+        "sqm": 3025,
+        "propertyType": "Residential (96% of lettable area)",
+        "address": "Malmskillnadsg 47 A, B",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Hötorget",
+        "nearestStationM": 224
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0646035,
+          59.3374378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-21",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Paradiset 23",
+        "sqm": 8517,
+        "propertyType": "Office (83% of lettable area)",
+        "address": "Strandbergsg 53–57",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Stadshagen",
+        "nearestStationM": 304
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.010596,
+          59.3383699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-22",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Paradiset 27",
+        "sqm": 26560,
+        "propertyType": "Office (73% of lettable area)",
+        "address": "Strandbergsg 59–65",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Stadshagen",
+        "nearestStationM": 337
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0106774,
+          59.3391038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-23",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Paradiset 31",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Strandbergsg 53–57",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Stadshagen",
+        "nearestStationM": 304
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.010596,
+          59.3383699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-24",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Pilen 27",
+        "sqm": 2057,
+        "propertyType": "Office (91% of lettable area)",
+        "address": "Bryggarg 12A",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "T-Centralen",
+        "nearestStationM": 212
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0588873,
+          59.3329197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-25",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Pilen 31",
+        "sqm": 9555,
+        "propertyType": "Mixed use (largest: Office, 48%)",
+        "address": "Gamla Brog 27–29, Vasag 38",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "T-Centralen",
+        "nearestStationM": 284
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0580937,
+          59.3334373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SIC-26",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Sparven 18",
+        "sqm": 8649,
+        "propertyType": "Hotel (70% of lettable area)",
+        "address": "Birger Jarlsg 21–23, Kungsg 2",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Östermalmstorg",
+        "nearestStationM": 324
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0714932,
+          59.3364816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-01",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Farao 14",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Dalvägen 10, Pyramidvägen 7, 9",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1030
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.006181,
+          59.3677456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-02",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Farao 15",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Dalvägen 8, Pyramidvägen 5",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 962
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0054544,
+          59.3672435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-03",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Farao 16",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Dalvägen 4–6, Pyramidvägen 3",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 933
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.006906,
+          59.3665083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-04",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Farao 19",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Magasinsvägen",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1046
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0032656,
+          59.3685143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-05",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Farao 20",
+        "sqm": 7854,
+        "propertyType": "Office (94% of lettable area)",
+        "address": "Pyramidvägen 7",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1030
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.006181,
+          59.3677456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-06",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Farao 8",
+        "sqm": 6186,
+        "propertyType": "Office (94% of lettable area)",
+        "address": "Dalvägen 12, Pyramidvägen 11",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1030
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0035264,
+          59.3683177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-07",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Järva 3:7",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Evenemangsgatan",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Näckrosen",
+        "nearestStationM": 1030
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9983972,
+          59.3713929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-08",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Kairo 1",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Pyramidvägen 2",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 944
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0078834,
+          59.3662747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-09",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Nationalarenan 3",
+        "sqm": 19165,
+        "propertyType": "Hotel (87% of lettable area)",
+        "address": "Evenemangsgatan 48",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Näckrosen",
+        "nearestStationM": 1104
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9976315,
+          59.3733316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-10",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Nationalarenan 5",
+        "sqm": 25500,
+        "propertyType": "Parking/other (100% of lettable area)",
+        "address": "Evenemangsgatan 32",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Näckrosen",
+        "nearestStationM": 1072
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9981079,
+          59.3724583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-11",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Nationalarenan 8",
+        "sqm": 41947,
+        "propertyType": "Office (99% of lettable area)",
+        "address": "Stjärntorget 1, Råsta strandväg 15C, Evenemangsgatan 2C",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1169
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0061351,
+          59.3691409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-12",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Poolen 1",
+        "sqm": 28142,
+        "propertyType": "Office (96% of lettable area)",
+        "address": "Kolonnvägen 24",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1511
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0084451,
+          59.3719848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-13",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Pyramiden 4",
+        "sqm": 72234,
+        "propertyType": "Office (100% of lettable area)",
+        "address": "Stjärntorget 3–5, Pyramidvägen 4–22, Magasinsvägen 6–12, Råsta strandväg 5–9",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1136
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0064608,
+          59.3687361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-14",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Semaforen 1",
+        "sqm": 159,
+        "propertyType": "Parking/other (100% of lettable area)",
+        "address": "Gustav III:s boulevard",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Bergshamra",
+        "nearestStationM": 1526
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0128508,
+          59.3751731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-15",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Signalen 3",
+        "sqm": 31040,
+        "propertyType": "Office (99% of lettable area)",
+        "address": "Kolonnvägen 22",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1511
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0084451,
+          59.3719848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-16",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Stigbygeln 2",
+        "sqm": 8418,
+        "propertyType": "Office (95% of lettable area)",
+        "address": "Gårdsvägen 6",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1126
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0122667,
+          59.3664599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-17",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Stigbygeln 3",
+        "sqm": 5904,
+        "propertyType": "Office (85% of lettable area)",
+        "address": "Gårdsvägen 8",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1130
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0117309,
+          59.3667912
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-18",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Stigbygeln 5",
+        "sqm": 7415,
+        "propertyType": "Office (92% of lettable area)",
+        "address": "Gårdsvägen 10 A, B",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1137
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0114353,
+          59.3670193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-19",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Stigbygeln 6",
+        "sqm": 9966,
+        "propertyType": "Office (90% of lettable area)",
+        "address": "Gårdsvägen 12–18",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1134
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0109254,
+          59.3672158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-20",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Tygeln 3",
+        "sqm": 7727,
+        "propertyType": "Parking/other (68% of lettable area)",
+        "address": "Gårdsvägen 13–21",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1131
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0097679,
+          59.3676536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-21",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Tömmen 1",
+        "sqm": 6929,
+        "propertyType": "Mixed use (largest: Office, 44%)",
+        "address": "Gårdsvägen 2–4",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1129
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0133247,
+          59.365872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-22",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Tömmen 2",
+        "sqm": 2610,
+        "propertyType": "Parking/other (100% of lettable area)",
+        "address": "Gårdsvägen 2",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1129
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0133247,
+          59.365872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-23",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Uarda 1",
+        "sqm": 24439,
+        "propertyType": "Office (94% of lettable area)",
+        "address": "Dalvägen 30, Evenemangsgatan 27–31, Vintervägen 33",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Näckrosen",
+        "nearestStationM": 1010
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.998951,
+          59.3701678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-24",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Uarda 4",
+        "sqm": 7872,
+        "propertyType": "Office (83% of lettable area)",
+        "address": "Dalvägen 14–16",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1050
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0028513,
+          59.3686092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-25",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Fräsaren 9",
+        "sqm": 9786,
+        "propertyType": "Office (64% of lettable area)",
+        "address": "Svetsarvägen 22",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Solna strand",
+        "nearestStationM": 562
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9815733,
+          59.3573825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-26",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Fräsaren 10",
+        "sqm": 11633,
+        "propertyType": "Office (62% of lettable area)",
+        "address": "Svetsarvägen 24",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Solna strand",
+        "nearestStationM": 613
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9827223,
+          59.3572952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-27",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Fräsaren 11",
+        "sqm": 39203,
+        "propertyType": "Office (85% of lettable area)",
+        "address": "Englundavägen 2–4, Svetsarvägen 4–10",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Sundbybergs centrum",
+        "nearestStationM": 258
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9772994,
+          59.3597137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-28",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Fräsaren 12",
+        "sqm": 37188,
+        "propertyType": "Office (51% of lettable area)",
+        "address": "Svetsarvägen 12–18, 20, 20A",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Sundbybergs centrum",
+        "nearestStationM": 403
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9793175,
+          59.3588461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-29",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Sliparen 1",
+        "sqm": null,
+        "propertyType": "No lettable area reported",
+        "address": "Ekensbergsv 115, Svetsarv 1–3",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Sundbybergs centrum",
+        "nearestStationM": 311
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9784125,
+          59.3610875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-30",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Sliparen 2",
+        "sqm": 21632,
+        "propertyType": "Office (79% of lettable area)",
+        "address": "Ekensbergsv 113, Svetsarv 3–5",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Sundbybergs centrum",
+        "nearestStationM": 365
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9794076,
+          59.3610219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-31",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Smeden 1",
+        "sqm": 44762,
+        "propertyType": "Office (77% of lettable area)",
+        "address": "Englundav 6–14, Smidesv 5–7, Svetsarv 5–17",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Sundbybergs centrum",
+        "nearestStationM": 395
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9798609,
+          59.3598231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-32",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Svetsaren 1",
+        "sqm": 16151,
+        "propertyType": "Office (77% of lettable area)",
+        "address": "Englundavägen 7",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Sundbybergs centrum",
+        "nearestStationM": 439
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9807577,
+          59.3607929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-33",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Svetsaren 3",
+        "sqm": 24400,
+        "propertyType": "Office (62% of lettable area)",
+        "address": "Enlundavägen 9–13",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Sundbybergs centrum",
+        "nearestStationM": 458
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9811054,
+          59.3603585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-34",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Yrket 3",
+        "sqm": 7282,
+        "propertyType": "Mixed use (largest: Industrial/warehouse, 48%)",
+        "address": "Smidesvägen 2–8",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Sundbybergs centrum",
+        "nearestStationM": 599
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9834121,
+          59.3595223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-35",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Ackordet 1",
+        "sqm": 27471,
+        "propertyType": "Office (91% of lettable area)",
+        "address": "Mathildatorget 3",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1312
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0185512,
+          59.3647279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-36",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Ackordet 2",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": null,
+        "geocodePrecision": "area",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1312
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0185512,
+          59.3647279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-37",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Kvarten 1",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Frösundaleden 4",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1213
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0174099,
+          59.3638628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-38",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Kvinten 1",
+        "sqm": 456,
+        "propertyType": "Industrial/warehouse (100% of lettable area)",
+        "address": "Frösundaleden 4",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1213
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0174099,
+          59.3638628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-39",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Kvinten 8",
+        "sqm": 2632,
+        "propertyType": "Residential (100% of lettable area)",
+        "address": "Frösundaleden 4",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1213
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0174099,
+          59.3638628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-40",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Tersen 1",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Frösundaleden 4",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1213
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0174099,
+          59.3638628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-41",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Hagalund 2:11",
+        "sqm": 15355,
+        "propertyType": "Office (98% of lettable area)",
+        "address": "Kolonnvägen",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1174
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0155959,
+          59.3649049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-42",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Distansen 4",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": null,
+        "geocodePrecision": "area",
+        "bestWalkMinutes": null,
+        "nearestStation": "Näckrosen",
+        "nearestStationM": 1887
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0009387,
+          59.3813784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-43",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Distansen 6",
+        "sqm": 10731,
+        "propertyType": "Office (95% of lettable area)",
+        "address": "Kolonnvägen 43–55",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Näckrosen",
+        "nearestStationM": 1887
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0009387,
+          59.3813784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-44",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Distansen 7",
+        "sqm": 9810,
+        "propertyType": "Parking/other (100% of lettable area)",
+        "address": "Kolonnvägen 57–59",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Näckrosen",
+        "nearestStationM": 1887
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0009387,
+          59.3813784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-45",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Fortet 2",
+        "sqm": 7548,
+        "propertyType": "Hotel (100% of lettable area)",
+        "address": "Råsundavägen 1–3, Hagavägen 1",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 1493
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0231893,
+          59.3630436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-46",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Hörnan 1",
+        "sqm": 16460,
+        "propertyType": "Office (97% of lettable area)",
+        "address": "Solnavägen 31–35, Garvis Carlssons gata 1–9",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 322
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9982993,
+          59.3624154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-47",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Järvakrogen 3",
+        "sqm": 7423,
+        "propertyType": "Hotel (100% of lettable area)",
+        "address": "Enköpingsvägen 1",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Näckrosen",
+        "nearestStationM": 1436
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.998575,
+          59.3771803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-48",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Klacken 2",
+        "sqm": null,
+        "propertyType": "No lettable area reported",
+        "address": "Garvis Carlssons gata",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 298
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9976312,
+          59.3622139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-49",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Lagern 2",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Solnavägen 37, Idrottsgatan 7",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Solna centrum",
+        "nearestStationM": 348
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9979523,
+          59.3626616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-SOL-50",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Nöten 4",
+        "sqm": 66000,
+        "propertyType": "Office (100% of lettable area)",
+        "address": "Solna strandväg 2–60",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Solna strand",
+        "nearestStationM": 220
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9700847,
+          59.3534892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-01",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Fartygstrafiken 2",
+        "sqm": 8710,
+        "propertyType": "Office (77% of lettable area)",
+        "address": "Hammarby Allé 93",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Gullmarsplan",
+        "nearestStationM": 931
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0939103,
+          59.3043103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-02",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Båtturen 2",
+        "sqm": 18107,
+        "propertyType": "Office (89% of lettable area)",
+        "address": "Hammarby Kaj 12, Hammarby Kaj 14–18",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Gullmarsplan",
+        "nearestStationM": 653
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.086662,
+          59.304265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-03",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Korphoppet 1",
+        "sqm": 14115,
+        "propertyType": "Office (60% of lettable area)",
+        "address": "Virkesvägen 24–26",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Skärmarbrink",
+        "nearestStationM": 814
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0977252,
+          59.3015495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-04",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Korphoppet 5",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Hammarby Fabriksväg 37–39",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Hammarbyhöjden",
+        "nearestStationM": 732
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.100386,
+          59.3009786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-05",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Korphoppet 6",
+        "sqm": 4682,
+        "propertyType": "Industrial/warehouse (91% of lettable area)",
+        "address": "Hammarby Fabriksväg 33",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Skärmarbrink",
+        "nearestStationM": 705
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0954489,
+          59.3010579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-06",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Luma 1",
+        "sqm": 38626,
+        "propertyType": "Office (78% of lettable area)",
+        "address": "Ljusslingan 1–17, 2–26, Glödlampsgränd 1–6, Lumaparksv 2–18, 5–15, Kölnag 3",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Skanstull",
+        "nearestStationM": 1148
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0958169,
+          59.3061968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-07",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Påsen 1",
+        "sqm": 12690,
+        "propertyType": "Office (83% of lettable area)",
+        "address": "Textilgatan 41–43",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Gullmarsplan",
+        "nearestStationM": 622
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0905051,
+          59.3019164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-08",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Trikåfabriken 12",
+        "sqm": 10851,
+        "propertyType": "Mixed use (largest: Office, 43%)",
+        "address": "Hammarby Fabriksväg 27, Virkesvägen 8–10",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Skärmarbrink",
+        "nearestStationM": 692
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0923553,
+          59.3014114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-09",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Trikåfabriken 8",
+        "sqm": 15405,
+        "propertyType": "Office (71% of lettable area)",
+        "address": "Virkesvägen 12, Heliosgatan 1–3",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Skärmarbrink",
+        "nearestStationM": 729
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0936693,
+          59.3016028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-HSJ-10",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Trikåfabriken 9",
+        "sqm": 16676,
+        "propertyType": "Office (88% of lettable area)",
+        "address": "Virkesvägen 2–4",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Gullmarsplan",
+        "nearestStationM": 610
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0908321,
+          59.3013443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-01",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Anoden 4",
+        "sqm": 1000,
+        "propertyType": "Industrial/warehouse (100% of lettable area)",
+        "address": null,
+        "geocodePrecision": "area",
+        "bestWalkMinutes": null,
+        "nearestStation": "Masmo",
+        "nearestStationM": 4522
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9398948,
+          59.2223899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-02",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Batteriet 3",
+        "sqm": 800,
+        "propertyType": "Industrial/warehouse (100% of lettable area)",
+        "address": "Regulatorvägen 15",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Hagsätra",
+        "nearestStationM": 5466
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9602878,
+          59.2211318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-03",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Batteriet 4",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Regulatorvägen 17",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Masmo",
+        "nearestStationM": 5473
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9592474,
+          59.2210027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-04",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Generatorn 10",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": null,
+        "geocodePrecision": "area",
+        "bestWalkMinutes": null,
+        "nearestStation": "Masmo",
+        "nearestStationM": 5172
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9458336,
+          59.2171069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-05",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Land & project",
+        "name": "Generatorn 11",
+        "sqm": null,
+        "propertyType": "Land / project (no lettable area reported)",
+        "address": "Björnkullavägen",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Masmo",
+        "nearestStationM": 5172
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9458336,
+          59.2171069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-06",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Regulatorn 3",
+        "sqm": 23595,
+        "propertyType": "Industrial/warehouse (53% of lettable area)",
+        "address": "Jonvägen 1, 3; Elektronvägen 2, 4, 6; Regulatorvägen 6, 8",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Hagsätra",
+        "nearestStationM": 5363
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9600562,
+          59.2223271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-07",
+        "company": "Fabege",
+        "status": "Development",
+        "classification": "Development",
+        "name": "Regulatorn 2",
+        "sqm": 42945,
+        "propertyType": "Industrial/warehouse (88% of lettable area)",
+        "address": "Elektronvägen 1",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Masmo",
+        "nearestStationM": 5169
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9550889,
+          59.2227167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-08",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Regulatorn 4",
+        "sqm": 11964,
+        "propertyType": "Office (100% of lettable area)",
+        "address": "Elektronvägen",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Masmo",
+        "nearestStationM": 5284
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9564983,
+          59.2219599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-FLB-09",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Separatorn 1",
+        "sqm": 23451,
+        "propertyType": "Office (96% of lettable area)",
+        "address": "Regulatorvägen 31",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": null,
+        "nearestStation": "Masmo",
+        "nearestStationM": 5459
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.9595428,
+          59.22142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAB-OTH-02",
+        "company": "Fabege",
+        "status": "Standing",
+        "classification": "Investment",
+        "name": "Kabelverket 2",
+        "sqm": 33638,
+        "propertyType": "Office (57% of lettable area)",
+        "address": "Glasfibergatan 6–14 and others",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": null,
+        "nearestStation": "Telefonplan",
+        "nearestStationM": 1954
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0013698,
+          59.2808036
+        ]
+      }
+    }
+  ]
+}

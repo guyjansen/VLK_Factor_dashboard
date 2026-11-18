@@ -221,6 +221,15 @@
   map.addControl(fitControl, 'top-right');
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric', maxWidth: 120 }), 'bottom-left');
   map.addControl(attribution, 'bottom-right');
+  collapseAttributionOnSmallScreens();
+
+  // MapLibre opens the compact attribution expanded; on phones it would cover
+  // half the map, so start collapsed there (the ⓘ button still expands it).
+  function collapseAttributionOnSmallScreens() {
+    if (window.innerWidth > 760) return;
+    var box = document.querySelector('.maplibregl-ctrl-attrib');
+    if (box) { box.classList.remove('maplibregl-compact-show'); box.removeAttribute('open'); }
+  }
 
   function attributionHtml() {
     var parts = ['Metro data: SL via Trafiklab (GTFS Regional, CC0)', 'Line colours: SL'];
@@ -681,7 +690,7 @@
       : 'A property counts as within N minutes when it lies inside the N-minute walking area of any selected station. Shares are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for counts.';
     box.appendChild(el('p', { className: 'hint', text: note }));
     var out = BLD.list.filter(function (b) { return state.companies.has(b.company) && !b.inAnalysis; });
-    if (out.length) box.appendChild(el('p', { className: 'hint', text: 'Not counted (' + out.length + '): ' + out.map(function (b) { return b.name + ' — ' + (b.notInAnalysisReason || 'not located'); }).join('; ') + '.' }));
+    if (out.length) box.appendChild(el('p', { className: 'hint', text: 'Not counted (' + out.length + '): ' + out.map(function (b) { return b.name + ' — ' + String(b.notInAnalysisReason || 'not located').replace(/[.\s]+$/, ''); }).join('; ') + '.' }));
     if (bySqm) {
       var unknown = BLD.list.filter(function (b) { return state.companies.has(b.company) && b.inAnalysis && !(b.sqm > 0); });
       if (unknown.length) box.appendChild(el('p', { className: 'hint', text: 'Floor area unknown (0 or blank in the source) for ' + unknown.length + ' propert' + (unknown.length === 1 ? 'y' : 'ies') + ': ' + unknown.map(function (b) { return b.name; }).join(', ') + '. These are left out of floor-area shares, not counted as zero.' }));
@@ -1274,6 +1283,7 @@
       map.removeControl(attribution);
       attribution = new maplibregl.AttributionControl({ compact: true, customAttribution: attributionHtml() });
       map.addControl(attribution, 'bottom-right');
+      collapseAttributionOnSmallScreens();
     } catch (e) { /* non-fatal */ }
   }
 

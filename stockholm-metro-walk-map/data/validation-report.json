@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T15:45:31.181Z",
+  "generatedAt": "2026-11-18T15:48:36.972Z",
   "status": "warnings",
   "errors": [],
   "warnings": [
@@ -174,6 +174,40 @@
     }
   },
   "isochrones": {
-    "status": "not-generated"
+    "status": "complete",
+    "providers": [
+      "Valhalla (FOSSGIS public instance, OpenStreetMap data)"
+    ],
+    "parameters": {
+      "costing": "pedestrian",
+      "walking_speed_kmh": 5.04,
+      "contours_seconds": [
+        300,
+        600
+      ],
+      "polygons": true,
+      "denoise": 0.1,
+      "generalize_m": 3
+    },
+    "generatedBetween": [
+      "2026-11-18T15:46:35.702Z",
+      "2026-11-18T15:48:24.663Z"
+    ],
+    "stationsWithIsochrones": 100,
+    "missing": [],
+    "lastRunFailures": [],
+    "invalidGeometries": [],
+    "nestingViolations": [],
+    "circularLooking": [],
+    "beyondPhysicalMaximum": [],
+    "maxReachOverStraightLineLimit": {
+      "300": 1.129,
+      "600": 1.029
+    },
+    "radialCoefficientOfVariation": {
+      "min": 0.065,
+      "median": 0.182,
+      "max": 0.512
+    }
   }
 }
