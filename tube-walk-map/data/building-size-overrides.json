@@ -1,0 +1,9 @@
+{
+  "description": "Corrected floor areas (sqm) that replace values from London_office_sizes_sqm.xlsx. Source: data/Derwent_London_Plc.xlsx, sheet 'Property Browser', 'Developments:' section, column 'Property Size (sq. m.)'. Each entry is matched on Asset ID and checked against company, name and property key.",
+  "overrides": {
+    "B145": { "company": "Derwent London", "name": "Middlesex House", "propertyKey": 106770, "sqm": 4617.13 },
+    "B146": { "company": "Derwent London", "name": "Greencoat/Gordon House", "propertyKey": 106649, "sqm": 10014.62 },
+    "B147": { "company": "Derwent London", "name": "Holden House", "propertyKey": 106651, "sqm": 12402.15 },
+    "B149": { "company": "Derwent London", "name": "Baker Street 50", "propertyKey": 440391, "sqm": 10962.2 }
+  }
+}

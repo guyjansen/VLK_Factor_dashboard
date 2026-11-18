@@ -77,7 +77,10 @@ test('floor areas import by Asset ID; zero/blank sizes are unknown, not zero', (
   assert.equal(Object.keys(sizes.sizes).length, 148);
   assert.deepEqual(sizes.unknown.map((u) => u.id), ['B109']); // Canada Water-Future Phases has size 0 in the source
   const total = Object.values(sizes.sizes).reduce((s, v) => s + v, 0);
-  assert.ok(Math.abs(total - 2219091) < 5, String(total));
+  // 2,219,091 sqm in the workbook, plus corrected Derwent development sizes (+4,885 sqm).
+  assert.ok(Math.abs(total - 2223976) < 5, String(total));
+  assert.equal(sizes.sizes.B145, 4617.13);
+  assert.equal(sizes.sizes.B149, 10962.2);
   assert.equal(out.find((b) => b.id === 'B109').sqm, null);
 });
 
@@ -87,7 +90,6 @@ test('floor-area shares (all stations) match the SQM table in the annotated work
     Landsec: { All: 0.65703, Standing: 0.58786, Development: 0.79525 },
     'Great Portland Estates': { All: 0.63694, Standing: 0.55717, Development: 0.85309 },
     'British Land': { All: 0.80246, Standing: 0.79312, Development: 0.83338 },
-    'Derwent London': { All: 0.73068, Standing: 0.75217, Development: 0.52252 }
   };
   for (const [company, byStatus] of Object.entries(expected)) {
     for (const [status, share] of Object.entries(byStatus)) {

@@ -4,7 +4,33 @@
     "sheet": "All assets",
     "column": "Property size",
     "unit": "sqm",
-    "importedAt": "2026-11-18T14:04:37.792Z",
+    "importedAt": "2026-11-18T16:18:53.871Z",
+    "corrections": [
+      {
+        "id": "B145",
+        "name": "Middlesex House",
+        "from": 6178.1,
+        "to": 4617.13
+      },
+      {
+        "id": "B146",
+        "name": "Greencoat/Gordon House",
+        "from": 12848.5,
+        "to": 10014.62
+      },
+      {
+        "id": "B147",
+        "name": "Holden House",
+        "from": 8417,
+        "to": 12402.15
+      },
+      {
+        "id": "B149",
+        "name": "Baker Street 50",
+        "from": 5667.1,
+        "to": 10962.2
+      }
+    ],
     "note": "A size of 0 or blank is treated as unknown and excluded from floor-area shares."
   },
   "sizes": {
@@ -152,10 +178,10 @@
     "B143": 2703.5,
     "B144": 3363.1,
     "B148": 5667.1,
-    "B149": 5667.1,
-    "B146": 12848.5,
-    "B147": 8417,
-    "B145": 6178.1
+    "B149": 10962.2,
+    "B146": 10014.62,
+    "B147": 12402.15,
+    "B145": 4617.13
   },
   "unknown": [
     {

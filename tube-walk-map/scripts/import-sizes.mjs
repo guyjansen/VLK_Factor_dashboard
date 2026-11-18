@@ -40,6 +40,20 @@ for (const r of rows.slice(1)) {
   if (r[SIZE] === null || r[SIZE] === '' || !Number.isFinite(v) || v <= 0) unknown.push({ id, company: b.company, name: b.name, value: r[SIZE] });
   else sizes[id] = Math.round(v * 10) / 10;
 }
+// Reviewed corrections (data/building-size-overrides.json) replace workbook values.
+const corrections = readJson(paths.buildingSizeOverrides, { overrides: {} }).overrides;
+const applied = [];
+for (const [id, o] of Object.entries(corrections)) {
+  const b = buildings.get(id);
+  if (!b || b.company !== o.company || b.name !== o.name || (o.propertyKey && b.propertyKey !== o.propertyKey)) {
+    console.error(`ERROR: size correction ${id} does not match the portfolio (${o.company} / ${o.name})`);
+    process.exit(1);
+  }
+  applied.push({ id, name: b.name, from: sizes[id] ?? null, to: o.sqm });
+  sizes[id] = o.sqm;
+  const u = unknown.findIndex((x) => x.id === id);
+  if (u >= 0) unknown.splice(u, 1);
+}
 const missingRows = [...buildings.keys()].filter((id) => !(id in sizes) && !unknown.some((u) => u.id === id));
 missingRows.forEach((id) => unknown.push({ id, company: buildings.get(id).company, name: buildings.get(id).name, value: 'row missing' }));
 if (problems.length) {
@@ -47,11 +61,12 @@ if (problems.length) {
   process.exit(1);
 }
 writeJson(paths.buildingSizes, {
-  meta: { source: rel(paths.sizesXlsx), sheet: 'All assets', column: 'Property size', unit: 'sqm', importedAt: new Date().toISOString(), note: 'A size of 0 or blank is treated as unknown and excluded from floor-area shares.' },
+  meta: { source: rel(paths.sizesXlsx), sheet: 'All assets', column: 'Property size', unit: 'sqm', importedAt: new Date().toISOString(), corrections: applied, note: 'A size of 0 or blank is treated as unknown and excluded from floor-area shares.' },
   sizes,
   unknown
 });
 const total = Object.values(sizes).reduce((s, v) => s + v, 0);
 console.log(`Imported floor areas for ${Object.keys(sizes).length}/${buildings.size} buildings (${Math.round(total).toLocaleString('en-GB')} sqm).`);
 if (unknown.length) console.log(`  unknown size: ${unknown.map((u) => `${u.id} ${u.name} (${u.value})`).join('; ')}`);
+applied.forEach((a) => console.log(`  corrected ${a.id} ${a.name}: ${a.from} -> ${a.to} sqm`));
 console.log(`Wrote ${rel(paths.buildingSizes)}`);

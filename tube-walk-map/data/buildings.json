@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-18T14:04:38.121Z",
+    "generatedAt": "2026-11-18T16:18:54.004Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
@@ -5088,7 +5088,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 6178.1,
+      "sqm": 4617.13,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUGPS": 600,
@@ -5125,7 +5125,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 12848.5,
+      "sqm": 10014.62,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 600
@@ -5161,7 +5161,7 @@
           "Holden House, London -> Holden House, Deptford Church Street, Albury Court"
         ]
       },
-      "sqm": 8417,
+      "sqm": 12402.15,
       "stations": {
         "940GZZLUGDG": 600,
         "940GZZLUOXC": 600,
@@ -5232,7 +5232,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 5667.1,
+      "sqm": 10962.2,
       "stations": {
         "940GZZLUBST": 300,
         "940GZZLUMYB": 600
