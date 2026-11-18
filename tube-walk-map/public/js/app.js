@@ -139,7 +139,8 @@
     showStations: true,
     showBuildings: true,
     companies: new Set(C.COMPANIES.map(function (c) { return c.name; })),
-    statuses: new Set(['Standing', 'Development'])
+    statuses: new Set(['Standing', 'Development']),
+    buildingMeasure: 'count' // 'count' (number of buildings) or 'sqm' (floor area)
   };
   var selection = S.resolveSelection(NET, state);
   var selectedSet = new Set(selection.stationIds);
@@ -609,48 +610,80 @@
     });
   }
 
-  function pct(n, d) { return d ? Math.round((100 * n) / d) + '%' : '–'; }
+  function pct(n, d) {
+    if (!d) return '–';
+    var v = (100 * n) / d;
+    var r = Math.round(v);
+    // Never show a rounded 100% / 0% for a share that is not exactly that.
+    if ((r === 100 && n < d) || (r === 0 && n > 0)) return (r === 100 ? Math.min(v, 99.9) : Math.max(v, 0.1)).toFixed(1) + '%';
+    return r + '%';
+  }
+
+  var fmtInt = function (v) { return Math.round(v).toLocaleString('en-GB'); };
+  function hasSizes() { return BLD.list.some(function (b) { return b.sqm > 0; }); }
 
   function renderBuildingStats() {
     var box = $('building-stats');
     if (!box) return;
     box.textContent = '';
+    var toggle = $('measure-toggle');
+    if (toggle) toggle.hidden = !(BLD.status === 'ready' && hasSizes());
     if (BLD.status === 'loading') { box.appendChild(el('p', { className: 'hint', text: 'Loading buildings…' })); return; }
     if (BLD.status === 'error') { box.appendChild(el('p', { className: 'hint', text: 'Building data unavailable.' })); return; }
     if (ISO.status !== 'ready') { box.appendChild(el('p', { className: 'hint', text: 'Waiting for walking areas…' })); return; }
     var secs = Array.from(state.contours).sort(function (a, b) { return a - b; });
     if (!secs.length) { box.appendChild(el('p', { className: 'hint', text: 'Turn on a walking-time contour to see how many buildings it covers.' })); return; }
+
+    var bySqm = state.buildingMeasure === 'sqm' && hasSizes();
+    // Count mode: every building weighs 1. Floor-area mode: weight = sqm, and
+    // buildings with an unknown size are left out of numerator and denominator.
+    var included = function (b) { return b.lon != null && (!bySqm || b.sqm > 0); };
+    var weight = function (b) { return bySqm ? b.sqm : 1; };
+    var sum = function (arr) { return arr.reduce(function (t, b) { return t + weight(b); }, 0); };
+    var amount = function (v) { return bySqm ? fmtInt(v) + ' m²' : fmtInt(v) + (v === 1 ? ' building' : ' buildings'); };
+
     var table = el('table', { className: 'bstats' });
-    table.appendChild(el('caption', { text: 'Share of each company’s buildings within walking distance of the ' + selection.stationIds.length + ' selected stations' }));
+    table.appendChild(el('caption', { text: (bySqm ? 'Share of each company’s floor area (sqm)' : 'Share of each company’s buildings') + ' within walking distance of the ' + selection.stationIds.length + ' selected stations' }));
     table.appendChild(el('thead', null, [el('tr', null, [
       el('th', { scope: 'col', text: 'Company' }), el('th', { scope: 'col', text: 'Walk' }),
-      el('th', { scope: 'col', text: 'All', title: 'All buildings (standing + development)' }),
+      el('th', { scope: 'col', text: 'All', title: bySqm ? 'All floor area (standing + development)' : 'All buildings (standing + development)' }),
       el('th', { scope: 'col', text: 'Standing' }), el('th', { scope: 'col', text: 'Develop.', title: 'Developments' })
     ])]));
     var tbody = el('tbody');
     C.COMPANIES.forEach(function (c) {
       if (!state.companies.has(c.name)) return;
-      var bs = BLD.list.filter(function (b) { return b.company === c.name && b.lon != null; });
+      var bs = BLD.list.filter(function (b) { return b.company === c.name && included(b); });
       var st = bs.filter(function (b) { return b.status === 'Standing'; });
       var dv = bs.filter(function (b) { return b.status === 'Development'; });
+      var totalLabel = bySqm
+        ? fmtInt(sum(bs)) + ' m² (' + fmtInt(sum(dv)) + ' m² dev.)'
+        : bs.length + ' buildings (' + dv.length + ' dev.)';
       secs.forEach(function (sec, i) {
-        var within = function (arr) { return arr.filter(function (b) { var x = buildingBand(b); return x !== null && x <= sec; }).length; };
+        var within = function (arr) { return sum(arr.filter(function (b) { var x = buildingBand(b); return x !== null && x <= sec; })); };
         var a = within(bs), w = within(st), d = within(dv);
+        var A = sum(bs), W = sum(st), D = sum(dv);
         var cells = [];
         if (i === 0) cells.push(el('th', { scope: 'rowgroup', rowspan: String(secs.length), className: 'bstats-company' }, [
           el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': c.colour } }), c.name,
-          el('span', { className: 'bstats-n', text: bs.length + ' buildings (' + dv.length + ' dev.)' })
+          el('span', { className: 'bstats-n', text: totalLabel })
         ]));
         cells.push(el('td', { text: '≤ ' + sec / 60 + ' min' }));
-        cells.push(el('td', { text: pct(a, bs.length), title: a + ' of ' + bs.length }));
-        cells.push(el('td', { text: pct(w, st.length), title: w + ' of ' + st.length }));
-        cells.push(el('td', { text: pct(d, dv.length), title: d + ' of ' + dv.length }));
+        cells.push(el('td', { text: pct(a, A), title: amount(a) + ' of ' + amount(A) }));
+        cells.push(el('td', { text: pct(w, W), title: amount(w) + ' of ' + amount(W) }));
+        cells.push(el('td', { text: pct(d, D), title: amount(d) + ' of ' + amount(D) }));
         tbody.appendChild(el('tr', { className: i === 0 ? 'group-start' : null }, cells));
       });
     });
     table.appendChild(tbody);
     box.appendChild(table);
-    box.appendChild(el('p', { className: 'hint', text: 'A building counts as within N minutes when it lies inside the N-minute walking area of any selected station. Percentages are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for counts.' }));
+    var note = bySqm
+      ? 'Floor area counts as within N minutes when its building lies inside the N-minute walking area of any selected station. Percentages are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for square metres.'
+      : 'A building counts as within N minutes when it lies inside the N-minute walking area of any selected station. Percentages are cumulative (≤ 10 min includes ≤ 5 min). Hover a percentage for counts.';
+    box.appendChild(el('p', { className: 'hint', text: note }));
+    if (bySqm) {
+      var unknown = BLD.list.filter(function (b) { return state.companies.has(b.company) && !(b.sqm > 0); });
+      if (unknown.length) box.appendChild(el('p', { className: 'hint', text: 'No floor area in the source for: ' + unknown.map(function (b) { return b.name + ' (' + b.company + ')'; }).join(', ') + '. Excluded from floor-area shares.' }));
+    }
   }
 
   function buildCompanyList() {
@@ -689,6 +722,7 @@
       el('dt', { text: 'Company' }), el('dd', { text: b.company }),
       el('dt', { text: 'Status' }), el('dd', { text: b.status === 'Development' ? 'Development (pipeline)' : 'Standing asset' }),
       el('dt', { text: 'Type' }), el('dd', { text: b.propertyType || '—' }),
+      el('dt', { text: 'Floor area' }), el('dd', { text: b.sqm > 0 ? fmtInt(b.sqm) + ' m²' : 'Not given in source' }),
       el('dt', { text: 'Address' }), el('dd', { text: b.street || '—' }),
       el('dt', { text: 'Walk' }), el('dd', { text: walk }),
       el('dt', { text: 'Stations' }), el('dd', { text: near.length ? near.map(function (x) { return x.name + ' (' + x.sec / 60 + ' min)'; }).join(', ') : '—' }),
@@ -912,6 +946,8 @@
     state.showRoutes = state.showContext = state.showStations = state.showBuildings = true;
     state.companies = new Set(C.COMPANIES.map(function (c) { return c.name; }));
     state.statuses = new Set(['Standing', 'Development']);
+    state.buildingMeasure = 'count';
+    var mc = document.querySelector('input[name="measure"][value="count"]'); if (mc) mc.checked = true;
     C.COMPANIES.forEach(function (c) { var i = $('company-' + c.id); if (i) i.checked = true; });
     $('show-buildings').checked = $('show-standing').checked = $('show-developments').checked = true;
     C.CONTOURS.forEach(function (c) { $('contour-' + c.seconds).checked = state.contours.has(c.seconds); });
@@ -1109,6 +1145,9 @@
     $(p[0]).addEventListener('change', function () { state[p[1]] = this.checked; applyLayerVisibility(); });
   });
   $('show-buildings').addEventListener('change', function () { state.showBuildings = this.checked; applyBuildings(); });
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="measure"]'), function (r) {
+    r.addEventListener('change', function () { if (r.checked) { state.buildingMeasure = r.value; renderBuildingStats(); } });
+  });
   [['show-standing', 'Standing'], ['show-developments', 'Development']].forEach(function (p) {
     $(p[0]).addEventListener('change', function () { if (this.checked) state.statuses.add(p[1]); else state.statuses.delete(p[1]); applyBuildings(); });
   });

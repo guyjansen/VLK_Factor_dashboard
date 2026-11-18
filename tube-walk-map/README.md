@@ -4,11 +4,11 @@ An interactive map of the areas you can reach **on foot within 5 and 10 minutes*
 
 > **Unofficial accessibility visualisation. Not affiliated with or endorsed by Transport for London.**
 
-![Status](https://img.shields.io/badge/tests-48%20passing-brightgreen)
+![Status](https://img.shields.io/badge/tests-50%20passing-brightgreen)
 
 - 301 physical stations from 302 station records (the duplicate Paddington record is merged): 272 Underground stations, 41 Elizabeth line stations, 12 of them shared. 11 Underground lines plus the Elizabeth line. 351 track links built from TfL Route Sequence data.
 - The Elizabeth line is listed and treated like every other line (select it, combine it, compare buildings against it).
-- **149 office buildings** of Landsec, Great Portland Estates, British Land and Derwent London (`data/London_office_data.xlsx`) are shown as points, one colour per company, with developments in a lighter shade of the same colour. The panel shows live per-company statistics for the current selection: the % of all buildings, standing assets and developments within each selected walking time.
+- **149 office buildings** of Landsec, Great Portland Estates, British Land and Derwent London (`data/London_office_data.xlsx`) are shown as points, one colour per company, with developments in a lighter shade of the same colour. The panel shows live per-company statistics for the current selection: the % of all buildings, standing assets and developments within each selected walking time. A toggle switches these statistics between **number of buildings** and **floor area (sqm)**.
 - **Excel report** `reports/office-station-access.xlsx`: every asset with its walking band, stations and lines, one sheet per company, plus summary, distribution and per-line statistics as live formulas.
 - 602 walking-time polygons (301 stations × 300/600 s, i.e. 5 and 10 minutes) generated with Valhalla (`pedestrian` costing, 5.04 km/h = 1.4 m/s).
 - Combined coverage is a true polygon union for each time threshold, computed in a Web Worker in the browser and also precomputed for each line and for the whole network.
@@ -127,6 +127,7 @@ tube-walk-map/
 │   ├── Underground_and_Elizabeth_Stations.xlsx   supplied input (default)
 │   ├── stations.csv              original Underground-only input
 │   ├── London_office_data.xlsx   office portfolio input
+│   ├── London_office_sizes_sqm.xlsx / building-sizes.json   floor areas (sqm)
 │   ├── geocode-cache.json / geocode-overrides.json
 │   ├── buildings.json / buildings.geojson   geocoded buildings + walking-area membership
 │   ├── station-aliases.json      reviewed join exceptions + special-case notes
@@ -190,7 +191,7 @@ npm run build
 ## Office buildings and the Excel report
 
 ```bash
-npm run buildings      # parse workbook → geocode (cached) → assign to walking areas
+npm run buildings      # parse workbook → geocode (cached) → import floor areas → assign to walking areas
 ```
 
 ```bash
@@ -203,6 +204,7 @@ npm run report         # write reports/office-station-access.xlsx (Python 3 + op
   - A building-level hit without the house number is downgraded to street level.
   - 22 ambiguous or missing addresses use reviewed queries in `data/geocode-overrides.json`, each with a reason. For example, Langham Place W1 not Harringay, and Exchange Square EC2 not Croydon. The street check alone stops matches such as 70 *Victoria Street* landing on *Queen* Victoria Street.
   - Result: **89 building-level, 57 street-level and 3 area-level** positions. Street-level points sit on the right street but can be a few hundred metres from the building, so check those for buildings near the edge of a 5- or 10-minute area. **One Chapel Place** is listed as "1 Chapel Street" in the source; it is placed at Chapel Place W1G (Great Portland Estates' building), which should be confirmed.
+- **Floor areas** (`scripts/import-sizes.mjs`): read from the "Property size" column (sqm) of the "All assets" sheet in `data/London_office_sizes_sqm.xlsx`, the annotated version of the report. Rows are joined on Asset ID and must also match on company and property name, otherwise the import stops. 148 of 149 buildings have a size (2,219,091 sqm in total). **Canada Water – Future Phases** (British Land) has 0 in the source; it is treated as unknown, not as zero, so it is left out of floor-area shares and the panel says so. In floor-area mode, each building counts with its sqm, so a share is "sqm within N minutes ÷ total sqm". Shares that would round to 100% or 0% without being exact are shown to one decimal place (for example, British Land ≤ 10 min: 99.6%). These shares match the SQM table in the annotated workbook's Distribution sheet, which a test checks.
 - **Assignment** (`scripts/assign-buildings.mjs`): for every building and station, the smallest walking time (300/600 s) whose full-precision isochrone contains the building. In the app, a building is "within N min" of the current selection when any selected station's N-minute area contains it, which is the same as lying inside their union.
 - **Map**: the points are circles with a dark outline. Buildings outside the largest selected walking time fade. Click a building for its company, status, address, walking time, stations and geocode precision.
 - **Report** (`scripts/export-portfolio.py` → `reports/office-station-access.xlsx`):
@@ -289,7 +291,7 @@ Or run the whole pipeline: `npm run data:full`.
 npm test
 ```
 
-Expected result: **48 tests, 48 pass, 0 fail**. The tests cover:
+Expected result: **50 tests, 50 pass, 0 fail**. The tests cover:
 
 - **Data validation**: colours equal the PDF RGB values (including the Elizabeth line) and are defined only in the central config; the CSV parser handles quotes, CRLF, BOM and malformed rows; the xlsx reader and BNG conversion reproduce the original CSV coordinates; all 302 records and all 315 TfL stops join; the Elizabeth line has the correct termini, branches and shared stations; Paddington is deduplicated; Edgware Road, Hammersmith and Shepherd's Bush stay separate; interchanges have all their lines; every line forms one connected component; the termini of every line match reality (for example, the Northern line has Morden, Battersea Power Station, Edgware, High Barnet and Mill Hill East); branch junctions exist (Northern Euston–Camden Town and Euston–Mornington Crescent, Metropolitan Chesham/Watford/Uxbridge, District at Earl's Court with degree 5, the Central Hainault loop, the Piccadilly Heathrow loop); no Underground link is longer than 8 km and no Elizabeth line link longer than 12 km; the validation report has no errors.
 - **Selection logic**: single and multiple lines, deduplication of interchanges (including Underground/Elizabeth line ones), manual add and remove, pruning of overrides, select all and clear all, summary text, search that ignores punctuation.

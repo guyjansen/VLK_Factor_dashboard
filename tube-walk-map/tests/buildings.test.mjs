@@ -71,3 +71,30 @@ test('Excel report exists with the expected sheets', { skip: !fs.existsSync(new 
   const rows = readFirstSheet(new URL('../reports/office-station-access.xlsx', import.meta.url).pathname);
   assert.match(String(rows[0][0]), /walking access/i);
 });
+
+test('floor areas import by Asset ID; zero/blank sizes are unknown, not zero', () => {
+  const sizes = readJson(paths.buildingSizes);
+  assert.equal(Object.keys(sizes.sizes).length, 148);
+  assert.deepEqual(sizes.unknown.map((u) => u.id), ['B109']); // Canada Water-Future Phases has size 0 in the source
+  const total = Object.values(sizes.sizes).reduce((s, v) => s + v, 0);
+  assert.ok(Math.abs(total - 2219091) < 5, String(total));
+  assert.equal(out.find((b) => b.id === 'B109').sqm, null);
+});
+
+test('floor-area shares (all stations) match the SQM table in the annotated workbook', () => {
+  // Reference: "Distribution" sheet of London_Offices_-_Map_data_inc._sqm.xlsx (share of sqm within 5 min).
+  const expected = {
+    Landsec: { All: 0.65703, Standing: 0.58786, Development: 0.79525 },
+    'Great Portland Estates': { All: 0.63694, Standing: 0.55717, Development: 0.85309 },
+    'British Land': { All: 0.80246, Standing: 0.79312, Development: 0.83338 },
+    'Derwent London': { All: 0.73068, Standing: 0.75217, Development: 0.52252 }
+  };
+  for (const [company, byStatus] of Object.entries(expected)) {
+    for (const [status, share] of Object.entries(byStatus)) {
+      const bs = out.filter((b) => b.company === company && (status === 'All' || b.status === status) && b.sqm > 0);
+      const total = bs.reduce((s, b) => s + b.sqm, 0);
+      const within = bs.filter((b) => b.bestSeconds !== null && b.bestSeconds <= 300).reduce((s, b) => s + b.sqm, 0);
+      assert.ok(Math.abs(within / total - share) < 0.0005, `${company} ${status}: ${within / total} vs ${share}`);
+    }
+  }
+});

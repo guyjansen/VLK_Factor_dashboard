@@ -282,3 +282,13 @@ body.panel-collapsed .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib { max
 .bstats .bstats-n { display: block; font-weight: 400; color: var(--muted); font-size: 0.72rem; }
 .bstats tr.group-start th, .bstats tr.group-start td { border-top: 1px solid var(--border); }
 .bstats td { white-space: nowrap; }
+
+/* Count / floor-area toggle (segmented control built from native radios). */
+.measure-toggle { margin: 10px 0 4px; }
+.segmented { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.segmented label { position: relative; cursor: pointer; }
+.segmented input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.segmented span { display: block; padding: 6px 12px; font-size: 0.85rem; min-height: 32px; line-height: 20px; background: var(--surface); }
+.segmented label + label span { border-left: 1px solid var(--border); }
+.segmented input:checked + span { background: var(--accent); color: var(--accent-contrast); font-weight: 600; }
+.segmented input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: -3px; }

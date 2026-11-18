@@ -86,6 +86,13 @@
           <label class="toggle"><input id="show-developments" type="checkbox" checked> Developments (lighter shade)</label>
         </div>
         <ul id="company-list" class="line-list" aria-label="Companies"></ul>
+        <fieldset id="measure-toggle" class="fieldset measure-toggle" hidden>
+          <legend>Statistics by</legend>
+          <div class="segmented">
+            <label><input type="radio" name="measure" value="count" checked> <span># of buildings</span></label>
+            <label><input type="radio" name="measure" value="sqm"> <span>Floor area (sqm)</span></label>
+          </div>
+        </fieldset>
         <div id="building-stats" class="building-stats" aria-live="polite"></div>
       </section>
 
@@ -155,7 +162,7 @@
         <li>Station coordinates: supplied station workbook (Underground_and_Elizabeth_Stations.xlsx). British National Grid coordinates were converted to WGS84.</li>
         <li>Walking areas: <span id="info-provider">routing provider</span>, using OpenStreetMap data © OpenStreetMap contributors, available under the Open Database Licence.</li>
         <li>Basemap: OpenFreeMap, OpenMapTiles schema, © OpenStreetMap contributors.</li>
-        <li>Office buildings: supplied portfolio workbook (London_office_data.xlsx). Positions were geocoded from the street addresses with Nominatim (© OpenStreetMap contributors, ODbL). 89 buildings matched at building level, 57 at street level and 3 at area level, so some points are approximate. Each building popup shows its match level.</li>
+        <li>Office buildings: supplied portfolio workbook (London_office_data.xlsx). Positions were geocoded from the street addresses with Nominatim (© OpenStreetMap contributors, ODbL). 89 buildings matched at building level, 57 at street level and 3 at area level, so some points are approximate. Each building popup shows its match level. Floor areas (sqm) come from the "Property size" column of the annotated portfolio workbook.</li>
         <li>Software: MapLibre GL JS (BSD-3-Clause), polygon-clipping (MIT).</li>
       </ul>
     </div>

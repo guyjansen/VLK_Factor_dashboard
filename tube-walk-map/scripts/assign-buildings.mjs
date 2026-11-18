@@ -19,6 +19,7 @@ try {
   console.error(`ERROR: ${err.message}\nRun "npm run buildings:prepare && npm run buildings:geocode" and the isochrone pipeline first.`);
   process.exit(1);
 }
+const sizesDoc = readJson(paths.buildingSizes, null); // optional: floor areas (npm run buildings:sizes)
 const stations = stationsDoc.stations.filter((s) => s.lines.length);
 const byId = new Map(stations.map((s) => [s.id, s]));
 const polys = []; // {stationId, seconds, polygons, bbox}
@@ -29,7 +30,8 @@ for (const f of iso.features) {
 
 const out = [];
 for (const b of doc.buildings) {
-  const rec = { ...b, stations: {}, bestSeconds: null, nearestStation: null };
+  const sqm = sizesDoc?.sizes?.[b.id];
+  const rec = { ...b, sqm: Number.isFinite(sqm) ? sqm : null, stations: {}, bestSeconds: null, nearestStation: null };
   if (Number.isFinite(b.lon) && Number.isFinite(b.lat)) {
     const pt = [b.lon, b.lat];
     for (const p of polys) {
@@ -55,6 +57,7 @@ const meta = {
   source: doc.source,
   geocoder: doc.geocoder,
   geocodedAt: doc.geocodedAt,
+  sizes: sizesDoc ? { source: sizesDoc.meta.source, unit: 'sqm', known: Object.keys(sizesDoc.sizes).length, unknown: sizesDoc.unknown, note: sizesDoc.meta.note } : null,
   isochrones: { providers: iso.metadata?.providers, generatedBetween: iso.metadata?.isochronesGeneratedBetween },
   method: 'Point-in-polygon of the geocoded building point against each station\'s full-precision 300/600 s (5/10 min) pedestrian isochrones.',
   caveat: 'Building positions come from geocoding street addresses; street-level matches can be off by a few hundred metres.'
@@ -64,7 +67,7 @@ writeJson(paths.buildingsGeojson, {
   type: 'FeatureCollection', metadata: meta,
   features: out.filter((b) => b.lon != null).map((b) => ({
     type: 'Feature',
-    properties: { id: b.id, company: b.company, status: b.status, name: b.name, propertyKey: b.propertyKey, propertyType: b.propertyType, street: b.street, geocodePrecision: b.geocode.precision, bestWalkMinutes: b.bestSeconds ? b.bestSeconds / 60 : null, nearestStation: b.nearestStation?.name, nearestStationM: b.nearestStation?.distanceM },
+    properties: { id: b.id, company: b.company, status: b.status, name: b.name, sqm: b.sqm, propertyKey: b.propertyKey, propertyType: b.propertyType, street: b.street, geocodePrecision: b.geocode.precision, bestWalkMinutes: b.bestSeconds ? b.bestSeconds / 60 : null, nearestStation: b.nearestStation?.name, nearestStationM: b.nearestStation?.distanceM },
     geometry: { type: 'Point', coordinates: [b.lon, b.lat] }
   }))
 });
@@ -74,7 +77,7 @@ writeBrowserData(paths.publicBuildings, 'TUBE_BUILDINGS', {
   buildings: out.map((b) => ({
     id: b.id, company: b.company, status: b.status, name: b.name, street: b.street, propertyType: b.propertyType, propertyKey: b.propertyKey,
     lon: b.lon == null ? null : r6(b.lon), lat: b.lat == null ? null : r6(b.lat),
-    precision: b.geocode.precision, geocoded: b.geocode.displayName, stations: b.stations, nearest: b.nearestStation
+    precision: b.geocode.precision, geocoded: b.geocode.displayName, stations: b.stations, nearest: b.nearestStation, sqm: b.sqm
   }))
 });
 

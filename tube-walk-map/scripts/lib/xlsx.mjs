@@ -47,6 +47,11 @@ function colIndex(ref) {
 
 /** Read the first worksheet as an array of row arrays (strings / numbers / null). */
 export function readFirstSheet(file) {
+  return readSheet(file, null);
+}
+
+/** Read a worksheet by name (or the first one when name is null). */
+export function readSheet(file, sheetName) {
   const get = readZip(fs.readFileSync(file));
   const shared = [];
   const sst = get('xl/sharedStrings.xml');
@@ -57,7 +62,10 @@ export function readFirstSheet(file) {
   }
   const wb = get('xl/workbook.xml') || '';
   const rels = get('xl/_rels/workbook.xml.rels') || '';
-  const firstRid = (/<sheet [^>]*r:id="([^"]+)"/.exec(wb) || [])[1];
+  const sheets = [...wb.matchAll(/<sheet [^>]*>/g)].map((m) => ({ name: decode((/name="([^"]*)"/.exec(m[0]) || [])[1] || ''), rid: (/r:id="([^"]+)"/.exec(m[0]) || [])[1] }));
+  const chosen = sheetName == null ? sheets[0] : sheets.find((x) => x.name === sheetName);
+  if (!chosen) throw new Error(`worksheet "${sheetName}" not found (have: ${sheets.map((x) => x.name).join(', ')})`);
+  const firstRid = chosen.rid;
   const target = firstRid && (new RegExp(`Id="${firstRid}"[^>]*Target="([^"]+)"`).exec(rels) || new RegExp(`Target="([^"]+)"[^>]*Id="${firstRid}"`).exec(rels) || [])[1];
   const sheetPath = target ? 'xl/' + target.replace(/^\/?xl\//, '') : 'xl/worksheets/sheet1.xml';
   const xml = get(sheetPath);

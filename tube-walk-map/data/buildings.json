@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-17T16:29:53.694Z",
+    "generatedAt": "2026-11-18T14:04:38.121Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
@@ -8,6 +8,20 @@
       "attribution": "Geocoding © OpenStreetMap contributors (ODbL), Nominatim"
     },
     "geocodedAt": "2026-11-17T16:00:04.019Z",
+    "sizes": {
+      "source": "data/London_office_sizes_sqm.xlsx",
+      "unit": "sqm",
+      "known": 148,
+      "unknown": [
+        {
+          "id": "B109",
+          "company": "British Land",
+          "name": "Canada Water-Future Phases",
+          "value": 0
+        }
+      ],
+      "note": "A size of 0 or blank is treated as unknown and excluded from floor-area shares."
+    },
     "isochrones": {
       "providers": [
         "Valhalla (FOSSGIS public instance, OpenStreetMap data)"
@@ -43,6 +57,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 8754.6,
       "stations": {
         "940GZZLUBBN": 300,
         "940GZZLUFCN": 600,
@@ -77,6 +92,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 25561.2,
       "stations": {
         "940GZZLUSJP": 300,
         "940GZZLUVIC": 600
@@ -110,6 +126,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 43486.9,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
@@ -145,6 +162,7 @@
           "City Gate, London -> City Gate, 99, Mile End Road"
         ]
       },
+      "sqm": 5189.3,
       "stations": {
         "940GZZLUBOR": 600,
         "940GZZLULNB": 600,
@@ -179,6 +197,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 14946.2,
       "stations": {
         "940GZZLUALD": 600,
         "940GZZLULVT": 300,
@@ -213,6 +232,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 6063.1,
       "stations": {
         "940GZZLULGT": 600,
         "940GZZLUPAC": 600,
@@ -247,6 +267,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 8759.9,
       "stations": {
         "940GZZLULGT": 600,
         "940GZZLUPAC": 600,
@@ -281,6 +302,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 5276,
       "stations": {
         "940GZZLULGT": 600,
         "940GZZLUPAC": 300,
@@ -315,6 +337,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 15984.1,
       "stations": {
         "940GZZLUBKF": 600,
         "940GZZLUCHL": 600,
@@ -350,6 +373,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 7618,
       "stations": {
         "940GZZLUKSX": 600
       },
@@ -382,6 +406,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 14071.7,
       "stations": {
         "940GZZLUGPK": 600,
         "940GZZLULSQ": 600,
@@ -417,6 +442,7 @@
         "note": "Source street '155 Moorgate Hall' adds the building name to the street; 155 Moorgate used.",
         "rejected": []
       },
+      "sqm": 7510.2,
       "stations": {
         "940GZZLULVT": 600,
         "940GZZLUMGT": 300,
@@ -451,6 +477,7 @@
         "note": "Property name 'n2' matched an unrelated 'N2' building at Heathrow; source street Bressenden Place (street-level).",
         "rejected": []
       },
+      "sqm": 15050.3,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
@@ -484,6 +511,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 65807,
       "stations": {
         "940GZZLUBKF": 600,
         "940GZZLUCHL": 600,
@@ -518,6 +546,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 53023,
       "stations": {
         "940GZZLUBNK": 600,
         "940GZZLUCST": 600,
@@ -553,6 +582,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 14007.3,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
@@ -586,6 +616,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 11921.7,
       "stations": {
         "940GZZLUCST": 600,
         "940GZZLULNB": 600,
@@ -620,6 +651,7 @@
         "note": "York Way runs from King's Cross to Tufnell Park; Regents Quarter is at the King's Cross end. Geocoder returns the Regent Quarter area next to King's Cross station.",
         "rejected": []
       },
+      "sqm": 3127.6,
       "stations": {
         "940GZZLUKSX": 300
       },
@@ -652,6 +684,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 12908.4,
       "stations": {
         "940GZZLUBOR": 600,
         "940GZZLULNB": 600,
@@ -688,6 +721,7 @@
           "70 Victoria Street, London -> 70, Queen Victoria Street, Bank"
         ]
       },
+      "sqm": 22378.5,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
@@ -721,6 +755,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 15050.3,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
@@ -756,6 +791,7 @@
           "Timber Square, London -> Fulham Timber, Ellerslie Square, Ellerslie Square Industrial Estate"
         ]
       },
+      "sqm": 35581.9,
       "stations": {
         "940GZZLUBOR": 600,
         "940GZZLULNB": 600,
@@ -790,6 +826,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 28799.9,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 300
@@ -823,6 +860,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 20903.2,
       "stations": {
         "940GZZLUBOR": 600,
         "940GZZLULNB": 300
@@ -856,6 +894,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 35303.2,
       "stations": {
         "940GZZLUBOR": 600,
         "940GZZLULNB": 600,
@@ -890,6 +929,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 17282.5,
       "stations": {
         "940GZZLUSJP": 300,
         "940GZZLUVIC": 600
@@ -923,6 +963,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 6921,
       "stations": {
         "940GZZLUOVL": 600,
         "940GZZLUVXL": 600
@@ -956,6 +997,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 43486.9,
       "stations": {
         "940GZZLUSJP": 300,
         "940GZZLUWSM": 300
@@ -989,6 +1031,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 53523.3,
       "stations": {
         "940GZZLUVIC": 300
       },
@@ -1023,6 +1066,7 @@
           "Bramah House, London -> Bramah House, 9, Gatliff Road"
         ]
       },
+      "sqm": 1486.4,
       "stations": {
         "940GZZLULNB": 600
       },
@@ -1057,6 +1101,7 @@
           "Carrington House, London -> Carrington House, 6, Hertford Street"
         ]
       },
+      "sqm": 2870.7,
       "stations": {
         "940GZZLUGPK": 600,
         "940GZZLUOXC": 600,
@@ -1091,6 +1136,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 594.6,
       "stations": {
         "940GZZLUBOR": 600,
         "940GZZLULNB": 300,
@@ -1127,6 +1173,7 @@
           "City Tower, London -> City Tower, 3, Limeharbour"
         ]
       },
+      "sqm": 12839.2,
       "stations": {
         "940GZZLUBNK": 600,
         "940GZZLUBBN": 600,
@@ -1165,6 +1212,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 2276.1,
       "stations": {
         "940GZZLUOXC": 600,
         "940GZZLUPCC": 600,
@@ -1199,6 +1247,7 @@
         "note": "Workbook lists street 'Piccadilly'; 30 Duke Street is Duke Street St James's, just south of Piccadilly (street-level).",
         "rejected": []
       },
+      "sqm": 6586.8,
       "stations": {
         "940GZZLUGPK": 300,
         "940GZZLUPCC": 600
@@ -1232,6 +1281,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 4589.4,
       "stations": {
         "940GZZLUCHL": 600
       },
@@ -1264,6 +1314,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 6029.4,
       "stations": {
         "940GZZLUGDG": 600,
         "940GZZLUOXC": 300,
@@ -1300,6 +1351,7 @@
           "Empire House, London -> Empire House, Thurloe Place, Brompton"
         ]
       },
+      "sqm": 4245.7,
       "stations": {
         "940GZZLUGPK": 300,
         "940GZZLULSQ": 600,
@@ -1334,6 +1386,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1681.5,
       "stations": {
         "940GZZLUGPK": 300,
         "940GZZLUPCC": 600
@@ -1367,6 +1420,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 26458.8,
       "stations": {
         "940GZZLUCHL": 600
       },
@@ -1399,6 +1453,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 20485.1,
       "stations": {
         "940GZZLUBND": 300,
         "940GZZLUOXC": 300
@@ -1432,6 +1487,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 2666.3,
       "stations": {
         "940GZZLUGPK": 600,
         "940GZZLULSQ": 600,
@@ -1466,6 +1522,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 5509.2,
       "stations": {
         "940GZZLUBND": 600,
         "940GZZLUGDG": 600,
@@ -1503,6 +1560,7 @@
           "Kingsland House, London -> Kingsland House, Kingsland Road, De Beauvoir Town"
         ]
       },
+      "sqm": 808.3,
       "stations": {
         "940GZZLUGPK": 600,
         "940GZZLULSQ": 600,
@@ -1538,6 +1596,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 2341.2,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUOXC": 600,
@@ -1572,6 +1631,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 4450.1,
       "stations": {
         "940GZZLUBND": 600,
         "940GZZLUMBA": 600
@@ -1605,6 +1665,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3818.3,
       "stations": {
         "940GZZLUGPK": 300,
         "940GZZLUPCC": 600
@@ -1638,6 +1699,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1969.5,
       "stations": {
         "940GZZLUBND": 600,
         "940GZZLUGPK": 600,
@@ -1673,6 +1735,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 6819.1,
       "stations": {
         "940GZZLUBND": 600,
         "940GZZLUMBA": 300
@@ -1706,6 +1769,7 @@
         "note": "'6 Saint Andrew Street' not matched at house level; street-level used.",
         "rejected": []
       },
+      "sqm": 4440.8,
       "stations": {
         "940GZZLUBKF": 600,
         "940GZZLUCHL": 300,
@@ -1743,6 +1807,7 @@
           "The Hickman, London -> T Patton The Plumbing Place, Hickman Avenue, Highams Park"
         ]
       },
+      "sqm": 6958.4,
       "stations": {
         "940GZZLUALD": 600,
         "940GZZLUADE": 600,
@@ -1777,6 +1842,7 @@
         "note": "Source street '166/175 Piccadilly Street' does not exist as written; Piccadilly (St James's) used at street level.",
         "rejected": []
       },
+      "sqm": 17456.5,
       "stations": {
         "940GZZLUGPK": 300,
         "940GZZLULSQ": 600,
@@ -1811,6 +1877,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 5249,
       "stations": {
         "940GZZLUBND": 600,
         "940GZZLUGDG": 600,
@@ -1845,6 +1912,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 5899.3,
       "stations": {
         "940GZZLULSQ": 600,
         "940GZZLUOXC": 600,
@@ -1880,6 +1948,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1783.7,
       "stations": {
         "940GZZLUGDG": 600,
         "940GZZLUOXC": 600,
@@ -1916,6 +1985,7 @@
           "Woolyard, London -> Woolyard, St Olave's Estate, Bermondsey Village"
         ]
       },
+      "sqm": 4301.4,
       "stations": {
         "940GZZLULNB": 600
       },
@@ -1948,6 +2018,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 6745,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUTCR": 300,
@@ -1982,6 +2053,7 @@
         "note": "Estate name not found; first listed address (16 Soho Square) used.",
         "rejected": []
       },
+      "sqm": 8574.7,
       "stations": {
         "940GZZLUCGN": 600,
         "940GZZLUGDG": 600,
@@ -2019,6 +2091,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 15496.2,
       "stations": {
         "940GZZLUBOR": 600,
         "940GZZLULNB": 300,
@@ -2053,6 +2126,7 @@
         "note": "Source lists two addresses (15 Gresse Street and 12-13 Rathbone Place); Gresse Street used at street level.",
         "rejected": []
       },
+      "sqm": 3994.7,
       "stations": {
         "940GZZLUGDG": 600,
         "940GZZLUOXC": 600,
@@ -2089,6 +2163,7 @@
           "The Courtyard, London -> The Courtyard, 40, Pitfield Street"
         ]
       },
+      "sqm": 5955.1,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -2124,6 +2199,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 6921.3,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -2159,6 +2235,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3874.1,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -2196,6 +2273,7 @@
           "The Gable, London -> The Dutch Gable, 25, Drayton Avenue"
         ]
       },
+      "sqm": 5955.1,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -2231,6 +2309,7 @@
         "note": "'14/20 Saint Thomas Street' not matched at house level; St Thomas Street SE1 used.",
         "rejected": []
       },
+      "sqm": 9290.3,
       "stations": {
         "940GZZLULNB": 600
       },
@@ -2263,6 +2342,7 @@
         "note": "Source says '1 Chapel Street', which geocodes to a residential block in Paddington (NW1). Great Portland Estates' One Chapel Place is on Chapel Place W1G, off Oxford Street. Please confirm.",
         "rejected": []
       },
+      "sqm": 3177.3,
       "stations": {
         "940GZZLUBND": 300,
         "940GZZLUMBA": 600,
@@ -2297,6 +2377,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1021.9,
       "stations": {
         "940GZZLULVT": 300,
         "940GZZLUMGT": 600,
@@ -2331,6 +2412,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 2508.4,
       "stations": {
         "940GZZLUBST": 600,
         "940GZZLUBND": 600,
@@ -2365,6 +2447,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 41000,
       "stations": {
         "940GZZLUALD": 600,
         "940GZZLULVT": 300,
@@ -2399,6 +2482,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 11148.4,
       "stations": {
         "940GZZLULVT": 300,
         "940GZZLUMGT": 300,
@@ -2433,6 +2517,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3901.9,
       "stations": {
         "940GZZLULVT": 300,
         "940GZZLUMGT": 600
@@ -2466,6 +2551,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 31122.5,
       "stations": {
         "940GZZLUALD": 600,
         "940GZZLULVT": 300,
@@ -2500,6 +2586,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 37161.2,
       "stations": {
         "940GZZLUALD": 600,
         "940GZZLULVT": 300
@@ -2533,6 +2620,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 13378,
       "stations": {
         "940GZZLULVT": 600
       },
@@ -2565,6 +2653,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 38554.8,
       "stations": {
         "940GZZLULVT": 600
       },
@@ -2599,6 +2688,7 @@
           "Broadgate Broadgate 1-2, London -> Broadgate Estate, Bishopsgate, City of London"
         ]
       },
+      "sqm": 85749.5,
       "stations": {
         "940GZZLULVT": 300,
         "940GZZLUMGT": 600
@@ -2632,6 +2722,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 26941.9,
       "stations": {
         "940GZZLULVT": 600
       },
@@ -2664,6 +2755,7 @@
         "note": "Unqualified 'Exchange Square' matched Croydon; Broadgate's Exchange Square (EC2) used.",
         "rejected": []
       },
+      "sqm": 36232.2,
       "stations": {
         "940GZZLULVT": 300
       },
@@ -2696,6 +2788,7 @@
         "note": "Unqualified '10 Exchange Square' matched Harbour Exchange Square (Isle of Dogs); Broadgate's Exchange Square (EC2) used.",
         "rejected": []
       },
+      "sqm": 14957.4,
       "stations": {
         "940GZZLULVT": 300
       },
@@ -2728,6 +2821,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 26570.3,
       "stations": {
         "940GZZLULVT": 300,
         "940GZZLUMGT": 600,
@@ -2762,6 +2856,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 48309.6,
       "stations": {
         "940GZZLUALD": 600,
         "940GZZLULVT": 300,
@@ -2796,6 +2891,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1486.4,
       "stations": {
         "940GZZLULVT": 600,
         "940GZZLUODS": 600
@@ -2829,6 +2925,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3158.7,
       "stations": {
         "940GZZLULVT": 300,
         "940GZZLUMGT": 600
@@ -2862,6 +2959,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 24805.1,
       "stations": {
         "940GZZLUPAH": 300,
         "940GZZLUWKA": 600
@@ -2895,6 +2993,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 13656.7,
       "stations": {
         "940GZZLUPAH": 300,
         "940GZZLURYO": 600,
@@ -2929,6 +3028,7 @@
         "note": "Unqualified 'Seymour Street' matched near Euston; Marble Arch House is on Seymour Street W1H.",
         "rejected": []
       },
+      "sqm": 7060.6,
       "stations": {
         "940GZZLUMBA": 300
       },
@@ -2961,6 +3061,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 29357.4,
       "stations": {
         "940GZZLULVT": 600
       },
@@ -2993,6 +3094,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 18116.1,
       "stations": {
         "940GZZLUPAC": 600,
         "940GZZLUPAH": 300,
@@ -3028,6 +3130,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3809,
       "stations": {},
       "bestSeconds": null,
       "nearestStation": {
@@ -3058,6 +3161,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 12449,
       "stations": {
         "940GZZLUBST": 600,
         "940GZZLUBND": 600,
@@ -3092,6 +3196,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 2136.8,
       "stations": {
         "940GZZLUEUS": 600,
         "940GZZLUESQ": 300,
@@ -3128,6 +3233,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3994.8,
       "stations": {
         "940GZZLUEUS": 600,
         "940GZZLUESQ": 600,
@@ -3163,6 +3269,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 10683.8,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 600,
@@ -3199,6 +3306,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 11520,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 600,
@@ -3235,6 +3343,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 31679.9,
       "stations": {
         "940GZZLUEUS": 600,
         "940GZZLUESQ": 300,
@@ -3271,6 +3380,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 32423.2,
       "stations": {
         "940GZZLUEUS": 600,
         "940GZZLUESQ": 600,
@@ -3308,6 +3418,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 11236.2,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGPS": 300,
@@ -3343,6 +3454,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 23690.3,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGPS": 300,
@@ -3378,6 +3490,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 21460.6,
       "stations": {
         "940GZZLUPAC": 600,
         "940GZZLUPAH": 300,
@@ -3413,6 +3526,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 22761.2,
       "stations": {
         "940GZZLUCWR": 600
       },
@@ -3445,6 +3559,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1393.5,
       "stations": {
         "940GZZLUEUS": 600,
         "940GZZLUESQ": 600,
@@ -3480,6 +3595,7 @@
         "note": "Unqualified 'Seymour Street' matched near Euston; York House is on Seymour Street W1H (street-level).",
         "rejected": []
       },
+      "sqm": 12263.2,
       "stations": {
         "940GZZLUMBA": 300
       },
@@ -3512,6 +3628,7 @@
         "note": "Building found by name (address given as 'Deal Porters Way / Canada Water').",
         "rejected": []
       },
+      "sqm": 10870,
       "stations": {
         "940GZZLUCWR": 300
       },
@@ -3544,6 +3661,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 2500,
       "stations": {
         "940GZZLUCWR": 300
       },
@@ -3576,6 +3694,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 69677,
       "stations": {
         "940GZZLULVT": 300,
         "940GZZLUMGT": 600,
@@ -3610,6 +3729,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 33445,
       "stations": {
         "940GZZLULVT": 300,
         "940GZZLUMGT": 600
@@ -3643,6 +3763,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 52000,
       "stations": {
         "940GZZLUEUS": 600,
         "940GZZLUESQ": 300,
@@ -3679,6 +3800,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 36789.6,
       "stations": {
         "940GZZLULVT": 600
       },
@@ -3711,6 +3833,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": null,
       "stations": {
         "940GZZLUCWR": 600
       },
@@ -3743,6 +3866,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 28892.8,
       "stations": {
         "940GZZLUCWR": 300
       },
@@ -3775,6 +3899,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 24925.9,
       "stations": {
         "940GZZLUAGL": 300
       },
@@ -3807,6 +3932,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 27685.1,
       "stations": {
         "940GZZLUBST": 600,
         "940GZZLUBND": 600,
@@ -3841,6 +3967,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 5583.5,
       "stations": {
         "940GZZLUBKF": 600,
         "940GZZLUSWK": 300
@@ -3874,6 +4001,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 4961,
       "stations": {
         "940GZZLUBXN": 300
       },
@@ -3906,6 +4034,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 22612.6,
       "stations": {
         "940GZZLUERB": 600,
         "940GZZLUERC": 600,
@@ -3942,6 +4071,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 4385,
       "stations": {
         "940GZZLUGDG": 600,
         "940GZZLULSQ": 600,
@@ -3977,6 +4107,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1040.5,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUOXC": 600,
@@ -4012,6 +4143,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 31261.9,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -4048,6 +4180,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 15412.6,
       "stations": {
         "940GZZLUEUS": 600,
         "940GZZLUESQ": 300,
@@ -4084,6 +4217,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 15449.8,
       "stations": {
         "940GZZLUBBN": 600,
         "940GZZLUCHL": 600,
@@ -4118,6 +4252,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 752.5,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 600,
@@ -4153,6 +4288,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3010.1,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 600
@@ -4186,6 +4322,7 @@
         "note": "Unqualified 'Langham Place' matched Harringay (N15); Henry Wood House is on Langham Place W1B.",
         "rejected": []
       },
+      "sqm": 7413.7,
       "stations": {
         "940GZZLUBND": 600,
         "940GZZLUGDG": 600,
@@ -4221,6 +4358,7 @@
         "note": "Source spells 'Cruickshank Street'; the street is Cruikshank Street WC1X.",
         "rejected": []
       },
+      "sqm": 3864.8,
       "stations": {
         "940GZZLUAGL": 600
       },
@@ -4253,6 +4391,7 @@
         "note": "Unqualified '1-5 Maple Place' matched Tottenham (N17); Maple Place W1T (Fitzrovia) used.",
         "rejected": []
       },
+      "sqm": 1068.4,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -4288,6 +4427,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 8203.3,
       "stations": {
         "940GZZLUBBN": 600,
         "940GZZLUODS": 600
@@ -4323,6 +4463,7 @@
           "Network Building, London -> International Network for Traditional Building, Architecture & Urbanism, 19-22"
         ]
       },
+      "sqm": 5964.4,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUTCR": 300,
@@ -4357,6 +4498,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 17270.7,
       "stations": {
         "940GZZLUMGT": 600,
         "940GZZLUODS": 300
@@ -4390,6 +4532,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 566.7,
       "stations": {
         "940GZZLUGDG": 600,
         "940GZZLULSQ": 600,
@@ -4425,6 +4568,7 @@
         "note": "Unqualified 'Page Street' matched Mill Hill (NW7); Page Street SW1P used.",
         "rejected": []
       },
+      "sqm": 11873,
       "stations": {
         "940GZZLUPCO": 600,
         "940GZZLUSJP": 600
@@ -4458,6 +4602,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1050,
       "stations": {
         "940GZZLUGDG": 600,
         "940GZZLUOXC": 600,
@@ -4492,6 +4637,7 @@
         "note": "Unqualified address matched Tottenham Hale (N17).",
         "rejected": []
       },
+      "sqm": 9150.9,
       "stations": {
         "940GZZLUAGL": 600
       },
@@ -4524,6 +4670,7 @@
         "note": "'Saint John Street' matched a college in Battersea. 401 St John Street adjoins the Angel Building (407); that position is used.",
         "rejected": []
       },
+      "sqm": 1142.7,
       "stations": {
         "940GZZLUAGL": 300
       },
@@ -4556,6 +4703,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3994.8,
       "stations": {
         "940GZZLUBND": 600,
         "940GZZLUGPK": 600,
@@ -4591,6 +4739,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 20986.8,
       "stations": {
         "940GZZLUCGN": 600,
         "940GZZLUGDG": 600,
@@ -4628,6 +4777,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 24712.2,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUOXC": 600,
@@ -4662,6 +4812,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 25288.2,
       "stations": {},
       "bestSeconds": null,
       "nearestStation": {
@@ -4692,6 +4843,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 11520,
       "stations": {
         "940GZZLUODS": 300
       },
@@ -4724,6 +4876,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 25241.8,
       "stations": {
         "940GZZLUALD": 300,
         "940GZZLUADE": 300,
@@ -4758,6 +4911,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 1467.9,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -4793,6 +4947,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 4264.2,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUTCR": 300,
@@ -4827,6 +4982,7 @@
         "note": "Building found by name; its address is Old Street Yard off City Road, so the street check rejected it.",
         "rejected": []
       },
+      "sqm": 27350.7,
       "stations": {
         "940GZZLUODS": 300
       },
@@ -4859,6 +5015,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 2703.5,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -4894,6 +5051,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 3363.1,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -4930,6 +5088,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 6178.1,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUGPS": 600,
@@ -4966,6 +5125,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 12848.5,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 600
@@ -5001,6 +5161,7 @@
           "Holden House, London -> Holden House, Deptford Church Street, Albury Court"
         ]
       },
+      "sqm": 8417,
       "stations": {
         "940GZZLUGDG": 600,
         "940GZZLUOXC": 600,
@@ -5036,6 +5197,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 5667.1,
       "stations": {
         "940GZZLUBST": 600,
         "940GZZLUBND": 600,
@@ -5070,6 +5232,7 @@
         "note": null,
         "rejected": []
       },
+      "sqm": 5667.1,
       "stations": {
         "940GZZLUBST": 300,
         "940GZZLUMYB": 600
