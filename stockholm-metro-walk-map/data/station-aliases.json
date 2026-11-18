@@ -1,0 +1,7 @@
+{
+  "description": "Documented special cases for station identity. 'aliases' links two operator stop records (stop ids) that are the same physical station although no ID or equal name links them. 'osmAliases' maps an OpenStreetMap station name to the operator's station name for the reference cross-check only. Every entry needs a reason. Records are still joined only within maxJoinDistanceM.",
+  "maxJoinDistanceM": 500,
+  "aliases": [],
+  "osmAliases": [],
+  "notes": {}
+}

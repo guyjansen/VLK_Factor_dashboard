@@ -1,0 +1,5527 @@
+{
+  "{\"street\":\"20 Döbelnsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0612885,
+      "lat": 59.3414374,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "20, Döbelnsgatan, Sibirien, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 57, Sverige",
+      "osm": "node/1516415136",
+      "address": {
+        "house_number": "20",
+        "road": "Döbelnsgatan",
+        "neighbourhood": "Sibirien",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 57",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"61 Rådmansgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0555381,
+      "lat": 59.3394562,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "61, Rådmansgatan, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 60, Sverige",
+      "osm": "node/1449088391",
+      "address": {
+        "house_number": "61",
+        "road": "Rådmansgatan",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 60",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"22 Lästmakargatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0688239,
+      "lat": 59.3354555,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "22, Lästmakargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+      "osm": "node/8980098454",
+      "address": {
+        "house_number": "22",
+        "road": "Lästmakargatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 43",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"20 Lästmakargatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0695256,
+      "lat": 59.3354906,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "20, Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+      "osm": "node/8980098449",
+      "address": {
+        "house_number": "20",
+        "road": "Lästmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 43",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"56 Regeringsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0677754,
+      "lat": 59.3354349,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "56, Regeringsgatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 56, Sverige",
+      "osm": "node/8980098456",
+      "address": {
+        "house_number": "56",
+        "road": "Regeringsgatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"8 Lästmakargatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.071997,
+      "lat": 59.3355319,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+      "osm": "way/41771244",
+      "address": {
+        "road": "Lästmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 42",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0688793,
+      "lat": 59.3353864,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Lästmakargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+      "osm": "way/1279721810",
+      "address": {
+        "road": "Lästmakargatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 43",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.070706,
+      "lat": 59.3354682,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+      "osm": "way/24968085",
+      "address": {
+        "road": "Lästmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 42",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Lästmakargatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.071997,
+      "lat": 59.3355319,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+      "osm": "way/41771244",
+      "address": {
+        "road": "Lästmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 42",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0688793,
+      "lat": 59.3353864,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Lästmakargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+      "osm": "way/1279721810",
+      "address": {
+        "road": "Lästmakargatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 43",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0679692,
+      "lat": 59.3353456,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Lästmakargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 56, Sverige",
+      "osm": "way/1279721811",
+      "address": {
+        "road": "Lästmakargatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"14 Lästmakargatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0699326,
+      "lat": 59.3355456,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "14-16, Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+      "osm": "node/8980098447",
+      "address": {
+        "house_number": "14-16",
+        "road": "Lästmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 43",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.071997,
+      "lat": 59.3355319,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+      "osm": "way/41771244",
+      "address": {
+        "road": "Lästmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 42",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0688793,
+      "lat": 59.3353864,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Lästmakargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+      "osm": "way/1279721810",
+      "address": {
+        "road": "Lästmakargatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 43",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"3 Kungsbroplan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0498122,
+      "lat": 59.3315913,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "3, Kungsbroplan, Kungsholmen, Kungsholmens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 112 27, Sverige",
+      "osm": "node/410594876",
+      "address": {
+        "house_number": "3",
+        "road": "Kungsbroplan",
+        "suburb": "Kungsholmen",
+        "city_district": "Kungsholmens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "112 27",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"3 Barnhusgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0578733,
+      "lat": 59.3363838,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "3, Barnhusgatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 23, Sverige",
+      "osm": "node/473577294",
+      "address": {
+        "house_number": "3",
+        "road": "Barnhusgatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 23",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"149 Sveavägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.053475,
+      "lat": 59.3460788,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Sveavägen, Sibirien, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 49, Sverige",
+      "osm": "way/212472726",
+      "address": {
+        "road": "Sveavägen",
+        "neighbourhood": "Sibirien",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0639402,
+      "lat": 59.3353029,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Sveavägen, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 35, Sverige",
+      "osm": "way/497479643",
+      "address": {
+        "road": "Sveavägen",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 35",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0554449,
+      "lat": 59.344028,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Sveavägen, Sibirien, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 50, Sverige",
+      "osm": "way/130381251",
+      "address": {
+        "road": "Sveavägen",
+        "neighbourhood": "Sibirien",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 50",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Sveavägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.054127,
+      "lat": 59.3455592,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Sveavägen, Sibirien, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 49, Sverige",
+      "osm": "way/130381255",
+      "address": {
+        "road": "Sveavägen",
+        "neighbourhood": "Sibirien",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0629059,
+      "lat": 59.3362894,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Sveavägen, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 35, Sverige",
+      "osm": "way/121854793",
+      "address": {
+        "road": "Sveavägen",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 35",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0553782,
+      "lat": 59.3440919,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Sveavägen, Sibirien, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 50, Sverige",
+      "osm": "way/129795628",
+      "address": {
+        "road": "Sveavägen",
+        "neighbourhood": "Sibirien",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 50",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"143 Sveavägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0487861,
+      "lat": 59.3499017,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "143, Sveavägen, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 47, Sverige",
+      "osm": "node/1436224081",
+      "address": {
+        "house_number": "143",
+        "road": "Sveavägen",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 47",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"159 Sveavägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.046248,
+      "lat": 59.3499016,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "159, Sveavägen, Hagastaden, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 46, Sverige",
+      "osm": "node/2502482215",
+      "address": {
+        "house_number": "159",
+        "road": "Sveavägen",
+        "neighbourhood": "Hagastaden",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 46",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"27 Drottninggatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0643327,
+      "lat": 59.3308334,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "27, Drottninggatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 51, Sverige",
+      "osm": "node/1392751632",
+      "address": {
+        "house_number": "27",
+        "road": "Drottninggatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 51",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"11 Holländargatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0604688,
+      "lat": 59.3366118,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "11, Holländargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 36, Sverige",
+      "osm": "node/1403941653",
+      "address": {
+        "house_number": "11",
+        "road": "Holländargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 36",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"4 Torsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0526836,
+      "lat": 59.3354334,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "4, Torsgatan, Sabbatsberg, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 61, Sverige",
+      "osm": "node/708031852",
+      "address": {
+        "house_number": "4",
+        "road": "Torsgatan",
+        "neighbourhood": "Sabbatsberg",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 61",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"25A Hagagatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0504322,
+      "lat": 59.3467182,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "25A, Hagagatan, Sibirien, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 46, Sverige",
+      "osm": "node/7036830869",
+      "address": {
+        "house_number": "25A",
+        "road": "Hagagatan",
+        "neighbourhood": "Sibirien",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 46",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"5 Engelbrektsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0697455,
+      "lat": 59.3387196,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "5, Engelbrektsgatan, Eriksberg, Östermalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 58, Sverige",
+      "osm": "node/1525463110",
+      "address": {
+        "house_number": "5",
+        "road": "Engelbrektsgatan",
+        "neighbourhood": "Eriksberg",
+        "suburb": "Östermalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 58",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"166 Sveavägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0487328,
+      "lat": 59.3510452,
+      "placeRank": 30,
+      "category": "building",
+      "type": "office",
+      "addresstype": "building",
+      "displayName": "Wenner-Gren Center, 166, Sveavägen, Hagastaden, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 47, Sverige",
+      "osm": "way/23511958",
+      "address": {
+        "building": "Wenner-Gren Center",
+        "house_number": "166",
+        "road": "Sveavägen",
+        "neighbourhood": "Hagastaden",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 47",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0486187,
+      "lat": 59.351103,
+      "placeRank": 30,
+      "category": "office",
+      "type": "diplomatic",
+      "addresstype": "office",
+      "displayName": "Taipei Mission in Sweden, 166, Sveavägen, Hagastaden, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 47, Sverige",
+      "osm": "node/13297171287",
+      "address": {
+        "office": "Taipei Mission in Sweden",
+        "house_number": "166",
+        "road": "Sveavägen",
+        "neighbourhood": "Hagastaden",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 47",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0488075,
+      "lat": 59.350919,
+      "placeRank": 30,
+      "category": "amenity",
+      "type": "cafe",
+      "addresstype": "amenity",
+      "displayName": "WGC Café, 166, Sveavägen, Hagastaden, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 47, Sverige",
+      "osm": "node/1577198911",
+      "address": {
+        "amenity": "WGC Café",
+        "house_number": "166",
+        "road": "Sveavägen",
+        "neighbourhood": "Hagastaden",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 47",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"18 Luntmakargatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0637574,
+      "lat": 59.3373836,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "18, Luntmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 38, Sverige",
+      "osm": "node/1433722488",
+      "address": {
+        "house_number": "18",
+        "road": "Luntmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"47A Malmskillnadsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0663535,
+      "lat": 59.3329856,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Malmskillnadsgatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 56, Sverige",
+      "osm": "way/572704118",
+      "address": {
+        "road": "Malmskillnadsgatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0664929,
+      "lat": 59.3324491,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Malmskillnadsgatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 53, Sverige",
+      "osm": "way/34210635",
+      "address": {
+        "road": "Malmskillnadsgatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 53",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0649772,
+      "lat": 59.3370057,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Malmskillnadsgatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 38, Sverige",
+      "osm": "way/1279707342",
+      "address": {
+        "road": "Malmskillnadsgatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Malmskillnadsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0656964,
+      "lat": 59.3342815,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Malmskillnadsgatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 57, Sverige",
+      "osm": "way/132329943",
+      "address": {
+        "road": "Malmskillnadsgatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 57",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0663535,
+      "lat": 59.3329856,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Malmskillnadsgatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 56, Sverige",
+      "osm": "way/572704118",
+      "address": {
+        "road": "Malmskillnadsgatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"53 Strandbergsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.010596,
+      "lat": 59.3383699,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "53, Strandbergsgatan, Hornsberg, Stadshagen, Kungsholmens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 112 51, Sverige",
+      "osm": "node/730950965",
+      "address": {
+        "house_number": "53",
+        "road": "Strandbergsgatan",
+        "neighbourhood": "Hornsberg",
+        "suburb": "Stadshagen",
+        "city_district": "Kungsholmens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "112 51",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"59 Strandbergsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0106774,
+      "lat": 59.3391038,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "59, Strandbergsgatan, Hornsberg, Stadshagen, Kungsholmens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 112 51, Sverige",
+      "osm": "node/730950916",
+      "address": {
+        "house_number": "59",
+        "road": "Strandbergsgatan",
+        "neighbourhood": "Hornsberg",
+        "suburb": "Stadshagen",
+        "city_district": "Kungsholmens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "112 51",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"12A Bryggargatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0588873,
+      "lat": 59.3329197,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "12A, Bryggargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 20, Sverige",
+      "osm": "node/9174595838",
+      "address": {
+        "house_number": "12A",
+        "road": "Bryggargatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 20",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0587865,
+      "lat": 59.3329273,
+      "placeRank": 30,
+      "category": "amenity",
+      "type": "library",
+      "addresstype": "amenity",
+      "displayName": "Goethe Institut, 12a, Bryggargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 21, Sverige",
+      "osm": "node/5536645382",
+      "address": {
+        "amenity": "Goethe Institut",
+        "house_number": "12a",
+        "road": "Bryggargatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 21",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"27 Gamla Brogatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0580937,
+      "lat": 59.3334373,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "27, Gamla Brogatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 22, Sverige",
+      "osm": "node/1401399441",
+      "address": {
+        "house_number": "27",
+        "road": "Gamla Brogatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 22",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"21 Birger Jarlsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0714932,
+      "lat": 59.3364816,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "21, Birger Jarlsgatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+      "osm": "node/1382112668",
+      "address": {
+        "house_number": "21",
+        "road": "Birger Jarlsgatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 42",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"10 Dalvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0038757,
+      "lat": 59.3678099,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Dalvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/423909712",
+      "address": {
+        "road": "Dalvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.007962,
+      "lat": 59.3656983,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Dalvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 171 22, Sverige",
+      "osm": "way/284064340",
+      "address": {
+        "road": "Dalvägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 22",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.999505,
+      "lat": 59.3698366,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Dalvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "way/132935551",
+      "address": {
+        "road": "Dalvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"7 Pyramidvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.006181,
+      "lat": 59.3677456,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "7, Pyramidvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "node/6586413721",
+      "address": {
+        "house_number": "7",
+        "road": "Pyramidvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"8 Dalvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0054544,
+      "lat": 59.3672435,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "8, Dalvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 59, Sverige",
+      "osm": "node/1539235854",
+      "address": {
+        "house_number": "8",
+        "road": "Dalvägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 59",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"4 Dalvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.006906,
+      "lat": 59.3665083,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "4, Dalvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 59, Sverige",
+      "osm": "node/1539235868",
+      "address": {
+        "house_number": "4",
+        "road": "Dalvägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 59",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Magasinsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0032656,
+      "lat": 59.3685143,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Magasinsvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/140494184",
+      "address": {
+        "road": "Magasinsvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"12 Dalvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0035264,
+      "lat": 59.3683177,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "12, Dalvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "node/1539235850",
+      "address": {
+        "house_number": "12",
+        "road": "Dalvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Evenemangsgatan\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9983972,
+      "lat": 59.3713929,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Evenemangsgatan, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "way/270327152",
+      "address": {
+        "road": "Evenemangsgatan",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0032557,
+      "lat": 59.3695284,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Evenemangsgatan, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/731737996",
+      "address": {
+        "road": "Evenemangsgatan",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.999945,
+      "lat": 59.3705503,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Evenemangsgatan, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "way/186926942",
+      "address": {
+        "road": "Evenemangsgatan",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"2 Pyramidvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0078834,
+      "lat": 59.3662747,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "2A, Pyramidvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "node/1539238636",
+      "address": {
+        "house_number": "2A",
+        "road": "Pyramidvägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0079417,
+      "lat": 59.3666824,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "2C, Pyramidvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "node/1723737561",
+      "address": {
+        "house_number": "2C",
+        "road": "Pyramidvägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0079954,
+      "lat": 59.3664843,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "2B, Pyramidvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "node/1723737554",
+      "address": {
+        "house_number": "2B",
+        "road": "Pyramidvägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"48 Evenemangsgatan\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9976315,
+      "lat": 59.3733316,
+      "placeRank": 30,
+      "category": "tourism",
+      "type": "hotel",
+      "addresstype": "tourism",
+      "displayName": "Comfort Hotel Solna, 48, Evenemangsgatan, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "way/889249573",
+      "address": {
+        "tourism": "Comfort Hotel Solna",
+        "house_number": "48",
+        "road": "Evenemangsgatan",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"32 Evenemangsgatan\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9981079,
+      "lat": 59.3724583,
+      "placeRank": 30,
+      "category": "building",
+      "type": "apartments",
+      "addresstype": "building",
+      "displayName": "VIP-Logen, 32, Evenemangsgatan, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "way/260241464",
+      "address": {
+        "building": "VIP-Logen",
+        "house_number": "32",
+        "road": "Evenemangsgatan",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"1 Stjärntorget\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0061351,
+      "lat": 59.3691409,
+      "placeRank": 30,
+      "category": "office",
+      "type": "telecommunication",
+      "addresstype": "office",
+      "displayName": "Telia Company, 1, Stjärntorget, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "node/4890645131",
+      "address": {
+        "office": "Telia Company",
+        "house_number": "1",
+        "road": "Stjärntorget",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"24 Kolonnvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0042518,
+      "lat": 59.3764002,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Agnesberg, Norra Ritorp, Järva, Solna, Solna kommun, Stockholms län, 170 66, Sverige",
+      "osm": "way/352413749",
+      "address": {
+        "road": "Kolonnvägen",
+        "neighbourhood": "Agnesberg",
+        "suburb": "Norra Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0111479,
+      "lat": 59.3680317,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Frösunda, Järva, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/97500231",
+      "address": {
+        "road": "Kolonnvägen",
+        "suburb": "Frösunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0080875,
+      "lat": 59.3706532,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 71, Sverige",
+      "osm": "way/693820001",
+      "address": {
+        "road": "Kolonnvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 71",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Kolonnvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0007446,
+      "lat": 59.3820811,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Kolonnvägen, Agnesberg, Nya Ulriksdal, Järva, Solna, Solna kommun, Stockholms län, 170 67, Sverige",
+      "osm": "way/438753107",
+      "address": {
+        "road": "Kolonnvägen",
+        "neighbourhood": "Agnesberg",
+        "suburb": "Nya Ulriksdal",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 67",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0135189,
+      "lat": 59.3663674,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+      "osm": "way/1537706555",
+      "address": {
+        "road": "Kolonnvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 68",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0067885,
+      "lat": 59.373117,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 170 66, Sverige",
+      "osm": "way/1537706544",
+      "address": {
+        "road": "Kolonnvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"3 Stjärntorget\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0064608,
+      "lat": 59.3687361,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/356760851",
+      "address": {
+        "road": "Stjärntorget",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0066905,
+      "lat": 59.3683726,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/583604884",
+      "address": {
+        "road": "Stjärntorget",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0067094,
+      "lat": 59.3683092,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/583604887",
+      "address": {
+        "road": "Stjärntorget",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"4 Pyramidvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0055061,
+      "lat": 59.3681042,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Pyramidvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/215319413",
+      "address": {
+        "road": "Pyramidvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0075076,
+      "lat": 59.3668135,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Pyramidvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/5366930",
+      "address": {
+        "road": "Pyramidvägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"6 Magasinsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0032656,
+      "lat": 59.3685143,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Magasinsvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/140494184",
+      "address": {
+        "road": "Magasinsvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"5 Råsta strandväg\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0046365,
+      "lat": 59.3713007,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Råsta strandväg, Norra Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/242237988",
+      "address": {
+        "road": "Råsta strandväg",
+        "suburb": "Norra Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0023507,
+      "lat": 59.373591,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Råsta strandväg, Norra Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "way/324292077",
+      "address": {
+        "road": "Råsta strandväg",
+        "suburb": "Norra Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0022763,
+      "lat": 59.3734705,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Råsta strandväg, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "way/324292076",
+      "address": {
+        "road": "Råsta strandväg",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Stjärntorget\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0064608,
+      "lat": 59.3687361,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/356760851",
+      "address": {
+        "road": "Stjärntorget",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0066905,
+      "lat": 59.3683726,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/583604884",
+      "address": {
+        "road": "Stjärntorget",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0067094,
+      "lat": 59.3683092,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/583604887",
+      "address": {
+        "road": "Stjärntorget",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Gustav III:s boulevard\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0128508,
+      "lat": 59.3751731,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Gustav III:s boulevard, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 74, Sverige",
+      "osm": "way/37886094",
+      "address": {
+        "road": "Gustav III:s boulevard",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 74",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0137625,
+      "lat": 59.3745007,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Gustav III:s boulevard, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 82, Sverige",
+      "osm": "way/37886097",
+      "address": {
+        "road": "Gustav III:s boulevard",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 82",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0152285,
+      "lat": 59.3733069,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Gustav III:s boulevard, Frösunda, Järva, Solna, Solna kommun, Stockholms län, 169 73, Sverige",
+      "osm": "way/37883427",
+      "address": {
+        "road": "Gustav III:s boulevard",
+        "suburb": "Frösunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 73",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"22 Kolonnvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0084451,
+      "lat": 59.3719848,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "22D, Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 71, Sverige",
+      "osm": "node/6937731670",
+      "address": {
+        "house_number": "22D",
+        "road": "Kolonnvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 71",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0088759,
+      "lat": 59.3720343,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "22E, Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 71, Sverige",
+      "osm": "node/6937731671",
+      "address": {
+        "house_number": "22E",
+        "road": "Kolonnvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 71",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.009067,
+      "lat": 59.372057,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "22F, Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 71, Sverige",
+      "osm": "node/6937731672",
+      "address": {
+        "house_number": "22F",
+        "road": "Kolonnvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 71",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"6 Gårdsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0122667,
+      "lat": 59.3664599,
+      "placeRank": 30,
+      "category": "office",
+      "type": "company",
+      "addresstype": "office",
+      "displayName": "Eniro, 6, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 70, Sverige",
+      "osm": "node/10596404804",
+      "address": {
+        "office": "Eniro",
+        "house_number": "6",
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 70",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.012637,
+      "lat": 59.3664379,
+      "placeRank": 30,
+      "category": "building",
+      "type": "commercial",
+      "addresstype": "building",
+      "displayName": "PEAB, 6, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/23513158",
+      "address": {
+        "building": "PEAB",
+        "house_number": "6",
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0125745,
+      "lat": 59.3662494,
+      "placeRank": 30,
+      "category": "amenity",
+      "type": "cafe",
+      "addresstype": "amenity",
+      "displayName": "Du Bon Pain, 6, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "node/10031486652",
+      "address": {
+        "amenity": "Du Bon Pain",
+        "house_number": "6",
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"8 Gårdsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0117309,
+      "lat": 59.3667912,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "8, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "node/6609253878",
+      "address": {
+        "house_number": "8",
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"10A Gårdsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0114353,
+      "lat": 59.3670193,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "10a, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 70, Sverige",
+      "osm": "node/9611255876",
+      "address": {
+        "house_number": "10a",
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 70",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"12 Gårdsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0109254,
+      "lat": 59.3672158,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/23513241",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0139512,
+      "lat": 59.365196,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+      "osm": "way/23165897",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 68",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0143576,
+      "lat": 59.3649935,
+      "placeRank": 27,
+      "category": "highway",
+      "type": "service",
+      "addresstype": "road",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 75, Sverige",
+      "osm": "way/340330512",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 75",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Gårdsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0109254,
+      "lat": 59.3672158,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/23513241",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0139512,
+      "lat": 59.365196,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+      "osm": "way/23165897",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 68",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0143576,
+      "lat": 59.3649935,
+      "placeRank": 27,
+      "category": "highway",
+      "type": "service",
+      "addresstype": "road",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 75, Sverige",
+      "osm": "way/340330512",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 75",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"13 Gårdsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0097679,
+      "lat": 59.3676536,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "13, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "node/6939038697",
+      "address": {
+        "house_number": "13",
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"2 Gårdsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0133247,
+      "lat": 59.365872,
+      "placeRank": 30,
+      "category": "building",
+      "type": "commercial",
+      "addresstype": "building",
+      "displayName": "4-2, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+      "osm": "way/23513160",
+      "address": {
+        "house_number": "4-2",
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 68",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0109254,
+      "lat": 59.3672158,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/23513241",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0139512,
+      "lat": 59.365196,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+      "osm": "way/23165897",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 68",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"30 Dalvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.998951,
+      "lat": 59.3701678,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "30, Dalvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "node/3574700899",
+      "address": {
+        "house_number": "30",
+        "road": "Dalvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"14 Dalvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0028513,
+      "lat": 59.3686092,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "14, Dalvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "node/1532769259",
+      "address": {
+        "house_number": "14",
+        "road": "Dalvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"22 Svetsarvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9815733,
+      "lat": 59.3573825,
+      "placeRank": 30,
+      "category": "leisure",
+      "type": "sports_centre",
+      "addresstype": "leisure",
+      "displayName": "F9, 22, Svetsarvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "way/23748670",
+      "address": {
+        "leisure": "F9",
+        "house_number": "22",
+        "road": "Svetsarvägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"24 Svetsarvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9827223,
+      "lat": 59.3572952,
+      "placeRank": 30,
+      "category": "building",
+      "type": "retail",
+      "addresstype": "building",
+      "displayName": "24, Svetsarvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "way/23748648",
+      "address": {
+        "house_number": "24",
+        "road": "Svetsarvägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"2 Englundavägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9772994,
+      "lat": 59.3597137,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "2, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/7700307335",
+      "address": {
+        "house_number": "2",
+        "road": "Englundavägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.97721,
+      "lat": 59.359716,
+      "placeRank": 30,
+      "category": "tourism",
+      "type": "hotel",
+      "addresstype": "tourism",
+      "displayName": "Best Western Solna Business Park, 2, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/2140186682",
+      "address": {
+        "tourism": "Best Western Solna Business Park",
+        "house_number": "2",
+        "road": "Englundavägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"12 Svetsarvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9793175,
+      "lat": 59.3588461,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "12, Svetsarvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/3056260195",
+      "address": {
+        "house_number": "12",
+        "road": "Svetsarvägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"115 Ekensbergsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9784125,
+      "lat": 59.3610875,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "115, Ekensbergsvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/7700307329",
+      "address": {
+        "house_number": "115",
+        "road": "Ekensbergsvägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"113 Ekensbergsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9794076,
+      "lat": 59.3610219,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "113, Ekensbergsvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/7700307328",
+      "address": {
+        "house_number": "113",
+        "road": "Ekensbergsvägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"6 Englundavägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9798609,
+      "lat": 59.3598231,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "6, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/7700307314",
+      "address": {
+        "house_number": "6",
+        "road": "Englundavägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"7 Englundavägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9807577,
+      "lat": 59.3607929,
+      "placeRank": 30,
+      "category": "building",
+      "type": "office",
+      "addresstype": "building",
+      "displayName": "7, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "way/24283109",
+      "address": {
+        "house_number": "7",
+        "road": "Englundavägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.980466,
+      "lat": 59.3609729,
+      "placeRank": 30,
+      "category": "amenity",
+      "type": "restaurant",
+      "addresstype": "amenity",
+      "displayName": "Pocket in the Park, 7, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/3724438816",
+      "address": {
+        "amenity": "Pocket in the Park",
+        "house_number": "7",
+        "road": "Englundavägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"9 Englundavägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9811054,
+      "lat": 59.3603585,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "9, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/7700307325",
+      "address": {
+        "house_number": "9",
+        "road": "Englundavägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"2 Smidesvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9834121,
+      "lat": 59.3595223,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "2, Smidesvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+      "osm": "node/7700307308",
+      "address": {
+        "house_number": "2",
+        "road": "Smidesvägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"3 Mathildatorget\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0185512,
+      "lat": 59.3647279,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Mathildatorget, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+      "osm": "way/1554729509",
+      "address": {
+        "road": "Mathildatorget",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 67",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Mathildatorget\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0185512,
+      "lat": 59.3647279,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Mathildatorget, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+      "osm": "way/1554729509",
+      "address": {
+        "road": "Mathildatorget",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 67",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Haga Norra, Solna\"}": [
+    {
+      "lon": 18.0261585,
+      "lat": 59.3625818,
+      "placeRank": 30,
+      "category": "highway",
+      "type": "bus_stop",
+      "addresstype": "highway",
+      "displayName": "Haga norra, Uppsalavägen, Solna Kyrkby, Haga, Solna, Solna kommun, Stockholms län, 169 70, Sverige",
+      "osm": "node/1346354015",
+      "address": {
+        "highway": "Haga norra",
+        "road": "Uppsalavägen",
+        "suburb": "Solna Kyrkby",
+        "city_district": "Haga",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 70",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0242771,
+      "lat": 59.3629648,
+      "placeRank": 30,
+      "category": "information",
+      "type": "board",
+      "addresstype": "information",
+      "displayName": "Haga norra, Morgonstjärnans väg, Solna Kyrkby, Haga, Solna, Solna kommun, Stockholms län, 169 70, Sverige",
+      "osm": "node/6404788986",
+      "address": {
+        "information": "Haga norra",
+        "road": "Morgonstjärnans väg",
+        "suburb": "Solna Kyrkby",
+        "city_district": "Haga",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 70",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"4 Frösundaleden\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9910241,
+      "lat": 59.3601369,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Skytteholm, Solna, Solna kommun, Stockholms län, 169 31, Sverige",
+      "osm": "way/43683186",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 31",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9980996,
+      "lat": 59.36155,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Skytteholm, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+      "osm": "way/41835561",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9944313,
+      "lat": 59.3607119,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Skytteholm, Solna, Solna kommun, Stockholms län, 169 35, Sverige",
+      "osm": "way/846143223",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 35",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Frösundaleden\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9901763,
+      "lat": 59.359891,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Skytteholm, Solna, Solna kommun, Stockholms län, 169 31, Sverige",
+      "osm": "way/254760947",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 31",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9854151,
+      "lat": 59.3580021,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Skytteholm, Solna, Solna kommun, Stockholms län, 171 66, Sverige",
+      "osm": "way/771769738",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0003549,
+      "lat": 59.361735,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Skytteholm, Solna, Solna kommun, Stockholms län, 171 45, Sverige",
+      "osm": "way/1576010066",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 45",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Ulriksdal, Solna\"}": [
+    {
+      "lon": 18.0003755,
+      "lat": 59.3807703,
+      "placeRank": 30,
+      "category": "railway",
+      "type": "station",
+      "addresstype": "railway",
+      "displayName": "Ulriksdal, Bagartorpsringen, Agnesberg, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 170 65, Sverige",
+      "osm": "node/1300249017",
+      "address": {
+        "railway": "Ulriksdal",
+        "road": "Bagartorpsringen",
+        "neighbourhood": "Agnesberg",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 65",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0117412,
+      "lat": 59.3841084,
+      "placeRank": 24,
+      "category": "leisure",
+      "type": "nature_reserve",
+      "addresstype": "nature_reserve",
+      "displayName": "Ulriksdals naturreservat, Ulriksdal, Solna, Solna kommun, Stockholms län, Sverige",
+      "osm": "way/103225154",
+      "address": {
+        "nature_reserve": "Ulriksdals naturreservat",
+        "city_district": "Ulriksdal",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0152066,
+      "lat": 59.387928,
+      "placeRank": 18,
+      "category": "boundary",
+      "type": "administrative",
+      "addresstype": "city_district",
+      "displayName": "Ulriksdal, Solna, Solna kommun, Stockholms län, Sverige",
+      "osm": "relation/20340505",
+      "address": {
+        "city_district": "Ulriksdal",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"43 Kolonnvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0009387,
+      "lat": 59.3813784,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "43, Kolonnvägen, Agnesberg, Nya Ulriksdal, Järva, Solna, Solna kommun, Stockholms län, 170 67, Sverige",
+      "osm": "node/6425261945",
+      "address": {
+        "house_number": "43",
+        "road": "Kolonnvägen",
+        "neighbourhood": "Agnesberg",
+        "suburb": "Nya Ulriksdal",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 67",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"57 Kolonnvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0042518,
+      "lat": 59.3764002,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Agnesberg, Norra Ritorp, Järva, Solna, Solna kommun, Stockholms län, 170 66, Sverige",
+      "osm": "way/352413749",
+      "address": {
+        "road": "Kolonnvägen",
+        "neighbourhood": "Agnesberg",
+        "suburb": "Norra Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0080875,
+      "lat": 59.3706532,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 71, Sverige",
+      "osm": "way/693820001",
+      "address": {
+        "road": "Kolonnvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 71",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0067885,
+      "lat": 59.373117,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 170 66, Sverige",
+      "osm": "way/1537706544",
+      "address": {
+        "road": "Kolonnvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"1 Råsundavägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0231893,
+      "lat": 59.3630436,
+      "placeRank": 30,
+      "category": "tourism",
+      "type": "hotel",
+      "addresstype": "tourism",
+      "displayName": "Hotel Giò, 1, Råsundavägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+      "osm": "node/7873319507",
+      "address": {
+        "tourism": "Hotel Giò",
+        "house_number": "1",
+        "road": "Råsundavägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 67",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0234232,
+      "lat": 59.3630453,
+      "placeRank": 30,
+      "category": "amenity",
+      "type": "restaurant",
+      "addresstype": "amenity",
+      "displayName": "Mama Giò, 1, Råsundavägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+      "osm": "node/7873319508",
+      "address": {
+        "amenity": "Mama Giò",
+        "house_number": "1",
+        "road": "Råsundavägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 67",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"31 Solnavägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0304171,
+      "lat": 59.3478012,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Solnavägen, Solna Kyrkby, Haga, Solna, Solna kommun, Stockholms län, 171 76, Sverige",
+      "osm": "way/365905336",
+      "address": {
+        "road": "Solnavägen",
+        "suburb": "Solna Kyrkby",
+        "city_district": "Haga",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 76",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0106921,
+      "lat": 59.3563347,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Solnavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 169 60, Sverige",
+      "osm": "way/257203344",
+      "address": {
+        "road": "Solnavägen",
+        "suburb": "Skytteholm",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 60",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0133701,
+      "lat": 59.3553374,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Solnavägen, Hagalund, Solna, Solna kommun, Stockholms län, 171 48, Sverige",
+      "osm": "way/257203345",
+      "address": {
+        "road": "Solnavägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "171 48",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"1 Garvis Carlssons gata\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9982993,
+      "lat": 59.3624154,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "1, Garvis Carlssons Gata, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+      "osm": "node/11039964044",
+      "address": {
+        "house_number": "1",
+        "road": "Garvis Carlssons Gata",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9982629,
+      "lat": 59.3623396,
+      "placeRank": 30,
+      "category": "office",
+      "type": "financial",
+      "addresstype": "office",
+      "displayName": "Handelsbanken Solna, 1, Garvis Carlssons Gata, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+      "osm": "node/10560240409",
+      "address": {
+        "office": "Handelsbanken Solna",
+        "house_number": "1",
+        "road": "Garvis Carlssons Gata",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"1 Enköpingsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.998575,
+      "lat": 59.3771803,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Enköpingsvägen, Agnesberg, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 170 65, Sverige",
+      "osm": "way/231058819",
+      "address": {
+        "road": "Enköpingsvägen",
+        "neighbourhood": "Agnesberg",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 65",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0102643,
+      "lat": 59.3775027,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Enköpingsvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 74, Sverige",
+      "osm": "way/7211367",
+      "address": {
+        "road": "Enköpingsvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 74",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0055917,
+      "lat": 59.3767363,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Enköpingsvägen, Norra Ritorp, Järva, Solna, Solna kommun, Stockholms län, 170 66, Sverige",
+      "osm": "way/473988959",
+      "address": {
+        "road": "Enköpingsvägen",
+        "suburb": "Norra Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Enköpingsvägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 18.0012699,
+      "lat": 59.3769733,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Enköpingsvägen, Agnesberg, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 170 65, Sverige",
+      "osm": "way/4591365",
+      "address": {
+        "road": "Enköpingsvägen",
+        "neighbourhood": "Agnesberg",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 65",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0099794,
+      "lat": 59.3777386,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Enköpingsvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 170 66, Sverige",
+      "osm": "way/804598769",
+      "address": {
+        "road": "Enköpingsvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0105236,
+      "lat": 59.377942,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Enköpingsvägen, Järva Krog, Järva, Solna, Solna kommun, Stockholms län, 169 74, Sverige",
+      "osm": "way/291464489",
+      "address": {
+        "road": "Enköpingsvägen",
+        "suburb": "Järva Krog",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 74",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Garvis Carlssons gata\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9976312,
+      "lat": 59.3622139,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Garvis Carlssons Gata, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+      "osm": "way/1109617181",
+      "address": {
+        "road": "Garvis Carlssons Gata",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9950028,
+      "lat": 59.3629606,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "living_street",
+      "addresstype": "living_street",
+      "displayName": "Garvis Carlssons Gata, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 51, Sverige",
+      "osm": "way/992398148",
+      "address": {
+        "road": "Garvis Carlssons Gata",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 51",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9966919,
+      "lat": 59.3619165,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "living_street",
+      "addresstype": "living_street",
+      "displayName": "Garvis Carlssons Gata, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+      "osm": "way/1194998179",
+      "address": {
+        "road": "Garvis Carlssons Gata",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"37 Solnavägen\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9979523,
+      "lat": 59.3626616,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "37, Solnavägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+      "osm": "node/11039990327",
+      "address": {
+        "house_number": "37",
+        "road": "Solnavägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 41",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"2 Solna strandväg\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9700847,
+      "lat": 59.3534892,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Solna strandväg, Nöten, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 106 36, Sverige",
+      "osm": "way/164591657",
+      "address": {
+        "road": "Solna strandväg",
+        "commercial": "Nöten",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "106 36",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9720987,
+      "lat": 59.3541158,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Solna strandväg, Solna strand, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 172 38, Sverige",
+      "osm": "way/24003597",
+      "address": {
+        "road": "Solna strandväg",
+        "neighbourhood": "Solna strand",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "172 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9697555,
+      "lat": 59.3553719,
+      "placeRank": 27,
+      "category": "highway",
+      "type": "service",
+      "addresstype": "road",
+      "displayName": "Solna strandväg, Nöten, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 172 38, Sverige",
+      "osm": "way/359338772",
+      "address": {
+        "road": "Solna strandväg",
+        "commercial": "Nöten",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "172 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Solna strandväg\",\"city\":\"Solna\"}": [
+    {
+      "lon": 17.9700847,
+      "lat": 59.3534892,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Solna strandväg, Nöten, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 106 36, Sverige",
+      "osm": "way/164591657",
+      "address": {
+        "road": "Solna strandväg",
+        "commercial": "Nöten",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "106 36",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9720987,
+      "lat": 59.3541158,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Solna strandväg, Solna strand, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 172 38, Sverige",
+      "osm": "way/24003597",
+      "address": {
+        "road": "Solna strandväg",
+        "neighbourhood": "Solna strand",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "172 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9697555,
+      "lat": 59.3553719,
+      "placeRank": 27,
+      "category": "highway",
+      "type": "service",
+      "addresstype": "road",
+      "displayName": "Solna strandväg, Nöten, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 172 38, Sverige",
+      "osm": "way/359338772",
+      "address": {
+        "road": "Solna strandväg",
+        "commercial": "Nöten",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "172 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"93 Hammarby Allé\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0939103,
+      "lat": 59.3043103,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "93, Hammarby Allé, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 62, Sverige",
+      "osm": "node/2516720336",
+      "address": {
+        "house_number": "93",
+        "road": "Hammarby Allé",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 62",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0932408,
+      "lat": 59.304174,
+      "placeRank": 30,
+      "category": "amenity",
+      "type": "pharmacy",
+      "addresstype": "amenity",
+      "displayName": "Kronans Apotek, 93, Hammarby Allé, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 63, Sverige",
+      "osm": "node/434473559",
+      "address": {
+        "amenity": "Kronans Apotek",
+        "house_number": "93",
+        "road": "Hammarby Allé",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 63",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0940828,
+      "lat": 59.3043848,
+      "placeRank": 30,
+      "category": "shop",
+      "type": "sports",
+      "addresstype": "shop",
+      "displayName": "Adidas outlet, 93, Hammarby Allé, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 62, Sverige",
+      "osm": "node/1231079435",
+      "address": {
+        "shop": "Adidas outlet",
+        "house_number": "93",
+        "road": "Hammarby Allé",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 62",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"12 Hammarby Kaj\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0865722,
+      "lat": 59.3038941,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "12, Hammarby Kajgata, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 62, Sverige",
+      "osm": "node/7801747006",
+      "address": {
+        "house_number": "12",
+        "road": "Hammarby Kajgata",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 62",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0873588,
+      "lat": 59.3045215,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Hammarby Kaj, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 62, Sverige",
+      "osm": "way/197497200",
+      "address": {
+        "road": "Hammarby Kaj",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 62",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0814325,
+      "lat": 59.3031589,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Hammarby Kaj, Skanstull, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 32, Sverige",
+      "osm": "way/463849289",
+      "address": {
+        "road": "Hammarby Kaj",
+        "neighbourhood": "Skanstull",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 32",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Hammarby Kaj\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0873588,
+      "lat": 59.3045215,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Hammarby Kaj, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 62, Sverige",
+      "osm": "way/197497200",
+      "address": {
+        "road": "Hammarby Kaj",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 62",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0831619,
+      "lat": 59.3035338,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Hammarby Kaj, Skanstull, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 32, Sverige",
+      "osm": "way/563855837",
+      "address": {
+        "road": "Hammarby Kaj",
+        "neighbourhood": "Skanstull",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 32",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"24 Virkesvägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0977252,
+      "lat": 59.3015495,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "24, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 79, Sverige",
+      "osm": "node/2468784785",
+      "address": {
+        "house_number": "24",
+        "road": "Virkesvägen",
+        "industrial": "Hammarby industriområde",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"37 Hammarby Fabriksväg\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.100386,
+      "lat": 59.3009786,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 79, Sverige",
+      "osm": "way/593117913",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0909114,
+      "lat": 59.3006563,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "way/83409563",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.1046084,
+      "lat": 59.3012078,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 66, Sverige",
+      "osm": "way/163012439",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Hammarby Fabriksväg\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.1046084,
+      "lat": 59.3012078,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 66, Sverige",
+      "osm": "way/163012439",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.100386,
+      "lat": 59.3009786,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 79, Sverige",
+      "osm": "way/593117913",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0947003,
+      "lat": 59.3008458,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 61, Sverige",
+      "osm": "way/414673690",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 61",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"33 Hammarby Fabriksväg\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0954489,
+      "lat": 59.3010579,
+      "placeRank": 30,
+      "category": "amenity",
+      "type": "cafe",
+      "addresstype": "amenity",
+      "displayName": "Waynes Coffee, 33, Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "node/2516720337",
+      "address": {
+        "amenity": "Waynes Coffee",
+        "house_number": "33",
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0958313,
+      "lat": 59.3009306,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "33, Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "node/2378807097",
+      "address": {
+        "house_number": "33",
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"1 Ljusslingan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0958169,
+      "lat": 59.3061968,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "1, Ljusslingan, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 31, Sverige",
+      "osm": "node/5769047047",
+      "address": {
+        "house_number": "1",
+        "road": "Ljusslingan",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 31",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"41 Textilgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0905051,
+      "lat": 59.3019164,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "41, Textilgatan, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "node/2516720301",
+      "address": {
+        "house_number": "41",
+        "road": "Textilgatan",
+        "industrial": "Hammarby industriområde",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"27 Hammarby Fabriksväg\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.1046084,
+      "lat": 59.3012078,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 66, Sverige",
+      "osm": "way/163012439",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.100386,
+      "lat": 59.3009786,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 79, Sverige",
+      "osm": "way/593117913",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0947003,
+      "lat": 59.3008458,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 61, Sverige",
+      "osm": "way/414673690",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 61",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"8 Virkesvägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0923553,
+      "lat": 59.3014114,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "8, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "node/2516720328",
+      "address": {
+        "house_number": "8",
+        "road": "Virkesvägen",
+        "industrial": "Hammarby industriområde",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"12 Virkesvägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0936693,
+      "lat": 59.3016028,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "12, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "node/8956524079",
+      "address": {
+        "house_number": "12",
+        "road": "Virkesvägen",
+        "industrial": "Hammarby industriområde",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"2 Virkesvägen\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0908321,
+      "lat": 59.3013443,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "2, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "node/2516720259",
+      "address": {
+        "house_number": "2",
+        "road": "Virkesvägen",
+        "industrial": "Hammarby industriområde",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0908395,
+      "lat": 59.3013144,
+      "placeRank": 30,
+      "category": "office",
+      "type": "government",
+      "addresstype": "office",
+      "displayName": "Naturvårdsverket, 2, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "node/13516730469",
+      "address": {
+        "office": "Naturvårdsverket",
+        "house_number": "2",
+        "road": "Virkesvägen",
+        "industrial": "Hammarby industriområde",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Flemingsberg, Huddinge\"}": [
+    {
+      "lon": 17.9398948,
+      "lat": 59.2223899,
+      "placeRank": 19,
+      "category": "place",
+      "type": "suburb",
+      "addresstype": "suburb",
+      "displayName": "Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 57, Sverige",
+      "osm": "node/442688099",
+      "address": {
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 57",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9465879,
+      "lat": 59.2185965,
+      "placeRank": 30,
+      "category": "railway",
+      "type": "station",
+      "addresstype": "railway",
+      "displayName": "Flemingsberg, Generatorslingan, Visättra, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 25, Sverige",
+      "osm": "node/7110863406",
+      "address": {
+        "railway": "Flemingsberg",
+        "road": "Generatorslingan",
+        "neighbourhood": "Visättra",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 25",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"15 Regulatorvägen\",\"city\":\"Huddinge\"}": [
+    {
+      "lon": 17.9602878,
+      "lat": 59.2211318,
+      "placeRank": 30,
+      "category": "building",
+      "type": "industrial",
+      "addresstype": "building",
+      "displayName": "15, Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/163638611",
+      "address": {
+        "house_number": "15",
+        "road": "Regulatorvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"17 Regulatorvägen\",\"city\":\"Huddinge\"}": [
+    {
+      "lon": 17.9592474,
+      "lat": 59.2210027,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "17, Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "node/9437779586",
+      "address": {
+        "house_number": "17",
+        "road": "Regulatorvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Björnkullavägen\",\"city\":\"Huddinge\"}": [
+    {
+      "lon": 17.9458336,
+      "lat": 59.2171069,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Björnkullavägen, Visättra, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 25, Sverige",
+      "osm": "way/362029939",
+      "address": {
+        "road": "Björnkullavägen",
+        "neighbourhood": "Visättra",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 25",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9459158,
+      "lat": 59.2132829,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Björnkullavägen, Visättra, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 51, Sverige",
+      "osm": "way/163629691",
+      "address": {
+        "road": "Björnkullavägen",
+        "neighbourhood": "Visättra",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 51",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"1 Jonvägen\",\"city\":\"Huddinge\"}": [
+    {
+      "lon": 17.9600562,
+      "lat": 59.2223271,
+      "placeRank": 30,
+      "category": "building",
+      "type": "industrial",
+      "addresstype": "building",
+      "displayName": "1, Jonvägen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/707078447",
+      "address": {
+        "house_number": "1",
+        "road": "Jonvägen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9600336,
+      "lat": 59.2221561,
+      "placeRank": 30,
+      "category": "leisure",
+      "type": "fitness_centre",
+      "addresstype": "leisure",
+      "displayName": "Crossfitpassagen, 1, Jonvägen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "node/6644687883",
+      "address": {
+        "leisure": "Crossfitpassagen",
+        "house_number": "1",
+        "road": "Jonvägen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"1 Elektronvägen\",\"city\":\"Huddinge\"}": [
+    {
+      "lon": 17.9550889,
+      "lat": 59.2227167,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "1, Elektronvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "node/9437779640",
+      "address": {
+        "house_number": "1",
+        "road": "Elektronvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Elektronvägen\",\"city\":\"Huddinge\"}": [
+    {
+      "lon": 17.9564983,
+      "lat": 59.2219599,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Elektronvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/163638669",
+      "address": {
+        "road": "Elektronvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"31 Regulatorvägen\",\"city\":\"Huddinge\"}": [
+    {
+      "lon": 17.9595428,
+      "lat": 59.22142,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/395797772",
+      "address": {
+        "road": "Regulatorvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9624429,
+      "lat": 59.2226075,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/395797771",
+      "address": {
+        "road": "Regulatorvägen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9533008,
+      "lat": 59.2193711,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 50, Sverige",
+      "osm": "way/227054967",
+      "address": {
+        "road": "Regulatorvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 50",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"Regulatorvägen\",\"city\":\"Huddinge\"}": [
+    {
+      "lon": 17.9595428,
+      "lat": 59.22142,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/395797772",
+      "address": {
+        "road": "Regulatorvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9624429,
+      "lat": 59.2226075,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/395797771",
+      "address": {
+        "road": "Regulatorvägen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9533008,
+      "lat": 59.2193711,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 50, Sverige",
+      "osm": "way/227054967",
+      "address": {
+        "road": "Regulatorvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 50",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Sollentuna, Sollentuna\"}": [
+    {
+      "lon": 17.94845,
+      "lat": 59.4283893,
+      "placeRank": 30,
+      "category": "railway",
+      "type": "station",
+      "addresstype": "railway",
+      "displayName": "Sollentuna, Sköldvägen, Tureberg, Sollentuna kommun, Stockholms län, 191 21, Sverige",
+      "osm": "node/35690049",
+      "address": {
+        "railway": "Sollentuna",
+        "road": "Sköldvägen",
+        "suburb": "Tureberg",
+        "town": "Sollentuna kommun",
+        "municipality": "Sollentuna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "191 21",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9485835,
+      "lat": 59.4284249,
+      "placeRank": 30,
+      "category": "railway",
+      "type": "stop",
+      "addresstype": "railway",
+      "displayName": "Sollentuna, Sköldvägen, Tureberg, Sollentuna kommun, Stockholms län, 191 21, Sverige",
+      "osm": "node/1501325798",
+      "address": {
+        "railway": "Sollentuna",
+        "road": "Sköldvägen",
+        "suburb": "Tureberg",
+        "town": "Sollentuna kommun",
+        "municipality": "Sollentuna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "191 21",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9482965,
+      "lat": 59.4283581,
+      "placeRank": 30,
+      "category": "railway",
+      "type": "stop",
+      "addresstype": "railway",
+      "displayName": "Sollentuna, Tingsvägen, Töjnan, Tureberg, Sollentuna kommun, Stockholms län, 191 61, Sverige",
+      "osm": "node/1501325774",
+      "address": {
+        "railway": "Sollentuna",
+        "road": "Tingsvägen",
+        "quarter": "Töjnan",
+        "suburb": "Tureberg",
+        "town": "Sollentuna kommun",
+        "municipality": "Sollentuna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "191 61",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"6 Glasfibergatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0013698,
+      "lat": 59.2808036,
+      "placeRank": 30,
+      "category": "amenity",
+      "type": "restaurant",
+      "addresstype": "amenity",
+      "displayName": "Klockhusköket, 6, Glasfibergatan, Älvsjö, Hägersten-Älvsjö stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 125 45, Sverige",
+      "osm": "node/2280454919",
+      "address": {
+        "amenity": "Klockhusköket",
+        "house_number": "6",
+        "road": "Glasfibergatan",
+        "suburb": "Älvsjö",
+        "city_district": "Hägersten-Älvsjö stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "125 45",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0024389,
+      "lat": 59.2812434,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "6, Glasfibergatan, Älvsjö, Hägersten-Älvsjö stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 125 45, Sverige",
+      "osm": "node/9209391032",
+      "address": {
+        "house_number": "6",
+        "road": "Glasfibergatan",
+        "suburb": "Älvsjö",
+        "city_district": "Hägersten-Älvsjö stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "125 45",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Lästmakargatan 8, Stockholm\"}": [
+    {
+      "lon": 18.071997,
+      "lat": 59.3355319,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+      "osm": "way/41771244",
+      "address": {
+        "road": "Lästmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 42",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0688793,
+      "lat": 59.3353864,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Lästmakargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+      "osm": "way/1279721810",
+      "address": {
+        "road": "Lästmakargatan",
+        "neighbourhood": "Klara",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 43",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.070706,
+      "lat": 59.3354682,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+      "osm": "way/24968085",
+      "address": {
+        "road": "Lästmakargatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 42",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Sveavägen 151, Stockholm\"}": [
+    {
+      "lon": 18.0476908,
+      "lat": 59.3499154,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "151, Sveavägen, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 47, Sverige",
+      "osm": "node/7128026378",
+      "address": {
+        "house_number": "151",
+        "road": "Sveavägen",
+        "suburb": "Vasastaden",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "113 47",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"47 Malmskillnadsgatan\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.0646035,
+      "lat": 59.3374378,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "47, Malmskillnadsgatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 38, Sverige",
+      "osm": "node/1358036272",
+      "address": {
+        "house_number": "47",
+        "road": "Malmskillnadsgatan",
+        "suburb": "Norrmalm",
+        "city_district": "Norra innerstadens stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "111 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Stjärntorget 3, Solna\"}": [
+    {
+      "lon": 18.0064608,
+      "lat": 59.3687361,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/356760851",
+      "address": {
+        "road": "Stjärntorget",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0066905,
+      "lat": 59.3683726,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/583604884",
+      "address": {
+        "road": "Stjärntorget",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0067094,
+      "lat": 59.3683092,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "pedestrian",
+      "addresstype": "pedestrian",
+      "displayName": "Stjärntorget, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/583604887",
+      "address": {
+        "road": "Stjärntorget",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Pyramidvägen 4, Solna\"}": [
+    {
+      "lon": 18.0055061,
+      "lat": 59.3681042,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Pyramidvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/215319413",
+      "address": {
+        "road": "Pyramidvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0075076,
+      "lat": 59.3668135,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Pyramidvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/5366930",
+      "address": {
+        "road": "Pyramidvägen",
+        "neighbourhood": "Vasalund",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Magasinsvägen 6, Solna\"}": [
+    {
+      "lon": 18.0032656,
+      "lat": 59.3685143,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Magasinsvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/140494184",
+      "address": {
+        "road": "Magasinsvägen",
+        "neighbourhood": "Arenastaden",
+        "suburb": "Råsunda",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Råsta strandväg 5, Solna\"}": [
+    {
+      "lon": 17.9919729,
+      "lat": 59.3739618,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Råsta strandväg, Råstahem, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 169 55, Sverige",
+      "osm": "way/24651444",
+      "address": {
+        "road": "Råsta strandväg",
+        "neighbourhood": "Råstahem",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 55",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0023507,
+      "lat": 59.373591,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Råsta strandväg, Norra Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+      "osm": "way/324292077",
+      "address": {
+        "road": "Råsta strandväg",
+        "suburb": "Norra Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 56",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0047201,
+      "lat": 59.3712803,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Råsta strandväg, Norra Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+      "osm": "way/256764452",
+      "address": {
+        "road": "Råsta strandväg",
+        "suburb": "Norra Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Gårdsvägen 12, Solna\"}": [
+    {
+      "lon": 18.0109254,
+      "lat": 59.3672158,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+      "osm": "way/23513241",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 03",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0139512,
+      "lat": 59.365196,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+      "osm": "way/23165897",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 68",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0143576,
+      "lat": 59.3649935,
+      "placeRank": 27,
+      "category": "highway",
+      "type": "service",
+      "addresstype": "road",
+      "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 75, Sverige",
+      "osm": "way/340330512",
+      "address": {
+        "road": "Gårdsvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 75",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Mathildatorget 3, Solna\"}": [
+    {
+      "lon": 18.0185512,
+      "lat": 59.3647279,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Mathildatorget, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+      "osm": "way/1554729509",
+      "address": {
+        "road": "Mathildatorget",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 67",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Frösundaleden, Hagalund, Solna\"}": [
+    {
+      "lon": 18.0174099,
+      "lat": 59.3638628,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+      "osm": "way/501793437",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 67",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0020466,
+      "lat": 59.3618577,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Hagalund, Solna, Solna kommun, Stockholms län, 169 52, Sverige",
+      "osm": "way/75464651",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 52",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0210207,
+      "lat": 59.3641132,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Frösundaleden, Hagalund, Solna, Solna kommun, Stockholms län, 169 70, Sverige",
+      "osm": "way/804669076",
+      "address": {
+        "road": "Frösundaleden",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 70",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Kolonnvägen, Hagalund, Solna\"}": [
+    {
+      "lon": 18.0155959,
+      "lat": 59.3649049,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 75, Sverige",
+      "osm": "way/570476242",
+      "address": {
+        "road": "Kolonnvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 75",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0135189,
+      "lat": 59.3663674,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Kolonnvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+      "osm": "way/1537706555",
+      "address": {
+        "road": "Kolonnvägen",
+        "suburb": "Hagalund",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 68",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Enköpingsvägen 1, Solna\"}": [
+    {
+      "lon": 18.0012699,
+      "lat": 59.3769733,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Enköpingsvägen, Agnesberg, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 170 65, Sverige",
+      "osm": "way/4591365",
+      "address": {
+        "road": "Enköpingsvägen",
+        "neighbourhood": "Agnesberg",
+        "suburb": "Bagartorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 65",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0099794,
+      "lat": 59.3777386,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Enköpingsvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 170 66, Sverige",
+      "osm": "way/804598769",
+      "address": {
+        "road": "Enköpingsvägen",
+        "suburb": "Ritorp",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "170 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0105236,
+      "lat": 59.377942,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "secondary",
+      "addresstype": "secondary",
+      "displayName": "Enköpingsvägen, Järva Krog, Järva, Solna, Solna kommun, Stockholms län, 169 74, Sverige",
+      "osm": "way/291464489",
+      "address": {
+        "road": "Enköpingsvägen",
+        "suburb": "Järva Krog",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "169 74",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Solna strandväg 2, Solna\"}": [
+    {
+      "lon": 17.9700847,
+      "lat": 59.3534892,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Solna strandväg, Nöten, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 106 36, Sverige",
+      "osm": "way/164591657",
+      "address": {
+        "road": "Solna strandväg",
+        "commercial": "Nöten",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "106 36",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9720987,
+      "lat": 59.3541158,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "residential",
+      "addresstype": "residential",
+      "displayName": "Solna strandväg, Solna strand, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 172 38, Sverige",
+      "osm": "way/24003597",
+      "address": {
+        "road": "Solna strandväg",
+        "neighbourhood": "Solna strand",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "172 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9697555,
+      "lat": 59.3553719,
+      "placeRank": 27,
+      "category": "highway",
+      "type": "service",
+      "addresstype": "road",
+      "displayName": "Solna strandväg, Nöten, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 172 38, Sverige",
+      "osm": "way/359338772",
+      "address": {
+        "road": "Solna strandväg",
+        "commercial": "Nöten",
+        "suburb": "Västra skogen",
+        "town": "Solna",
+        "municipality": "Solna kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "172 38",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"street\":\"14 Hammarby Kaj\",\"city\":\"Stockholm\"}": [
+    {
+      "lon": 18.086662,
+      "lat": 59.304265,
+      "placeRank": 30,
+      "category": "place",
+      "type": "house",
+      "addresstype": "place",
+      "displayName": "14, Hammarby Kaj, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 62, Sverige",
+      "osm": "node/2516720250",
+      "address": {
+        "house_number": "14",
+        "road": "Hammarby Kaj",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 62",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Hammarby Fabriksväg 37, Stockholm\"}": [
+    {
+      "lon": 18.100386,
+      "lat": 59.3009786,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 79, Sverige",
+      "osm": "way/593117913",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 79",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.0909114,
+      "lat": 59.3006563,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+      "osm": "way/83409563",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 30",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 18.1046084,
+      "lat": 59.3012078,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "unclassified",
+      "addresstype": "unclassified",
+      "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 66, Sverige",
+      "osm": "way/163012439",
+      "address": {
+        "road": "Hammarby Fabriksväg",
+        "suburb": "Södra Hammarbyhamnen",
+        "city_district": "Södermalms stadsdelsområde",
+        "city": "Stockholm",
+        "municipality": "Stockholms kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "120 66",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ],
+  "{\"q\":\"Regulatorvägen 31, Huddinge\"}": [
+    {
+      "lon": 17.9595428,
+      "lat": 59.22142,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/395797772",
+      "address": {
+        "road": "Regulatorvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9624429,
+      "lat": 59.2226075,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+      "osm": "way/395797771",
+      "address": {
+        "road": "Regulatorvägen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 49",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    },
+    {
+      "lon": 17.9552814,
+      "lat": 59.2202472,
+      "placeRank": 26,
+      "category": "highway",
+      "type": "tertiary",
+      "addresstype": "tertiary",
+      "displayName": "Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 50, Sverige",
+      "osm": "way/136033713",
+      "address": {
+        "road": "Regulatorvägen",
+        "neighbourhood": "Flemingsbergsdalen",
+        "suburb": "Flemingsberg",
+        "town": "Huddinge",
+        "municipality": "Huddinge kommun",
+        "county": "Stockholms län",
+        "ISO3166-2-lvl4": "SE-AB",
+        "postcode": "141 50",
+        "country": "Sverige",
+        "country_code": "se"
+      }
+    }
+  ]
+}

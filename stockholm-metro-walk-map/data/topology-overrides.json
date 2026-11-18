@@ -1,0 +1,5 @@
+{
+  "description": "Reviewed corrections to the GTFS-derived topology. removeEdges: [{line, a, b, reason}] drops an edge between two stations (by station name) on a line; addEdges: [{line, route, a, b, reason}] adds one. Every entry needs a reason, and the build fails if an override no longer applies (validate reports unusedOverrides as an error).",
+  "removeEdges": [],
+  "addEdges": []
+}

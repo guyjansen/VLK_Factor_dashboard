@@ -1,0 +1,83 @@
+{
+  "description": "Reviewed geocoding corrections (hand-checked 2026-11-18). Each entry replaces the automatic queries for one asset with one reviewed query: a structured street query, or a free-text query that adds the district. 'streetName' (when given) must still match the result's road, and 'precision' fixes the reported precision. The geocode step fails if an override refers to an unknown asset or is not applied. Entries marked 'Please confirm' rest on a judgement the portfolio owner should check.",
+  "overrides": {
+    "FAB-SOL-33": {
+      "street": "9 Englundavägen",
+      "city": "Solna",
+      "streetName": "Englundavägen",
+      "number": "9",
+      "reason": "Source spells 'Enlundavägen 9–13'; no such street exists. Svetsaren 3 is in Solna Business Park, where the street is Englundavägen (Svetsaren 1 is Englundavägen 7). Please confirm."
+    },
+    "FAB-SIC-10": {
+      "query": "Sveavägen 151, Stockholm",
+      "streetName": "Sveavägen",
+      "precision": "street",
+      "reason": "Sveavägen 149 is not in OpenStreetMap, and the plain street match lands about 500 m south. No. 151 is the adjoining entrance of the same block (Getingen 13 lies between Getingen 14, Sveavägen 143–147, and Getingen 15, Sveavägen 159). Reported as street level."
+    },
+    "FAB-SOL-12": {
+      "street": "22 Kolonnvägen",
+      "city": "Solna",
+      "streetName": "Kolonnvägen",
+      "precision": "street",
+      "reason": "Kolonnvägen runs about 2 km from Hagalund to Ulriksdal and No. 24 is not in OpenStreetMap; the plain street match lands in Norra Ritorp, about 500 m north of Arenastaden. Poolen 1 (Kolonnvägen 24) adjoins Signalen 3 (Kolonnvägen 22), which is located at building level. Reported as street level."
+    },
+    "FAB-SOL-44": {
+      "street": "43 Kolonnvägen",
+      "city": "Solna",
+      "streetName": "Kolonnvägen",
+      "precision": "street",
+      "reason": "Kolonnvägen 57–59 is not in OpenStreetMap; the plain street match lands in Norra Ritorp. Distansen 7 is in the same quarter as Distansen 6 (Kolonnvägen 43–55, located at building level in Nya Ulriksdal). Reported as street level."
+    },
+    "FAB-SOL-41": {
+      "query": "Kolonnvägen, Hagalund, Solna",
+      "streetName": "Kolonnvägen",
+      "precision": "street",
+      "reason": "No house number in the source and the workbook places Hagalund 2:11 in Haga Norra; the plain street match lands in Nya Ulriksdal, about 2 km north. The Hagalund section of Kolonnvägen borders Haga Norra (district added). Please confirm."
+    },
+    "FAB-SOL-37": {
+      "query": "Frösundaleden, Hagalund, Solna",
+      "streetName": "Frösundaleden",
+      "precision": "street",
+      "reason": "Frösundaleden 4 is not in OpenStreetMap and the plain street match lands in Skytteholm, about 1.3 km west. The workbook places Kvarten 1 in Haga Norra; the Hagalund section of Frösundaleden borders Haga Norra (district added)."
+    },
+    "FAB-SOL-38": {
+      "query": "Frösundaleden, Hagalund, Solna",
+      "streetName": "Frösundaleden",
+      "precision": "street",
+      "reason": "As FAB-SOL-37 (Kvinten 1, Frösundaleden 4, Haga Norra)."
+    },
+    "FAB-SOL-39": {
+      "query": "Frösundaleden, Hagalund, Solna",
+      "streetName": "Frösundaleden",
+      "precision": "street",
+      "reason": "As FAB-SOL-37 (Kvinten 8, Frösundaleden 4, Haga Norra)."
+    },
+    "FAB-SOL-40": {
+      "query": "Frösundaleden, Hagalund, Solna",
+      "streetName": "Frösundaleden",
+      "precision": "street",
+      "reason": "As FAB-SOL-37 (Tersen 1, Frösundaleden 4, Haga Norra)."
+    },
+    "FAB-SOL-36": {
+      "street": "Mathildatorget",
+      "city": "Solna",
+      "streetName": "Mathildatorget",
+      "precision": "area",
+      "reason": "No address in the source. Ackordet 2 is in the same quarter (Ackordet) as Ackordet 1, Mathildatorget 3, the central square of Haga Norra; 'Haga Norra' itself only matches a bus stop and a sign in OpenStreetMap. Reported as area level. Please confirm."
+    },
+    "FAB-SOL-42": {
+      "street": "43 Kolonnvägen",
+      "city": "Solna",
+      "streetName": "Kolonnvägen",
+      "precision": "area",
+      "reason": "No address in the source. 'Ulriksdal, Solna' resolves to the centre of a large district (incl. the palace park), about 900 m from the Distansen quarter. Distansen 4 is in the same quarter as Distansen 6 (Kolonnvägen 43–55). Reported as area level. Please confirm."
+    },
+    "FAB-FLB-04": {
+      "street": "Björnkullavägen",
+      "city": "Huddinge",
+      "streetName": "Björnkullavägen",
+      "precision": "area",
+      "reason": "No address in the source. Generatorn 10 is in the same quarter (Generatorn) as Generatorn 11 (Björnkullavägen). Reported as area level rather than the centre of Flemingsberg. Please confirm."
+    }
+  }
+}

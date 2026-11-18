@@ -1,0 +1,5713 @@
+{
+  "source": "data/FABG_property_list_FY25.xlsx",
+  "sheet": "Properties",
+  "preparedAt": "2026-11-18T15:25:27.146Z",
+  "statusRule": "Standing = Classification \"Investment\"; Development = \"Development\" or \"Land & project\".",
+  "buildings": [
+    {
+      "id": "FAB-SIC-01",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Apotekaren 22",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 1,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Döbelnsg 20, 24, Kungstensg 21–23, Rådmansg 40, 42, Tuleg 7 A–B 13",
+      "addresses": [
+        {
+          "street": "Döbelnsgatan",
+          "number": "20",
+          "numbers": [
+            "20",
+            "24"
+          ],
+          "sourceText": "Döbelnsg 20",
+          "abbreviated": true
+        },
+        {
+          "street": "Kungstensgatan",
+          "number": "21",
+          "numbers": [
+            "21"
+          ],
+          "sourceText": "Kungstensg 21–23",
+          "abbreviated": true
+        },
+        {
+          "street": "Rådmansgatan",
+          "number": "40",
+          "numbers": [
+            "40",
+            "42"
+          ],
+          "sourceText": "Rådmansg 40",
+          "abbreviated": true
+        },
+        {
+          "street": "Tulegatan",
+          "number": "7A",
+          "numbers": [
+            "7A"
+          ],
+          "sourceText": "Tuleg 7 A–B 13",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (89% of lettable area)",
+      "usesSqm": {
+        "Office": 25261,
+        "Retail": 680,
+        "Industrial/warehouse": 1410,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 974
+      },
+      "totalLettableSqmSource": 28325,
+      "constructionYear": "1902/2002",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 1373000,
+      "sourcePage": 130,
+      "sourceRow": 2,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0612885,
+      "lat": 59.3414374,
+      "geocode": {
+        "query": "20 Döbelnsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "20, Döbelnsgatan, Sibirien, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 57, Sverige",
+        "osm": "node/1516415136",
+        "road": "Döbelnsgatan",
+        "houseNumber": "20",
+        "kmFromCentre": 1,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-02",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Barnhusväderkvarnen 36",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 2,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Rådmansg 61–65",
+      "addresses": [
+        {
+          "street": "Rådmansgatan",
+          "number": "61",
+          "numbers": [
+            "61"
+          ],
+          "sourceText": "Rådmansg 61–65",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (55% of lettable area)",
+      "usesSqm": {
+        "Office": 14158,
+        "Retail": 1156,
+        "Industrial/warehouse": 1731,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 8562
+      },
+      "totalLettableSqmSource": 25607,
+      "constructionYear": "1963",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 734000,
+      "sourcePage": 130,
+      "sourceRow": 3,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0555381,
+      "lat": 59.3394562,
+      "geocode": {
+        "query": "61 Rådmansgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "61, Rådmansgatan, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 60, Sverige",
+        "osm": "node/1449088391",
+        "road": "Rådmansgatan",
+        "houseNumber": "61",
+        "kmFromCentre": 0.93,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-03",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Bocken 35",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 3,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Lästmakarg 22–24",
+      "addresses": [
+        {
+          "street": "Lästmakargatan",
+          "number": "22",
+          "numbers": [
+            "22"
+          ],
+          "sourceText": "Lästmakarg 22–24",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (97% of lettable area)",
+      "usesSqm": {
+        "Office": 14389,
+        "Retail": 282,
+        "Industrial/warehouse": 194,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 14865,
+      "constructionYear": "1951",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 1244162,
+      "sourcePage": 130,
+      "sourceRow": 4,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0688239,
+      "lat": 59.3354555,
+      "geocode": {
+        "query": "22 Lästmakargatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "22, Lästmakargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+        "osm": "node/8980098454",
+        "road": "Lästmakargatan",
+        "houseNumber": "22",
+        "kmFromCentre": 0.39,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-04",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Bocken 39",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 4,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Lästmakarg 20, Kungsg 7–15",
+      "addresses": [
+        {
+          "street": "Lästmakargatan",
+          "number": "20",
+          "numbers": [
+            "20"
+          ],
+          "sourceText": "Lästmakarg 20",
+          "abbreviated": true
+        },
+        {
+          "street": "Kungsgatan",
+          "number": "7",
+          "numbers": [
+            "7"
+          ],
+          "sourceText": "Kungsg 7–15",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (81% of lettable area)",
+      "usesSqm": {
+        "Office": 16624,
+        "Retail": 2089,
+        "Industrial/warehouse": 1591,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 129
+      },
+      "totalLettableSqmSource": 20433,
+      "constructionYear": "1931",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 1422000,
+      "sourcePage": 130,
+      "sourceRow": 5,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0695256,
+      "lat": 59.3354906,
+      "geocode": {
+        "query": "20 Lästmakargatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "20, Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+        "osm": "node/8980098449",
+        "road": "Lästmakargatan",
+        "houseNumber": "20",
+        "kmFromCentre": 0.41,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-05",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Bocken 46",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 5,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Regeringsgatan 56",
+      "addresses": [
+        {
+          "street": "Regeringsgatan",
+          "number": "56",
+          "numbers": [
+            "56"
+          ],
+          "sourceText": "Regeringsgatan 56",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "No lettable area reported",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1977",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": null,
+      "sourcePage": 130,
+      "sourceRow": 6,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0677754,
+      "lat": 59.3354349,
+      "geocode": {
+        "query": "56 Regeringsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "56, Regeringsgatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 56, Sverige",
+        "osm": "node/8980098456",
+        "road": "Regeringsgatan",
+        "houseNumber": "56",
+        "kmFromCentre": 0.35,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-06",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Bocken 47",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 6,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Lästmakarg 8",
+      "addresses": [
+        {
+          "street": "Lästmakargatan",
+          "number": "8",
+          "numbers": [
+            "8"
+          ],
+          "sourceText": "Lästmakarg 8",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Retail (50% of lettable area)",
+      "usesSqm": {
+        "Office": 660,
+        "Retail": 665,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 1325,
+      "constructionYear": "1929",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 56921,
+      "sourcePage": 130,
+      "sourceRow": 7,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.071997,
+      "lat": 59.3355319,
+      "geocode": {
+        "query": "8 Lästmakargatan, Stockholm",
+        "method": "address",
+        "precision": "street",
+        "displayName": "Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+        "osm": "way/41771244",
+        "road": "Lästmakargatan",
+        "houseNumber": null,
+        "kmFromCentre": 0.52,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-07",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Bocken 52",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 7,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Lästmakarg 14–16",
+      "addresses": [
+        {
+          "street": "Lästmakargatan",
+          "number": "14",
+          "numbers": [
+            "14"
+          ],
+          "sourceText": "Lästmakarg 14–16",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Residential (94% of lettable area)",
+      "usesSqm": {
+        "Office": 145,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 2208,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 2353,
+      "constructionYear": "1951",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 155200,
+      "sourcePage": 130,
+      "sourceRow": 8,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0699326,
+      "lat": 59.3355456,
+      "geocode": {
+        "query": "14 Lästmakargatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "14-16, Lästmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 43, Sverige",
+        "osm": "node/8980098447",
+        "road": "Lästmakargatan",
+        "houseNumber": "14-16",
+        "kmFromCentre": 0.43,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-08",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Drabanten 3",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 8,
+      "area": "Kungsholmen",
+      "municipality": "Stockholm",
+      "street": "Kungsbroplan 3, etc.",
+      "addresses": [
+        {
+          "street": "Kungsbroplan",
+          "number": "3",
+          "numbers": [
+            "3"
+          ],
+          "sourceText": "Kungsbroplan 3",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (96% of lettable area)",
+      "usesSqm": {
+        "Office": 6381,
+        "Retail": 0,
+        "Industrial/warehouse": 249,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 6630,
+      "constructionYear": "1907",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 267000,
+      "sourcePage": 130,
+      "sourceRow": 9,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0498122,
+      "lat": 59.3315913,
+      "geocode": {
+        "query": "3 Kungsbroplan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "3, Kungsbroplan, Kungsholmen, Kungsholmens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 112 27, Sverige",
+        "osm": "node/410594876",
+        "road": "Kungsbroplan",
+        "houseNumber": "3",
+        "kmFromCentre": 0.86,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-09",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Fenix 1",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 9,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Barnhusgatan 3",
+      "addresses": [
+        {
+          "street": "Barnhusgatan",
+          "number": "3",
+          "numbers": [
+            "3"
+          ],
+          "sourceText": "Barnhusgatan 3",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (93% of lettable area)",
+      "usesSqm": {
+        "Office": 3506,
+        "Retail": 48,
+        "Industrial/warehouse": 199,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 3753,
+      "constructionYear": "1929",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 174000,
+      "sourcePage": 130,
+      "sourceRow": 10,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0578733,
+      "lat": 59.3363838,
+      "geocode": {
+        "query": "3 Barnhusgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "3, Barnhusgatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 23, Sverige",
+        "osm": "node/473577294",
+        "road": "Barnhusgatan",
+        "houseNumber": "3",
+        "kmFromCentre": 0.58,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-10",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Getingen 13",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 10,
+      "area": "Vasastan",
+      "municipality": "Stockholm",
+      "street": "Sveavägen 149",
+      "addresses": [
+        {
+          "street": "Sveavägen",
+          "number": "149",
+          "numbers": [
+            "149"
+          ],
+          "sourceText": "Sveavägen 149",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (64% of lettable area)",
+      "usesSqm": {
+        "Office": 11107,
+        "Retail": 839,
+        "Industrial/warehouse": 2873,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 2415
+      },
+      "totalLettableSqmSource": 17234,
+      "constructionYear": "1963",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 465000,
+      "sourcePage": 130,
+      "sourceRow": 11,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0476908,
+      "lat": 59.3499154,
+      "geocode": {
+        "query": "Sveavägen 151, Stockholm",
+        "method": "override",
+        "precision": "street",
+        "displayName": "151, Sveavägen, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 47, Sverige",
+        "osm": "node/7128026378",
+        "road": "Sveavägen",
+        "houseNumber": "151",
+        "kmFromCentre": 2.16,
+        "note": "Sveavägen 149 is not in OpenStreetMap, and the plain street match lands about 500 m south. No. 151 is the adjoining entrance of the same block (Getingen 13 lies between Getingen 14, Sveavägen 143–147, and Getingen 15, Sveavägen 159). Reported as street level.",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-11",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Getingen 14",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 11,
+      "area": "Vasastan",
+      "municipality": "Stockholm",
+      "street": "Sveavägen 143–147",
+      "addresses": [
+        {
+          "street": "Sveavägen",
+          "number": "143",
+          "numbers": [
+            "143"
+          ],
+          "sourceText": "Sveavägen 143–147",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (65% of lettable area)",
+      "usesSqm": {
+        "Office": 8340,
+        "Retail": 2505,
+        "Industrial/warehouse": 767,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 1123
+      },
+      "totalLettableSqmSource": 12735,
+      "constructionYear": "1953",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 343000,
+      "sourcePage": 130,
+      "sourceRow": 12,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0487861,
+      "lat": 59.3499017,
+      "geocode": {
+        "query": "143 Sveavägen, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "143, Sveavägen, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 47, Sverige",
+        "osm": "node/1436224081",
+        "road": "Sveavägen",
+        "houseNumber": "143",
+        "kmFromCentre": 2.13,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-12",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Getingen 15",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 12,
+      "area": "Vasastan",
+      "municipality": "Stockholm",
+      "street": "Sveavägen 159",
+      "addresses": [
+        {
+          "street": "Sveavägen",
+          "number": "159",
+          "numbers": [
+            "159"
+          ],
+          "sourceText": "Sveavägen 159",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (53% of lettable area)",
+      "usesSqm": {
+        "Office": 13407,
+        "Retail": 2502,
+        "Industrial/warehouse": 4546,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 5001
+      },
+      "totalLettableSqmSource": 25456,
+      "constructionYear": "1963",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 538000,
+      "sourcePage": 130,
+      "sourceRow": 13,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.046248,
+      "lat": 59.3499016,
+      "geocode": {
+        "query": "159 Sveavägen, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "159, Sveavägen, Hagastaden, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 46, Sverige",
+        "osm": "node/2502482215",
+        "road": "Sveavägen",
+        "houseNumber": "159",
+        "kmFromCentre": 2.2,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-13",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Hägern Mindre 7",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 13,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Drottninggatan 27–29",
+      "addresses": [
+        {
+          "street": "Drottninggatan",
+          "number": "27",
+          "numbers": [
+            "27"
+          ],
+          "sourceText": "Drottninggatan 27–29",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (70% of lettable area)",
+      "usesSqm": {
+        "Office": 9639,
+        "Retail": 1319,
+        "Industrial/warehouse": 593,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 2228
+      },
+      "totalLettableSqmSource": 13779,
+      "constructionYear": "1971",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 659000,
+      "sourcePage": 130,
+      "sourceRow": 14,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0643327,
+      "lat": 59.3308334,
+      "geocode": {
+        "query": "27 Drottninggatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "27, Drottninggatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 51, Sverige",
+        "osm": "node/1392751632",
+        "road": "Drottninggatan",
+        "houseNumber": "27",
+        "kmFromCentre": 0.2,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-14",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Islandet 3",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 14,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Holländargatan 11–13",
+      "addresses": [
+        {
+          "street": "Holländargatan",
+          "number": "11",
+          "numbers": [
+            "11"
+          ],
+          "sourceText": "Holländargatan 11–13",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (97% of lettable area)",
+      "usesSqm": {
+        "Office": 9829,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 255
+      },
+      "totalLettableSqmSource": 10084,
+      "constructionYear": "1904",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 301742,
+      "sourcePage": 130,
+      "sourceRow": 15,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0604688,
+      "lat": 59.3366118,
+      "geocode": {
+        "query": "11 Holländargatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "11, Holländargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 36, Sverige",
+        "osm": "node/1403941653",
+        "road": "Holländargatan",
+        "houseNumber": "11",
+        "kmFromCentre": 0.51,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-15",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Läraren 13",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 15,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Torsgatan 4",
+      "addresses": [
+        {
+          "street": "Torsgatan",
+          "number": "4",
+          "numbers": [
+            "4"
+          ],
+          "sourceText": "Torsgatan 4",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (100% of lettable area)",
+      "usesSqm": {
+        "Office": 6877,
+        "Retail": 0,
+        "Industrial/warehouse": 1,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 6878,
+      "constructionYear": "1904/1929",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 283750,
+      "sourcePage": 130,
+      "sourceRow": 16,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0526836,
+      "lat": 59.3354334,
+      "geocode": {
+        "query": "4 Torsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "4, Torsgatan, Sabbatsberg, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 61, Sverige",
+        "osm": "node/708031852",
+        "road": "Torsgatan",
+        "houseNumber": "4",
+        "kmFromCentre": 0.76,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-16",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Mimer 5",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 16,
+      "area": "Vasastan",
+      "municipality": "Stockholm",
+      "street": "Hagagatan 25 A–C, Vanadisvägen 9",
+      "addresses": [
+        {
+          "street": "Hagagatan",
+          "number": "25A",
+          "numbers": [
+            "25A"
+          ],
+          "sourceText": "Hagagatan 25 A–C",
+          "abbreviated": false
+        },
+        {
+          "street": "Vanadisvägen",
+          "number": "9",
+          "numbers": [
+            "9"
+          ],
+          "sourceText": "Vanadisvägen 9",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (97% of lettable area)",
+      "usesSqm": {
+        "Office": 11749,
+        "Retail": 0,
+        "Industrial/warehouse": 307,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 5
+      },
+      "totalLettableSqmSource": 12061,
+      "constructionYear": "1957",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": null,
+      "sourcePage": 130,
+      "sourceRow": 17,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0504322,
+      "lat": 59.3467182,
+      "geocode": {
+        "query": "25A Hagagatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "25A, Hagagatan, Sibirien, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 46, Sverige",
+        "osm": "node/7036830869",
+        "road": "Hagagatan",
+        "houseNumber": "25A",
+        "kmFromCentre": 1.77,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-17",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Norrtälje 24",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 17,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Engelbrektsgatan 5–7",
+      "addresses": [
+        {
+          "street": "Engelbrektsgatan",
+          "number": "5",
+          "numbers": [
+            "5"
+          ],
+          "sourceText": "Engelbrektsgatan 5–7",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (89% of lettable area)",
+      "usesSqm": {
+        "Office": 6351,
+        "Retail": 0,
+        "Industrial/warehouse": 227,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 561
+      },
+      "totalLettableSqmSource": 7139,
+      "constructionYear": "1881",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 486000,
+      "sourcePage": 130,
+      "sourceRow": 18,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0697455,
+      "lat": 59.3387196,
+      "geocode": {
+        "query": "5 Engelbrektsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "5, Engelbrektsgatan, Eriksberg, Östermalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 58, Sverige",
+        "osm": "node/1525463110",
+        "road": "Engelbrektsgatan",
+        "houseNumber": "5",
+        "kmFromCentre": 0.73,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-18",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Ormträsket 10",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 18,
+      "area": "Vasastan",
+      "municipality": "Stockholm",
+      "street": "Sveavägen 166–170, 186",
+      "addresses": [
+        {
+          "street": "Sveavägen",
+          "number": "166",
+          "numbers": [
+            "166",
+            "186"
+          ],
+          "sourceText": "Sveavägen 166–170",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (77% of lettable area)",
+      "usesSqm": {
+        "Office": 15351,
+        "Retail": 1837,
+        "Industrial/warehouse": 763,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 2071
+      },
+      "totalLettableSqmSource": 20022,
+      "constructionYear": "1962/1967",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 428860,
+      "sourcePage": 130,
+      "sourceRow": 19,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0487328,
+      "lat": 59.3510452,
+      "geocode": {
+        "query": "166 Sveavägen, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "Wenner-Gren Center, 166, Sveavägen, Hagastaden, Vasastaden, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 113 47, Sverige",
+        "osm": "way/23511958",
+        "road": "Sveavägen",
+        "houseNumber": "166",
+        "kmFromCentre": 2.25,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-19",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Oxen Mindre 33",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 19,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Luntmakarg 18",
+      "addresses": [
+        {
+          "street": "Luntmakargatan",
+          "number": "18",
+          "numbers": [
+            "18"
+          ],
+          "sourceText": "Luntmakarg 18",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (65% of lettable area)",
+      "usesSqm": {
+        "Office": 6694,
+        "Retail": 0,
+        "Industrial/warehouse": 338,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 3314
+      },
+      "totalLettableSqmSource": 10346,
+      "constructionYear": "1979",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 390000,
+      "sourcePage": 130,
+      "sourceRow": 20,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0637574,
+      "lat": 59.3373836,
+      "geocode": {
+        "query": "18 Luntmakargatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "18, Luntmakargatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 38, Sverige",
+        "osm": "node/1433722488",
+        "road": "Luntmakargatan",
+        "houseNumber": "18",
+        "kmFromCentre": 0.54,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-20",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Oxen Mindre 38",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 20,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Malmskillnadsg 47 A, B",
+      "addresses": [
+        {
+          "street": "Malmskillnadsgatan",
+          "number": "47A",
+          "numbers": [
+            "47A"
+          ],
+          "sourceText": "Malmskillnadsg 47 A",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Residential (96% of lettable area)",
+      "usesSqm": {
+        "Office": 122,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 2900,
+        "Hotel": 0,
+        "Parking/other": 3
+      },
+      "totalLettableSqmSource": 3025,
+      "constructionYear": "1979",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 169868,
+      "sourcePage": 130,
+      "sourceRow": 21,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0646035,
+      "lat": 59.3374378,
+      "geocode": {
+        "query": "47 Malmskillnadsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "47, Malmskillnadsgatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 38, Sverige",
+        "osm": "node/1358036272",
+        "road": "Malmskillnadsgatan",
+        "houseNumber": "47",
+        "kmFromCentre": 0.54,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-21",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Paradiset 23",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 21,
+      "area": "Stadshagen",
+      "municipality": "Stockholm",
+      "street": "Strandbergsg 53–57",
+      "addresses": [
+        {
+          "street": "Strandbergsgatan",
+          "number": "53",
+          "numbers": [
+            "53"
+          ],
+          "sourceText": "Strandbergsg 53–57",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (83% of lettable area)",
+      "usesSqm": {
+        "Office": 7038,
+        "Retail": 89,
+        "Industrial/warehouse": 188,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 1202
+      },
+      "totalLettableSqmSource": 8517,
+      "constructionYear": "1944",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 290000,
+      "sourcePage": 130,
+      "sourceRow": 22,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.010596,
+      "lat": 59.3383699,
+      "geocode": {
+        "query": "53 Strandbergsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "53, Strandbergsgatan, Hornsberg, Stadshagen, Kungsholmens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 112 51, Sverige",
+        "osm": "node/730950965",
+        "road": "Strandbergsgatan",
+        "houseNumber": "53",
+        "kmFromCentre": 3.15,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-22",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Paradiset 27",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 22,
+      "area": "Stadshagen",
+      "municipality": "Stockholm",
+      "street": "Strandbergsg 59–65",
+      "addresses": [
+        {
+          "street": "Strandbergsgatan",
+          "number": "59",
+          "numbers": [
+            "59"
+          ],
+          "sourceText": "Strandbergsg 59–65",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (73% of lettable area)",
+      "usesSqm": {
+        "Office": 19330,
+        "Retail": 3093,
+        "Industrial/warehouse": 1908,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 2229
+      },
+      "totalLettableSqmSource": 26560,
+      "constructionYear": "1959",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 506658,
+      "sourcePage": 130,
+      "sourceRow": 23,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0106774,
+      "lat": 59.3391038,
+      "geocode": {
+        "query": "59 Strandbergsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "59, Strandbergsgatan, Hornsberg, Stadshagen, Kungsholmens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 112 51, Sverige",
+        "osm": "node/730950916",
+        "road": "Strandbergsgatan",
+        "houseNumber": "59",
+        "kmFromCentre": 3.16,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-23",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Paradiset 31",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 23,
+      "area": "Stadshagen",
+      "municipality": "Stockholm",
+      "street": "Strandbergsg 53–57",
+      "addresses": [
+        {
+          "street": "Strandbergsgatan",
+          "number": "53",
+          "numbers": [
+            "53"
+          ],
+          "sourceText": "Strandbergsg 53–57",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1944",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 130,
+      "sourceRow": 24,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.010596,
+      "lat": 59.3383699,
+      "geocode": {
+        "query": "53 Strandbergsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "53, Strandbergsgatan, Hornsberg, Stadshagen, Kungsholmens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 112 51, Sverige",
+        "osm": "node/730950965",
+        "road": "Strandbergsgatan",
+        "houseNumber": "53",
+        "kmFromCentre": 3.15,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-24",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Pilen 27",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 24,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Bryggarg 12A",
+      "addresses": [
+        {
+          "street": "Bryggargatan",
+          "number": "12A",
+          "numbers": [
+            "12A"
+          ],
+          "sourceText": "Bryggarg 12A",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (91% of lettable area)",
+      "usesSqm": {
+        "Office": 1865,
+        "Retail": 0,
+        "Industrial/warehouse": 192,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 2057,
+      "constructionYear": "1907",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 145000,
+      "sourcePage": 130,
+      "sourceRow": 25,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0588873,
+      "lat": 59.3329197,
+      "geocode": {
+        "query": "12A Bryggargatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "12A, Bryggargatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 20, Sverige",
+        "osm": "node/9174595838",
+        "road": "Bryggargatan",
+        "houseNumber": "12A",
+        "kmFromCentre": 0.34,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-25",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Pilen 31",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 25,
+      "area": "Norrmalm",
+      "municipality": "Stockholm",
+      "street": "Gamla Brog 27–29, Vasag 38",
+      "addresses": [
+        {
+          "street": "Gamla Brogatan",
+          "number": "27",
+          "numbers": [
+            "27"
+          ],
+          "sourceText": "Gamla Brog 27–29",
+          "abbreviated": true
+        },
+        {
+          "street": "Vasagatan",
+          "number": "38",
+          "numbers": [
+            "38"
+          ],
+          "sourceText": "Vasag 38",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Mixed use (largest: Office, 48%)",
+      "usesSqm": {
+        "Office": 4608,
+        "Retail": 616,
+        "Industrial/warehouse": 218,
+        "Residential": 0,
+        "Hotel": 3542,
+        "Parking/other": 571
+      },
+      "totalLettableSqmSource": 9555,
+      "constructionYear": "1988",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 708000,
+      "sourcePage": 130,
+      "sourceRow": 26,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0580937,
+      "lat": 59.3334373,
+      "geocode": {
+        "query": "27 Gamla Brogatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "27, Gamla Brogatan, Klara, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 22, Sverige",
+        "osm": "node/1401399441",
+        "road": "Gamla Brogatan",
+        "houseNumber": "27",
+        "kmFromCentre": 0.4,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SIC-26",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Sparven 18",
+      "region": "Stockholm inner city",
+      "subArea": "Stockholm inner city",
+      "listingNo": 26,
+      "area": "Östermalm",
+      "municipality": "Stockholm",
+      "street": "Birger Jarlsg 21–23, Kungsg 2",
+      "addresses": [
+        {
+          "street": "Birger Jarlsgatan",
+          "number": "21",
+          "numbers": [
+            "21"
+          ],
+          "sourceText": "Birger Jarlsg 21–23",
+          "abbreviated": true
+        },
+        {
+          "street": "Kungsgatan",
+          "number": "2",
+          "numbers": [
+            "2"
+          ],
+          "sourceText": "Kungsg 2",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Hotel (70% of lettable area)",
+      "usesSqm": {
+        "Office": 1626,
+        "Retail": 948,
+        "Industrial/warehouse": 49,
+        "Residential": 0,
+        "Hotel": 6026,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 8649,
+      "constructionYear": "1929",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 599000,
+      "sourcePage": 130,
+      "sourceRow": 27,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0714932,
+      "lat": 59.3364816,
+      "geocode": {
+        "query": "21 Birger Jarlsgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "21, Birger Jarlsgatan, Norrmalm, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 42, Sverige",
+        "osm": "node/1382112668",
+        "road": "Birger Jarlsgatan",
+        "houseNumber": "21",
+        "kmFromCentre": 0.57,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-01",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Farao 14",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 1,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Dalvägen 10, Pyramidvägen 7, 9",
+      "addresses": [
+        {
+          "street": "Dalvägen",
+          "number": "10",
+          "numbers": [
+            "10"
+          ],
+          "sourceText": "Dalvägen 10",
+          "abbreviated": false
+        },
+        {
+          "street": "Pyramidvägen",
+          "number": "7",
+          "numbers": [
+            "7",
+            "9"
+          ],
+          "sourceText": "Pyramidvägen 7",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1967",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 66996,
+      "sourcePage": 132,
+      "sourceRow": 28,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.006181,
+      "lat": 59.3677456,
+      "geocode": {
+        "query": "7 Pyramidvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "7, Pyramidvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+        "osm": "node/6586413721",
+        "road": "Pyramidvägen",
+        "houseNumber": "7",
+        "kmFromCentre": 5.13,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-02",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Farao 15",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 2,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Dalvägen 8, Pyramidvägen 5",
+      "addresses": [
+        {
+          "street": "Dalvägen",
+          "number": "8",
+          "numbers": [
+            "8"
+          ],
+          "sourceText": "Dalvägen 8",
+          "abbreviated": false
+        },
+        {
+          "street": "Pyramidvägen",
+          "number": "5",
+          "numbers": [
+            "5"
+          ],
+          "sourceText": "Pyramidvägen 5",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1981",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 74600,
+      "sourcePage": 132,
+      "sourceRow": 29,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0054544,
+      "lat": 59.3672435,
+      "geocode": {
+        "query": "8 Dalvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "8, Dalvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 59, Sverige",
+        "osm": "node/1539235854",
+        "road": "Dalvägen",
+        "houseNumber": "8",
+        "kmFromCentre": 5.12,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-03",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Farao 16",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 3,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Dalvägen 4–6, Pyramidvägen 3",
+      "addresses": [
+        {
+          "street": "Dalvägen",
+          "number": "4",
+          "numbers": [
+            "4"
+          ],
+          "sourceText": "Dalvägen 4–6",
+          "abbreviated": false
+        },
+        {
+          "street": "Pyramidvägen",
+          "number": "3",
+          "numbers": [
+            "3"
+          ],
+          "sourceText": "Pyramidvägen 3",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1973",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 47201,
+      "sourcePage": 132,
+      "sourceRow": 30,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.006906,
+      "lat": 59.3665083,
+      "geocode": {
+        "query": "4 Dalvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "4, Dalvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 59, Sverige",
+        "osm": "node/1539235868",
+        "road": "Dalvägen",
+        "houseNumber": "4",
+        "kmFromCentre": 5,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-04",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Farao 19",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 4,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Magasinsvägen",
+      "addresses": [
+        {
+          "street": "Magasinsvägen",
+          "number": null,
+          "numbers": [],
+          "sourceText": "Magasinsvägen",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 132,
+      "sourceRow": 31,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0032656,
+      "lat": 59.3685143,
+      "geocode": {
+        "query": "Magasinsvägen, Solna",
+        "method": "street",
+        "precision": "street",
+        "displayName": "Magasinsvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+        "osm": "way/140494184",
+        "road": "Magasinsvägen",
+        "houseNumber": null,
+        "kmFromCentre": 5.31,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-05",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Farao 20",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 5,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Pyramidvägen 7",
+      "addresses": [
+        {
+          "street": "Pyramidvägen",
+          "number": "7",
+          "numbers": [
+            "7"
+          ],
+          "sourceText": "Pyramidvägen 7",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (94% of lettable area)",
+      "usesSqm": {
+        "Office": 7352,
+        "Retail": 0,
+        "Industrial/warehouse": 127,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 375
+      },
+      "totalLettableSqmSource": 7854,
+      "constructionYear": "1964",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 248000,
+      "sourcePage": 132,
+      "sourceRow": 32,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.006181,
+      "lat": 59.3677456,
+      "geocode": {
+        "query": "7 Pyramidvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "7, Pyramidvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+        "osm": "node/6586413721",
+        "road": "Pyramidvägen",
+        "houseNumber": "7",
+        "kmFromCentre": 5.13,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-06",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Farao 8",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 6,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Dalvägen 12, Pyramidvägen 11",
+      "addresses": [
+        {
+          "street": "Dalvägen",
+          "number": "12",
+          "numbers": [
+            "12"
+          ],
+          "sourceText": "Dalvägen 12",
+          "abbreviated": false
+        },
+        {
+          "street": "Pyramidvägen",
+          "number": "11",
+          "numbers": [
+            "11"
+          ],
+          "sourceText": "Pyramidvägen 11",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (94% of lettable area)",
+      "usesSqm": {
+        "Office": 5839,
+        "Retail": 0,
+        "Industrial/warehouse": 325,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 22
+      },
+      "totalLettableSqmSource": 6186,
+      "constructionYear": "2001",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 157000,
+      "sourcePage": 132,
+      "sourceRow": 33,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0035264,
+      "lat": 59.3683177,
+      "geocode": {
+        "query": "12 Dalvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "12, Dalvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+        "osm": "node/1539235850",
+        "road": "Dalvägen",
+        "houseNumber": "12",
+        "kmFromCentre": 5.28,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-07",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Järva 3:7",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 7,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Evenemangsgatan",
+      "addresses": [
+        {
+          "street": "Evenemangsgatan",
+          "number": null,
+          "numbers": [],
+          "sourceText": "Evenemangsgatan",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 481,
+      "sourcePage": 132,
+      "sourceRow": 34,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9983972,
+      "lat": 59.3713929,
+      "geocode": {
+        "query": "Evenemangsgatan, Solna",
+        "method": "street",
+        "precision": "street",
+        "displayName": "Evenemangsgatan, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+        "osm": "way/270327152",
+        "road": "Evenemangsgatan",
+        "houseNumber": null,
+        "kmFromCentre": 5.73,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-08",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Kairo 1",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 8,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Pyramidvägen 2",
+      "addresses": [
+        {
+          "street": "Pyramidvägen",
+          "number": "2",
+          "numbers": [
+            "2"
+          ],
+          "sourceText": "Pyramidvägen 2",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1983",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 74000,
+      "sourcePage": 132,
+      "sourceRow": 35,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0078834,
+      "lat": 59.3662747,
+      "geocode": {
+        "query": "2 Pyramidvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "2A, Pyramidvägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+        "osm": "node/1539238636",
+        "road": "Pyramidvägen",
+        "houseNumber": "2A",
+        "kmFromCentre": 4.95,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-09",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Nationalarenan 3",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 9,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Evenemangsgatan 48",
+      "addresses": [
+        {
+          "street": "Evenemangsgatan",
+          "number": "48",
+          "numbers": [
+            "48"
+          ],
+          "sourceText": "Evenemangsgatan 48",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Hotel (87% of lettable area)",
+      "usesSqm": {
+        "Office": 2488,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 16677,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 19165,
+      "constructionYear": "2020",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 578000,
+      "sourcePage": 132,
+      "sourceRow": 36,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9976315,
+      "lat": 59.3733316,
+      "geocode": {
+        "query": "48 Evenemangsgatan, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "Comfort Hotel Solna, 48, Evenemangsgatan, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+        "osm": "way/889249573",
+        "road": "Evenemangsgatan",
+        "houseNumber": "48",
+        "kmFromCentre": 5.92,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-10",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Nationalarenan 5",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 10,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Evenemangsgatan 32",
+      "addresses": [
+        {
+          "street": "Evenemangsgatan",
+          "number": "32",
+          "numbers": [
+            "32"
+          ],
+          "sourceText": "Evenemangsgatan 32",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Parking/other (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 25500
+      },
+      "totalLettableSqmSource": 25500,
+      "constructionYear": "2013",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 89000,
+      "sourcePage": 132,
+      "sourceRow": 37,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9981079,
+      "lat": 59.3724583,
+      "geocode": {
+        "query": "32 Evenemangsgatan, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "VIP-Logen, 32, Evenemangsgatan, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+        "osm": "way/260241464",
+        "road": "Evenemangsgatan",
+        "houseNumber": "32",
+        "kmFromCentre": 5.83,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-11",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Nationalarenan 8",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 11,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Stjärntorget 1, Råsta strandväg 15C, Evenemangsgatan 2C",
+      "addresses": [
+        {
+          "street": "Stjärntorget",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Stjärntorget 1",
+          "abbreviated": false
+        },
+        {
+          "street": "Råsta strandväg",
+          "number": "15C",
+          "numbers": [
+            "15C"
+          ],
+          "sourceText": "Råsta strandväg 15C",
+          "abbreviated": false
+        },
+        {
+          "street": "Evenemangsgatan",
+          "number": "2C",
+          "numbers": [
+            "2C"
+          ],
+          "sourceText": "Evenemangsgatan 2C",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (99% of lettable area)",
+      "usesSqm": {
+        "Office": 41556,
+        "Retail": 0,
+        "Industrial/warehouse": 391,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 41947,
+      "constructionYear": "2018",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 1299000,
+      "sourcePage": 132,
+      "sourceRow": 38,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0061351,
+      "lat": 59.3691409,
+      "geocode": {
+        "query": "1 Stjärntorget, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "Telia Company, 1, Stjärntorget, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+        "osm": "node/4890645131",
+        "road": "Stjärntorget",
+        "houseNumber": "1",
+        "kmFromCentre": 5.25,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-12",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Poolen 1",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 12,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Kolonnvägen 24",
+      "addresses": [
+        {
+          "street": "Kolonnvägen",
+          "number": "24",
+          "numbers": [
+            "24"
+          ],
+          "sourceText": "Kolonnvägen 24",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (96% of lettable area)",
+      "usesSqm": {
+        "Office": 27057,
+        "Retail": 912,
+        "Industrial/warehouse": 122,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 51
+      },
+      "totalLettableSqmSource": 28142,
+      "constructionYear": "2022",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 664000,
+      "sourcePage": 132,
+      "sourceRow": 39,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0084451,
+      "lat": 59.3719848,
+      "geocode": {
+        "query": "22 Kolonnvägen, Solna",
+        "method": "override",
+        "precision": "street",
+        "displayName": "22D, Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 71, Sverige",
+        "osm": "node/6937731670",
+        "road": "Kolonnvägen",
+        "houseNumber": "22D",
+        "kmFromCentre": 5.42,
+        "note": "Kolonnvägen runs about 2 km from Hagalund to Ulriksdal and No. 24 is not in OpenStreetMap; the plain street match lands in Norra Ritorp, about 500 m north of Arenastaden. Poolen 1 (Kolonnvägen 24) adjoins Signalen 3 (Kolonnvägen 22), which is located at building level. Reported as street level.",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-13",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Pyramiden 4",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 13,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Stjärntorget 3–5, Pyramidvägen 4–22, Magasinsvägen 6–12, Råsta strandväg 5–9",
+      "addresses": [
+        {
+          "street": "Stjärntorget",
+          "number": "3",
+          "numbers": [
+            "3"
+          ],
+          "sourceText": "Stjärntorget 3–5",
+          "abbreviated": false
+        },
+        {
+          "street": "Pyramidvägen",
+          "number": "4",
+          "numbers": [
+            "4"
+          ],
+          "sourceText": "Pyramidvägen 4–22",
+          "abbreviated": false
+        },
+        {
+          "street": "Magasinsvägen",
+          "number": "6",
+          "numbers": [
+            "6"
+          ],
+          "sourceText": "Magasinsvägen 6–12",
+          "abbreviated": false
+        },
+        {
+          "street": "Råsta strandväg",
+          "number": "5",
+          "numbers": [
+            "5"
+          ],
+          "sourceText": "Råsta strandväg 5–9",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (100% of lettable area)",
+      "usesSqm": {
+        "Office": 72234,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 72234,
+      "constructionYear": "2018",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 2173000,
+      "sourcePage": 132,
+      "sourceRow": 40,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0064608,
+      "lat": 59.3687361,
+      "geocode": {
+        "query": "3 Stjärntorget, Solna",
+        "method": "address",
+        "precision": "street",
+        "displayName": "Stjärntorget, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 79, Sverige",
+        "osm": "way/356760851",
+        "road": "Stjärntorget",
+        "houseNumber": null,
+        "kmFromCentre": 5.21,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-14",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Semaforen 1",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 14,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Gustav III:s boulevard",
+      "addresses": [
+        {
+          "street": "Gustav III:s boulevard",
+          "number": null,
+          "numbers": [],
+          "sourceText": "Gustav III:s boulevard",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Parking/other (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 159
+      },
+      "totalLettableSqmSource": 159,
+      "constructionYear": "2023",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 75224,
+      "sourcePage": 132,
+      "sourceRow": 41,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0128508,
+      "lat": 59.3751731,
+      "geocode": {
+        "query": "Gustav III:s boulevard, Solna",
+        "method": "street",
+        "precision": "street",
+        "displayName": "Gustav III:s boulevard, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 74, Sverige",
+        "osm": "way/37886094",
+        "road": "Gustav III:s boulevard",
+        "houseNumber": null,
+        "kmFromCentre": 5.58,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-15",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Signalen 3",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 15,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Kolonnvägen 22",
+      "addresses": [
+        {
+          "street": "Kolonnvägen",
+          "number": "22",
+          "numbers": [
+            "22"
+          ],
+          "sourceText": "Kolonnvägen 22",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (99% of lettable area)",
+      "usesSqm": {
+        "Office": 30664,
+        "Retail": 0,
+        "Industrial/warehouse": 376,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 31040,
+      "constructionYear": "2019",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 688000,
+      "sourcePage": 132,
+      "sourceRow": 42,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0084451,
+      "lat": 59.3719848,
+      "geocode": {
+        "query": "22 Kolonnvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "22D, Kolonnvägen, Ritorp, Järva, Solna, Solna kommun, Stockholms län, 169 71, Sverige",
+        "osm": "node/6937731670",
+        "road": "Kolonnvägen",
+        "houseNumber": "22D",
+        "kmFromCentre": 5.42,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-16",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Stigbygeln 2",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 16,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Gårdsvägen 6",
+      "addresses": [
+        {
+          "street": "Gårdsvägen",
+          "number": "6",
+          "numbers": [
+            "6"
+          ],
+          "sourceText": "Gårdsvägen 6",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (95% of lettable area)",
+      "usesSqm": {
+        "Office": 7997,
+        "Retail": 95,
+        "Industrial/warehouse": 326,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 8418,
+      "constructionYear": "1955",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 177000,
+      "sourcePage": 132,
+      "sourceRow": 43,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0122667,
+      "lat": 59.3664599,
+      "geocode": {
+        "query": "6 Gårdsvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "Eniro, 6, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 70, Sverige",
+        "osm": "node/10596404804",
+        "road": "Gårdsvägen",
+        "houseNumber": "6",
+        "kmFromCentre": 4.8,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-17",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Stigbygeln 3",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 17,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Gårdsvägen 8",
+      "addresses": [
+        {
+          "street": "Gårdsvägen",
+          "number": "8",
+          "numbers": [
+            "8"
+          ],
+          "sourceText": "Gårdsvägen 8",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (85% of lettable area)",
+      "usesSqm": {
+        "Office": 5047,
+        "Retail": 262,
+        "Industrial/warehouse": 595,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 5904,
+      "constructionYear": "1960",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 79000,
+      "sourcePage": 132,
+      "sourceRow": 44,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0117309,
+      "lat": 59.3667912,
+      "geocode": {
+        "query": "8 Gårdsvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "8, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+        "osm": "node/6609253878",
+        "road": "Gårdsvägen",
+        "houseNumber": "8",
+        "kmFromCentre": 4.85,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-18",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Stigbygeln 5",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 18,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Gårdsvägen 10 A, B",
+      "addresses": [
+        {
+          "street": "Gårdsvägen",
+          "number": "10A",
+          "numbers": [
+            "10A"
+          ],
+          "sourceText": "Gårdsvägen 10 A",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (92% of lettable area)",
+      "usesSqm": {
+        "Office": 6795,
+        "Retail": 0,
+        "Industrial/warehouse": 50,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 570
+      },
+      "totalLettableSqmSource": 7415,
+      "constructionYear": "1963",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 41153,
+      "sourcePage": 132,
+      "sourceRow": 45,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0114353,
+      "lat": 59.3670193,
+      "geocode": {
+        "query": "10A Gårdsvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "10a, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 70, Sverige",
+        "osm": "node/9611255876",
+        "road": "Gårdsvägen",
+        "houseNumber": "10a",
+        "kmFromCentre": 4.88,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-19",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Stigbygeln 6",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 19,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Gårdsvägen 12–18",
+      "addresses": [
+        {
+          "street": "Gårdsvägen",
+          "number": "12",
+          "numbers": [
+            "12"
+          ],
+          "sourceText": "Gårdsvägen 12–18",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (90% of lettable area)",
+      "usesSqm": {
+        "Office": 9005,
+        "Retail": 581,
+        "Industrial/warehouse": 380,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 9966,
+      "constructionYear": "2001",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 276000,
+      "sourcePage": 132,
+      "sourceRow": 46,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0109254,
+      "lat": 59.3672158,
+      "geocode": {
+        "query": "12 Gårdsvägen, Solna",
+        "method": "address",
+        "precision": "street",
+        "displayName": "Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+        "osm": "way/23513241",
+        "road": "Gårdsvägen",
+        "houseNumber": null,
+        "kmFromCentre": 4.92,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-20",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Tygeln 3",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 20,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Gårdsvägen 13–21",
+      "addresses": [
+        {
+          "street": "Gårdsvägen",
+          "number": "13",
+          "numbers": [
+            "13"
+          ],
+          "sourceText": "Gårdsvägen 13–21",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Parking/other (68% of lettable area)",
+      "usesSqm": {
+        "Office": 2437,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 5290
+      },
+      "totalLettableSqmSource": 7727,
+      "constructionYear": "2001",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 130830,
+      "sourcePage": 132,
+      "sourceRow": 47,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0097679,
+      "lat": 59.3676536,
+      "geocode": {
+        "query": "13 Gårdsvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "13, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 03, Sverige",
+        "osm": "node/6939038697",
+        "road": "Gårdsvägen",
+        "houseNumber": "13",
+        "kmFromCentre": 5,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-21",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Tömmen 1",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 21,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Gårdsvägen 2–4",
+      "addresses": [
+        {
+          "street": "Gårdsvägen",
+          "number": "2",
+          "numbers": [
+            "2"
+          ],
+          "sourceText": "Gårdsvägen 2–4",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Mixed use (largest: Office, 44%)",
+      "usesSqm": {
+        "Office": 3083,
+        "Retail": 0,
+        "Industrial/warehouse": 1335,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 2511
+      },
+      "totalLettableSqmSource": 6929,
+      "constructionYear": "1952",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 25334,
+      "sourcePage": 132,
+      "sourceRow": 48,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0133247,
+      "lat": 59.365872,
+      "geocode": {
+        "query": "2 Gårdsvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "4-2, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+        "osm": "way/23513160",
+        "road": "Gårdsvägen",
+        "houseNumber": "4-2",
+        "kmFromCentre": 4.72,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-22",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Tömmen 2",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 22,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Gårdsvägen 2",
+      "addresses": [
+        {
+          "street": "Gårdsvägen",
+          "number": "2",
+          "numbers": [
+            "2"
+          ],
+          "sourceText": "Gårdsvägen 2",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Parking/other (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 2610
+      },
+      "totalLettableSqmSource": 2610,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 132,
+      "sourceRow": 49,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0133247,
+      "lat": 59.365872,
+      "geocode": {
+        "query": "2 Gårdsvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "4-2, Gårdsvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 68, Sverige",
+        "osm": "way/23513160",
+        "road": "Gårdsvägen",
+        "houseNumber": "4-2",
+        "kmFromCentre": 4.72,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-23",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Uarda 1",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 23,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Dalvägen 30, Evenemangsgatan 27–31, Vintervägen 33",
+      "addresses": [
+        {
+          "street": "Dalvägen",
+          "number": "30",
+          "numbers": [
+            "30"
+          ],
+          "sourceText": "Dalvägen 30",
+          "abbreviated": false
+        },
+        {
+          "street": "Evenemangsgatan",
+          "number": "27",
+          "numbers": [
+            "27"
+          ],
+          "sourceText": "Evenemangsgatan 27–31",
+          "abbreviated": false
+        },
+        {
+          "street": "Vintervägen",
+          "number": "33",
+          "numbers": [
+            "33"
+          ],
+          "sourceText": "Vintervägen 33",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (94% of lettable area)",
+      "usesSqm": {
+        "Office": 22878,
+        "Retail": 1051,
+        "Industrial/warehouse": 480,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 30
+      },
+      "totalLettableSqmSource": 24439,
+      "constructionYear": "1987",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 686000,
+      "sourcePage": 132,
+      "sourceRow": 50,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.998951,
+      "lat": 59.3701678,
+      "geocode": {
+        "query": "30 Dalvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "30, Dalvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+        "osm": "node/3574700899",
+        "road": "Dalvägen",
+        "houseNumber": "30",
+        "kmFromCentre": 5.61,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-24",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Uarda 4",
+      "region": "Solna",
+      "subArea": "Solna, Arenastaden",
+      "listingNo": 24,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Dalvägen 14–16",
+      "addresses": [
+        {
+          "street": "Dalvägen",
+          "number": "14",
+          "numbers": [
+            "14"
+          ],
+          "sourceText": "Dalvägen 14–16",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (83% of lettable area)",
+      "usesSqm": {
+        "Office": 6539,
+        "Retail": 0,
+        "Industrial/warehouse": 1333,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 7872,
+      "constructionYear": "1992",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 162000,
+      "sourcePage": 132,
+      "sourceRow": 51,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0028513,
+      "lat": 59.3686092,
+      "geocode": {
+        "query": "14 Dalvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "14, Dalvägen, Arenastaden, Råsunda, Solna, Solna kommun, Stockholms län, 169 56, Sverige",
+        "osm": "node/1532769259",
+        "road": "Dalvägen",
+        "houseNumber": "14",
+        "kmFromCentre": 5.33,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-25",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Fräsaren 9",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 25,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Svetsarvägen 22",
+      "addresses": [
+        {
+          "street": "Svetsarvägen",
+          "number": "22",
+          "numbers": [
+            "22"
+          ],
+          "sourceText": "Svetsarvägen 22",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (64% of lettable area)",
+      "usesSqm": {
+        "Office": 6285,
+        "Retail": 0,
+        "Industrial/warehouse": 3501,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 9786,
+      "constructionYear": "1962",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 36878,
+      "sourcePage": 133,
+      "sourceRow": 52,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9815733,
+      "lat": 59.3573825,
+      "geocode": {
+        "query": "22 Svetsarvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "F9, 22, Svetsarvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "way/23748670",
+        "road": "Svetsarvägen",
+        "houseNumber": "22",
+        "kmFromCentre": 5.47,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-26",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Fräsaren 10",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 26,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Svetsarvägen 24",
+      "addresses": [
+        {
+          "street": "Svetsarvägen",
+          "number": "24",
+          "numbers": [
+            "24"
+          ],
+          "sourceText": "Svetsarvägen 24",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (62% of lettable area)",
+      "usesSqm": {
+        "Office": 7245,
+        "Retail": 4241,
+        "Industrial/warehouse": 138,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 9
+      },
+      "totalLettableSqmSource": 11633,
+      "constructionYear": "1964",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 207000,
+      "sourcePage": 133,
+      "sourceRow": 53,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9827223,
+      "lat": 59.3572952,
+      "geocode": {
+        "query": "24 Svetsarvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "24, Svetsarvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "way/23748648",
+        "road": "Svetsarvägen",
+        "houseNumber": "24",
+        "kmFromCentre": 5.41,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-27",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Fräsaren 11",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 27,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Englundavägen 2–4, Svetsarvägen 4–10",
+      "addresses": [
+        {
+          "street": "Englundavägen",
+          "number": "2",
+          "numbers": [
+            "2"
+          ],
+          "sourceText": "Englundavägen 2–4",
+          "abbreviated": false
+        },
+        {
+          "street": "Svetsarvägen",
+          "number": "4",
+          "numbers": [
+            "4"
+          ],
+          "sourceText": "Svetsarvägen 4–10",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (85% of lettable area)",
+      "usesSqm": {
+        "Office": 33171,
+        "Retail": 255,
+        "Industrial/warehouse": 923,
+        "Residential": 0,
+        "Hotel": 1840,
+        "Parking/other": 3014
+      },
+      "totalLettableSqmSource": 39203,
+      "constructionYear": "1962",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 686000,
+      "sourcePage": 133,
+      "sourceRow": 54,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9772994,
+      "lat": 59.3597137,
+      "geocode": {
+        "query": "2 Englundavägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "2, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "node/7700307335",
+        "road": "Englundavägen",
+        "houseNumber": "2",
+        "kmFromCentre": 5.81,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-28",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Fräsaren 12",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 28,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Svetsarvägen 12–18, 20, 20A",
+      "addresses": [
+        {
+          "street": "Svetsarvägen",
+          "number": "12",
+          "numbers": [
+            "12",
+            "20",
+            "20A"
+          ],
+          "sourceText": "Svetsarvägen 12–18",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (51% of lettable area)",
+      "usesSqm": {
+        "Office": 19132,
+        "Retail": 10163,
+        "Industrial/warehouse": 1053,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 6840
+      },
+      "totalLettableSqmSource": 37188,
+      "constructionYear": "1964",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 698000,
+      "sourcePage": 133,
+      "sourceRow": 55,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9793175,
+      "lat": 59.3588461,
+      "geocode": {
+        "query": "12 Svetsarvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "12, Svetsarvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "node/3056260195",
+        "road": "Svetsarvägen",
+        "houseNumber": "12",
+        "kmFromCentre": 5.66,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-29",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Sliparen 1",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 29,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Ekensbergsv 115, Svetsarv 1–3",
+      "addresses": [
+        {
+          "street": "Ekensbergsvägen",
+          "number": "115",
+          "numbers": [
+            "115"
+          ],
+          "sourceText": "Ekensbergsv 115",
+          "abbreviated": true
+        },
+        {
+          "street": "Svetsarvägen",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Svetsarv 1–3",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "No lettable area reported",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1963",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 24000,
+      "sourcePage": 133,
+      "sourceRow": 56,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9784125,
+      "lat": 59.3610875,
+      "geocode": {
+        "query": "115 Ekensbergsvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "115, Ekensbergsvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "node/7700307329",
+        "road": "Ekensbergsvägen",
+        "houseNumber": "115",
+        "kmFromCentre": 5.84,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-30",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Sliparen 2",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 30,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Ekensbergsv 113, Svetsarv 3–5",
+      "addresses": [
+        {
+          "street": "Ekensbergsvägen",
+          "number": "113",
+          "numbers": [
+            "113"
+          ],
+          "sourceText": "Ekensbergsv 113",
+          "abbreviated": true
+        },
+        {
+          "street": "Svetsarvägen",
+          "number": "3",
+          "numbers": [
+            "3"
+          ],
+          "sourceText": "Svetsarv 3–5",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (79% of lettable area)",
+      "usesSqm": {
+        "Office": 17042,
+        "Retail": 345,
+        "Industrial/warehouse": 618,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 3627
+      },
+      "totalLettableSqmSource": 21632,
+      "constructionYear": "1964",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 276268,
+      "sourcePage": 133,
+      "sourceRow": 57,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9794076,
+      "lat": 59.3610219,
+      "geocode": {
+        "query": "113 Ekensbergsvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "113, Ekensbergsvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "node/7700307328",
+        "road": "Ekensbergsvägen",
+        "houseNumber": "113",
+        "kmFromCentre": 5.79,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-31",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Smeden 1",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 31,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Englundav 6–14, Smidesv 5–7, Svetsarv 5–17",
+      "addresses": [
+        {
+          "street": "Englundavägen",
+          "number": "6",
+          "numbers": [
+            "6"
+          ],
+          "sourceText": "Englundav 6–14",
+          "abbreviated": true
+        },
+        {
+          "street": "Smidesvägen",
+          "number": "5",
+          "numbers": [
+            "5"
+          ],
+          "sourceText": "Smidesv 5–7",
+          "abbreviated": true
+        },
+        {
+          "street": "Svetsarvägen",
+          "number": "5",
+          "numbers": [
+            "5"
+          ],
+          "sourceText": "Svetsarv 5–17",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (77% of lettable area)",
+      "usesSqm": {
+        "Office": 34559,
+        "Retail": 3963,
+        "Industrial/warehouse": 1675,
+        "Residential": 467,
+        "Hotel": 0,
+        "Parking/other": 4098
+      },
+      "totalLettableSqmSource": 44762,
+      "constructionYear": "1967",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 675545,
+      "sourcePage": 133,
+      "sourceRow": 58,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9798609,
+      "lat": 59.3598231,
+      "geocode": {
+        "query": "6 Englundavägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "6, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "node/7700307314",
+        "road": "Englundavägen",
+        "houseNumber": "6",
+        "kmFromCentre": 5.69,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-32",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Svetsaren 1",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 32,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Englundavägen 7",
+      "addresses": [
+        {
+          "street": "Englundavägen",
+          "number": "7",
+          "numbers": [
+            "7"
+          ],
+          "sourceText": "Englundavägen 7",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (77% of lettable area)",
+      "usesSqm": {
+        "Office": 12391,
+        "Retail": 742,
+        "Industrial/warehouse": 588,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 2430
+      },
+      "totalLettableSqmSource": 16151,
+      "constructionYear": "1964",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 180000,
+      "sourcePage": 133,
+      "sourceRow": 59,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9807577,
+      "lat": 59.3607929,
+      "geocode": {
+        "query": "7 Englundavägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "7, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "way/24283109",
+        "road": "Englundavägen",
+        "houseNumber": "7",
+        "kmFromCentre": 5.71,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-33",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Svetsaren 3",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 33,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Enlundavägen 9–13",
+      "addresses": [
+        {
+          "street": "Enlundavägen",
+          "number": "9",
+          "numbers": [
+            "9"
+          ],
+          "sourceText": "Enlundavägen 9–13",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (62% of lettable area)",
+      "usesSqm": {
+        "Office": 15203,
+        "Retail": 329,
+        "Industrial/warehouse": 2330,
+        "Residential": 387,
+        "Hotel": 2491,
+        "Parking/other": 3660
+      },
+      "totalLettableSqmSource": 24400,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 316015,
+      "sourcePage": 133,
+      "sourceRow": 60,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9811054,
+      "lat": 59.3603585,
+      "geocode": {
+        "query": "9 Englundavägen, Solna",
+        "method": "override",
+        "precision": "building",
+        "displayName": "9, Englundavägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "node/7700307325",
+        "road": "Englundavägen",
+        "houseNumber": "9",
+        "kmFromCentre": 5.67,
+        "note": "Source spells 'Enlundavägen 9–13'; no such street exists. Svetsaren 3 is in Solna Business Park, where the street is Englundavägen (Svetsaren 1 is Englundavägen 7). Please confirm.",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-34",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Yrket 3",
+      "region": "Solna",
+      "subArea": "Solna Business Park",
+      "listingNo": 34,
+      "area": "Solna Business Park",
+      "municipality": "Solna",
+      "street": "Smidesvägen 2–8",
+      "addresses": [
+        {
+          "street": "Smidesvägen",
+          "number": "2",
+          "numbers": [
+            "2"
+          ],
+          "sourceText": "Smidesvägen 2–8",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Mixed use (largest: Industrial/warehouse, 48%)",
+      "usesSqm": {
+        "Office": 2346,
+        "Retail": 0,
+        "Industrial/warehouse": 3466,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 1470
+      },
+      "totalLettableSqmSource": 7282,
+      "constructionYear": "1982",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 41400,
+      "sourcePage": 133,
+      "sourceRow": 61,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9834121,
+      "lat": 59.3595223,
+      "geocode": {
+        "query": "2 Smidesvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "2, Smidesvägen, Skytteholm, Solna, Solna kommun, Stockholms län, 171 41, Sverige",
+        "osm": "node/7700307308",
+        "road": "Smidesvägen",
+        "houseNumber": "2",
+        "kmFromCentre": 5.5,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-35",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Ackordet 1",
+      "region": "Solna",
+      "subArea": "Solna, Haga Norra",
+      "listingNo": 35,
+      "area": "Haga Norra",
+      "municipality": "Solna",
+      "street": "Mathildatorget 3",
+      "addresses": [
+        {
+          "street": "Mathildatorget",
+          "number": "3",
+          "numbers": [
+            "3"
+          ],
+          "sourceText": "Mathildatorget 3",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (91% of lettable area)",
+      "usesSqm": {
+        "Office": 24904,
+        "Retail": 1056,
+        "Industrial/warehouse": 1085,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 427
+      },
+      "totalLettableSqmSource": 27471,
+      "constructionYear": "2024",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 606000,
+      "sourcePage": 133,
+      "sourceRow": 62,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0185512,
+      "lat": 59.3647279,
+      "geocode": {
+        "query": "3 Mathildatorget, Solna",
+        "method": "address",
+        "precision": "street",
+        "displayName": "Mathildatorget, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+        "osm": "way/1554729509",
+        "road": "Mathildatorget",
+        "houseNumber": null,
+        "kmFromCentre": 4.43,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-36",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Ackordet 2",
+      "region": "Solna",
+      "subArea": "Solna, Haga Norra",
+      "listingNo": 36,
+      "area": "Haga Norra",
+      "municipality": "Solna",
+      "street": null,
+      "addresses": [],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 155960,
+      "sourcePage": 133,
+      "sourceRow": 63,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0185512,
+      "lat": 59.3647279,
+      "geocode": {
+        "query": "Mathildatorget, Solna",
+        "method": "override",
+        "precision": "area",
+        "displayName": "Mathildatorget, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+        "osm": "way/1554729509",
+        "road": "Mathildatorget",
+        "houseNumber": null,
+        "kmFromCentre": 4.43,
+        "note": "No address in the source. Ackordet 2 is in the same quarter (Ackordet) as Ackordet 1, Mathildatorget 3, the central square of Haga Norra; 'Haga Norra' itself only matches a bus stop and a sign in OpenStreetMap. Reported as area level. Please confirm.",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-37",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Kvarten 1",
+      "region": "Solna",
+      "subArea": "Solna, Haga Norra",
+      "listingNo": 37,
+      "area": "Haga Norra",
+      "municipality": "Solna",
+      "street": "Frösundaleden 4",
+      "addresses": [
+        {
+          "street": "Frösundaleden",
+          "number": "4",
+          "numbers": [
+            "4"
+          ],
+          "sourceText": "Frösundaleden 4",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 317704,
+      "sourcePage": 133,
+      "sourceRow": 64,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0174099,
+      "lat": 59.3638628,
+      "geocode": {
+        "query": "Frösundaleden, Hagalund, Solna",
+        "method": "override",
+        "precision": "street",
+        "displayName": "Frösundaleden, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+        "osm": "way/501793437",
+        "road": "Frösundaleden",
+        "houseNumber": null,
+        "kmFromCentre": 4.4,
+        "note": "Frösundaleden 4 is not in OpenStreetMap and the plain street match lands in Skytteholm, about 1.3 km west. The workbook places Kvarten 1 in Haga Norra; the Hagalund section of Frösundaleden borders Haga Norra (district added).",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-38",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Kvinten 1",
+      "region": "Solna",
+      "subArea": "Solna, Haga Norra",
+      "listingNo": 38,
+      "area": "Haga Norra",
+      "municipality": "Solna",
+      "street": "Frösundaleden 4",
+      "addresses": [
+        {
+          "street": "Frösundaleden",
+          "number": "4",
+          "numbers": [
+            "4"
+          ],
+          "sourceText": "Frösundaleden 4",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Industrial/warehouse (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 456,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 456,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 544825,
+      "sourcePage": 133,
+      "sourceRow": 65,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0174099,
+      "lat": 59.3638628,
+      "geocode": {
+        "query": "Frösundaleden, Hagalund, Solna",
+        "method": "override",
+        "precision": "street",
+        "displayName": "Frösundaleden, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+        "osm": "way/501793437",
+        "road": "Frösundaleden",
+        "houseNumber": null,
+        "kmFromCentre": 4.4,
+        "note": "As FAB-SOL-37 (Kvinten 1, Frösundaleden 4, Haga Norra).",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-39",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Kvinten 8",
+      "region": "Solna",
+      "subArea": "Solna, Haga Norra",
+      "listingNo": 39,
+      "area": "Haga Norra",
+      "municipality": "Solna",
+      "street": "Frösundaleden 4",
+      "addresses": [
+        {
+          "street": "Frösundaleden",
+          "number": "4",
+          "numbers": [
+            "4"
+          ],
+          "sourceText": "Frösundaleden 4",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Residential (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 2632,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 2632,
+      "constructionYear": "2025",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 133,
+      "sourceRow": 66,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0174099,
+      "lat": 59.3638628,
+      "geocode": {
+        "query": "Frösundaleden, Hagalund, Solna",
+        "method": "override",
+        "precision": "street",
+        "displayName": "Frösundaleden, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+        "osm": "way/501793437",
+        "road": "Frösundaleden",
+        "houseNumber": null,
+        "kmFromCentre": 4.4,
+        "note": "As FAB-SOL-37 (Kvinten 8, Frösundaleden 4, Haga Norra).",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-40",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Tersen 1",
+      "region": "Solna",
+      "subArea": "Solna, Haga Norra",
+      "listingNo": 40,
+      "area": "Haga Norra",
+      "municipality": "Solna",
+      "street": "Frösundaleden 4",
+      "addresses": [
+        {
+          "street": "Frösundaleden",
+          "number": "4",
+          "numbers": [
+            "4"
+          ],
+          "sourceText": "Frösundaleden 4",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 78504,
+      "sourcePage": 133,
+      "sourceRow": 67,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0174099,
+      "lat": 59.3638628,
+      "geocode": {
+        "query": "Frösundaleden, Hagalund, Solna",
+        "method": "override",
+        "precision": "street",
+        "displayName": "Frösundaleden, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+        "osm": "way/501793437",
+        "road": "Frösundaleden",
+        "houseNumber": null,
+        "kmFromCentre": 4.4,
+        "note": "As FAB-SOL-37 (Tersen 1, Frösundaleden 4, Haga Norra).",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-41",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Hagalund 2:11",
+      "region": "Solna",
+      "subArea": "Solna, Haga Norra",
+      "listingNo": 41,
+      "area": "Haga Norra",
+      "municipality": "Solna",
+      "street": "Kolonnvägen",
+      "addresses": [
+        {
+          "street": "Kolonnvägen",
+          "number": null,
+          "numbers": [],
+          "sourceText": "Kolonnvägen",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (98% of lettable area)",
+      "usesSqm": {
+        "Office": 15017,
+        "Retail": 158,
+        "Industrial/warehouse": 180,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 15355,
+      "constructionYear": "2021",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 309600,
+      "sourcePage": 133,
+      "sourceRow": 68,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0155959,
+      "lat": 59.3649049,
+      "geocode": {
+        "query": "Kolonnvägen, Hagalund, Solna",
+        "method": "override",
+        "precision": "street",
+        "displayName": "Kolonnvägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 75, Sverige",
+        "osm": "way/570476242",
+        "road": "Kolonnvägen",
+        "houseNumber": null,
+        "kmFromCentre": 4.55,
+        "note": "No house number in the source and the workbook places Hagalund 2:11 in Haga Norra; the plain street match lands in Nya Ulriksdal, about 2 km north. The Hagalund section of Kolonnvägen borders Haga Norra (district added). Please confirm.",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-42",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Distansen 4",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 42,
+      "area": "Ulriksdal",
+      "municipality": "Solna",
+      "street": null,
+      "addresses": [],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "2016",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 16900,
+      "sourcePage": 133,
+      "sourceRow": 69,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0009387,
+      "lat": 59.3813784,
+      "geocode": {
+        "query": "43 Kolonnvägen, Solna",
+        "method": "override",
+        "precision": "area",
+        "displayName": "43, Kolonnvägen, Agnesberg, Nya Ulriksdal, Järva, Solna, Solna kommun, Stockholms län, 170 67, Sverige",
+        "osm": "node/6425261945",
+        "road": "Kolonnvägen",
+        "houseNumber": "43",
+        "kmFromCentre": 6.52,
+        "note": "No address in the source. 'Ulriksdal, Solna' resolves to the centre of a large district (incl. the palace park), about 900 m from the Distansen quarter. Distansen 4 is in the same quarter as Distansen 6 (Kolonnvägen 43–55). Reported as area level. Please confirm.",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-43",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Distansen 6",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 43,
+      "area": "Ulriksdal",
+      "municipality": "Solna",
+      "street": "Kolonnvägen 43–55",
+      "addresses": [
+        {
+          "street": "Kolonnvägen",
+          "number": "43",
+          "numbers": [
+            "43"
+          ],
+          "sourceText": "Kolonnvägen 43–55",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (95% of lettable area)",
+      "usesSqm": {
+        "Office": 10189,
+        "Retail": 542,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 10731,
+      "constructionYear": "2016",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 185000,
+      "sourcePage": 133,
+      "sourceRow": 70,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0009387,
+      "lat": 59.3813784,
+      "geocode": {
+        "query": "43 Kolonnvägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "43, Kolonnvägen, Agnesberg, Nya Ulriksdal, Järva, Solna, Solna kommun, Stockholms län, 170 67, Sverige",
+        "osm": "node/6425261945",
+        "road": "Kolonnvägen",
+        "houseNumber": "43",
+        "kmFromCentre": 6.52,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-44",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Distansen 7",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 44,
+      "area": "Ulriksdal",
+      "municipality": "Solna",
+      "street": "Kolonnvägen 57–59",
+      "addresses": [
+        {
+          "street": "Kolonnvägen",
+          "number": "57",
+          "numbers": [
+            "57"
+          ],
+          "sourceText": "Kolonnvägen 57–59",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Parking/other (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 9810
+      },
+      "totalLettableSqmSource": 9810,
+      "constructionYear": "2016",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 42440,
+      "sourcePage": 133,
+      "sourceRow": 71,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0009387,
+      "lat": 59.3813784,
+      "geocode": {
+        "query": "43 Kolonnvägen, Solna",
+        "method": "override",
+        "precision": "street",
+        "displayName": "43, Kolonnvägen, Agnesberg, Nya Ulriksdal, Järva, Solna, Solna kommun, Stockholms län, 170 67, Sverige",
+        "osm": "node/6425261945",
+        "road": "Kolonnvägen",
+        "houseNumber": "43",
+        "kmFromCentre": 6.52,
+        "note": "Kolonnvägen 57–59 is not in OpenStreetMap; the plain street match lands in Norra Ritorp. Distansen 7 is in the same quarter as Distansen 6 (Kolonnvägen 43–55, located at building level in Nya Ulriksdal). Reported as street level.",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-45",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Fortet 2",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 45,
+      "area": "Arenastaden",
+      "municipality": "Solna",
+      "street": "Råsundavägen 1–3, Hagavägen 1",
+      "addresses": [
+        {
+          "street": "Råsundavägen",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Råsundavägen 1–3",
+          "abbreviated": false
+        },
+        {
+          "street": "Hagavägen",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Hagavägen 1",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Hotel (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 7533,
+        "Parking/other": 15
+      },
+      "totalLettableSqmSource": 7548,
+      "constructionYear": "1958",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 80000,
+      "sourcePage": 133,
+      "sourceRow": 72,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0231893,
+      "lat": 59.3630436,
+      "geocode": {
+        "query": "1 Råsundavägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "Hotel Giò, 1, Råsundavägen, Hagalund, Solna, Solna kommun, Stockholms län, 169 67, Sverige",
+        "osm": "node/7873319507",
+        "road": "Råsundavägen",
+        "houseNumber": "1",
+        "kmFromCentre": 4.13,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-46",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Hörnan 1",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 46,
+      "area": "Råsunda",
+      "municipality": "Solna",
+      "street": "Solnavägen 31–35, Garvis Carlssons gata 1–9",
+      "addresses": [
+        {
+          "street": "Solnavägen",
+          "number": "31",
+          "numbers": [
+            "31"
+          ],
+          "sourceText": "Solnavägen 31–35",
+          "abbreviated": false
+        },
+        {
+          "street": "Garvis Carlssons gata",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Garvis Carlssons gata 1–9",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (97% of lettable area)",
+      "usesSqm": {
+        "Office": 15970,
+        "Retail": 458,
+        "Industrial/warehouse": 32,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 16460,
+      "constructionYear": "2018",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 554000,
+      "sourcePage": 133,
+      "sourceRow": 73,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9982993,
+      "lat": 59.3624154,
+      "geocode": {
+        "query": "1 Garvis Carlssons gata, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "1, Garvis Carlssons Gata, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+        "osm": "node/11039964044",
+        "road": "Garvis Carlssons Gata",
+        "houseNumber": "1",
+        "kmFromCentre": 5.02,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-47",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Järvakrogen 3",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 47,
+      "area": "Frösunda",
+      "municipality": "Solna",
+      "street": "Enköpingsvägen 1",
+      "addresses": [
+        {
+          "street": "Enköpingsvägen",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Enköpingsvägen 1",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Hotel (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 7423,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 7423,
+      "constructionYear": "2015",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 236000,
+      "sourcePage": 133,
+      "sourceRow": 74,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.998575,
+      "lat": 59.3771803,
+      "geocode": {
+        "query": "1 Enköpingsvägen, Solna",
+        "method": "address",
+        "precision": "street",
+        "displayName": "Enköpingsvägen, Agnesberg, Bagartorp, Järva, Solna, Solna kommun, Stockholms län, 170 65, Sverige",
+        "osm": "way/231058819",
+        "road": "Enköpingsvägen",
+        "houseNumber": null,
+        "kmFromCentre": 6.22,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-48",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Klacken 2",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 48,
+      "area": "Råsunda",
+      "municipality": "Solna",
+      "street": "Garvis Carlssons gata",
+      "addresses": [
+        {
+          "street": "Garvis Carlssons gata",
+          "number": null,
+          "numbers": [],
+          "sourceText": "Garvis Carlssons gata",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "No lettable area reported",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 13800,
+      "sourcePage": 133,
+      "sourceRow": 75,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9976312,
+      "lat": 59.3622139,
+      "geocode": {
+        "query": "Garvis Carlssons gata, Solna",
+        "method": "street",
+        "precision": "street",
+        "displayName": "Garvis Carlssons Gata, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+        "osm": "way/1109617181",
+        "road": "Garvis Carlssons Gata",
+        "houseNumber": null,
+        "kmFromCentre": 5.04,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-49",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Lagern 2",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 49,
+      "area": "Råsunda",
+      "municipality": "Solna",
+      "street": "Solnavägen 37, Idrottsgatan 7",
+      "addresses": [
+        {
+          "street": "Solnavägen",
+          "number": "37",
+          "numbers": [
+            "37"
+          ],
+          "sourceText": "Solnavägen 37",
+          "abbreviated": false
+        },
+        {
+          "street": "Idrottsgatan",
+          "number": "7",
+          "numbers": [
+            "7"
+          ],
+          "sourceText": "Idrottsgatan 7",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1985",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 133,
+      "sourceRow": 76,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9979523,
+      "lat": 59.3626616,
+      "geocode": {
+        "query": "37 Solnavägen, Solna",
+        "method": "address",
+        "precision": "building",
+        "displayName": "37, Solnavägen, Vasalund, Råsunda, Solna, Solna kommun, Stockholms län, 169 41, Sverige",
+        "osm": "node/11039990327",
+        "road": "Solnavägen",
+        "houseNumber": "37",
+        "kmFromCentre": 5.06,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-SOL-50",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Nöten 4",
+      "region": "Solna",
+      "subArea": "Other parts of Solna",
+      "listingNo": 50,
+      "area": "Solna Strand",
+      "municipality": "Solna",
+      "street": "Solna strandväg 2–60",
+      "addresses": [
+        {
+          "street": "Solna strandväg",
+          "number": "2",
+          "numbers": [
+            "2"
+          ],
+          "sourceText": "Solna strandväg 2–60",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (100% of lettable area)",
+      "usesSqm": {
+        "Office": 66000,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 66000,
+      "constructionYear": "1971",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 950000,
+      "sourcePage": 133,
+      "sourceRow": 77,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9700847,
+      "lat": 59.3534892,
+      "geocode": {
+        "query": "2 Solna strandväg, Solna",
+        "method": "address",
+        "precision": "street",
+        "displayName": "Solna strandväg, Nöten, Västra skogen, Huvudsta, Solna, Solna kommun, Stockholms län, 106 36, Sverige",
+        "osm": "way/164591657",
+        "road": "Solna strandväg",
+        "houseNumber": null,
+        "kmFromCentre": 5.86,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-01",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Fartygstrafiken 2",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 1,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Hammarby Allé 93",
+      "addresses": [
+        {
+          "street": "Hammarby Allé",
+          "number": "93",
+          "numbers": [
+            "93"
+          ],
+          "sourceText": "Hammarby Allé 93",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (77% of lettable area)",
+      "usesSqm": {
+        "Office": 6696,
+        "Retail": 1840,
+        "Industrial/warehouse": 165,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 9
+      },
+      "totalLettableSqmSource": 8710,
+      "constructionYear": "1955",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 180000,
+      "sourcePage": 134,
+      "sourceRow": 78,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0939103,
+      "lat": 59.3043103,
+      "geocode": {
+        "query": "93 Hammarby Allé, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "93, Hammarby Allé, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 62, Sverige",
+        "osm": "node/2516720336",
+        "road": "Hammarby Allé",
+        "houseNumber": "93",
+        "kmFromCentre": 3.55,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-02",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Båtturen 2",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 2,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Hammarby Kaj 12, Hammarby Kaj 14–18",
+      "addresses": [
+        {
+          "street": "Hammarby Kaj",
+          "number": "12",
+          "numbers": [
+            "12",
+            "14"
+          ],
+          "sourceText": "Hammarby Kaj 12",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (89% of lettable area)",
+      "usesSqm": {
+        "Office": 16109,
+        "Retail": 276,
+        "Industrial/warehouse": 492,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 1230
+      },
+      "totalLettableSqmSource": 18107,
+      "constructionYear": "1937",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 622000,
+      "sourcePage": 134,
+      "sourceRow": 79,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.086662,
+      "lat": 59.304265,
+      "geocode": {
+        "query": "14 Hammarby Kaj, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "14, Hammarby Kaj, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 62, Sverige",
+        "osm": "node/2516720250",
+        "road": "Hammarby Kaj",
+        "houseNumber": "14",
+        "kmFromCentre": 3.38,
+        "note": null,
+        "rejected": [
+          "12 Hammarby Kaj, Stockholm -> 12, Hammarby Kajgata, Södra Hammarbyhamnen, Södermalms stadsdelsområde (on \"Hammarby Kajgata\", not on Hammarby Kaj)"
+        ]
+      }
+    },
+    {
+      "id": "FAB-HSJ-03",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Korphoppet 1",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 3,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Virkesvägen 24–26",
+      "addresses": [
+        {
+          "street": "Virkesvägen",
+          "number": "24",
+          "numbers": [
+            "24"
+          ],
+          "sourceText": "Virkesvägen 24–26",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (60% of lettable area)",
+      "usesSqm": {
+        "Office": 8520,
+        "Retail": 575,
+        "Industrial/warehouse": 3812,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 1208
+      },
+      "totalLettableSqmSource": 14115,
+      "constructionYear": "1949",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 264000,
+      "sourcePage": 134,
+      "sourceRow": 80,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0977252,
+      "lat": 59.3015495,
+      "geocode": {
+        "query": "24 Virkesvägen, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "24, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 79, Sverige",
+        "osm": "node/2468784785",
+        "road": "Virkesvägen",
+        "houseNumber": "24",
+        "kmFromCentre": 3.92,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-04",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Korphoppet 5",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 4,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Hammarby Fabriksväg 37–39",
+      "addresses": [
+        {
+          "street": "Hammarby Fabriksväg",
+          "number": "37",
+          "numbers": [
+            "37"
+          ],
+          "sourceText": "Hammarby Fabriksväg 37–39",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": "1968",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 134,
+      "sourceRow": 81,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.100386,
+      "lat": 59.3009786,
+      "geocode": {
+        "query": "37 Hammarby Fabriksväg, Stockholm",
+        "method": "address",
+        "precision": "street",
+        "displayName": "Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 79, Sverige",
+        "osm": "way/593117913",
+        "road": "Hammarby Fabriksväg",
+        "houseNumber": null,
+        "kmFromCentre": 4.05,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-05",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Korphoppet 6",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 5,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Hammarby Fabriksväg 33",
+      "addresses": [
+        {
+          "street": "Hammarby Fabriksväg",
+          "number": "33",
+          "numbers": [
+            "33"
+          ],
+          "sourceText": "Hammarby Fabriksväg 33",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Industrial/warehouse (91% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 428,
+        "Industrial/warehouse": 4254,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 4682,
+      "constructionYear": "1988",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 112000,
+      "sourcePage": 134,
+      "sourceRow": 82,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0954489,
+      "lat": 59.3010579,
+      "geocode": {
+        "query": "33 Hammarby Fabriksväg, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "Waynes Coffee, 33, Hammarby Fabriksväg, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+        "osm": "node/2516720337",
+        "road": "Hammarby Fabriksväg",
+        "houseNumber": "33",
+        "kmFromCentre": 3.91,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-06",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Luma 1",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 6,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Ljusslingan 1–17, 2–26, Glödlampsgränd 1–6, Lumaparksv 2–18, 5–15, Kölnag 3",
+      "addresses": [
+        {
+          "street": "Ljusslingan",
+          "number": "1",
+          "numbers": [
+            "1",
+            "2"
+          ],
+          "sourceText": "Ljusslingan 1–17",
+          "abbreviated": false
+        },
+        {
+          "street": "Glödlampsgränd",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Glödlampsgränd 1–6",
+          "abbreviated": false
+        },
+        {
+          "street": "Lumaparksvägen",
+          "number": "2",
+          "numbers": [
+            "2",
+            "5"
+          ],
+          "sourceText": "Lumaparksv 2–18",
+          "abbreviated": true
+        },
+        {
+          "street": "Kölnagatan",
+          "number": "3",
+          "numbers": [
+            "3"
+          ],
+          "sourceText": "Kölnag 3",
+          "abbreviated": true
+        }
+      ],
+      "propertyType": "Office (78% of lettable area)",
+      "usesSqm": {
+        "Office": 30288,
+        "Retail": 2419,
+        "Industrial/warehouse": 1311,
+        "Residential": 691,
+        "Hotel": 0,
+        "Parking/other": 3917
+      },
+      "totalLettableSqmSource": 38626,
+      "constructionYear": "1930",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 631120,
+      "sourcePage": 134,
+      "sourceRow": 83,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0958169,
+      "lat": 59.3061968,
+      "geocode": {
+        "query": "1 Ljusslingan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "1, Ljusslingan, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 31, Sverige",
+        "osm": "node/5769047047",
+        "road": "Ljusslingan",
+        "houseNumber": "1",
+        "kmFromCentre": 3.42,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-07",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Påsen 1",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 7,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Textilgatan 41–43",
+      "addresses": [
+        {
+          "street": "Textilgatan",
+          "number": "41",
+          "numbers": [
+            "41"
+          ],
+          "sourceText": "Textilgatan 41–43",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (83% of lettable area)",
+      "usesSqm": {
+        "Office": 10576,
+        "Retail": 204,
+        "Industrial/warehouse": 527,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 1383
+      },
+      "totalLettableSqmSource": 12690,
+      "constructionYear": "1956",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 270000,
+      "sourcePage": 134,
+      "sourceRow": 84,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0905051,
+      "lat": 59.3019164,
+      "geocode": {
+        "query": "41 Textilgatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "41, Textilgatan, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+        "osm": "node/2516720301",
+        "road": "Textilgatan",
+        "houseNumber": "41",
+        "kmFromCentre": 3.71,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-08",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Trikåfabriken 12",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 8,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Hammarby Fabriksväg 27, Virkesvägen 8–10",
+      "addresses": [
+        {
+          "street": "Hammarby Fabriksväg",
+          "number": "27",
+          "numbers": [
+            "27"
+          ],
+          "sourceText": "Hammarby Fabriksväg 27",
+          "abbreviated": false
+        },
+        {
+          "street": "Virkesvägen",
+          "number": "8",
+          "numbers": [
+            "8"
+          ],
+          "sourceText": "Virkesvägen 8–10",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Mixed use (largest: Office, 43%)",
+      "usesSqm": {
+        "Office": 4691,
+        "Retail": 891,
+        "Industrial/warehouse": 4291,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 978
+      },
+      "totalLettableSqmSource": 10851,
+      "constructionYear": "1942",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 175000,
+      "sourcePage": 134,
+      "sourceRow": 85,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0923553,
+      "lat": 59.3014114,
+      "geocode": {
+        "query": "8 Virkesvägen, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "8, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+        "osm": "node/2516720328",
+        "road": "Virkesvägen",
+        "houseNumber": "8",
+        "kmFromCentre": 3.8,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-09",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Trikåfabriken 8",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 9,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Virkesvägen 12, Heliosgatan 1–3",
+      "addresses": [
+        {
+          "street": "Virkesvägen",
+          "number": "12",
+          "numbers": [
+            "12"
+          ],
+          "sourceText": "Virkesvägen 12",
+          "abbreviated": false
+        },
+        {
+          "street": "Heliosgatan",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Heliosgatan 1–3",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (71% of lettable area)",
+      "usesSqm": {
+        "Office": 10921,
+        "Retail": 1037,
+        "Industrial/warehouse": 3438,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 9
+      },
+      "totalLettableSqmSource": 15405,
+      "constructionYear": "1930",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 296000,
+      "sourcePage": 134,
+      "sourceRow": 86,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0936693,
+      "lat": 59.3016028,
+      "geocode": {
+        "query": "12 Virkesvägen, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "12, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+        "osm": "node/8956524079",
+        "road": "Virkesvägen",
+        "houseNumber": "12",
+        "kmFromCentre": 3.81,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-HSJ-10",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Trikåfabriken 9",
+      "region": "Hammarby Sjöstad",
+      "subArea": "Hammarby Sjöstad",
+      "listingNo": 10,
+      "area": "Hammarby Sjöstad",
+      "municipality": "Stockholm",
+      "street": "Virkesvägen 2–4",
+      "addresses": [
+        {
+          "street": "Virkesvägen",
+          "number": "2",
+          "numbers": [
+            "2"
+          ],
+          "sourceText": "Virkesvägen 2–4",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (88% of lettable area)",
+      "usesSqm": {
+        "Office": 14671,
+        "Retail": 375,
+        "Industrial/warehouse": 565,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 1065
+      },
+      "totalLettableSqmSource": 16676,
+      "constructionYear": "1928",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 657000,
+      "sourcePage": 134,
+      "sourceRow": 87,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0908321,
+      "lat": 59.3013443,
+      "geocode": {
+        "query": "2 Virkesvägen, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "2, Virkesvägen, Hammarby industriområde, Södra Hammarbyhamnen, Södermalms stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 120 30, Sverige",
+        "osm": "node/2516720259",
+        "road": "Virkesvägen",
+        "houseNumber": "2",
+        "kmFromCentre": 3.77,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-01",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Anoden 4",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 1,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": null,
+      "addresses": [],
+      "propertyType": "Industrial/warehouse (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 1000,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 1000,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 11361,
+      "sourcePage": 135,
+      "sourceRow": 88,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9398948,
+      "lat": 59.2223899,
+      "geocode": {
+        "query": "Flemingsberg, Huddinge",
+        "method": "area",
+        "precision": "area",
+        "displayName": "Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 57, Sverige",
+        "osm": "node/442688099",
+        "road": null,
+        "houseNumber": null,
+        "kmFromCentre": 14.16,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-02",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Batteriet 3",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 2,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": "Regulatorvägen 15",
+      "addresses": [
+        {
+          "street": "Regulatorvägen",
+          "number": "15",
+          "numbers": [
+            "15"
+          ],
+          "sourceText": "Regulatorvägen 15",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Industrial/warehouse (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 800,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 800,
+      "constructionYear": "1981",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 6489,
+      "sourcePage": 135,
+      "sourceRow": 89,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9602878,
+      "lat": 59.2211318,
+      "geocode": {
+        "query": "15 Regulatorvägen, Huddinge",
+        "method": "address",
+        "precision": "building",
+        "displayName": "15, Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+        "osm": "way/163638611",
+        "road": "Regulatorvägen",
+        "houseNumber": "15",
+        "kmFromCentre": 13.75,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-03",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Batteriet 4",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 3,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": "Regulatorvägen 17",
+      "addresses": [
+        {
+          "street": "Regulatorvägen",
+          "number": "17",
+          "numbers": [
+            "17"
+          ],
+          "sourceText": "Regulatorvägen 17",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 135,
+      "sourceRow": 90,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9592474,
+      "lat": 59.2210027,
+      "geocode": {
+        "query": "17 Regulatorvägen, Huddinge",
+        "method": "address",
+        "precision": "building",
+        "displayName": "17, Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+        "osm": "node/9437779586",
+        "road": "Regulatorvägen",
+        "houseNumber": "17",
+        "kmFromCentre": 13.78,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-04",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Generatorn 10",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 4,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": null,
+      "addresses": [],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 135,
+      "sourceRow": 91,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9458336,
+      "lat": 59.2171069,
+      "geocode": {
+        "query": "Björnkullavägen, Huddinge",
+        "method": "override",
+        "precision": "area",
+        "displayName": "Björnkullavägen, Visättra, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 25, Sverige",
+        "osm": "way/362029939",
+        "road": "Björnkullavägen",
+        "houseNumber": null,
+        "kmFromCentre": 14.51,
+        "note": "No address in the source. Generatorn 10 is in the same quarter (Generatorn) as Generatorn 11 (Björnkullavägen). Reported as area level rather than the centre of Flemingsberg. Please confirm.",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-05",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Generatorn 11",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 5,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": "Björnkullavägen",
+      "addresses": [
+        {
+          "street": "Björnkullavägen",
+          "number": null,
+          "numbers": [],
+          "sourceText": "Björnkullavägen",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": null,
+      "sourcePage": 135,
+      "sourceRow": 92,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9458336,
+      "lat": 59.2171069,
+      "geocode": {
+        "query": "Björnkullavägen, Huddinge",
+        "method": "street",
+        "precision": "street",
+        "displayName": "Björnkullavägen, Visättra, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 25, Sverige",
+        "osm": "way/362029939",
+        "road": "Björnkullavägen",
+        "houseNumber": null,
+        "kmFromCentre": 14.51,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-06",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Regulatorn 3",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 6,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": "Jonvägen 1, 3; Elektronvägen 2, 4, 6; Regulatorvägen 6, 8",
+      "addresses": [
+        {
+          "street": "Jonvägen",
+          "number": "1",
+          "numbers": [
+            "1",
+            "3"
+          ],
+          "sourceText": "Jonvägen 1",
+          "abbreviated": false
+        },
+        {
+          "street": "Elektronvägen",
+          "number": "2",
+          "numbers": [
+            "2",
+            "4",
+            "6"
+          ],
+          "sourceText": "Elektronvägen 2",
+          "abbreviated": false
+        },
+        {
+          "street": "Regulatorvägen",
+          "number": "6",
+          "numbers": [
+            "6",
+            "8"
+          ],
+          "sourceText": "Regulatorvägen 6",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Industrial/warehouse (53% of lettable area)",
+      "usesSqm": {
+        "Office": 10104,
+        "Retail": 1058,
+        "Industrial/warehouse": 12433,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 23595,
+      "constructionYear": "1963",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 115567,
+      "sourcePage": 135,
+      "sourceRow": 93,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9600562,
+      "lat": 59.2223271,
+      "geocode": {
+        "query": "1 Jonvägen, Huddinge",
+        "method": "address",
+        "precision": "building",
+        "displayName": "1, Jonvägen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+        "osm": "way/707078447",
+        "road": "Jonvägen",
+        "houseNumber": "1",
+        "kmFromCentre": 13.63,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-07",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Development",
+      "name": "Regulatorn 2",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 7,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": "Elektronvägen 1",
+      "addresses": [
+        {
+          "street": "Elektronvägen",
+          "number": "1",
+          "numbers": [
+            "1"
+          ],
+          "sourceText": "Elektronvägen 1",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Industrial/warehouse (88% of lettable area)",
+      "usesSqm": {
+        "Office": 3833,
+        "Retail": 0,
+        "Industrial/warehouse": 37963,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 1149
+      },
+      "totalLettableSqmSource": 42945,
+      "constructionYear": "1967",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 203231,
+      "sourcePage": 135,
+      "sourceRow": 94,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9550889,
+      "lat": 59.2227167,
+      "geocode": {
+        "query": "1 Elektronvägen, Huddinge",
+        "method": "address",
+        "precision": "building",
+        "displayName": "1, Elektronvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+        "osm": "node/9437779640",
+        "road": "Elektronvägen",
+        "houseNumber": "1",
+        "kmFromCentre": 13.72,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-08",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Regulatorn 4",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 8,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": "Elektronvägen",
+      "addresses": [
+        {
+          "street": "Elektronvägen",
+          "number": null,
+          "numbers": [],
+          "sourceText": "Elektronvägen",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (100% of lettable area)",
+      "usesSqm": {
+        "Office": 11964,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 11964,
+      "constructionYear": "2024",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": null,
+      "sourcePage": 135,
+      "sourceRow": 95,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9564983,
+      "lat": 59.2219599,
+      "geocode": {
+        "query": "Elektronvägen, Huddinge",
+        "method": "street",
+        "precision": "street",
+        "displayName": "Elektronvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+        "osm": "way/163638669",
+        "road": "Elektronvägen",
+        "houseNumber": null,
+        "kmFromCentre": 13.76,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-FLB-09",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Separatorn 1",
+      "region": "Flemingsberg",
+      "subArea": "Flemingsberg",
+      "listingNo": 9,
+      "area": "Flemingsberg",
+      "municipality": "Huddinge",
+      "street": "Regulatorvägen 31",
+      "addresses": [
+        {
+          "street": "Regulatorvägen",
+          "number": "31",
+          "numbers": [
+            "31"
+          ],
+          "sourceText": "Regulatorvägen 31",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (96% of lettable area)",
+      "usesSqm": {
+        "Office": 22444,
+        "Retail": 968,
+        "Industrial/warehouse": 39,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 23451,
+      "constructionYear": "2025",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 257600,
+      "sourcePage": 135,
+      "sourceRow": 96,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 17.9595428,
+      "lat": 59.22142,
+      "geocode": {
+        "query": "31 Regulatorvägen, Huddinge",
+        "method": "address",
+        "precision": "street",
+        "displayName": "Regulatorvägen, Flemingsbergsdalen, Flemingsberg, Huddinge, Huddinge kommun, Stockholms län, 141 49, Sverige",
+        "osm": "way/395797772",
+        "road": "Regulatorvägen",
+        "houseNumber": null,
+        "kmFromCentre": 13.74,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-OTH-01",
+      "company": "Fabege",
+      "status": "Development",
+      "classification": "Land & project",
+      "name": "Tekniken 1",
+      "region": "Other",
+      "subArea": "Other",
+      "listingNo": 1,
+      "area": "Sollentuna",
+      "municipality": "Sollentuna",
+      "street": null,
+      "addresses": [],
+      "propertyType": "Land / project (no lettable area reported)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 0,
+      "constructionYear": null,
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 126,
+      "sourcePage": 135,
+      "sourceRow": 97,
+      "excluded": false,
+      "excludedReason": null,
+      "lat": null,
+      "lon": null,
+      "geocode": {
+        "query": "Sollentuna, Sollentuna",
+        "method": null,
+        "precision": "unlocated",
+        "displayName": null,
+        "osm": null,
+        "note": "No street address in the source and no district-level match.",
+        "rejected": [
+          "Sollentuna, Sollentuna -> Sollentuna, Sköldvägen, Tureberg, Sollentuna kommun (result is a railway, not a district)",
+          "Sollentuna, Sollentuna -> Sollentuna, Sköldvägen, Tureberg, Sollentuna kommun (result is a railway, not a district)",
+          "Sollentuna, Sollentuna -> Sollentuna, Tingsvägen, Töjnan, Tureberg (result is a railway, not a district)"
+        ]
+      }
+    },
+    {
+      "id": "FAB-OTH-02",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Kabelverket 2",
+      "region": "Other",
+      "subArea": "Other",
+      "listingNo": 2,
+      "area": "Älvsjö",
+      "municipality": "Stockholm",
+      "street": "Glasfibergatan 6–14 and others",
+      "addresses": [
+        {
+          "street": "Glasfibergatan",
+          "number": "6",
+          "numbers": [
+            "6"
+          ],
+          "sourceText": "Glasfibergatan 6–14",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Office (57% of lettable area)",
+      "usesSqm": {
+        "Office": 19250,
+        "Retail": 485,
+        "Industrial/warehouse": 2241,
+        "Residential": 0,
+        "Hotel": 0,
+        "Parking/other": 11662
+      },
+      "totalLettableSqmSource": 33638,
+      "constructionYear": "1996",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 205902,
+      "sourcePage": 135,
+      "sourceRow": 98,
+      "excluded": false,
+      "excludedReason": null,
+      "lon": 18.0013698,
+      "lat": 59.2808036,
+      "geocode": {
+        "query": "6 Glasfibergatan, Stockholm",
+        "method": "address",
+        "precision": "building",
+        "displayName": "Klockhusköket, 6, Glasfibergatan, Älvsjö, Hägersten-Älvsjö stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 125 45, Sverige",
+        "osm": "node/2280454919",
+        "road": "Glasfibergatan",
+        "houseNumber": "6",
+        "kmFromCentre": 6.8,
+        "note": null,
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-OTH-03",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Daggkåpan 2",
+      "region": "Other",
+      "subArea": "Other",
+      "listingNo": 3,
+      "area": "Borås",
+      "municipality": "Borås",
+      "street": "Backadalsstigen 4 A–D, 6 A–F",
+      "addresses": [
+        {
+          "street": "Backadalsstigen",
+          "number": "4A",
+          "numbers": [
+            "4A",
+            "6A"
+          ],
+          "sourceText": "Backadalsstigen 4 A–D",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Residential (68% of lettable area)",
+      "usesSqm": {
+        "Office": 1775,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 3707,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 5482,
+      "constructionYear": "2021",
+      "environmentallyCertified": "Yes",
+      "taxValueKSEK": 104128,
+      "sourcePage": 135,
+      "sourceRow": 99,
+      "excluded": true,
+      "excludedReason": "Borås is about 400 km from Stockholm, outside the metro network scope (excluded by decision; listed, not mapped).",
+      "lat": null,
+      "lon": null,
+      "geocode": {
+        "precision": "excluded",
+        "query": null,
+        "method": null,
+        "displayName": null,
+        "osm": null,
+        "note": "Borås is about 400 km from Stockholm, outside the metro network scope (excluded by decision; listed, not mapped).",
+        "rejected": []
+      }
+    },
+    {
+      "id": "FAB-OTH-04",
+      "company": "Fabege",
+      "status": "Standing",
+      "classification": "Investment",
+      "name": "Solrosen 16",
+      "region": "Other",
+      "subArea": "Other",
+      "listingNo": 4,
+      "area": "Borås",
+      "municipality": "Borås",
+      "street": "Druveforsvägen 31",
+      "addresses": [
+        {
+          "street": "Druveforsvägen",
+          "number": "31",
+          "numbers": [
+            "31"
+          ],
+          "sourceText": "Druveforsvägen 31",
+          "abbreviated": false
+        }
+      ],
+      "propertyType": "Residential (100% of lettable area)",
+      "usesSqm": {
+        "Office": 0,
+        "Retail": 0,
+        "Industrial/warehouse": 0,
+        "Residential": 1283,
+        "Hotel": 0,
+        "Parking/other": 0
+      },
+      "totalLettableSqmSource": 1283,
+      "constructionYear": "2021",
+      "environmentallyCertified": "No",
+      "taxValueKSEK": 34488,
+      "sourcePage": 135,
+      "sourceRow": 100,
+      "excluded": true,
+      "excludedReason": "Borås is about 400 km from Stockholm, outside the metro network scope (excluded by decision; listed, not mapped).",
+      "lat": null,
+      "lon": null,
+      "geocode": {
+        "precision": "excluded",
+        "query": null,
+        "method": null,
+        "displayName": null,
+        "osm": null,
+        "note": "Borås is about 400 km from Stockholm, outside the metro network scope (excluded by decision; listed, not mapped).",
+        "rejected": []
+      }
+    }
+  ],
+  "issues": [],
+  "geocodedAt": "2026-11-18T15:25:57.478Z",
+  "geocoder": {
+    "name": "Nominatim (OpenStreetMap)",
+    "url": "https://nominatim.openstreetmap.org",
+    "attribution": "Geocoding © OpenStreetMap contributors (ODbL), Nominatim",
+    "maxKmFromCentre": 30,
+    "viewbox": "17.55,59.65,18.75,58.95"
+  },
+  "geocodePrecisionCounts": {
+    "building": 70,
+    "street": 22,
+    "area": 4,
+    "unlocated": 1,
+    "excluded": 2
+  }
+}

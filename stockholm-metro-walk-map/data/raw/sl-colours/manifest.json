@@ -1,0 +1,20 @@
+{
+  "source": "SL (Region Stockholm) public website sl.se: design-system stylesheet linked from https://sl.se/",
+  "retrievedAt": "2026-11-18T15:13:58+00:00",
+  "files": [
+    {
+      "file": "sl-se-stylesheet.css",
+      "url": "https://afde-slweb-prod-axgjc2gedaepaveg.z01.azurefd.net/monorepo/sl/20261116_30bc55f/_next/static/chunks/21vl5gv1uxve7.css",
+      "referencedBy": "https://sl.se/",
+      "sha256": "28108df8c3cb42ef5dd7f8336c10635b8d5c309ab9664950308a6a59b216fc9d",
+      "bytes": 35277
+    }
+  ],
+  "extracted": {
+    "--color-metro-blue": "#007db8",
+    "--color-metro-red": "#d71d24",
+    "--color-metro-green": "#148541"
+  },
+  "licence": "SL website asset, kept only as evidence for the colour values; it is not part of the app. The three hex values are used to draw the lines.",
+  "note": "The colours SL uses for the blue, red and green metro lines on its own website (CSS custom properties), i.e. screen (RGB) values."
+}

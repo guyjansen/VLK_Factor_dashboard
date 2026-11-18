@@ -1,0 +1,14 @@
+node_modules/
+dist/*
+!dist/stockholm-metro-walk-map.html
+.env
+.env.*
+!.env.example
+public/vendor/
+public/config.js
+data/isochrones/.tmp-*
+data/raw/gtfs-sl/sl.zip
+data/raw/gtfs-sl/*.part
+*.log
+.DS_Store
+__pycache__/

@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "source": "data/FABG_property_list_FY25.xlsx",
+    "sheet": "Properties",
+    "column": "Total lettable area (sqm)",
+    "unit": "sqm",
+    "joinedOn": "asset ID (region + listing no.) with company and property-name check",
+    "importedAt": "2026-11-18T15:26:02.893Z",
+    "note": "A size of 0 or blank is treated as unknown and excluded from floor-area shares."
+  },
+  "sizes": {
+    "FAB-SIC-01": 28325,
+    "FAB-SIC-02": 25607,
+    "FAB-SIC-03": 14865,
+    "FAB-SIC-04": 20433,
+    "FAB-SIC-06": 1325,
+    "FAB-SIC-07": 2353,
+    "FAB-SIC-08": 6630,
+    "FAB-SIC-09": 3753,
+    "FAB-SIC-10": 17234,
+    "FAB-SIC-11": 12735,
+    "FAB-SIC-12": 25456,
+    "FAB-SIC-13": 13779,
+    "FAB-SIC-14": 10084,
+    "FAB-SIC-15": 6878,
+    "FAB-SIC-16": 12061,
+    "FAB-SIC-17": 7139,
+    "FAB-SIC-18": 20022,
+    "FAB-SIC-19": 10346,
+    "FAB-SIC-20": 3025,
+    "FAB-SIC-21": 8517,
+    "FAB-SIC-22": 26560,
+    "FAB-SIC-24": 2057,
+    "FAB-SIC-25": 9555,
+    "FAB-SIC-26": 8649,
+    "FAB-SOL-05": 7854,
+    "FAB-SOL-06": 6186,
+    "FAB-SOL-09": 19165,
+    "FAB-SOL-10": 25500,
+    "FAB-SOL-11": 41947,
+    "FAB-SOL-12": 28142,
+    "FAB-SOL-13": 72234,
+    "FAB-SOL-14": 159,
+    "FAB-SOL-15": 31040,
+    "FAB-SOL-16": 8418,
+    "FAB-SOL-17": 5904,
+    "FAB-SOL-18": 7415,
+    "FAB-SOL-19": 9966,
+    "FAB-SOL-20": 7727,
+    "FAB-SOL-21": 6929,
+    "FAB-SOL-22": 2610,
+    "FAB-SOL-23": 24439,
+    "FAB-SOL-24": 7872,
+    "FAB-SOL-25": 9786,
+    "FAB-SOL-26": 11633,
+    "FAB-SOL-27": 39203,
+    "FAB-SOL-28": 37188,
+    "FAB-SOL-30": 21632,
+    "FAB-SOL-31": 44762,
+    "FAB-SOL-32": 16151,
+    "FAB-SOL-33": 24400,
+    "FAB-SOL-34": 7282,
+    "FAB-SOL-35": 27471,
+    "FAB-SOL-38": 456,
+    "FAB-SOL-39": 2632,
+    "FAB-SOL-41": 15355,
+    "FAB-SOL-43": 10731,
+    "FAB-SOL-44": 9810,
+    "FAB-SOL-45": 7548,
+    "FAB-SOL-46": 16460,
+    "FAB-SOL-47": 7423,
+    "FAB-SOL-50": 66000,
+    "FAB-HSJ-01": 8710,
+    "FAB-HSJ-02": 18107,
+    "FAB-HSJ-03": 14115,
+    "FAB-HSJ-05": 4682,
+    "FAB-HSJ-06": 38626,
+    "FAB-HSJ-07": 12690,
+    "FAB-HSJ-08": 10851,
+    "FAB-HSJ-09": 15405,
+    "FAB-HSJ-10": 16676,
+    "FAB-FLB-01": 1000,
+    "FAB-FLB-02": 800,
+    "FAB-FLB-06": 23595,
+    "FAB-FLB-07": 42945,
+    "FAB-FLB-08": 11964,
+    "FAB-FLB-09": 23451,
+    "FAB-OTH-02": 33638,
+    "FAB-OTH-03": 5482,
+    "FAB-OTH-04": 1283
+  },
+  "unknown": [
+    {
+      "id": "FAB-SIC-05",
+      "company": "Fabege",
+      "name": "Bocken 46",
+      "value": 0
+    },
+    {
+      "id": "FAB-SIC-23",
+      "company": "Fabege",
+      "name": "Paradiset 31",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-01",
+      "company": "Fabege",
+      "name": "Farao 14",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-02",
+      "company": "Fabege",
+      "name": "Farao 15",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-03",
+      "company": "Fabege",
+      "name": "Farao 16",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-04",
+      "company": "Fabege",
+      "name": "Farao 19",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-07",
+      "company": "Fabege",
+      "name": "Järva 3:7",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-08",
+      "company": "Fabege",
+      "name": "Kairo 1",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-29",
+      "company": "Fabege",
+      "name": "Sliparen 1",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-36",
+      "company": "Fabege",
+      "name": "Ackordet 2",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-37",
+      "company": "Fabege",
+      "name": "Kvarten 1",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-40",
+      "company": "Fabege",
+      "name": "Tersen 1",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-42",
+      "company": "Fabege",
+      "name": "Distansen 4",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-48",
+      "company": "Fabege",
+      "name": "Klacken 2",
+      "value": 0
+    },
+    {
+      "id": "FAB-SOL-49",
+      "company": "Fabege",
+      "name": "Lagern 2",
+      "value": 0
+    },
+    {
+      "id": "FAB-HSJ-04",
+      "company": "Fabege",
+      "name": "Korphoppet 5",
+      "value": 0
+    },
+    {
+      "id": "FAB-FLB-03",
+      "company": "Fabege",
+      "name": "Batteriet 4",
+      "value": 0
+    },
+    {
+      "id": "FAB-FLB-04",
+      "company": "Fabege",
+      "name": "Generatorn 10",
+      "value": 0
+    },
+    {
+      "id": "FAB-FLB-05",
+      "company": "Fabege",
+      "name": "Generatorn 11",
+      "value": 0
+    },
+    {
+      "id": "FAB-OTH-01",
+      "company": "Fabege",
+      "name": "Tekniken 1",
+      "value": 0
+    }
+  ]
+}

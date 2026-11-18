@@ -1,0 +1,39 @@
+{
+  "name": "stockholm-metro-walk-map",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unofficial interactive map of 5- and 10-minute pedestrian-network walking areas around Stockholm metro (tunnelbana) stations, with office portfolios and an Excel report.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.21.0"
+  },
+  "scripts": {
+    "postinstall": "node scripts/vendor.mjs",
+    "vendor": "node scripts/vendor.mjs",
+    "fetch-topology": "node --env-file-if-exists=.env --use-env-proxy --disable-warning=UNDICI-EHPA scripts/fetch-topology.mjs",
+    "prepare-stations": "node scripts/prepare-stations.mjs",
+    "build-network": "node scripts/build-network.mjs",
+    "validate": "node scripts/validate-network.mjs",
+    "isochrones": "node --env-file-if-exists=.env --use-env-proxy --disable-warning=UNDICI-EHPA scripts/generate-isochrones.mjs",
+    "unions": "node scripts/generate-unions.mjs",
+    "buildings:prepare": "node scripts/prepare-buildings.mjs",
+    "buildings:geocode": "node --env-file-if-exists=.env --use-env-proxy --disable-warning=UNDICI-EHPA scripts/geocode-buildings.mjs",
+    "buildings:sizes": "node scripts/import-sizes.mjs",
+    "buildings:assign": "node scripts/assign-buildings.mjs",
+    "buildings": "npm run buildings:prepare && npm run buildings:geocode && npm run buildings:sizes && npm run buildings:assign",
+    "report": "python3 scripts/export-portfolio.py && python3 scripts/verify-report.py",
+    "data": "npm run prepare-stations && npm run build-network && npm run validate",
+    "data:full": "npm run fetch-topology && npm run data && npm run isochrones && npm run unions && npm run validate && npm run buildings && npm run report",
+    "dev": "node --env-file-if-exists=.env --use-env-proxy --disable-warning=UNDICI-EHPA --watch-path=server --watch-path=scripts/lib server/server.mjs",
+    "start": "node --env-file-if-exists=.env --use-env-proxy --disable-warning=UNDICI-EHPA server/server.mjs",
+    "build": "node scripts/build.mjs && node scripts/build-single.mjs",
+    "build:single": "node scripts/build-single.mjs",
+    "test": "node --test \"tests/*.test.mjs\"",
+    "check:browser": "node scripts/browser-check.mjs"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "maplibre-gl": "5.23.0",
+    "polygon-clipping": "0.15.7"
+  }
+}
