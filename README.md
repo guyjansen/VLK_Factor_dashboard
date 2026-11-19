@@ -52,6 +52,10 @@ The coverage list is in `config/universe.csv`. It holds the Yahoo ticker, countr
 - **Vastned** (VASTB) is the company formed when Vastned Belgium absorbed Vastned Retail on 1 January 2025. Yahoo no longer serves Vastned Retail's history, so the series starts at the merger.
 - **Unibail-Rodamco-Westfield** moved its reference market to Euronext Paris on 14 April 2023. The pipeline tries Yahoo's legacy Paris symbol (UL.PA) for older history and otherwise starts in April 2023.
 
+## Morning real estate RNS report
+
+`rns_report/` holds a separate stand-alone script. Each morning it collects the day's real estate RNS announcements from Investegate, falling back to the London Stock Exchange site, and writes their full text into one document. See [rns_report/README.md](rns_report/README.md).
+
 ## Refreshing the data
 
 The **Refresh market data** workflow (`.github/workflows/refresh-data.yml`) rebuilds `docs/data/dashboard_data.js` every weekday at 17:35 UTC, after the European close. It commits the result and uploads the single-file dashboard as a build artifact. It also runs whenever the pipeline or coverage list changes, and on demand from the Actions tab. Scheduled runs only fire on the repository's default branch.

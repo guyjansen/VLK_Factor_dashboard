@@ -1,0 +1,66 @@
+RNS REAL ESTATE REPORT - HOW TO USE
+===================================
+
+What it does
+------------
+Every weekday at 08:01 Amsterdam time (07:01 UK time) your computer
+collects all of that morning's stock exchange announcements (RNS) from
+UK-listed real estate companies and saves them in ONE file:
+
+    Documents\RNS Reports\RNS_RealEstate_<date>.md
+
+Drag that file into your AI assistant (Copilot, ChatGPT, Claude, ...).
+The file already ends with instructions telling the assistant what to
+pick out, so you can simply press Enter or type "Go".
+A Word copy (.docx) is saved next to it, for reading yourself.
+
+
+One-time setup (5 minutes)
+--------------------------
+1. Copy this whole folder to your computer (for example to Downloads).
+   Keep all files together.
+2. Double-click  Install.bat
+   A black window shows what it did. Every line should start with [ok].
+   Press any key to close it.
+3. Done. A shortcut "RNS Reports" is now on your desktop.
+
+If Windows shows "Windows protected your PC", click "More info" and then
+"Run anyway". This happens the first time only.
+
+
+Every morning
+-------------
+Open the "RNS Reports" shortcut on your desktop and drag today's .md
+file into your AI assistant.
+
+Your computer must be switched on or asleep at 08:01 (not shut down),
+and you must be logged in. A locked screen is fine. If the computer was
+off, the report is made as soon as you log in.
+
+
+If today's file is missing
+--------------------------
+Double-click "Make today's report now" in the RNS Reports folder, or
+"Run now.bat" in this folder. The file appears within a minute.
+
+
+If the file says WARNING or SOURCES FAILED
+------------------------------------------
+Double-click "Test connection.bat". It opens a short text file
+(probe_summary.txt). Send that file to whoever set this up.
+
+
+Changing settings
+-----------------
+Open settings.ini with Notepad to change the time, the folder, or to
+include routine Form 8 disclosures (left out by default). Then double-click Install.bat
+again.
+
+To change what the AI assistant is asked to do, edit
+llm_instructions.txt (in this folder before installing, or in
+%LOCALAPPDATA%\RNS Report afterwards).
+
+
+Removing it
+-----------
+Double-click Uninstall.bat. Your reports are kept.

@@ -1,0 +1,115 @@
+name: Build RNS report kit
+
+# Builds the folder that is copied to each computer: the script, the
+# double-click files and a private copy of Python, so nothing has to be
+# installed. Download it from the run's "RNS-Report-kit" artifact.
+
+on:
+  push:
+    paths:
+      - "rns_report/**"
+      - ".github/workflows/rns-kit.yml"
+  workflow_dispatch:
+
+jobs:
+  kit:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Get the embeddable Python runtime
+        run: |
+          $index = (Invoke-WebRequest https://www.python.org/ftp/python/ -UseBasicParsing).Content
+          $versions = [regex]::Matches($index, 'href="(3\.1[2-4]\.\d+)/"') |
+            ForEach-Object { [version]$_.Groups[1].Value } | Sort-Object -Descending -Unique
+          $found = $null
+          foreach ($v in $versions) {
+            $url = "https://www.python.org/ftp/python/$v/python-$v-embed-amd64.zip"
+            try { Invoke-WebRequest $url -OutFile python.zip -UseBasicParsing; $found = $v; break } catch { }
+          }
+          if (-not $found) { throw "No embeddable Python found on python.org" }
+          Write-Host "Using Python $found"
+
+      - name: Assemble the kit
+        run: |
+          $kit = "RNS Report"
+          New-Item -ItemType Directory $kit | Out-Null
+          Expand-Archive python.zip -DestinationPath "$kit/python"
+          Copy-Item -Path rns_report/rns_report.py, rns_report/settings.ini, rns_report/llm_instructions.txt, "rns_report/HOW TO USE.txt" -Destination $kit
+          # Text files only, for networks that block downloading .exe files too
+          New-Item -ItemType Directory files | Out-Null
+          Copy-Item -Path rns_report/rns_report.py, rns_report/settings.ini, rns_report/llm_instructions.txt, "rns_report/HOW TO USE.txt" -Destination files
+          Get-ChildItem $kit | Format-Table Name, Length
+
+      - name: Smoke test
+        run: |
+          & "RNS Report/python/python.exe" -c "import ssl, urllib.request, http.cookiejar, html.parser, zipfile, json, configparser, ctypes, concurrent.futures; print('stdlib ok')"
+          if ($LASTEXITCODE) { throw "bundled Python is missing modules" }
+          & "RNS Report/python/python.exe" "RNS Report/rns_report.py" --help
+          if ($LASTEXITCODE) { throw "script does not start" }
+
+      - name: Upload the kit
+        uses: actions/upload-artifact@v4
+        with:
+          name: RNS-Report-kit
+          path: RNS Report/
+          retention-days: 90
+
+      - name: Upload the text-only files
+        uses: actions/upload-artifact@v4
+        with:
+          name: RNS-Report-files
+          path: files/
+          retention-days: 90
+
+      # No .bat files are shipped (downloading them is often blocked); the
+      # script writes them with --make-kit. Check that, and that a copied
+      # full Python installation runs from its new place.
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Test --make-kit from an installed Python
+        run: |
+          python files/rns_report.py --make-kit made-kit
+          if ($LASTEXITCODE) { throw "make-kit failed" }
+          foreach ($f in "Install.bat", "Run now.bat", "Test connection.bat", "Uninstall.bat", "python/python.exe", "python/pythonw.exe") {
+            if (-not (Test-Path "made-kit/$f")) { throw "made-kit/$f missing" }
+          }
+          & "made-kit/python/python.exe" "made-kit/rns_report.py" --help | Out-Null
+          if ($LASTEXITCODE) { throw "the copied Python does not run the script" }
+          "{0:N0} MB" -f ((Get-ChildItem made-kit -Recurse | Measure-Object Length -Sum).Sum / 1MB)
+          & "RNS Report/python/python.exe" "RNS Report/rns_report.py" --make-kit
+          if (-not (Test-Path "RNS Report/Install.bat")) { throw "launchers not written into the kit" }
+
+      - name: Test the installer
+        run: |
+          & "RNS Report/python/python.exe" "RNS Report/rns_report.py" --setup
+          schtasks /Query /TN "RNS Real Estate Morning Report" /V /FO LIST
+          if ($LASTEXITCODE) { throw "the scheduled task was not created" }
+          & "$env:LOCALAPPDATA/RNS Report/python/python.exe" "$env:LOCALAPPDATA/RNS Report/rns_report.py" --help | Out-Null
+          if ($LASTEXITCODE) { throw "the installed copy does not start" }
+          & "RNS Report/python/python.exe" "RNS Report/rns_report.py" --uninstall
+          exit 0
+
+      - name: Live run against the real sites (information only)
+        continue-on-error: true
+        run: |
+          New-Item -ItemType Directory live | Out-Null
+          & "RNS Report/python/python.exe" "RNS Report/rns_report.py" --once --out live --formats "md,docx"
+          & "RNS Report/python/python.exe" "RNS Report/rns_report.py" --diagnose --out live
+          Copy-Item -Recurse "RNS Report/debug", "RNS Report/logs" live -ErrorAction SilentlyContinue
+          Get-ChildItem live/*.md | ForEach-Object { Get-Content $_ -TotalCount 80 }
+
+      - name: Upload the live test
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-test
+          path: live/
+          retention-days: 14
