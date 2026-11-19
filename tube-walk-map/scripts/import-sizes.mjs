@@ -54,6 +54,12 @@ for (const [id, o] of Object.entries(corrections)) {
   const u = unknown.findIndex((x) => x.id === id);
   if (u >= 0) unknown.splice(u, 1);
 }
+// Companies from the JV sheets carry their own floor areas.
+for (const b of buildings.values()) {
+  if (!b.sourceSheet) continue;
+  if (b.sqm > 0) sizes[b.id] = Math.round(b.sqm * 10) / 10;
+  else unknown.push({ id: b.id, company: b.company, name: b.name, value: 'no size in sheet' });
+}
 const missingRows = [...buildings.keys()].filter((id) => !(id in sizes) && !unknown.some((u) => u.id === id));
 missingRows.forEach((id) => unknown.push({ id, company: buildings.get(id).company, name: buildings.get(id).name, value: 'row missing' }));
 if (problems.length) {

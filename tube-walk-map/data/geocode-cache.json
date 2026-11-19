@@ -3856,5 +3856,35 @@
     "addresstype": "residential",
     "displayName": "Gresse Street, East Marylebone, Covent Garden, City of Westminster, Greater London, England, W1T 1QS, United Kingdom",
     "osm": "way/4256032"
+  },
+  "The Founding, Canada Water, London": {
+    "lon": -0.0499528,
+    "lat": 51.4970221,
+    "placeRank": 30,
+    "category": "building",
+    "type": "apartments",
+    "addresstype": "building",
+    "displayName": "The Founding, Deal Porters Way, Canada Water, Rotherhithe, London Borough of Southwark, Greater London, England, SE16 7BB, United Kingdom",
+    "osm": "way/1330247335"
+  },
+  "75 Davies Street, Mayfair, London": {
+    "lon": -0.1492173,
+    "lat": 51.5137542,
+    "placeRank": 30,
+    "category": "building",
+    "type": "office",
+    "addresstype": "building",
+    "displayName": "75, Davies Street, East Marylebone, Mayfair, City of Westminster, Greater London, England, W1K 5RF, United Kingdom",
+    "osm": "way/202193349"
+  },
+  "5 Kingdom Street, Paddington, London": {
+    "lon": -0.1836789,
+    "lat": 51.5193136,
+    "placeRank": 30,
+    "category": "amenity",
+    "type": "bar",
+    "addresstype": "amenity",
+    "displayName": "Pergola Paddington, 5, Kingdom Street, Kensal Town, Paddington, City of Westminster, Greater London, England, W2 6PY, United Kingdom",
+    "osm": "way/541721956"
   }
 }

@@ -1,17 +1,17 @@
 {
   "meta": {
-    "generatedAt": "2026-11-18T16:18:54.004Z",
+    "generatedAt": "2026-11-19T15:45:45.118Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
       "url": "https://nominatim.openstreetmap.org",
       "attribution": "Geocoding © OpenStreetMap contributors (ODbL), Nominatim"
     },
-    "geocodedAt": "2026-11-17T16:00:04.019Z",
+    "geocodedAt": "2026-11-19T15:45:38.812Z",
     "sizes": {
       "source": "data/London_office_sizes_sqm.xlsx",
       "unit": "sqm",
-      "known": 148,
+      "known": 199,
       "unknown": [
         {
           "id": "B109",
@@ -2042,8 +2042,8 @@
       "propertyType": null,
       "street": "16/19 Soho Square, 29/43 Oxford Street and 7 Falconberg Mews",
       "sourceRow": 64,
-      "lat": 51.5159242,
       "lon": -0.1319902,
+      "lat": 51.5159242,
       "geocode": {
         "query": "16 Soho Square, Soho, London",
         "method": "reviewed override",
@@ -2115,8 +2115,8 @@
       "propertyType": "Office",
       "street": "15 Gresse Street and 12–13 Rathbone Place",
       "sourceRow": 66,
-      "lat": 51.5175302,
       "lon": -0.133308,
+      "lat": 51.5175302,
       "geocode": {
         "query": "Gresse Street, London",
         "method": "reviewed override",
@@ -2298,8 +2298,8 @@
       "propertyType": "Office",
       "street": "14/20 Saint Thomas Street",
       "sourceRow": 71,
-      "lat": 51.502943,
       "lon": -0.0840022,
+      "lat": 51.502943,
       "geocode": {
         "query": "St Thomas Street, Southwark, London",
         "method": "reviewed override",
@@ -4347,8 +4347,8 @@
       "propertyType": "Multi-Use",
       "street": "Cruickshank Street",
       "sourceRow": 134,
-      "lat": 51.5304417,
       "lon": -0.1114999,
+      "lat": 51.5304417,
       "geocode": {
         "query": "Cruikshank Street, London",
         "method": "reviewed override",
@@ -5242,6 +5242,1932 @@
         "id": "940GZZLUBST",
         "name": "Baker Street",
         "distanceM": 103
+      }
+    },
+    {
+      "id": "BLJ01",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "100 Liverpool Street",
+      "sourceName": "100 Liverpool Street",
+      "sourceMarker": null,
+      "propertyKey": 187105,
+      "propertyType": "Office",
+      "street": "100 Liverpool Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B081",
+      "geocodeQuery": null,
+      "sqm": 17790.9,
+      "sizeNote": null,
+      "lon": -0.0836589,
+      "lat": 51.5179318,
+      "geocode": {
+        "query": "100 Liverpool Street, London",
+        "method": "same building as B081",
+        "precision": "building",
+        "displayName": "Los Mochis London City, 100, Liverpool Street, Bishopsgate Without, Bishopsgate, City of London, Greater London, England, EC2M 2AT, United Kingdom",
+        "osm": "node/12651123701",
+        "note": "Location reused from B081 (Broadgate-Liverpool Street 100).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUALD": 600,
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 71
+      }
+    },
+    {
+      "id": "BLJ02",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "Broadgate Circle",
+      "sourceName": "Broadgate Circle",
+      "sourceMarker": null,
+      "propertyKey": 202587,
+      "propertyType": "Office",
+      "street": "Broadgate Circle",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B071",
+      "geocodeQuery": null,
+      "sqm": 1951,
+      "sizeNote": null,
+      "lon": -0.083953,
+      "lat": 51.5188004,
+      "geocode": {
+        "query": "Broadgate Circle, London",
+        "method": "same building as B071",
+        "precision": "street",
+        "displayName": "Broadgate Circle, Broadgate Estate, Bishopsgate, City of London, Greater London, England, EC2M 2QS, United Kingdom",
+        "osm": "relation/5186032",
+        "note": "Location reused from B071 (Broadgate Circle).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 169
+      }
+    },
+    {
+      "id": "BLJ03",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "155 Bishopsgate",
+      "sourceName": "155 Bishopsgate",
+      "sourceMarker": null,
+      "propertyKey": 201472,
+      "propertyType": "Office",
+      "street": "155 Bishopsgate",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B073",
+      "geocodeQuery": null,
+      "sqm": 18580.6,
+      "sizeNote": null,
+      "lon": -0.0795741,
+      "lat": 51.5187959,
+      "geocode": {
+        "query": "155 Bishopsgate, London",
+        "method": "same building as B073",
+        "precision": "building",
+        "displayName": "Honi Poke, 155, Bishopsgate, Bishopsgate Without, Bishopsgate, City of London, Greater London, England, EC2M 3TQ, United Kingdom",
+        "osm": "node/9691976219",
+        "note": "Location reused from B073 (Broadgate-Bishopsgate 155).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUALD": 600,
+        "940GZZLULVT": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 299
+      }
+    },
+    {
+      "id": "BLJ04",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "10 Exchange square",
+      "sourceName": "10 Exchange square",
+      "sourceMarker": null,
+      "propertyKey": 201479,
+      "propertyType": "Office",
+      "street": "10 Exchange Square",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B079",
+      "geocodeQuery": null,
+      "sqm": 7478.7,
+      "sizeNote": null,
+      "lon": -0.0809214,
+      "lat": 51.5198723,
+      "geocode": {
+        "query": "Exchange Square, City of London",
+        "method": "same building as B079",
+        "precision": "area",
+        "displayName": "Exchange Square, Bishopsgate Without, Bishopsgate, City of London, Greater London, England, EC2A 2EH, United Kingdom",
+        "osm": "relation/4166375",
+        "note": "Location reused from B079 (Broadgate-Exchange Square 10).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULVT": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 322
+      }
+    },
+    {
+      "id": "BLJ05",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "338 Euston Road Regents Place",
+      "sourceName": "338 Euston Road Regents Place",
+      "sourceMarker": null,
+      "propertyKey": 201643,
+      "propertyType": "Office",
+      "street": "338 Euston Road",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B093",
+      "geocodeQuery": null,
+      "sqm": 10683.8,
+      "sizeNote": null,
+      "lon": -0.1416497,
+      "lat": 51.524666,
+      "geocode": {
+        "query": "338 Euston Road, London",
+        "method": "same building as B093",
+        "precision": "building",
+        "displayName": "Regent’s Place, 338, Euston Road, Fitzrovia, London Borough of Camden, Greater London, England, NW1 3BG, United Kingdom",
+        "osm": "way/105541076",
+        "note": "Location reused from B093 (Regent's Place-Euston Road 338).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 300,
+        "940GZZLURGP": 600,
+        "940GZZLUWRR": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUGPS",
+        "name": "Great Portland Street",
+        "distanceM": 204
+      }
+    },
+    {
+      "id": "BLJ06",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "10 Brock Street",
+      "sourceName": "10 Brock Street",
+      "sourceMarker": null,
+      "propertyKey": 175722,
+      "propertyType": "Office",
+      "street": "10 Brock Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B095",
+      "geocodeQuery": null,
+      "sqm": 31679.9,
+      "sizeNote": null,
+      "lon": -0.1396894,
+      "lat": 51.5256769,
+      "geocode": {
+        "query": "10 Brock Street, London",
+        "method": "same building as B095",
+        "precision": "building",
+        "displayName": "Meta, 10, Brock Street, Fitzrovia, London Borough of Camden, Greater London, England, NW1 3FG, United Kingdom",
+        "osm": "node/3763350319",
+        "note": "Location reused from B095 (Regent's Place-NEQ/Brock Street 10).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUEUS": 600,
+        "940GZZLUESQ": 300,
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 600,
+        "940GZZLUWRR": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUWRR",
+        "name": "Warren Street",
+        "distanceM": 158
+      }
+    },
+    {
+      "id": "BLJ07",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "1 Triton Square",
+      "sourceName": "1 Triton Square",
+      "sourceMarker": null,
+      "propertyKey": 201646,
+      "propertyType": "Office",
+      "street": "1/4/7 Triton Square",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B096",
+      "geocodeQuery": null,
+      "sqm": 10080,
+      "sizeNote": null,
+      "lon": -0.1410198,
+      "lat": 51.5254581,
+      "geocode": {
+        "query": "1 Triton Square, London",
+        "method": "same building as B096",
+        "precision": "building",
+        "displayName": "1, Triton Square, Fitzrovia, London Borough of Camden, Greater London, England, NW1 3AN, United Kingdom",
+        "osm": "way/105541085",
+        "note": "Location reused from B096 (Regent's Place-Triton Square 1/4/7).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUEUS": 600,
+        "940GZZLUESQ": 600,
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 300,
+        "940GZZLURGP": 600,
+        "940GZZLUWRR": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUWRR",
+        "name": "Warren Street",
+        "distanceM": 212
+      }
+    },
+    {
+      "id": "BLJ08",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "20 Triton Square",
+      "sourceName": "20 Triton Square",
+      "sourceMarker": null,
+      "propertyKey": 201654,
+      "propertyType": "Office",
+      "street": "20 Triton Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B098",
+      "geocodeQuery": null,
+      "sqm": 11845.1,
+      "sizeNote": null,
+      "lon": -0.1427764,
+      "lat": 51.5250492,
+      "geocode": {
+        "query": "20 Triton Street, London",
+        "method": "same building as B098",
+        "precision": "building",
+        "displayName": "20, Triton Street, Fitzrovia, London Borough of Camden, Greater London, England, NW1 3BF, United Kingdom",
+        "osm": "relation/2989465",
+        "note": "Location reused from B098 (Regent's Place-Triton Street 20).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUESQ": 600,
+        "940GZZLUGPS": 300,
+        "940GZZLURGP": 600,
+        "940GZZLUWRR": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUGPS",
+        "name": "Great Portland Street",
+        "distanceM": 170
+      }
+    },
+    {
+      "id": "BLJ09",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "1 Finsbury Avenue",
+      "sourceName": "1 Finsbury Avenue",
+      "sourceMarker": null,
+      "propertyKey": 201504,
+      "propertyType": "Office",
+      "street": "1 Finsbury Avenue",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B080",
+      "geocodeQuery": null,
+      "sqm": 13052.9,
+      "sizeNote": null,
+      "lon": -0.0851116,
+      "lat": 51.5195135,
+      "geocode": {
+        "query": "1 Finsbury Avenue, London",
+        "method": "same building as B080",
+        "precision": "building",
+        "displayName": "1FA, 1, Finsbury Avenue, Broadgate Estate, Bishopsgate, City of London, Greater London, England, EC2M 2PA, United Kingdom",
+        "osm": "way/242164467",
+        "note": "Location reused from B080 (Broadgate-Finsbury Avenue 1).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600,
+        "940GZZLUODS": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 274
+      }
+    },
+    {
+      "id": "BLJ10",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "Marble Arch House",
+      "sourceName": "Marble Arch House",
+      "sourceMarker": null,
+      "propertyKey": 186557,
+      "propertyType": "Office",
+      "street": "62/64 Seymour Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B086",
+      "geocodeQuery": null,
+      "sqm": 1765.2,
+      "sizeNote": null,
+      "lon": -0.1611165,
+      "lat": 51.5143899,
+      "geocode": {
+        "query": "62 Seymour Street, Marylebone",
+        "method": "same building as B086",
+        "precision": "building",
+        "displayName": "Bernardi's, 62, Seymour Street, Marylebone, City of Westminster, Greater London, England, W1H 5BN, United Kingdom",
+        "osm": "node/4054930315",
+        "note": "Location reused from B086 (Marble Arch House).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUMBA": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUMBA",
+        "name": "Marble Arch",
+        "distanceM": 274
+      }
+    },
+    {
+      "id": "BLJ11",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "1 Sheldon Square",
+      "sourceName": "1 Sheldon Square",
+      "sourceMarker": null,
+      "propertyKey": 275951,
+      "propertyType": "Office",
+      "street": "1 Sheldon Square",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B088",
+      "geocodeQuery": null,
+      "sqm": 4529,
+      "sizeNote": null,
+      "lon": -0.1807589,
+      "lat": 51.5189853,
+      "geocode": {
+        "query": "1 Sheldon Square, London",
+        "method": "same building as B088",
+        "precision": "building",
+        "displayName": "Visa London, 1, Sheldon Square, Paddington, City of Westminster, Greater London, England, W2 6TT, United Kingdom",
+        "osm": "way/42031440",
+        "note": "Location reused from B088 (One Sheldon Square).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 300,
+        "940GZZLURYO": 600,
+        "940GZZLUWKA": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUPAH",
+        "name": "Paddington (H&C Line)",
+        "distanceM": 146
+      }
+    },
+    {
+      "id": "BLJ12",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "Northon Folgate",
+      "sourceName": "Northon Folgate",
+      "sourceMarker": null,
+      "propertyKey": 230344,
+      "propertyType": "Office",
+      "street": "Norton Folgate",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B087",
+      "geocodeQuery": null,
+      "sqm": 33494.3,
+      "sizeNote": null,
+      "lon": -0.0787076,
+      "lat": 51.5212826,
+      "geocode": {
+        "query": "Norton Folgate, London",
+        "method": "same building as B087",
+        "precision": "street",
+        "displayName": "Norton Folgate, Bishopsgate Without, Bishopsgate, City of London, Greater London, England, E1 6DB, United Kingdom",
+        "osm": "way/1068540386",
+        "note": "Location reused from B087 (Norton Folgate).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULVT": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 537
+      }
+    },
+    {
+      "id": "BLJ13",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "York House",
+      "sourceName": "York House",
+      "sourceMarker": null,
+      "propertyKey": 96592,
+      "propertyType": "Office",
+      "street": "45 Seymour Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B102",
+      "geocodeQuery": null,
+      "sqm": 3065.8,
+      "sizeNote": null,
+      "lon": -0.1612621,
+      "lat": 51.5142545,
+      "geocode": {
+        "query": "45 Seymour Street, Marylebone",
+        "method": "same building as B102",
+        "precision": "street",
+        "displayName": "Seymour Street, Marylebone, City of Westminster, Greater London, England, W2 2EN, United Kingdom",
+        "osm": "way/232727499",
+        "note": "Location reused from B102 (York House).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUMBA": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUMBA",
+        "name": "Marble Arch",
+        "distanceM": 280
+      }
+    },
+    {
+      "id": "BLJ14",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "2 Kingdom Street",
+      "sourceName": "2 Kingdom Street",
+      "sourceMarker": null,
+      "propertyKey": 228446,
+      "propertyType": "Office",
+      "street": "2 Kingdom Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B084",
+      "geocodeQuery": null,
+      "sqm": 6201.3,
+      "sizeNote": null,
+      "lon": -0.1816755,
+      "lat": 51.5196153,
+      "geocode": {
+        "query": "2 Kingdom Street, London",
+        "method": "same building as B084",
+        "precision": "building",
+        "displayName": "Two Kingdom Street, 2, Kingdom Street, Kensal Town, Paddington, City of Westminster, Greater London, England, W2 6PY, United Kingdom",
+        "osm": "way/42032683",
+        "note": "Location reused from B084 (Kingdom Street 2).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUPAH": 300,
+        "940GZZLUWKA": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUPAH",
+        "name": "Paddington (H&C Line)",
+        "distanceM": 234
+      }
+    },
+    {
+      "id": "BLJ15",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "4 Kingdom Street",
+      "sourceName": "4 Kingdom Street",
+      "sourceMarker": null,
+      "propertyKey": 228466,
+      "propertyType": "Office",
+      "street": "4 Kingdom Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B085",
+      "geocodeQuery": null,
+      "sqm": 2951.2,
+      "sizeNote": null,
+      "lon": -0.1828146,
+      "lat": 51.519448,
+      "geocode": {
+        "query": "4 Kingdom Street, London",
+        "method": "same building as B085",
+        "precision": "building",
+        "displayName": "Four Kingdom Street, 4, Kingdom Street, Kensal Town, Paddington, City of Westminster, Greater London, England, W2 6BD, United Kingdom",
+        "osm": "way/638846989",
+        "note": "Location reused from B085 (Kingdom Street 4).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUPAH": 300,
+        "940GZZLURYO": 600,
+        "940GZZLUWKA": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUPAH",
+        "name": "Paddington (H&C Line)",
+        "distanceM": 297
+      }
+    },
+    {
+      "id": "BLJ16",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "3 sheldon Square",
+      "sourceName": "3 sheldon Square",
+      "sourceMarker": null,
+      "propertyKey": 228452,
+      "propertyType": "Office",
+      "street": "3 Sheldon Square",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B099",
+      "geocodeQuery": null,
+      "sqm": 3321.3,
+      "sizeNote": null,
+      "lon": -0.1807498,
+      "lat": 51.5196203,
+      "geocode": {
+        "query": "3 Sheldon Square, London",
+        "method": "same building as B099",
+        "precision": "building",
+        "displayName": "Three Sheldon Square, 3, Sheldon Square, Paddington, City of Westminster, Greater London, England, W2 6DL, United Kingdom",
+        "osm": "way/42031439",
+        "note": "Location reused from B099 (Sheldon Square 3).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 300,
+        "940GZZLURYO": 600,
+        "940GZZLUWKA": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUPAH",
+        "name": "Paddington (H&C Line)",
+        "distanceM": 183
+      }
+    },
+    {
+      "id": "BLJ17",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "Canada Water Dock Shed",
+      "sourceName": "Canada Water Dock Shed",
+      "sourceMarker": null,
+      "propertyKey": 397756,
+      "propertyType": "Multi-Use",
+      "street": "Deal Porters Way",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B100",
+      "geocodeQuery": null,
+      "sqm": 12310.6,
+      "sizeNote": null,
+      "lon": -0.0491535,
+      "lat": 51.4954093,
+      "geocode": {
+        "query": "Deal Porters Way, London",
+        "method": "same building as B100",
+        "precision": "street",
+        "displayName": "Deal Porters Way, Canada Water, Rotherhithe, London Borough of Southwark, Greater London, England, SE16 2XN, United Kingdom",
+        "osm": "way/1239431309",
+        "note": "Location reused from B100 (The Dock Shed A2).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUCWR": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUCWR",
+        "name": "Canada Water",
+        "distanceM": 285
+      }
+    },
+    {
+      "id": "BLJ18",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "Canada Water The Founding",
+      "sourceName": "Canada Water The Founding",
+      "sourceMarker": null,
+      "propertyKey": null,
+      "propertyType": null,
+      "street": null,
+      "sourceSheet": "British Land 2",
+      "sameAs": null,
+      "geocodeQuery": "The Founding, Canada Water, London",
+      "sqm": 6535.8,
+      "sizeNote": null,
+      "lon": -0.0499528,
+      "lat": 51.4970221,
+      "geocode": {
+        "query": "The Founding, Canada Water, London",
+        "method": "reviewed query (jv-sheets.json)",
+        "precision": "building",
+        "displayName": "The Founding, Deal Porters Way, Canada Water, Rotherhithe, London Borough of Southwark, Greater London, England, SE16 7BB, United Kingdom",
+        "osm": "way/1330247335",
+        "note": null,
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUCWR": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUCWR",
+        "name": "Canada Water",
+        "distanceM": 100
+      }
+    },
+    {
+      "id": "BLJ19",
+      "company": "British Land (incl. JV)",
+      "status": "Standing",
+      "name": "Canada Water 3 Deal Porters",
+      "sourceName": "Canada Water 3 Deal Porters",
+      "sourceMarker": null,
+      "propertyKey": null,
+      "propertyType": null,
+      "street": "Deal Porters Way / Canada Water, London SE16",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B103",
+      "geocodeQuery": null,
+      "sqm": 6840.1,
+      "sizeNote": null,
+      "lon": -0.0499987,
+      "lat": 51.4967673,
+      "geocode": {
+        "query": "Three Deal Porters, Canada Water",
+        "method": "same building as B103",
+        "precision": "building",
+        "displayName": "Three Deal Porters, Marker Way, Canada Water, Rotherhithe, London Borough of Southwark, Greater London, England, SE16 2AJ, United Kingdom",
+        "osm": "way/1428008978",
+        "note": "Location reused from B103 (Three Deal Porters - Canada Water).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUCWR": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUCWR",
+        "name": "Canada Water",
+        "distanceM": 128
+      }
+    },
+    {
+      "id": "BLJ20",
+      "company": "British Land (incl. JV)",
+      "status": "Development",
+      "name": "The Broadgate Tower",
+      "sourceName": "The Broadgate Tower",
+      "sourceMarker": null,
+      "propertyKey": 201490,
+      "propertyType": "Office",
+      "street": "20 Primrose Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B108",
+      "geocodeQuery": null,
+      "sqm": 18394.8,
+      "sizeNote": null,
+      "lon": -0.0797591,
+      "lat": 51.5213133,
+      "geocode": {
+        "query": "20 Primrose Street, London",
+        "method": "same building as B108",
+        "precision": "building",
+        "displayName": "Broadgate Tower, 20, Primrose Street, Bishopsgate Without, Bishopsgate, City of London, Greater London, England, EC2A 2BQ, United Kingdom",
+        "osm": "way/455277718",
+        "note": "Location reused from B108 (The Broadgate Tower).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULVT": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 501
+      }
+    },
+    {
+      "id": "BLJ21",
+      "company": "British Land (incl. JV)",
+      "status": "Development",
+      "name": "Broadgate-Finsbury Avenue 2",
+      "sourceName": "Broadgate-Finsbury Avenue 2",
+      "sourceMarker": null,
+      "propertyKey": 201505,
+      "propertyType": "Office",
+      "street": "2 Finsbury Avenue",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B105",
+      "geocodeQuery": null,
+      "sqm": 17212.4,
+      "sizeNote": null,
+      "lon": -0.0845686,
+      "lat": 51.5199004,
+      "geocode": {
+        "query": "2 Finsbury Avenue, London",
+        "method": "same building as B105",
+        "precision": "building",
+        "displayName": "2, Finsbury Avenue, Broadgate Estate, Bishopsgate, City of London, Greater London, England, EC2M 2PP, United Kingdom",
+        "osm": "way/1577708847",
+        "note": "Location reused from B105 (Broadgate-Finsbury Avenue 2).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600,
+        "940GZZLUODS": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 298
+      }
+    },
+    {
+      "id": "BLJ22",
+      "company": "British Land (incl. JV)",
+      "status": "Development",
+      "name": "Broadgate-Appold Street 1",
+      "sourceName": "Broadgate-Appold Street 1",
+      "sourceMarker": null,
+      "propertyKey": 201492,
+      "propertyType": "Office",
+      "street": "1 Appold Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B106",
+      "geocodeQuery": null,
+      "sqm": 9452.9,
+      "sizeNote": null,
+      "lon": -0.0822252,
+      "lat": 51.5198429,
+      "geocode": {
+        "query": "1 Appold Street, London",
+        "method": "same building as B106",
+        "precision": "building",
+        "displayName": "1, Appold Street, Shoreditch, City of London, Greater London, England, EC2A 2UT, United Kingdom",
+        "osm": "way/30805754",
+        "note": "Location reused from B106 (Broadgate-Appold Street 1).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 285
+      }
+    },
+    {
+      "id": "BLJ23",
+      "company": "British Land (incl. JV)",
+      "status": "Development",
+      "name": "West One",
+      "sourceName": "West One",
+      "sourceMarker": null,
+      "propertyKey": null,
+      "propertyType": null,
+      "street": "75 Davies Street, Mayfair, W1K 5JN",
+      "sourceSheet": "British Land 2",
+      "sameAs": null,
+      "geocodeQuery": "75 Davies Street, Mayfair, London",
+      "sqm": 2183.2,
+      "sizeNote": null,
+      "lon": -0.1492173,
+      "lat": 51.5137542,
+      "geocode": {
+        "query": "75 Davies Street, Mayfair, London",
+        "method": "reviewed query (jv-sheets.json)",
+        "precision": "building",
+        "displayName": "75, Davies Street, East Marylebone, Mayfair, City of Westminster, Greater London, England, W1K 5RF, United Kingdom",
+        "osm": "way/202193349",
+        "note": null,
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUBND": 300,
+        "940GZZLUMBA": 600,
+        "940GZZLUOXC": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUBND",
+        "name": "Bond Street",
+        "distanceM": 77
+      }
+    },
+    {
+      "id": "BLJ24",
+      "company": "British Land (incl. JV)",
+      "status": "Development",
+      "name": "Euston Tower",
+      "sourceName": "Euston Tower",
+      "sourceMarker": null,
+      "propertyKey": 201641,
+      "propertyType": "Office",
+      "street": "286 Euston Road",
+      "sourceSheet": "British Land 2",
+      "sameAs": "B107",
+      "geocodeQuery": null,
+      "sqm": 54069.6,
+      "sizeNote": null,
+      "lon": -0.1391424,
+      "lat": 51.5253537,
+      "geocode": {
+        "query": "286 Euston Road, London",
+        "method": "same building as B107",
+        "precision": "building",
+        "displayName": "Euston Tower, 286, Euston Road, Fitzrovia, London Borough of Camden, Greater London, England, NW1 3DP, United Kingdom",
+        "osm": "way/746156596",
+        "note": "Location reused from B107 (Euston Tower).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUEUS": 600,
+        "940GZZLUESQ": 300,
+        "940GZZLUGDG": 600,
+        "940GZZLUGPS": 600,
+        "940GZZLUWRR": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUWRR",
+        "name": "Warren Street",
+        "distanceM": 107
+      }
+    },
+    {
+      "id": "BLJ25",
+      "company": "British Land (incl. JV)",
+      "status": "Development",
+      "name": "5 Kingdom Street",
+      "sourceName": "5 Kingdom Street",
+      "sourceMarker": null,
+      "propertyKey": 228465,
+      "propertyType": "Office",
+      "street": "5 Kingdom Street",
+      "sourceSheet": "British Land 2",
+      "sameAs": null,
+      "geocodeQuery": "5 Kingdom Street, Paddington, London",
+      "sqm": 22389.6,
+      "sizeNote": null,
+      "lon": -0.1836789,
+      "lat": 51.5193136,
+      "geocode": {
+        "query": "5 Kingdom Street, Paddington, London",
+        "method": "reviewed query (jv-sheets.json)",
+        "precision": "building",
+        "displayName": "Pergola Paddington, 5, Kingdom Street, Kensal Town, Paddington, City of Westminster, Greater London, England, W2 6PY, United Kingdom",
+        "osm": "way/541721956",
+        "note": null,
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUPAH": 600,
+        "940GZZLURYO": 600,
+        "940GZZLUWKA": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLURYO",
+        "name": "Royal Oak",
+        "distanceM": 286
+      }
+    },
+    {
+      "id": "LSJ01",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Buckingham Gate 62",
+      "sourceName": "Buckingham Gate 62",
+      "sourceMarker": null,
+      "propertyKey": 120088,
+      "propertyType": "Office",
+      "street": "62 Buckingham Gate",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B002",
+      "geocodeQuery": null,
+      "sqm": 25561.2,
+      "sizeNote": null,
+      "lon": -0.1364181,
+      "lat": 51.497691,
+      "geocode": {
+        "query": "62 Buckingham Gate, London",
+        "method": "same building as B002",
+        "precision": "building",
+        "displayName": "62 Buckingham Gate, Buckingham Gate, Westminster, Victoria, City of Westminster, Greater London, England, SW1E 6AE, United Kingdom",
+        "osm": "way/111763680",
+        "note": "Location reused from B002 (Buckingham Gate 62).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUSJP": 300,
+        "940GZZLUVIC": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUSJP",
+        "name": "St. James's Park",
+        "distanceM": 284
+      }
+    },
+    {
+      "id": "LSJ02",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Cardinal Place",
+      "sourceName": "Cardinal Place",
+      "sourceMarker": null,
+      "propertyKey": 120017,
+      "propertyType": "Office",
+      "street": "Victoria Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B003",
+      "geocodeQuery": null,
+      "sqm": 48439,
+      "sizeNote": null,
+      "lon": -0.1401126,
+      "lat": 51.4972547,
+      "geocode": {
+        "query": "Cardinal Place - 80–100 Victoria Street, London",
+        "method": "same building as B003",
+        "precision": "building",
+        "displayName": "Cardinal Place Shopping Centre, 80, Victoria Street, Westminster, Victoria, City of Westminster, Greater London, England, SW1E 5JL, United Kingdom",
+        "osm": "way/107063630",
+        "note": "Location reused from B003 (Cardinal Place - 80–100 Victoria Street).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUVIC",
+        "name": "Victoria",
+        "distanceM": 227
+      }
+    },
+    {
+      "id": "LSJ03",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "City Gate",
+      "sourceName": "City Gate",
+      "sourceMarker": null,
+      "propertyKey": 120123,
+      "propertyType": "Office",
+      "street": "14 Southwark Bridge Road",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B004",
+      "geocodeQuery": null,
+      "sqm": 7378.5,
+      "sizeNote": null,
+      "lon": -0.0954957,
+      "lat": 51.5053485,
+      "geocode": {
+        "query": "14 Southwark Bridge Road, London",
+        "method": "same building as B004",
+        "precision": "street",
+        "displayName": "Southwark Bridge Road, Bankside, Southwark, London Borough of Southwark, Greater London, England, SE1 9EU, United Kingdom",
+        "osm": "way/1053446601",
+        "note": "Location reused from B004 (City Gate).",
+        "rejected": [
+          "City Gate, London -> City Gate, 99, Mile End Road"
+        ]
+      },
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUMSH": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLULNB",
+        "name": "London Bridge",
+        "distanceM": 406
+      }
+    },
+    {
+      "id": "LSJ04",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Dashwood House",
+      "sourceName": "Dashwood House",
+      "sourceMarker": null,
+      "propertyKey": 120033,
+      "propertyType": "Office",
+      "street": "69 Old Broad Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B005",
+      "geocodeQuery": null,
+      "sqm": 14029.9,
+      "sizeNote": null,
+      "lon": -0.0826894,
+      "lat": 51.5168841,
+      "geocode": {
+        "query": "69 Old Broad Street, London",
+        "method": "same building as B005",
+        "precision": "building",
+        "displayName": "Dashwood House, 69, Old Broad Street, Bishopsgate Without, Bishopsgate, City of London, Greater London, England, EC2M 1QS, United Kingdom",
+        "osm": "way/30806421",
+        "note": "Location reused from B005 (Dashwood House).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUALD": 600,
+        "940GZZLULVT": 300,
+        "940GZZLUMGT": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULVT",
+        "name": "Liverpool Street",
+        "distanceM": 63
+      }
+    },
+    {
+      "id": "LSJ05",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Eastbourne Terrace 10",
+      "sourceName": "Eastbourne Terrace 10",
+      "sourceMarker": null,
+      "propertyKey": 416459,
+      "propertyType": "Office",
+      "street": "10 Eastbourne Terrace",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B006",
+      "geocodeQuery": null,
+      "sqm": 6063.1,
+      "sizeNote": null,
+      "lon": -0.1795674,
+      "lat": 51.517067,
+      "geocode": {
+        "query": "10 Eastbourne Terrace, London",
+        "method": "same building as B006",
+        "precision": "building",
+        "displayName": "10, Eastbourne Terrace, Paddington, City of Westminster, Greater London, England, W2 6LG, United Kingdom",
+        "osm": "way/42030140",
+        "note": "Location reused from B006 (Eastbourne Terrace 10).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULGT": 600,
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUPAH",
+        "name": "Paddington (H&C Line)",
+        "distanceM": 169
+      }
+    },
+    {
+      "id": "LSJ06",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Eastbourne Terrace 20",
+      "sourceName": "Eastbourne Terrace 20",
+      "sourceMarker": null,
+      "propertyKey": 120023,
+      "propertyType": "Office",
+      "street": "20 Eastbourne Terrace",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B007",
+      "geocodeQuery": null,
+      "sqm": 8759.6,
+      "sizeNote": null,
+      "lon": -0.1790635,
+      "lat": 51.5166662,
+      "geocode": {
+        "query": "20 Eastbourne Terrace, London",
+        "method": "same building as B007",
+        "precision": "building",
+        "displayName": "20, Eastbourne Terrace, Paddington, City of Westminster, Greater London, England, W2 6LG, United Kingdom",
+        "osm": "way/42030138",
+        "note": "Location reused from B007 (Eastbourne Terrace 20).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULGT": 600,
+        "940GZZLUPAC": 600,
+        "940GZZLUPAH": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUPAH",
+        "name": "Paddington (H&C Line)",
+        "distanceM": 206
+      }
+    },
+    {
+      "id": "LSJ07",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Eastbourne Terrace 30",
+      "sourceName": "Eastbourne Terrace 30",
+      "sourceMarker": null,
+      "propertyKey": 416460,
+      "propertyType": "Office",
+      "street": "30 Eastbourne Terrace",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B008",
+      "geocodeQuery": null,
+      "sqm": 4459.9,
+      "sizeNote": null,
+      "lon": -0.1786092,
+      "lat": 51.5163996,
+      "geocode": {
+        "query": "30 Eastbourne Terrace, London",
+        "method": "same building as B008",
+        "precision": "building",
+        "displayName": "30, Eastbourne Terrace, Paddington, City of Westminster, Greater London, England, W2 6LG, United Kingdom",
+        "osm": "way/42030136",
+        "note": "Location reused from B008 (Eastbourne Terrace 30).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULGT": 600,
+        "940GZZLUPAC": 300,
+        "940GZZLUPAH": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUPAC",
+        "name": "Paddington",
+        "distanceM": 182
+      }
+    },
+    {
+      "id": "LSJ08",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Lucent",
+      "sourceName": "Lucent",
+      "sourceMarker": null,
+      "propertyKey": 120001,
+      "propertyType": "Office",
+      "street": "1 Sherwood Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B011",
+      "geocodeQuery": null,
+      "sqm": 15047.7,
+      "sizeNote": null,
+      "lon": -0.1353688,
+      "lat": 51.5105219,
+      "geocode": {
+        "query": "1 Sherwood Street, London",
+        "method": "same building as B011",
+        "precision": "street",
+        "displayName": "Sherwood Street, Soho, City of Westminster, Greater London, England, W1D 7HW, United Kingdom",
+        "osm": "way/96690719",
+        "note": "Location reused from B011 (Lucent / picadilly lights).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUGPK": 600,
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUPCC",
+        "name": "Piccadilly Circus",
+        "distanceM": 127
+      }
+    },
+    {
+      "id": "LSJ09",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Moorgate Hall",
+      "sourceName": "Moorgate Hall",
+      "sourceMarker": null,
+      "propertyKey": 119979,
+      "propertyType": "Office",
+      "street": "155 Moorgate Hall",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B012",
+      "geocodeQuery": null,
+      "sqm": 7510.2,
+      "sizeNote": null,
+      "lon": -0.0881274,
+      "lat": 51.5187729,
+      "geocode": {
+        "query": "155 Moorgate, London",
+        "method": "same building as B012",
+        "precision": "building",
+        "displayName": "Mace, 155, Moorgate, Bishopsgate Without, Moorgate, City of London, Greater London, England, EC2M 6XB, United Kingdom",
+        "osm": "node/2389234328",
+        "note": "Location reused from B012 (Moorgate Hall).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLULVT": 600,
+        "940GZZLUMGT": 300,
+        "940GZZLUODS": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUMGT",
+        "name": "Moorgate",
+        "distanceM": 94
+      }
+    },
+    {
+      "id": "LSJ10",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Myo Kings Cross",
+      "sourceName": "Myo Kings Cross",
+      "sourceMarker": null,
+      "propertyKey": 469694,
+      "propertyType": "Office",
+      "street": "York Way",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B010",
+      "geocodeQuery": null,
+      "sqm": 3127.6,
+      "sizeNote": null,
+      "lon": -0.121924,
+      "lat": 51.5330601,
+      "geocode": {
+        "query": "42–50 York Way, London, N1 9AB",
+        "method": "same building as B010",
+        "precision": "building",
+        "displayName": "London Studio Centre, 42–50, York Way, Barnsbury, London Borough of Islington, Greater London, England, N1 9AB, United Kingdom",
+        "osm": "way/36560962",
+        "note": "Location reused from B010 (Myo Kings Cross).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUKSX": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUKSX",
+        "name": "King's Cross St. Pancras",
+        "distanceM": 414
+      }
+    },
+    {
+      "id": "LSJ11",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "MYO Piccadilly - Picadilly lights",
+      "sourceName": "MYO Piccadilly - Picadilly lights",
+      "sourceMarker": null,
+      "propertyKey": 532557,
+      "propertyType": "Office",
+      "street": "1 Sherwood Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B011",
+      "geocodeQuery": null,
+      "sqm": 141199,
+      "sizeNote": null,
+      "lon": -0.1353688,
+      "lat": 51.5105219,
+      "geocode": {
+        "query": "1 Sherwood Street, London",
+        "method": "same building as B011",
+        "precision": "street",
+        "displayName": "Sherwood Street, Soho, City of Westminster, Greater London, England, W1D 7HW, United Kingdom",
+        "osm": "way/96690719",
+        "note": "Location reused from B011 (Lucent / picadilly lights).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUGPK": 600,
+        "940GZZLULSQ": 600,
+        "940GZZLUOXC": 600,
+        "940GZZLUPCC": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUPCC",
+        "name": "Piccadilly Circus",
+        "distanceM": 127
+      }
+    },
+    {
+      "id": "LSJ12",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "n2",
+      "sourceName": "n2",
+      "sourceMarker": null,
+      "propertyKey": 438326,
+      "propertyType": "Office",
+      "street": "Bressenden Place",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B013",
+      "geocodeQuery": null,
+      "sqm": 15045.2,
+      "sizeNote": null,
+      "lon": -0.1424341,
+      "lat": 51.497774,
+      "geocode": {
+        "query": "Bressenden Place, Victoria, London",
+        "method": "same building as B013",
+        "precision": "street",
+        "displayName": "Bressenden Place, Victoria, City of Westminster, Greater London, England, SW1E 5DH, United Kingdom",
+        "osm": "way/211341742",
+        "note": "Location reused from B013 (n2).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUVIC",
+        "name": "Victoria",
+        "distanceM": 159
+      }
+    },
+    {
+      "id": "LSJ13",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "New Street Square",
+      "sourceName": "New Street Square",
+      "sourceMarker": null,
+      "propertyKey": 119983,
+      "propertyType": "Office",
+      "street": "76 Shoe Lane",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B014",
+      "geocodeQuery": null,
+      "sqm": 64218.4,
+      "sizeNote": null,
+      "lon": -0.1073827,
+      "lat": 51.5157324,
+      "geocode": {
+        "query": "3-5 New Street Square, London",
+        "method": "same building as B014",
+        "precision": "street",
+        "displayName": "New Street Square, West Smithfield, Blackfriars, City of London, Greater London, England, EC4A 3BH, United Kingdom",
+        "osm": "way/1208094364",
+        "note": "Location reused from B014 (New Street Square).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUBKF": 600,
+        "940GZZLUCHL": 600,
+        "940GZZLUFCN": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUCHL",
+        "name": "Chancery Lane",
+        "distanceM": 403
+      }
+    },
+    {
+      "id": "LSJ14",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Palace Street 16",
+      "sourceName": "Palace Street 16",
+      "sourceMarker": null,
+      "propertyKey": 416457,
+      "propertyType": "Office",
+      "street": "16 Palace Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B016",
+      "geocodeQuery": null,
+      "sqm": 13839.9,
+      "sizeNote": null,
+      "lon": -0.1394964,
+      "lat": 51.4975784,
+      "geocode": {
+        "query": "16 Palace Street, London",
+        "method": "same building as B016",
+        "precision": "street",
+        "displayName": "Palace Street, Westminster, Victoria, City of Westminster, Greater London, England, SW1E 5JD, United Kingdom",
+        "osm": "way/320718074",
+        "note": "Location reused from B016 (Palace Street 16).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUVIC",
+        "name": "Victoria",
+        "distanceM": 281
+      }
+    },
+    {
+      "id": "LSJ15",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "The Forge",
+      "sourceName": "The Forge",
+      "sourceMarker": null,
+      "propertyKey": 310049,
+      "propertyType": "Office",
+      "street": "105 Sumner Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B019",
+      "geocodeQuery": null,
+      "sqm": 12831.5,
+      "sizeNote": null,
+      "lon": -0.0961828,
+      "lat": 51.506642,
+      "geocode": {
+        "query": "105 Sumner Street, London",
+        "method": "same building as B019",
+        "precision": "building",
+        "displayName": "105, Sumner Street, Bankside, Southwark, London Borough of Southwark, Greater London, England, SE1 9JY, United Kingdom",
+        "osm": "way/1215655386",
+        "note": "Location reused from B019 (The Forge).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUMSH": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLULNB",
+        "name": "London Bridge",
+        "distanceM": 485
+      }
+    },
+    {
+      "id": "LSJ16",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "The Zig Zag Building",
+      "sourceName": "The Zig Zag Building",
+      "sourceMarker": null,
+      "propertyKey": 120016,
+      "propertyType": "Office",
+      "street": "70 Victoria Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B020",
+      "geocodeQuery": null,
+      "sqm": 22397.1,
+      "sizeNote": null,
+      "lon": -0.138707,
+      "lat": 51.4972908,
+      "geocode": {
+        "query": "The Zig Zag Building, London",
+        "method": "same building as B020",
+        "precision": "building",
+        "displayName": "The Zig Zag Building, Victoria Street, Westminster, Victoria, City of Westminster, Greater London, England, SW1E 6RA, United Kingdom",
+        "osm": "way/385880916",
+        "note": "Location reused from B020 (The Zig Zag Building).",
+        "rejected": [
+          "70 Victoria Street, London -> 70, Queen Victoria Street, Bank"
+        ]
+      },
+      "stations": {
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUVIC",
+        "name": "Victoria",
+        "distanceM": 319
+      }
+    },
+    {
+      "id": "LSJ17",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Timber Square",
+      "sourceName": "Timber Square",
+      "sourceMarker": null,
+      "propertyKey": 367859,
+      "propertyType": "Office",
+      "street": "25 Lavington Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B022",
+      "geocodeQuery": null,
+      "sqm": 33956.1,
+      "sizeNote": null,
+      "lon": -0.0985532,
+      "lat": 51.5051802,
+      "geocode": {
+        "query": "25 Lavington Street, London",
+        "method": "same building as B022",
+        "precision": "street",
+        "displayName": "Lavington Street, Bankside, Southwark, London Borough of Southwark, Greater London, England, SE1 0JA, United Kingdom",
+        "osm": "way/646240656",
+        "note": "Location reused from B022 (Timber Square).",
+        "rejected": [
+          "Timber Square, London -> Fulham Timber, Ellerslie Square, Ellerslie Square Industrial Estate"
+        ]
+      },
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUSWK": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUSWK",
+        "name": "Southwark",
+        "distanceM": 484
+      }
+    },
+    {
+      "id": "LSJ18",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Westminster City Hall",
+      "sourceName": "Westminster City Hall",
+      "sourceMarker": null,
+      "propertyKey": 120089,
+      "propertyType": "Office",
+      "street": "64 Victoria Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B026",
+      "geocodeQuery": null,
+      "sqm": 17561.2,
+      "sizeNote": null,
+      "lon": -0.1373436,
+      "lat": 51.4976144,
+      "geocode": {
+        "query": "64 Victoria Street, London",
+        "method": "same building as B026",
+        "precision": "building",
+        "displayName": "Westminster City Hall, 62-64, Victoria Street, Westminster, Victoria, City of Westminster, Greater London, England, SW1E 6QP, United Kingdom",
+        "osm": "way/16409717",
+        "note": "Location reused from B026 (Westminster City Hall).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUSJP": 300,
+        "940GZZLUVIC": 600
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUSJP",
+        "name": "St. James's Park",
+        "distanceM": 336
+      }
+    },
+    {
+      "id": "LSJ19",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "Oval Works",
+      "sourceName": "Oval Works",
+      "sourceMarker": null,
+      "propertyKey": null,
+      "propertyType": "Office",
+      "street": "Vauxhall Street, Oval Village,SE11 5RH",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B027",
+      "geocodeQuery": null,
+      "sqm": 6921,
+      "sizeNote": null,
+      "lon": -0.115669,
+      "lat": 51.4858536,
+      "geocode": {
+        "query": "Oval Works, London",
+        "method": "same building as B027",
+        "precision": "building",
+        "displayName": "Oval Works, Vauxhall Street, Kennington Cross, Oval, London Borough of Lambeth, Greater London, England, SE11 5RN, United Kingdom",
+        "osm": "way/1228899477",
+        "note": "Location reused from B027 (Oval Works).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUOVL": 600,
+        "940GZZLUVXL": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUOVL",
+        "name": "Oval",
+        "distanceM": 500
+      }
+    },
+    {
+      "id": "LSJ20",
+      "company": "Landsec (incl. JV)",
+      "status": "Standing",
+      "name": "One New Change",
+      "sourceName": "One New Change",
+      "sourceMarker": null,
+      "propertyKey": 119987,
+      "propertyType": "Office",
+      "street": "1 New Change",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B015",
+      "geocodeQuery": null,
+      "sqm": 31000,
+      "sizeNote": null,
+      "lon": -0.0949305,
+      "lat": 51.5138383,
+      "geocode": {
+        "query": "1 New Change, London",
+        "method": "same building as B015",
+        "precision": "building",
+        "displayName": "1, New Change, West Smithfield, St Paul's, City of London, Greater London, England, EC4M 9AF, United Kingdom",
+        "osm": "way/320420940",
+        "note": "Location reused from B015 (One New Change).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUBNK": 600,
+        "940GZZLUCST": 600,
+        "940GZZLUMSH": 300,
+        "940GZZLUSPU": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUSPU",
+        "name": "St. Paul's",
+        "distanceM": 218
+      }
+    },
+    {
+      "id": "LSJ21",
+      "company": "Landsec (incl. JV)",
+      "status": "Development",
+      "name": "Thirty High",
+      "sourceName": "Thirty High+",
+      "sourceMarker": "+",
+      "propertyKey": 460622,
+      "propertyType": "Office",
+      "street": "Bressenden Place",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B021",
+      "geocodeQuery": null,
+      "sqm": 27778,
+      "sizeNote": null,
+      "lon": -0.141846,
+      "lat": 51.4970777,
+      "geocode": {
+        "query": "Bressenden Place, London",
+        "method": "same building as B021",
+        "precision": "street",
+        "displayName": "Bressenden Place, Victoria, City of Westminster, Greater London, England, SW1E 5LB, United Kingdom",
+        "osm": "way/39547934",
+        "note": "Location reused from B021 (Thirty High).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUSJP": 600,
+        "940GZZLUVIC": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUVIC",
+        "name": "Victoria",
+        "distanceM": 114
+      }
+    },
+    {
+      "id": "LSJ22",
+      "company": "Landsec (incl. JV)",
+      "status": "Development",
+      "name": "Nova Place",
+      "sourceName": "Nova Place+",
+      "sourceMarker": "+",
+      "propertyKey": 355140,
+      "propertyType": "Office",
+      "street": "Victoria Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B028",
+      "geocodeQuery": null,
+      "sqm": 2787.1,
+      "sizeNote": null,
+      "lon": -0.1300952,
+      "lat": 51.4992966,
+      "geocode": {
+        "query": "Victoria Street, London",
+        "method": "same building as B028",
+        "precision": "street",
+        "displayName": "Victoria Street, Westminster, Millbank, City of Westminster, Greater London, England, SW1H 0ND, United Kingdom",
+        "osm": "way/256483223",
+        "note": "Location reused from B028 (Nova Place).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUSJP": 300,
+        "940GZZLUWSM": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUSJP",
+        "name": "St. James's Park",
+        "distanceM": 246
+      }
+    },
+    {
+      "id": "LSJ23",
+      "company": "Landsec (incl. JV)",
+      "status": "Development",
+      "name": "Nova Victoria North",
+      "sourceName": "Nova Victoria North",
+      "sourceMarker": null,
+      "propertyKey": 164835,
+      "propertyType": "Office",
+      "street": "11 Bressenden Place",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B029",
+      "geocodeQuery": null,
+      "sqm": 26699.8,
+      "sizeNote": null,
+      "lon": -0.1431405,
+      "lat": 51.4975531,
+      "geocode": {
+        "query": "11 Bressenden Place, London",
+        "method": "same building as B029",
+        "precision": "building",
+        "displayName": "Nova North, 11, Bressenden Place, Victoria, City of Westminster, Greater London, England, SW1E 5DH, United Kingdom",
+        "osm": "way/451259202",
+        "note": "Location reused from B029 (Nova Victoria North).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUVIC": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLUVIC",
+        "name": "Victoria",
+        "distanceM": 128
+      }
+    },
+    {
+      "id": "LSJ24",
+      "company": "Landsec (incl. JV)",
+      "status": "Development",
+      "name": "Liberty of Southwark",
+      "sourceName": "Liberty of Southwark",
+      "sourceMarker": null,
+      "propertyKey": 425686,
+      "propertyType": "Multi-Use",
+      "street": "Southwark Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B024",
+      "geocodeQuery": null,
+      "sqm": 20440,
+      "sizeNote": null,
+      "lon": -0.0949879,
+      "lat": 51.5048606,
+      "geocode": {
+        "query": "Southwark Street, London",
+        "method": "same building as B024",
+        "precision": "street",
+        "displayName": "Southwark Street, Bankside, The Borough, London Borough of Southwark, Greater London, England, SE1 1RU, United Kingdom",
+        "osm": "way/51979801",
+        "note": "Location reused from B024 (Landmark Court/Liberty of Southwark).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 300
+      },
+      "bestSeconds": 300,
+      "nearestStation": {
+        "id": "940GZZLULNB",
+        "name": "London Bridge",
+        "distanceM": 370
+      }
+    },
+    {
+      "id": "LSJ25",
+      "company": "Landsec (incl. JV)",
+      "status": "Development",
+      "name": "Timber Square Phase 2",
+      "sourceName": "Timber Square Phase 2+",
+      "sourceMarker": "+",
+      "propertyKey": 467783,
+      "propertyType": "Office",
+      "street": "Lavington Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B025",
+      "geocodeQuery": null,
+      "sqm": 35303.2,
+      "sizeNote": "Percent Owned entered as 100 (fraction expected); used \"Property Size (sq. m.)\" instead of the inflated JV figure.",
+      "lon": -0.1000695,
+      "lat": 51.5050972,
+      "geocode": {
+        "query": "Lavington Street, London",
+        "method": "same building as B025",
+        "precision": "street",
+        "displayName": "Lavington Street, Bankside, Southwark, London Borough of Southwark, Greater London, England, SE1 0NZ, United Kingdom",
+        "osm": "way/4253745",
+        "note": "Location reused from B025 (Timber Square Phase 2).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUBOR": 600,
+        "940GZZLULNB": 600,
+        "940GZZLUSWK": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUSWK",
+        "name": "Southwark",
+        "distanceM": 380
+      }
+    },
+    {
+      "id": "LSJ26",
+      "company": "Landsec (incl. JV)",
+      "status": "Development",
+      "name": "Hill House",
+      "sourceName": "Hill House",
+      "sourceMarker": null,
+      "propertyKey": 119996,
+      "propertyType": "Office",
+      "street": "1 Little New Street",
+      "sourceSheet": "Land Sec 2",
+      "sameAs": "B009",
+      "geocodeQuery": null,
+      "sqm": 15984.1,
+      "sizeNote": "Percent Owned entered as 100 (fraction expected); used \"Property Size (sq. m.)\" instead of the inflated JV figure.",
+      "lon": -0.1068418,
+      "lat": 51.5154345,
+      "geocode": {
+        "query": "1 Little New Street, London",
+        "method": "same building as B009",
+        "precision": "building",
+        "displayName": "Hill House, 1, Little New Street, West Smithfield, Blackfriars, City of London, Greater London, England, EC4A 3TR, United Kingdom",
+        "osm": "way/31424046",
+        "note": "Location reused from B009 (Hill House).",
+        "rejected": []
+      },
+      "stations": {
+        "940GZZLUBKF": 600,
+        "940GZZLUCHL": 600,
+        "940GZZLUFCN": 600,
+        "940GZZLUSPU": 600
+      },
+      "bestSeconds": 600,
+      "nearestStation": {
+        "id": "940GZZLUCHL",
+        "name": "Chancery Lane",
+        "distanceM": 453
       }
     }
   ]

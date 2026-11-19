@@ -9,7 +9,7 @@ const out = readJson(paths.buildings).buildings;
 const stations = new Map(readJson(paths.stations).stations.map((s) => [s.id, s]));
 
 test('workbook parses into four companies with standing and development blocks', () => {
-  assert.equal(clean.buildings.length, 149);
+  assert.equal(clean.buildings.filter((b) => !b.sourceSheet).length, 149);
   assert.deepEqual(clean.issues, []);
   const count = (c, s) => clean.buildings.filter((b) => b.company === c && b.status === s).length;
   assert.deepEqual([count('Landsec', 'Standing'), count('Landsec', 'Development')], [22, 7]);
@@ -74,11 +74,12 @@ test('Excel report exists with the expected sheets', { skip: !fs.existsSync(new 
 
 test('floor areas import by Asset ID; zero/blank sizes are unknown, not zero', () => {
   const sizes = readJson(paths.buildingSizes);
-  assert.equal(Object.keys(sizes.sizes).length, 148);
+  assert.equal(Object.keys(sizes.sizes).filter((id) => /^B\d/.test(id)).length, 148);
   assert.deepEqual(sizes.unknown.map((u) => u.id), ['B109']); // Canada Water-Future Phases has size 0 in the source
   const total = Object.values(sizes.sizes).reduce((s, v) => s + v, 0);
   // 2,219,091 sqm in the workbook, plus corrected Derwent development sizes (+4,885 sqm).
-  assert.ok(Math.abs(total - 2223976) < 5, String(total));
+  const totalMain = Object.entries(sizes.sizes).filter(([id]) => /^B\d/.test(id)).reduce((t, [, v]) => t + v, 0);
+  assert.ok(Math.abs(totalMain - 2223976) < 5, String(totalMain));
   assert.equal(sizes.sizes.B145, 4617.13);
   assert.equal(sizes.sizes.B149, 10962.2);
   assert.equal(out.find((b) => b.id === 'B109').sqm, null);
@@ -99,4 +100,24 @@ test('floor-area shares (all stations) match the SQM table in the annotated work
       assert.ok(Math.abs(within / total - share) < 0.0005, `${company} ${status}: ${within / total} vs ${share}`);
     }
   }
+});
+
+test('JV sheets become separate companies with reused locations and sheet sizes', () => {
+  const jv = clean.buildings.filter((b) => b.sourceSheet);
+  const count = (c, st) => jv.filter((b) => b.company === c && b.status === st).length;
+  assert.deepEqual([count('British Land (incl. JV)', 'Standing'), count('British Land (incl. JV)', 'Development')], [19, 6]);
+  assert.deepEqual([count('Landsec (incl. JV)', 'Standing'), count('Landsec (incl. JV)', 'Development')], [20, 6]);
+  for (const b of jv) {
+    assert.ok(TubeConfig.COMPANY_BY_NAME[b.company], b.company);
+    assert.ok(Number.isFinite(b.lon), `${b.name} not located`);
+    if (b.sameAs) {
+      const t = clean.buildings.find((x) => x.id === b.sameAs);
+      assert.deepEqual([b.lon, b.lat], [t.lon, t.lat], b.name);
+    }
+  }
+  // Non-office and non-London sections are excluded.
+  assert.ok(!jv.some((b) => /Tesco|Novotel|Optic|Priestley|Roberts/.test(b.name)));
+  // "Percent Owned" typed as 100 must not inflate the size 100x.
+  assert.ok(jv.find((b) => b.name === 'Hill House').sqm < 20000);
+  assert.ok(jv.find((b) => b.name === 'Timber Square Phase 2').sqm < 40000);
 });

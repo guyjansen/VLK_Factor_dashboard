@@ -1,18 +1,18 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "generatedAt": "2026-11-18T16:18:54.004Z",
+    "generatedAt": "2026-11-19T15:45:45.118Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
       "url": "https://nominatim.openstreetmap.org",
       "attribution": "Geocoding © OpenStreetMap contributors (ODbL), Nominatim"
     },
-    "geocodedAt": "2026-11-17T16:00:04.019Z",
+    "geocodedAt": "2026-11-19T15:45:38.812Z",
     "sizes": {
       "source": "data/London_office_sizes_sqm.xlsx",
       "unit": "sqm",
-      "known": 148,
+      "known": 199,
       "unknown": [
         {
           "id": "B109",
@@ -3609,6 +3609,1230 @@
         "coordinates": [
           -0.1575201,
           51.5221225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ01",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "100 Liverpool Street",
+        "sqm": 17790.9,
+        "propertyKey": 187105,
+        "propertyType": "Office",
+        "street": "100 Liverpool Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 71
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0836589,
+          51.5179318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ02",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "Broadgate Circle",
+        "sqm": 1951,
+        "propertyKey": 202587,
+        "propertyType": "Office",
+        "street": "Broadgate Circle",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 169
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.083953,
+          51.5188004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ03",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "155 Bishopsgate",
+        "sqm": 18580.6,
+        "propertyKey": 201472,
+        "propertyType": "Office",
+        "street": "155 Bishopsgate",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 299
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0795741,
+          51.5187959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ04",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "10 Exchange square",
+        "sqm": 7478.7,
+        "propertyKey": 201479,
+        "propertyType": "Office",
+        "street": "10 Exchange Square",
+        "geocodePrecision": "area",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 322
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0809214,
+          51.5198723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ05",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "338 Euston Road Regents Place",
+        "sqm": 10683.8,
+        "propertyKey": 201643,
+        "propertyType": "Office",
+        "street": "338 Euston Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Great Portland Street",
+        "nearestStationM": 204
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1416497,
+          51.524666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ06",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "10 Brock Street",
+        "sqm": 31679.9,
+        "propertyKey": 175722,
+        "propertyType": "Office",
+        "street": "10 Brock Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 158
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1396894,
+          51.5256769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ07",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "1 Triton Square",
+        "sqm": 10080,
+        "propertyKey": 201646,
+        "propertyType": "Office",
+        "street": "1/4/7 Triton Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 212
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1410198,
+          51.5254581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ08",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "20 Triton Square",
+        "sqm": 11845.1,
+        "propertyKey": 201654,
+        "propertyType": "Office",
+        "street": "20 Triton Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Great Portland Street",
+        "nearestStationM": 170
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1427764,
+          51.5250492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ09",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "1 Finsbury Avenue",
+        "sqm": 13052.9,
+        "propertyKey": 201504,
+        "propertyType": "Office",
+        "street": "1 Finsbury Avenue",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 274
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0851116,
+          51.5195135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ10",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "Marble Arch House",
+        "sqm": 1765.2,
+        "propertyKey": 186557,
+        "propertyType": "Office",
+        "street": "62/64 Seymour Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 274
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1611165,
+          51.5143899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ11",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "1 Sheldon Square",
+        "sqm": 4529,
+        "propertyKey": 275951,
+        "propertyType": "Office",
+        "street": "1 Sheldon Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 146
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1807589,
+          51.5189853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ12",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "Northon Folgate",
+        "sqm": 33494.3,
+        "propertyKey": 230344,
+        "propertyType": "Office",
+        "street": "Norton Folgate",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 537
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0787076,
+          51.5212826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ13",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "York House",
+        "sqm": 3065.8,
+        "propertyKey": 96592,
+        "propertyType": "Office",
+        "street": "45 Seymour Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Marble Arch",
+        "nearestStationM": 280
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1612621,
+          51.5142545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ14",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "2 Kingdom Street",
+        "sqm": 6201.3,
+        "propertyKey": 228446,
+        "propertyType": "Office",
+        "street": "2 Kingdom Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 234
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1816755,
+          51.5196153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ15",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "4 Kingdom Street",
+        "sqm": 2951.2,
+        "propertyKey": 228466,
+        "propertyType": "Office",
+        "street": "4 Kingdom Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 297
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1828146,
+          51.519448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ16",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "3 sheldon Square",
+        "sqm": 3321.3,
+        "propertyKey": 228452,
+        "propertyType": "Office",
+        "street": "3 Sheldon Square",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 183
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1807498,
+          51.5196203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ17",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "Canada Water Dock Shed",
+        "sqm": 12310.6,
+        "propertyKey": 397756,
+        "propertyType": "Multi-Use",
+        "street": "Deal Porters Way",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Canada Water",
+        "nearestStationM": 285
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0491535,
+          51.4954093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ18",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "Canada Water The Founding",
+        "sqm": 6535.8,
+        "propertyKey": null,
+        "propertyType": null,
+        "street": null,
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Canada Water",
+        "nearestStationM": 100
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0499528,
+          51.4970221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ19",
+        "company": "British Land (incl. JV)",
+        "status": "Standing",
+        "name": "Canada Water 3 Deal Porters",
+        "sqm": 6840.1,
+        "propertyKey": null,
+        "propertyType": null,
+        "street": "Deal Porters Way / Canada Water, London SE16",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Canada Water",
+        "nearestStationM": 128
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0499987,
+          51.4967673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ20",
+        "company": "British Land (incl. JV)",
+        "status": "Development",
+        "name": "The Broadgate Tower",
+        "sqm": 18394.8,
+        "propertyKey": 201490,
+        "propertyType": "Office",
+        "street": "20 Primrose Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 501
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0797591,
+          51.5213133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ21",
+        "company": "British Land (incl. JV)",
+        "status": "Development",
+        "name": "Broadgate-Finsbury Avenue 2",
+        "sqm": 17212.4,
+        "propertyKey": 201505,
+        "propertyType": "Office",
+        "street": "2 Finsbury Avenue",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 298
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0845686,
+          51.5199004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ22",
+        "company": "British Land (incl. JV)",
+        "status": "Development",
+        "name": "Broadgate-Appold Street 1",
+        "sqm": 9452.9,
+        "propertyKey": 201492,
+        "propertyType": "Office",
+        "street": "1 Appold Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 285
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0822252,
+          51.5198429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ23",
+        "company": "British Land (incl. JV)",
+        "status": "Development",
+        "name": "West One",
+        "sqm": 2183.2,
+        "propertyKey": null,
+        "propertyType": null,
+        "street": "75 Davies Street, Mayfair, W1K 5JN",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Bond Street",
+        "nearestStationM": 77
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1492173,
+          51.5137542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ24",
+        "company": "British Land (incl. JV)",
+        "status": "Development",
+        "name": "Euston Tower",
+        "sqm": 54069.6,
+        "propertyKey": 201641,
+        "propertyType": "Office",
+        "street": "286 Euston Road",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Warren Street",
+        "nearestStationM": 107
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1391424,
+          51.5253537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BLJ25",
+        "company": "British Land (incl. JV)",
+        "status": "Development",
+        "name": "5 Kingdom Street",
+        "sqm": 22389.6,
+        "propertyKey": 228465,
+        "propertyType": "Office",
+        "street": "5 Kingdom Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Royal Oak",
+        "nearestStationM": 286
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1836789,
+          51.5193136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ01",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Buckingham Gate 62",
+        "sqm": 25561.2,
+        "propertyKey": 120088,
+        "propertyType": "Office",
+        "street": "62 Buckingham Gate",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "St. James's Park",
+        "nearestStationM": 284
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1364181,
+          51.497691
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ02",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Cardinal Place",
+        "sqm": 48439,
+        "propertyKey": 120017,
+        "propertyType": "Office",
+        "street": "Victoria Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 227
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1401126,
+          51.4972547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ03",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "City Gate",
+        "sqm": 7378.5,
+        "propertyKey": 120123,
+        "propertyType": "Office",
+        "street": "14 Southwark Bridge Road",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 10,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 406
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0954957,
+          51.5053485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ04",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Dashwood House",
+        "sqm": 14029.9,
+        "propertyKey": 120033,
+        "propertyType": "Office",
+        "street": "69 Old Broad Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Liverpool Street",
+        "nearestStationM": 63
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0826894,
+          51.5168841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ05",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Eastbourne Terrace 10",
+        "sqm": 6063.1,
+        "propertyKey": 416459,
+        "propertyType": "Office",
+        "street": "10 Eastbourne Terrace",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 169
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1795674,
+          51.517067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ06",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Eastbourne Terrace 20",
+        "sqm": 8759.6,
+        "propertyKey": 120023,
+        "propertyType": "Office",
+        "street": "20 Eastbourne Terrace",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Paddington (H&C Line)",
+        "nearestStationM": 206
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1790635,
+          51.5166662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ07",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Eastbourne Terrace 30",
+        "sqm": 4459.9,
+        "propertyKey": 416460,
+        "propertyType": "Office",
+        "street": "30 Eastbourne Terrace",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Paddington",
+        "nearestStationM": 182
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1786092,
+          51.5163996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ08",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Lucent",
+        "sqm": 15047.7,
+        "propertyKey": 120001,
+        "propertyType": "Office",
+        "street": "1 Sherwood Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Piccadilly Circus",
+        "nearestStationM": 127
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1353688,
+          51.5105219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ09",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Moorgate Hall",
+        "sqm": 7510.2,
+        "propertyKey": 119979,
+        "propertyType": "Office",
+        "street": "155 Moorgate Hall",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Moorgate",
+        "nearestStationM": 94
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0881274,
+          51.5187729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ10",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Myo Kings Cross",
+        "sqm": 3127.6,
+        "propertyKey": 469694,
+        "propertyType": "Office",
+        "street": "York Way",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "King's Cross St. Pancras",
+        "nearestStationM": 414
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.121924,
+          51.5330601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ11",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "MYO Piccadilly - Picadilly lights",
+        "sqm": 141199,
+        "propertyKey": 532557,
+        "propertyType": "Office",
+        "street": "1 Sherwood Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Piccadilly Circus",
+        "nearestStationM": 127
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1353688,
+          51.5105219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ12",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "n2",
+        "sqm": 15045.2,
+        "propertyKey": 438326,
+        "propertyType": "Office",
+        "street": "Bressenden Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 159
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1424341,
+          51.497774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ13",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "New Street Square",
+        "sqm": 64218.4,
+        "propertyKey": 119983,
+        "propertyType": "Office",
+        "street": "76 Shoe Lane",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Chancery Lane",
+        "nearestStationM": 403
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1073827,
+          51.5157324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ14",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Palace Street 16",
+        "sqm": 13839.9,
+        "propertyKey": 416457,
+        "propertyType": "Office",
+        "street": "16 Palace Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 281
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1394964,
+          51.4975784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ15",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "The Forge",
+        "sqm": 12831.5,
+        "propertyKey": 310049,
+        "propertyType": "Office",
+        "street": "105 Sumner Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 485
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0961828,
+          51.506642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ16",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "The Zig Zag Building",
+        "sqm": 22397.1,
+        "propertyKey": 120016,
+        "propertyType": "Office",
+        "street": "70 Victoria Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 319
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.138707,
+          51.4972908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ17",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Timber Square",
+        "sqm": 33956.1,
+        "propertyKey": 367859,
+        "propertyType": "Office",
+        "street": "25 Lavington Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Southwark",
+        "nearestStationM": 484
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0985532,
+          51.5051802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ18",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Westminster City Hall",
+        "sqm": 17561.2,
+        "propertyKey": 120089,
+        "propertyType": "Office",
+        "street": "64 Victoria Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "St. James's Park",
+        "nearestStationM": 336
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1373436,
+          51.4976144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ19",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "Oval Works",
+        "sqm": 6921,
+        "propertyKey": null,
+        "propertyType": "Office",
+        "street": "Vauxhall Street, Oval Village,SE11 5RH",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Oval",
+        "nearestStationM": 500
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.115669,
+          51.4858536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ20",
+        "company": "Landsec (incl. JV)",
+        "status": "Standing",
+        "name": "One New Change",
+        "sqm": 31000,
+        "propertyKey": 119987,
+        "propertyType": "Office",
+        "street": "1 New Change",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "St. Paul's",
+        "nearestStationM": 218
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0949305,
+          51.5138383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ21",
+        "company": "Landsec (incl. JV)",
+        "status": "Development",
+        "name": "Thirty High",
+        "sqm": 27778,
+        "propertyKey": 460622,
+        "propertyType": "Office",
+        "street": "Bressenden Place",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 114
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.141846,
+          51.4970777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ22",
+        "company": "Landsec (incl. JV)",
+        "status": "Development",
+        "name": "Nova Place",
+        "sqm": 2787.1,
+        "propertyKey": 355140,
+        "propertyType": "Office",
+        "street": "Victoria Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "St. James's Park",
+        "nearestStationM": 246
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1300952,
+          51.4992966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ23",
+        "company": "Landsec (incl. JV)",
+        "status": "Development",
+        "name": "Nova Victoria North",
+        "sqm": 26699.8,
+        "propertyKey": 164835,
+        "propertyType": "Office",
+        "street": "11 Bressenden Place",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 5,
+        "nearestStation": "Victoria",
+        "nearestStationM": 128
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1431405,
+          51.4975531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ24",
+        "company": "Landsec (incl. JV)",
+        "status": "Development",
+        "name": "Liberty of Southwark",
+        "sqm": 20440,
+        "propertyKey": 425686,
+        "propertyType": "Multi-Use",
+        "street": "Southwark Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 5,
+        "nearestStation": "London Bridge",
+        "nearestStationM": 370
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0949879,
+          51.5048606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ25",
+        "company": "Landsec (incl. JV)",
+        "status": "Development",
+        "name": "Timber Square Phase 2",
+        "sqm": 35303.2,
+        "propertyKey": 467783,
+        "propertyType": "Office",
+        "street": "Lavington Street",
+        "geocodePrecision": "street",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Southwark",
+        "nearestStationM": 380
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1000695,
+          51.5050972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LSJ26",
+        "company": "Landsec (incl. JV)",
+        "status": "Development",
+        "name": "Hill House",
+        "sqm": 15984.1,
+        "propertyKey": 119996,
+        "propertyType": "Office",
+        "street": "1 Little New Street",
+        "geocodePrecision": "building",
+        "bestWalkMinutes": 10,
+        "nearestStation": "Chancery Lane",
+        "nearestStationM": 453
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1068418,
+          51.5154345
         ]
       }
     }

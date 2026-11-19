@@ -1,0 +1,41 @@
+{
+  "description": "How the 'British Land 2' and 'Land Sec 2' sheets of London_office_sizes_sqm.xlsx (portfolios including joint ventures) become separate companies. Rows are matched to an existing building (sameAs: reuse its reviewed location) or geocoded if new. Sections named in skipSections are not London offices and are excluded.",
+  "sheets": [
+    {
+      "sheet": "British Land 2", "company": "British Land (incl. JV)", "idPrefix": "BLJ",
+      "sizeColumn": "Property Size (sq. m.) INC JV",
+      "developmentSections": ["Development Phase"],
+      "skipSections": ["Non Offices", "Non London"],
+      "sameAs": {
+        "100 Liverpool Street": "B081", "Broadgate Circle": "B071", "155 Bishopsgate": "B073", "10 Exchange square": "B079",
+        "338 Euston Road Regents Place": "B093", "10 Brock Street": "B095", "1 Triton Square": "B096",
+        "20 Triton Square": "B098", "1 Finsbury Avenue": "B080", "Marble Arch House": "B086", "1 Sheldon Square": "B088",
+        "Northon Folgate": "B087", "York House": "B102", "2 Kingdom Street": "B084", "4 Kingdom Street": "B085",
+        "3 sheldon Square": "B099", "Canada Water Dock Shed": "B100", "Canada Water 3 Deal Porters": "B103",
+        "The Broadgate Tower": "B108", "Broadgate-Finsbury Avenue 2": "B105", "Broadgate-Appold Street 1": "B106",
+        "Euston Tower": "B107"
+      },
+      "geocode": {
+        "Canada Water The Founding": "The Founding, Canada Water, London",
+        "West One": "75 Davies Street, Mayfair, London",
+        "5 Kingdom Street": "5 Kingdom Street, Paddington, London"
+      }
+    },
+    {
+      "sheet": "Land Sec 2", "company": "Landsec (incl. JV)", "idPrefix": "LSJ",
+      "sizeColumn": "Property size INC JV", "fallbackSizeColumn": "Property Size (sq. m.)", "ownershipColumn": "Percent Owned",
+      "developmentSections": ["Developments", "Pre Developments"],
+      "skipSections": [],
+      "sameAs": {
+        "Buckingham Gate 62": "B002", "Cardinal Place": "B003", "City Gate": "B004", "Dashwood House": "B005",
+        "Eastbourne Terrace 10": "B006", "Eastbourne Terrace 20": "B007", "Eastbourne Terrace 30": "B008",
+        "Lucent": "B011", "Moorgate Hall": "B012", "Myo Kings Cross": "B010", "MYO Piccadilly - Picadilly lights": "B011",
+        "n2": "B013", "New Street Square": "B014", "Palace Street 16": "B016", "The Forge": "B019",
+        "The Zig Zag Building": "B020", "Timber Square": "B022", "Westminster City Hall": "B026", "Oval Works": "B027",
+        "One New Change": "B015", "Thirty High+": "B021", "Nova Place+": "B028", "Nova Victoria North": "B029",
+        "Liberty of Southwark": "B024", "Timber Square Phase 2+": "B025", "Hill House": "B009"
+      },
+      "geocode": {}
+    }
+  ]
+}

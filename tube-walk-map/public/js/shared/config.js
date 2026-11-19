@@ -85,7 +85,10 @@
     { id: 'landsec', name: 'Landsec', rgb: [232, 113, 10] },
     { id: 'gpe', name: 'Great Portland Estates', rgb: [194, 24, 91] },
     { id: 'british-land', name: 'British Land', rgb: [21, 101, 192] },
-    { id: 'derwent', name: 'Derwent London', rgb: [143, 108, 0] }
+    { id: 'derwent', name: 'Derwent London', rgb: [143, 108, 0] },
+    // Portfolios including joint ventures (sheets "British Land 2" / "Land Sec 2").
+    { id: 'british-land-jv', name: 'British Land (incl. JV)', rgb: [93, 64, 55] },
+    { id: 'landsec-jv', name: 'Landsec (incl. JV)', rgb: [104, 159, 56] }
   ].map(function (c) {
     return Object.freeze({ id: c.id, name: c.name, colour: hex(c.rgb), developmentColour: hex(lighten(c.rgb, 0.45)) });
   });

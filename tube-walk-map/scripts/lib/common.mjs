@@ -37,6 +37,7 @@ export const paths = {
   geocodeCache: path.join(DATA_DIR, 'geocode-cache.json'),
   sizesXlsx: path.join(DATA_DIR, 'London_office_sizes_sqm.xlsx'),
   buildingSizes: path.join(DATA_DIR, 'building-sizes.json'),
+  jvConfig: path.join(DATA_DIR, 'jv-sheets.json'),
   buildingSizeOverrides: path.join(DATA_DIR, 'building-size-overrides.json'),
   geocodeOverrides: path.join(DATA_DIR, 'geocode-overrides.json'),
   buildings: path.join(DATA_DIR, 'buildings.json'),

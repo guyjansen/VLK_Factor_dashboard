@@ -74,9 +74,16 @@ const onStreet = (h, street) => {
 const firstNumber = (s) => (/^(\d+)/.exec(String(s || '').trim()) || [])[1] || null;
 
 for (const b of doc.buildings) {
+  if (b.sameAs) {
+    const t = doc.buildings.find((x) => x.id === b.sameAs);
+    b.lon = t.lon; b.lat = t.lat;
+    b.geocode = { ...t.geocode, method: `same building as ${t.id}`, note: `Location reused from ${t.id} (${t.name}).` };
+    continue;
+  }
   const attempts = [];
   const street = (b.street || '').split(/:/)[0].replace(/,\s*$/, '').trim();
   if (overrides[b.id]) attempts.push({ q: overrides[b.id].query, why: 'reviewed override', check: false });
+  else if (b.geocodeQuery) attempts.push({ q: b.geocodeQuery, why: 'reviewed query (jv-sheets.json)', check: false });
   else {
     if (street) attempts.push({ q: { street: street.split(',')[0], city: 'London' }, why: /^\d/.test(street) ? 'address' : 'street', check: true });
     const alt = nameAsAddress(b.name);
