@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-20T08:49:46.734Z",
+    "generatedAt": "2026-11-20T09:39:43.313Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
@@ -1211,7 +1211,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 2276.1,
+      "sqm": 3050,
       "stations": {
         "940GZZLUOXC": 600,
         "940GZZLUPCC": 600,
@@ -1664,7 +1664,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 3818.3,
+      "sqm": 2573,
       "stations": {
         "940GZZLUGPK": 300,
         "940GZZLUPCC": 600
@@ -1911,7 +1911,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 5899.3,
+      "sqm": 2440.58,
       "stations": {
         "940GZZLULSQ": 600,
         "940GZZLUOXC": 600,
@@ -2052,7 +2052,7 @@
         "note": "Estate name not found; first listed address (16 Soho Square) used.",
         "rejected": []
       },
-      "sqm": 8574.7,
+      "sqm": 8407.45,
       "stations": {
         "940GZZLUCGN": 600,
         "940GZZLUGDG": 600,
@@ -2234,7 +2234,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 3874.1,
+      "sqm": 8305.26,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -2272,7 +2272,7 @@
           "The Gable, London -> The Dutch Gable, 25, Drayton Avenue"
         ]
       },
-      "sqm": 5955.1,
+      "sqm": 4087.6,
       "stations": {
         "940GZZLUESQ": 600,
         "940GZZLUGDG": 300,
@@ -2308,7 +2308,7 @@
         "note": "'14/20 Saint Thomas Street' not matched at house level; St Thomas Street SE1 used.",
         "rejected": []
       },
-      "sqm": 9290.3,
+      "sqm": 17353.72,
       "stations": {
         "940GZZLULNB": 600
       },
@@ -2341,7 +2341,7 @@
         "note": "Source says '1 Chapel Street', which geocodes to a residential block in Paddington (NW1). Great Portland Estates' One Chapel Place is on Chapel Place W1G, off Oxford Street. Please confirm.",
         "rejected": []
       },
-      "sqm": 3177.3,
+      "sqm": 5295.3,
       "stations": {
         "940GZZLUBND": 300,
         "940GZZLUMBA": 600,
@@ -4462,7 +4462,7 @@
           "Network Building, London -> International Network for Traditional Building, Architecture & Urbanism, 19-22"
         ]
       },
-      "sqm": 5964.4,
+      "sqm": 13117.91,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUTCR": 300,
@@ -4497,7 +4497,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 17270.7,
+      "sqm": 16936,
       "stations": {
         "940GZZLUMGT": 600,
         "940GZZLUODS": 300
@@ -5087,7 +5087,7 @@
         "note": null,
         "rejected": []
       },
-      "sqm": 4617.13,
+      "sqm": 6075,
       "stations": {
         "940GZZLUGDG": 300,
         "940GZZLUGPS": 600,
@@ -5124,7 +5124,7 @@
         "note": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20.",
         "rejected": []
       },
-      "sqm": 10014.62,
+      "sqm": 12840,
       "stations": {
         "940GZZLUSJP": 600,
         "940GZZLUVIC": 600

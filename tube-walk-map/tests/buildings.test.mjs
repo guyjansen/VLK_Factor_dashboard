@@ -77,10 +77,10 @@ test('floor areas import by Asset ID; zero/blank sizes are unknown, not zero', (
   assert.equal(Object.keys(sizes.sizes).filter((id) => /^B\d/.test(id)).length, 148);
   assert.deepEqual(sizes.unknown.map((u) => u.id), ['B109']); // Canada Water-Future Phases has size 0 in the source
   const total = Object.values(sizes.sizes).reduce((s, v) => s + v, 0);
-  // 2,219,091 sqm in the workbook, plus corrected Derwent development sizes (+4,885 sqm).
+  // Workbook sizes plus all corrections in data/building-size-overrides.json.
   const totalMain = Object.entries(sizes.sizes).filter(([id]) => /^B\d/.test(id)).reduce((t, [, v]) => t + v, 0);
-  assert.ok(Math.abs(totalMain - 2223976) < 5, String(totalMain));
-  assert.equal(sizes.sizes.B145, 4617.13);
+  assert.ok(Math.abs(totalMain - 2243726) < 5, String(totalMain));
+  assert.equal(sizes.sizes.B145, 6075); // corrected in Derwent_London_Plc_checked.xlsx
   assert.equal(sizes.sizes.B149, 10962.2);
   assert.equal(out.find((b) => b.id === 'B109').sqm, null);
 });
@@ -89,7 +89,7 @@ test('floor-area shares (all stations) match the SQM table in the annotated work
   // Reference: "Distribution" sheet of London_Offices_-_Map_data_inc._sqm.xlsx (share of sqm within 5 min).
   const expected = {
     Landsec: { All: 0.65703, Standing: 0.58786, Development: 0.79525 },
-    'Great Portland Estates': { All: 0.63694, Standing: 0.55717, Development: 0.85309 },
+    // Great Portland Estates omitted: sizes corrected from Great_Portland_Estates_checked.xlsx.
     // British Land omitted: The Dock Shed A2 and Printworks were moved into the 5-min area by the manual coordinates (2026-11-20).
   };
   for (const [company, byStatus] of Object.entries(expected)) {

@@ -1,9 +1,101 @@
 {
-  "description": "Corrected floor areas (sqm) that replace values from London_office_sizes_sqm.xlsx. Source: data/Derwent_London_Plc.xlsx, sheet 'Property Browser', 'Developments:' section, column 'Property Size (sq. m.)'. Each entry is matched on Asset ID and checked against company, name and property key.",
+  "description": "Corrected floor areas (sqm) that replace values from London_office_sizes_sqm.xlsx. Sources: Derwent_London_Plc.xlsx and the checked files Great_Portland_Estates_checked.xlsx / Derwent_London_Plc_checked.xlsx (column 'Property Size (sq. m.)'), matched on company + property name. Each entry is checked against company, name and property key.",
   "overrides": {
-    "B145": { "company": "Derwent London", "name": "Middlesex House", "propertyKey": 106770, "sqm": 4617.13 },
-    "B146": { "company": "Derwent London", "name": "Greencoat/Gordon House", "propertyKey": 106649, "sqm": 10014.62 },
-    "B147": { "company": "Derwent London", "name": "Holden House", "propertyKey": 106651, "sqm": 12402.15 },
-    "B149": { "company": "Derwent London", "name": "Baker Street 50", "propertyKey": 440391, "sqm": 10962.2 }
+    "B145": {
+      "company": "Derwent London",
+      "name": "Middlesex House",
+      "propertyKey": 106770,
+      "sqm": 6075,
+      "source": "Derwent_London_Plc_checked.xlsx"
+    },
+    "B146": {
+      "company": "Derwent London",
+      "name": "Greencoat/Gordon House",
+      "propertyKey": 106649,
+      "sqm": 12840,
+      "source": "Derwent_London_Plc_checked.xlsx"
+    },
+    "B147": {
+      "company": "Derwent London",
+      "name": "Holden House",
+      "propertyKey": 106651,
+      "sqm": 12402.15
+    },
+    "B149": {
+      "company": "Derwent London",
+      "name": "Baker Street 50",
+      "propertyKey": 440391,
+      "sqm": 10962.2
+    },
+    "B034": {
+      "company": "Great Portland Estates",
+      "name": "Dufour's Place 10/16",
+      "propertyKey": 124366,
+      "sqm": 3050,
+      "source": "Great_Portland_Estates_checked.xlsx"
+    },
+    "B047": {
+      "company": "Great Portland Estates",
+      "name": "Piccadilly 170",
+      "propertyKey": 460650,
+      "sqm": 2573,
+      "source": "Great_Portland_Estates_checked.xlsx"
+    },
+    "B054": {
+      "company": "Great Portland Estates",
+      "name": "Wardour Street 141",
+      "propertyKey": 450765,
+      "sqm": 2440.58,
+      "source": "Great_Portland_Estates_checked.xlsx"
+    },
+    "B063": {
+      "company": "Great Portland Estates",
+      "name": "Alfred Place 31/34",
+      "propertyKey": 280938,
+      "sqm": 8305.26,
+      "source": "Great_Portland_Estates_checked.xlsx"
+    },
+    "B058": {
+      "company": "Great Portland Estates",
+      "name": "Soho Square Estate",
+      "propertyKey": null,
+      "sqm": 8407.45,
+      "source": "Great_Portland_Estates_checked.xlsx"
+    },
+    "B064": {
+      "company": "Great Portland Estates",
+      "name": "The Gable",
+      "propertyKey": null,
+      "sqm": 4087.6,
+      "source": "Great_Portland_Estates_checked.xlsx"
+    },
+    "B065": {
+      "company": "Great Portland Estates",
+      "name": "Saint Thomas Yard",
+      "propertyKey": 94521,
+      "sqm": 17353.72,
+      "source": "Great_Portland_Estates_checked.xlsx"
+    },
+    "B066": {
+      "company": "Great Portland Estates",
+      "name": "One Chapel Place",
+      "propertyKey": 509512,
+      "sqm": 5295.3,
+      "source": "Great_Portland_Estates_checked.xlsx"
+    },
+    "B127": {
+      "company": "Derwent London",
+      "name": "Network Building",
+      "propertyKey": 106910,
+      "sqm": 13117.91,
+      "source": "Derwent_London_Plc_checked.xlsx"
+    },
+    "B128": {
+      "company": "Derwent London",
+      "name": "Oliver's Yard 1",
+      "propertyKey": 106648,
+      "sqm": 16936,
+      "source": "Derwent_London_Plc_checked.xlsx"
+    }
   }
 }
