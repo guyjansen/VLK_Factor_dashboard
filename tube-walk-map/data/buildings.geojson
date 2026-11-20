@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "generatedAt": "2026-11-20T09:39:43.313Z",
+    "generatedAt": "2026-11-20T15:07:10.391Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
@@ -883,7 +883,7 @@
         "company": "Great Portland Estates",
         "status": "Standing",
         "name": "Elm Yard",
-        "sqm": 4589.4,
+        "sqm": 2294.71,
         "propertyKey": 257955,
         "propertyType": "Office",
         "street": "10-16 Elm Street",
@@ -979,7 +979,7 @@
         "company": "Great Portland Estates",
         "status": "Standing",
         "name": "Gray's Inn Road 200/214",
-        "sqm": 26458.8,
+        "sqm": 13229.39,
         "propertyKey": 197826,
         "propertyType": "Multi-Use",
         "street": "200/214 Gray's Inn Road",
@@ -1003,7 +1003,7 @@
         "company": "Great Portland Estates",
         "status": "Standing",
         "name": "Hanover Square",
-        "sqm": 20485.1,
+        "sqm": 10242.56,
         "propertyKey": 192200,
         "propertyType": "Multi-Use",
         "street": "18 Hanover Square",

@@ -96,6 +96,27 @@
       "propertyKey": 106648,
       "sqm": 16936,
       "source": "Derwent_London_Plc_checked.xlsx"
+    },
+    "B036": {
+      "company": "Great Portland Estates",
+      "name": "Elm Yard",
+      "propertyKey": 257955,
+      "sqm": 2294.71,
+      "source": "Great_Portland_Estates_checked.xlsx (2nd revision)"
+    },
+    "B040": {
+      "company": "Great Portland Estates",
+      "name": "Gray's Inn Road 200/214",
+      "propertyKey": 197826,
+      "sqm": 13229.39,
+      "source": "Great_Portland_Estates_checked.xlsx (2nd revision)"
+    },
+    "B041": {
+      "company": "Great Portland Estates",
+      "name": "Hanover Square",
+      "propertyKey": 192200,
+      "sqm": 10242.56,
+      "source": "Great_Portland_Estates_checked.xlsx (2nd revision)"
     }
   }
 }

@@ -79,7 +79,7 @@ test('floor areas import by Asset ID; zero/blank sizes are unknown, not zero', (
   const total = Object.values(sizes.sizes).reduce((s, v) => s + v, 0);
   // Workbook sizes plus all corrections in data/building-size-overrides.json.
   const totalMain = Object.entries(sizes.sizes).filter(([id]) => /^B\d/.test(id)).reduce((t, [, v]) => t + v, 0);
-  assert.ok(Math.abs(totalMain - 2243726) < 5, String(totalMain));
+  assert.ok(Math.abs(totalMain - 2217959) < 5, String(totalMain));
   assert.equal(sizes.sizes.B145, 6075); // corrected in Derwent_London_Plc_checked.xlsx
   assert.equal(sizes.sizes.B149, 10962.2);
   assert.equal(out.find((b) => b.id === 'B109').sqm, null);
