@@ -80,6 +80,11 @@ for (const b of doc.buildings) {
     b.geocode = { ...t.geocode, method: `same building as ${t.id}`, note: `Location reused from ${t.id} (${t.name}).` };
     continue;
   }
+  if (overrides[b.id] && Number.isFinite(overrides[b.id].lat) && Number.isFinite(overrides[b.id].lon)) {
+    b.lon = overrides[b.id].lon; b.lat = overrides[b.id].lat;
+    b.geocode = { query: null, method: 'manual coordinates', precision: 'manual', displayName: null, osm: null, note: overrides[b.id].reason, rejected: [] };
+    continue;
+  }
   const attempts = [];
   const street = (b.street || '').split(/:/)[0].replace(/,\s*$/, '').trim();
   if (overrides[b.id]) attempts.push({ q: overrides[b.id].query, why: 'reviewed override', check: false });

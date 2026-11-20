@@ -727,7 +727,7 @@
       el('dt', { text: 'Walk' }), el('dd', { text: walk }),
       el('dt', { text: 'Stations' }), el('dd', { text: near.length ? near.map(function (x) { return x.name + ' (' + x.sec / 60 + ' min)'; }).join(', ') : '—' }),
       el('dt', { text: 'Nearest' }), el('dd', { text: b.nearest ? b.nearest.name + ', ' + b.nearest.distanceM + ' m straight line' : '—' }),
-      el('dt', { text: 'Located' }), el('dd', { text: { building: 'Building-level match', street: 'Street-level match (approximate)', area: 'Area-level match (approximate)' }[b.precision] || b.precision })
+      el('dt', { text: 'Located' }), el('dd', { text: { manual: 'Manually set coordinates', building: 'Building-level match', street: 'Street-level match (approximate)', area: 'Area-level match (approximate)' }[b.precision] || b.precision })
     ]);
     var body = el('div', { className: 'popup' }, [
       el('h3', null, [el('span', { className: 'dot', 'aria-hidden': 'true', style: { '--c': buildingColour(b) } }), b.name]),

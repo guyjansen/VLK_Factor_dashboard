@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generatedAt": "2026-11-19T15:45:45.118Z",
+    "generatedAt": "2026-11-20T08:49:46.734Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
       "url": "https://nominatim.openstreetmap.org",
       "attribution": "Geocoding © OpenStreetMap contributors (ODbL), Nominatim"
     },
-    "geocodedAt": "2026-11-19T15:45:38.812Z",
+    "geocodedAt": "2026-11-20T08:49:46.585Z",
     "sizes": {
       "source": "data/London_office_sizes_sqm.xlsx",
       "unit": "sqm",
@@ -986,27 +986,26 @@
       "propertyType": "Office",
       "street": "Victoria Street",
       "sourceRow": 31,
-      "lon": -0.1300952,
-      "lat": 51.4992966,
+      "lon": -0.14388,
+      "lat": 51.496991,
       "geocode": {
-        "query": "Victoria Street, London",
-        "method": "street",
-        "precision": "street",
-        "displayName": "Victoria Street, Westminster, Millbank, City of Westminster, Greater London, England, SW1H 0ND, United Kingdom",
-        "osm": "way/256483223",
-        "note": null,
+        "query": null,
+        "method": "manual coordinates",
+        "precision": "manual",
+        "displayName": null,
+        "osm": null,
+        "note": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20.",
         "rejected": []
       },
       "sqm": 43486.9,
       "stations": {
-        "940GZZLUSJP": 300,
-        "940GZZLUWSM": 300
+        "940GZZLUVIC": 300
       },
       "bestSeconds": 300,
       "nearestStation": {
-        "id": "940GZZLUSJP",
-        "name": "St. James's Park",
-        "distanceM": 246
+        "id": "940GZZLUVIC",
+        "name": "Victoria",
+        "distanceM": 85
       }
     },
     {
@@ -3515,26 +3514,26 @@
       "propertyType": "Multi-Use",
       "street": "Deal Porters Way",
       "sourceRow": 107,
-      "lon": -0.0491535,
-      "lat": 51.4954093,
+      "lon": -0.049444,
+      "lat": 51.496444,
       "geocode": {
-        "query": "Deal Porters Way, London",
-        "method": "street",
-        "precision": "street",
-        "displayName": "Deal Porters Way, Canada Water, Rotherhithe, London Borough of Southwark, Greater London, England, SE16 2XN, United Kingdom",
-        "osm": "way/1239431309",
-        "note": null,
+        "query": null,
+        "method": "manual coordinates",
+        "precision": "manual",
+        "displayName": null,
+        "osm": null,
+        "note": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20.",
         "rejected": []
       },
       "sqm": 22761.2,
       "stations": {
-        "940GZZLUCWR": 600
+        "940GZZLUCWR": 300
       },
-      "bestSeconds": 600,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUCWR",
         "name": "Canada Water",
-        "distanceM": 285
+        "distanceM": 168
       }
     },
     {
@@ -3855,15 +3854,15 @@
       "propertyType": "Multi-Use",
       "street": "Surrey Quays Road",
       "sourceRow": 118,
-      "lon": -0.0484926,
-      "lat": 51.4987791,
+      "lon": -0.047944,
+      "lat": 51.498139,
       "geocode": {
-        "query": "Surrey Quays Road, London",
-        "method": "street",
-        "precision": "street",
-        "displayName": "Surrey Quays Road, Canada Water, Rotherhithe, London Borough of Southwark, Greater London, England, SE16 7AN, United Kingdom",
-        "osm": "way/77342440",
-        "note": null,
+        "query": null,
+        "method": "manual coordinates",
+        "precision": "manual",
+        "displayName": null,
+        "osm": null,
+        "note": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20.",
         "rejected": []
       },
       "sqm": 28892.8,
@@ -3874,7 +3873,7 @@
       "nearestStation": {
         "id": "940GZZLUCWR",
         "name": "Canada Water",
-        "distanceM": 141
+        "distanceM": 144
       }
     },
     {
@@ -5114,15 +5113,15 @@
       "propertyType": "Office",
       "street": "Francis Street",
       "sourceRow": 157,
-      "lon": -0.1383772,
-      "lat": 51.4950051,
+      "lon": -0.137583,
+      "lat": 51.495611,
       "geocode": {
-        "query": "Francis Street, London",
-        "method": "street",
-        "precision": "street",
-        "displayName": "Francis Street, Westminster, Victoria, City of Westminster, Greater London, England, SW1P 1QL, United Kingdom",
-        "osm": "way/4238239",
-        "note": null,
+        "query": null,
+        "method": "manual coordinates",
+        "precision": "manual",
+        "displayName": null,
+        "osm": null,
+        "note": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20.",
         "rejected": []
       },
       "sqm": 10014.62,
@@ -5134,7 +5133,7 @@
       "nearestStation": {
         "id": "940GZZLUVIC",
         "name": "Victoria",
-        "distanceM": 361
+        "distanceM": 391
       }
     },
     {
@@ -5866,25 +5865,25 @@
       "geocodeQuery": null,
       "sqm": 12310.6,
       "sizeNote": null,
-      "lon": -0.0491535,
-      "lat": 51.4954093,
+      "lon": -0.049444,
+      "lat": 51.496444,
       "geocode": {
-        "query": "Deal Porters Way, London",
+        "query": null,
         "method": "same building as B100",
-        "precision": "street",
-        "displayName": "Deal Porters Way, Canada Water, Rotherhithe, London Borough of Southwark, Greater London, England, SE16 2XN, United Kingdom",
-        "osm": "way/1239431309",
+        "precision": "manual",
+        "displayName": null,
+        "osm": null,
         "note": "Location reused from B100 (The Dock Shed A2).",
         "rejected": []
       },
       "stations": {
-        "940GZZLUCWR": 600
+        "940GZZLUCWR": 300
       },
-      "bestSeconds": 600,
+      "bestSeconds": 300,
       "nearestStation": {
         "id": "940GZZLUCWR",
         "name": "Canada Water",
-        "distanceM": 285
+        "distanceM": 168
       }
     },
     {
@@ -6998,26 +6997,25 @@
       "geocodeQuery": null,
       "sqm": 2787.1,
       "sizeNote": null,
-      "lon": -0.1300952,
-      "lat": 51.4992966,
+      "lon": -0.14388,
+      "lat": 51.496991,
       "geocode": {
-        "query": "Victoria Street, London",
+        "query": null,
         "method": "same building as B028",
-        "precision": "street",
-        "displayName": "Victoria Street, Westminster, Millbank, City of Westminster, Greater London, England, SW1H 0ND, United Kingdom",
-        "osm": "way/256483223",
+        "precision": "manual",
+        "displayName": null,
+        "osm": null,
         "note": "Location reused from B028 (Nova Place).",
         "rejected": []
       },
       "stations": {
-        "940GZZLUSJP": 300,
-        "940GZZLUWSM": 300
+        "940GZZLUVIC": 300
       },
       "bestSeconds": 300,
       "nearestStation": {
-        "id": "940GZZLUSJP",
-        "name": "St. James's Park",
-        "distanceM": 246
+        "id": "940GZZLUVIC",
+        "name": "Victoria",
+        "distanceM": 85
       }
     },
     {

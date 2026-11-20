@@ -1,14 +1,14 @@
 {
   "type": "FeatureCollection",
   "metadata": {
-    "generatedAt": "2026-11-19T15:45:45.118Z",
+    "generatedAt": "2026-11-20T08:49:46.734Z",
     "source": "data/London_office_data.xlsx",
     "geocoder": {
       "name": "Nominatim (OpenStreetMap)",
       "url": "https://nominatim.openstreetmap.org",
       "attribution": "Geocoding © OpenStreetMap contributors (ODbL), Nominatim"
     },
-    "geocodedAt": "2026-11-19T15:45:38.812Z",
+    "geocodedAt": "2026-11-20T08:49:46.585Z",
     "sizes": {
       "source": "data/London_office_sizes_sqm.xlsx",
       "unit": "sqm",
@@ -695,16 +695,16 @@
         "propertyKey": 355140,
         "propertyType": "Office",
         "street": "Victoria Street",
-        "geocodePrecision": "street",
+        "geocodePrecision": "manual",
         "bestWalkMinutes": 5,
-        "nearestStation": "St. James's Park",
-        "nearestStationM": 246
+        "nearestStation": "Victoria",
+        "nearestStationM": 85
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.1300952,
-          51.4992966
+          -0.14388,
+          51.496991
         ]
       }
     },
@@ -2423,16 +2423,16 @@
         "propertyKey": 397756,
         "propertyType": "Multi-Use",
         "street": "Deal Porters Way",
-        "geocodePrecision": "street",
-        "bestWalkMinutes": 10,
+        "geocodePrecision": "manual",
+        "bestWalkMinutes": 5,
         "nearestStation": "Canada Water",
-        "nearestStationM": 285
+        "nearestStationM": 168
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.0491535,
-          51.4954093
+          -0.049444,
+          51.496444
         ]
       }
     },
@@ -2663,16 +2663,16 @@
         "propertyKey": 455207,
         "propertyType": "Multi-Use",
         "street": "Surrey Quays Road",
-        "geocodePrecision": "street",
+        "geocodePrecision": "manual",
         "bestWalkMinutes": 5,
         "nearestStation": "Canada Water",
-        "nearestStationM": 141
+        "nearestStationM": 144
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.0484926,
-          51.4987791
+          -0.047944,
+          51.498139
         ]
       }
     },
@@ -3527,16 +3527,16 @@
         "propertyKey": 106649,
         "propertyType": "Office",
         "street": "Francis Street",
-        "geocodePrecision": "street",
+        "geocodePrecision": "manual",
         "bestWalkMinutes": 10,
         "nearestStation": "Victoria",
-        "nearestStationM": 361
+        "nearestStationM": 391
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.1383772,
-          51.4950051
+          -0.137583,
+          51.495611
         ]
       }
     },
@@ -4007,16 +4007,16 @@
         "propertyKey": 397756,
         "propertyType": "Multi-Use",
         "street": "Deal Porters Way",
-        "geocodePrecision": "street",
-        "bestWalkMinutes": 10,
+        "geocodePrecision": "manual",
+        "bestWalkMinutes": 5,
         "nearestStation": "Canada Water",
-        "nearestStationM": 285
+        "nearestStationM": 168
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.0491535,
-          51.4954093
+          -0.049444,
+          51.496444
         ]
       }
     },
@@ -4727,16 +4727,16 @@
         "propertyKey": 355140,
         "propertyType": "Office",
         "street": "Victoria Street",
-        "geocodePrecision": "street",
+        "geocodePrecision": "manual",
         "bestWalkMinutes": 5,
-        "nearestStation": "St. James's Park",
-        "nearestStationM": 246
+        "nearestStation": "Victoria",
+        "nearestStationM": 85
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.1300952,
-          51.4992966
+          -0.14388,
+          51.496991
         ]
       }
     },

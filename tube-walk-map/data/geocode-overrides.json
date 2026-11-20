@@ -1,5 +1,5 @@
 {
-  "description": "Reviewed geocoding queries for properties where the plain address is ambiguous in London or missing. Each entry replaces the automatic queries with one more specific query (usually adding the postal district). Reviewed against the first geocoding run (see README).",
+  "description": "Reviewed geocoding queries for properties where the plain address is ambiguous in London or missing. Each entry replaces the automatic queries with one more specific query (usually adding the postal district). Reviewed against the first geocoding run (see README). Entries with lat/lon are manual coordinates and replace geocoding.",
   "overrides": {
     "B013": {
       "query": "Bressenden Place, Victoria, London",
@@ -90,6 +90,26 @@
     "B142": {
       "query": "White Collar Factory, London",
       "reason": "Building found by name; its address is Old Street Yard off City Road, so the street check rejected it."
+    },
+    "B028": {
+      "lat": 51.496991,
+      "lon": -0.14388,
+      "reason": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20."
+    },
+    "B100": {
+      "lat": 51.496444,
+      "lon": -0.049444,
+      "reason": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20."
+    },
+    "B110": {
+      "lat": 51.498139,
+      "lon": -0.047944,
+      "reason": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20."
+    },
+    "B146": {
+      "lat": 51.495611,
+      "lon": -0.137583,
+      "reason": "Manually adjusted coordinates from London_office_coordinates_manual.xlsx ('All assets' sheet), 2026-11-20."
     }
   }
 }
