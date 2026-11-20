@@ -29,7 +29,7 @@ for (const f of iso.features) {
 }
 
 const out = [];
-for (const b of doc.buildings) {
+for (const b of doc.buildings.filter((x) => !x.superseded)) { // superseded: replaced by a JV sheet
   const sqm = sizesDoc?.sizes?.[b.id];
   const rec = { ...b, sqm: Number.isFinite(sqm) ? sqm : null, stations: {}, bestSeconds: null, nearestStation: null };
   if (Number.isFinite(b.lon) && Number.isFinite(b.lat)) {

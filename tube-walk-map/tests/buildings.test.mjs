@@ -11,7 +11,7 @@ const stations = new Map(readJson(paths.stations).stations.map((s) => [s.id, s])
 test('workbook parses into four companies with standing and development blocks', () => {
   assert.equal(clean.buildings.filter((b) => !b.sourceSheet).length, 149);
   assert.deepEqual(clean.issues, []);
-  const count = (c, s) => clean.buildings.filter((b) => b.company === c && b.status === s).length;
+  const count = (c, s) => clean.buildings.filter((b) => !b.sourceSheet && b.company === c && b.status === s).length;
   assert.deepEqual([count('Landsec', 'Standing'), count('Landsec', 'Development')], [22, 7]);
   assert.deepEqual([count('Great Portland Estates', 'Standing'), count('Great Portland Estates', 'Development')], [28, 9]);
   assert.deepEqual([count('British Land', 'Standing'), count('British Land', 'Development')], [38, 6]);
@@ -82,13 +82,13 @@ test('floor areas import by Asset ID; zero/blank sizes are unknown, not zero', (
   assert.ok(Math.abs(totalMain - 2217959) < 5, String(totalMain));
   assert.equal(sizes.sizes.B145, 6075); // corrected in Derwent_London_Plc_checked.xlsx
   assert.equal(sizes.sizes.B149, 10962.2);
-  assert.equal(out.find((b) => b.id === 'B109').sqm, null);
+  assert.ok(!('B109' in sizes.sizes));
 });
 
 test('floor-area shares (all stations) match the SQM table in the annotated workbook', () => {
   // Reference: "Distribution" sheet of London_Offices_-_Map_data_inc._sqm.xlsx (share of sqm within 5 min).
   const expected = {
-    Landsec: { All: 0.65703, Standing: 0.58786, Development: 0.79525 },
+    // Landsec omitted: the map now uses the JV portfolio (sheet 'Land Sec 2').
     // Great Portland Estates omitted: sizes corrected from Great_Portland_Estates_checked.xlsx.
     // British Land omitted: The Dock Shed A2 and Printworks were moved into the 5-min area by the manual coordinates (2026-11-20).
   };
@@ -102,11 +102,18 @@ test('floor-area shares (all stations) match the SQM table in the annotated work
   }
 });
 
-test('JV sheets become separate companies with reused locations and sheet sizes', () => {
+test('JV sheets replace Landsec and British Land, with reused locations and sheet sizes', () => {
   const jv = clean.buildings.filter((b) => b.sourceSheet);
   const count = (c, st) => jv.filter((b) => b.company === c && b.status === st).length;
-  assert.deepEqual([count('British Land (incl. JV)', 'Standing'), count('British Land (incl. JV)', 'Development')], [19, 6]);
-  assert.deepEqual([count('Landsec (incl. JV)', 'Standing'), count('Landsec (incl. JV)', 'Development')], [20, 6]);
+  assert.deepEqual([count('British Land', 'Standing'), count('British Land', 'Development')], [19, 6]);
+  assert.deepEqual([count('Landsec', 'Standing'), count('Landsec', 'Development')], [20, 6]);
+  // The original Landsec / British Land rows are superseded and not on the map.
+  assert.ok(clean.buildings.filter((b) => !b.sourceSheet && ['Landsec', 'British Land'].includes(b.company)).every((b) => b.superseded));
+  assert.ok(!out.some((b) => b.superseded));
+  assert.equal(out.filter((b) => b.company === 'Landsec').length, 26);
+  assert.equal(out.filter((b) => b.company === 'British Land').length, 25);
+  assert.equal(out.length, 127);
+  assert.equal(TubeConfig.COMPANIES.length, 4);
   for (const b of jv) {
     assert.ok(TubeConfig.COMPANY_BY_NAME[b.company], b.company);
     assert.ok(Number.isFinite(b.lon), `${b.name} not located`);

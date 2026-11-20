@@ -1,6 +1,6 @@
 {
   "source": "data/London_office_data.xlsx",
-  "preparedAt": "2026-11-19T15:45:32.241Z",
+  "preparedAt": "2026-11-20T15:38:03.175Z",
   "buildings": [
     {
       "id": "B001",
@@ -13,6 +13,7 @@
       "propertyType": "Office",
       "street": "140 Aldersgate Street",
       "sourceRow": 3,
+      "superseded": "Land Sec 2",
       "lon": -0.097583,
       "lat": 51.5196054,
       "geocode": {
@@ -36,6 +37,7 @@
       "propertyType": "Office",
       "street": "62 Buckingham Gate",
       "sourceRow": 4,
+      "superseded": "Land Sec 2",
       "lon": -0.1364181,
       "lat": 51.497691,
       "geocode": {
@@ -59,6 +61,7 @@
       "propertyType": "Office",
       "street": "Victoria Street",
       "sourceRow": 5,
+      "superseded": "Land Sec 2",
       "lon": -0.1401126,
       "lat": 51.4972547,
       "geocode": {
@@ -82,6 +85,7 @@
       "propertyType": "Office",
       "street": "14 Southwark Bridge Road",
       "sourceRow": 6,
+      "superseded": "Land Sec 2",
       "lon": -0.0954957,
       "lat": 51.5053485,
       "geocode": {
@@ -107,6 +111,7 @@
       "propertyType": "Office",
       "street": "69 Old Broad Street",
       "sourceRow": 7,
+      "superseded": "Land Sec 2",
       "lon": -0.0826894,
       "lat": 51.5168841,
       "geocode": {
@@ -130,6 +135,7 @@
       "propertyType": "Office",
       "street": "10 Eastbourne Terrace",
       "sourceRow": 8,
+      "superseded": "Land Sec 2",
       "lon": -0.1795674,
       "lat": 51.517067,
       "geocode": {
@@ -153,6 +159,7 @@
       "propertyType": "Office",
       "street": "20 Eastbourne Terrace",
       "sourceRow": 9,
+      "superseded": "Land Sec 2",
       "lon": -0.1790635,
       "lat": 51.5166662,
       "geocode": {
@@ -176,6 +183,7 @@
       "propertyType": "Office",
       "street": "30 Eastbourne Terrace",
       "sourceRow": 10,
+      "superseded": "Land Sec 2",
       "lon": -0.1786092,
       "lat": 51.5163996,
       "geocode": {
@@ -199,6 +207,7 @@
       "propertyType": "Office",
       "street": "1 Little New Street",
       "sourceRow": 11,
+      "superseded": "Land Sec 2",
       "lon": -0.1068418,
       "lat": 51.5154345,
       "geocode": {
@@ -222,6 +231,7 @@
       "propertyType": "Multi-Use",
       "street": "42–50 York Way, London, N1 9AB,",
       "sourceRow": 12,
+      "superseded": "Land Sec 2",
       "lon": -0.121924,
       "lat": 51.5330601,
       "geocode": {
@@ -245,6 +255,7 @@
       "propertyType": "Office",
       "street": "1 Sherwood Street",
       "sourceRow": 13,
+      "superseded": "Land Sec 2",
       "lon": -0.1353688,
       "lat": 51.5105219,
       "geocode": {
@@ -268,6 +279,7 @@
       "propertyType": "Office",
       "street": "155 Moorgate Hall",
       "sourceRow": 14,
+      "superseded": "Land Sec 2",
       "lon": -0.0881274,
       "lat": 51.5187729,
       "geocode": {
@@ -291,6 +303,7 @@
       "propertyType": "Office",
       "street": "Bressenden Place",
       "sourceRow": 15,
+      "superseded": "Land Sec 2",
       "lon": -0.1424341,
       "lat": 51.497774,
       "geocode": {
@@ -314,6 +327,7 @@
       "propertyType": "Office",
       "street": "3-5 New Street Square: London EC4A 3BF, United Kingdom",
       "sourceRow": 16,
+      "superseded": "Land Sec 2",
       "lon": -0.1073827,
       "lat": 51.5157324,
       "geocode": {
@@ -337,6 +351,7 @@
       "propertyType": "Multi-Use",
       "street": "1 New Change",
       "sourceRow": 17,
+      "superseded": "Land Sec 2",
       "lon": -0.0949305,
       "lat": 51.5138383,
       "geocode": {
@@ -360,6 +375,7 @@
       "propertyType": "Office",
       "street": "16 Palace Street",
       "sourceRow": 18,
+      "superseded": "Land Sec 2",
       "lon": -0.1394964,
       "lat": 51.4975784,
       "geocode": {
@@ -383,6 +399,7 @@
       "propertyType": "Office",
       "street": "46-48 Park Street",
       "sourceRow": 19,
+      "superseded": "Land Sec 2",
       "lon": -0.0936311,
       "lat": 51.5073472,
       "geocode": {
@@ -406,6 +423,7 @@
       "propertyType": "Office",
       "street": "York Way",
       "sourceRow": 20,
+      "superseded": "Land Sec 2",
       "lon": -0.121758,
       "lat": 51.5311084,
       "geocode": {
@@ -429,6 +447,7 @@
       "propertyType": "Office",
       "street": "105 Sumner Street",
       "sourceRow": 21,
+      "superseded": "Land Sec 2",
       "lon": -0.0961828,
       "lat": 51.506642,
       "geocode": {
@@ -452,6 +471,7 @@
       "propertyType": "Office",
       "street": "70 Victoria Street",
       "sourceRow": 22,
+      "superseded": "Land Sec 2",
       "lon": -0.138707,
       "lat": 51.4972908,
       "geocode": {
@@ -477,6 +497,7 @@
       "propertyType": "Multi-Use",
       "street": "Bressenden Place",
       "sourceRow": 23,
+      "superseded": "Land Sec 2",
       "lon": -0.141846,
       "lat": 51.4970777,
       "geocode": {
@@ -500,6 +521,7 @@
       "propertyType": "Office",
       "street": "25 Lavington Street",
       "sourceRow": 24,
+      "superseded": "Land Sec 2",
       "lon": -0.0985532,
       "lat": 51.5051802,
       "geocode": {
@@ -525,6 +547,7 @@
       "propertyType": "Office",
       "street": "Bressenden Place, Victoria, SW1E 5BH",
       "sourceRow": 26,
+      "superseded": "Land Sec 2",
       "lon": -0.141846,
       "lat": 51.4970777,
       "geocode": {
@@ -548,6 +571,7 @@
       "propertyType": "Multi-Use",
       "street": "Southwark Street",
       "sourceRow": 27,
+      "superseded": "Land Sec 2",
       "lon": -0.0949879,
       "lat": 51.5048606,
       "geocode": {
@@ -571,6 +595,7 @@
       "propertyType": "Office",
       "street": "Lavington Street",
       "sourceRow": 28,
+      "superseded": "Land Sec 2",
       "lon": -0.1000695,
       "lat": 51.5050972,
       "geocode": {
@@ -594,6 +619,7 @@
       "propertyType": "Office",
       "street": "64 Victoria Street",
       "sourceRow": 29,
+      "superseded": "Land Sec 2",
       "lon": -0.1373436,
       "lat": 51.4976144,
       "geocode": {
@@ -617,6 +643,7 @@
       "propertyType": null,
       "street": "Vauxhall Street, Oval Village,SE11 5RH",
       "sourceRow": 30,
+      "superseded": "Land Sec 2",
       "lon": -0.115669,
       "lat": 51.4858536,
       "geocode": {
@@ -640,6 +667,7 @@
       "propertyType": "Office",
       "street": "Victoria Street",
       "sourceRow": 31,
+      "superseded": "Land Sec 2",
       "lon": -0.14388,
       "lat": 51.496991,
       "geocode": {
@@ -663,6 +691,7 @@
       "propertyType": "Office",
       "street": "11 Bressenden Place",
       "sourceRow": 32,
+      "superseded": "Land Sec 2",
       "lon": -0.1431405,
       "lat": 51.4975531,
       "geocode": {
@@ -1555,6 +1584,7 @@
       "propertyType": "Office",
       "street": "18-20 Appold Street",
       "sourceRow": 74,
+      "superseded": "British Land 2",
       "lon": -0.0831734,
       "lat": 51.5200059,
       "geocode": {
@@ -1578,6 +1608,7 @@
       "propertyType": "Office",
       "street": "1-5 Baker Street",
       "sourceRow": 75,
+      "superseded": "British Land 2",
       "lon": -0.1551413,
       "lat": 51.5164366,
       "geocode": {
@@ -1601,6 +1632,7 @@
       "propertyType": "Office",
       "street": "158-164 Bishopsgate",
       "sourceRow": 76,
+      "superseded": "British Land 2",
       "lon": -0.0801956,
       "lat": 51.5171125,
       "geocode": {
@@ -1624,6 +1656,7 @@
       "propertyType": "Multi-Use",
       "street": "Eldon Street",
       "sourceRow": 77,
+      "superseded": "British Land 2",
       "lon": -0.0858465,
       "lat": 51.5186774,
       "geocode": {
@@ -1647,6 +1680,7 @@
       "propertyType": "Office",
       "street": "Broadgate Circle",
       "sourceRow": 78,
+      "superseded": "British Land 2",
       "lon": -0.083953,
       "lat": 51.5188004,
       "geocode": {
@@ -1670,6 +1704,7 @@
       "propertyType": "Office",
       "street": "135 Bishopsgate",
       "sourceRow": 79,
+      "superseded": "British Land 2",
       "lon": -0.0801147,
       "lat": 51.5187415,
       "geocode": {
@@ -1693,6 +1728,7 @@
       "propertyType": "Office",
       "street": "155 Bishopsgate",
       "sourceRow": 80,
+      "superseded": "British Land 2",
       "lon": -0.0795741,
       "lat": 51.5187959,
       "geocode": {
@@ -1716,6 +1752,7 @@
       "propertyType": "Office",
       "street": "199 Bishopsgate",
       "sourceRow": 81,
+      "superseded": "British Land 2",
       "lon": -0.0794711,
       "lat": 51.5203041,
       "geocode": {
@@ -1739,6 +1776,7 @@
       "propertyType": "Office",
       "street": "201 Bishopsgate",
       "sourceRow": 82,
+      "superseded": "British Land 2",
       "lon": -0.0792583,
       "lat": 51.5210268,
       "geocode": {
@@ -1762,6 +1800,7 @@
       "propertyType": "Office",
       "street": "1-2 Broadgate",
       "sourceRow": 83,
+      "superseded": "British Land 2",
       "lon": -0.0839643,
       "lat": 51.5187465,
       "geocode": {
@@ -1787,6 +1826,7 @@
       "propertyType": "Office",
       "street": "5 Appold Street",
       "sourceRow": 84,
+      "superseded": "British Land 2",
       "lon": -0.0811407,
       "lat": 51.5209589,
       "geocode": {
@@ -1810,6 +1850,7 @@
       "propertyType": "Office",
       "street": "Exchange Square",
       "sourceRow": 85,
+      "superseded": "British Land 2",
       "lon": -0.0809214,
       "lat": 51.5198723,
       "geocode": {
@@ -1833,6 +1874,7 @@
       "propertyType": "Office",
       "street": "10 Exchange Square",
       "sourceRow": 86,
+      "superseded": "British Land 2",
       "lon": -0.0809214,
       "lat": 51.5198723,
       "geocode": {
@@ -1856,6 +1898,7 @@
       "propertyType": "Office",
       "street": "1 Finsbury Avenue",
       "sourceRow": 87,
+      "superseded": "British Land 2",
       "lon": -0.0851116,
       "lat": 51.5195135,
       "geocode": {
@@ -1879,6 +1922,7 @@
       "propertyType": "Office",
       "street": "100 Liverpool Street",
       "sourceRow": 88,
+      "superseded": "British Land 2",
       "lon": -0.0836589,
       "lat": 51.5179318,
       "geocode": {
@@ -1902,6 +1946,7 @@
       "propertyType": "Office",
       "street": "4-8 Crown Place",
       "sourceRow": 89,
+      "superseded": "British Land 2",
       "lon": -0.081813,
       "lat": 51.5220744,
       "geocode": {
@@ -1925,6 +1970,7 @@
       "propertyType": "Office",
       "street": "6-9 Eldon Street",
       "sourceRow": 90,
+      "superseded": "British Land 2",
       "lon": -0.0843379,
       "lat": 51.5180958,
       "geocode": {
@@ -1948,6 +1994,7 @@
       "propertyType": "Office",
       "street": "2 Kingdom Street",
       "sourceRow": 91,
+      "superseded": "British Land 2",
       "lon": -0.1816755,
       "lat": 51.5196153,
       "geocode": {
@@ -1971,6 +2018,7 @@
       "propertyType": "Office",
       "street": "4 Kingdom Street",
       "sourceRow": 92,
+      "superseded": "British Land 2",
       "lon": -0.1828146,
       "lat": 51.519448,
       "geocode": {
@@ -1994,6 +2042,7 @@
       "propertyType": "Office",
       "street": "62/64 Seymour Street",
       "sourceRow": 93,
+      "superseded": "British Land 2",
       "lon": -0.1611165,
       "lat": 51.5143899,
       "geocode": {
@@ -2017,6 +2066,7 @@
       "propertyType": "Office",
       "street": "Norton Folgate",
       "sourceRow": 94,
+      "superseded": "British Land 2",
       "lon": -0.0787076,
       "lat": 51.5212826,
       "geocode": {
@@ -2040,6 +2090,7 @@
       "propertyType": "Office",
       "street": "1 Sheldon Square",
       "sourceRow": 95,
+      "superseded": "British Land 2",
       "lon": -0.1807589,
       "lat": 51.5189853,
       "geocode": {
@@ -2063,6 +2114,7 @@
       "propertyType": "Office",
       "street": "6 Orsman Road",
       "sourceRow": 96,
+      "superseded": "British Land 2",
       "lon": -0.0785484,
       "lat": 51.5363054,
       "geocode": {
@@ -2086,6 +2138,7 @@
       "propertyType": "Office",
       "street": "10 Portman Square",
       "sourceRow": 97,
+      "superseded": "British Land 2",
       "lon": -0.1546846,
       "lat": 51.5167602,
       "geocode": {
@@ -2109,6 +2162,7 @@
       "propertyType": "Office",
       "street": "30 Brock Street",
       "sourceRow": 98,
+      "superseded": "British Land 2",
       "lon": -0.1391078,
       "lat": 51.525622,
       "geocode": {
@@ -2132,6 +2186,7 @@
       "propertyType": "Office",
       "street": "184-192 Drummond Street",
       "sourceRow": 99,
+      "superseded": "British Land 2",
       "lon": -0.140677,
       "lat": 51.5262188,
       "geocode": {
@@ -2155,6 +2210,7 @@
       "propertyType": "Office",
       "street": "338 Euston Road",
       "sourceRow": 100,
+      "superseded": "British Land 2",
       "lon": -0.1416497,
       "lat": 51.524666,
       "geocode": {
@@ -2178,6 +2234,7 @@
       "propertyType": "Office",
       "street": "350 Euston Road",
       "sourceRow": 101,
+      "superseded": "British Land 2",
       "lon": -0.1419938,
       "lat": 51.5245001,
       "geocode": {
@@ -2201,6 +2258,7 @@
       "propertyType": "Office",
       "street": "10 Brock Street",
       "sourceRow": 102,
+      "superseded": "British Land 2",
       "lon": -0.1396894,
       "lat": 51.5256769,
       "geocode": {
@@ -2224,6 +2282,7 @@
       "propertyType": "Office",
       "street": "1/4/7 Triton Square",
       "sourceRow": 103,
+      "superseded": "British Land 2",
       "lon": -0.1410198,
       "lat": 51.5254581,
       "geocode": {
@@ -2247,6 +2306,7 @@
       "propertyType": "Office",
       "street": "10 Triton Street",
       "sourceRow": 104,
+      "superseded": "British Land 2",
       "lon": -0.1422897,
       "lat": 51.524784,
       "geocode": {
@@ -2270,6 +2330,7 @@
       "propertyType": "Office",
       "street": "20 Triton Street",
       "sourceRow": 105,
+      "superseded": "British Land 2",
       "lon": -0.1427764,
       "lat": 51.5250492,
       "geocode": {
@@ -2293,6 +2354,7 @@
       "propertyType": "Office",
       "street": "3 Sheldon Square",
       "sourceRow": 106,
+      "superseded": "British Land 2",
       "lon": -0.1807498,
       "lat": 51.5196203,
       "geocode": {
@@ -2316,6 +2378,7 @@
       "propertyType": "Multi-Use",
       "street": "Deal Porters Way",
       "sourceRow": 107,
+      "superseded": "British Land 2",
       "lon": -0.049444,
       "lat": 51.496444,
       "geocode": {
@@ -2339,6 +2402,7 @@
       "propertyType": "Office",
       "street": "7-9 William Road",
       "sourceRow": 108,
+      "superseded": "British Land 2",
       "lon": -0.1398026,
       "lat": 51.527159,
       "geocode": {
@@ -2362,6 +2426,7 @@
       "propertyType": "Office",
       "street": "45 Seymour Street",
       "sourceRow": 109,
+      "superseded": "British Land 2",
       "lon": -0.1612621,
       "lat": 51.5142545,
       "geocode": {
@@ -2385,6 +2450,7 @@
       "propertyType": null,
       "street": "Deal Porters Way / Canada Water, London SE16",
       "sourceRow": 110,
+      "superseded": "British Land 2",
       "lon": -0.0499987,
       "lat": 51.4967673,
       "geocode": {
@@ -2408,6 +2474,7 @@
       "propertyType": null,
       "street": "Canada Water, London SE16",
       "sourceRow": 111,
+      "superseded": "British Land 2",
       "lon": -0.0490838,
       "lat": 51.4976669,
       "geocode": {
@@ -2431,6 +2498,7 @@
       "propertyType": "Office",
       "street": "2 Finsbury Avenue",
       "sourceRow": 113,
+      "superseded": "British Land 2",
       "lon": -0.0845686,
       "lat": 51.5199004,
       "geocode": {
@@ -2454,6 +2522,7 @@
       "propertyType": "Office",
       "street": "1 Appold Street",
       "sourceRow": 114,
+      "superseded": "British Land 2",
       "lon": -0.0822252,
       "lat": 51.5198429,
       "geocode": {
@@ -2477,6 +2546,7 @@
       "propertyType": "Office",
       "street": "286 Euston Road",
       "sourceRow": 115,
+      "superseded": "British Land 2",
       "lon": -0.1391424,
       "lat": 51.5253537,
       "geocode": {
@@ -2500,6 +2570,7 @@
       "propertyType": "Office",
       "street": "20 Primrose Street",
       "sourceRow": 116,
+      "superseded": "British Land 2",
       "lon": -0.0797591,
       "lat": 51.5213133,
       "geocode": {
@@ -2523,6 +2594,7 @@
       "propertyType": "Multi-Use",
       "street": "Lower Road",
       "sourceRow": 117,
+      "superseded": "British Land 2",
       "lon": -0.0508198,
       "lat": 51.4951466,
       "geocode": {
@@ -2546,6 +2618,7 @@
       "propertyType": "Multi-Use",
       "street": "Surrey Quays Road",
       "sourceRow": 118,
+      "superseded": "British Land 2",
       "lon": -0.047944,
       "lat": 51.498139,
       "geocode": {
@@ -3461,7 +3534,7 @@
     },
     {
       "id": "BLJ01",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "100 Liverpool Street",
       "sourceName": "100 Liverpool Street",
@@ -3488,7 +3561,7 @@
     },
     {
       "id": "BLJ02",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "Broadgate Circle",
       "sourceName": "Broadgate Circle",
@@ -3515,7 +3588,7 @@
     },
     {
       "id": "BLJ03",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "155 Bishopsgate",
       "sourceName": "155 Bishopsgate",
@@ -3542,7 +3615,7 @@
     },
     {
       "id": "BLJ04",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "10 Exchange square",
       "sourceName": "10 Exchange square",
@@ -3569,7 +3642,7 @@
     },
     {
       "id": "BLJ05",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "338 Euston Road Regents Place",
       "sourceName": "338 Euston Road Regents Place",
@@ -3596,7 +3669,7 @@
     },
     {
       "id": "BLJ06",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "10 Brock Street",
       "sourceName": "10 Brock Street",
@@ -3623,7 +3696,7 @@
     },
     {
       "id": "BLJ07",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "1 Triton Square",
       "sourceName": "1 Triton Square",
@@ -3650,7 +3723,7 @@
     },
     {
       "id": "BLJ08",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "20 Triton Square",
       "sourceName": "20 Triton Square",
@@ -3677,7 +3750,7 @@
     },
     {
       "id": "BLJ09",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "1 Finsbury Avenue",
       "sourceName": "1 Finsbury Avenue",
@@ -3704,7 +3777,7 @@
     },
     {
       "id": "BLJ10",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "Marble Arch House",
       "sourceName": "Marble Arch House",
@@ -3731,7 +3804,7 @@
     },
     {
       "id": "BLJ11",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "1 Sheldon Square",
       "sourceName": "1 Sheldon Square",
@@ -3758,7 +3831,7 @@
     },
     {
       "id": "BLJ12",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "Northon Folgate",
       "sourceName": "Northon Folgate",
@@ -3785,7 +3858,7 @@
     },
     {
       "id": "BLJ13",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "York House",
       "sourceName": "York House",
@@ -3812,7 +3885,7 @@
     },
     {
       "id": "BLJ14",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "2 Kingdom Street",
       "sourceName": "2 Kingdom Street",
@@ -3839,7 +3912,7 @@
     },
     {
       "id": "BLJ15",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "4 Kingdom Street",
       "sourceName": "4 Kingdom Street",
@@ -3866,7 +3939,7 @@
     },
     {
       "id": "BLJ16",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "3 sheldon Square",
       "sourceName": "3 sheldon Square",
@@ -3893,7 +3966,7 @@
     },
     {
       "id": "BLJ17",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "Canada Water Dock Shed",
       "sourceName": "Canada Water Dock Shed",
@@ -3920,7 +3993,7 @@
     },
     {
       "id": "BLJ18",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "Canada Water The Founding",
       "sourceName": "Canada Water The Founding",
@@ -3947,7 +4020,7 @@
     },
     {
       "id": "BLJ19",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Standing",
       "name": "Canada Water 3 Deal Porters",
       "sourceName": "Canada Water 3 Deal Porters",
@@ -3974,7 +4047,7 @@
     },
     {
       "id": "BLJ20",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Development",
       "name": "The Broadgate Tower",
       "sourceName": "The Broadgate Tower",
@@ -4001,7 +4074,7 @@
     },
     {
       "id": "BLJ21",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Development",
       "name": "Broadgate-Finsbury Avenue 2",
       "sourceName": "Broadgate-Finsbury Avenue 2",
@@ -4028,7 +4101,7 @@
     },
     {
       "id": "BLJ22",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Development",
       "name": "Broadgate-Appold Street 1",
       "sourceName": "Broadgate-Appold Street 1",
@@ -4055,7 +4128,7 @@
     },
     {
       "id": "BLJ23",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Development",
       "name": "West One",
       "sourceName": "West One",
@@ -4082,7 +4155,7 @@
     },
     {
       "id": "BLJ24",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Development",
       "name": "Euston Tower",
       "sourceName": "Euston Tower",
@@ -4109,7 +4182,7 @@
     },
     {
       "id": "BLJ25",
-      "company": "British Land (incl. JV)",
+      "company": "British Land",
       "status": "Development",
       "name": "5 Kingdom Street",
       "sourceName": "5 Kingdom Street",
@@ -4136,7 +4209,7 @@
     },
     {
       "id": "LSJ01",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Buckingham Gate 62",
       "sourceName": "Buckingham Gate 62",
@@ -4163,7 +4236,7 @@
     },
     {
       "id": "LSJ02",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Cardinal Place",
       "sourceName": "Cardinal Place",
@@ -4190,7 +4263,7 @@
     },
     {
       "id": "LSJ03",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "City Gate",
       "sourceName": "City Gate",
@@ -4219,7 +4292,7 @@
     },
     {
       "id": "LSJ04",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Dashwood House",
       "sourceName": "Dashwood House",
@@ -4246,7 +4319,7 @@
     },
     {
       "id": "LSJ05",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Eastbourne Terrace 10",
       "sourceName": "Eastbourne Terrace 10",
@@ -4273,7 +4346,7 @@
     },
     {
       "id": "LSJ06",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Eastbourne Terrace 20",
       "sourceName": "Eastbourne Terrace 20",
@@ -4300,7 +4373,7 @@
     },
     {
       "id": "LSJ07",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Eastbourne Terrace 30",
       "sourceName": "Eastbourne Terrace 30",
@@ -4327,7 +4400,7 @@
     },
     {
       "id": "LSJ08",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Lucent",
       "sourceName": "Lucent",
@@ -4354,7 +4427,7 @@
     },
     {
       "id": "LSJ09",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Moorgate Hall",
       "sourceName": "Moorgate Hall",
@@ -4381,7 +4454,7 @@
     },
     {
       "id": "LSJ10",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Myo Kings Cross",
       "sourceName": "Myo Kings Cross",
@@ -4408,7 +4481,7 @@
     },
     {
       "id": "LSJ11",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "MYO Piccadilly - Picadilly lights",
       "sourceName": "MYO Piccadilly - Picadilly lights",
@@ -4435,7 +4508,7 @@
     },
     {
       "id": "LSJ12",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "n2",
       "sourceName": "n2",
@@ -4462,7 +4535,7 @@
     },
     {
       "id": "LSJ13",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "New Street Square",
       "sourceName": "New Street Square",
@@ -4489,7 +4562,7 @@
     },
     {
       "id": "LSJ14",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Palace Street 16",
       "sourceName": "Palace Street 16",
@@ -4516,7 +4589,7 @@
     },
     {
       "id": "LSJ15",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "The Forge",
       "sourceName": "The Forge",
@@ -4543,7 +4616,7 @@
     },
     {
       "id": "LSJ16",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "The Zig Zag Building",
       "sourceName": "The Zig Zag Building",
@@ -4572,7 +4645,7 @@
     },
     {
       "id": "LSJ17",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Timber Square",
       "sourceName": "Timber Square",
@@ -4601,7 +4674,7 @@
     },
     {
       "id": "LSJ18",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Westminster City Hall",
       "sourceName": "Westminster City Hall",
@@ -4628,7 +4701,7 @@
     },
     {
       "id": "LSJ19",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "Oval Works",
       "sourceName": "Oval Works",
@@ -4655,7 +4728,7 @@
     },
     {
       "id": "LSJ20",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Standing",
       "name": "One New Change",
       "sourceName": "One New Change",
@@ -4682,7 +4755,7 @@
     },
     {
       "id": "LSJ21",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Development",
       "name": "Thirty High",
       "sourceName": "Thirty High+",
@@ -4709,7 +4782,7 @@
     },
     {
       "id": "LSJ22",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Development",
       "name": "Nova Place",
       "sourceName": "Nova Place+",
@@ -4736,7 +4809,7 @@
     },
     {
       "id": "LSJ23",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Development",
       "name": "Nova Victoria North",
       "sourceName": "Nova Victoria North",
@@ -4763,7 +4836,7 @@
     },
     {
       "id": "LSJ24",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Development",
       "name": "Liberty of Southwark",
       "sourceName": "Liberty of Southwark",
@@ -4790,7 +4863,7 @@
     },
     {
       "id": "LSJ25",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Development",
       "name": "Timber Square Phase 2",
       "sourceName": "Timber Square Phase 2+",
@@ -4817,7 +4890,7 @@
     },
     {
       "id": "LSJ26",
-      "company": "Landsec (incl. JV)",
+      "company": "Landsec",
       "status": "Development",
       "name": "Hill House",
       "sourceName": "Hill House",
@@ -4845,7 +4918,7 @@
   ],
   "issues": [],
   "duplicateKeys": [],
-  "geocodedAt": "2026-11-20T08:49:46.585Z",
+  "geocodedAt": "2026-11-20T15:38:54.226Z",
   "geocoder": {
     "name": "Nominatim (OpenStreetMap)",
     "url": "https://nominatim.openstreetmap.org",

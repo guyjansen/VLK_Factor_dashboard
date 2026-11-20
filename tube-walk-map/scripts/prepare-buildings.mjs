@@ -129,10 +129,15 @@ if (fs.existsSync(paths.jvConfig) && fs.existsSync(paths.sizesXlsx)) {
       });
     }
   }
+  // Sheets that replace a company's original rows: keep those rows only as
+  // location references (sameAs targets) and hide them from all outputs.
+  for (const sh of cfg.sheets.filter((x) => x.replacesOriginal)) {
+    for (const b of doc.buildings) if (!b.sourceSheet && b.company === sh.company) b.superseded = sh.sheet;
+  }
   if (issues.length) { console.error(`ERROR:\n  ${issues.join('\n  ')}`); process.exit(1); }
   writeJson(paths.buildingsClean, doc);
   for (const sh of cfg.sheets) {
-    const bs = doc.buildings.filter((b) => b.company === sh.company);
+    const bs = doc.buildings.filter((b) => b.company === sh.company && b.sourceSheet === sh.sheet);
     console.log(`  ${sh.company.padEnd(24)} standing ${bs.filter((b) => b.status === 'Standing').length}, development ${bs.filter((b) => b.status === 'Development').length} (sheet "${sh.sheet}")`);
   }
 }

@@ -171,6 +171,8 @@
   var map = new maplibregl.Map({
     container: 'map',
     style: BASEMAPS[effectiveTheme()],
+    // Keeps the last frame readable so "Save image" can copy the map canvas.
+    preserveDrawingBuffer: true,
     bounds: C.LONDON_BOUNDS,
     fitBoundsOptions: { padding: 16 },
     maxBounds: [[-1.4, 51.0], [1.0, 52.0]],
@@ -219,6 +221,15 @@
   var attribution = new maplibregl.AttributionControl({ compact: true, customAttribution: attributionHtml() });
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
   map.addControl(fitControl, 'top-right');
+  map.addControl({
+    onAdd: function () {
+      this._c = el('div', { className: 'maplibregl-ctrl maplibregl-ctrl-group fit-ctrl' }, [
+        el('button', { type: 'button', title: 'Save map image (PNG with legend)', 'aria-label': 'Save the current map view as an image with legend', text: '⤓', onclick: function () { saveMapImage(); } })
+      ]);
+      return this._c;
+    },
+    onRemove: function () { this._c.remove(); }
+  }, 'top-right');
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric', maxWidth: 120 }), 'bottom-left');
   map.addControl(attribution, 'bottom-right');
 
@@ -1135,6 +1146,7 @@
   $('select-all').addEventListener('click', selectAll);
   $('clear-all').addEventListener('click', clearAll);
   $('fit').addEventListener('click', fitToSelection);
+  $('save-image').addEventListener('click', saveMapImage);
   $('reset').addEventListener('click', reset);
   Array.prototype.forEach.call(document.querySelectorAll('input[name="mode"]'), function (r) {
     r.addEventListener('change', function () { if (r.checked) { state.mode = r.value; applyLayerVisibility(); onStateChange(); } });
@@ -1310,6 +1322,171 @@
         Messages.error(err.name === 'AbortError' ? 'The routing request timed out.' : 'Could not generate walking area: ' + err.message);
       })
       .then(function () { clearTimeout(timer); });
+  }
+
+  // ------------------------------------------------------- save map as image
+  // Composes the current map view (WebGL canvas) with a legend panel, scale
+  // bar, attribution and disclaimer into one PNG and downloads it. Works from
+  // file:// too (no server round-trip). Pan/zoom first to choose the snippet.
+  function saveMapImage() {
+    var btns = [$('save-image')];
+    btns.forEach(function (b) { if (b) { b.disabled = true; b.textContent = 'Preparing image…'; } });
+    var done = function () { btns.forEach(function (b) { if (b) { b.disabled = false; b.textContent = 'Save map image'; } }); };
+    // Wait for tiles and layers to finish drawing, then copy the frame.
+    var go = function () {
+      try { composeImage(); } catch (err) { Messages.error('Could not create the image: ' + err.message); }
+      done();
+    };
+    if (map.loaded() && map.areTilesLoaded()) { map.triggerRepaint(); map.once('render', go); }
+    else map.once('idle', go);
+  }
+
+  function composeImage() {
+    var mapCanvas = map.getCanvas();
+    var dpr = mapCanvas.width / mapCanvas.clientWidth || 1;
+    var W = mapCanvas.clientWidth, H = mapCanvas.clientHeight;
+    var LEG = 300; // legend width (CSS px)
+    var items = legendItems();
+    // Measure legend height.
+    var lineH = 20, pad = 16;
+    var legendH = pad * 2 + items.reduce(function (h, it) { return h + (it.kind === 'heading' ? 28 : it.kind === 'text' ? it.lines * 15 + 4 : lineH); }, 0);
+    var footerH = 34;
+    var outW = W + LEG, outH = Math.max(H, legendH) + footerH;
+    var cv = document.createElement('canvas');
+    cv.width = Math.round(outW * dpr); cv.height = Math.round(outH * dpr);
+    var ctx = cv.getContext('2d');
+    ctx.scale(dpr, dpr);
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, outW, outH);
+    ctx.drawImage(mapCanvas, 0, 0, W, H);
+    drawScaleBar(ctx, 12, H - 14);
+    ctx.strokeStyle = '#d5d9de'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(W + 0.5, 0); ctx.lineTo(W + 0.5, outH - footerH); ctx.stroke();
+
+    // Legend
+    var x = W + pad, y = pad;
+    var font = '"Helvetica Neue", Helvetica, Arial, sans-serif';
+    items.forEach(function (it) {
+      ctx.textBaseline = 'middle';
+      if (it.kind === 'heading') {
+        ctx.fillStyle = '#1a1d21'; ctx.font = '700 13px ' + font;
+        ctx.fillText(it.text, x, y + 16); y += 28; return;
+      }
+      if (it.kind === 'text') {
+        ctx.fillStyle = '#555c66'; ctx.font = '400 11px ' + font;
+        wrap(ctx, it.text, LEG - pad * 2).forEach(function (ln, i) { ctx.fillText(ln, x, y + 8 + i * 15); });
+        y += it.lines * 15 + 4; return;
+      }
+      var cy = y + lineH / 2;
+      if (it.kind === 'contour') {
+        ctx.globalAlpha = 0.75; ctx.fillStyle = it.fill; roundRect(ctx, x, cy - 7, 30, 14, 3); ctx.fill(); ctx.globalAlpha = 1;
+        ctx.strokeStyle = it.outline; ctx.lineWidth = 2; ctx.setLineDash(it.dash ? it.dash.map(function (d) { return d * 2; }) : []);
+        roundRect(ctx, x, cy - 7, 30, 14, 3); ctx.stroke(); ctx.setLineDash([]);
+      } else if (it.kind === 'line') {
+        ctx.strokeStyle = '#2b2f36'; ctx.lineWidth = 6; ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(x + 2, cy); ctx.lineTo(x + 28, cy); ctx.stroke();
+        ctx.strokeStyle = it.colour; ctx.lineWidth = 4;
+        ctx.beginPath(); ctx.moveTo(x + 2, cy); ctx.lineTo(x + 28, cy); ctx.stroke();
+      } else if (it.kind === 'station') {
+        ctx.beginPath(); ctx.arc(x + 15, cy, it.r, 0, Math.PI * 2);
+        ctx.fillStyle = it.fill; ctx.fill(); ctx.lineWidth = it.stroke; ctx.strokeStyle = it.strokeColour; ctx.stroke();
+      } else if (it.kind === 'company') {
+        it.colours.forEach(function (c, i) {
+          ctx.beginPath(); ctx.arc(x + 7 + i * 16, cy, 6, 0, Math.PI * 2);
+          ctx.globalAlpha = it.faded ? 0.35 : 1;
+          ctx.fillStyle = c; ctx.fill(); ctx.lineWidth = 1.4; ctx.strokeStyle = '#1a1d21'; ctx.stroke();
+          ctx.globalAlpha = 1;
+        });
+      }
+      ctx.fillStyle = '#1a1d21'; ctx.font = '400 12px ' + font;
+      ctx.fillText(it.label, x + 40, cy);
+      y += lineH;
+    });
+
+    // Footer: attribution + disclaimer
+    ctx.fillStyle = '#f3f4f6'; ctx.fillRect(0, outH - footerH, outW, footerH);
+    ctx.fillStyle = '#555c66'; ctx.font = '400 10px ' + font; ctx.textBaseline = 'middle';
+    var providers = ISO.meta && ISO.meta.providers ? ISO.meta.providers.join(', ') : 'pedestrian routing';
+    ctx.fillText('Map data © OpenStreetMap contributors · Basemap: OpenFreeMap / OpenMapTiles · Station & route data: Powered by TfL Open Data · Walking areas: ' + providers, 10, outH - footerH + 11);
+    ctx.fillText(C.DISCLAIMER + '  Created ' + new Date().toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' }) + '.', 10, outH - footerH + 25);
+
+    var name = 'tube-walk-map-' + new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '') + '.png';
+    var finish = function (url, revoke) {
+      var a = el('a', { href: url, download: name });
+      document.body.appendChild(a); a.click(); a.remove();
+      if (revoke) setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
+      Messages.info('Map image saved as ' + name + '.', 'saved-' + name);
+    };
+    if (cv.toBlob) cv.toBlob(function (blob) { finish(URL.createObjectURL(blob), true); }, 'image/png');
+    else finish(cv.toDataURL('image/png'), false);
+  }
+
+  function legendItems() {
+    var items = [{ kind: 'heading', text: 'Walking access to stations' }];
+    items.push({ kind: 'text', text: $('summary').textContent, lines: 3 });
+    var shownContours = C.CONTOURS.filter(function (c) { return state.contours.has(c.seconds); });
+    if (shownContours.length && ISO.status === 'ready') {
+      items.push({ kind: 'heading', text: 'Walking time (' + (state.mode === 'union' ? 'combined' : 'per station') + ')' });
+      shownContours.forEach(function (c) { items.push({ kind: 'contour', fill: c.fill, outline: c.outline, dash: c.dash, label: 'Within ' + c.label + ' walk' }); });
+    }
+    if (state.showRoutes) {
+      var lines = C.LINES.filter(function (l) { return state.lines.has(l.id); });
+      if (lines.length) {
+        items.push({ kind: 'heading', text: 'Lines' });
+        lines.forEach(function (l) { items.push({ kind: 'line', colour: l.colour, label: l.name }); });
+      }
+    }
+    if (state.showStations) {
+      items.push({ kind: 'heading', text: 'Stations' });
+      items.push({ kind: 'station', r: 5, fill: '#ffffff', stroke: 1.8, strokeColour: '#111418', label: 'Selected station' });
+      items.push({ kind: 'station', r: 6.5, fill: '#ffffff', stroke: 2.5, strokeColour: '#111418', label: 'Selected interchange' });
+      items.push({ kind: 'station', r: 3, fill: '#c9ced6', stroke: 1, strokeColour: '#6b7280', label: 'Station not selected' });
+    }
+    if (state.showBuildings && BLD.status === 'ready') {
+      var comps = C.COMPANIES.filter(function (c) { return state.companies.has(c.name); });
+      if (comps.length) {
+        var st = state.statuses.has('Standing'), dv = state.statuses.has('Development');
+        items.push({ kind: 'heading', text: 'Office buildings' });
+        items.push({ kind: 'text', text: st && dv ? 'Dark dot = standing asset, light dot = development' : (st ? 'Standing assets only' : 'Developments only'), lines: 1 });
+        comps.forEach(function (c) {
+          var cols = [];
+          if (st) cols.push(c.colour);
+          if (dv) cols.push(c.developmentColour);
+          if (cols.length) items.push({ kind: 'company', colours: cols, label: c.name });
+        });
+        if (state.contours.size) items.push({ kind: 'company', colours: ['#888888'], faded: true, label: 'Faded: outside selected walk times' });
+      }
+    }
+    return items;
+  }
+
+  function drawScaleBar(ctx, x, y) {
+    // Metres per CSS pixel at the bottom-left of the view.
+    var p1 = map.unproject([x, y]), p2 = map.unproject([x + 100, y]);
+    var mPer100 = G.haversineM([p1.lng, p1.lat], [p2.lng, p2.lat]);
+    var nice = [50, 100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000, 20000];
+    var dist = nice.filter(function (n) { return n / mPer100 * 100 <= 140; }).pop() || nice[0];
+    var px = dist / mPer100 * 100;
+    ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fillRect(x - 6, y - 18, px + 60, 24);
+    ctx.strokeStyle = '#1a1d21'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(x, y - 6); ctx.lineTo(x, y); ctx.lineTo(x + px, y); ctx.lineTo(x + px, y - 6); ctx.stroke();
+    ctx.fillStyle = '#1a1d21'; ctx.font = '600 11px Arial, sans-serif'; ctx.textBaseline = 'middle';
+    ctx.fillText(dist >= 1000 ? dist / 1000 + ' km' : dist + ' m', x + px + 6, y - 5);
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+
+  function wrap(ctx, text, width) {
+    var words = String(text).split(/\s+/), out = [], line = '';
+    words.forEach(function (w) {
+      var t = line ? line + ' ' + w : w;
+      if (ctx.measureText(t).width > width && line) { out.push(line); line = w; } else line = t;
+    });
+    if (line) out.push(line);
+    return out.slice(0, 3);
   }
 
   // -------------------------------------------------------------------- init
