@@ -93,20 +93,20 @@ def main():
     assets = wb.create_sheet('All assets')
 
     # ------------------------------------------------------------ All assets
-    cols = ['Asset ID', 'Company', 'Status', 'Property name', 'Property key', 'Property type', 'Address (source)',
+    cols = ['Asset ID', 'Company', 'Status', 'Property name', 'Floor area (sqm)', 'Property key', 'Property type', 'Address (source)',
             'Latitude', 'Longitude', 'Geocode precision', 'Geocoded as', 'Best walk time to a station (min)',
             'Walk band', 'Stations ≤ 5 min', 'Stations ≤ 10 min', 'Lines ≤ 10 min',
             'Nearest station (straight line)', 'Distance to nearest station (m)'] + [f'{n} (min)' for _, n in LINES]
-    widths = [8, 20, 12, 34, 11, 11, 32, 10, 10, 11, 48, 12, 10, 34, 48, 36, 24, 12] + [10] * len(LINES)
+    widths = [8, 20, 12, 34, 12, 11, 11, 32, 10, 10, 11, 48, 12, 10, 34, 48, 36, 24, 12] + [10] * len(LINES)
 
     def write_assets(ws, rows, first_data_row=2):
         header(ws, 1, cols, widths=widths)
         for r, b in enumerate(rows, start=first_data_row):
             best = best_for(b)
             lines5 = sorted({l for sid in b['stations'] for l in st_by[sid]['lines']}, key=[x for x, _ in LINES].index)
-            vals = [b['id'], b['company'], b['status'], b['name'], b['propertyKey'], b['propertyType'], b['street'],
+            vals = [b['id'], b['company'], b['status'], b['name'], b.get('sqm'), b['propertyKey'], b['propertyType'], b['street'],
                     b['lat'], b['lon'], b['geocode']['precision'], b['geocode']['displayName'], best,
-                    f'=IF(L{r}="","> 10 min",IF(L{r}<=5,"≤ 5 min","5–10 min"))',
+                    f'=IF(M{r}="","> 10 min",IF(M{r}<=5,"≤ 5 min","5–10 min"))',
                     names_within(b, 5), names_within(b, 10),
                     ', '.join(line_name[l] for l in lines5),
                     (b.get('nearestStation') or {}).get('name'), (b.get('nearestStation') or {}).get('distanceM')]
@@ -115,16 +115,22 @@ def main():
                 cell = ws.cell(row=r, column=c, value=v)
                 cell.font = F
                 cell.border = BOX
-                if c in (8, 9):
+                if c == 5:
+                    cell.number_format = INT
+                elif c in (9, 10):
                     cell.number_format = '0.00000'
-                elif c in (12, 18) or c >= 19:
-                    cell.number_format = '0' if c != 18 else INT
+                elif c in (13, 19) or c >= 20:
+                    cell.number_format = '0' if c != 19 else INT
                     cell.alignment = Alignment(horizontal='center')
             fill = dict(COMPANIES).get(b['company'])
             if fill:
                 ws.cell(row=r, column=2).fill = PatternFill('solid', fgColor=lighten(fill, 0.8 if b['status'] == 'Standing' else 0.9))
-            if b['geocode'].get('note'):
-                ws.cell(row=r, column=11).comment = Comment('Reviewed geocoding query: ' + b['geocode']['query'] + '\n' + b['geocode']['note'], 'tube-walk-map')
+            g = b['geocode']
+            if g.get('note'):
+                head = 'Manually set coordinates.' if g['precision'] == 'manual' else ('Reviewed geocoding query: ' + g['query']) if g.get('query') else 'Location note.'
+                ws.cell(row=r, column=12).comment = Comment(head + '\n' + g['note'], 'tube-walk-map')
+            if b.get('sizeNote'):
+                ws.cell(row=r, column=5).comment = Comment(b['sizeNote'], 'tube-walk-map')
         ws.freeze_panes = 'E2'
         ws.auto_filter.ref = f'A1:{get_column_letter(len(cols))}{first_data_row + len(rows) - 1}'
 
@@ -132,7 +138,7 @@ def main():
     n = len(buildings)
     last = n + 1
     A = lambda col: f"'All assets'!${col}$2:${col}${last}"  # noqa: E731
-    COMPANY, STATUS, BEST, PREC, DIST = A('B'), A('C'), A('L'), A('J'), A('R')
+    COMPANY, STATUS, SQM, BEST, PREC, DIST = A('B'), A('C'), A('E'), A('M'), A('K'), A('S')
 
     for cname, colour in COMPANIES:
         ws = wb.create_sheet(cname[:31])
@@ -150,20 +156,22 @@ def main():
     s.row_dimensions[2].height = 30
     s['A2'].alignment = Alignment(wrap_text=True, vertical='top')
 
-    def company_table(top, title, status):
+    def company_table(top, title, status, by_sqm=False):
         s.cell(row=top, column=1, value=title).font = FB
-        labels = ['Company', 'Buildings'] + [x for m, lab in BANDS for x in (f'{lab} (n)', f'{lab} (%)')] + ['> 10 min (n)', '> 10 min (%)']
+        u = 'sqm' if by_sqm else 'n'
+        labels = ['Company', 'Floor area (sqm)' if by_sqm else 'Buildings'] + [x for m, lab in BANDS for x in (f'{lab} ({u})', f'{lab} (%)')] + [f'> 10 min ({u})', '> 10 min (%)']
         header(s, top + 1, labels)
         crit_status = f',{STATUS},"{status}"' if status else ''
+        agg = (lambda crit: f'=SUMIFS({SQM},{COMPANY},{crit})') if by_sqm else (lambda crit: f'=COUNTIFS({COMPANY},{crit})')
         rows = []
         for i, (cname, colour) in enumerate(COMPANIES):
             r = top + 2 + i
             rows.append(r)
             s.cell(row=r, column=1, value=cname).fill = PatternFill('solid', fgColor=lighten(colour))
-            s.cell(row=r, column=2, value=f'=COUNTIFS({COMPANY},$A{r}{crit_status})')
+            s.cell(row=r, column=2, value=agg(f'$A{r}{crit_status}'))
             col = 3
             for m, _ in BANDS:
-                s.cell(row=r, column=col, value=f'=COUNTIFS({COMPANY},$A{r}{crit_status},{BEST},"<={m}")')
+                s.cell(row=r, column=col, value=agg(f'$A{r}{crit_status},{BEST},"<={m}"'))
                 s.cell(row=r, column=col + 1, value=f'=IF($B{r}=0,0,{get_column_letter(col)}{r}/$B{r})')
                 col += 2
             s.cell(row=r, column=col, value=f'=$B{r}-{get_column_letter(col - 2)}{r}')
@@ -192,13 +200,17 @@ def main():
     end = company_table(4, 'All buildings (standing assets + developments)', None)
     end = company_table(end + 3, 'Developments only (% of each company’s developments)', 'Development')
     end = company_table(end + 3, 'Standing assets only', 'Standing')
+    end = company_table(end + 3, 'Floor area (sqm): all buildings', None, by_sqm=True)
+    end = company_table(end + 3, 'Floor area (sqm): developments only', 'Development', by_sqm=True)
+    end = company_table(end + 3, 'Floor area (sqm): standing assets only', 'Standing', by_sqm=True)
 
     # Key characteristics
     top = end + 3
     s.cell(row=top, column=1, value='Key characteristics per company').font = FB
     labels = ['Company', 'Buildings', 'Developments', 'Developments as % of portfolio', '% of all buildings ≤ 5 min',
               '% of developments ≤ 5 min', '% of all buildings ≤ 10 min', '% of developments ≤ 10 min',
-              'Average distance to nearest station (m)', 'Located at building level (%)']
+              'Average distance to nearest station (m)', 'Located at building level (%)',
+              'Floor area (sqm)', 'Development floor area (sqm)', '% of floor area ≤ 5 min', '% of development floor area ≤ 5 min']
     header(s, top + 1, labels)
     rows = []
     for i, (cname, colour) in enumerate(COMPANIES):
@@ -214,13 +226,17 @@ def main():
             f'=IF(B{r}=0,0,COUNTIFS({COMPANY},$A{r},{BEST},"<=10")/B{r})',
             f'=IF(C{r}=0,0,COUNTIFS({COMPANY},$A{r},{STATUS},"Development",{BEST},"<=10")/C{r})',
             f'=IFERROR(AVERAGEIFS({DIST},{COMPANY},$A{r}),0)',
-            f'=IF(B{r}=0,0,COUNTIFS({COMPANY},$A{r},{PREC},"building")/B{r})'
+            f'=IF(B{r}=0,0,COUNTIFS({COMPANY},$A{r},{PREC},"building")/B{r})',
+            f'=SUMIFS({SQM},{COMPANY},$A{r})',
+            f'=SUMIFS({SQM},{COMPANY},$A{r},{STATUS},"Development")',
+            f'=IF(K{r}=0,0,SUMIFS({SQM},{COMPANY},$A{r},{BEST},"<=5")/K{r})',
+            f'=IF(L{r}=0,0,SUMIFS({SQM},{COMPANY},$A{r},{STATUS},"Development",{BEST},"<=5")/L{r})'
         ]
         for c, v in enumerate(f, start=2):
             cell = s.cell(row=r, column=c, value=v)
-            cell.number_format = INT if c in (2, 3, 9) else PCT
+            cell.number_format = INT if c in (2, 3, 9, 11, 12) else PCT
             cell.alignment = Alignment(horizontal='center')
-        for c in range(1, 11):
+        for c in range(1, 15):
             s.cell(row=r, column=c).font = F
             s.cell(row=r, column=c).border = BOX
     note_r = rows[-1] + 2
@@ -242,32 +258,41 @@ def main():
     d['A2'] = 'Each building is counted once, in the band of its shortest walk to any station. Formulas on the "All assets" sheet.'
     d['A2'].font = FI
     bands = [('≤ 5 min', '"<=5"', None), ('5–10 min', '">5"', '"<=10"')]
-    labels = ['Company', 'Status', 'Buildings'] + [x for b in bands for x in (f'{b[0]} (n)', f'{b[0]} (%)')] + ['> 10 min (n)', '> 10 min (%)']
-    header(d, 4, labels, widths=[26, 14, 11] + [11] * 6)
-    r = 5
-    for cname, colour in COMPANIES:
-        for status in ['All', 'Standing', 'Development']:
-            d.cell(row=r, column=1, value=cname).fill = PatternFill('solid', fgColor=lighten(colour))
-            d.cell(row=r, column=2, value=status)
-            sc = '' if status == 'All' else f',{STATUS},$B{r}'
-            d.cell(row=r, column=3, value=f'=COUNTIFS({COMPANY},$A{r}{sc})')
-            col = 4
-            for _, lo, hi in bands:
-                crit = f',{BEST},{lo}' + (f',{BEST},{hi}' if hi else '')
-                d.cell(row=r, column=col, value=f'=COUNTIFS({COMPANY},$A{r}{sc}{crit})')
+
+    def dist_table(top, by_sqm):
+        u = 'sqm' if by_sqm else 'n'
+        d.cell(row=top - 1, column=1, value='By floor area (sqm)' if by_sqm else 'By number of buildings').font = FB
+        labels = ['Company', 'Status', 'Floor area (sqm)' if by_sqm else 'Buildings'] + [x for b in bands for x in (f'{b[0]} ({u})', f'{b[0]} (%)')] + [f'> 10 min ({u})', '> 10 min (%)']
+        header(d, top, labels, widths=[26, 14, 14] + [13] * 6)
+        agg = (lambda crit: f'=SUMIFS({SQM},{COMPANY},{crit})') if by_sqm else (lambda crit: f'=COUNTIFS({COMPANY},{crit})')
+        r = top + 1
+        for cname, colour in COMPANIES:
+            for status in ['All', 'Standing', 'Development']:
+                d.cell(row=r, column=1, value=cname).fill = PatternFill('solid', fgColor=lighten(colour))
+                d.cell(row=r, column=2, value=status)
+                sc = '' if status == 'All' else f',{STATUS},$B{r}'
+                d.cell(row=r, column=3, value=agg(f'$A{r}{sc}'))
+                col = 4
+                for _, lo, hi in bands:
+                    crit = f',{BEST},{lo}' + (f',{BEST},{hi}' if hi else '')
+                    d.cell(row=r, column=col, value=agg(f'$A{r}{sc}{crit}'))
+                    d.cell(row=r, column=col + 1, value=f'=IF($C{r}=0,0,{get_column_letter(col)}{r}/$C{r})')
+                    col += 2
+                d.cell(row=r, column=col, value=f'=$C{r}-D{r}-F{r}')
                 d.cell(row=r, column=col + 1, value=f'=IF($C{r}=0,0,{get_column_letter(col)}{r}/$C{r})')
-                col += 2
-            d.cell(row=r, column=col, value=f'=$C{r}-D{r}-F{r}')
-            d.cell(row=r, column=col + 1, value=f'=IF($C{r}=0,0,{get_column_letter(col)}{r}/$C{r})')
-            for c in range(1, col + 2):
-                cell = d.cell(row=r, column=c)
-                cell.font = FB if status == 'All' else F
-                cell.border = BOX
-                if c >= 3:
-                    cell.number_format = PCT if c >= 5 and c % 2 == 1 else INT
-                    cell.alignment = Alignment(horizontal='center')
-            r += 1
-    d.freeze_panes = 'C5'
+                for c in range(1, col + 2):
+                    cell = d.cell(row=r, column=c)
+                    cell.font = FB if status == 'All' else F
+                    cell.border = BOX
+                    if c >= 3:
+                        cell.number_format = PCT if c >= 5 and c % 2 == 1 else INT
+                        cell.alignment = Alignment(horizontal='center')
+                r += 1
+        return r
+
+    end_d = dist_table(5, False)
+    dist_table(end_d + 3, True)
+    d.freeze_panes = 'C6'
 
     # ---------------------------------------------------------------- By line
     bl = byline
@@ -279,9 +304,9 @@ def main():
     bl['A2'].alignment = Alignment(wrap_text=True, vertical='top')
     bl.row_dimensions[2].height = 30
     row = 4
-    first_line_col = 19  # column S in All assets
-    for m, lab in BANDS:
-        bl.cell(row=row, column=1, value=f'Buildings {lab} of a station on the line').font = FB
+    first_line_col = 20  # column T in All assets
+    for (m, lab), by_sqm in [(b, False) for b in BANDS] + [(b, True) for b in BANDS]:
+        bl.cell(row=row, column=1, value=(f'Floor area (sqm) {lab} of a station on the line' if by_sqm else f'Buildings {lab} of a station on the line')).font = FB
         header(bl, row + 1, ['Company'] + [n for _, n in LINES], widths=[26] + [12] * len(LINES))
         for i, (cname, colour) in enumerate(COMPANIES):
             r = row + 2 + i
@@ -289,7 +314,11 @@ def main():
             bl.cell(row=r, column=1).font = F
             for j in range(len(LINES)):
                 rng = A(get_column_letter(first_line_col + j))
-                cell = bl.cell(row=r, column=2 + j, value=f'=IF(COUNTIFS({COMPANY},$A{r})=0,0,COUNTIFS({COMPANY},$A{r},{rng},"<={m}")/COUNTIFS({COMPANY},$A{r}))')
+                if by_sqm:
+                    f = f'=IF(SUMIFS({SQM},{COMPANY},$A{r})=0,0,SUMIFS({SQM},{COMPANY},$A{r},{rng},"<={m}")/SUMIFS({SQM},{COMPANY},$A{r}))'
+                else:
+                    f = f'=IF(COUNTIFS({COMPANY},$A{r})=0,0,COUNTIFS({COMPANY},$A{r},{rng},"<={m}")/COUNTIFS({COMPANY},$A{r}))'
+                cell = bl.cell(row=r, column=2 + j, value=f)
                 cell.number_format = PCT
                 cell.font = F
                 cell.alignment = Alignment(horizontal='center')
@@ -302,7 +331,10 @@ def main():
     meta = bdoc['meta']
     lines = [
         ('Generated', datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')),
-        ('Portfolio source', 'London_office_data.xlsx (supplied). Section titles define company and status: rows under "… developments" are Development; all other rows are Standing. Trailing "+" and "*" markers on property names are footnote markers in the source and were removed from names.'),
+        ('Portfolio source', 'Great Portland Estates and Derwent London: London_office_data.xlsx. Section titles define company and status: rows under "… developments" are Development; all other rows are Standing. Trailing "+" and "*" markers on property names are footnote markers in the source and were removed from names.'),
+        ('Landsec and British Land', 'Portfolios including joint ventures, from the "Land Sec 2" and "British Land 2" sheets of the annotated workbook. These replace the original Landsec and British Land rows. Rows under "Developments", "Pre Developments" and "Development Phase" are Development. "Non Offices" and "Non London" sections are excluded. Buildings already geocoded reuse that location; new ones were geocoded.'),
+        ('Floor area (sqm)', 'GPE and Derwent: "Property size" column of the annotated workbook, with corrections from Derwent_London_Plc.xlsx and the checked Great_Portland_Estates / Derwent_London_Plc files (data/building-size-overrides.json). Landsec and British Land: the "INC JV" size columns of their sheets. Where Percent Owned was entered as 100 instead of a fraction (Hill House, Timber Square Phase 2), the plain property size is used (see cell comments). Floor-area shares are "sqm within N minutes ÷ total sqm".'),
+        ('Manual coordinates', 'Nova Place, The Dock Shed A2 / Canada Water Dock Shed, Canada Water-Printworks H1/H2 and Greencoat/Gordon House use manually adjusted coordinates (Geocode precision = "manual").'),
         ('Stations', '301 physical stations on the 11 London Underground lines and the Elizabeth line (Underground_and_Elizabeth_Stations.xlsx, joined to TfL Unified API route data).'),
         ('Walking areas', 'Pedestrian isochrones of 5 and 10 minutes from each station coordinate, computed with Valhalla (pedestrian costing, 5.04 km/h ≈ 1.4 m/s) on OpenStreetMap data. Isochrones generated ' + ' – '.join(x[:10] for x in (meta.get('isochrones', {}).get('generatedBetween') or []) if x) + '. They follow the street network, so they are not circles.'),
         ('Method', 'A building is "within N min" when its point lies inside the N-minute walking area of at least one station (point-in-polygon on full-precision polygons). "Best walk time" is the smallest such N. Blank means more than 10 minutes from every station.'),
